@@ -1,0 +1,252 @@
+import {pool4Abi} from "../../configure";
+
+const pools = [
+  {
+    name: 'ELE-BNB LP',
+    description: '',
+    token: 'ELE-BNB LP',
+    tokenDescription: 'ELE-BNB LP',
+    tokenDecimals: 18,
+    tokenAddress: '0x1f43e18a2558aef9276a00e041c57ba589813eb2',
+    earnedToken: 'ELE',
+    earnedTokenDescription: '',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+    earnContractAbi: pool4Abi,
+    color: '133, 100, 245',
+    startTimestamp: 1614808020,
+    earnTime: 365 * 24 * 3600,
+    earnedTokenUrl: 'https://eleven.finance',
+    masterchefPid: 8,
+    token1: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+    token2: "0xacd7b3d9c10e97d0efa418903c0c7669e702e4c0"
+  },
+  {
+    name: 'ELE',
+    description: '',
+    token: 'E11',
+    tokenDescription: 'E11',
+    tokenDecimals: 18,
+    tokenAddress: '0x3Ed531BfB3FAD41111f6dab567b33C4db897f991',
+    earnedToken: 'ELE',
+    earnedTokenDescription: '',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+    earnContractAbi: pool4Abi,
+    color: '152, 163, 0',
+    startTimestamp: 1614808020,
+    earnTime: 365 * 24 * 3600,
+    earnedTokenUrl: 'https://eleven.finance',
+    masterchefPid: 7,
+    token1: "",
+    token2: ""
+  },
+  {
+    name: 'ALPACA-BNB LP',
+    description: '',
+    token: '11ALPACA',
+    tokenDescription: '11ALPACA',
+    tokenDecimals: 18,
+    tokenAddress: '0x0A33E8e887850Ad53739A0CeF110283b74E02f3e',
+    earnedToken: 'ELE',
+    earnedTokenDescription: '',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+    earnContractAbi: pool4Abi,
+    color: '189,49,224',
+    startTimestamp: 1614798020,
+    earnTime: 365 * 24 * 3600,
+    earnedTokenUrl: 'https://eleven.finance',
+    masterchefPid: 9, //ELEVEN CHEF!!
+    token1: "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+    token2: "0x250632378e573c6be1ac2f97fcdf00515d0aa91b"
+  },
+  {
+    name: 'BMXX-BNB LP',
+    description: '',
+    token: '11BMXX',
+    tokenDescription: '11BMXX',
+    tokenDecimals: 18,
+    tokenAddress: '0xda88bD84e752960f8fDe52CC2E9e6B19ae0D6e7C',
+    earnedToken: 'ELE',
+    earnedTokenDescription: '',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+    earnContractAbi: pool4Abi,
+    color: '204,167,55',
+    startTimestamp: 1614798020,
+    earnTime: 365 * 24 * 3600,
+    earnedTokenUrl: 'https://eleven.finance',
+    masterchefPid: 10, //ELEVEN CHEF!!
+    token1: "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+    token2: "0x250632378e573c6be1ac2f97fcdf00515d0aa91b"
+  },
+  {
+    name: 'BETH-ETH LP',
+    description: '',
+    token: '11BETH',
+    tokenDescription: '11BETH',
+    tokenDecimals: 18,
+    tokenAddress: '0xc11beE3b3Ff05C59ACC074fa02aEA53a49aa96F1',
+    earnedToken: 'ELE',
+    earnedTokenDescription: '',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+    earnContractAbi: pool4Abi,
+    color: '100,100,100',
+    startTimestamp: 1614798020,
+    earnTime: 365 * 24 * 3600,
+    earnedTokenUrl: 'https://eleven.finance',
+    masterchefPid: 6, //ELEVEN CHEF!!
+    token1: "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+    token2: "0x250632378e573c6be1ac2f97fcdf00515d0aa91b"
+  },
+  {
+    name: 'PSG-BNB LP',
+    description: '',
+    token: '11PSG',
+    tokenDescription: '11PSG',
+    tokenDecimals: 18,
+    tokenAddress: '0x250b9021018132a52C1bE46d9f1ae53997C3f8A8',
+    earnedToken: 'ELE',
+    earnedTokenDescription: '',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+    earnContractAbi: pool4Abi,
+    color: '83,122,207',
+    startTimestamp: 1614808020,
+    earnTime: 365 * 24 * 3600,
+    earnedTokenUrl: 'https://eleven.finance',
+    masterchefPid: 4,
+    token1: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+    token2: "0xbc5609612b7c44bef426de600b5fd1379db2ecf1"
+  },
+  {
+    name: 'ATM-BNB LP',
+    description: '',
+    token: '11ATM',
+    tokenDescription: '11ATM',
+    tokenDecimals: 18,
+    tokenAddress: '0xd527f4145C84a57E38278485658829040E7e87b7',
+    earnedToken: 'ELE',
+    earnedTokenDescription: '',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+    earnContractAbi: pool4Abi,
+    color: '161, 19, 19',
+    startTimestamp: 1614808020,
+    earnTime: 365 * 24 * 3600,
+    earnedTokenUrl: 'https://eleven.finance',
+    masterchefPid: 2,
+    token1: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+    token2: "0x25e9d05365c867e59c1904e7463af9f312296f9e"
+  },
+  {
+    name: 'JUV-BNB LP',
+    description: '',
+    token: '11JUV',
+    tokenDescription: '11JUV',
+    tokenDecimals: 18,
+    tokenAddress: '0x2f01AC6cDec485d07D4Be8998Bc4c16f540b914C',
+    earnedToken: 'ELE',
+    earnedTokenDescription: '',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+    earnContractAbi: pool4Abi,
+    color: '35, 140, 25',
+    startTimestamp: 1614808020,
+    earnTime: 365 * 24 * 3600,
+    earnedTokenUrl: 'https://eleven.finance',
+    masterchefPid: 1,
+    token1: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+    token2: "0xc40c9a843e1c6d01b7578284a9028854f6683b1b"
+  },
+  {
+    name: 'OG-BNB LP',
+    description: '',
+    token: '11OG',
+    tokenDescription: '11OG',
+    tokenDecimals: 18,
+    tokenAddress: '0xd2e399e7768fc713c9ecf0c8e8988dd056c8dbd7',
+    earnedToken: 'ELE',
+    earnedTokenDescription: '',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+    earnContractAbi: pool4Abi,
+    color: '10, 163, 158',
+    startTimestamp: 1614808020,
+    earnTime: 365 * 24 * 3600,
+    earnedTokenUrl: 'https://eleven.finance',
+    masterchefPid: 5,
+    token1: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+    token2: "0xf05e45ad22150677a017fbd94b84fbb63dc9b44c"
+  },
+  {
+    name: 'ASR-BNB LP',
+    description: '',
+    token: '11ASR',
+    tokenDescription: '11ASR',
+    tokenDecimals: 18,
+    tokenAddress: '0x1716D66943b0833f26A938d0A75aEfAc708Bd98B',
+    earnedToken: 'ELE',
+    earnedTokenDescription: '',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+    earnContractAbi: pool4Abi,
+    color: '254,119,0',
+    startTimestamp: 1614808020,
+    earnTime: 365 * 24 * 3600,
+    earnedTokenUrl: 'https://eleven.finance',
+    masterchefPid: 3,
+    token1: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+    token2: "0x80d5f92c2c8c682070c95495313ddb680b267320"
+  },
+];
+
+const length = pools.length;
+const poolsInfo = Array(length).fill({staked: 0, tvl: 0, apy: 10});
+const fetchPoolsInfoPending = false;
+const allowance = Array(length).fill(0);
+const checkApprovalPending = Array(length).fill(false);
+const balance = Array(length).fill(0);
+const fetchBalancePending = Array(length).fill(false);
+const currentlyStaked = Array(length).fill(0);
+const fetchCurrentlyStakedPending = Array(length).fill(false);
+const rewardsAvailable = Array(length).fill(0);
+const fetchRewardsAvailablePending = Array(length).fill(false);
+const fetchApprovalPending = Array(length).fill(false);
+const fetchStakePending = Array(length).fill(false);
+const fetchWithdrawPending = Array(length).fill(false);
+const fetchClaimPending = Array(length).fill(false);
+const fetchExitPending = Array(length).fill(false);
+
+const initialState = {
+  pools,
+  poolsInfo,
+  fetchPoolsInfoPending,
+  allowance,
+  checkApprovalPending,
+  balance,
+  fetchBalancePending,
+  currentlyStaked,
+  fetchCurrentlyStakedPending,
+  rewardsAvailable,
+  fetchRewardsAvailablePending,
+  fetchApprovalPending,
+  fetchStakePending,
+  fetchWithdrawPending,
+  fetchClaimPending,
+  fetchExitPending
+};
+
+export default initialState;
