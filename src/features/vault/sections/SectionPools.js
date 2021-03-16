@@ -66,6 +66,22 @@ export default function SectionPools() {
 
   const { enqueueSnackbar } = useSnackbar();
 
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+
+  const handleSearchChange = event => {
+    setSearchTerm(event.target.value);
+  };
+
+  useEffect(() => {
+    const term = searchTerm.toLowerCase()
+    const results = pools.filter(pool =>
+      pool.token.toLowerCase().includes(term)
+    );
+    setSearchResults(results);
+  }, [searchTerm]);
+
+
 /*function commarize()
 {
 	// 1e6 = 1 Million, begin with number to word after 1e6.
@@ -595,8 +611,23 @@ Number.prototype.commarize = commarize;
         <div className={classes.mainTitle}>{t('Vault-Main-Title')}</div>
         <h3 className={classes.secondTitle}>Total value locked: <span id="tvl"><img src={loading} width="70px" alt="loading" /></span></h3>
       </Grid>
-      
-        {Boolean(networkId === Number(process.env.NETWORK_ID)) && pools.map((pool, index) => {
+      <Grid item>
+        <div>
+          <TextField
+            type="text"
+            variant="outlined"
+            placeholder="Search"
+            value={searchTerm}
+            onChange={handleSearchChange}
+            style={{
+              backgroundColor: 'white',
+              marginBottom: '15px',
+              borderRadius: '5px'
+            }}
+          />
+        </div>
+      </Grid>
+        {Boolean(networkId === Number(process.env.NETWORK_ID)) && searchResults.map((pool, index) => {
             let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
             // balanceSingle = byDecimals(random(1, 1000000), 1)
             // balanceSingle = new BigNumber(random(1, 1000000000000000))
