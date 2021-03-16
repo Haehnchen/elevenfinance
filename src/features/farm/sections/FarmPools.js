@@ -11,6 +11,7 @@ import {Avatar} from "@material-ui/core";
 import { useConnectWallet } from '../../home/redux/hooks';
 import masterchefAbi from "./masterchefabi.json"
 import { vaultERC20, erc20ABI, e11Abi, alpacamchef } from "../../configure";
+import TextField from '@material-ui/core/TextField';
 
 
 const useStyles = makeStyles(farmItemStyle);
@@ -21,6 +22,21 @@ export default () => {
   const {t, i18n} = useTranslation();
   const {pools, poolsInfo, fetchPoolsInfo} = useFetchPoolsInfo();
   const { web3, address, networkId } = useConnectWallet();
+
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+
+  const handleSearchChange = event => {
+    setSearchTerm(event.target.value);
+  };
+
+  useEffect(() => {
+    const term = searchTerm.toLowerCase()
+    const results = pools.filter(pool =>
+      pool.token.toLowerCase().includes(term)
+    );
+    setSearchResults(results);
+  }, [searchTerm]);
 
 
 function commarize() {
@@ -429,8 +445,29 @@ Number.prototype.commarize = commarize;
         <div className={classes.mainTitle}>{t('Farm-Main-Title')}</div>
         <h3 style={{color:'orange'}} className={classes.secondTitle}>{t('Farm-Second-Title')}</h3>
       </Grid>
+      {/* <Grid item>
+        <div>
+          <TextField
+            type="text"
+            variant="outlined"
+            placeholder="Search"
+            value={searchTerm}
+            onChange={handleSearchChange}
+            InputProps={{
+              classes:{
+                root: classes.secondTitle
+              }
+            }}
+            style={{
+              backgroundColor: '#353848',
+              marginBottom: '15px',
+              borderRadius: '5px'
+            }}
+          />
+        </div>
+      </Grid> */}
       <Grid container item xs={12} justify={"center"}>
-        {pools.map((pool, index) => {
+        {searchResults.map((pool, index) => {
           const {token, name, earnedToken, earnedTokenAddress, color, tokenDescription, token1, token2} = pool;
 
           // 根据名称是否含有LP判断是否是存 LPToken对
