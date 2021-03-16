@@ -604,7 +604,6 @@ Number.prototype.commarize = commarize;
     return Math.floor(Math.random() * (max - min)) + min;
   }
 
-
   return (
     <Grid container style={{paddingTop: '4px'}}>
       <Grid item xs={12}>
@@ -619,8 +618,13 @@ Number.prototype.commarize = commarize;
             placeholder="Search"
             value={searchTerm}
             onChange={handleSearchChange}
+            InputProps={{
+              classes:{
+                root: classes.secondTitle
+              }
+            }}
             style={{
-              backgroundColor: 'white',
+              backgroundColor: '#353848',
               marginBottom: '15px',
               borderRadius: '5px'
             }}
