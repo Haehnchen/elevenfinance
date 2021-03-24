@@ -15,7 +15,15 @@ const farmItemStyle = theme => ({
     color: '#FFFFFF',
     letterSpacing: '0',
     lineHeight: '32px',
-    fontWeight: "550",
+    fontWeight: "300",
+  },
+  subTitle: {
+    fontFamily: 'Helvetica',
+    fontSize: '16px',
+    color: '#FFFFFF',
+    letterSpacing: '0',
+    lineHeight: '32px',
+    fontWeight: "300",
   },
   secondTitle: {
     ...secondStyle,
@@ -57,7 +65,10 @@ const farmItemStyle = theme => ({
     borderRadius: 10,
     fontSize: 15,
     margin: 10
-  }
+  },
+  margin: {
+    marginRight: '5px'
+  },
 });
 
 export default farmItemStyle;
