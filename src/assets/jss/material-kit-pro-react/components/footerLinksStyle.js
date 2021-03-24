@@ -50,7 +50,7 @@ const footerLinksStyle = theme => ({
         width: "auto",
     },
     navLink: {
-        background: primaryColor[0],
+        background: "#635AFF",
         position: "relative",
         padding: "0.9375rem",
         width: "44px",
@@ -60,7 +60,8 @@ const footerLinksStyle = theme => ({
         margin: "0px",
         display: "inline-flex",
         "&:hover,&:focus": {
-          background: hoverColor[0],
+          background: "#635AFF",
+          opacity: 0.5
         },
         [theme.breakpoints.down("sm")]: {
           marginLeft: "0px",
@@ -103,13 +104,15 @@ const footerLinksStyle = theme => ({
         padding: theme.spacing(1),
     },
     extraContent: {
-        color:primaryColor[0],
+        color: 'white',
         fontWeight: "400",
         'a&:hover, a&:focus':{
-          color:hoverColor[0],
+          color: 'white',
+          opacity: 0.5
         },
         'a:visited': {
-          color:primaryColor[0],
+          color: 'white',
+          textDecoration: 'underline'
         },
     },
     linkList: {
@@ -120,6 +123,7 @@ const footerLinksStyle = theme => ({
     },
     linkItem: {
       whiteSpace:'nowrap',
+      color: 'white'
     },
 
 })

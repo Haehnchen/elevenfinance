@@ -14,8 +14,6 @@ import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import _ from 'lodash';
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
 import NativeSelect from '@material-ui/core/NativeSelect';
 
 const useStyles = makeStyles(farmItemStyle);
@@ -32,7 +30,7 @@ const BootstrapInput = withStyles((theme) => ({
     position: 'relative',
     backgroundColor: theme.palette.background.paper,
     border: '1px solid #ced4da',
-    fontSize: 16,
+    fontSize: '14px',
     padding: '10px 26px 10px 12px',
   },
 }))(InputBase);
@@ -59,7 +57,7 @@ export default () => {
     setSearchResults(results);
   }, [searchTerm]);
 
-  const [data, setData] = useState([]);
+  const [normalizedData, setData] = useState([]);
 
   useEffect(() => {
     loadData();
@@ -69,7 +67,7 @@ export default () => {
     const response = await fetch("https://eleven.finance/api.json");
     const json = await response.json();
 
-    const alteredData = pools.map((pool) => {
+    let normalizedData = pools.map((pool) => {
       let name = pool.name;
 
       if (name === "ELE-BNB LP") {
@@ -83,7 +81,23 @@ export default () => {
       }
     })
 
-    setData(alteredData);
+    normalizedData = pools.map((pool) => {
+      if (pool.farm.apy === undefined || pool.farm.apy == null) {
+        pool.farm["apy"] = 0;
+      }
+
+      if (pool.farm.aprd === undefined || pool.farm.aprd == null) {
+        pool.farm["aprd"] = 0;
+      }
+
+      if (pool.farm.aprl === undefined || pool.farm.aprl == null) {
+        pool.farm["aprl"] = 0;
+      }
+
+      return pool;
+    })
+
+    setData(normalizedData);
   }
 
   const [sortTerm, setSortTerm] = useState("");
@@ -104,12 +118,6 @@ export default () => {
           setSearchResults(orderedPools);
         }
         break;
-      case "aprd":
-        if (pools[0].farmItemStyle !== undefined) {
-          const orderedPools = _.orderBy(pools, 'farm.aprd', 'desc');
-          setSearchResults(orderedPools);
-        }
-        break;
       case "aprl":
         if (pools[0].farm !== undefined) {
           const orderedPools = _.orderBy(pools, 'farm.aprl', 'desc');
@@ -120,7 +128,6 @@ export default () => {
         setSearchResults(pools);
     }
   }, [sortTerm])
-
 
   const units = ["", "K", "Million", "Billion", "Trillion", "Quadrillion", "Quintillion", "Sextillion", "Septillion", "Octillion", "Nonillion", "Decillion", "Undecillion"];
 
@@ -184,7 +191,6 @@ export default () => {
         >
           <option value="">Default</option>
           <option value={"apy"}>APY</option>
-          <option value={"aprd"}>APRD</option>
           <option value={"aprl"}>ELE APR</option>
         </NativeSelect>
       </FormControl>
@@ -199,7 +205,7 @@ export default () => {
 
           return (
             <Grid item sm={6} key={index}>
-              <div style={{ background: `rgba(${color},0.5)` }} className={classNames({
+              <div style={{ background: `#2D3140` }} className={classNames({
                 [classes.flexColumnCenter]: true,
                 [classes.farmItem]: true
               })} key={index}>
@@ -243,21 +249,21 @@ export default () => {
                     <>
                       <Button className={classes.menuButton}
                         href={`/#/farm/pool/${index + 1}`}
-                        style={{ background: `rgb(${color})` }}>
+                        style={{ background: `#635AFF` }}>
                         {t('Farm-Mining')}
                       </Button>
                       <Button
                         className={classes.menuButton}
                         href={`https://exchange.pancakeswap.finance/#/add/${token1}/${token2}`}
                         target={"_blank"}
-                        style={{ background: `rgb(${color})` }}>
+                        style={{ background: `#FF635A` }}>
                         {t('Farm-Get')} LP Token
                       </Button>
                     </>
                   ) : <Button
                     className={classes.menuButton}
                     href={`/#/farm/pool/${index + 1}`}
-                    style={{ background: `rgb(${color})` }}>{t('Farm-Mining')}</Button>}
+                    style={{ background: `#635AFF` }}>{t('Farm-Mining')}</Button>}
                 </div>
               </div>
             </Grid>

@@ -18,8 +18,6 @@ import Hidden from '@material-ui/core/Hidden';
 import { primaryColor } from "assets/jss/material-kit-pro-react.js";
 import { Search } from "@material-ui/icons"
 import InputLabel from '@material-ui/core/InputLabel';
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
 import NativeSelect from '@material-ui/core/NativeSelect';
 // core components
 import Button from "components/CustomButtons/Button.js";
@@ -57,7 +55,7 @@ const BootstrapInput = withStyles((theme) => ({
     position: 'relative',
     backgroundColor: theme.palette.background.paper,
     border: '1px solid #ced4da',
-    fontSize: 16,
+    fontSize: '14px',
     padding: '10px 26px 10px 12px',
   },
 }))(InputBase);
@@ -98,7 +96,6 @@ export default function SectionPools() {
     setSearchResults(results);
   }, [searchTerm]);
 
-
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -109,7 +106,7 @@ export default function SectionPools() {
     const response = await fetch("https://eleven.finance/api.json");
     const json = await response.json();
 
-    const alteredData = pools.map((pool) => {
+    const normalizedData = pools.map((pool) => {
       let token = pool.token;
       let vault = json[token]["vault"];
       let tvl = json[token]["tvl"];
@@ -118,9 +115,9 @@ export default function SectionPools() {
       return pool;
     });
 
-    alteredData["totalvaluelocked"] = json["totalvaluelocked"]
+    normalizedData["totalvaluelocked"] = json["totalvaluelocked"]
 
-    setData(alteredData);
+    setData(normalizedData);
   }
 
   const [sortTerm, setSortTerm] = useState("");
