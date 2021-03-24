@@ -6,6 +6,7 @@ import {
   hoverColor,
   grayColor,
 } from "assets/jss/material-kit-pro-react.js";
+import { fade } from '@material-ui/core/styles';
 
 import checkboxes from "assets/jss/material-kit-pro-react/customCheckboxRadioSwitchStyle.js";
 import buttonGroup from "assets/jss/material-kit-pro-react/buttonGroupStyle.js";
@@ -28,7 +29,7 @@ const sectionPoolsStyle = theme => ({
     color: '#FFFFFF',
     letterSpacing: '0',
     lineHeight: '32px',
-    fontWeight: "550",
+    fontWeight: "300",
   },
   secondTitle:{
       ...secondStyle,
@@ -137,7 +138,7 @@ const sectionPoolsStyle = theme => ({
   },
   iconContainerMainTitle:{
     fontSize: '18px',
-    fontWeight: 'bold',
+    fontWeight: '300',
     color: '#fff',
     lineHeight: '18px',
     // marginBottom:'8px',
@@ -145,11 +146,19 @@ const sectionPoolsStyle = theme => ({
   },
   iconContainerSubTitle:{
     fontSize: '14px',
-    fontWeight: '400',
+    fontWeight: '300',
     color: '#fff',
     lineHeight: '14px',
     opacity: "0.4",
     letterSpacing: 0
+  },
+  poolTvl:{
+    fontSize: '14px',
+    fontWeight: '300',
+    color: '#fff',
+    lineHeight: '14px',
+    letterSpacing: 0,
+    marginBottom: '5px'
   },
   iconContainerSecond: {
       width:'48px',
@@ -168,14 +177,15 @@ const sectionPoolsStyle = theme => ({
   iconContainerPrimary: {
       width:'48px',
       height:'48px',
-      backgroundColor:primaryColor[0],
+      backgroundColor:'#242833',
       borderRadius:'8px',
       color:'#fff',
       "& i": {
         fontSize: '24px',
       },
       "&:hover,&:focus": {
-        background: hoverColor[0],
+        opacity: 0.5,
+        background:'#242833',
       }
   },
     accordion:{
@@ -212,16 +222,16 @@ const sectionPoolsStyle = theme => ({
         fontWeight: '600',
     },
     depositedBalanceSliderRoot:{
-        color:'#C7971C',
+      color:'#ff635a',
     },
     depositedBalanceSliderMarkLabel:{
-        color:'#C7971C',
+      color:'#ff635a',
     },
     drawSliderRoot:{
-        color:'#635AFF',
+      color:'#635AFF',
     },
     drawSliderMarkLabel:{
-        color:'#635AFF',
+      color:'#635AFF'
     },
     showDetailLeft:{
         float: 'left',
@@ -250,6 +260,39 @@ const sectionPoolsStyle = theme => ({
           marginLeft: '5px'
         }
     },
+    search: {
+      position: 'relative',
+      borderRadius: theme.shape.borderRadius,
+      backgroundColor: fade(theme.palette.common.white, 0.15),
+      '&:hover': {
+        backgroundColor: fade(theme.palette.common.white, 0.25),
+      },
+      marginRight: theme.spacing(2),
+      marginLeft: 0,
+      width: '100%',
+      [theme.breakpoints.up('sm')]: {
+        marginLeft: theme.spacing(3),
+        width: 'auto',
+      },
+    },
+    searchIcon: {
+      padding: theme.spacing(0, 2),
+      height: '100%',
+      position: 'absolute',
+      pointerEvents: 'none',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    margin: {
+      marginRight: '5px'
+    },
+    hideIconPadding: {
+      "& .MuiSelect-outlined": {
+        paddingRight: "0px"
+      },
+      paddingRight: '0px'
+    }
 });
 
 export default sectionPoolsStyle;
