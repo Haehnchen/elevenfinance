@@ -10,6 +10,7 @@ import Grid from '@material-ui/core/Grid';
 import {farmPoolsStyle} from "../jss/sections/farmPoolsStyle";
 import Button from "../../../components/CustomButtons/Button";
 import TextButton from '@material-ui/core/Button';
+import { vaultERC20 } from "../../configure";
 
 import {useConnectWallet} from '../../home/redux/hooks';
 import {
@@ -37,7 +38,7 @@ const useStyles = makeStyles(farmPoolsStyle);
 export default function FarmPool(props) {
   const classes = useStyles();
   const {t, i18n} = useTranslation();
-  const {address} = useConnectWallet();
+  const { web3, address, networkId } = useConnectWallet();
   const {allowance, checkApproval} = useCheckApproval();
   const {pools} = useFetchPoolsInfo();
   const {balance, fetchBalance} = useFetchBalance();
@@ -107,6 +108,21 @@ export default function FarmPool(props) {
     fetchWithdraw(index, amount);
   }
 
+  const checkPricePerShare = async (amount) => {
+    const add = pools[index]["tokenAddress"];
+    const vaultC = new web3.eth.Contract(vaultERC20, add);
+    const price = await vaultC.methods.getPricePerFullShare().call();
+    if(amount*price/1e36 == 0) document.getElementById("toLPs").innerHTML = "loading...";
+    else{
+      document.getElementById("toLPs").innerHTML = amount*price/1e36;
+//      const wbnbContract = new web3.eth.Contract(erc20Abi, "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c");
+//      const busdContract = new web3.eth.Contract(erc20Abi, "0x1b96b92314c44b159149f7e0303511fb2fc4774f");
+//      wbnbI = wbnbContract.methods.balanceOf(").call();
+    }
+  }
+
+
+
   useEffect(() => {
     const isPending = Boolean(fetchClaimPending[index]);
     const rewardsAvailableIs0 = rewardsAvailable[index] === 0;
@@ -155,11 +171,13 @@ export default function FarmPool(props) {
       fetchBalance(index);
       fetchCurrentlyStaked(index);
       fetchRewardsAvailable(index);
+      checkPricePerShare(currentlyStaked[index]+balance[index]);
       const id = setInterval(() => {
         checkApproval(index);
         fetchBalance(index);
         fetchCurrentlyStaked(index);
         fetchRewardsAvailable(index);
+        checkPricePerShare(currentlyStaked[index]+balance[index]);
       }, 10000);
       return () => clearInterval(id);
     }
@@ -264,6 +282,7 @@ export default function FarmPool(props) {
             </div>
             <Grid container item xs={12} className={classes.menuContent}>
               <div className={classes.menuNumber}>
+                Total LPs: <span id="toLPs"></span><br/><br/>
                 <div className={classes.numberWeight}>{myBalance.toNumber()}</div>
                 <span>{t('Farm-Hold')} {tokenDescription}</span>
               </div>
