@@ -136,7 +136,11 @@ export default () => {
       return '--'
     } else {
       const farmApy = pool.farm.apy;
-      return millify(farmApy, { units, precision: 2 })
+      try{
+        return millify(farmApy, { units, precision: 2 })
+      }catch{
+        return "--"
+      }
     }
   }
 
@@ -154,7 +158,11 @@ export default () => {
       return '--'
     } else {
       const farmAprl = pool.farm.aprl;
-      return millify(farmAprl, { units, precision: 2 })
+      try{
+          return millify(farmAprl, { units, precision: 2 })
+      }catch{
+          return "--"
+      }
     }
   }
 
