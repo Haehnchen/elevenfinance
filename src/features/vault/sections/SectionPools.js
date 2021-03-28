@@ -354,7 +354,9 @@ export default function SectionPools() {
       return "";
     } else {
       const vaultApy = pool.vault.apy;
-      return millify(vaultApy, { units, space: true });
+      try{
+        return millify(vaultApy, { units, space: true });
+      }catch{return "--"}
     }
   }
 
@@ -363,7 +365,9 @@ export default function SectionPools() {
       return "";
     } else {
       const vaultAprd = pool.vault.aprd;
-      return millify(vaultAprd, { units, space: true });
+      try{
+        return millify(vaultAprd, { units, space: true });
+      }catch{return "--"}
     }
   }
 
@@ -373,29 +377,6 @@ export default function SectionPools() {
         <div className={classes.mainTitle}>{t('Vault-Main-Title')}</div>
         <h3 style={{color: 'white'}}>TVL: <NumberFormat value={data.totalvaluelocked} displayType={'text'} thousandSeparator={true} prefix={'$'} decimalScale={0} /></h3>
       </Grid>
-      <FormControl className={classes.margin}>
-        <InputLabel shrink id="demo-simple-select-placeholder-label-label" htmlFor="demo-customized-textbox" style={{color: 'white'}}>Search</InputLabel>
-          <BootstrapInput
-            placeholder="Search"
-            value={searchTerm}
-            onChange={handleSearchChange}
-            autoFocus={true}
-          />
-      </FormControl>
-      <FormControl>
-        <InputLabel shrink id="demo-simple-select-placeholder-label-label" style={{color: 'white'}}>Sort by</InputLabel>
-        <NativeSelect
-          value={sortTerm}
-          onChange={handleSort}
-          style={{width: '100px', backgroundColor: 'white'}}
-          input={<BootstrapInput />}
-        >
-          <option value="" label="Default" />
-          <option value="apy">APY</option>
-          <option value="apd">APD</option>
-          <option value="tvl">TVL</option>
-        </NativeSelect>
-      </FormControl>
       {Boolean(networkId === Number(process.env.NETWORK_ID)) && searchResults.map((pool, index) => {
         let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
         let singleDepositedBalance = byDecimals(tokens[pool.earnedToken].tokenBalance, pool.itokenDecimals);

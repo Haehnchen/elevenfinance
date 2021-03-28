@@ -114,10 +114,7 @@ export default function FarmPool(props) {
     const price = await vaultC.methods.getPricePerFullShare().call();
     if(amount*price/1e36 == 0) document.getElementById("toLPs").innerHTML = "loading...";
     else{
-      document.getElementById("toLPs").innerHTML = amount*price/1e36;
-//      const wbnbContract = new web3.eth.Contract(erc20Abi, "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c");
-//      const busdContract = new web3.eth.Contract(erc20Abi, "0x1b96b92314c44b159149f7e0303511fb2fc4774f");
-//      wbnbI = wbnbContract.methods.balanceOf(").call();
+      document.getElementById("toLPs").innerHTML = amount*price/1e37;
     }
   }
 
@@ -171,14 +168,14 @@ export default function FarmPool(props) {
       fetchBalance(index);
       fetchCurrentlyStaked(index);
       fetchRewardsAvailable(index);
-      checkPricePerShare(currentlyStaked[index]+balance[index]);
+      checkPricePerShare((currentlyStaked[index]+balance[index]));
       const id = setInterval(() => {
         checkApproval(index);
         fetchBalance(index);
         fetchCurrentlyStaked(index);
         fetchRewardsAvailable(index);
-        checkPricePerShare(currentlyStaked[index]+balance[index]);
-      }, 10000);
+        checkPricePerShare((currentlyStaked[index]+balance[index]));
+      }, 3000);
       return () => clearInterval(id);
     }
   }, [address, index]);
@@ -282,7 +279,7 @@ export default function FarmPool(props) {
             </div>
             <Grid container item xs={12} className={classes.menuContent}>
               <div className={classes.menuNumber}>
-                Total LPs: <span id="toLPs"></span><br/><br/>
+                Current LP value: <span id="toLPs"></span> LP<br/><br/>
                 <div className={classes.numberWeight}>{myBalance.toNumber()}</div>
                 <span>{t('Farm-Hold')} {tokenDescription}</span>
               </div>

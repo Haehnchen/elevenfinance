@@ -145,6 +145,40 @@ export default function FooterLinks(props) {
                     className={
                         classes.navLink + " " + classes.socialIconsButton
                     }
+                    href="https://github.com/Eleven-Finance"
+                    target="_blank"
+                    >
+                    <i
+                        style={iconColorStyle}
+                        className={
+                        "fab fa-github"
+                        }
+                    />
+                    </Button>
+                </ListItem>
+                <ListItem className={classes.listItem}>
+                    <Button
+                    color={color}
+                    className={
+                        classes.navLink + " " + classes.socialIconsButton
+                    }
+                    href="https://11eleven-11finance.gitbook.io/eleven-finance/"
+                    target="_blank"
+                    >
+                    <i
+                        style={iconColorStyle}
+                        className={
+                        "fas fa-book"
+                        }
+                    />
+                    </Button>
+                </ListItem>
+                <ListItem className={classes.listItem}>
+                    <Button
+                    color={color}
+                    className={
+                        classes.navLink + " " + classes.socialIconsButton
+                    }
                     href="https://twitter.com/WARONRUGS/status/1374144695274774528"
                     target="_blank"
                     >

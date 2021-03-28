@@ -180,28 +180,6 @@ export default () => {
         <div className={classes.mainTitle}>{t('Farm-Main-Title')}</div>
         <h3 className={classes.subTitle} style={{ color: 'white' }}>{t('Farm-Second-Title')}</h3>
       </Grid>
-      <FormControl className={classes.margin}>
-        <InputLabel shrink id="demo-simple-select-placeholder-label-label" htmlFor="demo-customized-textbox" style={{ color: 'white' }}>Search</InputLabel>
-        <BootstrapInput
-          placeholder="Search"
-          value={searchTerm}
-          onChange={handleSearchChange}
-          autoFocus={true}
-        />
-      </FormControl>
-      <FormControl className={classes.margin}>
-        <InputLabel shrink id="demo-simple-select-placeholder-label-label" style={{ color: 'white' }}>Sort by</InputLabel>
-        <NativeSelect
-          value={sortTerm}
-          onChange={handleSort}
-          style={{ width: '100px', backgroundColor: 'white' }}
-          input={<BootstrapInput />}
-        >
-          <option value="">Default</option>
-          <option value={"apy"}>APY</option>
-          <option value={"aprl"}>ELE APR</option>
-        </NativeSelect>
-      </FormControl>
       <Grid container item xs={12} justify={"center"}>
         {searchResults.map((pool, index) => {
           const { token, name, earnedToken, earnedTokenAddress, color, tokenDescription, token1, token2 } = pool;
