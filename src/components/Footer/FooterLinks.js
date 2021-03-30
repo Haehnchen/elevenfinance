@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React, { useEffect, useState } from "react";
 // nodejs library to set properties for components
-import WoR from "../../images/wor_title.png";
+import WoR from "../../images/wor_war_on_rugs_small.png";
 import PropTypes from "prop-types";
 import { useTranslation } from 'react-i18next';
 import Footer from "components/Footer/Footer.js";
