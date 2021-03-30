@@ -356,7 +356,7 @@ export default function SectionPools() {
       const vaultApy = pool.vault.apy;
       try{
         return millify(vaultApy, { units, space: true });
-      }catch{return "--"}
+      }catch{return Number.parseFloat(vaultApy).toExponential(2);}
     }
   }
 

@@ -65,6 +65,27 @@ const pools = [
     token2: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
   },
   {
+    name: 'YUMCHA-BUSD LP',
+    description: '',
+    token: '11YUMCHABUSD',
+    tokenDescription: '11YUMCHABUSD',
+    tokenDecimals: 18,
+    tokenAddress: '0x02fed251bc69009814b7c3b5ea13a3320e84a77e',
+    earnedToken: 'ELE',
+    earnedTokenDescription: '',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+    earnContractAbi: pool4Abi,
+    color: '25, 94, 0',
+    startTimestamp: 1614798020,
+    earnTime: 365 * 24 * 3600,
+    earnedTokenUrl: 'https://eleven.finance',
+    masterchefPid: 80, //ELEVEN CHEF!!
+    token1: "0xc7d0ce2961396d02059f06e8df7dd37e6809d478",
+    token2: "0xe9e7cea3dedca5984780bafc599bd69add087d56"
+  },
+  {
     name: 'EPS-BNB LP',
     description: '',
     token: '11EPS',

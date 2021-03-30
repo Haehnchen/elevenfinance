@@ -54,6 +54,26 @@ export const pools = [
     tokenAddress: '0x135AeDCFb35b0b5dCf61Db7891a21253452Eb970'
   },
   {
+    id: 'yumchabnb',
+    name: 'YUMCHA',
+    token: 'YUMCHA-BUSD LP',
+    tokenDescription: 'YUMCHA',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses pancakeswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11YUMCHA',
+    earnedTokenAddress: '0x02fed251bc69009814b7c3b5ea13a3320e84a77e',
+    earnContractAddress: '0x02fed251bc69009814b7c3b5ea13a3320e84a77e',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0xD7c43A10F6e92c6F1aB13096AE4a08DD8F8c3c8A'
+  },
+  {
     id: 'epsbnb',
     name: 'EPS',
     token: 'EPS-BNB LP',

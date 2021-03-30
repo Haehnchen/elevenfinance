@@ -139,7 +139,7 @@ export default () => {
       try{
         return millify(farmApy, { units, precision: 2 })
       }catch{
-        return "--"
+        return Number.parseFloat(farmApy).toExponential(2);
       }
     }
   }
