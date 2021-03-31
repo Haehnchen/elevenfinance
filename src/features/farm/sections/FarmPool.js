@@ -114,7 +114,7 @@ export default function FarmPool(props) {
     const price = await vaultC.methods.getPricePerFullShare().call();
     if(amount*price/1e36 == 0) document.getElementById("toLPs").innerHTML = "loading...";
     else{
-      document.getElementById("toLPs").innerHTML = amount*price/1e37;
+      document.getElementById("toLPs").innerHTML = amount*price/1e36;
     }
   }
 
@@ -174,7 +174,7 @@ export default function FarmPool(props) {
         fetchBalance(index);
         fetchCurrentlyStaked(index);
         fetchRewardsAvailable(index);
-        checkPricePerShare((currentlyStaked[index]+balance[index]));
+        checkPricePerShare((Number(currentlyStaked[index])+Number(balance[index])));
       }, 3000);
       return () => clearInterval(id);
     }
