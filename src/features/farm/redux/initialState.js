@@ -65,6 +65,26 @@ const pools = [
     token2: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
   },
   {
+    name: 'ICE',
+    description: '',
+    token: '11ICE',
+    tokenDescription: '11ICE',
+    tokenDecimals: 18,
+    tokenAddress: '0x77e3D9c047b4D21fCB91509e0A0a85Bc057eb18a',
+    earnedToken: 'ELE',
+    earnedTokenDescription: '',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+    earnContractAbi: pool4Abi,
+    color: '25, 94, 0',
+    startTimestamp: 1614798020,
+    earnTime: 365 * 24 * 3600,
+    earnedTokenUrl: 'https://eleven.finance',
+    masterchefPid: 81, //ELEVEN CHEF!!
+    token1: "0xf16e81dce15B08F326220742020379B855B87DF9",
+  },
+  {
     name: 'YUMCHA-BUSD LP',
     description: '',
     token: '11YUMCHABUSD',

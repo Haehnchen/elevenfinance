@@ -54,6 +54,26 @@ export const pools = [
     tokenAddress: '0x135AeDCFb35b0b5dCf61Db7891a21253452Eb970'
   },
   {
+    id: 'ice',
+    name: 'ICE',
+    token: 'ICE',
+    tokenDescription: 'ICE',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses popsicle',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11ICE',
+    earnedTokenAddress: '0x77e3D9c047b4D21fCB91509e0A0a85Bc057eb18a',
+    earnContractAddress: '0x77e3D9c047b4D21fCB91509e0A0a85Bc057eb18a',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0xf16e81dce15B08F326220742020379B855B87DF9'
+  },
+  {
     id: 'yumchabnb',
     name: 'YUMCHA',
     token: 'YUMCHA-BUSD LP',
