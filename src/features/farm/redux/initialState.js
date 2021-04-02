@@ -44,12 +44,12 @@ const pools = [
     token2: ""
   },
   {
-    name: 'SWIRL-BNB LP',
+    name: 'ICE-BNB LP',
     description: '',
-    token: '11SWIRL',
-    tokenDescription: '11SWIRL',
+    token: '11ICEBNB',
+    tokenDescription: '11ICEBNB',
     tokenDecimals: 18,
-    tokenAddress: '0xfd3912EAB0fE94Fa99F69c7dF33bB9252803487b',
+    tokenAddress: '0x40A5ef990864328F8fe22B5FD04bDC90E4604a84',
     earnedToken: 'ELE',
     earnedTokenDescription: '',
     earnedTokenDecimals: 18,
@@ -60,8 +60,29 @@ const pools = [
     startTimestamp: 1614798020,
     earnTime: 365 * 24 * 3600,
     earnedTokenUrl: 'https://eleven.finance',
-    masterchefPid: 62, //ELEVEN CHEF!!
-    token1: "0x52d86850bc8207b520340B7E39cDaF22561b9E56",
+    masterchefPid: 83, //ELEVEN CHEF!!
+    token1: "0xf16e81dce15B08F326220742020379B855B87DF9",
+    token2: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
+  },
+  {
+    name: 'EULER-BNB LP',
+    description: '',
+    token: '11EULER',
+    tokenDescription: '11EULER',
+    tokenDecimals: 18,
+    tokenAddress: '0x42D6855799eFC79188e06e80a5704e1Cef40DBf5',
+    earnedToken: 'ELE',
+    earnedTokenDescription: '',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+    earnContractAbi: pool4Abi,
+    color: '25, 94, 0',
+    startTimestamp: 1614798020,
+    earnTime: 365 * 24 * 3600,
+    earnedTokenUrl: 'https://eleven.finance',
+    masterchefPid: 82, //ELEVEN CHEF!!
+    token1: "0x3920123482070C1a2dff73AaD695c60e7c6F6862",
     token2: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
   },
   {
