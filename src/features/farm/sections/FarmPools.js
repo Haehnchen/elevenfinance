@@ -63,8 +63,9 @@ export default () => {
     const response = await fetch("https://eleven.finance/api.json");
     const json = await response.json();
 
-    let normalizedData = pools.map((pool) => {
+    let normalizedData = pools.map((pool, index) => {
       let name = pool.name;
+      pool.id = index + 1;
 
       if (name === "ELE-BNB LP") {
         let apy = json[name]["apy"];
@@ -207,7 +208,7 @@ export default () => {
 
       <Grid container item xs={12} justify={"center"}>
         {searchResults.map((pool, index) => {
-          const { token, name, earnedToken, earnedTokenAddress, color, tokenDescription, token1, token2 } = pool;
+          const { id, token, name, earnedToken, earnedTokenAddress, color, tokenDescription, token1, token2 } = pool;
 
           // 根据名称是否含有LP判断是否是存 LPToken对
           const isLP = name.toLowerCase().indexOf('lp') > -1;
@@ -259,7 +260,7 @@ export default () => {
                   {isLP ? (
                     <>
                       <Button className={classes.menuButton}
-                        href={`/#/farm/pool/${index + 1}`}
+                        href={`/#/farm/pool/${id}`}
                         style={{ background: `#635AFF` }}>
                         {t('Farm-Mining')}
                       </Button>
@@ -273,7 +274,7 @@ export default () => {
                     </>
                   ) : <Button
                     className={classes.menuButton}
-                    href={`/#/farm/pool/${index + 1}`}
+                    href={`/#/farm/pool/${id}`}
                     style={{ background: `#635AFF` }}>{t('Farm-Mining')}</Button>}
                 </div>
               </div>
