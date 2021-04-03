@@ -280,11 +280,11 @@ export default function FarmPool(props) {
             <Grid container item xs={12} className={classes.menuContent}>
               <div className={classes.menuNumber}>
                 Current LP value: <span id="toLPs"></span> LP<br/><br/>
-                <div className={classes.numberWeight}>{myBalance.toNumber()}</div>
+                <div className={classes.numberWeight}>{myBalance.toFixed(6)}</div>
                 <span>{t('Farm-Hold')} {tokenDescription}</span>
               </div>
               <div className={classes.menuNumber}>
-                <div className={classes.numberWeight}>{myCurrentlyStaked.toString()}</div>
+                <div className={classes.numberWeight}>{myCurrentlyStaked.toFixed(6)}</div>
                 <span>{t('Farm-Pledged')} {tokenDescription}</span>
               </div>
             </Grid>
