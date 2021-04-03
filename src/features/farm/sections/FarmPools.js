@@ -12,6 +12,11 @@ import millify from 'millify';
 import InputBase from '@material-ui/core/InputBase';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import MenuItem from '@material-ui/core/MenuItem';
+import TextField from '@material-ui/core/TextField';
+import SearchIcon from '@material-ui/icons/Search';
+import Select from '@material-ui/core/Select';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import _ from 'lodash';
 import NativeSelect from '@material-ui/core/NativeSelect';
@@ -45,17 +50,8 @@ export default () => {
   const [searchResults, setSearchResults] = useState([]);
 
   const handleSearchChange = event => {
-    setSortTerm("");
     setSearchTerm(event.target.value);
   };
-
-  useEffect(() => {
-    const term = searchTerm.toLowerCase()
-    const results = pools.filter(pool =>
-      pool.token.toLowerCase().includes(term)
-    );
-    setSearchResults(results);
-  }, [searchTerm]);
 
   const [normalizedData, setData] = useState([]);
 
@@ -67,8 +63,9 @@ export default () => {
     const response = await fetch("https://eleven.finance/api.json");
     const json = await response.json();
 
-    let normalizedData = pools.map((pool) => {
+    let normalizedData = pools.map((pool, index) => {
       let name = pool.name;
+      pool.id = index + 1;
 
       if (name === "ELE-BNB LP") {
         let apy = json[name]["apy"];
@@ -100,34 +97,33 @@ export default () => {
     setData(normalizedData);
   }
 
-  const [sortTerm, setSortTerm] = useState("");
+  const [sortTerm, setSortTerm] = useState("default");
 
   const handleSort = event => {
-    setSearchTerm("");
     setSortTerm(event.target.value);
   }
 
   useEffect(() => {
+    if (pools[0].vault !== undefined) {
+      setSearchResults(pools);
+    }
+
+    const term = searchTerm.toLowerCase()
+    let results = pools.filter(pool =>
+      pool.token.toLowerCase().includes(term)
+    );
+
     switch (sortTerm) {
-      case "":
-        setSearchResults(pools);
-        break;
       case "apy":
-        if (pools[0].farm !== undefined) {
-          const orderedPools = _.orderBy(pools, 'farm.apy', 'desc');
-          setSearchResults(orderedPools);
-        }
+        results = _.orderBy(results, 'farm.apy', 'desc');
         break;
       case "aprl":
-        if (pools[0].farm !== undefined) {
-          const orderedPools = _.orderBy(pools, 'farm.aprl', 'desc');
-          setSearchResults(orderedPools);
-        }
+        results = _.orderBy(results, 'farm.aprl', 'desc');
         break;
-      default:
-        setSearchResults(pools);
     }
-  }, [sortTerm])
+
+    setSearchResults(results);
+  }, [searchTerm, sortTerm])
 
   const units = ["", "K", "Million", "Billion", "Trillion", "Quadrillion", "Quintillion", "Sextillion", "Septillion", "Octillion", "Nonillion", "Decillion", "Undecillion"];
 
@@ -180,9 +176,39 @@ export default () => {
         <div className={classes.mainTitle}>{t('Farm-Main-Title')}</div>
         <h3 className={classes.subTitle} style={{ color: 'white' }}>{t('Farm-Second-Title')}</h3>
       </Grid>
+
+      <Grid item className={classes.filtersContainer} xs={12}>
+        <TextField
+          onChange={handleSearchChange}
+          className={classes.searchInput}
+          placeholder="Search"
+          variant="outlined"
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <SearchIcon />
+              </InputAdornment>
+            ),
+          }} />
+
+        <FormControl
+          variant="outlined"
+          className={classes.sortSelect}
+        >
+          <Select
+            value={sortTerm}
+            onChange={handleSort}
+          >
+            <MenuItem value="default">Default</MenuItem>
+            <MenuItem value="apy">APY</MenuItem>
+            <MenuItem value="aprl">ELE APR</MenuItem>
+          </Select>
+        </FormControl>
+      </Grid>
+
       <Grid container item xs={12} justify={"center"}>
         {searchResults.map((pool, index) => {
-          const { token, name, earnedToken, earnedTokenAddress, color, tokenDescription, token1, token2 } = pool;
+          const { id, token, name, earnedToken, earnedTokenAddress, color, tokenDescription, token1, token2 } = pool;
 
           // 根据名称是否含有LP判断是否是存 LPToken对
           const isLP = name.toLowerCase().indexOf('lp') > -1;
@@ -234,7 +260,7 @@ export default () => {
                   {isLP ? (
                     <>
                       <Button className={classes.menuButton}
-                        href={`/#/farm/pool/${index + 1}`}
+                        href={`/#/farm/pool/${id}`}
                         style={{ background: `#635AFF` }}>
                         {t('Farm-Mining')}
                       </Button>
@@ -248,7 +274,7 @@ export default () => {
                     </>
                   ) : <Button
                     className={classes.menuButton}
-                    href={`/#/farm/pool/${index + 1}`}
+                    href={`/#/farm/pool/${id}`}
                     style={{ background: `#635AFF` }}>{t('Farm-Mining')}</Button>}
                 </div>
               </div>

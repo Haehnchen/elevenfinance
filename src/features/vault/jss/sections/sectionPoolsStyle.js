@@ -11,6 +11,7 @@ import { fade } from '@material-ui/core/styles';
 import checkboxes from "assets/jss/material-kit-pro-react/customCheckboxRadioSwitchStyle.js";
 import buttonGroup from "assets/jss/material-kit-pro-react/buttonGroupStyle.js";
 import tooltips from "assets/jss/material-kit-pro-react/tooltipsStyle.js";
+import filtersSection from 'assets/jss/components/sectionFiltersStyle.js';
 import { rgbToHex } from "@material-ui/core";
 
 const secondStyle = {
@@ -21,20 +22,6 @@ const secondStyle = {
   letterSpacing: '0',
   lineHeight: '14px',
 };
-
-const inputBackground = {
-  backgroundColor: '#2C3040',
-  color: '#fff',
-  '& input': {
-    color: '#fff'
-  },
-  '& svg': {
-    color: '#727580'
-  },
-  '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': {
-    borderColor: '#727580'
-  }
-}
 
 const sectionPoolsStyle = theme => ({
   mainTitle:{
@@ -56,29 +43,7 @@ const sectionPoolsStyle = theme => ({
   ...buttonGroup,
   ...tooltips,
 
-  filtersContainer: {
-    padding: '3px 0 15px',
-    display: 'flex',
-    justifyContent: 'flex-end'
-  },
-  searchInput: {
-    ...inputBackground,
-    [theme.breakpoints.down('sm')]: {
-      width: '60%'
-    },
-  },
-  sortSelect: {
-    marginLeft: '10px',
-    ...inputBackground,
-    '& > *': {
-      color: '#fff',
-      paddingRight: '5px',
-    },
-
-    [theme.breakpoints.down('sm')]: {
-      width: '40%'
-    },
-  },
+  ...filtersSection(theme),
 
   icon: {
     verticalAlign: 'bottom',

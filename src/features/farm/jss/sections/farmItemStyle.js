@@ -1,3 +1,4 @@
+import filtersSection from 'assets/jss/components/sectionFiltersStyle.js';
 
 const secondStyle = {
   opacity: '0.4',
@@ -9,6 +10,8 @@ const secondStyle = {
 };
 
 const farmItemStyle = theme => ({
+  ...filtersSection(theme),
+
   mainTitle: {
     fontFamily: 'Helvetica',
     fontSize: '32px',
