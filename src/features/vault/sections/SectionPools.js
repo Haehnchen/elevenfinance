@@ -435,10 +435,10 @@ export default function SectionPools() {
                               />
                             </Hidden>
                           </Typography>
-                          {pool.token === 'ELE' ? (
-                            <Typography className={classes.poolTvl} variant="body2">--</Typography>
-                          ) : (
+                          {typeof pool.tvl !== 'undefined' ? (
                             <Typography className={classes.poolTvl} variant="body2">TVL: <NumberFormat value={pool.tvl} displayType={'text'} thousandSeparator={true} prefix={'$'} decimalScale={0} /> </Typography>
+                          ) : (
+                            <Typography className={classes.poolTvl} variant="body2">--</Typography>
                           )}
                           <Typography className={classes.iconContainerSubTitle} variant="body2">{pool.uses}</Typography>
                         </Grid>
