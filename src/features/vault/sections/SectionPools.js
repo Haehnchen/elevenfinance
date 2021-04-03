@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import BigNumber from "bignumber.js";
 import { byDecimals, calculateReallyNum } from 'features/helpers/bignumber';
 // @material-ui/core components
-import { InputAdornment } from "@material-ui/core";
+import { InputAdornment, MenuItem } from "@material-ui/core";
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Accordion from '@material-ui/core/Accordion'
 import AccordionSummary from '@material-ui/core/AccordionSummary'
@@ -16,9 +16,11 @@ import CustomOutlinedInput from 'components/CustomOutlinedInput/CustomOutlinedIn
 import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
 import { primaryColor } from "assets/jss/material-kit-pro-react.js";
-import { Search } from "@material-ui/icons"
 import InputLabel from '@material-ui/core/InputLabel';
 import NativeSelect from '@material-ui/core/NativeSelect';
+import SearchIcon from "@material-ui/icons/Search"
+import Select from '@material-ui/core/Select';
+import TextField from '@material-ui/core/TextField';
 // core components
 import Button from "components/CustomButtons/Button.js";
 import Avatar from '@material-ui/core/Avatar';
@@ -84,17 +86,8 @@ export default function SectionPools() {
   const [searchResults, setSearchResults] = useState([]);
 
   const handleSearchChange = event => {
-    setSortTerm("");
     setSearchTerm(event.target.value);
   };
-
-  useEffect(() => {
-    const term = searchTerm.toLowerCase()
-    const results = pools.filter(pool =>
-      pool.token.toLowerCase().includes(term)
-    );
-    setSearchResults(results);
-  }, [searchTerm]);
 
   const [data, setData] = useState([]);
 
@@ -120,40 +113,36 @@ export default function SectionPools() {
     setData(normalizedData);
   }
 
-  const [sortTerm, setSortTerm] = useState("");
+  const [sortTerm, setSortTerm] = useState("default");
 
   const handleSort = event => {
-    setSearchTerm("");
     setSortTerm(event.target.value);
   }
 
   useEffect(() => {
+    if (pools[0].vault !== undefined) {
+      setSearchResults(pools);
+    }
+
+    const term = searchTerm.toLowerCase()
+    let results = pools.filter(pool =>
+      pool.token.toLowerCase().includes(term)
+    );
+
     switch (sortTerm) {
-      case "":
-        setSearchResults(pools);
-        break;
       case "apy":
-        if (pools[0].vault !== undefined) {
-          const orderedPools = _.orderBy(pools, 'vault.apy', 'desc');
-          setSearchResults(orderedPools);
-        }
+        results = _.orderBy(results, 'vault.apy', 'desc');
         break;
       case "apd":
-        if (pools[0].vault !== undefined) {
-          const orderedPools = _.orderBy(pools, 'vault.aprd', 'desc');
-          setSearchResults(orderedPools);
-        }
+        results = _.orderBy(results, 'vault.aprd', 'desc');
         break;
       case "tvl":
-        if (pools[0].vault !== undefined) {
-          const orderedPools = _.orderBy(pools, 'tvl', 'desc');
-          setSearchResults(orderedPools);
-        }
+        results = _.orderBy(results, 'tvl', 'desc');
         break;
-      default:
-        setSearchResults(pools);
     }
-  }, [sortTerm])
+
+    setSearchResults(results);
+  }, [searchTerm, sortTerm])
 
   const changeDetailInputValue = (type, index, total, tokenDecimals, event) => {
     let value = event.target.value;
@@ -377,6 +366,37 @@ export default function SectionPools() {
         <div className={classes.mainTitle}>{t('Vault-Main-Title')}</div>
         <h3 style={{color: 'white'}}>TVL: <NumberFormat value={data.totalvaluelocked} displayType={'text'} thousandSeparator={true} prefix={'$'} decimalScale={0} /></h3>
       </Grid>
+
+      <Grid item className={classes.filtersContainer} xs={12}>
+        <TextField
+          onChange={handleSearchChange}
+          className={classes.searchInput}
+          placeholder="Search"
+          variant="outlined"
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <SearchIcon />
+              </InputAdornment>
+            ),
+          }} />
+
+        <FormControl
+          variant="outlined"
+          className={classes.sortSelect}
+        >
+          <Select
+            value={sortTerm}
+            onChange={handleSort}
+            labelId="sort-label"
+          >
+            <MenuItem value="default">Default</MenuItem>
+            <MenuItem value="apy">APY</MenuItem>
+            <MenuItem value="tvl">TVL</MenuItem>
+          </Select>
+        </FormControl>
+      </Grid>
+
       {Boolean(networkId === Number(process.env.NETWORK_ID)) && searchResults.map((pool, index) => {
         let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
         let singleDepositedBalance = byDecimals(tokens[pool.earnedToken].tokenBalance, pool.itokenDecimals);
@@ -445,7 +465,7 @@ export default function SectionPools() {
                         </Hidden>
                         <Grid item xs={12} md={1} container justify='center' alignItems="center">
                           <Grid item>
-                            <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap> 
+                            <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
                               <span>APY: {getApy(pool)} %</span>
                             </Typography>
                             <Typography className={classes.iconContainerSubTitle} variant="body2">
