@@ -114,10 +114,10 @@ export default () => {
 
     switch (sortTerm) {
       case "apy":
-        results = _.orderBy(pools, 'farm.apy', 'desc');
+        results = _.orderBy(results, 'farm.apy', 'desc');
         break;
       case "aprl":
-        results = _.orderBy(pools, 'farm.aprl', 'desc');
+        results = _.orderBy(results, 'farm.aprl', 'desc');
         break;
     }
 
