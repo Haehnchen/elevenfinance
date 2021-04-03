@@ -388,7 +388,6 @@ export default function SectionPools() {
           <Select
             value={sortTerm}
             onChange={handleSort}
-            labelId="sort-label"
           >
             <MenuItem value="default">Default</MenuItem>
             <MenuItem value="apy">APY</MenuItem>
