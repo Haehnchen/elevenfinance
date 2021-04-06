@@ -7,7 +7,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import GridItem from "components/Grid/GridItem.js";
 import Avatar from '@material-ui/core/Avatar';
 import Grid from '@material-ui/core/Grid';
-import {farmPoolsStyle} from "../jss/sections/farmPoolsStyle";
+import farmPoolStyle from "../jss/sections/farmPoolsStyle";
 import Button from "../../../components/CustomButtons/Button";
 import TextButton from '@material-ui/core/Button';
 import { vaultERC20 } from "../../configure";
@@ -33,7 +33,7 @@ import TextField from "@material-ui/core/TextField";
 import DialogActions from "@material-ui/core/DialogActions";
 import {Input} from "@material-ui/core";
 
-const useStyles = makeStyles(farmPoolsStyle);
+const useStyles = makeStyles(farmPoolStyle);
 
 export default function FarmPool(props) {
   const classes = useStyles();
@@ -91,6 +91,16 @@ export default function FarmPool(props) {
     setStakeAble(!Boolean(fetchStakePending[index]));
   }, [fetchStakePending[index], index]);
 
+  const onDepositButton = () => {
+    setDialogType(1);
+    setDialogShow(true);
+  }
+
+  const onWithdrawalButton = () => {
+    setDialogType(2);
+    setDialogShow(true);
+  }
+
   const onStake = () => {
     const amount = new BigNumber(inputVal).multipliedBy(new BigNumber(10).exponentiatedBy(pools[index].tokenDecimals)).toString(10);
     fetchStake(index, amount);
@@ -112,10 +122,10 @@ export default function FarmPool(props) {
     const add = pools[index]["tokenAddress"];
     const vaultC = new web3.eth.Contract(vaultERC20, add);
     const price = await vaultC.methods.getPricePerFullShare().call();
-    if(amount*price/1e36 == 0) document.getElementById("toLPs").innerHTML = "loading...";
-    else{
-      document.getElementById("toLPs").innerHTML = amount*price/1e36;
-    }
+    // if(amount*price/1e36 == 0) document.getElementById("toLPs").innerHTML = "loading...";
+    // else{
+    //   document.getElementById("toLPs").innerHTML = amount*price/1e36;
+    // }
   }
 
 
@@ -229,95 +239,70 @@ export default function FarmPool(props) {
   }
 
   return (
-    <Grid container style={{paddingTop: '4px', marginBottom: 200}}>
-      <Grid item xs={12}>
-        <div className={classes.detailTitle}>{`Farm / ${pools[index].tokenDescription}`}</div>
-        <div className={classes.detailDesc}>
-          {`${t('Farm-Stake')} ${tokenDescription} ${t('Farm-CAN-GET')} ${earnedToken}，${t('Farm-Time')} ${earnTime / 7 / 24 / 3600} ${t('Farm-week')}。`} 
-          <a href={earnedTokenUrl} target={'_blank'} style={{color: 'rgb(54,85,152)'}}>{t('Farm-Know')} {earnedToken}</a>
-        </div>
-      </Grid>
-      <Grid item xs={12}>
-        {canStake ? (<div className={classes.detailTime}>{t('Farm-Will-Mining-Over')}</div>) : null}
-        <div className={classes.detailTime}
-             style={{fontSize: 18, marginTop: 5}}>{canStake ? dateCount(timeEnd) : t('Farm-Mining-Over')}</div>
-      </Grid>
-      <Grid container item xs={12} style={{marginTop: 30}}>
-        <GridItem sm={6}>
-          <div className={classNames({
-            [classes.menuItem]: true,
-            [classes.flexColumnCenter]: true
-          })}>
-            <div className={classes.menuItemLogo}>
-              <Avatar className={classes.menuItemLogoImg}
-                      src={require(`../../../images/${earnedToken}-logo.png`)}/></div>
-            <div className={classes.menuContent}>
-              <div className={classes.menuNumber}>
-                <div className={classes.numberWeight}>{Math.floor(myRewardsAvailable.toNumber() * 10000) / 10000}</div>
-                <span>{t('Farm-Earned')} {earnedToken}</span>
-              </div>
+    <Grid container>
+      <Grid item container xs={12} className={classes.farmWrapper}>
+        {/* Farm Details */}
+        <Grid item container xs={12} md={8} className={classes.farmDetails}>
+          <Grid item container xs={12} className={classes.farmTitleBlock}>
+            <img className={classes.farmLogo} src={require(`../../../images/${name}-logo.svg`)}/>
+            <div className={classes.farmTitle}>
+              {`Farm / ${pools[index].tokenDescription}`}
             </div>
-            <Button className={classes.menuItemButton}
-                    onClick={onClaim}>{t('Farm-Reward')}</Button>
-          </div>
-        </GridItem>
-        <GridItem sm={6}>
-          <div className={classNames({
-            [classes.menuItem]: true,
-            [classes.flexColumnCenter]: true
-          })}>
-            <div className={classes.menuItemLogo}>
-              {isLP && lpTokens.length === 2 ?
-                lpTokens.map((item, index) => {
-                  return (
-                    <img key={index} src={require(`../../../images/${item}-logo.png`)}
-                            className={classes.menuItemLogoImg}
-                            style={index > 0 ? offsetImageStyle : {}}/>
-                  )
-                }) :
-                <img className={classes.menuItemLogoImg} src={require(`../../../images/${name}-logo.svg`)}/>}
-            </div>
-            <Grid container item xs={12} className={classes.menuContent}>
-              <div className={classes.menuNumber}>
-                Current LP value: <span id="toLPs"></span> LP<br/><br/>
-                <div className={classes.numberWeight}>{myBalance.toFixed(6)}</div>
-                <span>{t('Farm-Hold')} {tokenDescription}</span>
-              </div>
-              <div className={classes.menuNumber}>
-                <div className={classes.numberWeight}>{myCurrentlyStaked.toFixed(6)}</div>
-                <span>{t('Farm-Pledged')} {tokenDescription}</span>
-              </div>
+          </Grid>
+          <Grid item container justify="space-around" xs={12} className={classes.farmControls}>
+
+            {/* Wallet Balance */}
+            <Grid item xs={12} sm={6} lg={4}>
+              <div className={classes.farmBalance}>{myBalance.toFixed(6)}</div>
+              <div className={classes.farmBalanceDescription}>{t('Farm-Balance')} {tokenDescription}</div>
+
+              {
+                ! isNeedApproval
+                ? <Button className={classes.buttonPrimary}
+                          disabled={ ! canStake}
+                          onClick={onDepositButton}>
+                    {t('Farm-Stake')} {tokenDescription}
+                  </Button>
+                : <Button className={classes.buttonPrimary}
+                          disabled={ ! Boolean(approvalAble)}
+                          onClick={onApproval}>
+                    {t('Farm-Approval')} {tokenDescription}
+                  </Button>
+              }
             </Grid>
-            {
-              !isNeedApproval ?
-                <Button className={classes.menuItemButton}
-                        disabled={!canStake}
-                        onClick={() => {
-                          // 显示存入弹窗
-                          setDialogType(1);
-                          setDialogShow(true);
-                        }}>{t('Farm-Stake')} {tokenDescription}</Button>
-                :
-                <Button className={classes.menuItemButton}
-                        disabled={!Boolean(approvalAble)}
-                        onClick={onApproval}>{t('Farm-Approval')} {tokenDescription}</Button>
-            }
 
-            {!isNeedApproval ? (
-              <>
-                <Button className={classNames({[classes.menuItemButton]: true, [classes.menuItemButtonExit]: true,})}
-                        disabled={!Boolean(withdrawAble)}
-                        onClick={() => {
-                          setDialogType(2);
-                          setDialogShow(true);
-                        }}
-                >{t('Farm-UnApproval')} {tokenDescription}</Button>
-              </>
-            ) : null}
+            {/* Deposited Balance */}
+            <Grid item xs={12} sm={6} lg={4}>
+              <div className={classes.farmBalance}>{myCurrentlyStaked.toFixed(6)}</div>
+              <div className={classes.farmBalanceDescription}>{t('Farm-Deposited')} {tokenDescription}</div>
+
+              <Button className={classes.buttonPrimary}
+                      disabled={!Boolean(withdrawAble)}
+                      onClick={onWithdrawalButton}>
+                {t('Farm-Withdraw')} {tokenDescription}
+              </Button>
+            </Grid>
+          </Grid>
+        </Grid>
+
+        {/* Farm Earnings */}
+        <Grid item xs={12} md={4} className={classes.farmEarnings}>
+          <div className={classes.farmEarnedLogo}>
+            <img src={require(`../../../images/${earnedToken}-logo.png`)}/>
           </div>
-        </GridItem>
+
+          <div className={classes.farmBalance}>{Math.floor(myRewardsAvailable.toNumber() * 10000) / 10000}</div>
+          <div className={classes.farmBalanceDescription}>{t('Farm-Earned')} {earnedToken}</div>
+
+          <Button className={classes.buttonPrimary}
+                  onClick={onClaim}
+          >
+            {t('Farm-Reward')}
+          </Button>
+        </Grid>
       </Grid>
 
+      {/* Deposit / Withdrawal Popup */}
       <Dialog fullWidth={true}
               disableBackdropClick={true}
               open={dialogShow}
@@ -332,7 +317,7 @@ export default function FarmPool(props) {
         <DialogContent>
           <DialogContentText style={{fontSize: 15, color: "#ffffff"}}>
             {
-              t(isStake ? 'Farm-Balance' : 'Farm-Pledged') + "：" + (isStake ? myBalance.toString() : myCurrentlyStaked.toString())
+              t(isStake ? 'Farm-Available-Balance' : 'Farm-Pledged') + "：" + (isStake ? myBalance.toString() : myCurrentlyStaked.toString())
             }
             <a className={classes.dialogHref}
                onClick={() => {
