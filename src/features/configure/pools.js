@@ -40,7 +40,7 @@ export const pools = [
     tokenDescription: 'EULER',
     tokenAddress: '',
     tokenDecimals: 18,
-    uses: 'Farming has not started',
+    uses: 'Uses euler',
     itokenDecimals: 18,
     depostLimit:0,
     tokenDescriptionUrl: '',
