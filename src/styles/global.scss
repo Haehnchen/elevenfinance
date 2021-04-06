@@ -14,6 +14,16 @@ body {
   }
 }
 
+
+#bigfoot-link {
+  font-weight: bold;
+  color: #f0b90b;
+  @media (max-width: 959px) {
+    color: unset;
+  }
+}
+
+
 // .pool-section {
 //   padding-left: 16px;
 // }

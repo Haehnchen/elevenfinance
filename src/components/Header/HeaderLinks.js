@@ -127,6 +127,17 @@ export default function HeaderLinks(props) {
           </ListItem>
         ))
       }
+      <ListItem id="bigfoot-link" className={classes.listItem}>
+        <Button
+          type="button"
+          color="transparent"
+          onClick={ () => {
+            window.open("http://bigfoot.eleven.finance", "_blank");
+          }}
+        >
+          BigFoot
+        </Button>
+      </ListItem>
       <ListItem className={classes.listItem}>
         <Button
           style={{
