@@ -1,8 +1,9 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import BigNumber from 'bignumber.js';
+import { byDecimals } from '../../helpers/bignumber';
 
-import { vaultERC20 } from '../../configure';
+import { e11Abi, vaultERC20 } from '../../configure';
 
 import {
   FARM_FETCH_PRICE_PER_SHARE_BEGIN,
@@ -22,10 +23,34 @@ export function fetchPricePerShare(index) {
 			const { home, farm } = getState();
       const { web3 } = home;
       const { pools } = farm;
-      const { tokenAddress } = pools[index];
+      const { name, token, tokenAddress } = pools[index];
 
-			const contract = new web3.eth.Contract(vaultERC20, tokenAddress);
-			contract.methods.getPricePerFullShare().call().then(
+      if (name == 'ELE-BNB LP') {
+        const data = new BigNumber(1e18);
+
+        dispatch({
+          type: FARM_FETCH_PRICE_PER_SHARE_SUCCESS,
+          data: data,
+          index
+        });
+        resolve(1);
+        return;
+      }
+
+      let promise;
+
+      if (token == 'E11') {
+        const contract = new web3.eth.Contract(e11Abi, tokenAddress);
+			  promise = contract.methods.sharesPerToken().call()
+          .then(data => {
+            return new BigNumber(1e12).div(BigNumber(data)).times(1e18);
+          })
+      } else {
+        const contract = new web3.eth.Contract(vaultERC20, tokenAddress);
+			  promise = contract.methods.getPricePerFullShare().call()
+      }
+
+      promise.then(
         data => {
           dispatch({
             type: FARM_FETCH_PRICE_PER_SHARE_SUCCESS,

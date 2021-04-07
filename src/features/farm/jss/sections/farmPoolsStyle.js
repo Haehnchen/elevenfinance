@@ -73,6 +73,7 @@ const farmPoolStyle = (theme) => ({
 		fontSize: '20px',
 		color: textSecondaryColor,
 		fontWeight: 'bold',
+		marginBottom: '-10px'
 	},
 	farmLpValueToken: {
 		fontSize: '14px',
