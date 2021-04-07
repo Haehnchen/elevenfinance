@@ -8,3 +8,4 @@ export { useFetchStake } from './fetchStake';
 export { useFetchWithdraw } from './fetchWithdraw';
 export { useFetchClaim } from './fetchClaim';
 export { useFetchExit } from './fetchExit';
+export { useFetchPricePerShare } from './fetchPricePerShare';

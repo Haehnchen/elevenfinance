@@ -1,16 +1,13 @@
 import React, {useState, useEffect} from 'react';
-import classNames from "classnames";
 import {useTranslation} from 'react-i18next';
 import BigNumber from 'bignumber.js'
 import {byDecimals} from 'features/helpers/bignumber';
 import {makeStyles} from "@material-ui/core/styles";
-import GridItem from "components/Grid/GridItem.js";
-import Avatar from '@material-ui/core/Avatar';
 import Grid from '@material-ui/core/Grid';
 import farmPoolStyle from "../jss/sections/farmPoolsStyle";
 import Button from "../../../components/CustomButtons/Button";
+import CircularProgress from '@material-ui/core/CircularProgress';
 import TextButton from '@material-ui/core/Button';
-import { vaultERC20 } from "../../configure";
 
 import {useConnectWallet} from '../../home/redux/hooks';
 import {
@@ -23,7 +20,8 @@ import {
   useFetchStake,
   useFetchWithdraw,
   useFetchClaim,
-  useFetchExit
+  useFetchExit,
+  useFetchPricePerShare
 } from '../redux/hooks';
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
@@ -49,6 +47,8 @@ export default function FarmPool(props) {
   const {fetchWithdraw, fetchWithdrawPending} = useFetchWithdraw();
   const {fetchClaim, fetchClaimPending} = useFetchClaim();
   const {fetchExit, fetchExitPending} = useFetchExit();
+  const {pricePerShare, fetchPricePerShare} = useFetchPricePerShare();
+
   const [index, setIndex] = useState(Number(props.match.params.index) - 1);
   const [showInput, setShowInput] = useState(false);
   const [isStake, setIsStake] = useState(true);
@@ -65,6 +65,7 @@ export default function FarmPool(props) {
   const [myHalfTime, setMyHalfTime] = useState(`0day 00:00:00`);
   const [inputVal, setInputVal] = useState(0);
   const [anchorEl, setAnchorEl] = useState(null);
+  const [lpValue, setLpValue] = useState(null);
   // 弹窗
   const [dialogShow, setDialogShow] = useState(false);
   // 存入、解除质押 弹窗类型
@@ -118,18 +119,6 @@ export default function FarmPool(props) {
     fetchWithdraw(index, amount);
   }
 
-  const checkPricePerShare = async (amount) => {
-    const add = pools[index]["tokenAddress"];
-    const vaultC = new web3.eth.Contract(vaultERC20, add);
-    const price = await vaultC.methods.getPricePerFullShare().call();
-    // if(amount*price/1e36 == 0) document.getElementById("toLPs").innerHTML = "loading...";
-    // else{
-    //   document.getElementById("toLPs").innerHTML = amount*price/1e36;
-    // }
-  }
-
-
-
   useEffect(() => {
     const isPending = Boolean(fetchClaimPending[index]);
     const rewardsAvailableIs0 = rewardsAvailable[index] === 0;
@@ -173,18 +162,32 @@ export default function FarmPool(props) {
   }, [rewardsAvailable[index], index]);
 
   useEffect(() => {
+    const price = byDecimals(pricePerShare[index], pools[index].tokenDecimals);
+    if (price.eq(0)) {
+      return;
+    }
+
+    const balanceAmount = byDecimals(balance[index], pools[index].tokenDecimals);
+    const stakedAmount = byDecimals(currentlyStaked[index], pools[index].tokenDecimals);
+
+    const lpValue = price.times(balanceAmount.plus(stakedAmount));
+    setLpValue(lpValue);
+  }, [pricePerShare[index], currentlyStaked[index], balance[index], index]);
+
+  useEffect(() => {
     if (address) {
       checkApproval(index);
       fetchBalance(index);
       fetchCurrentlyStaked(index);
       fetchRewardsAvailable(index);
-      checkPricePerShare((currentlyStaked[index]+balance[index]));
+      fetchPricePerShare(index);
+
       const id = setInterval(() => {
         checkApproval(index);
         fetchBalance(index);
         fetchCurrentlyStaked(index);
         fetchRewardsAvailable(index);
-        checkPricePerShare((Number(currentlyStaked[index])+Number(balance[index])));
+        fetchPricePerShare(index);
       }, 3000);
       return () => clearInterval(id);
     }
@@ -245,8 +248,24 @@ export default function FarmPool(props) {
         <Grid item container xs={12} md={8} className={classes.farmDetails}>
           <Grid item container xs={12} className={classes.farmTitleBlock}>
             <img className={classes.farmLogo} src={require(`../../../images/${name}-logo.svg`)}/>
-            <div className={classes.farmTitle}>
-              {`Farm / ${pools[index].tokenDescription}`}
+            <div>
+              <div className={classes.farmTitle}>
+                {`Farm / ${pools[index].tokenDescription}`}
+              </div>
+              <div className={classes.farmLpValue}>
+                Total Value:&nbsp;
+                {
+                  name && lpValue
+                  ? <span>
+                      {lpValue.toFixed(6)}&nbsp;
+                      <span className={classes.farmLpValueToken}>{name}</span>
+                    </span>
+                  : <CircularProgress
+                      className={classes.farmLpValueLoader}
+                      size={20}
+                      thickness={6} />
+                }
+              </div>
             </div>
           </Grid>
           <Grid item container justify="space-around" xs={12} className={classes.farmControls}>

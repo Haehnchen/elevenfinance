@@ -1739,6 +1739,8 @@ const currentlyStaked = Array(length).fill(0);
 const fetchCurrentlyStakedPending = Array(length).fill(false);
 const rewardsAvailable = Array(length).fill(0);
 const fetchRewardsAvailablePending = Array(length).fill(false);
+const pricePerShare = Array(length).fill(0);
+const fetchPricePerSharePending = Array(length).fill(false);
 const fetchApprovalPending = Array(length).fill(false);
 const fetchStakePending = Array(length).fill(false);
 const fetchWithdrawPending = Array(length).fill(false);
@@ -1761,7 +1763,9 @@ const initialState = {
   fetchStakePending,
   fetchWithdrawPending,
   fetchClaimPending,
-  fetchExitPending
+  fetchExitPending,
+  pricePerShare,
+  fetchPricePerSharePending
 };
 
 export default initialState;
