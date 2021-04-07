@@ -69,6 +69,21 @@ const farmPoolStyle = (theme) => ({
 		fontWeight: 'bold',
 		lineHeight: '40px'
 	},
+	farmLpValue: {
+		fontSize: '20px',
+		color: textSecondaryColor,
+		fontWeight: 'bold',
+	},
+	farmLpValueToken: {
+		fontSize: '14px',
+		fontWeight: 'normal'
+	},
+	farmLpValueLoader: {
+		marginLeft: '5px',
+		position: 'relative',
+		top: '3px',
+		color: textSecondaryColor
+	},
 	farmLogo: {
 		height: '35px',
 		marginRight: '25px',
@@ -117,7 +132,11 @@ const farmPoolStyle = (theme) => ({
 		},
 	},
 	farmEarnedLogo: {
-		margin: '0 0 30px',
+		margin: '20px 0 30px',
+
+		[theme.breakpoints.down('sm')]: {
+			marginTop: 0
+		},
 
 		'& img': {
 			height: '60px',
