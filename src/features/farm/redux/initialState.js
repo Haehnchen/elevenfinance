@@ -43,6 +43,29 @@ const pools = [
     token1: "",
     token2: ""
   },
+{
+    name: 'NRV-BNB LP',
+    description: '',
+    token: '11NRVBNB',
+    tokenDescription: '11NRVBNB',
+    tokenDecimals: 18,
+    tokenAddress: '0xeB5603459684F5dbaC4a1B6a35A214Cd42931714',
+    earnedToken: 'ELE',
+    earnedTokenDescription: '',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+    earnContractAbi: pool4Abi,
+    color: '12, 33, 89',
+    startTimestamp: 1614798020,
+    earnTime: 365 * 24 * 3600,
+    earnedTokenUrl: 'https://eleven.finance',
+    masterchefPid: 91, //ELEVEN CHEF!!
+    token1: "0x42F6f551ae042cBe50C739158b4f0CAC0Edb9096",
+    token2: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
+  },
+
+
   {
     name: 'SWIRL-BNB LP',
     description: '',
@@ -188,6 +211,222 @@ const pools = [
     masterchefPid: 85, //ELEVEN CHEF!!
     token1: "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82",
   },
+{
+    name: 'DFT-BNB LP',
+    description: '',
+    token: '11DFTBNB',
+    tokenDescription: '11DFTBNB',
+    tokenDecimals: 18,
+    tokenAddress: '0xD78BA97d501E55Ef7C5c5a385E30c572E9ab7b07',
+    earnedToken: 'ELE',
+    earnedTokenDescription: '',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+    earnContractAbi: pool4Abi,
+    color: '12, 33, 89',
+    startTimestamp: 1614798020,
+    earnTime: 365 * 24 * 3600,
+    earnedTokenUrl: 'https://eleven.finance',
+    masterchefPid: 87, //ELEVEN CHEF!!
+    token1: "0x42712df5009c20fee340b245b510c0395896cf6e",
+    token2: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
+  },
+
+
+
+{
+    name: 'PBTC-BNB LP',
+    description: '',
+    token: '11PBTCBNB',
+    tokenDescription: '11PBTCBNB',
+    tokenDecimals: 18,
+    tokenAddress: '0x70f7817956b642E9C703680b1f0D5602c549F867',
+    earnedToken: 'ELE',
+    earnedTokenDescription: '',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+    earnContractAbi: pool4Abi,
+    color: '12, 33, 89',
+    startTimestamp: 1614798020,
+    earnTime: 365 * 24 * 3600,
+    earnedTokenUrl: 'https://eleven.finance',
+    masterchefPid: 88, //ELEVEN CHEF!!
+    token1: "0xed28a457a5a76596ac48d87c0f577020f6ea1c4c",
+    token2: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
+  },
+
+
+
+{
+    name: 'GUM-BNB LP',
+    description: '',
+    token: '11GUMBNB',
+    tokenDescription: '11GUMBNB',
+    tokenDecimals: 18,
+    tokenAddress: '0x93ED4d8F66aCc39d660Cd567eb3d9513a4682A9D',
+    earnedToken: 'ELE',
+    earnedTokenDescription: '',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+    earnContractAbi: pool4Abi,
+    color: '12, 33, 89',
+    startTimestamp: 1614798020,
+    earnTime: 365 * 24 * 3600,
+    earnedTokenUrl: 'https://eleven.finance',
+    masterchefPid: 89, //ELEVEN CHEF!!
+    token1: "0xc53708664b99df348dd27c3ac0759d2da9c40462",
+    token2: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
+  },
+
+
+
+{
+    name: 'DEGO-BNB LP',
+    description: '',
+    token: '11DEGOBNB',
+    tokenDescription: '11DEGOBNB',
+    tokenDecimals: 18,
+    tokenAddress: '0x088Cd6b5E22D1F7BE00B286A6aF0bc088B7C750C',
+    earnedToken: 'ELE',
+    earnedTokenDescription: '',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+    earnContractAbi: pool4Abi,
+    color: '12, 33, 89',
+    startTimestamp: 1614798020,
+    earnTime: 365 * 24 * 3600,
+    earnedTokenUrl: 'https://eleven.finance',
+    masterchefPid: 90, //ELEVEN CHEF!!
+    token1: "0x3fda9383a84c05ec8f7630fe10adf1fac13241cc",
+    token2: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
+  },
+
+
+
+
+
+{
+    name: 'EASY-BNB LP',
+    description: '',
+    token: '11EASYBNB',
+    tokenDescription: '11EASYBNB',
+    tokenDecimals: 18,
+    tokenAddress: '0x24999901607DE66DC095D3f4e9037dB69c70bdEd',
+    earnedToken: 'ELE',
+    earnedTokenDescription: '',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+    earnContractAbi: pool4Abi,
+    color: '12, 33, 89',
+    startTimestamp: 1614798020,
+    earnTime: 365 * 24 * 3600,
+    earnedTokenUrl: 'https://eleven.finance',
+    masterchefPid: 92, //ELEVEN CHEF!!
+    token1: "0x7c17c8bed8d14bacce824d020f994f4880d6ab3b",
+    token2: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
+  },
+
+
+
+{
+    name: 'ODDZ-BNB LP',
+    description: '',
+    token: '11ODDZBNB',
+    tokenDescription: '11ODDZBNB',
+    tokenDecimals: 18,
+    tokenAddress: '0x3E52061CBbbAB88578d908855fCd2ac2ebF4497e',
+    earnedToken: 'ELE',
+    earnedTokenDescription: '',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+    earnContractAbi: pool4Abi,
+    color: '12, 33, 89',
+    startTimestamp: 1614798020,
+    earnTime: 365 * 24 * 3600,
+    earnedTokenUrl: 'https://eleven.finance',
+    masterchefPid: 93, //ELEVEN CHEF!!
+    token1: "0xcd40f2670cf58720b694968698a5514e924f742d",
+    token2: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
+  },
+
+
+
+{
+    name: 'APYS-BNB LP',
+    description: '',
+    token: '11APYSBNB',
+    tokenDescription: '11APYSBNB',
+    tokenDecimals: 18,
+    tokenAddress: '0xcb78A5dFb73612a325c322c539955eFda1Fdd38F',
+    earnedToken: 'ELE',
+    earnedTokenDescription: '',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+    earnContractAbi: pool4Abi,
+    color: '12, 33, 89',
+    startTimestamp: 1614798020,
+    earnTime: 365 * 24 * 3600,
+    earnedTokenUrl: 'https://eleven.finance',
+    masterchefPid: 94, //ELEVEN CHEF!!
+    token1: "0x37dfacfaeda801437ff648a1559d73f4c40aacb7",
+    token2: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
+  },
+
+
+{
+    name: 'TKO-BNB LP',
+    description: '',
+    token: '11TKOBNB',
+    tokenDescription: '11TKOBNB',
+    tokenDecimals: 18,
+    tokenAddress: '0xeC58B5139A2903D3514518749EA8Ea17e33a285D',
+    earnedToken: 'ELE',
+    earnedTokenDescription: '',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+    earnContractAbi: pool4Abi,
+    color: '12, 33, 89',
+    startTimestamp: 1614798020,
+    earnTime: 365 * 24 * 3600,
+    earnedTokenUrl: 'https://eleven.finance',
+    masterchefPid: 95, //ELEVEN CHEF!!
+    token1: "0x9f589e3eabe42ebc94a44727b3f3531c0c877809",
+    token2: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
+  },
+
+
+
+{
+    name: 'BONDLY-BNB LP',
+    description: '',
+    token: '11BONDLYBNB',
+    tokenDescription: '11BONDLYBNB',
+    tokenDecimals: 18,
+    tokenAddress: '0xc1Fc509224b5c2E268E164c3500303a086128EBf',
+    earnedToken: 'ELE',
+    earnedTokenDescription: '',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+    earnContractAbi: pool4Abi,
+    color: '12, 33, 89',
+    startTimestamp: 1614798020,
+    earnTime: 365 * 24 * 3600,
+    earnedTokenUrl: 'https://eleven.finance',
+    masterchefPid: 96, //ELEVEN CHEF!!
+    token1: "0x96058f8c3e16576d9bd68766f3836d9a33158f89",
+    token2: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
+  },
+
+
   {
     name: 'LIEN-BNB LP',
     description: '',

@@ -34,6 +34,26 @@ export const pools = [
     tokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0'
   },
   {
+    id: 'nervebnb',
+    name: 'NRV',
+    token: 'NRV-BNB LP',
+    tokenDescription: 'NRV',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses pancakeswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11NRVBNB',
+    earnedTokenAddress: '0xeB5603459684F5dbaC4a1B6a35A214Cd42931714',
+    earnContractAddress: '0xeB5603459684F5dbaC4a1B6a35A214Cd42931714',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x5a805994a2E30aC710e7376ccc0211285bD4dD92'
+  },
+  {
     id: 'eulerbnb',
     name: 'EULER',
     token: 'EULER-BNB LP',
@@ -173,6 +193,233 @@ export const pools = [
     pastPricePerFullShare: 1,
     tokenAddress: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82'
   },
+
+  {
+    id: 'swthbnb',
+    name: 'SWTH',
+    token: 'SWTH-BNB LP',
+    tokenDescription: 'SWTH',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses pancakeswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11SWTHBNB',
+    earnedTokenAddress: '0x4f8D5Ae88835aA910DD0744Ac65c91deF52ceaef',
+    earnContractAddress: '0x4f8D5Ae88835aA910DD0744Ac65c91deF52ceaef',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x8c5cFfad6cddb96Ee33DA685D0d50a37e030E115'
+  },
+
+
+
+  {
+    id: 'dftbnb',
+    name: 'DFT',
+    token: 'DFT-BNB LP',
+    tokenDescription: 'DFT',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses pancakeswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11DFTBNB',
+    earnedTokenAddress: '0xD78BA97d501E55Ef7C5c5a385E30c572E9ab7b07',
+    earnContractAddress: '0xD78BA97d501E55Ef7C5c5a385E30c572E9ab7b07',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x8FbCbD7e30b1733965a8980bf7Ae2ca1c0C456cc'
+  },
+
+
+  {
+    id: 'pbtcbnb',
+    name: 'PBTC',
+    token: 'PBTC-BNB LP',
+    tokenDescription: 'PBTC',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses pancakeswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11PBTCBNB',
+    earnedTokenAddress: '0x70f7817956b642E9C703680b1f0D5602c549F867',
+    earnContractAddress: '0x70f7817956b642E9C703680b1f0D5602c549F867',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0xb5F6f7dAD23132d40d778085D795BD0FD4B859CD'
+  },
+
+
+
+  {
+    id: 'gumbnb',
+    name: 'GUM',
+    token: 'GUM-BNB LP',
+    tokenDescription: 'GUM',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses pancakeswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11GUMBNB',
+    earnedTokenAddress: '0x93ED4d8F66aCc39d660Cd567eb3d9513a4682A9D',
+    earnContractAddress: '0x93ED4d8F66aCc39d660Cd567eb3d9513a4682A9D',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x155645cDF8e4B28d5B7790b65d9f79efc222740C'
+  },
+
+
+
+  {
+    id: 'degobnb',
+    name: 'DEGO',
+    token: 'DEGO-BNB LP',
+    tokenDescription: 'DEGO',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses pancakeswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11DEGOBNB',
+    earnedTokenAddress: '0x088Cd6b5E22D1F7BE00B286A6aF0bc088B7C750C',
+    earnContractAddress: '0x088Cd6b5E22D1F7BE00B286A6aF0bc088B7C750C',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x17F0b998B81cE75074a7CDAdAe6D63Da3cb23572'
+  },
+  {
+    id: 'easybnb',
+    name: 'EASY',
+    token: 'EASY-BNB LP',
+    tokenDescription: 'EASY',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses pancakeswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11EASYBNB',
+    earnedTokenAddress: '0x24999901607DE66DC095D3f4e9037dB69c70bdEd',
+    earnContractAddress: '0x24999901607DE66DC095D3f4e9037dB69c70bdEd',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0xBD1eC00B0d1CCA9D5B28fbE0bB7d664238af2fFa'
+  },
+
+
+
+  {
+    id: 'oddzbnb',
+    name: 'ODDZ',
+    token: 'ODDZ-BNB LP',
+    tokenDescription: 'ODDZ',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses pancakeswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11ODDZBNB',
+    earnedTokenAddress: '0x3E52061CBbbAB88578d908855fCd2ac2ebF4497e',
+    earnContractAddress: '0x3E52061CBbbAB88578d908855fCd2ac2ebF4497e',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x61376B56Ff33c618B115131712A4138f98810A6a'
+  },
+
+
+
+  {
+    id: 'apysbnb',
+    name: 'APYS',
+    token: 'APYS-BNB LP',
+    tokenDescription: 'APYS',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses pancakeswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11APYSBNB',
+    earnedTokenAddress: '0xcb78A5dFb73612a325c322c539955eFda1Fdd38F',
+    earnContractAddress: '0xcb78A5dFb73612a325c322c539955eFda1Fdd38F',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0xE5783Cc9dFb3E7e474B81B07369a008e80F1cEdb'
+  },
+
+
+  {
+    id: 'tkobnb',
+    name: 'TKO',
+    token: 'TKO-BNB LP',
+    tokenDescription: 'TKO',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses pancakeswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11TKOBNB',
+    earnedTokenAddress: '0xeC58B5139A2903D3514518749EA8Ea17e33a285D',
+    earnContractAddress: '0xeC58B5139A2903D3514518749EA8Ea17e33a285D',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x496a8b716A3A3410B16e71E3c906968CE4488e52'
+  },
+
+
+
+  {
+    id: 'bondlybnb',
+    name: 'BONDLY',
+    token: 'BONDLY-BNB LP',
+    tokenDescription: 'BONDLY',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses pancakeswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11BONDLYBNB',
+    earnedTokenAddress: '0xc1Fc509224b5c2E268E164c3500303a086128EBf',
+    earnContractAddress: '0xc1Fc509224b5c2E268E164c3500303a086128EBf',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x67581BFB4fc13BB73C71489b504E9b5354769063'
+  },
+
+
+   
+
   {
     id: 'lienbnb',
     name: 'LIEN',
