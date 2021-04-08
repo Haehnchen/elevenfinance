@@ -21,7 +21,8 @@ import {
   useFetchWithdraw,
   useFetchClaim,
   useFetchExit,
-  useFetchPricePerShare
+  useFetchPricePerShare,
+  useFetchPoolsStats
 } from '../redux/hooks';
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
@@ -48,6 +49,7 @@ export default function FarmPool(props) {
   const {fetchClaim, fetchClaimPending} = useFetchClaim();
   const {fetchExit, fetchExitPending} = useFetchExit();
   const {pricePerShare, fetchPricePerShare} = useFetchPricePerShare();
+  const {poolsStats, fetchPoolsStats} = useFetchPoolsStats();
 
   const [index, setIndex] = useState(Number(props.match.params.index) - 1);
   const [showInput, setShowInput] = useState(false);
@@ -66,6 +68,9 @@ export default function FarmPool(props) {
   const [inputVal, setInputVal] = useState(0);
   const [anchorEl, setAnchorEl] = useState(null);
   const [lpValue, setLpValue] = useState(null);
+  const [lpPriceUsd, setLpPriceUsd] = useState(null);
+  const [lpValueUsd, setLpValueUsd] = useState(null);
+
   // 弹窗
   const [dialogShow, setDialogShow] = useState(false);
   // 存入、解除质押 弹窗类型
@@ -175,12 +180,28 @@ export default function FarmPool(props) {
   }, [pricePerShare[index], currentlyStaked[index], balance[index], index]);
 
   useEffect(() => {
+    if (poolsStats && name && poolsStats[name]) {
+      const poolStats = poolsStats[name];
+      if (poolStats.price) {
+        setLpPriceUsd(new BigNumber(poolStats.price));
+      }
+    }
+  }, [poolsStats]);
+
+  useEffect(() => {
+    if (lpValue && lpPriceUsd) {
+      setLpValueUsd(lpPriceUsd.times(lpValue));
+    }
+  }, [lpValue, lpPriceUsd]);
+
+  useEffect(() => {
     if (address) {
       checkApproval(index);
       fetchBalance(index);
       fetchCurrentlyStaked(index);
       fetchRewardsAvailable(index);
       fetchPricePerShare(index);
+      fetchPoolsStats(index);
 
       const id = setInterval(() => {
         checkApproval(index);
@@ -259,6 +280,14 @@ export default function FarmPool(props) {
                   ? <span>
                       {lpValue.toFixed(6)}&nbsp;
                       <span className={classes.farmLpValueToken}>{name}</span>
+
+                      {
+                        lpValueUsd
+                        ? <span className={classes.farmLpValueUsd}>
+                            &nbsp;({lpValueUsd.toFixed(2)}$)
+                          </span>
+                        : ''
+                      }
                     </span>
                   : <CircularProgress
                       className={classes.farmLpValueLoader}
