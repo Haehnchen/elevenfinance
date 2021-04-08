@@ -224,3 +224,29 @@ export function calculateReallyNum(total,sliderNum,formatNum=4){
   }
   return byDecimals(sliderNum/100*Number(total), 0).toFormat(formatNum);
 }
+
+export function formatDecimals(number) {
+  let decimals = 0;
+
+  if (number.lt(1000)) {
+    decimals = 2;
+  }
+
+  if (number.lt(100)) {
+    decimals = 4;
+  }
+
+  if (number.lt(10)) {
+    decimals = 6;
+  }
+
+  if (number.lt(1)) {
+    decimals = 10;
+  }
+
+  if (number.eq(0)) {
+    decimals = 0;
+  }
+
+  return number.toFixed(decimals);
+}

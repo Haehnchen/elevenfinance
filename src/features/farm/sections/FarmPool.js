@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {useTranslation} from 'react-i18next';
 import BigNumber from 'bignumber.js'
-import {byDecimals} from 'features/helpers/bignumber';
+import { byDecimals, formatDecimals } from 'features/helpers/bignumber';
 import {makeStyles} from "@material-ui/core/styles";
 import Grid from '@material-ui/core/Grid';
 import farmPoolStyle from "../jss/sections/farmPoolsStyle";
@@ -278,7 +278,7 @@ export default function FarmPool(props) {
                 {
                   name && lpValue
                   ? <span>
-                      {lpValue.toFixed(6)}&nbsp;
+                      {formatDecimals(lpValue)}&nbsp;
                       <span className={classes.farmLpValueToken}>{name}</span>
 
                       {
@@ -301,7 +301,7 @@ export default function FarmPool(props) {
 
             {/* Wallet Balance */}
             <Grid item xs={12} sm={6} lg={4}>
-              <div className={classes.farmBalance}>{myBalance.toFixed(6)}</div>
+              <div className={classes.farmBalance}>{formatDecimals(myBalance)}</div>
               <div className={classes.farmBalanceDescription}>{t('Farm-Balance')} {tokenDescription}</div>
 
               {
@@ -321,7 +321,7 @@ export default function FarmPool(props) {
 
             {/* Deposited Balance */}
             <Grid item xs={12} sm={6} lg={4}>
-              <div className={classes.farmBalance}>{myCurrentlyStaked.toFixed(6)}</div>
+              <div className={classes.farmBalance}>{formatDecimals(myCurrentlyStaked)}</div>
               <div className={classes.farmBalanceDescription}>{t('Farm-Deposited')} {tokenDescription}</div>
 
               <Button className={classes.buttonPrimary}
@@ -339,7 +339,7 @@ export default function FarmPool(props) {
             <img src={require(`../../../images/${earnedToken}-logo.png`)}/>
           </div>
 
-          <div className={classes.farmBalance}>{Math.floor(myRewardsAvailable.toNumber() * 10000) / 10000}</div>
+          <div className={classes.farmBalance}>{formatDecimals(myRewardsAvailable)}</div>
           <div className={classes.farmBalanceDescription}>{t('Farm-Earned')} {earnedToken}</div>
 
           <Button className={classes.buttonPrimary}
