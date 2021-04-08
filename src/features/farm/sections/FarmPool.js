@@ -284,7 +284,7 @@ export default function FarmPool(props) {
                       {
                         lpValueUsd
                         ? <span className={classes.farmLpValueUsd}>
-                            &nbsp;({lpValueUsd.toFixed(2)}$)
+                            &nbsp;(${lpValueUsd.toFixed(2)})
                           </span>
                         : ''
                       }

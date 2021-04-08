@@ -226,6 +226,10 @@ export function calculateReallyNum(total,sliderNum,formatNum=4){
 }
 
 export function formatDecimals(number) {
+  if (number.eq(0)) {
+    return '0';
+  }
+
   let decimals = 0;
 
   if (number.lt(1000)) {
@@ -244,9 +248,11 @@ export function formatDecimals(number) {
     decimals = 10;
   }
 
-  if (number.eq(0)) {
-    decimals = 0;
+  number = number.toFixed(decimals);
+
+  if (number.indexOf('.') !== -1) {
+    number = number.replace(/\.?0+$/, '');
   }
 
-  return number.toFixed(decimals);
+  return number;
 }
