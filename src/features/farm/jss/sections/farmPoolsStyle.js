@@ -79,6 +79,14 @@ const farmPoolStyle = (theme) => ({
 		fontSize: '14px',
 		fontWeight: 'normal'
 	},
+	farmLpValueUsd: {
+		fontSize: '18px',
+
+		[theme.breakpoints.down('xs')]: {
+			display: 'block',
+			marginBottom: '5px'
+		}
+	},
 	farmLpValueLoader: {
 		marginLeft: '5px',
 		position: 'relative',

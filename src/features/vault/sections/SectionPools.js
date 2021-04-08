@@ -417,7 +417,7 @@ export default function SectionPools() {
                 >
                   <Grid container alignItems="center" justify="space-around" spacing={4} style={{ paddingTop: "16px", paddingBottom: "16px" }}>
                     <Grid item xs={12} sm={6} md={3}>
-                      <Grid container alignItems="center" xs={12} spacing={2}>
+                      <Grid item container alignItems="center" xs={12} spacing={2}>
                         <Grid item>
                           <Avatar alt={pool.token} src={require(`../../../images/${pool.token}-logo.svg`)} />
                         </Grid>
@@ -450,21 +450,21 @@ export default function SectionPools() {
                     <Grid item xs={6} sm={4} md={8}>
                       <Grid item container justify="space-between">
                         <Hidden smDown>
-                          <Grid item xs={5} container justify='left' alignItems="center">
+                          <Grid item xs={5} container alignItems="center">
                             <Grid item style={{ width: "200px" }}>
                               <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>{pool.token == 'OG-BNB LP' || pool.token == 'PSG-BNB LP' || pool.token == 'JUV-BNB LP' || pool.token == 'ASR-BNB LP' || pool.token == 'ATM-BNB LP' ? forMat(balanceSingle) : forMat(balanceSingle).toFixed(6)} {pool.token}</Typography>
                               <Typography className={classes.iconContainerSubTitle} variant="body2">{t('Vault-Balance')}</Typography></Grid>
                           </Grid>
                         </Hidden>
                         <Hidden mdDown>
-                          <Grid item xs={4} container justify='left' alignItems="center">
+                          <Grid item xs={4} container alignItems="center">
                             <Grid item style={{ width: "200px" }}>
                               <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>{pool.token == 'OG-BNB LP' || pool.token == 'PSG-BNB LP' || pool.token == 'JUV-BNB LP' ? forMat(singleDepositedBalance) : forMat(singleDepositedBalance).toFixed(6)} {pool.earnedToken}</Typography>
                               <Typography className={classes.iconContainerSubTitle} variant="body2">{t('Vault-Deposited')}</Typography>
                             </Grid>
                           </Grid>
                         </Hidden>
-                        <Grid item xs={12} md={3} container justify='left' alignItems="center">
+                        <Grid item xs={12} md={3} container alignItems="center">
                           <Grid item>
                             <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
                               <span>APY: {getApy(pool)} %</span>
@@ -477,7 +477,7 @@ export default function SectionPools() {
                       </Grid>
                     </Grid>
 
-                    <Grid item xs={6} sm={2} md={1} alignItems="center">
+                    <Grid item xs={6} sm={2} md={1}>
                       <Grid item container justify="flex-end" alignItems="center" spacing={2}>
                         <Hidden xsUp>
                           <Grid item>
