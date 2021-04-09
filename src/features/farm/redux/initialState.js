@@ -212,6 +212,28 @@ const pools = [
     token1: "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82",
   },
 {
+    name: 'SWTH-BNB LP',
+    description: '',
+    token: '11SWTHBNB',
+    tokenDescription: '11SWTHBNB',
+    tokenDecimals: 18,
+    tokenAddress: '0x4f8d5ae88835aa910dd0744ac65c91def52ceaef',
+    earnedToken: 'ELE',
+    earnedTokenDescription: '',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+    earnContractAbi: pool4Abi,
+    color: '12, 33, 89',
+    startTimestamp: 1614798020,
+    earnTime: 365 * 24 * 3600,
+    earnedTokenUrl: 'https://eleven.finance',
+    masterchefPid: 86, //ELEVEN CHEF!!
+    token1: "0x250b211ee44459dad5cd3bca803dd6a7ecb5d46c",
+    token2: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
+  },
+
+{
     name: 'DFT-BNB LP',
     description: '',
     token: '11DFTBNB',
