@@ -40,7 +40,7 @@ export const pools = [
     tokenDescription: 'NRV',
     tokenAddress: '',
     tokenDecimals: 18,
-    uses: 'Uses pancakeswap',
+    uses: 'Uses xnrv from nerve',
     itokenDecimals: 18,
     depostLimit:0,
     tokenDescriptionUrl: '',
