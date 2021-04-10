@@ -1,6 +1,6 @@
 import BigNumber from "bignumber.js";
 // id: '池子id',
-// name: '池子名字',  
+// name: '池子名字',
 // token: '池子代币',
 // tokenDescription: '代币描述',
 // tokenAddress: '代币ERC20地址',
@@ -11,7 +11,7 @@ import BigNumber from "bignumber.js";
 // earnedTokenAddress: '奖励代币ERC20地址',
 // earnContractAddress: '池子合约地址',
 // price ： 挖的代币的价格！
-// path price: 
+// path price:
 export const pools = [
   {
     id: 'ELE',
@@ -32,6 +32,26 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0'
+  },
+  {
+    id: 'nerve',
+    name: 'NRV',
+    token: 'NRV',
+    tokenDescription: 'NRV',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses pancakeswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11NRV',
+    earnedTokenAddress: '0x54f4D5dd6164B99603E77C8E13FFC3B239F63147',
+    earnContractAddress: '0x54f4D5dd6164B99603E77C8E13FFC3B239F63147',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x42F6f551ae042cBe50C739158b4f0CAC0Edb9096'
   },
   {
     id: 'nervebnb',

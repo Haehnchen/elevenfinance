@@ -44,6 +44,26 @@ const pools = [
     token2: ""
   },
 {
+    name: 'NRV',
+    description: '',
+    token: '11NRV',
+    tokenDescription: '11NRV',
+    tokenDecimals: 18,
+    tokenAddress: '0x54f4D5dd6164B99603E77C8E13FFC3B239F63147',
+    earnedToken: 'ELE',
+    earnedTokenDescription: '',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+    earnContractAbi: pool4Abi,
+    color: '12, 33, 89',
+    startTimestamp: 1614798020,
+    earnTime: 365 * 24 * 3600,
+    earnedTokenUrl: 'https://eleven.finance',
+    masterchefPid: 97, //ELEVEN CHEF!!
+    token1: "0x42F6f551ae042cBe50C739158b4f0CAC0Edb9096"
+  },
+{
     name: 'NRV-BNB LP',
     description: '',
     token: '11NRVBNB',
