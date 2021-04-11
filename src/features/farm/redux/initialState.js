@@ -2027,8 +2027,6 @@ const fetchStakePending = Array(length).fill(false);
 const fetchWithdrawPending = Array(length).fill(false);
 const fetchClaimPending = Array(length).fill(false);
 const fetchExitPending = Array(length).fill(false);
-const poolsStats = null;
-const fetchPoolsStatsPending = false;
 
 const initialState = {
   pools,
@@ -2049,8 +2047,10 @@ const initialState = {
   fetchExitPending,
   pricePerShare,
   fetchPricePerSharePending,
-  poolsStats,
-  fetchPoolsStatsPending
+  poolsStats: null,
+  fetchPoolsStatsPending: false,
+  fetchPoolsStakedDone: false,
+  fetchPoolsStakedPending: false
 };
 
 export default initialState;

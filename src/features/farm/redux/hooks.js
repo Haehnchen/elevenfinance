@@ -10,3 +10,4 @@ export { useFetchClaim } from './fetchClaim';
 export { useFetchExit } from './fetchExit';
 export { useFetchPricePerShare } from './fetchPricePerShare';
 export { useFetchPoolsStats } from './fetchPoolsStats';
+export { useFetchPoolsStaked } from './fetchPoolsStaked';

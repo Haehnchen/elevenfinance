@@ -146,7 +146,7 @@ const farmPoolStyle = (theme) => ({
 		},
 	},
 	farmEarnedLogo: {
-		margin: '20px 0 30px',
+		margin: '14px 0 30px',
 
 		[theme.breakpoints.down('sm')]: {
 			marginTop: 0

@@ -367,33 +367,36 @@ export default function SectionPools() {
         <h3 style={{color: 'white'}}>TVL: <NumberFormat value={data.totalvaluelocked} displayType={'text'} thousandSeparator={true} prefix={'$'} decimalScale={0} /></h3>
       </Grid>
 
-      <Grid item className={classes.filtersContainer} xs={12}>
-        <TextField
-          onChange={handleSearchChange}
-          className={classes.searchInput}
-          placeholder="Search"
-          variant="outlined"
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <SearchIcon />
-              </InputAdornment>
-            ),
-          }} />
+      <Grid item container className={classes.filtersContainer} xs={12}>
+        <Grid item xs={12} sm={6} className={classes.filtersLeft}></Grid>
+        <Grid item xs={12} sm={6} className={classes.filtersRight}>
+          <TextField
+            onChange={handleSearchChange}
+            className={classes.searchInput}
+            placeholder="Search"
+            variant="outlined"
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon />
+                </InputAdornment>
+              ),
+            }} />
 
-        <FormControl
-          variant="outlined"
-          className={classes.sortSelect}
-        >
-          <Select
-            value={sortTerm}
-            onChange={handleSort}
+          <FormControl
+            variant="outlined"
+            className={classes.sortSelect}
           >
-            <MenuItem value="default">Default</MenuItem>
-            <MenuItem value="apy">APY</MenuItem>
-            <MenuItem value="tvl">TVL</MenuItem>
-          </Select>
-        </FormControl>
+            <Select
+              value={sortTerm}
+              onChange={handleSort}
+            >
+              <MenuItem value="default">Default</MenuItem>
+              <MenuItem value="apy">APY</MenuItem>
+              <MenuItem value="tvl">TVL</MenuItem>
+            </Select>
+          </FormControl>
+        </Grid>
       </Grid>
 
       {Boolean(networkId === Number(process.env.NETWORK_ID)) && searchResults.map((pool, index) => {

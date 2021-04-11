@@ -11,6 +11,7 @@ import { reducer as fetchClaimReducer } from './fetchClaim';
 import { reducer as fetchExitReducer } from './fetchExit';
 import { reducer as fetchPricePerShareReducer } from './fetchPricePerShare';
 import { reducer as fetchPoolsStatsReducer } from './fetchPoolsStats';
+import { reducer as fetchPoolsStakedReducer } from './fetchPoolsStaked';
 
 
 const reducers = [
@@ -25,7 +26,8 @@ const reducers = [
   fetchClaimReducer,
   fetchExitReducer,
   fetchPricePerShareReducer,
-  fetchPoolsStatsReducer
+  fetchPoolsStatsReducer,
+  fetchPoolsStakedReducer,
 ];
 
 export default function reducer(state = initialState, action) {
