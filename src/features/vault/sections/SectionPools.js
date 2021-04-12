@@ -2,8 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import BigNumber from "bignumber.js";
-import { byDecimals, calculateReallyNum } from 'features/helpers/bignumber';
-
+import { byDecimals, calculateReallyNum, formatDecimals } from 'features/helpers/bignumber';
 // @material-ui/core components
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import CustomOutlinedInput from 'components/CustomOutlinedInput/CustomOutlinedInput';
@@ -106,6 +105,7 @@ export default function SectionPools() {
       let tvl = json[token]["tvl"];
       pool["vault"] = vault;
       pool["tvl"] = tvl;
+      pool['price'] = json[token]['price'];
       return pool;
     });
 
@@ -441,6 +441,7 @@ export default function SectionPools() {
       {Boolean(networkId === Number(process.env.NETWORK_ID)) && searchResults.map((pool, index) => {
         let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
         let singleDepositedBalance = byDecimals(tokens[pool.earnedToken].tokenBalance, pool.itokenDecimals);
+        let depositedLpValue = singleDepositedBalance.times(pool.pricePerFullShare);
         return (
           <Grid item xs={12} container key={index} style={{ marginBottom: "24px" }} spacing={0}>
             <div style={{ width: "100%" }}>
@@ -559,8 +560,21 @@ export default function SectionPools() {
                 <AccordionDetails style={{ justifyContent: "space-between" }}>
                   <Grid container style={{ width: "100%", marginLeft: 0, marginRight: 0 }}>
                     <Grid item xs={12} sm={6} className={classes.sliderDetailContainer}>
-                      <div className={classes.showDetailRight}>
-                        {t('Vault-Balance')}:{balanceSingle.toFormat(15)} {pool.token}
+                      <div className={classes.poolBalanceBlock}>
+                        <div>{t('Vault-Balance')}</div>
+                        <div>
+                          <div>
+                            {formatDecimals(balanceSingle)}
+                            {
+                              pool.price
+                              ? <span>
+                                  &nbsp; (${balanceSingle.times(pool.price).toFixed(2)})
+                                </span>
+                              : ''
+                            }
+                          </div>
+                          <div className={classes.poolBalanceDescription}>&nbsp;</div>
+                        </div>
                       </div>
                       <FormControl fullWidth variant="outlined">
                         <CustomOutlinedInput
@@ -646,9 +660,24 @@ export default function SectionPools() {
                     </Grid>
 
                     <Grid item xs={12} sm={6} className={classes.sliderDetailContainer}>
-                      <div className={classes.showDetailRight}>
-                        {singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)).toFormat(15)} {pool.token} ({singleDepositedBalance.toFormat(15)} {pool.earnedToken})
-                            </div>
+                      <div className={classes.poolBalanceBlock}>
+                        <div>{t('Vault-ListDeposited')}</div>
+                        <div className={classes.poolBalance}>
+                          <div>
+                            {formatDecimals(singleDepositedBalance)}
+                            {
+                              pool.price
+                              ? <span>
+                                  &nbsp; (${depositedLpValue.times(pool.price).toFixed(2)})
+                                </span>
+                              : ''
+                            }
+                          </div>
+                          <div className={classes.poolBalanceDescription}>
+                            {formatDecimals(depositedLpValue)} {pool.token}
+                          </div>
+                        </div>
+                      </div>
                       <FormControl fullWidth variant="outlined">
                         <CustomOutlinedInput
                           value={withdrawAmount[index] != undefined ? withdrawAmount[index] : '0'}
