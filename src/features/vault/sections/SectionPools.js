@@ -3,27 +3,33 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import BigNumber from "bignumber.js";
 import { byDecimals, calculateReallyNum } from 'features/helpers/bignumber';
+
 // @material-ui/core components
-import { InputAdornment, MenuItem } from "@material-ui/core";
 import { makeStyles, withStyles } from '@material-ui/core/styles';
-import Accordion from '@material-ui/core/Accordion'
-import AccordionSummary from '@material-ui/core/AccordionSummary'
-import AccordionDetails from '@material-ui/core/AccordionActions'
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import FormControl from '@material-ui/core/FormControl';
 import CustomOutlinedInput from 'components/CustomOutlinedInput/CustomOutlinedInput';
-import Grid from '@material-ui/core/Grid';
-import Hidden from '@material-ui/core/Hidden';
 import { primaryColor } from "assets/jss/material-kit-pro-react.js";
-import InputLabel from '@material-ui/core/InputLabel';
-import NativeSelect from '@material-ui/core/NativeSelect';
 import SearchIcon from "@material-ui/icons/Search"
-import Select from '@material-ui/core/Select';
-import TextField from '@material-ui/core/TextField';
+import {
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  Avatar,
+  Checkbox,
+  FormControl,
+  FormControlLabel,
+  Grid,
+  Hidden,
+  IconButton,
+  InputAdornment,
+  InputBase,
+  MenuItem,
+  Select,
+  TextField,
+  Typography
+} from '@material-ui/core';
+
 // core components
 import Button from "components/CustomButtons/Button.js";
-import Avatar from '@material-ui/core/Avatar';
 // sections for this section
 // import SectionOpenedPool from "./SectionOpenedPool";
 import { useSnackbar } from 'notistack';
@@ -34,10 +40,6 @@ import CustomSlider from 'components/CustomSlider/CustomSlider';
 
 import sectionPoolsStyle from "../jss/sections/sectionPoolsStyle";
 import { inputLimitPass, inputFinalVal, isEmpty } from 'features/helpers/utils';
-
-import InputBase from '@material-ui/core/InputBase';
-
-import loading from '../../../images/loading.gif';
 
 import millify from 'millify';
 
@@ -82,12 +84,11 @@ export default function SectionPools() {
 
   const { enqueueSnackbar } = useSnackbar();
 
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
+  const [sortTerm, setSortTerm] = useState('default');
+  const [onlyStakedPools, setOnlyStakedPools] = useState(false);
+  const [onlyWithBalancePools, setOnlyWithBalancePools] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
-
-  const handleSearchChange = event => {
-    setSearchTerm(event.target.value);
-  };
 
   const [data, setData] = useState([]);
 
@@ -113,12 +114,6 @@ export default function SectionPools() {
     setData(normalizedData);
   }
 
-  const [sortTerm, setSortTerm] = useState("default");
-
-  const handleSort = event => {
-    setSortTerm(event.target.value);
-  }
-
   useEffect(() => {
     if (pools[0].vault !== undefined) {
       setSearchResults(pools);
@@ -128,6 +123,14 @@ export default function SectionPools() {
     let results = pools.filter(pool =>
       pool.token.toLowerCase().includes(term)
     );
+
+    if (onlyStakedPools) {
+      results = results.filter(pool => tokens[pool.earnedToken]?.tokenBalance > 0);
+    }
+
+    if (onlyWithBalancePools) {
+      results = results.filter(pool => tokens[pool.token]?.tokenBalance > 0);
+    }
 
     switch (sortTerm) {
       case "apy":
@@ -142,7 +145,7 @@ export default function SectionPools() {
     }
 
     setSearchResults(results);
-  }, [searchTerm, sortTerm])
+  }, [searchTerm, sortTerm, onlyStakedPools, onlyWithBalancePools, tokens])
 
   const changeDetailInputValue = (type, index, total, tokenDecimals, event) => {
     let value = event.target.value;
@@ -360,6 +363,22 @@ export default function SectionPools() {
     }
   }
 
+  const handleSearchChange = event => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleSort = event => {
+    setSortTerm(event.target.value);
+  }
+
+  const handleOnlyStakedPools = event => {
+    setOnlyStakedPools(event.target.checked);
+  }
+
+  const handleOnlyWithBalancePools = event => {
+    setOnlyWithBalancePools(event.target.checked);
+  }
+
   return (
     <Grid container style={{ paddingTop: '4px' }}>
       <Grid item xs={12}>
@@ -368,7 +387,27 @@ export default function SectionPools() {
       </Grid>
 
       <Grid item container className={classes.filtersContainer} xs={12}>
-        <Grid item xs={12} sm={6} className={classes.filtersLeft}></Grid>
+        <Grid item xs={12} sm={6} className={classes.filtersLeft}>
+          <FormControlLabel
+            control={
+              <Checkbox checked={onlyStakedPools}
+                        onChange={handleOnlyStakedPools}
+                        name="only_staked_pools" />
+            }
+            label="Deposited Only"
+            className={classes.filtersCheckbox}
+          />
+
+          <FormControlLabel
+            control={
+              <Checkbox checked={onlyWithBalancePools}
+                        onChange={handleOnlyWithBalancePools}
+                        name="only_with_balance_pools" />
+            }
+            label="Hide Zero Balances"
+            className={classes.filtersCheckbox}
+          />
+        </Grid>
         <Grid item xs={12} sm={6} className={classes.filtersRight}>
           <TextField
             onChange={handleSearchChange}
