@@ -2004,10 +2004,11 @@ const pools = [
     token1: "0x80d5f92c2c8c682070c95495313ddb680b267320",
     token2: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
   },
-
-
-
 ];
+
+pools.forEach((pool, index) => {
+  pool.id = index + 1;
+});
 
 const length = pools.length;
 const poolsInfo = Array(length).fill({staked: 0, tvl: 0, apy: 10});
@@ -2027,8 +2028,6 @@ const fetchStakePending = Array(length).fill(false);
 const fetchWithdrawPending = Array(length).fill(false);
 const fetchClaimPending = Array(length).fill(false);
 const fetchExitPending = Array(length).fill(false);
-const poolsStats = null;
-const fetchPoolsStatsPending = false;
 
 const initialState = {
   pools,
@@ -2049,8 +2048,10 @@ const initialState = {
   fetchExitPending,
   pricePerShare,
   fetchPricePerSharePending,
-  poolsStats,
-  fetchPoolsStatsPending
+  poolsStats: null,
+  fetchPoolsStatsPending: false,
+  fetchPoolsStakedDone: false,
+  fetchPoolsStakedPending: false
 };
 
 export default initialState;

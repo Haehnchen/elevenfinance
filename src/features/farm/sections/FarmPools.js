@@ -2,56 +2,41 @@ import React, { useState, useEffect } from 'react';
 import classNames from "classnames";
 import { useTranslation } from 'react-i18next';
 import farmItemStyle from "../jss/sections/farmItemStyle";
-import Grid from '@material-ui/core/Grid';
-// core components
 import Button from "components/CustomButtons/Button.js";
-import { useFetchPoolsInfo } from '../redux/hooks';
-import { Avatar } from "@material-ui/core";
+import { useFetchPoolsInfo, useFetchPoolsBalances } from '../redux/hooks';
 import { useConnectWallet } from '../../home/redux/hooks';
+
 import millify from 'millify';
-import InputBase from '@material-ui/core/InputBase';
-import FormControl from '@material-ui/core/FormControl';
-import InputLabel from '@material-ui/core/InputLabel';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import MenuItem from '@material-ui/core/MenuItem';
-import TextField from '@material-ui/core/TextField';
+
+import {
+  Avatar,
+  Checkbox,
+  FormControl,
+  FormControlLabel,
+  Grid,
+  InputAdornment,
+  MenuItem,
+  Select,
+  TextField,
+} from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
-import Select from '@material-ui/core/Select';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import _ from 'lodash';
-import NativeSelect from '@material-ui/core/NativeSelect';
 
 const useStyles = makeStyles(farmItemStyle);
-
-const BootstrapInput = withStyles((theme) => ({
-  root: {
-    'label + &': {
-      marginTop: theme.spacing(3),
-      marginBottom: theme.spacing(3),
-    },
-  },
-  input: {
-    borderRadius: 4,
-    position: 'relative',
-    backgroundColor: theme.palette.background.paper,
-    border: '1px solid #ced4da',
-    fontSize: '14px',
-    padding: '10px 26px 10px 12px',
-  },
-}))(InputBase);
 
 export default () => {
   const classes = useStyles();
   const { t } = useTranslation();
   let { pools } = useFetchPoolsInfo();
+  const { fetchPoolsBalances, fetchPoolsBalancesDone } = useFetchPoolsBalances();
   const { web3, address, networkId } = useConnectWallet();
 
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
+  const [sortTerm, setSortTerm] = useState('default');
+  const [onlyStakedPools, setOnlyStakedPools] = useState(false);
+  const [onlyWithBalancePools, setOnlyWithBalancePools] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
-
-  const handleSearchChange = event => {
-    setSearchTerm(event.target.value);
-  };
 
   const [normalizedData, setData] = useState([]);
 
@@ -65,7 +50,6 @@ export default () => {
 
     let normalizedData = pools.map((pool, index) => {
       let name = pool.name;
-      pool.id = index + 1;
 
       if (name === "ELE-BNB LP") {
         let apy = json[name]["apy"];
@@ -97,12 +81,6 @@ export default () => {
     setData(normalizedData);
   }
 
-  const [sortTerm, setSortTerm] = useState("default");
-
-  const handleSort = event => {
-    setSortTerm(event.target.value);
-  }
-
   useEffect(() => {
     if (pools[0].vault !== undefined) {
       setSearchResults(pools);
@@ -113,17 +91,25 @@ export default () => {
       pool.token.toLowerCase().includes(term)
     );
 
+    if (onlyStakedPools) {
+      results = results.filter(pool => pool.stakedAmount && pool.stakedAmount.gt(0));
+    }
+
+    if (onlyWithBalancePools) {
+      results = results.filter(pool => pool.userTokenBalance && pool.userTokenBalance.gt(0));
+    }
+
     switch (sortTerm) {
-      case "apy":
+      case 'apy':
         results = _.orderBy(results, 'farm.apy', 'desc');
         break;
-      case "aprl":
+      case 'aprl':
         results = _.orderBy(results, 'farm.aprl', 'desc');
         break;
     }
 
     setSearchResults(results);
-  }, [searchTerm, sortTerm])
+  }, [searchTerm, sortTerm, onlyStakedPools, onlyWithBalancePools, fetchPoolsBalancesDone])
 
   const units = ["", "K", "Million", "Billion", "Trillion", "Quadrillion", "Quintillion", "Sextillion", "Septillion", "Octillion", "Nonillion", "Decillion", "Undecillion"];
 
@@ -163,11 +149,32 @@ export default () => {
   }
 
   useEffect(() => {
-    if (address && web3) {
-      const id = setInterval(() => { }, 10000);
-      return () => clearInterval(id);
-    }
+    const fetch = () => {
+      if (address && web3) {
+        fetchPoolsBalances({ address, web3, pools })
+      }
+    };
+    fetch();
+
+    const id = setInterval(fetch, 15000);
+    return () => clearInterval(id);
   }, [address, web3]);
+
+  const handleSearchChange = event => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleSort = event => {
+    setSortTerm(event.target.value);
+  }
+
+  const handleOnlyStakedPools = event => {
+    setOnlyStakedPools(event.target.checked);
+  }
+
+  const handleOnlyWithBalancePools = event => {
+    setOnlyWithBalancePools(event.target.checked);
+  }
 
   const offsetImageStyle = { marginLeft: "-25%", zIndex: 0, background: '#ffffff' }
   return (
@@ -177,33 +184,56 @@ export default () => {
         <h3 className={classes.subTitle} style={{ color: 'white' }}>{t('Farm-Second-Title')}</h3>
       </Grid>
 
-      <Grid item className={classes.filtersContainer} xs={12}>
-        <TextField
-          onChange={handleSearchChange}
-          className={classes.searchInput}
-          placeholder="Search"
-          variant="outlined"
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <SearchIcon />
-              </InputAdornment>
-            ),
-          }} />
+      <Grid item container className={classes.filtersContainer} xs={12}>
+        <Grid item xs={12} sm={6} className={classes.filtersLeft}>
+          <FormControlLabel
+            control={
+              <Checkbox checked={onlyStakedPools}
+                        onChange={handleOnlyStakedPools}
+                        name="only_staked_pools" />
+            }
+            label="Staked Only"
+            className={classes.filtersCheckbox}
+          />
 
-        <FormControl
-          variant="outlined"
-          className={classes.sortSelect}
-        >
-          <Select
-            value={sortTerm}
-            onChange={handleSort}
+          <FormControlLabel
+            control={
+              <Checkbox checked={onlyWithBalancePools}
+                        onChange={handleOnlyWithBalancePools}
+                        name="only_with_balance_pools" />
+            }
+            label="Hide Zero Balances"
+            className={classes.filtersCheckbox}
+          />
+        </Grid>
+        <Grid item xs={12} sm={6} className={classes.filtersRight}>
+          <TextField
+            onChange={handleSearchChange}
+            className={classes.searchInput}
+            placeholder="Search"
+            variant="outlined"
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon />
+                </InputAdornment>
+              ),
+            }} />
+
+          <FormControl
+            variant="outlined"
+            className={classes.sortSelect}
           >
-            <MenuItem value="default">Default</MenuItem>
-            <MenuItem value="apy">APY</MenuItem>
-            <MenuItem value="aprl">ELE APR</MenuItem>
-          </Select>
-        </FormControl>
+            <Select
+              value={sortTerm}
+              onChange={handleSort}
+            >
+              <MenuItem value="default">Default</MenuItem>
+              <MenuItem value="apy">APY</MenuItem>
+              <MenuItem value="aprl">ELE APR</MenuItem>
+            </Select>
+          </FormControl>
+        </Grid>
       </Grid>
 
       <Grid container item xs={12} justify={"center"}>
@@ -216,7 +246,7 @@ export default () => {
           const lpTokens = isLP ? token.split('/') : [];
 
           return (
-            <Grid item sm={6} key={index}>
+            <Grid item xs={12} sm={6} key={index}>
               <div style={{ background: `#2D3140` }} className={classNames({
                 [classes.flexColumnCenter]: true,
                 [classes.farmItem]: true

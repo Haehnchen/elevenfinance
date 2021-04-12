@@ -35,7 +35,7 @@ export function fetchBalances(data) {
       }
       async.map(newTokens, (token, callback) => {
         async.parallel([
-          (callbackInner) => { 
+          (callbackInner) => {
             fetchBalance({
               web3,
               address,

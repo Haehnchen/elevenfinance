@@ -10,8 +10,8 @@ import { reducer as fetchWithdrawReducer } from './fetchWithdraw';
 import { reducer as fetchClaimReducer } from './fetchClaim';
 import { reducer as fetchExitReducer } from './fetchExit';
 import { reducer as fetchPricePerShareReducer } from './fetchPricePerShare';
+import { reducer as fetchPoolsBalancesReducer } from './fetchPoolsBalances';
 import { reducer as fetchPoolsStatsReducer } from './fetchPoolsStats';
-
 
 const reducers = [
   fetchPoolsInfoReducer,
@@ -25,7 +25,8 @@ const reducers = [
   fetchClaimReducer,
   fetchExitReducer,
   fetchPricePerShareReducer,
-  fetchPoolsStatsReducer
+  fetchPoolsBalancesReducer,
+  fetchPoolsStatsReducer,
 ];
 
 export default function reducer(state = initialState, action) {
