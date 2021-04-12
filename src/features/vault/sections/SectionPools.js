@@ -129,7 +129,10 @@ export default function SectionPools() {
     }
 
     if (onlyWithBalancePools) {
-      results = results.filter(pool => tokens[pool.token]?.tokenBalance > 0);
+      results = results.filter(pool => {
+        return tokens[pool.token]?.tokenBalance > 0
+          || tokens[pool.earnedToken]?.tokenBalance > 0;
+      });
     }
 
     switch (sortTerm) {
