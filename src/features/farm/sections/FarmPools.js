@@ -96,7 +96,10 @@ export default () => {
     }
 
     if (onlyWithBalancePools) {
-      results = results.filter(pool => pool.userTokenBalance && pool.userTokenBalance.gt(0));
+      results = results.filter(pool => {
+        return (pool.userTokenBalance && pool.userTokenBalance.gt(0))
+          || (pool.stakedAmount && pool.stakedAmount.gt(0))
+      });
     }
 
     switch (sortTerm) {
