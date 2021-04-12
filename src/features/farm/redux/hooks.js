@@ -9,5 +9,5 @@ export { useFetchWithdraw } from './fetchWithdraw';
 export { useFetchClaim } from './fetchClaim';
 export { useFetchExit } from './fetchExit';
 export { useFetchPricePerShare } from './fetchPricePerShare';
+export { useFetchPoolsBalances } from './fetchPoolsBalances';
 export { useFetchPoolsStats } from './fetchPoolsStats';
-export { useFetchPoolsStaked } from './fetchPoolsStaked';

@@ -58,6 +58,8 @@ const sectionFiltersStyle = theme => ({
         },
     },
     filtersCheckbox: {
+        marginRight: '25px',
+
         '& .MuiCheckbox-root': {
             color: '#858790',
             opacity: 0.7,

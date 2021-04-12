@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { useTranslation } from 'react-i18next';
 import farmItemStyle from "../jss/sections/farmItemStyle";
 import Button from "components/CustomButtons/Button.js";
-import { useFetchPoolsInfo, useFetchPoolsStaked } from '../redux/hooks';
+import { useFetchPoolsInfo, useFetchPoolsBalances } from '../redux/hooks';
 import { useConnectWallet } from '../../home/redux/hooks';
 
 import millify from 'millify';
@@ -29,12 +29,13 @@ export default () => {
   const classes = useStyles();
   const { t } = useTranslation();
   let { pools } = useFetchPoolsInfo();
-  const { fetchPoolsStaked, fetchPoolsStakedDone } = useFetchPoolsStaked();
+  const { fetchPoolsBalances, fetchPoolsBalancesDone } = useFetchPoolsBalances();
   const { web3, address, networkId } = useConnectWallet();
 
   const [searchTerm, setSearchTerm] = useState('');
   const [sortTerm, setSortTerm] = useState('default');
   const [onlyStakedPools, setOnlyStakedPools] = useState(false);
+  const [onlyWithBalancePools, setOnlyWithBalancePools] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
 
   const [normalizedData, setData] = useState([]);
@@ -49,7 +50,6 @@ export default () => {
 
     let normalizedData = pools.map((pool, index) => {
       let name = pool.name;
-      pool.id = index + 1;
 
       if (name === "ELE-BNB LP") {
         let apy = json[name]["apy"];
@@ -95,6 +95,10 @@ export default () => {
       results = results.filter(pool => pool.stakedAmount && pool.stakedAmount.gt(0));
     }
 
+    if (onlyWithBalancePools) {
+      results = results.filter(pool => pool.userTokenBalance && pool.userTokenBalance.gt(0));
+    }
+
     switch (sortTerm) {
       case 'apy':
         results = _.orderBy(results, 'farm.apy', 'desc');
@@ -105,7 +109,7 @@ export default () => {
     }
 
     setSearchResults(results);
-  }, [searchTerm, sortTerm, onlyStakedPools, fetchPoolsStakedDone])
+  }, [searchTerm, sortTerm, onlyStakedPools, onlyWithBalancePools, fetchPoolsBalancesDone])
 
   const units = ["", "K", "Million", "Billion", "Trillion", "Quadrillion", "Quintillion", "Sextillion", "Septillion", "Octillion", "Nonillion", "Decillion", "Undecillion"];
 
@@ -147,7 +151,7 @@ export default () => {
   useEffect(() => {
     const fetch = () => {
       if (address && web3) {
-        fetchPoolsStaked({ address, web3, pools })
+        fetchPoolsBalances({ address, web3, pools })
       }
     };
     fetch();
@@ -168,6 +172,10 @@ export default () => {
     setOnlyStakedPools(event.target.checked);
   }
 
+  const handleOnlyWithBalancePools = event => {
+    setOnlyWithBalancePools(event.target.checked);
+  }
+
   const offsetImageStyle = { marginLeft: "-25%", zIndex: 0, background: '#ffffff' }
   return (
     <Grid container style={{ paddingTop: '4px' }}>
@@ -185,6 +193,16 @@ export default () => {
                         name="only_staked_pools" />
             }
             label="Staked Only"
+            className={classes.filtersCheckbox}
+          />
+
+          <FormControlLabel
+            control={
+              <Checkbox checked={onlyWithBalancePools}
+                        onChange={handleOnlyWithBalancePools}
+                        name="only_with_balance_pools" />
+            }
+            label="Hide Zero Balances"
             className={classes.filtersCheckbox}
           />
         </Grid>
