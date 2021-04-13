@@ -188,7 +188,7 @@ export default () => {
       </Grid>
 
       <Grid item container className={classes.filtersContainer} xs={12}>
-        <Grid item xs={12} sm={6} className={classes.filtersLeft}>
+        <Grid item md={6} className={classes.filtersLeft}>
           <FormControlLabel
             control={
               <Checkbox checked={onlyStakedPools}
@@ -209,7 +209,7 @@ export default () => {
             className={classes.filtersCheckbox}
           />
         </Grid>
-        <Grid item xs={12} sm={6} className={classes.filtersRight}>
+        <Grid item md={6} className={classes.filtersRight}>
           <TextField
             onChange={handleSearchChange}
             className={classes.searchInput}

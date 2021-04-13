@@ -18,21 +18,26 @@ const sectionFiltersStyle = theme => ({
     filtersContainer: {
         padding: '3px 0 15px',
 
-        [theme.breakpoints.down('xs')]: {
+        [theme.breakpoints.down('sm')]: {
             flexDirection: 'column-reverse'
         }
     },
     filtersLeft: {
-        [theme.breakpoints.up('sm')]: {
+        [theme.breakpoints.up('md')]: {
             paddingLeft: '10px',
             lineHeight: '56px'
+        },
+
+        [theme.breakpoints.down('sm')]: {
+            width: '100%'
         }
     },
     filtersRight: {
         display: 'flex',
         justifyContent: 'flex-end',
 
-        [theme.breakpoints.down('xs')]: {
+        [theme.breakpoints.down('sm')]: {
+            width: '100%',
             marginBottom: '10px'
         }
     },
