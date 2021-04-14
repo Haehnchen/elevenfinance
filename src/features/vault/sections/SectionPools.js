@@ -65,6 +65,9 @@ import _ from 'lodash';
 const useStyles = makeStyles(sectionPoolsStyle);
 
 export default function SectionPools() {
+
+  const nervePools = ['nrvETH', 'nrvBTC', '3NRV', 'NRVBUSD'];
+
   const { t, i18n } = useTranslation();
   const { web3, address, networkId } = useConnectWallet();
   let { pools, fetchPoolBalances } = useFetchPoolBalances();
@@ -579,10 +582,10 @@ export default function SectionPools() {
                         <Grid item xs={12} md={3} container alignItems="center">
                           <Grid item>
                             <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
-                              <span>APY: {getApy(pool)} %</span>
+                              <span>{nervePools.includes(pool.name) ? "11NRV APR" : "APY" }: {getApy(pool)} %</span>
                             </Typography>
                             <Typography className={classes.iconContainerSubTitle} variant="body2">
-                              <span>APRD: {getAprd(pool)} %</span>
+                              <span>{nervePools.includes(pool.name) ? "ELE APR" : "APRD" }: {getAprd(pool)} %</span>
                             </Typography>
                           </Grid>
                         </Grid>
