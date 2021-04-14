@@ -3,29 +3,33 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import BigNumber from "bignumber.js";
 import { byDecimals, calculateReallyNum, formatDecimals } from 'features/helpers/bignumber';
+import classNames from 'classnames';
+
 // @material-ui/core components
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import CustomOutlinedInput from 'components/CustomOutlinedInput/CustomOutlinedInput';
 import { primaryColor } from "assets/jss/material-kit-pro-react.js";
-import SearchIcon from "@material-ui/icons/Search"
+
 import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
   Avatar,
   Checkbox,
+  Chip,
   FormControl,
   FormControlLabel,
   Grid,
   Hidden,
   IconButton,
   InputAdornment,
-  InputBase,
   MenuItem,
   Select,
   TextField,
   Typography
 } from '@material-ui/core';
+
+import SearchIcon from "@material-ui/icons/Search"
 
 // core components
 import Button from "components/CustomButtons/Button.js";
@@ -34,7 +38,19 @@ import Button from "components/CustomButtons/Button.js";
 import { useSnackbar } from 'notistack';
 //  hooks
 import { useConnectWallet } from '../../home/redux/hooks';
-import { useFetchBalances, useFetchPoolBalances, useFetchApproval, useFetchDeposit, useFetchWithdraw, useFetchContractApy, useFetchPendingRewards, useFetchClaim } from '../redux/hooks';
+
+import {
+  useFetchBalances,
+  useFetchPoolBalances,
+  useFetchApproval,
+  useFetchDeposit,
+  useFetchWithdraw,
+  useFetchContractApy,
+  useFetchPoolsInfo,
+  useFetchPendingRewards,
+  useFetchClaim
+} from '../redux/hooks';
+
 import CustomSlider from 'components/CustomSlider/CustomSlider';
 
 import sectionPoolsStyle from "../jss/sections/sectionPoolsStyle";
@@ -46,29 +62,13 @@ import NumberFormat from 'react-number-format';
 
 import _ from 'lodash';
 
-const BootstrapInput = withStyles((theme) => ({
-  root: {
-    'label + &': {
-      marginTop: theme.spacing(3),
-      marginBottom: theme.spacing(3),
-    },
-  },
-  input: {
-    borderRadius: 4,
-    position: 'relative',
-    backgroundColor: theme.palette.background.paper,
-    border: '1px solid #ced4da',
-    fontSize: '14px',
-    padding: '10px 26px 10px 12px',
-  },
-}))(InputBase);
-
 const useStyles = makeStyles(sectionPoolsStyle);
 
 export default function SectionPools() {
   const { t, i18n } = useTranslation();
   const { web3, address, networkId } = useConnectWallet();
   let { pools, fetchPoolBalances } = useFetchPoolBalances();
+  const { categories } = useFetchPoolsInfo();
   const { tokens, fetchBalances } = useFetchBalances();
   const { pendingRewards, fetchPendingRewards } = useFetchPendingRewards();
   const [openedCardList, setOpenCardList] = useState([0]);
@@ -89,6 +89,7 @@ export default function SectionPools() {
   const [sortTerm, setSortTerm] = useState('default');
   const [onlyStakedPools, setOnlyStakedPools] = useState(false);
   const [onlyWithBalancePools, setOnlyWithBalancePools] = useState(false);
+  const [filtersCategories, setFiltersCategories] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
 
   const [data, setData] = useState([]);
@@ -137,6 +138,20 @@ export default function SectionPools() {
       });
     }
 
+    if (filtersCategories.length) {
+      results = results.filter(pool => {
+        return _.intersection(pool.categories || [], filtersCategories).length > 0;
+      });
+    } else {
+      // Show all pools without category or in categories active by default
+      const defaultCategories = categories.filter(category => category.default).map(category => category.name);
+
+      results = results.filter(pool => {
+        return ! pool.categories?.length
+          || _.intersection(pool.categories, defaultCategories).length > 0;
+      });
+    }
+
     switch (sortTerm) {
       case "apy":
         results = _.orderBy(results, 'vault.apy', 'desc');
@@ -150,7 +165,7 @@ export default function SectionPools() {
     }
 
     setSearchResults(results);
-  }, [searchTerm, sortTerm, onlyStakedPools, onlyWithBalancePools, tokens])
+  }, [searchTerm, sortTerm, onlyStakedPools, onlyWithBalancePools, filtersCategories, tokens])
 
   const changeDetailInputValue = (type, index, total, tokenDecimals, event) => {
     let value = event.target.value;
@@ -400,6 +415,19 @@ export default function SectionPools() {
     setOnlyWithBalancePools(event.target.checked);
   }
 
+  const handleFiltersCategory = category => {
+    const selectedCategories = filtersCategories.slice();
+
+    var index = selectedCategories.indexOf(category.name);
+    if (index === -1) {
+      selectedCategories.push(category.name);
+    } else {
+      selectedCategories.splice(index, 1);
+    }
+
+    setFiltersCategories(selectedCategories);
+  }
+
   return (
     <Grid container style={{ paddingTop: '4px' }}>
       <Grid item xs={12}>
@@ -407,6 +435,25 @@ export default function SectionPools() {
         <h3 style={{color: 'white'}}>TVL: <NumberFormat value={data.totalvaluelocked} displayType={'text'} thousandSeparator={true} prefix={'$'} decimalScale={0} /></h3>
       </Grid>
 
+      {/* Categories */}
+      <Grid item xs={12} className={classes.filtersChips}>
+        {categories.map((category, index) => {
+          return (
+            <Chip key={index}
+                  label={category.name}
+                  onClick={() => handleFiltersCategory(category)}
+                  className={classNames(
+                    classes.filtersChip,
+                    {
+                      active: filtersCategories.includes(category.name),
+                      inactive: category.default === false
+                    }
+                  )} />
+          )
+        })}
+      </Grid>
+
+      {/* Filters */}
       <Grid item container className={classes.filtersContainer} xs={12}>
         <Grid item md={6} className={classes.filtersLeft}>
           <FormControlLabel
@@ -459,6 +506,7 @@ export default function SectionPools() {
         </Grid>
       </Grid>
 
+      {/* Pools */}
       {Boolean(networkId === Number(process.env.NETWORK_ID)) && searchResults.map((pool, index) => {
         let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
         let singleDepositedBalance = byDecimals(tokens[pool.earnedToken].tokenBalance, pool.itokenDecimals);

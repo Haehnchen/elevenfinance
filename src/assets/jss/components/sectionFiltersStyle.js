@@ -80,6 +80,45 @@ const sectionFiltersStyle = theme => ({
             fontWeight: 'bold',
         },
     },
+
+    filtersChips: {
+        margin: '10px 0 -5px',
+
+        [theme.breakpoints.down('sm')]: {
+            marginBottom: '10px'
+        },
+    },
+
+    filtersChip: {
+        height: '36px',
+        padding: '0 8px',
+        margin: '0 10px 8px 0',
+
+        fontSize: '16px',
+        fontWeight: 'bold',
+        color: '#858790',
+
+        backgroundColor: '#2C3040',
+
+        '&:focus': {
+            color: '#858790',
+            backgroundColor: '#2C3040',
+        },
+
+        '&:hover': {
+            backgroundColor: '#2C3040',
+        },
+
+        '&.active': {
+            color: '#000',
+            fontWeight: 'normal',
+            backgroundColor: primaryColor,
+        },
+
+        '&.inactive:not(.active)': {
+            opacity: 0.5
+        }
+    }
 });
 
 export default sectionFiltersStyle;
