@@ -19,11 +19,13 @@ pools.map(({token, tokenAddress, earnedToken, earnedTokenAddress})=> {
 const initialState = {
   pools,
   tokens,
+  pendingRewards: {},
   contractApy: {},
   fetchContractApyPending: false,
   fetchPoolBalancesPending: false,
   fetchBalancesPending: false,
   fetchApprovalPending: {},
+  fetchClaimPending: {},
   fetchDepositPending: {},
   fetchWithdrawPending: {},
 };

@@ -34,7 +34,7 @@ import Button from "components/CustomButtons/Button.js";
 import { useSnackbar } from 'notistack';
 //  hooks
 import { useConnectWallet } from '../../home/redux/hooks';
-import { useFetchBalances, useFetchPoolBalances, useFetchApproval, useFetchDeposit, useFetchWithdraw, useFetchContractApy } from '../redux/hooks';
+import { useFetchBalances, useFetchPoolBalances, useFetchApproval, useFetchDeposit, useFetchWithdraw, useFetchContractApy, useFetchPendingRewards, useFetchClaim } from '../redux/hooks';
 import CustomSlider from 'components/CustomSlider/CustomSlider';
 
 import sectionPoolsStyle from "../jss/sections/sectionPoolsStyle";
@@ -70,10 +70,12 @@ export default function SectionPools() {
   const { web3, address, networkId } = useConnectWallet();
   let { pools, fetchPoolBalances } = useFetchPoolBalances();
   const { tokens, fetchBalances } = useFetchBalances();
+  const { pendingRewards, fetchPendingRewards } = useFetchPendingRewards();
   const [openedCardList, setOpenCardList] = useState([0]);
   const classes = useStyles();
 
   const { fetchApproval, fetchApprovalPending } = useFetchApproval();
+  const { fetchClaim, fetchClaimPending } = useFetchClaim();
   const { fetchDeposit, fetchDepositEth, fetchDepositPending } = useFetchDeposit();
   const { fetchWithdraw, fetchWithdrawEth, fetchWithdrawPending } = useFetchWithdraw();
   const { fetchContractApy } = useFetchContractApy();
@@ -101,11 +103,11 @@ export default function SectionPools() {
 
     const normalizedData = pools.map((pool) => {
       let token = pool.token;
-      let vault = json[token]["vault"];
-      let tvl = json[token]["tvl"];
+      let vault = json[token]?.vault;
+      let tvl = json[token]?.tvl;
       pool["vault"] = vault;
       pool["tvl"] = tvl;
-      pool['price'] = json[token]['price'];
+      pool['price'] = json[token]?.price;
       return pool;
     });
 
@@ -294,6 +296,19 @@ export default function SectionPools() {
     }
   }
 
+  const onClaim = (pool, index) => {
+    fetchClaim({
+      address,
+      web3,
+      contractAddress: pool.earnContractAddress,
+      index
+    }).then(
+      () => enqueueSnackbar(`Claim Rewards success`, { variant: 'success' })
+    ).catch(
+      error => enqueueSnackbar(`Claim Rewards error: ${error}`, { variant: 'error' })
+    )
+  }
+
   const openCard = id => {
     return setOpenCardList(
       openedCardList => {
@@ -310,9 +325,12 @@ export default function SectionPools() {
     if (address && web3) {
       fetchBalances({ address, web3, tokens });
       fetchPoolBalances({ address, web3, pools });
+      fetchPendingRewards({ address, web3, pools });
+
       const id = setInterval(() => {
         fetchBalances({ address, web3, tokens });
         fetchPoolBalances({ address, web3, pools });
+        fetchPendingRewards({ address, web3, pools });
       }, 10000);
       return () => clearInterval(id);
     }
@@ -562,6 +580,7 @@ export default function SectionPools() {
                 </AccordionSummary>
                 <AccordionDetails style={{ justifyContent: "space-between" }}>
                   <Grid container style={{ width: "100%", marginLeft: 0, marginRight: 0 }}>
+                    {/* Deposit */}
                     <Grid item xs={12} sm={6} className={classes.sliderDetailContainer}>
                       <div className={classes.poolBalanceBlock}>
                         <div>{t('Vault-Balance')}</div>
@@ -662,6 +681,7 @@ export default function SectionPools() {
                       </div>
                     </Grid>
 
+                    {/* Withdraw */}
                     <Grid item xs={12} sm={6} className={classes.sliderDetailContainer}>
                       <div className={classes.poolBalanceBlock}>
                         <div>{t('Vault-ListDeposited')}</div>
@@ -734,6 +754,22 @@ export default function SectionPools() {
                         </Button>
                       </div>
                     </Grid>
+
+                    {pool.claimable
+                      ?
+                      <Grid item xs={12} className={classes.vaultPendingRewards}>
+                        Pending ELE: {formatDecimals(pendingRewards[pool.id]?.pendingEle)}<br/>
+                        Pending {pool.claimableToken}: {formatDecimals(pendingRewards[pool.id]?.pendingToken)}<br/>
+
+                        <Button className={classes.buttonPrimary}
+                                onClick={onClaim.bind(this, pool, index)}
+                                disabled={fetchClaimPending[index]}
+                        >
+                          {fetchClaimPending[index] ? t('Vault-ClaimING') : t('Vault-ClaimButton')}
+                        </Button>
+                      </Grid>
+                      : ''
+                    }
 
                   </Grid>
                 </AccordionDetails>

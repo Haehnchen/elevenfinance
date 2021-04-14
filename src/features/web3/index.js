@@ -3,6 +3,8 @@ export { fetchGasPrice } from './fetchGasPrice';
 export { fetchAllowance } from './fetchAllowance';
 export { fetchBalance } from './fetchBalance';
 export { fetchFarmStaked } from './fetchFarmStaked';
+export { fetchPendingReward } from './fetchPendingReward';
+export { claimRewards } from './claimRewards';
 export { deposit } from './deposit';
 export { depositEth } from './depositEth';
 export { withdraw } from './withdraw';

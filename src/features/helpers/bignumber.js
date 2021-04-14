@@ -226,7 +226,7 @@ export function calculateReallyNum(total,sliderNum,formatNum=4){
 }
 
 export function formatDecimals(number) {
-  if (number.eq(0)) {
+  if (! number || number.eq(0)) {
     return '0';
   }
 

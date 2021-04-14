@@ -54,6 +54,30 @@ export const pools = [
     tokenAddress: '0x42F6f551ae042cBe50C739158b4f0CAC0Edb9096'
   },
   {
+    id: 'nerveeth',
+    name: 'nrvETH',
+    token: 'nrvETH',
+    tokenDescription: 'nrvETH',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses nerve',
+    itokenDecimals: 18,
+    depostLimit: 0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11nrvETH',
+    earnedTokenAddress: '0x5C0E7b820fCC7cC66b787A204B2B31cbc027843f',
+    earnContractAddress: '0x5C0E7b820fCC7cC66b787A204B2B31cbc027843f',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x0d283BF16A9bdE49cfC48d8dc050AF28b71bdD90',
+
+    claimable: true,
+    claimableToken: '11NRV',
+    claimableRewardMethod: 'Nerve'
+  },
+  {
     id: 'nervebnb',
     name: 'NRV',
     token: 'NRV-BNB LP',
@@ -438,7 +462,7 @@ export const pools = [
   },
 
 
-   
+
 
   {
     id: 'lienbnb',
