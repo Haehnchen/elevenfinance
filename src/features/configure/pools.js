@@ -1,4 +1,26 @@
-import BigNumber from "bignumber.js";
+export const categories = [
+  {
+    name: 'Pancake',
+    default: true
+  },
+  {
+    name: 'Popsicle',
+    default: true
+  },
+  {
+    name: 'Nerve',
+    default: true
+  },
+  {
+    name: 'Wault',
+    default: true
+  },
+  {
+    name: 'Ellipsis',
+    default: true
+  }
+]
+
 // id: '池子id',
 // name: '池子名字',
 // token: '池子代币',
@@ -31,7 +53,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0'
+    tokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    categories: ['Pancake']
   },
   {
     id: 'nerve',
@@ -51,7 +74,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x42F6f551ae042cBe50C739158b4f0CAC0Edb9096'
+    tokenAddress: '0x42F6f551ae042cBe50C739158b4f0CAC0Edb9096',
+    categories: ['Nerve']
   },
   {
     id: 'nervebnb',
@@ -71,7 +95,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x5a805994a2E30aC710e7376ccc0211285bD4dD92'
+    tokenAddress: '0x5a805994a2E30aC710e7376ccc0211285bD4dD92',
+    categories: ['Pancake', 'Nerve']
   },
   {
     id: 'eulerbnb',
@@ -91,7 +116,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xd4B293586cb74770749Aea799e277241B339C62C'
+    tokenAddress: '0xd4B293586cb74770749Aea799e277241B339C62C',
+    categories: ['Wault']
   },
   {
     id: 'icebnb',
@@ -111,7 +137,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xFE3171B9c20d002376D4B0097207EDf54b02EA3B'
+    tokenAddress: '0xFE3171B9c20d002376D4B0097207EDf54b02EA3B',
+    categories: ['Popsicle']
   },
   {
     id: 'swirlbnb',
@@ -131,7 +158,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x135AeDCFb35b0b5dCf61Db7891a21253452Eb970'
+    tokenAddress: '0x135AeDCFb35b0b5dCf61Db7891a21253452Eb970',
+    categories: ['Pancake']
   },
   {
     id: 'ice',
@@ -151,7 +179,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xf16e81dce15B08F326220742020379B855B87DF9'
+    tokenAddress: '0xf16e81dce15B08F326220742020379B855B87DF9',
+    categories: ['Popsicle']
   },
   {
     id: 'yumchabnb',
@@ -171,7 +200,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xD7c43A10F6e92c6F1aB13096AE4a08DD8F8c3c8A'
+    tokenAddress: '0xD7c43A10F6e92c6F1aB13096AE4a08DD8F8c3c8A',
+    categories: ['Pancake']
   },
   {
     id: 'epsbnb',
@@ -191,7 +221,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xf9045866e7b372DeF1EFf3712CE55FAc1A98dAF0'
+    tokenAddress: '0xf9045866e7b372DeF1EFf3712CE55FAc1A98dAF0',
+    categories: ['Ellipsis']
   },
   {
     id: 'cake',
@@ -211,7 +242,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82'
+    tokenAddress: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
+    categories: ['Pancake']
   },
 
   {
@@ -232,7 +264,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x8c5cFfad6cddb96Ee33DA685D0d50a37e030E115'
+    tokenAddress: '0x8c5cFfad6cddb96Ee33DA685D0d50a37e030E115',
+    categories: ['Pancake']
   },
 
 
@@ -255,7 +288,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x8FbCbD7e30b1733965a8980bf7Ae2ca1c0C456cc'
+    tokenAddress: '0x8FbCbD7e30b1733965a8980bf7Ae2ca1c0C456cc',
+    categories: ['Pancake']
   },
 
 
@@ -277,7 +311,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xb5F6f7dAD23132d40d778085D795BD0FD4B859CD'
+    tokenAddress: '0xb5F6f7dAD23132d40d778085D795BD0FD4B859CD',
+    categories: ['Pancake']
   },
 
 
@@ -300,7 +335,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x155645cDF8e4B28d5B7790b65d9f79efc222740C'
+    tokenAddress: '0x155645cDF8e4B28d5B7790b65d9f79efc222740C',
+    categories: ['Pancake']
   },
 
 
@@ -323,7 +359,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x17F0b998B81cE75074a7CDAdAe6D63Da3cb23572'
+    tokenAddress: '0x17F0b998B81cE75074a7CDAdAe6D63Da3cb23572',
+    categories: ['Pancake']
   },
   {
     id: 'easybnb',
@@ -343,7 +380,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xBD1eC00B0d1CCA9D5B28fbE0bB7d664238af2fFa'
+    tokenAddress: '0xBD1eC00B0d1CCA9D5B28fbE0bB7d664238af2fFa',
+    categories: ['Pancake']
   },
 
 
@@ -366,7 +404,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x61376B56Ff33c618B115131712A4138f98810A6a'
+    tokenAddress: '0x61376B56Ff33c618B115131712A4138f98810A6a',
+    categories: ['Pancake']
   },
 
 
@@ -389,7 +428,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xE5783Cc9dFb3E7e474B81B07369a008e80F1cEdb'
+    tokenAddress: '0xE5783Cc9dFb3E7e474B81B07369a008e80F1cEdb',
+    categories: ['Pancake']
   },
 
 
@@ -411,7 +451,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x496a8b716A3A3410B16e71E3c906968CE4488e52'
+    tokenAddress: '0x496a8b716A3A3410B16e71E3c906968CE4488e52',
+    categories: ['Pancake']
   },
 
 
@@ -434,11 +475,12 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x67581BFB4fc13BB73C71489b504E9b5354769063'
+    tokenAddress: '0x67581BFB4fc13BB73C71489b504E9b5354769063',
+    categories: ['Pancake']
   },
 
 
-   
+
 
   {
     id: 'lienbnb',
@@ -458,7 +500,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xcd14855150335AAE984aa6D281E090c27035C692'
+    tokenAddress: '0xcd14855150335AAE984aa6D281E090c27035C692',
+    categories: ['Pancake']
   },
   {
     id: 'zilbnb',
@@ -478,7 +521,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xc746337b5F800a0e19eD4eB3bda03FF1401B8167'
+    tokenAddress: '0xc746337b5F800a0e19eD4eB3bda03FF1401B8167',
+    categories: ['Pancake']
   },
   {
     id: 'bellabnb',
@@ -498,7 +542,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xAB97952a2806D5c92b7046c7aB13a72A87e0097b'
+    tokenAddress: '0xAB97952a2806D5c92b7046c7aB13a72A87e0097b',
+    categories: ['Pancake']
   },
   {
     id: 'bfibnb',
@@ -518,7 +563,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x45a9e8D48BC560416008D122C9437927fEd50E7d'
+    tokenAddress: '0x45a9e8D48BC560416008D122C9437927fEd50E7d',
+    categories: ['Pancake']
   },
   {
     id: 'beltbnb',
@@ -538,7 +584,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x83B92D283cd279fF2e057BD86a95BdEfffED6faa'
+    tokenAddress: '0x83B92D283cd279fF2e057BD86a95BdEfffED6faa',
+    categories: ['Pancake']
   },
   {
     id: 'buxbnb',
@@ -558,7 +605,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x0F556f4E47513d1a19Be456a9aF778d7e1A226B9'
+    tokenAddress: '0x0F556f4E47513d1a19Be456a9aF778d7e1A226B9',
+    categories: ['Pancake']
   },
   {
     id: 'alicebnb',
@@ -578,7 +626,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xe022baa3E5E87658f789c9132B10d7425Fd3a389'
+    tokenAddress: '0xe022baa3E5E87658f789c9132B10d7425Fd3a389',
+    categories: ['Pancake']
   },
   {
     id: 'bunnybnb',
@@ -598,7 +647,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x7Bb89460599Dbf32ee3Aa50798BBcEae2A5F7f6a'
+    tokenAddress: '0x7Bb89460599Dbf32ee3Aa50798BBcEae2A5F7f6a',
+    categories: ['Pancake']
   },
   {
     id: 'cosbnb',
@@ -618,7 +668,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x7b1e440240B220244761C9D9A3B07fbA1995BD84'
+    tokenAddress: '0x7b1e440240B220244761C9D9A3B07fbA1995BD84',
+    categories: ['Pancake']
   },
   {
     id: 'bifibnb',
@@ -638,7 +689,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xd132D2C24F29EE8ABb64a66559d1b7aa627Bd7fD'
+    tokenAddress: '0xd132D2C24F29EE8ABb64a66559d1b7aa627Bd7fD',
+    categories: ['Pancake']
   },
   {
     id: 'duskbnb',
@@ -658,7 +710,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xB7918560273FD56e50E9c215CC0DFE8D764C36C5'
+    tokenAddress: '0xB7918560273FD56e50E9c215CC0DFE8D764C36C5',
+    categories: ['Pancake']
   },
   {
     id: 'tradebnb',
@@ -678,7 +731,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x2562f94E90dE6D9eb4fB6B3b8Eab56b15Aa4FC72'
+    tokenAddress: '0x2562f94E90dE6D9eb4fB6B3b8Eab56b15Aa4FC72',
+    categories: ['Pancake']
   },
   {
     id: 'ltobnb',
@@ -698,7 +752,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x85644FcD00C401E1A0a0a10d2aE6Bbe04A73e4ab'
+    tokenAddress: '0x85644FcD00C401E1A0a0a10d2aE6Bbe04A73e4ab',
+    categories: ['Pancake']
   },
   {
     id: 'pcwsbnb',
@@ -718,7 +773,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x889E81d25bFfbA437b2a5d3e0E4FC58a0E2749c5'
+    tokenAddress: '0x889E81d25bFfbA437b2a5d3e0E4FC58a0E2749c5',
+    categories: ['Pancake']
   },
 
   {
@@ -739,7 +795,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xA527a61703D82139F8a06Bc30097cC9CAA2df5A6'
+    tokenAddress: '0xA527a61703D82139F8a06Bc30097cC9CAA2df5A6',
+    categories: ['Pancake']
   },
   {
     id: 'betheth',
@@ -759,7 +816,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x99d865ed50d2c32c1493896810fa386c1ce81d91'
+    tokenAddress: '0x99d865ed50d2c32c1493896810fa386c1ce81d91',
+    categories: ['Pancake']
   },
   {
     id: 'alpacabnb',
@@ -779,7 +837,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xF3CE6Aac24980E6B657926dfC79502Ae414d3083'
+    tokenAddress: '0xF3CE6Aac24980E6B657926dfC79502Ae414d3083',
+    categories: ['Alpaca']
   },
   {
     id: 'bopenbnb',
@@ -799,7 +858,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x9d8b7e4a9D53654D82F12c83448D8f92732bC761'
+    tokenAddress: '0x9d8b7e4a9D53654D82F12c83448D8f92732bC761',
+    categories: ['Pancake']
   },
   {
     id: 'bmxxbnb',
@@ -819,7 +879,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x4D5aA94Ce6BbB1BC4eb73207a5a5d4D052cFcD67'
+    tokenAddress: '0x4D5aA94Ce6BbB1BC4eb73207a5a5d4D052cFcD67',
+    categories: ['Pancake']
   },
   {
     id: 'dodobnb',
@@ -839,7 +900,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x9e642d174B14fAEa31D842Dc83037c42b53236E6'
+    tokenAddress: '0x9e642d174B14fAEa31D842Dc83037c42b53236E6',
+    categories: ['Pancake']
   },
   {
     id: 'swingbybnb',
@@ -859,7 +921,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x4576C456AF93a37a096235e5d83f812AC9aeD027'
+    tokenAddress: '0x4576C456AF93a37a096235e5d83f812AC9aeD027',
+    categories: ['Pancake']
   },
   {
     id: 'brybnb',
@@ -879,7 +942,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x5E3CD27F36932Bc0314aC4e2510585798C34a2fC'
+    tokenAddress: '0x5E3CD27F36932Bc0314aC4e2510585798C34a2fC',
+    categories: ['Pancake']
   },
   {
     id: 'zeebnb',
@@ -899,7 +963,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xB5Ab3996808c7e489DCDc0f1Af2AB212ae0059aF'
+    tokenAddress: '0xB5Ab3996808c7e489DCDc0f1Af2AB212ae0059aF',
+    categories: ['Pancake']
   },
   {
     id: 'swgbbnb',
@@ -919,7 +984,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xC1800c29CF91954357cd0bf3f0accAADa3D0109c'
+    tokenAddress: '0xC1800c29CF91954357cd0bf3f0accAADa3D0109c',
+    categories: ['Pancake']
   },
   {
     id: 'watchbnb',
@@ -939,7 +1005,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xdC6C130299E53ACD2CC2D291fa10552CA2198a6b'
+    tokenAddress: '0xdC6C130299E53ACD2CC2D291fa10552CA2198a6b',
+    categories: ['Pancake']
   },
   {
     id: 'sfpbnb',
@@ -959,7 +1026,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xcBe2cF3bd012e9C1ADE2Ee4d41DB3DaC763e78F3'
+    tokenAddress: '0xcBe2cF3bd012e9C1ADE2Ee4d41DB3DaC763e78F3',
+    categories: ['Pancake']
   },
   {
     id: 'litbnb',
@@ -979,7 +1047,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x60bB03D1010b99CEAdD0dd209b64bC8bd83da161'
+    tokenAddress: '0x60bB03D1010b99CEAdD0dd209b64bC8bd83da161',
+    categories: ['Pancake']
   },
   {
     id: 'hgetbnb',
@@ -999,7 +1068,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x66b9E1eAc8a81F3752F7f3A5E95dE460688A17Ee'
+    tokenAddress: '0x66b9E1eAc8a81F3752F7f3A5E95dE460688A17Ee',
+    categories: ['Pancake']
   },
   {
     id: 'bdobnb',
@@ -1019,7 +1089,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x74690f829fec83ea424ee1F1654041b2491A7bE9'
+    tokenAddress: '0x74690f829fec83ea424ee1F1654041b2491A7bE9',
+    categories: ['Pancake']
   },
   {
     id: 'egldbnb',
@@ -1039,7 +1110,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x3Ef4952C7a9AfbE374EA02d1Bf5eD5a0015b7716'
+    tokenAddress: '0x3Ef4952C7a9AfbE374EA02d1Bf5eD5a0015b7716',
+    categories: ['Pancake']
   },
   {
     id: 'wsotebnb',
@@ -1059,7 +1131,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xFfb9E2d5ce4378F1a89b29bf53F80804CC078102'
+    tokenAddress: '0xFfb9E2d5ce4378F1a89b29bf53F80804CC078102',
+    categories: ['Pancake']
   },
   {
     id: 'frontbnb',
@@ -1079,7 +1152,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x36b7D2e5C7877392Fb17f9219efaD56F3D794700'
+    tokenAddress: '0x36b7D2e5C7877392Fb17f9219efaD56F3D794700',
+    categories: ['Pancake']
   },
   {
     id: 'helmetbnb',
@@ -1099,7 +1173,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x6411310C07d8c48730172146Fd6F31FA84034a8b'
+    tokenAddress: '0x6411310C07d8c48730172146Fd6F31FA84034a8b',
+    categories: ['Pancake']
   },
   {
     id: 'btcstbnb',
@@ -1119,7 +1194,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x91589786D36fEe5B27A5539CfE638a5fc9834665'
+    tokenAddress: '0x91589786D36fEe5B27A5539CfE638a5fc9834665',
+    categories: ['Pancake']
   },
   {
     id: 'ltcbnb',
@@ -1139,7 +1215,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xBc765Fd113c5bDB2ebc25F711191B56bB8690aec'
+    tokenAddress: '0xBc765Fd113c5bDB2ebc25F711191B56bB8690aec',
+    categories: ['Pancake']
   },
   {
     id: 'bscxbnb',
@@ -1159,7 +1236,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x20781bc3701C5309ac75291f5D09BdC23D7b7Fa8'
+    tokenAddress: '0x20781bc3701C5309ac75291f5D09BdC23D7b7Fa8',
+    categories: ['Pancake']
   },
   {
     id: 'tenbnb',
@@ -1179,7 +1257,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x01ecc44Ddd2D104F44D2AA1A2bD9DFbC91aE8275'
+    tokenAddress: '0x01ecc44Ddd2D104F44D2AA1A2bD9DFbC91aE8275',
+    categories: ['Pancake']
   },
   {
     id: 'balbtbnb',
@@ -1199,7 +1278,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xbe14f3a89A4F7f279Af9d99554cf12E8C29dB921'
+    tokenAddress: '0xbe14f3a89A4F7f279Af9d99554cf12E8C29dB921',
+    categories: ['Pancake']
   },
   {
     id: 'reefbnb',
@@ -1219,7 +1299,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x58B58cab6C5cF158f63A2390b817710826d116D0'
+    tokenAddress: '0x58B58cab6C5cF158f63A2390b817710826d116D0',
+    categories: ['Pancake']
   },
   {
     id: 'dittobnb',
@@ -1239,7 +1320,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x470BC451810B312BBb1256f96B0895D95eA659B1'
+    tokenAddress: '0x470BC451810B312BBb1256f96B0895D95eA659B1',
+    categories: ['Pancake']
   },
   {
     id: 'blkbnb',
@@ -1259,7 +1341,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xC743Dc05F03D25E1aF8eC5F8228f4BD25513c8d0'
+    tokenAddress: '0xC743Dc05F03D25E1aF8eC5F8228f4BD25513c8d0',
+    categories: ['Pancake']
   },
   {
     id: 'unfibnb',
@@ -1279,7 +1362,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xbEA35584b9a88107102ABEf0BDeE2c4FaE5D8c31'
+    tokenAddress: '0xbEA35584b9a88107102ABEf0BDeE2c4FaE5D8c31',
+    categories: ['Pancake']
   },
   {
     id: 'hardbnb',
@@ -1299,7 +1383,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x9F40e8a2Fcaa267A0c374B6c661E0b372264cC3D'
+    tokenAddress: '0x9F40e8a2Fcaa267A0c374B6c661E0b372264cC3D',
+    categories: ['Pancake']
   },
   {
     id: 'ctkbnb',
@@ -1319,7 +1404,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x7793870484647a7278907498ec504879d6971EAb'
+    tokenAddress: '0x7793870484647a7278907498ec504879d6971EAb',
+    categories: ['Pancake']
   },
   {
     id: 'sxpbnb',
@@ -1339,7 +1425,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x752E713fB70E3FA1Ac08bCF34485F14A986956c4'
+    tokenAddress: '0x752E713fB70E3FA1Ac08bCF34485F14A986956c4',
+    categories: ['Pancake']
   },
   {
     id: 'injbnb',
@@ -1359,7 +1446,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x7a34bd64d18e44CfdE3ef4B81b87BAf3EB3315B6'
+    tokenAddress: '0x7a34bd64d18e44CfdE3ef4B81b87BAf3EB3315B6',
+    categories: ['Pancake']
   },
   {
     id: 'filbnb',
@@ -1379,7 +1467,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x35FE9787F0eBF2a200BAc413D3030CF62D312774'
+    tokenAddress: '0x35FE9787F0eBF2a200BAc413D3030CF62D312774',
+    categories: ['Pancake']
   },
   {
     id: 'unibnb',
@@ -1399,7 +1488,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x4269e7F43A63CEA1aD7707Be565a94a9189967E9'
+    tokenAddress: '0x4269e7F43A63CEA1aD7707Be565a94a9189967E9',
+    categories: ['Pancake']
   },
   {
     id: 'yfibnb',
@@ -1419,7 +1509,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x68Ff2ca47D27db5Ac0b5c46587645835dD51D3C1'
+    tokenAddress: '0x68Ff2ca47D27db5Ac0b5c46587645835dD51D3C1',
+    categories: ['Pancake']
   },
   {
     id: 'bchbnb',
@@ -1439,7 +1530,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x54EdD846dB17f43b6e43296134ECD96284671E81'
+    tokenAddress: '0x54EdD846dB17f43b6e43296134ECD96284671E81',
+    categories: ['Pancake']
   },
   {
     id: 'xtzbnb',
@@ -1459,7 +1551,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x5acaC332F0F49c8bAdC7aFd0134aD19D3DB972e6'
+    tokenAddress: '0x5acaC332F0F49c8bAdC7aFd0134aD19D3DB972e6',
+    categories: ['Pancake']
   },
   {
     id: 'yfiibnb',
@@ -1479,7 +1572,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x574a978c2D0d36D707a05E459466C7A1054F1210'
+    tokenAddress: '0x574a978c2D0d36D707a05E459466C7A1054F1210',
+    categories: ['Pancake']
   },
   {
     id: 'atombnb',
@@ -1499,7 +1593,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x2333c77FC0B2875c11409cdCD3C75D42D402E834'
+    tokenAddress: '0x2333c77FC0B2875c11409cdCD3C75D42D402E834',
+    categories: ['Pancake']
   },
   {
     id: 'xrpbnb',
@@ -1519,7 +1614,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xC7b4B32A3be2cB6572a1c9959401F832Ce47a6d2'
+    tokenAddress: '0xC7b4B32A3be2cB6572a1c9959401F832Ce47a6d2',
+    categories: ['Pancake']
   },
   {
     id: 'alphabnb',
@@ -1539,7 +1635,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x4e0f3385d932F7179DeE045369286FFa6B03d887'
+    tokenAddress: '0x4e0f3385d932F7179DeE045369286FFa6B03d887',
+    categories: ['Pancake']
   },
   {
     id: 'btcbnb',
@@ -1559,7 +1656,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x7561EEe90e24F3b348E1087A005F78B4c8453524'
+    tokenAddress: '0x7561EEe90e24F3b348E1087A005F78B4c8453524',
+    categories: ['Pancake']
   },
   {
     id: 'ethbnb',
@@ -1579,7 +1677,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x70D8929d04b60Af4fb9B58713eBcf18765aDE422'
+    tokenAddress: '0x70D8929d04b60Af4fb9B58713eBcf18765aDE422',
+    categories: ['Pancake']
   },
   {
     id: 'xvsbnb',
@@ -1599,7 +1698,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x41182c32F854dd97bA0e0B1816022e0aCB2fc0bb'
+    tokenAddress: '0x41182c32F854dd97bA0e0B1816022e0aCB2fc0bb',
+    categories: ['Pancake']
   },
   {
     id: 'twtbnb',
@@ -1619,7 +1719,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x610e7a287c27dfFcaC0F0a94f547Cc1B770cF483'
+    tokenAddress: '0x610e7a287c27dfFcaC0F0a94f547Cc1B770cF483',
+    categories: ['Pancake']
   },
   {
     id: 'linkbnb',
@@ -1639,7 +1740,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xaeBE45E3a03B734c68e5557AE04BFC76917B4686'
+    tokenAddress: '0xaeBE45E3a03B734c68e5557AE04BFC76917B4686',
+    categories: ['Pancake']
   },
   {
     id: 'eosbnb',
@@ -1659,7 +1761,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x981d2Ba1b298888408d342C39c2Ab92e8991691e'
+    tokenAddress: '0x981d2Ba1b298888408d342C39c2Ab92e8991691e',
+    categories: ['Pancake']
   },
   {
     id: 'dotbnb',
@@ -1679,7 +1782,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xbCD62661A6b1DEd703585d3aF7d7649Ef4dcDB5c'
+    tokenAddress: '0xbCD62661A6b1DEd703585d3aF7d7649Ef4dcDB5c',
+    categories: ['Pancake']
   },
   {
     id: 'bandbnb',
@@ -1699,7 +1803,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xc639187ef82271D8f517de6FEAE4FaF5b517533c'
+    tokenAddress: '0xc639187ef82271D8f517de6FEAE4FaF5b517533c',
+    categories: ['Pancake']
   },
   {
     id: 'adabnb',
@@ -1719,7 +1824,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xBA51D1AB95756ca4eaB8737eCD450cd8F05384cF'
+    tokenAddress: '0xBA51D1AB95756ca4eaB8737eCD450cd8F05384cF',
+    categories: ['Pancake']
   },
   {
     id: 'busdbnb',
@@ -1739,7 +1845,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x1B96B92314C44b159149f7E0303511fB2Fc4774f'
+    tokenAddress: '0x1B96B92314C44b159149f7E0303511fB2Fc4774f',
+    categories: ['Pancake']
   },
   {
     id: 'waultbnb',
@@ -1759,7 +1866,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x1f280a4fA78f5805bAC193dDdAfEB77B16da4614'
+    tokenAddress: '0x1f280a4fA78f5805bAC193dDdAfEB77B16da4614',
+    categories: ['Pancake', 'Wault']
   },
   {
     id: 'psgbnb',
@@ -1779,7 +1887,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x9c4f6a5050CF863e67a402E8b377973b4E3372c1'
+    tokenAddress: '0x9c4f6a5050CF863e67a402E8b377973b4E3372c1',
+    categories: ['Pancake']
   },
   {
     id: 'atmbnb',
@@ -1799,7 +1908,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xd5b3ebf1a85d32c73a82b40f75e1cd929caf4029'
+    tokenAddress: '0xd5b3ebf1a85d32c73a82b40f75e1cd929caf4029',
+    categories: ['Pancake']
   },
   {
     id: 'juvbnb',
@@ -1819,7 +1929,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x51a2ffa5b7de506f9a22549e48b33f6cf0d9030e'
+    tokenAddress: '0x51a2ffa5b7de506f9a22549e48b33f6cf0d9030e',
+    categories: ['Pancake']
   },
   {
     id: 'ogbnb',
@@ -1839,7 +1950,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x64373608f2E93Ea97aD4D8Ca2CCE6B2575dB2F55'
+    tokenAddress: '0x64373608f2E93Ea97aD4D8Ca2CCE6B2575dB2F55',
+    categories: ['Pancake']
   },
   {
     id: 'asrbnb',
@@ -1859,7 +1971,8 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xd6b900d5308356317299dafe303e661271aa12f1'
+    tokenAddress: '0xd6b900d5308356317299dafe303e661271aa12f1',
+    categories: ['Pancake']
   },
 
-]
+];

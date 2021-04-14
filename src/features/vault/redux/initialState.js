@@ -1,4 +1,4 @@
-import { pools } from "../../configure";
+import { pools, categories } from "../../configure/pools";
 
 const tokens = {};
 
@@ -17,6 +17,7 @@ pools.map(({token, tokenAddress, earnedToken, earnedTokenAddress})=> {
 // console.log(tokens)
 
 const initialState = {
+  categories,
   pools,
   tokens,
   contractApy: {},
