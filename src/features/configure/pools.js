@@ -12,12 +12,12 @@ export const categories = [
     default: true
   },
   {
-    name: 'Euler',
+    name: 'Wault',
     default: true
   },
   {
     name: 'Ellipsis',
-    default: false
+    default: true
   }
 ]
 
@@ -96,7 +96,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x5a805994a2E30aC710e7376ccc0211285bD4dD92',
-    categories: ['Pancake']
+    categories: ['Pancake', 'Nerve']
   },
   {
     id: 'eulerbnb',
@@ -117,7 +117,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xd4B293586cb74770749Aea799e277241B339C62C',
-    categories: ['Euler']
+    categories: ['Wault']
   },
   {
     id: 'icebnb',
@@ -1867,7 +1867,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x1f280a4fA78f5805bAC193dDdAfEB77B16da4614',
-    categories: ['Pancake']
+    categories: ['Pancake', 'Wault']
   },
   {
     id: 'psgbnb',
