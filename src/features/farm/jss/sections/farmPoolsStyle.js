@@ -1,15 +1,13 @@
+import commonStyle from 'assets/jss/components/commonStyle.js';
+
 const backgroundMain = 'rgba(42,48,66,.7490196078431373);';
 
 const textNormalColor = '#ffffff';
 const textSecondaryColor = '#94a3b8';
 
-const primaryColor = '#f0b90b';
-const primaryColorHover = '#dcab10';
-const primaryContrastColor = 'rgb(30, 41, 59)';
-
 const fonts = 'Inter var,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji';
 
-const dialogStyles = (theme) => ({
+const dialogStyle = (theme) => ({
 	dialogRoot: {
 		background: "rgb(81,88,116)",
 		color: '#ffffff'
@@ -37,6 +35,9 @@ const dialogStyles = (theme) => ({
 })
 
 const farmPoolStyle = (theme) => ({
+	...commonStyle(theme),
+	...dialogStyle(theme),
+
 	farmWrapper: {
 		fontFamily: fonts,
 		backgroundColor: backgroundMain,
@@ -52,8 +53,8 @@ const farmPoolStyle = (theme) => ({
 
 	farmDetails: {
 		[theme.breakpoints.up('md')]: {
-            borderRight: '1px solid rgba(241, 245, 249, 0.12)',
-        }
+			borderRight: '1px solid rgba(241, 245, 249, 0.12)',
+		}
 	},
 	farmTitleBlock: {
 		padding: '20px 25px 15px',
@@ -112,8 +113,8 @@ const farmPoolStyle = (theme) => ({
 		padding: '25px',
 
 		[theme.breakpoints.down('md')]: {
-            textAlign: 'center'
-        },
+			textAlign: 'center'
+		},
 
 		'& > *': {
 			[theme.breakpoints.down('sm')]: {
@@ -156,34 +157,6 @@ const farmPoolStyle = (theme) => ({
 			height: '60px',
 		}
 	},
-
-	buttonPrimary: {
-		backgroundColor: primaryColor,
-		color: primaryContrastColor,
-		fontFamily: fonts,
-		fontSize: '14px',
-		fontWeight: '500',
-		boxShadow: '0 0 0 0 rgb(0 0 0 / 20%), 0 0 0 0 rgb(0 0 0 / 14%), 0 0 0 0 rgb(0 0 0 / 12%)',
-
-		'&:hover': {
-			backgroundColor: primaryColorHover,
-			color: primaryContrastColor,
-			boxShadow: '0 0 0 0 rgb(0 0 0 / 20%), 0 0 0 0 rgb(0 0 0 / 14%), 0 0 0 0 rgb(0 0 0 / 12%)',
-		},
-
-		'&:focus': {
-			backgroundColor: primaryColorHover,
-			color: primaryContrastColor,
-			boxShadow: '0 0 0 0 rgb(0 0 0 / 20%), 0 0 0 0 rgb(0 0 0 / 14%), 0 0 0 0 rgb(0 0 0 / 12%)',
-		},
-
-		'&:active': {
-			backgroundColor: primaryColor,
-			color: primaryContrastColor,
-		}
-	},
-
-	...dialogStyles(theme)
 })
 
 export default farmPoolStyle;

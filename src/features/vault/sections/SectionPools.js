@@ -303,9 +303,9 @@ export default function SectionPools() {
       contractAddress: pool.earnContractAddress,
       index
     }).then(
-      () => enqueueSnackbar(`Claim Rewards success`, { variant: 'success' })
+      () => enqueueSnackbar(`Harvest success`, { variant: 'success' })
     ).catch(
-      error => enqueueSnackbar(`Claim Rewards error: ${error}`, { variant: 'error' })
+      error => enqueueSnackbar(`Harvest error: ${error}`, { variant: 'error' })
     )
   }
 
@@ -581,7 +581,7 @@ export default function SectionPools() {
                 <AccordionDetails style={{ justifyContent: "space-between" }}>
                   <Grid container style={{ width: "100%", marginLeft: 0, marginRight: 0 }}>
                     {/* Deposit */}
-                    <Grid item xs={12} sm={6} className={classes.sliderDetailContainer}>
+                    <Grid item xs={12} sm={6} md={pool.claimable ? 5 : 6} className={classes.sliderDetailContainer}>
                       <div className={classes.poolBalanceBlock}>
                         <div>{t('Vault-Balance')}</div>
                         <div>
@@ -623,13 +623,12 @@ export default function SectionPools() {
                                   width: '180px',
                                   margin: '12px 5px',
                                   fontSize: '14px',
-                                  fontWeight: 'bold',
+                                  fontWeight: '500',
                                   backgroundColor: '#ff635a',
-                                  color: '#ffffff',
+                                  color: '#0b111b',
                                   boxShadow: '0 2px 2px 0 rgba(53, 56, 72, 0.14), 0 3px 1px -2px rgba(53, 56, 72, 0.2), 0 1px 5px 0 rgba(53, 56, 72, 0.12)',
                                   fontWeight: "bold"
                                 }}
-                                round
                                 color="primary"
                                 onClick={onApproval.bind(this, pool, index)}
                                 disabled={fetchApprovalPending[index]}
@@ -644,12 +643,11 @@ export default function SectionPools() {
                                   width: '180px',
                                   margin: '12px 5px',
                                   fontSize: '14px',
-                                  fontWeight: 'bold',
+                                  fontWeight: '500',
                                   backgroundColor: '#ff635a',
-                                  color: '#ffffff',
+                                  color: '#0b111b',
                                   boxShadow: '0 2px 2px 0 rgba(53, 56, 72, 0.14), 0 3px 1px -2px rgba(53, 56, 72, 0.2), 0 1px 5px 0 rgba(53, 56, 72, 0.12)'
                                 }}
-                                round
                                 onFocus={(event) => event.stopPropagation()}
                                 disabled={
                                   fetchDepositPending[index] || (new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber() || isMoreDepostLimit(new BigNumber(depositedBalance[index]).toNumber(), pool.depostLimit))
@@ -662,12 +660,11 @@ export default function SectionPools() {
                                   width: '180px',
                                   margin: '12px 5px',
                                   fontSize: '14px',
-                                  fontWeight: 'bold',
+                                  fontWeight: '500',
                                   backgroundColor: '#ff635a',
-                                  color: '#ffffff',
+                                  color: '#0b111b',
                                   boxShadow: '0 2px 2px 0 rgba(53, 56, 72, 0.14), 0 3px 1px -2px rgba(53, 56, 72, 0.2), 0 1px 5px 0 rgba(53, 56, 72, 0.12)'
                                 }}
-                                round
                                 onFocus={(event) => event.stopPropagation()}
                                 disabled={
                                   fetchDepositPending[index] || (new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber() || isMoreDepostLimit(balanceSingle.toNumber(), pool.depostLimit))
@@ -682,7 +679,7 @@ export default function SectionPools() {
                     </Grid>
 
                     {/* Withdraw */}
-                    <Grid item xs={12} sm={6} className={classes.sliderDetailContainer}>
+                    <Grid item xs={12} sm={6} md={pool.claimable ? 5 : 6} className={classes.sliderDetailContainer}>
                       <div className={classes.poolBalanceBlock}>
                         <div>{t('Vault-ListDeposited')}</div>
                         <div className={classes.poolBalance}>
@@ -722,12 +719,11 @@ export default function SectionPools() {
                             width: '180px',
                             margin: '12px 5px',
                             fontSize: '14px',
-                            fontWeight: 'bold',
+                            fontWeight: '500',
                             backgroundColor: '#635AFF',
-                            color: '#ffffff',
+                            color: '#0b111b',
                             boxShadow: '0 2px 2px 0 rgba(53, 56, 72, 0.14), 0 3px 1px -2px rgba(53, 56, 72, 0.2), 0 1px 5px 0 rgba(53, 56, 72, 0.12)'
                           }}
-                          round
                           type="button"
                           color="primary"
                           disabled={fetchWithdrawPending[index]}
@@ -740,12 +736,11 @@ export default function SectionPools() {
                             width: '180px',
                             margin: '12px 5px',
                             fontSize: '14px',
-                            fontWeight: 'bold',
+                            fontWeight: '500',
                             backgroundColor: '#635AFF',
-                            color: '#ffffff',
+                            color: '#0b111b',
                             boxShadow: '0 2px 2px 0 rgba(53, 56, 72, 0.14), 0 3px 1px -2px rgba(53, 56, 72, 0.2), 0 1px 5px 0 rgba(53, 56, 72, 0.12)',
                           }}
-                          round
                           type="button"
                           color="primary"
                           onClick={onWithdraw.bind(this, pool, index, true, singleDepositedBalance)}
@@ -757,16 +752,28 @@ export default function SectionPools() {
 
                     {pool.claimable
                       ?
-                      <Grid item xs={12} className={classes.vaultPendingRewards}>
-                        Pending ELE: {formatDecimals(pendingRewards[pool.id]?.pendingEle)}<br/>
-                        Pending {pool.claimableToken}: {formatDecimals(pendingRewards[pool.id]?.pendingToken)}<br/>
+                      <Grid item sm={12} md={2} className={classes.vaultPendingRewards}>
+                        <Grid item xs={12} className={classes.vaultPendingTitle}>
+                          {t('Vault-PendingRewards')}
+                        </Grid>
 
-                        <Button className={classes.buttonPrimary}
-                                onClick={onClaim.bind(this, pool, index)}
-                                disabled={fetchClaimPending[index]}
-                        >
-                          {fetchClaimPending[index] ? t('Vault-ClaimING') : t('Vault-ClaimButton')}
-                        </Button>
+                        <Grid item xs={6} sm={4} md={12}>
+                          <div className={classes.counter}>{formatDecimals(pendingRewards[pool.id]?.pendingEle)}</div>
+                          <div className={classes.counterDescription}>{t('Vault-Pending')} ELE</div>
+                        </Grid>
+
+                        <Grid item xs={6} sm={4} md={12}>
+                          <div className={classes.counter}>{formatDecimals(pendingRewards[pool.id]?.pendingToken)}</div>
+                          <div className={classes.counterDescription}>{t('Vault-Pending')} {pool.claimableToken}</div>
+                        </Grid>
+
+                        <Grid item xs={12} sm={4} md={12}>
+                          <Button className={classes.buttonPrimary}
+                                  onClick={onClaim.bind(this, pool, index)}
+                                  disabled={fetchClaimPending[index]}>
+                            {fetchClaimPending[index] ? t('Vault-HarvestING') : t('Vault-HarvestButton')}
+                          </Button>
+                        </Grid>
                       </Grid>
                       : ''
                     }

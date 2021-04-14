@@ -14,6 +14,8 @@ import tooltips from "assets/jss/material-kit-pro-react/tooltipsStyle.js";
 import filtersSection from 'assets/jss/components/sectionFiltersStyle.js';
 import { rgbToHex } from "@material-ui/core";
 
+import commonStyle from 'assets/jss/components/commonStyle.js';
+
 // TODO: move to single place
 const textSecondaryColor = '#94a3b8';
 const fonts = 'Inter var,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji';
@@ -47,6 +49,7 @@ const sectionPoolsStyle = theme => ({
   ...buttonGroup,
   ...tooltips,
 
+  ...commonStyle(theme),
   ...filtersSection(theme),
 
   icon: {
@@ -315,7 +318,44 @@ const sectionPoolsStyle = theme => ({
       fontWeight: 'normal',
       textAlign: 'right',
       color: textSecondaryColor,
-    }
+    },
+
+    vaultPendingRewards: {
+      padding: '10px 0 10px 30px',
+      borderTop: '1px solid #333',
+      fontFamily: fonts,
+
+      [theme.breakpoints.down('sm')]: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        padding: '10px'
+      }
+    },
+    vaultPendingTitle: {
+      fontSize: '18px',
+      fontWeight: 'bold',
+      margin: '13px 0 26px',
+
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '22px',
+        marginBottom: '10px'
+      }
+    },
+
+    counter: {
+      fontSize: '20px',
+      fontWeight: 'bold',
+      margin: '10px 0 0',
+
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '20px',
+      }
+    },
+    counterDescription: {
+      color: textSecondaryColor,
+      fontSize: '16px',
+      marginBottom: '15px',
+    },
 });
 
 export default sectionPoolsStyle;

@@ -50,6 +50,7 @@
   "Vault-FarmButton": "Farm",
   "Vault-FarmButtonDescription": "Manually send idle balance in the contract to farm yield.",
   "Vault-Yield": "Yield",
+  "Vault-PendingRewards": "Pending Rewards",
   "Vault-HarvestING": "Harvest...",
   "Vault-HarvestButton": "Harvest",
   "Vault-HarvestButtonDescription": "Help harvest and get rewarded with 1% of the revenue.",
