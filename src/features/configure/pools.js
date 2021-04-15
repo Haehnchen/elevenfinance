@@ -938,7 +938,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xF3CE6Aac24980E6B657926dfC79502Ae414d3083',
-    categories: ['Alpaca']
+    categories: ['Pancake']
   },
   {
     id: 'bopenbnb',
