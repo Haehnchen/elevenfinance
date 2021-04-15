@@ -35,7 +35,7 @@ export default function App({ children }) {
   const openRewardModal = () => {
     setRewardModal(true);
   };
-  
+
   const closeRewardModal = () => {
     setRewardModal(false);
   };
@@ -56,13 +56,26 @@ export default function App({ children }) {
           options: {
             infuraId: process.env.INFURA_ID
           }
-        }
+        },
+        'custom-binance': {
+          display: {
+            name: 'Binance',
+            description: 'Binance Chain Wallet',
+            logo: require(`../../images/wallets/binance-wallet.png`),
+          },
+          package: 'binance',
+          connector: async (ProviderPackage, options) => {
+            const provider = window.BinanceChain;
+            await provider.enable();
+            return provider;
+          },
+        },
       }
     })
     setModal(newModal)
   }, [setModal])
 
-  
+
 
   useEffect(() => {
     if (web3Modal && (web3Modal.cachedProvider || window.ethereum)) {
