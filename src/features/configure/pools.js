@@ -259,7 +259,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x135AeDCFb35b0b5dCf61Db7891a21253452Eb970',
-    categories: ['Pancake']
+    categories: ['Wault']
   },
   {
     id: 'ice',
