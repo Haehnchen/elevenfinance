@@ -582,7 +582,7 @@ export default function SectionPools() {
                         <Grid item xs={12} md={3} container alignItems="center">
                           <Grid item>
                             <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
-                              <span>{nervePools.includes(pool.name) ? "11NRV APR" : "APY" }: {getApy(pool)} %</span>
+                              <span>{nervePools.includes(pool.name) ? "APR" : "APY" }: {getApy(pool)} %</span>
                             </Typography>
                             <Typography className={classes.iconContainerSubTitle} variant="body2">
                               <span>{nervePools.includes(pool.name) ? "ELE APR" : "APRD" }: {getAprd(pool)} %</span>
