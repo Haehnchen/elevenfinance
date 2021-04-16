@@ -1,7 +1,6 @@
 /* eslint-disable */
 import React, { useEffect, useState } from "react";
 // nodejs library to set properties for components
-import WoR from "../../images/wor_war_on_rugs_small.png";
 import PropTypes from "prop-types";
 import { useTranslation } from 'react-i18next';
 import Footer from "components/Footer/Footer.js";
@@ -173,19 +172,6 @@ export default function FooterLinks(props) {
                     />
                     </Button>
                 </ListItem>
-                <ListItem className={classes.listItem}>
-                    <Button
-                    color={color}
-                    className={
-                        classes.navLink + " " + classes.socialIconsButton
-                    }
-                    href="https://twitter.com/WARONRUGS/status/1374144695274774528"
-                    target="_blank"
-                    >
-                      <img src={WoR} width="48px"/>
-                    </Button>
-                </ListItem>
-
             </List>
             <GridContainer className={classes.linkList} justify='center' align='center' >
                 {
