@@ -42,6 +42,11 @@ const commonStyle = theme => ({
     border: '2px solid ' + primaryColor,
     color: primaryColor + ' !important',
     padding: '8px 14px'
+  },
+
+  buttonLoader: {
+    color: primaryContrastColor,
+    margin: '2px 20px'
   }
 });
 

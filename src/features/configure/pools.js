@@ -75,7 +75,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x42F6f551ae042cBe50C739158b4f0CAC0Edb9096',
-    categories: ['Nerve']
+    categories: ['Nerve'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 97
+    }
   },
   {
     id: 'nerveeth',
@@ -196,7 +204,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x5a805994a2E30aC710e7376ccc0211285bD4dD92',
-    categories: ['Pancake', 'Nerve']
+    categories: ['Pancake', 'Nerve'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 91
+    }
   },
   {
     id: 'eulerbnb',
@@ -217,7 +233,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xd4B293586cb74770749Aea799e277241B339C62C',
-    categories: ['Wault']
+    categories: ['Wault'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 82
+    }
   },
   {
     id: 'icebnb',

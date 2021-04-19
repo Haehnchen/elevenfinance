@@ -97,7 +97,7 @@ const StakeButton = ({ pool, index, balance }) => {
         >
           {!fetchFarmApprovalPending[pool.id] ? `${t('Vault-ApproveButton')}` : (
             <CircularProgress
-              className={classes.loader}
+              className={classes.buttonLoader}
               size={20}
               thickness={6} />
           )}

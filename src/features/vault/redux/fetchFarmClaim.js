@@ -71,7 +71,7 @@ export function reducer(state, action) {
     case VAULT_FETCH_FARM_CLAIM_BEGIN:
       fetchFarmClaimPending[action.id] = true;
 
-    return {
+      return {
         ...state,
         fetchFarmClaimPending
       };

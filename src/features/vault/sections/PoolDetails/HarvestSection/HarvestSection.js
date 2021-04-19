@@ -21,12 +21,7 @@ const HarvestSection = ({ pool, index, pendingRewards }) => {
   const { fetchClaim, fetchClaimPending } = useFetchClaim();
 
   const onClaim = () => {
-    fetchClaim({
-      address,
-      web3,
-      contractAddress: pool.earnContractAddress,
-      index
-    })
+    fetchClaim({ address, web3, pool })
       .then(() => enqueueSnackbar(`Harvest success`, { variant: 'success' }))
       .catch(error => enqueueSnackbar(`Harvest error: ${error}`, { variant: 'error' }))
   }
@@ -50,9 +45,9 @@ const HarvestSection = ({ pool, index, pendingRewards }) => {
       <Grid item xs={12} sm={4} md={12}>
         <Button className={classes.buttonPrimary}
           onClick={onClaim}
-          disabled={fetchClaimPending[index]}
+          disabled={fetchClaimPending[pool.id]}
         >
-          {fetchClaimPending[index]
+          {fetchClaimPending[pool.id]
             ? t('Vault-HarvestING')
             : t('Vault-HarvestButton')}
         </Button>

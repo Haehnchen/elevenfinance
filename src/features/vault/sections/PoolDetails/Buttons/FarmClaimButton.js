@@ -31,7 +31,7 @@ const FarmClaimButton = ({ pool }) => {
     >
       {!fetchFarmClaimPending[pool.id] ? t('Vault-HarvestButton') : (
         <CircularProgress
-          className={classes.loader}
+          className={classes.buttonLoader}
           size={20}
           thickness={6} />
       )}

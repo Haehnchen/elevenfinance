@@ -96,7 +96,7 @@ const DepositButton = ({ pool, index, balance }) => {
         >
           {!fetchApprovalPending[index] ? `${t('Vault-ApproveButton')}` : (
             <CircularProgress
-              className={classes.loader}
+              className={classes.buttonLoader}
               size={20}
               thickness={6} />
           )}

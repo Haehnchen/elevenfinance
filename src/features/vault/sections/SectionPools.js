@@ -452,7 +452,7 @@ export default function SectionPools() {
                 </AccordionSummary>
                 <AccordionDetails>
                   <Grid container>
-                    {pool.farm ? (
+                    {pool.farm || pool.claimable ? (
                       <PoolDetails pool={pool}
                                 index={index}
                                 balanceSingle={balanceSingle}

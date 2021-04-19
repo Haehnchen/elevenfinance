@@ -9,27 +9,27 @@ import {
   VAULT_FETCH_CLAIM_FAILURE,
 } from './constants';
 
-export function fetchClaim({ address, web3, contractAddress, index }) {
+export function fetchClaim({ address, web3, pool }) {
   return dispatch => {
     dispatch({
       type: VAULT_FETCH_CLAIM_BEGIN,
-      index,
+      id: pool.id,
     });
 
     const promise = new Promise((resolve, reject) => {
-      claimRewards({ web3, address, contractAddress, dispatch })
+      claimRewards({ web3, address, contractAddress: pool.earnContractAddress, dispatch })
         .then(data => {
           dispatch({
             type: VAULT_FETCH_CLAIM_SUCCESS,
             data,
-            index,
+            id: pool.id,
           });
           resolve(data);
         })
         .catch(error => {
           dispatch({
             type: VAULT_FETCH_CLAIM_FAILURE,
-            index,
+            id: pool.id,
           });
           reject(error.message || error);
         });
@@ -54,32 +54,31 @@ export function useFetchClaim() {
 }
 
 export function reducer(state, action) {
+  const { fetchClaimPending } = state;
+
   switch (action.type) {
     case VAULT_FETCH_CLAIM_BEGIN:
+      fetchClaimPending[action.id] = true;
+
       return {
         ...state,
-        fetchClaimPending: {
-          ...state.fetchClaimPending,
-          [action.index]: true,
-        },
+        fetchClaimPending
       };
 
     case VAULT_FETCH_CLAIM_SUCCESS:
+      fetchClaimPending[action.id] = false;
+
       return {
         ...state,
-        fetchClaimPending: {
-          ...state.fetchClaimPending,
-          [action.index]: false,
-        },
+        fetchClaimPending
       };
 
     case VAULT_FETCH_CLAIM_FAILURE:
+      fetchClaimPending[action.id] = false;
+
       return {
         ...state,
-        fetchClaimPending: {
-          ...state.fetchClaimPending,
-          [action.index]: false,
-        },
+        fetchClaimPending
       };
 
     default:
