@@ -114,13 +114,17 @@ export default function SectionPools() {
     );
 
     if (onlyStakedPools) {
-      results = results.filter(pool => tokens[pool.earnedToken]?.tokenBalance > 0);
+      results = results.filter(pool => {
+        return tokens[pool.earnedToken]?.tokenBalance > 0
+          || pool.stakedAmount?.gt(0);
+      });
     }
 
     if (onlyWithBalancePools) {
       results = results.filter(pool => {
         return tokens[pool.token]?.tokenBalance > 0
-          || tokens[pool.earnedToken]?.tokenBalance > 0;
+          || tokens[pool.earnedToken]?.tokenBalance > 0
+          || pool.stakedAmount?.gt(0);
       });
     }
 
@@ -387,17 +391,22 @@ export default function SectionPools() {
                       <Grid item container justify="space-between">
                         <Hidden smDown>
                           <Grid item xs={5} container alignItems="center">
-                            <Grid item style={{ width: "200px" }}>
-                              <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>{pool.token == 'OG-BNB LP' || pool.token == 'PSG-BNB LP' || pool.token == 'JUV-BNB LP' || pool.token == 'ASR-BNB LP' || pool.token == 'ATM-BNB LP' ? forMat(balanceSingle) : forMat(balanceSingle).toFixed(6)}</Typography>
-                              <Typography className={classes.iconContainerSubTitle} variant="body2">{t('Vault-Balance')}</Typography></Grid>
+                            {!openedCardList.includes(index) && (
+                              <Grid item style={{ width: "200px" }}>
+                                <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>{pool.token == 'OG-BNB LP' || pool.token == 'PSG-BNB LP' || pool.token == 'JUV-BNB LP' || pool.token == 'ASR-BNB LP' || pool.token == 'ATM-BNB LP' ? forMat(balanceSingle) : forMat(balanceSingle).toFixed(6)}</Typography>
+                                <Typography className={classes.iconContainerSubTitle} variant="body2">{t('Vault-Balance')}</Typography>
+                              </Grid>
+                            )}
                           </Grid>
                         </Hidden>
                         <Hidden mdDown>
                           <Grid item xs={4} container alignItems="center">
-                            <Grid item style={{ width: "200px" }}>
-                              <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>{pool.token == 'OG-BNB LP' || pool.token == 'PSG-BNB LP' || pool.token == 'JUV-BNB LP' ? forMat(depositedAndStaked) : forMat(depositedAndStaked).toFixed(6)}</Typography>
-                              <Typography className={classes.iconContainerSubTitle} variant="body2">{t('Vault-Deposited')}</Typography>
-                            </Grid>
+                            {!openedCardList.includes(index) && (
+                              <Grid item style={{ width: "200px" }}>
+                                <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>{pool.token == 'OG-BNB LP' || pool.token == 'PSG-BNB LP' || pool.token == 'JUV-BNB LP' ? forMat(depositedAndStaked) : forMat(depositedAndStaked).toFixed(6)}</Typography>
+                                <Typography className={classes.iconContainerSubTitle} variant="body2">{'Deposited' + (pool.farm ? ' + Staked' : '')}</Typography>
+                              </Grid>
+                            )}
                           </Grid>
                         </Hidden>
                         <Grid item xs={12} md={3} container alignItems="center">
