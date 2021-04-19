@@ -2,17 +2,29 @@ import { textSecondaryColor } from 'assets/jss/components/commonStyle';
 
 const styles = theme => ({
   detailsSection: {
-    paddingLeft: '45px'
+    paddingLeft: '45px',
+
+    [theme.breakpoints.down('md')]: {
+      marginBottom: 20
+    },
   },
 
   balance: {
     fontSize: '24px',
     fontWeight: 'bold',
-    margin: '10px 0 2px'
+    margin: '10px 0 2px',
+
+    [theme.breakpoints.only('md')]: {
+      fontSize: '20px'
+    },
   },
   balanceSecondary: {
     fontWeight: 'bold',
-    color: '#fff'
+    color: '#fff',
+
+    [theme.breakpoints.only('md')]: {
+      fontSize: '15px'
+    },
   },
   balanceDescription: {
     color: textSecondaryColor,

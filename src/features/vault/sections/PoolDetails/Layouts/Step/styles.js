@@ -8,6 +8,11 @@ const styles = theme => ({
     color: primaryColor,
     position: 'relative',
   },
+  stepEmpty: {
+    [theme.breakpoints.down('xs')]: {
+      display: 'none'
+    },
+  },
 
   stepLine: {
     position: 'absolute',

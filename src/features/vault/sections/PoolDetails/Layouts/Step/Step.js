@@ -8,7 +8,7 @@ const Step = ({ number, label }) => {
   const classes = useStyles();
 
   return (
-    <div className={classes.step}>
+    <div className={classes.step + (!number ? ' ' + classes.stepEmpty : '')}>
       <span className={classes.stepLine}></span>
       {number && (
         <span>
