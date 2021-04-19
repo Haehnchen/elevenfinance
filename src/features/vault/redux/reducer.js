@@ -7,6 +7,12 @@ import { reducer as fetchWithdrawReducer } from './fetchWithdraw';
 import { reducer as fetchContractApyReducer } from './fetchContractApy';
 import { reducer as fetchPendingRewardsReducer } from './fetchPendingRewards';
 import { reducer as fetchClaimReducer } from './fetchClaim';
+import { reducer as fetchFarmAllowanceReducer } from './fetchFarmAllowance';
+import { reducer as fetchFarmApprovalReducer } from './fetchFarmApproval';
+import { reducer as fetchFarmsStakedReducer } from './fetchFarmsStaked';
+import { reducer as fetchFarmClaimReducer } from './fetchFarmClaim';
+import { reducer as fetchFarmStakeReducer } from './fetchFarmStake';
+import { reducer as fetchFarmUnstakeReducer } from './fetchFarmUnstake';
 
 const reducers = [
   fetchBalancesReducer,
@@ -16,7 +22,13 @@ const reducers = [
   fetchWithdrawReducer,
   fetchContractApyReducer,
   fetchPendingRewardsReducer,
-  fetchClaimReducer
+  fetchClaimReducer,
+  fetchFarmAllowanceReducer,
+  fetchFarmApprovalReducer,
+  fetchFarmsStakedReducer,
+  fetchFarmClaimReducer,
+  fetchFarmStakeReducer,
+  fetchFarmUnstakeReducer
 ];
 
 

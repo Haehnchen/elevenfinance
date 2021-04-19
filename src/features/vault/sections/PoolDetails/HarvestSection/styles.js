@@ -18,7 +18,8 @@ const styles = theme => ({
   vaultPendingTitle: {
     fontSize: '18px',
     fontWeight: 'bold',
-    margin: '13px 0 27px',
+    margin: '13px 0 0',
+    paddingBottom: 1,
 
     [theme.breakpoints.down('sm')]: {
       fontSize: '22px',
@@ -38,7 +39,7 @@ const styles = theme => ({
   counterDescription: {
     color: textSecondaryColor,
     fontSize: '16px',
-    marginBottom: '17px',
+    marginBottom: '13px',
   },
 });
 

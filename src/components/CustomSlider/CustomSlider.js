@@ -34,7 +34,7 @@ export default function CustomSlider(props) {
         classes
     } = props;
     return (
-        <Slider 
+        <Slider
             {...props}
             classes={Object.assign({},commonClasses,classes)}
             />
@@ -75,4 +75,3 @@ CustomSlider.propTypes = {
     valueLabelDisplay:PropTypes.string,
     marks:PropTypes.array,
 };
-  

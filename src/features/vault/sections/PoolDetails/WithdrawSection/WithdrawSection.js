@@ -36,7 +36,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
   const onWithdraw = isAll => {
     if (isAll) {
       setWithdrawAmount({
-        amount:forMat(sharesBalance),
+        amount: forMat(sharesBalance.times(new BigNumber(pool.pricePerFullShare))),
         slider: 100,
       })
     }
@@ -51,8 +51,9 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
         web3,
         isAll,
         amount: new BigNumber(amountValue)
-          .multipliedBy(new BigNumber(10).exponentiatedBy(pool.itokenDecimals))
-          .toString(10),
+          .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
+          .dividedBy(pool.pricePerFullShare)
+          .toFixed(0),
         contractAddress: pool.earnContractAddress,
         index
       })
@@ -76,7 +77,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
 
   const onInputChange = event => {
     const value = event.target.value;
-    const total = sharesBalance.toNumber();
+    const total = sharesBalance.times(new BigNumber(pool.pricePerFullShare));
 
     if (!inputLimitPass(value, pool.itokenDecimals)) {
       return;
@@ -96,7 +97,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
   };
 
   const onSliderChange = (_, sliderNum) => {
-    const total = sharesBalance.toNumber();
+    const total = sharesBalance.times(new BigNumber(pool.pricePerFullShare));
 
     setWithdrawAmount({
       amount: sliderNum === 0 ? 0 : calculateReallyNum(total, sliderNum),
@@ -111,15 +112,12 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
         <div>{t('Vault-ListDeposited')}</div>
         <div className={classes.poolBalance}>
           <div>
-            {formatDecimals(sharesBalance)}
+            {formatDecimals(depositedLpValue)}
             {pool.price && (
               <span>
                 &nbsp; (${depositedLpValue.times(pool.price).toFixed(2)})
               </span>
             )}
-          </div>
-          <div className={classes.poolBalanceDescription}>
-            {formatDecimals(depositedLpValue)} {pool.token}
           </div>
         </div>
       </div>

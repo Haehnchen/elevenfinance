@@ -31,7 +31,14 @@ import {
 import SearchIcon from "@material-ui/icons/Search"
 
 import { useConnectWallet } from '../../home/redux/hooks';
-import { useFetchBalances, useFetchPoolBalances, useFetchContractApy, useFetchPoolsInfo, useFetchPendingRewards } from '../redux/hooks';
+import {
+  useFetchBalances,
+  useFetchPoolBalances,
+  useFetchContractApy,
+  useFetchPoolsInfo,
+  useFetchPendingRewards,
+  useFetchFarmsStaked
+} from '../redux/hooks';
 
 import sectionPoolsStyle from "../jss/sections/sectionPoolsStyle";
 
@@ -46,6 +53,7 @@ const useStyles = makeStyles(sectionPoolsStyle);
 import DepositSection from './PoolDetails/DepositSection/DepositSection';
 import WithdrawSection from './PoolDetails/WithdrawSection/WithdrawSection';
 import HarvestSection from './PoolDetails/HarvestSection/HarvestSection';
+import PoolDetails from './PoolDetails/PoolDetails';
 
 export default function SectionPools() {
 
@@ -56,6 +64,7 @@ export default function SectionPools() {
   let { pools, fetchPoolBalances } = useFetchPoolBalances();
   const { categories } = useFetchPoolsInfo();
   const { tokens, fetchBalances } = useFetchBalances();
+  const { fetchFarmsStaked, fetchFarmsStakedDone } = useFetchFarmsStaked();
   const { pendingRewards, fetchPendingRewards } = useFetchPendingRewards();
   const [openedCardList, setOpenCardList] = useState([0]);
   const classes = useStyles();
@@ -161,11 +170,13 @@ export default function SectionPools() {
       fetchBalances({ address, web3, tokens });
       fetchPoolBalances({ address, web3, pools });
       fetchPendingRewards({ address, web3, pools });
+      fetchFarmsStaked({ address, web3, pools});
 
       const id = setInterval(() => {
         fetchBalances({ address, web3, tokens });
         fetchPoolBalances({ address, web3, pools });
         fetchPendingRewards({ address, web3, pools });
+        fetchFarmsStaked({ address, web3, pools});
       }, 10000);
       return () => clearInterval(id);
     }
@@ -323,6 +334,7 @@ export default function SectionPools() {
       {Boolean(networkId === Number(process.env.NETWORK_ID)) && searchResults.map((pool, index) => {
         let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
         let singleDepositedBalance = byDecimals(tokens[pool.earnedToken].tokenBalance, pool.itokenDecimals);
+        let depositedAndStaked = singleDepositedBalance?.plus(pool.stakedAmount || 0).times(pool.pricePerFullShare);
         return (
           <Grid item xs={12} container key={index} style={{ marginBottom: "24px" }} spacing={0}>
             <div style={{ width: "100%" }}>
@@ -376,14 +388,14 @@ export default function SectionPools() {
                         <Hidden smDown>
                           <Grid item xs={5} container alignItems="center">
                             <Grid item style={{ width: "200px" }}>
-                              <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>{pool.token == 'OG-BNB LP' || pool.token == 'PSG-BNB LP' || pool.token == 'JUV-BNB LP' || pool.token == 'ASR-BNB LP' || pool.token == 'ATM-BNB LP' ? forMat(balanceSingle) : forMat(balanceSingle).toFixed(6)} {pool.token}</Typography>
+                              <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>{pool.token == 'OG-BNB LP' || pool.token == 'PSG-BNB LP' || pool.token == 'JUV-BNB LP' || pool.token == 'ASR-BNB LP' || pool.token == 'ATM-BNB LP' ? forMat(balanceSingle) : forMat(balanceSingle).toFixed(6)}</Typography>
                               <Typography className={classes.iconContainerSubTitle} variant="body2">{t('Vault-Balance')}</Typography></Grid>
                           </Grid>
                         </Hidden>
                         <Hidden mdDown>
                           <Grid item xs={4} container alignItems="center">
                             <Grid item style={{ width: "200px" }}>
-                              <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>{pool.token == 'OG-BNB LP' || pool.token == 'PSG-BNB LP' || pool.token == 'JUV-BNB LP' ? forMat(singleDepositedBalance) : forMat(singleDepositedBalance).toFixed(6)} {pool.earnedToken}</Typography>
+                              <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>{pool.token == 'OG-BNB LP' || pool.token == 'PSG-BNB LP' || pool.token == 'JUV-BNB LP' ? forMat(depositedAndStaked) : forMat(depositedAndStaked).toFixed(6)}</Typography>
                               <Typography className={classes.iconContainerSubTitle} variant="body2">{t('Vault-Deposited')}</Typography>
                             </Grid>
                           </Grid>
@@ -438,13 +450,23 @@ export default function SectionPools() {
                     </Grid>
                   </Grid>
                 </AccordionSummary>
-                <AccordionDetails style={{ justifyContent: "space-between" }}>
-                  <Grid container style={{ width: "100%", marginLeft: 0, marginRight: 0 }}>
-                    <DepositSection pool={pool} index={index} balanceSingle={balanceSingle}/>
-                    <WithdrawSection pool={pool} index={index} sharesBalance={singleDepositedBalance} />
+                <AccordionDetails>
+                  <Grid container>
+                    {pool.farm ? (
+                      <PoolDetails pool={pool}
+                                index={index}
+                                balanceSingle={balanceSingle}
+                                sharesBalance={singleDepositedBalance}
+                                pendingRewards={pendingRewards[pool.id]} />
+                    ) : (
+                      <Grid item container xs={12} style={{ marginLeft: 0, marginRight: 0 }}>
+                        <DepositSection pool={pool} index={index} balanceSingle={balanceSingle}/>
+                        <WithdrawSection pool={pool} index={index} sharesBalance={singleDepositedBalance} />
 
-                    {pool.claimable && (
-                      <HarvestSection pool={pool} index={index} pendingRewards={pendingRewards[pool.id]} />
+                        {pool.claimable && (
+                          <HarvestSection pool={pool} index={index} pendingRewards={pendingRewards[pool.id]} />
+                        )}
+                      </Grid>
                     )}
                   </Grid>
                 </AccordionDetails>

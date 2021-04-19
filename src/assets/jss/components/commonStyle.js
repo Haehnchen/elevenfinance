@@ -6,7 +6,9 @@ export const primaryContrastColor = 'rgb(30, 41, 59)';
 export const textNormalColor = '#ffffff';
 export const textSecondaryColor = '#94a3b8';
 
-export const fonts = 'Inter var,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji';
+export const bgColor = '#2a3042';
+
+export const fonts = 'Roboto, Helvetica, sans-serif';
 
 const commonStyle = theme => ({
   buttonPrimary: {
@@ -35,6 +37,12 @@ const commonStyle = theme => ({
       color: primaryContrastColor,
     }
   },
+  buttonOutline: {
+    backgroundColor: 'transparent !important',
+    border: '2px solid ' + primaryColor,
+    color: primaryColor + ' !important',
+    padding: '8px 14px'
+  }
 });
 
 export default commonStyle;

@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import async from 'async';
 
-import { fetchPendingReward } from '../../web3';
+import { fetchPendingEle, fetchPendingReward } from '../../web3';
 import { byDecimals } from 'features/helpers/bignumber';
 
 import {
@@ -18,51 +18,74 @@ export function fetchPendingRewards({ address, web3, pools }) {
     });
 
     const promise = new Promise((resolve, reject) => {
-      const farmPools = pools.filter(pool => pool.claimable);
+      const farmPools = pools.filter(pool => pool.claimable || pool.farm);
+
       async.map(farmPools, (pool, callback) => {
-        const { earnContractAddress, tokenDecimals } = pool;
+        const { tokenDecimals } = pool;
 
-        async.parallel([
+        const requests = [];
+
+        if (pool.claimable) {
+          const { earnContractAddress } = pool;
+
           // Get pending ELE reward
-          (callbackInner) => {
-            const tokenName = 'Eleven';
+          requests.push(
+            (callbackInner) => {
+              const tokenName = 'Eleven';
 
-            fetchPendingReward({
-              web3,
-              address,
-              earnContractAddress,
-              tokenName
-            }).then(
-              data => callbackInner(null, data)
-            ).catch(
-              error => {
-                return callbackInner(error.message || error)
-              }
-            )
-          },
+              fetchPendingReward({
+                web3,
+                address,
+                earnContractAddress,
+                tokenName
+              })
+                .then(data => callbackInner(null, data))
+                .catch(error => callbackInner(error.message || error))
+            }
+          );
 
           // Get pending 11-token reward
-          (callbackInner) => {
-            const tokenName = pool.claimableRewardMethod;
+          requests.push(
+            (callbackInner) => {
+              const tokenName = pool.claimableRewardMethod;
 
-            fetchPendingReward({
-              web3,
-              address,
-              earnContractAddress,
-              tokenName
-            }).then(
-              data => callbackInner(null, data)
-            ).catch(
-              error => {
-                return callbackInner(error.message || error)
-              }
-            )
-          }
-        ], (error, data) => {
+              fetchPendingReward({
+                web3,
+                address,
+                earnContractAddress,
+                tokenName
+              })
+                .then(data => callbackInner(null, data))
+                .catch(error => callbackInner(error.message || error))
+            }
+          );
+        } else {
+          const { earnContractAddress, masterchefPid } = pool.farm;
+
+          // Get farm pending ELE reward
+          requests.push(
+            (callbackInner) => {
+              fetchPendingEle({
+                web3,
+                address,
+                earnContractAddress,
+                masterchefPid
+              })
+                .then(data => callbackInner(null, data))
+                .catch(error => callbackInner(error.message || error))
+            },
+          );
+        }
+
+        async.parallel(requests, (error, data) => {
           callback(null, {
             id: pool.id,
-            pendingEle: data[0] ? byDecimals(data[0], 18) : null,
-            pendingToken: data[1] ? byDecimals(data[1], tokenDecimals) : null,
+            pendingEle: data[0]
+              ? byDecimals(data[0], 18)
+              : null,
+            pendingToken: pool.claimable && data[1]
+              ? byDecimals(data[1], tokenDecimals)
+              : null,
           })
         })
       }, (error, data) => {
@@ -70,10 +93,12 @@ export function fetchPendingRewards({ address, web3, pools }) {
           dispatch({
             type: VAULT_FETCH_PENDING_REWARDS_FAILURE,
           })
+
           return reject(error.message || error)
         }
 
         const pendingRewards = {};
+
         data.forEach(pool => {
           pendingRewards[pool.id] = pool;
         });
