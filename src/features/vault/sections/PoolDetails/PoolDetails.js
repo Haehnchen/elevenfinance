@@ -5,7 +5,8 @@ import BigNumber from 'bignumber.js';
 import Grid from '@material-ui/core/Grid';
 
 import Claimable from './Layouts/Claimable';
-import Farm from './Layouts/Farm';
+import FarmOnly from './Layouts/FarmOnly';
+import WithFarm from './Layouts/WithFarm';
 
 import styles from './styles';
 const useStyles = makeStyles(styles);
@@ -32,11 +33,19 @@ const PoolDetails = ({ pool, index, balanceSingle, sharesBalance, pendingRewards
 
   return (
     <Grid item container xs={12} className={classes.poolDetails}>
-      {pool.farm && (
-        <Farm pool={pool}
+      {pool.farm && pool.earnContractAddress && (
+        <WithFarm pool={pool}
           index={index}
           balanceSingle={balanceSingle}
           depositedAmount={depositedAmount}
+          stakedAmount={stakedAmount}
+          pendingRewards={pendingRewards} />
+      )}
+
+      {pool.farm && ! pool.earnContractAddress && (
+        <FarmOnly pool={pool}
+          index={index}
+          balanceSingle={balanceSingle}
           stakedAmount={stakedAmount}
           pendingRewards={pendingRewards} />
       )}

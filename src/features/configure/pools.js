@@ -54,7 +54,43 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 7
+    }
+  },
+  {
+    id: 'elebnb',
+    name: 'ELE-BNB LP',
+    token: 'ELE-BNB LP',
+    tokenDescription: 'ELE-BNB LP',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses pancakeswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: 'ELE',
+    earnedTokenAddress: '0x1f43e18a2558aef9276a00e041c57ba589813eb2',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x1f43e18a2558aef9276a00e041c57ba589813eb2',
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 8
+    }
   },
   {
     id: 'nerve',
@@ -262,7 +298,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xFE3171B9c20d002376D4B0097207EDf54b02EA3B',
-    categories: ['Popsicle']
+    categories: ['Popsicle'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 83
+    }
   },
   {
     id: 'swirlbnb',
@@ -312,7 +356,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xf16e81dce15B08F326220742020379B855B87DF9',
-    categories: ['Popsicle']
+    categories: ['Popsicle'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 81
+    }
   },
   {
     id: 'yumchabnb',
@@ -333,7 +385,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xD7c43A10F6e92c6F1aB13096AE4a08DD8F8c3c8A',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 80
+    }
   },
   {
     id: 'epsbnb',
@@ -354,7 +414,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xf9045866e7b372DeF1EFf3712CE55FAc1A98dAF0',
-    categories: ['Ellipsis']
+    categories: ['Ellipsis'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 77
+    }
   },
   {
     id: 'cake',
@@ -375,7 +443,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 85
+    }
   },
 
   {
@@ -397,11 +473,16 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x8c5cFfad6cddb96Ee33DA685D0d50a37e030E115',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 86
+    }
   },
-
-
-
   {
     id: 'dftbnb',
     name: 'DFT',
@@ -421,10 +502,16 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x8FbCbD7e30b1733965a8980bf7Ae2ca1c0C456cc',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 87
+    }
   },
-
-
   {
     id: 'pbtcbnb',
     name: 'PBTC',
@@ -444,11 +531,16 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xb5F6f7dAD23132d40d778085D795BD0FD4B859CD',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 88
+    }
   },
-
-
-
   {
     id: 'gumbnb',
     name: 'GUM',
@@ -468,11 +560,16 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x155645cDF8e4B28d5B7790b65d9f79efc222740C',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 89
+    }
   },
-
-
-
   {
     id: 'degobnb',
     name: 'DEGO',
@@ -492,7 +589,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x17F0b998B81cE75074a7CDAdAe6D63Da3cb23572',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 90
+    }
   },
   {
     id: 'easybnb',
@@ -513,11 +618,16 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xBD1eC00B0d1CCA9D5B28fbE0bB7d664238af2fFa',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 92
+    }
   },
-
-
-
   {
     id: 'oddzbnb',
     name: 'ODDZ',
@@ -537,11 +647,16 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x61376B56Ff33c618B115131712A4138f98810A6a',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 93
+    }
   },
-
-
-
   {
     id: 'apysbnb',
     name: 'APYS',
@@ -561,10 +676,16 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xE5783Cc9dFb3E7e474B81B07369a008e80F1cEdb',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 94
+    }
   },
-
-
   {
     id: 'tkobnb',
     name: 'TKO',
@@ -584,11 +705,16 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x496a8b716A3A3410B16e71E3c906968CE4488e52',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 95
+    }
   },
-
-
-
   {
     id: 'bondlybnb',
     name: 'BONDLY',
@@ -608,12 +734,16 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x67581BFB4fc13BB73C71489b504E9b5354769063',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 96
+    }
   },
-
-
-
-
   {
     id: 'lienbnb',
     name: 'LIEN',
@@ -633,7 +763,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xcd14855150335AAE984aa6D281E090c27035C692',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 78
+    }
   },
   {
     id: 'zilbnb',
@@ -654,7 +792,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xc746337b5F800a0e19eD4eB3bda03FF1401B8167',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 76
+    }
   },
   {
     id: 'bellabnb',
@@ -675,7 +821,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xAB97952a2806D5c92b7046c7aB13a72A87e0097b',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 64
+    }
   },
   {
     id: 'bfibnb',
@@ -696,7 +850,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x45a9e8D48BC560416008D122C9437927fEd50E7d',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 65
+    }
   },
   {
     id: 'beltbnb',
@@ -717,7 +879,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x83B92D283cd279fF2e057BD86a95BdEfffED6faa',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 66
+    }
   },
   {
     id: 'buxbnb',
@@ -738,7 +908,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x0F556f4E47513d1a19Be456a9aF778d7e1A226B9',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 67
+    }
   },
   {
     id: 'alicebnb',
@@ -759,7 +937,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xe022baa3E5E87658f789c9132B10d7425Fd3a389',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 68
+    }
   },
   {
     id: 'bunnybnb',
@@ -780,7 +966,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x7Bb89460599Dbf32ee3Aa50798BBcEae2A5F7f6a',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 69
+    }
   },
   {
     id: 'cosbnb',
@@ -801,7 +995,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x7b1e440240B220244761C9D9A3B07fbA1995BD84',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 70
+    }
   },
   {
     id: 'bifibnb',
@@ -822,7 +1024,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xd132D2C24F29EE8ABb64a66559d1b7aa627Bd7fD',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 71
+    }
   },
   {
     id: 'duskbnb',
@@ -843,7 +1053,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xB7918560273FD56e50E9c215CC0DFE8D764C36C5',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 72
+    }
   },
   {
     id: 'tradebnb',
@@ -864,7 +1082,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x2562f94E90dE6D9eb4fB6B3b8Eab56b15Aa4FC72',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 73
+    }
   },
   {
     id: 'ltobnb',
@@ -885,7 +1111,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x85644FcD00C401E1A0a0a10d2aE6Bbe04A73e4ab',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 74
+    }
   },
   {
     id: 'pcwsbnb',
@@ -906,9 +1140,16 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x889E81d25bFfbA437b2a5d3e0E4FC58a0E2749c5',
-    categories: ['Pancake']
-  },
+    categories: ['Pancake'],
 
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 75
+    }
+  },
   {
     id: 'cakebnb',
     name: 'CAKE',
@@ -928,7 +1169,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xA527a61703D82139F8a06Bc30097cC9CAA2df5A6',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 63
+    }
   },
   {
     id: 'betheth',
@@ -949,7 +1198,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x99d865ed50d2c32c1493896810fa386c1ce81d91',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 6
+    }
   },
   {
     id: 'alpacabnb',
@@ -970,7 +1227,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xF3CE6Aac24980E6B657926dfC79502Ae414d3083',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 9
+    }
   },
   {
     id: 'bopenbnb',
@@ -991,7 +1256,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x9d8b7e4a9D53654D82F12c83448D8f92732bC761',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 14
+    }
   },
   {
     id: 'bmxxbnb',
@@ -1012,7 +1285,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x4D5aA94Ce6BbB1BC4eb73207a5a5d4D052cFcD67',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 10
+    }
   },
   {
     id: 'dodobnb',
@@ -1033,7 +1314,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x9e642d174B14fAEa31D842Dc83037c42b53236E6',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 11
+    }
   },
   {
     id: 'swingbybnb',
@@ -1054,7 +1343,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x4576C456AF93a37a096235e5d83f812AC9aeD027',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 15
+    }
   },
   {
     id: 'brybnb',
@@ -1075,7 +1372,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x5E3CD27F36932Bc0314aC4e2510585798C34a2fC',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 16
+    }
   },
   {
     id: 'zeebnb',
@@ -1096,7 +1401,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xB5Ab3996808c7e489DCDc0f1Af2AB212ae0059aF',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 17
+    }
   },
   {
     id: 'swgbbnb',
@@ -1117,7 +1430,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xC1800c29CF91954357cd0bf3f0accAADa3D0109c',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 18
+    }
   },
   {
     id: 'watchbnb',
@@ -1138,7 +1459,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xdC6C130299E53ACD2CC2D291fa10552CA2198a6b',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 60
+    }
   },
   {
     id: 'sfpbnb',
@@ -1159,7 +1488,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xcBe2cF3bd012e9C1ADE2Ee4d41DB3DaC763e78F3',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 19
+    }
   },
   {
     id: 'litbnb',
@@ -1180,7 +1517,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x60bB03D1010b99CEAdD0dd209b64bC8bd83da161',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 20
+    }
   },
   {
     id: 'hgetbnb',
@@ -1201,7 +1546,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x66b9E1eAc8a81F3752F7f3A5E95dE460688A17Ee',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 21
+    }
   },
   {
     id: 'bdobnb',
@@ -1222,7 +1575,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x74690f829fec83ea424ee1F1654041b2491A7bE9',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 22
+    }
   },
   {
     id: 'egldbnb',
@@ -1243,7 +1604,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x3Ef4952C7a9AfbE374EA02d1Bf5eD5a0015b7716',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 23
+    }
   },
   {
     id: 'wsotebnb',
@@ -1264,7 +1633,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xFfb9E2d5ce4378F1a89b29bf53F80804CC078102',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 24
+    }
   },
   {
     id: 'frontbnb',
@@ -1285,7 +1662,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x36b7D2e5C7877392Fb17f9219efaD56F3D794700',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 25
+    }
   },
   {
     id: 'helmetbnb',
@@ -1306,7 +1691,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x6411310C07d8c48730172146Fd6F31FA84034a8b',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 26
+    }
   },
   {
     id: 'btcstbnb',
@@ -1327,7 +1720,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x91589786D36fEe5B27A5539CfE638a5fc9834665',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 28
+    }
   },
   {
     id: 'ltcbnb',
@@ -1348,7 +1749,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xBc765Fd113c5bDB2ebc25F711191B56bB8690aec',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 29
+    }
   },
   {
     id: 'bscxbnb',
@@ -1369,7 +1778,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x20781bc3701C5309ac75291f5D09BdC23D7b7Fa8',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 30
+    }
   },
   {
     id: 'tenbnb',
@@ -1390,7 +1807,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x01ecc44Ddd2D104F44D2AA1A2bD9DFbC91aE8275',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 31
+    }
   },
   {
     id: 'balbtbnb',
@@ -1411,7 +1836,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xbe14f3a89A4F7f279Af9d99554cf12E8C29dB921',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 32
+    }
   },
   {
     id: 'reefbnb',
@@ -1432,7 +1865,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x58B58cab6C5cF158f63A2390b817710826d116D0',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 33
+    }
   },
   {
     id: 'dittobnb',
@@ -1453,7 +1894,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x470BC451810B312BBb1256f96B0895D95eA659B1',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 34
+    }
   },
   {
     id: 'blkbnb',
@@ -1474,7 +1923,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xC743Dc05F03D25E1aF8eC5F8228f4BD25513c8d0',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 35
+    }
   },
   {
     id: 'unfibnb',
@@ -1495,7 +1952,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xbEA35584b9a88107102ABEf0BDeE2c4FaE5D8c31',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 36
+    }
   },
   {
     id: 'hardbnb',
@@ -1516,7 +1981,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x9F40e8a2Fcaa267A0c374B6c661E0b372264cC3D',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 37
+    }
   },
   {
     id: 'ctkbnb',
@@ -1537,7 +2010,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x7793870484647a7278907498ec504879d6971EAb',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 38
+    }
   },
   {
     id: 'sxpbnb',
@@ -1558,7 +2039,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x752E713fB70E3FA1Ac08bCF34485F14A986956c4',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 39
+    }
   },
   {
     id: 'injbnb',
@@ -1579,7 +2068,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x7a34bd64d18e44CfdE3ef4B81b87BAf3EB3315B6',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 40
+    }
   },
   {
     id: 'filbnb',
@@ -1600,7 +2097,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x35FE9787F0eBF2a200BAc413D3030CF62D312774',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 41
+    }
   },
   {
     id: 'unibnb',
@@ -1621,7 +2126,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x4269e7F43A63CEA1aD7707Be565a94a9189967E9',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 42
+    }
   },
   {
     id: 'yfibnb',
@@ -1642,7 +2155,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x68Ff2ca47D27db5Ac0b5c46587645835dD51D3C1',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 43
+    }
   },
   {
     id: 'bchbnb',
@@ -1663,7 +2184,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x54EdD846dB17f43b6e43296134ECD96284671E81',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 44
+    }
   },
   {
     id: 'xtzbnb',
@@ -1684,7 +2213,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x5acaC332F0F49c8bAdC7aFd0134aD19D3DB972e6',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 45
+    }
   },
   {
     id: 'yfiibnb',
@@ -1705,7 +2242,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x574a978c2D0d36D707a05E459466C7A1054F1210',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 46
+    }
   },
   {
     id: 'atombnb',
@@ -1726,7 +2271,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x2333c77FC0B2875c11409cdCD3C75D42D402E834',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 47
+    }
   },
   {
     id: 'xrpbnb',
@@ -1747,7 +2300,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xC7b4B32A3be2cB6572a1c9959401F832Ce47a6d2',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 48
+    }
   },
   {
     id: 'alphabnb',
@@ -1768,7 +2329,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x4e0f3385d932F7179DeE045369286FFa6B03d887',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 49
+    }
   },
   {
     id: 'btcbnb',
@@ -1789,7 +2358,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x7561EEe90e24F3b348E1087A005F78B4c8453524',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 50
+    }
   },
   {
     id: 'ethbnb',
@@ -1810,7 +2387,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x70D8929d04b60Af4fb9B58713eBcf18765aDE422',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 51
+    }
   },
   {
     id: 'xvsbnb',
@@ -1831,7 +2416,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x41182c32F854dd97bA0e0B1816022e0aCB2fc0bb',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 52
+    }
   },
   {
     id: 'twtbnb',
@@ -1852,7 +2445,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x610e7a287c27dfFcaC0F0a94f547Cc1B770cF483',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 53
+    }
   },
   {
     id: 'linkbnb',
@@ -1873,7 +2474,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xaeBE45E3a03B734c68e5557AE04BFC76917B4686',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 54
+    }
   },
   {
     id: 'eosbnb',
@@ -1894,7 +2503,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x981d2Ba1b298888408d342C39c2Ab92e8991691e',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 55
+    }
   },
   {
     id: 'dotbnb',
@@ -1915,7 +2532,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xbCD62661A6b1DEd703585d3aF7d7649Ef4dcDB5c',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 56
+    }
   },
   {
     id: 'bandbnb',
@@ -1936,7 +2561,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xc639187ef82271D8f517de6FEAE4FaF5b517533c',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 57
+    }
   },
   {
     id: 'adabnb',
@@ -1957,7 +2590,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xBA51D1AB95756ca4eaB8737eCD450cd8F05384cF',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 58
+    }
   },
   {
     id: 'busdbnb',
@@ -1978,7 +2619,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x1B96B92314C44b159149f7E0303511fB2Fc4774f',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 59
+    }
   },
   {
     id: 'waultbnb',
@@ -2028,7 +2677,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x9c4f6a5050CF863e67a402E8b377973b4E3372c1',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 4
+    }
   },
   {
     id: 'atmbnb',
@@ -2049,7 +2706,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xd5b3ebf1a85d32c73a82b40f75e1cd929caf4029',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 2
+    }
   },
   {
     id: 'juvbnb',
@@ -2070,7 +2735,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x51a2ffa5b7de506f9a22549e48b33f6cf0d9030e',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 1
+    }
   },
   {
     id: 'ogbnb',
@@ -2091,7 +2764,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x64373608f2E93Ea97aD4D8Ca2CCE6B2575dB2F55',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 5
+    }
   },
   {
     id: 'asrbnb',
@@ -2112,7 +2793,15 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xd6b900d5308356317299dafe303e661271aa12f1',
-    categories: ['Pancake']
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 3
+    }
   },
 
 ];

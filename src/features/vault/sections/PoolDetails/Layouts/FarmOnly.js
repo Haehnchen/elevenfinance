@@ -15,45 +15,29 @@ import Step from './Step/Step';
 import styles from './styles';
 const useStyles = makeStyles(styles);
 
-const Farm = ({ pool, index, balanceSingle, depositedAmount, stakedAmount, pendingRewards }) => {
+const FarmOnly = ({ pool, index, balanceSingle, stakedAmount, pendingRewards }) => {
   const { t } = useTranslation();
   const classes = useStyles();
 
   return (
     <>
-      {/* Deposited Balance */}
-      <Grid item xs={12} lg={3}>
-        <Step number={1} label={'Deposit to Vault'} />
+      {/* Tokens Balance */}
+      <Grid item xs={12} sm={6} lg={4}>
+        <Step number={1} label={'Stake in Farm'} />
 
         <div className={classes.detailsSection}>
           <div className={classes.balance}>{formatDecimals(balanceSingle)}</div>
           {pool.price && (
             <div className={classes.balanceSecondary}>${balanceSingle.times(pool.price).toFixed(2)}</div>
           )}
-          <div className={classes.balanceDescription}>{t('Vault-Balance')}</div>
-
-          <DepositButton pool={pool} index={index} balance={balanceSingle} />
-        </div>
-      </Grid>
-
-      {/* Deposited Tokens */}
-      <Grid item xs={12} sm={6} lg={3}>
-        <Step number={2} label={'Stake in Farm'} />
-
-        <div className={classes.detailsSection}>
-          <div className={classes.balance}>{formatDecimals(depositedAmount)}</div>
-          {pool.price && (
-            <div className={classes.balanceSecondary}>${depositedAmount.times(pool.price).toFixed(2)}</div>
-          )}
           <div className={classes.balanceDescription}>{t('Vault-Deposited')}</div>
 
-          <StakeButton pool={pool} index={index} balance={depositedAmount} />&nbsp;&nbsp;
-          <WithdrawButton pool={pool} index={index} balance={depositedAmount} />
+          <StakeButton pool={pool} index={index} balance={balanceSingle} />
         </div>
       </Grid>
 
       {/* Deposited Balance */}
-      <Grid item xs={12} sm={6} lg={3}>
+      <Grid item xs={12} sm={6} lg={4}>
         <Step />
 
         <div className={classes.detailsSection}>
@@ -68,8 +52,8 @@ const Farm = ({ pool, index, balanceSingle, depositedAmount, stakedAmount, pendi
       </Grid>
 
       {/* Farm Earnings */}
-      <Grid item xs={12} lg={3}>
-        <Step number={3} label={'Harvest the Rewards'} />
+      <Grid item xs={12} lg={4}>
+        <Step number={2} label={'Harvest the Rewards'} />
 
         <div className={classes.detailsSection}>
           <div className={classes.balanceWithLogo + (pool.price ? ' ' + classes.balanceWithPadding : '')}>
@@ -89,4 +73,4 @@ const Farm = ({ pool, index, balanceSingle, depositedAmount, stakedAmount, pendi
   );
 }
 
-export default Farm;
+export default FarmOnly;
