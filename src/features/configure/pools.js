@@ -76,7 +76,7 @@ export const pools = [
     depostLimit:0,
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
-    earnedToken: 'ELE',
+    earnedToken: 'ELE-BNB LP',
     earnedTokenAddress: '0x1f43e18a2558aef9276a00e041c57ba589813eb2',
     defaultApy: "39.54",
     pricePerFullShare: 1,

@@ -337,8 +337,16 @@ export default function SectionPools() {
       {/* Pools */}
       {Boolean(networkId === Number(process.env.NETWORK_ID)) && searchResults.map((pool, index) => {
         let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
-        let singleDepositedBalance = byDecimals(tokens[pool.earnedToken].tokenBalance, pool.itokenDecimals);
+        let singleDepositedBalance = pool.earnContractAddress
+          ? byDecimals(tokens[pool.earnedToken].tokenBalance, pool.itokenDecimals)
+          : new BigNumber(0);
         let depositedAndStaked = singleDepositedBalance?.plus(pool.stakedAmount || 0).times(pool.pricePerFullShare);
+
+        let depositedLabels = [
+          pool.earnContractAddress ? 'Deposited' : null,
+          pool.farm ? 'Staked' : null
+        ];
+
         return (
           <Grid item xs={12} container key={index} style={{ marginBottom: "24px" }} spacing={0}>
             <div style={{ width: "100%" }}>
@@ -404,7 +412,7 @@ export default function SectionPools() {
                             {!openedCardList.includes(index) && (
                               <Grid item style={{ width: "200px" }}>
                                 <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>{pool.token == 'OG-BNB LP' || pool.token == 'PSG-BNB LP' || pool.token == 'JUV-BNB LP' ? forMat(depositedAndStaked) : forMat(depositedAndStaked).toFixed(6)}</Typography>
-                                <Typography className={classes.iconContainerSubTitle} variant="body2">{'Deposited' + (pool.farm ? ' + Staked' : '')}</Typography>
+                                <Typography className={classes.iconContainerSubTitle} variant="body2">{depositedLabels.filter(label => !! label).join(' + ')}</Typography>
                               </Grid>
                             )}
                           </Grid>
