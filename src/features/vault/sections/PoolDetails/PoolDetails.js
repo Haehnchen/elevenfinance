@@ -4,6 +4,9 @@ import BigNumber from 'bignumber.js';
 
 import Grid from '@material-ui/core/Grid';
 
+import { useConnectWallet } from 'features/home/redux/hooks';
+import { useFetchPoolRewards } from 'features/vault/redux/fetchPoolRewards';
+
 import Claimable from './Layouts/Claimable';
 import FarmOnly from './Layouts/FarmOnly';
 import WithFarm from './Layouts/WithFarm';
@@ -11,11 +14,27 @@ import WithFarm from './Layouts/WithFarm';
 import styles from './styles';
 const useStyles = makeStyles(styles);
 
-const PoolDetails = ({ pool, index, balanceSingle, sharesBalance, pendingRewards }) => {
+const PoolDetails = ({ pool, index, balanceSingle, sharesBalance }) => {
   const classes = useStyles();
+
+  const { web3, address } = useConnectWallet();
+  const { pendingRewards, fetchPoolRewards, fetchPoolRewardsPending } = useFetchPoolRewards();
 
   const [depositedAmount, setDepositedAmount] = useState(new BigNumber(0));
   const [stakedAmount, setStakedAmount] = useState(new BigNumber(0));
+
+  useEffect(() => {
+    const fetch = () => {
+      if (address && web3) {
+        fetchPoolRewards({ address, web3, pool })
+      }
+    };
+
+    fetch();
+
+    const id = setInterval(fetch, 15000);
+    return () => clearInterval(id);
+  }, [address, web3, fetchPoolRewards]);
 
   useEffect(() => {
     if (pool.pricePerFullShare) {
@@ -39,7 +58,7 @@ const PoolDetails = ({ pool, index, balanceSingle, sharesBalance, pendingRewards
           balanceSingle={balanceSingle}
           depositedAmount={depositedAmount}
           stakedAmount={stakedAmount}
-          pendingRewards={pendingRewards} />
+          pendingRewards={pendingRewards[pool.id]} />
       )}
 
       {pool.farm && ! pool.earnContractAddress && (
@@ -47,7 +66,7 @@ const PoolDetails = ({ pool, index, balanceSingle, sharesBalance, pendingRewards
           index={index}
           balanceSingle={balanceSingle}
           stakedAmount={stakedAmount}
-          pendingRewards={pendingRewards} />
+          pendingRewards={pendingRewards[pool.id]} />
       )}
 
       {pool.claimable && (
@@ -55,7 +74,7 @@ const PoolDetails = ({ pool, index, balanceSingle, sharesBalance, pendingRewards
           index={index}
           balanceSingle={balanceSingle}
           depositedAmount={depositedAmount}
-          pendingRewards={pendingRewards} />
+          pendingRewards={pendingRewards[pool.id]} />
       )}
     </Grid>
   );

@@ -36,6 +36,7 @@ const initialState = {
   fetchFarmUnstakePending: {},
   fetchApprovalPending: {},
   fetchFarmAllowanceDone: {},
+  fetchPoolRewardsPending: {},
   fetchFarmAllowancePending: {},
   fetchFarmApprovalPending: {},
   fetchClaimPending: {},

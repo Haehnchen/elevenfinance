@@ -36,7 +36,6 @@ import {
   useFetchPoolBalances,
   useFetchContractApy,
   useFetchPoolsInfo,
-  useFetchPendingRewards,
   useFetchFarmsStaked
 } from '../redux/hooks';
 
@@ -65,7 +64,6 @@ export default function SectionPools({ filtersCategory }) {
   const { categories } = useFetchPoolsInfo();
   const { tokens, fetchBalances } = useFetchBalances();
   const { fetchFarmsStaked, fetchFarmsStakedDone } = useFetchFarmsStaked();
-  const { pendingRewards, fetchPendingRewards } = useFetchPendingRewards();
   const [openedCardList, setOpenCardList] = useState([0]);
   const classes = useStyles();
 
@@ -182,13 +180,11 @@ export default function SectionPools({ filtersCategory }) {
     if (address && web3) {
       fetchBalances({ address, web3, tokens });
       fetchPoolBalances({ address, web3, pools });
-      fetchPendingRewards({ address, web3, pools });
       fetchFarmsStaked({ address, web3, pools});
 
       const id = setInterval(() => {
         fetchBalances({ address, web3, tokens });
         fetchPoolBalances({ address, web3, pools });
-        fetchPendingRewards({ address, web3, pools });
         fetchFarmsStaked({ address, web3, pools});
       }, 10000);
       return () => clearInterval(id);
@@ -512,18 +508,13 @@ export default function SectionPools({ filtersCategory }) {
                   <Grid container>
                     {pool.farm || pool.claimable ? (
                       <PoolDetails pool={pool}
-                                index={index}
-                                balanceSingle={balanceSingle}
-                                sharesBalance={singleDepositedBalance}
-                                pendingRewards={pendingRewards[pool.id]} />
+                          index={index}
+                          balanceSingle={balanceSingle}
+                          sharesBalance={singleDepositedBalance} />
                     ) : (
                       <Grid item container xs={12} style={{ marginLeft: 0, marginRight: 0 }}>
                         <DepositSection pool={pool} index={index} balanceSingle={balanceSingle}/>
                         <WithdrawSection pool={pool} index={index} sharesBalance={singleDepositedBalance} />
-
-                        {pool.claimable && (
-                          <HarvestSection pool={pool} index={index} pendingRewards={pendingRewards[pool.id]} />
-                        )}
                       </Grid>
                     )}
                   </Grid>

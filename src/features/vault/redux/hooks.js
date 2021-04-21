@@ -6,6 +6,7 @@ export { useFetchDeposit } from './fetchDeposit';
 export { useFetchWithdraw } from './fetchWithdraw';
 export { useFetchContractApy } from './fetchContractApy';
 export { useFetchPendingRewards } from './fetchPendingRewards';
+export { useFetchPoolRewards } from './fetchPoolRewards';
 export { useFetchClaim } from './fetchClaim';
 export { useFetchFarmAllowance } from './fetchFarmAllowance';
 export { useFetchFarmApproval } from './fetchFarmApproval';

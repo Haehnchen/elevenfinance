@@ -6,6 +6,7 @@ import { reducer as fetchDepositReducer } from './fetchDeposit';
 import { reducer as fetchWithdrawReducer } from './fetchWithdraw';
 import { reducer as fetchContractApyReducer } from './fetchContractApy';
 import { reducer as fetchPendingRewardsReducer } from './fetchPendingRewards';
+import { reducer as fetchPoolRewardsReducer } from './fetchPoolRewards';
 import { reducer as fetchClaimReducer } from './fetchClaim';
 import { reducer as fetchFarmAllowanceReducer } from './fetchFarmAllowance';
 import { reducer as fetchFarmApprovalReducer } from './fetchFarmApproval';
@@ -28,7 +29,8 @@ const reducers = [
   fetchFarmsStakedReducer,
   fetchFarmClaimReducer,
   fetchFarmStakeReducer,
-  fetchFarmUnstakeReducer
+  fetchFarmUnstakeReducer,
+  fetchPoolRewardsReducer
 ];
 
 
