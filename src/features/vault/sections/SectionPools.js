@@ -55,7 +55,7 @@ import WithdrawSection from './PoolDetails/WithdrawSection/WithdrawSection';
 import HarvestSection from './PoolDetails/HarvestSection/HarvestSection';
 import PoolDetails from './PoolDetails/PoolDetails';
 
-export default function SectionPools() {
+export default function SectionPools({ filtersCategory }) {
 
   const nervePools = ['nrvETH', 'nrvBTC', '3NRV', 'NRVBUSD'];
 
@@ -81,6 +81,14 @@ export default function SectionPools() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
+    if (filtersCategory) {
+      categories.forEach(category => {
+        if (category.name.toLowerCase() == filtersCategory.toLowerCase()) {
+          setFiltersCategories([category.name]);
+        }
+      })
+    }
+
     loadData();
   }, []);
 
@@ -95,6 +103,7 @@ export default function SectionPools() {
       pool["vault"] = vault;
       pool["tvl"] = tvl;
       pool['price'] = json[token]?.price;
+      pool['farmStats'] = json[token]?.farm;
       return pool;
     });
 
@@ -206,24 +215,49 @@ export default function SectionPools() {
   const units = ["", "K", "Million", "Billion", "Trillion", "Quadrillion", "Quintillion", "Sextillion", "Septillion", "Octillion", "Nonillion", "Decillion", "Undecillion"];
 
   const getApy = pool => {
-    if (pool.vault === undefined) {
+    const stats = pool.claimable
+      ? pool.vault
+      : pool.farmStats;
+
+    if (stats === undefined) {
       return "";
-    } else {
-      const vaultApy = pool.vault.apy;
-      try{
-        return millify(vaultApy, { units, space: true });
-      }catch{return Number.parseFloat(vaultApy).toExponential(2);}
+    }
+
+    const vaultApy = stats.apy;
+    try {
+      return millify(vaultApy, { units, space: true });
+    } catch {
+      return Number.parseFloat(vaultApy).toExponential(2);
     }
   }
 
   const getAprd = pool => {
-    if (pool.vault === undefined) {
+    const stats = pool.claimable
+      ? pool.vault
+      : pool.farmStats;
+
+    if (stats === undefined) {
       return "";
-    } else {
-      const vaultAprd = pool.vault.aprd;
-      try{
-        return millify(vaultAprd, { units, space: true });
-      }catch{return "--"}
+    }
+
+    const vaultAprd = stats.aprd;
+    try {
+      return millify(vaultAprd, { units, space: true });
+    } catch {
+      return "--"
+    }
+  }
+
+  const getEleApr = pool => {
+    if (pool.farmStats === undefined) {
+      return "";
+    }
+
+    const eleApr = pool.farmStats.aprl;
+    try {
+      return millify(eleApr, { units, space: true });
+    } catch {
+      return '--'
     }
   }
 
@@ -421,11 +455,16 @@ export default function SectionPools() {
                           {pool.earnContractAddress && (
                             <Grid item>
                               <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
-                                <span>{nervePools.includes(pool.name) ? "APR" : "APY" }: {getApy(pool)} %</span>
+                                <span>{pool.claimable ? "APR" : "APY" }: {getApy(pool)} %</span>
                               </Typography>
                               <Typography className={classes.iconContainerSubTitle} variant="body2">
-                                <span>{nervePools.includes(pool.name) ? "ELE APR" : "APRD" }: {getAprd(pool)} %</span>
+                                <span>{pool.claimable ? "ELE APR" : "APRD" }: {getAprd(pool)} %</span>
                               </Typography>
+                              {!pool.claimable && (
+                                <Typography className={classes.iconContainerSubTitle} variant="body2" style={{paddingTop: 5}}>
+                                  <span>ELE APR: {getEleApr(pool)} %</span>
+                                </Typography>
+                              )}
                             </Grid>
                           )}
                         </Grid>

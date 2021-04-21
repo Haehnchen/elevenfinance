@@ -8,7 +8,7 @@ import SectionTitle from './sections/SectionTitle';
 import SectionPools from './sections/SectionPools';
 // hooks
 
-export default function VaultPage() {
+export default function VaultPage(props) {
   useEffect(() => {
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
@@ -16,7 +16,7 @@ export default function VaultPage() {
   return (
     <>
       <SectionTitle />
-      <SectionPools />
+      <SectionPools filtersCategory={props?.match?.params.category} />
     </>
   );
 }
