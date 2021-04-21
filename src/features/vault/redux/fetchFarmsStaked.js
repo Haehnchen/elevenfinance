@@ -1,9 +1,10 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
-import async from 'async';
+import { MultiCall } from 'eth-multicall';
 
 import { byDecimals } from 'features/helpers/bignumber';
-import { fetchFarmStaked } from '../../web3';
+import { getNetworkMulticall } from 'features/helpers/getNetworkData';
+import { pool4Abi } from 'features/configure/abi';
 
 import {
   VAULT_FETCH_FARMS_STAKED_BEGIN,
@@ -20,48 +21,44 @@ export function fetchFarmsStaked({ address, web3, pools }) {
     const promise = new Promise((resolve, reject) => {
       const farmPools = pools.filter(pool => pool.farm);
 
-      async.map(farmPools, (pool, callback) => {
-        const { earnedTokenDecimals, earnContractAddress, masterchefPid } = pool.farm;
+      const multicall = new MultiCall(web3, getNetworkMulticall());
 
-        fetchFarmStaked({
-          web3,
-          address,
-          earnContractAddress,
-          earnContractAbi: null,
-          masterchefPid
-        }).then(data => {
-          callback(null, {
-            id: pool.id,
-            stakedAmount: data
-              ? byDecimals(data, earnedTokenDecimals)
-              : null
+      const calls = farmPools.map(pool => {
+        const { earnContractAddress, masterchefPid } = pool.farm;
+
+        const contract = new web3.eth.Contract(pool4Abi, earnContractAddress);
+        return {
+          stakedAmount: contract.methods.userInfo(masterchefPid, address)
+        };
+      });
+
+      multicall
+        .all([calls])
+        .then(([results]) => {
+          farmPools.map((farmPool, index) => {
+            const stakedAmount = byDecimals(results[index].stakedAmount[0], farmPool.farm.earnedTokenDecimals);
+
+            pools.map(pool => {
+              if (pool.id == farmPool.id) {
+                pool.stakedAmount = stakedAmount;
+              }
+            });
+          });
+
+          dispatch({
+            type: VAULT_FETCH_FARMS_STAKED_SUCCESS,
+            data: pools,
           })
+
+          resolve();
         })
-        .catch(error => callback(error.message || error))
-      }, (error, farmPools) => {
-        if (error) {
+        .catch(error => {
           dispatch({
             type: VAULT_FETCH_FARMS_STAKED_FAILURE,
-          })
-          return reject(error.message || error)
-        }
+          });
 
-        pools = pools.map(pool => {
-          farmPools.forEach(farmPool => {
-            if (farmPool.id == pool.id) {
-              pool.stakedAmount = farmPool.stakedAmount;
-            }
-          })
-
-          return pool;
-        })
-
-        dispatch({
-          type: VAULT_FETCH_FARMS_STAKED_SUCCESS,
-          data: pools,
-        })
-        resolve()
-      });
+          return reject(error.message || error);
+        });
     });
 
     return promise;

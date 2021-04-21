@@ -1,9 +1,13 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+import { MultiCall } from 'eth-multicall';
 import async from 'async';
 
-import { fetchPendingEle, fetchPendingReward } from '../../web3';
+import { getNetworkMulticall } from 'features/helpers/getNetworkData';
 import { byDecimals } from 'features/helpers/bignumber';
+import { fetchPendingEle, fetchPendingReward } from '../../web3';
+
+import { pool4Abi, vaultFarmAbi } from 'features/configure/abi';
 
 import {
   VAULT_FETCH_PENDING_REWARDS_BEGIN,
@@ -20,6 +24,58 @@ export function fetchPendingRewards({ address, web3, pools }) {
     const promise = new Promise((resolve, reject) => {
       const farmPools = pools.filter(pool => pool.claimable || pool.farm);
 
+      // TODO: multicall, doesn't work if msg.sender isn't the users address
+      // const calls = farmPools.map(pool => {
+      //   if (pool.claimable) {
+      //     const { earnContractAddress } = pool;
+      //     const contract = new web3.eth.Contract(vaultFarmAbi, earnContractAddress);
+      //     return {
+      //       pendingEle: contract.methods.pendingEleven(address),
+      //       pendingToken: contract.methods['pending' + pool.claimableRewardMethod](address)
+      //     }
+      //   } else {
+      //     const { earnContractAddress, masterchefPid } = pool.farm;
+      //     const contract = new web3.eth.Contract(pool4Abi, earnContractAddress);;
+      //     return {
+      //       pendingEle: contract.methods.pendingEleven(masterchefPid, address),
+      //     }
+      //   }
+      // });
+
+      // const multicall = new MultiCall(web3, getNetworkMulticall());
+      // multicall.all([calls])
+      //   .then(([results]) => {
+      //     const rewards = {};
+
+      //     farmPools.map((pool, index) => {
+      //       const { tokenDecimals } = pool;
+
+      //       rewards[pool.id] = {
+      //         pendingEle: results[index].pendingEle
+      //           ? byDecimals(results[index].pendingEle, 18)
+      //           : null,
+      //         pendingToken: results[index].pendingToken
+      //           ? byDecimals(results[index].pendingToken, tokenDecimals)
+      //           : null,
+      //       }
+      //     });
+
+      //     dispatch({
+      //       type: VAULT_FETCH_PENDING_REWARDS_SUCCESS,
+      //       data: rewards,
+      //     });
+
+      //     resolve();
+      //   })
+      //   .catch(error => {
+      //     dispatch({
+      //       type: VAULT_FETCH_PENDING_REWARDS_FAILURE,
+      //     });
+
+      //     return reject(error.message || error);
+      //   });
+
+      // TODO: separate calls
       async.map(farmPools, (pool, callback) => {
         const { tokenDecimals } = pool;
 
