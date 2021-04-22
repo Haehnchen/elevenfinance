@@ -54,7 +54,9 @@ export function fetchPoolBalances(data) {
       const multicall = new MultiCall(web3, getNetworkMulticall());
       multicall.all([tokenCalls, vaultCalls])
         .then(data => {
-          const newPools = pools.map(pool => {
+          const poolsData = {};
+
+          pools.map(pool => {
             let allowance = 0;
             let pricePerFullShare = 1;
 
@@ -66,16 +68,12 @@ export function fetchPoolBalances(data) {
               pricePerFullShare = byDecimals(data[1][callIndex].pricePerShare * multiplier, 18).toNumber() || 1;
             }
 
-            return {
-              ...pool,
-              allowance,
-              pricePerFullShare
-            }
+            poolsData[pool.id] = { allowance, pricePerFullShare }
           })
 
           dispatch({
             type: VAULT_FETCH_POOL_BALANCES_SUCCESS,
-            data: newPools,
+            data: poolsData,
           });
 
           resolve()
@@ -99,9 +97,10 @@ export function useFetchPoolBalances() {
   // if array, means args passed to the action creator
   const dispatch = useDispatch();
 
-  const { pools, fetchPoolBalancesPending } = useSelector(
+  const { pools, fetchPoolBalancesDone, fetchPoolBalancesPending } = useSelector(
     state => ({
       pools: state.vault.pools,
+      fetchPoolBalancesDone: state.vault.fetchPoolBalancesDone,
       fetchPoolBalancesPending: state.vault.fetchPoolBalancesPending,
     }),
     shallowEqual,
@@ -117,11 +116,14 @@ export function useFetchPoolBalances() {
   return {
     pools,
     fetchPoolBalances: boundAction,
+    fetchPoolBalancesDone,
     fetchPoolBalancesPending
   };
 }
 
 export function reducer(state, action) {
+  const { pools } = state;
+
   switch (action.type) {
     case VAULT_FETCH_POOL_BALANCES_BEGIN:
       // Just after a request is sent
@@ -131,10 +133,23 @@ export function reducer(state, action) {
       };
 
     case VAULT_FETCH_POOL_BALANCES_SUCCESS:
-      // The request is success
+      const updatedPools = pools.map(pool => {
+        if (! action.data[pool.id]) {
+          return pool;
+        }
+
+        const { allowance, pricePerFullShare } = action.data[pool.id];
+        return {
+          ...pool,
+          allowance,
+          pricePerFullShare
+        }
+      });
+
       return {
         ...state,
-        pools: action.data,
+        pools: updatedPools,
+        fetchPoolBalancesDone: true,
         fetchPoolBalancesPending: false,
       };
 

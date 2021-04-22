@@ -27,6 +27,7 @@ const initialState = {
   contractApy: {},
   farmAllowance: {},
   fetchContractApyPending: false,
+  fetchPoolBalancesDone: false,
   fetchPoolBalancesPending: false,
   fetchBalancesPending: false,
   fetchFarmsStakedDone: false,

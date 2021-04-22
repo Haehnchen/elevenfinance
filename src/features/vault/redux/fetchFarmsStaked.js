@@ -11,6 +11,7 @@ import {
   VAULT_FETCH_FARMS_STAKED_SUCCESS,
   VAULT_FETCH_FARMS_STAKED_FAILURE
 } from './constants';
+import BigNumber from 'bignumber.js';
 
 export function fetchFarmsStaked({ address, web3, pools }) {
   return dispatch => {
@@ -35,19 +36,19 @@ export function fetchFarmsStaked({ address, web3, pools }) {
       multicall
         .all([calls])
         .then(([results]) => {
-          farmPools.map((farmPool, index) => {
-            const stakedAmount = byDecimals(results[index].stakedAmount[0], farmPool.farm.earnedTokenDecimals);
+          const stakedAmounts = {};
 
-            pools.map(pool => {
-              if (pool.id == farmPool.id) {
-                pool.stakedAmount = stakedAmount;
-              }
-            });
-          });
+          pools.map(pool => {
+            const callIndex = farmPools.findIndex(farmPool => farmPool.id == pool.id);
+
+            stakedAmounts[pool.id] = callIndex >= 0
+              ? byDecimals(results[callIndex].stakedAmount[0], pool.farm.earnedTokenDecimals)
+              : new BigNumber(0);
+          })
 
           dispatch({
             type: VAULT_FETCH_FARMS_STAKED_SUCCESS,
-            data: pools,
+            data: stakedAmounts,
           })
 
           resolve();
@@ -93,6 +94,8 @@ export function useFetchFarmsStaked() {
 }
 
 export function reducer(state, action) {
+  const { pools } = state;
+
   switch (action.type) {
     case VAULT_FETCH_FARMS_STAKED_BEGIN:
       return {
@@ -101,9 +104,18 @@ export function reducer(state, action) {
       };
 
     case VAULT_FETCH_FARMS_STAKED_SUCCESS:
+      const updatedPools = pools.map(pool => {
+        const stakedAmount = action.data[pool.id];
+
+        return {
+          ...pool,
+          stakedAmount
+        }
+      });
+
       return {
         ...state,
-        pools: action.data,
+        pools: updatedPools,
         fetchFarmsStakedDone: true,
         fetchFarmsStakedPending: false,
       };
