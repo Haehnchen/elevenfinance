@@ -14,14 +14,11 @@ import WithFarm from './Layouts/WithFarm';
 import styles from './styles';
 const useStyles = makeStyles(styles);
 
-const PoolDetails = ({ pool, index, balanceSingle, sharesBalance }) => {
+const PoolDetails = ({ pool, index, tokenBalance, depositedBalance, stakedBalance }) => {
   const classes = useStyles();
 
   const { web3, address } = useConnectWallet();
   const { pendingRewards, fetchPoolRewards, fetchPoolRewardsPending } = useFetchPoolRewards();
-
-  const [depositedAmount, setDepositedAmount] = useState(new BigNumber(0));
-  const [stakedAmount, setStakedAmount] = useState(new BigNumber(0));
 
   useEffect(() => {
     const fetch = () => {
@@ -36,44 +33,30 @@ const PoolDetails = ({ pool, index, balanceSingle, sharesBalance }) => {
     return () => clearInterval(id);
   }, [address, web3, fetchPoolRewards]);
 
-  useEffect(() => {
-    if (pool.pricePerFullShare) {
-      const pricePerShare = new BigNumber(pool.pricePerFullShare);
-
-      if (sharesBalance) {
-        setDepositedAmount(sharesBalance.times(pricePerShare));
-      }
-
-      if (pool.stakedAmount) {
-        setStakedAmount(pool.stakedAmount.times(pricePerShare));
-      }
-    }
-  }, [pool, sharesBalance]);
-
   return (
     <Grid item container xs={12} className={classes.poolDetails}>
       {pool.farm && pool.earnContractAddress && (
         <WithFarm pool={pool}
           index={index}
-          balanceSingle={balanceSingle}
-          depositedAmount={depositedAmount}
-          stakedAmount={stakedAmount}
+          tokenBalance={tokenBalance}
+          depositedBalance={depositedBalance}
+          stakedBalance={stakedBalance}
           pendingRewards={pendingRewards[pool.id]} />
       )}
 
       {pool.farm && ! pool.earnContractAddress && (
         <FarmOnly pool={pool}
           index={index}
-          balanceSingle={balanceSingle}
-          stakedAmount={stakedAmount}
+          tokenBalance={tokenBalance}
+          stakedBalance={stakedBalance}
           pendingRewards={pendingRewards[pool.id]} />
       )}
 
       {pool.claimable && (
         <Claimable pool={pool}
           index={index}
-          balanceSingle={balanceSingle}
-          depositedAmount={depositedAmount}
+          tokenBalance={tokenBalance}
+          depositedBalance={depositedBalance}
           pendingRewards={pendingRewards[pool.id]} />
       )}
     </Grid>

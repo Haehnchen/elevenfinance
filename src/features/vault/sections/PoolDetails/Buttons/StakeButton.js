@@ -50,23 +50,18 @@ const StakeButton = ({ pool, index, balance }) => {
       .catch(error => enqueueSnackbar(`Approval error: ${error}`, { variant: 'error' }))
   }
 
-  const handleStake = (amount) => {
-    if (! amount || amount == '0') {
+  const handleStake = (stakeAmount) => {
+    if (! stakeAmount || stakeAmount == '0') {
       enqueueSnackbar(`Enter the amount to stake`, { variant: 'error' })
       return;
     }
 
-    let amountValue = amount.replace(',', '')
-
-    fetchFarmStake({
-      address,
-      web3,
-      pool,
-      amount: new BigNumber(amountValue)
+    const amount = new BigNumber(stakeAmount.replace(',', ''))
         .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
         .dividedBy(pool.pricePerFullShare)
-        .toFixed(0),
-    })
+        .toFixed(0);
+
+    fetchFarmStake({ address, web3, pool, amount })
       .then(() => {
         setAmountDialogOpen(false);
         enqueueSnackbar(`Stake success`, { variant: 'success' })

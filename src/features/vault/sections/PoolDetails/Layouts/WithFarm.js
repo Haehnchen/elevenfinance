@@ -15,7 +15,7 @@ import Step from './Step/Step';
 import styles from './styles';
 const useStyles = makeStyles(styles);
 
-const WithFarm = ({ pool, index, balanceSingle, depositedAmount, stakedAmount, pendingRewards }) => {
+const WithFarm = ({ pool, index, tokenBalance, depositedBalance, stakedBalance, pendingRewards }) => {
   const { t } = useTranslation();
   const classes = useStyles();
 
@@ -26,13 +26,13 @@ const WithFarm = ({ pool, index, balanceSingle, depositedAmount, stakedAmount, p
         <Step number={1} label={'Deposit to Vault'} />
 
         <div className={classes.detailsSection}>
-          <div className={classes.balance}>{formatDecimals(balanceSingle)}</div>
+          <div className={classes.balance}>{formatDecimals(tokenBalance)}</div>
           {pool.price && (
-            <div className={classes.balanceSecondary}>${balanceSingle.times(pool.price).toFixed(2)}</div>
+            <div className={classes.balanceSecondary}>${tokenBalance.times(pool.price).toFixed(2)}</div>
           )}
           <div className={classes.balanceDescription}>{t('Vault-Balance')}</div>
 
-          <DepositButton pool={pool} index={index} balance={balanceSingle} />
+          <DepositButton pool={pool} index={index} balance={tokenBalance} />
         </div>
       </Grid>
 
@@ -41,14 +41,14 @@ const WithFarm = ({ pool, index, balanceSingle, depositedAmount, stakedAmount, p
         <Step number={2} label={'Stake in Farm'} />
 
         <div className={classes.detailsSection}>
-          <div className={classes.balance}>{formatDecimals(depositedAmount)}</div>
+          <div className={classes.balance}>{formatDecimals(depositedBalance)}</div>
           {pool.price && (
-            <div className={classes.balanceSecondary}>${depositedAmount.times(pool.price).toFixed(2)}</div>
+            <div className={classes.balanceSecondary}>${depositedBalance.times(pool.price).toFixed(2)}</div>
           )}
           <div className={classes.balanceDescription}>{t('Vault-Deposited')}</div>
 
-          <StakeButton pool={pool} index={index} balance={depositedAmount} />&nbsp;&nbsp;
-          <WithdrawButton pool={pool} index={index} balance={depositedAmount} />
+          <StakeButton pool={pool} index={index} balance={depositedBalance} />&nbsp;&nbsp;
+          <WithdrawButton pool={pool} index={index} balance={depositedBalance} />
         </div>
       </Grid>
 
@@ -57,13 +57,13 @@ const WithFarm = ({ pool, index, balanceSingle, depositedAmount, stakedAmount, p
         <Step />
 
         <div className={classes.detailsSection}>
-          <div className={classes.balance}>{formatDecimals(stakedAmount)}</div>
+          <div className={classes.balance}>{formatDecimals(stakedBalance)}</div>
           {pool.price && (
-            <div className={classes.balanceSecondary}>${stakedAmount.times(pool.price).toFixed(2)}</div>
+            <div className={classes.balanceSecondary}>${stakedBalance.times(pool.price).toFixed(2)}</div>
           )}
           <div className={classes.balanceDescription}>{t('Vault-Staked')}</div>
 
-          <UnstakeButton pool={pool} index={index} balance={stakedAmount} />
+          <UnstakeButton pool={pool} index={index} balance={stakedBalance} />
         </div>
       </Grid>
 

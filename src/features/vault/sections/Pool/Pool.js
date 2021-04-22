@@ -28,7 +28,9 @@ const Pool = ({ pool, index, tokens, fetchPoolBalancesDone }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [tokenBalance, setTokenBalance] = useState(new BigNumber(0));
   const [depositedBalance, setDepositedBalance] = useState(new BigNumber(0));
+  const [stakedBalance, setStakedBalance] = useState(new BigNumber(0));
   const [depositedAndStaked, setDepositedAndStaked] = useState(new BigNumber(0));
+
   const isZh = Boolean((i18n.language == 'zh') || (i18n.language == 'zh-CN'));
 
   const toggleCard = useCallback(() => setIsOpen(!isOpen), [isOpen]);
@@ -46,11 +48,8 @@ const Pool = ({ pool, index, tokens, fetchPoolBalancesDone }) => {
       const stakedBalance = (pool.stakedAmount || new BigNumber(0)).times(pool.pricePerFullShare);
 
       setDepositedBalance(depositedBalance);
+      setStakedBalance(stakedBalance);
       setDepositedAndStaked(depositedBalance.plus(stakedBalance));
-
-      if (pool.id == 'ELE') {
-        console.info(pool.pricePerFullShare + ' ' + depositedBalance + ' ' + stakedBalance);
-      }
     }
   }, [tokens, pool, fetchPoolBalancesDone])
 
@@ -229,8 +228,9 @@ const Pool = ({ pool, index, tokens, fetchPoolBalancesDone }) => {
             <Grid container>
               <PoolDetails pool={pool}
                 index={index}
-                balanceSingle={tokenBalance}
-                sharesBalance={depositedBalance} />
+                tokenBalance={tokenBalance}
+                depositedBalance={depositedBalance}
+                stakedBalance={stakedBalance} />
             </Grid>
           </AccordionDetails>
         </Accordion>

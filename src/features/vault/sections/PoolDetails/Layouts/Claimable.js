@@ -13,7 +13,7 @@ import Step from './Step/Step';
 import styles from './styles';
 const useStyles = makeStyles(styles);
 
-const Claimable = ({ pool, index, balanceSingle, depositedAmount, pendingRewards }) => {
+const Claimable = ({ pool, index, tokenBalance, depositedBalance, pendingRewards }) => {
   const { t } = useTranslation();
   const classes = useStyles();
 
@@ -24,13 +24,13 @@ const Claimable = ({ pool, index, balanceSingle, depositedAmount, pendingRewards
         <Step number={1} label={'Deposit to Vault'} />
 
         <div className={classes.detailsSection}>
-          <div className={classes.balance}>{formatDecimals(balanceSingle)}</div>
+          <div className={classes.balance}>{formatDecimals(tokenBalance)}</div>
           {pool.price && (
-            <div className={classes.balanceSecondary}>${balanceSingle.times(pool.price).toFixed(2)}</div>
+            <div className={classes.balanceSecondary}>${tokenBalance.times(pool.price).toFixed(2)}</div>
           )}
           <div className={classes.balanceDescription}>{t('Vault-Balance')}</div>
 
-          <DepositButton pool={pool} index={index} balance={balanceSingle} />
+          <DepositButton pool={pool} index={index} balance={tokenBalance} />
         </div>
       </Grid>
 
@@ -39,13 +39,13 @@ const Claimable = ({ pool, index, balanceSingle, depositedAmount, pendingRewards
         <Step />
 
         <div className={classes.detailsSection}>
-          <div className={classes.balance}>{formatDecimals(depositedAmount)}</div>
+          <div className={classes.balance}>{formatDecimals(depositedBalance)}</div>
           {pool.price && (
-            <div className={classes.balanceSecondary}>${depositedAmount.times(pool.price).toFixed(2)}</div>
+            <div className={classes.balanceSecondary}>${depositedBalance.times(pool.price).toFixed(2)}</div>
           )}
           <div className={classes.balanceDescription}>{t('Vault-Deposited')}</div>
 
-          <WithdrawButton pool={pool} index={index} balance={depositedAmount} />
+          <WithdrawButton pool={pool} index={index} balance={depositedBalance} />
         </div>
       </Grid>
 

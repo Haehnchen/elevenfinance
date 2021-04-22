@@ -15,7 +15,7 @@ import Step from './Step/Step';
 import styles from './styles';
 const useStyles = makeStyles(styles);
 
-const FarmOnly = ({ pool, index, balanceSingle, stakedAmount, pendingRewards }) => {
+const FarmOnly = ({ pool, index, tokenBalance, stakedBalance, pendingRewards }) => {
   const { t } = useTranslation();
   const classes = useStyles();
 
@@ -26,13 +26,13 @@ const FarmOnly = ({ pool, index, balanceSingle, stakedAmount, pendingRewards }) 
         <Step number={1} label={'Stake in Farm'} />
 
         <div className={classes.detailsSection}>
-          <div className={classes.balance}>{formatDecimals(balanceSingle)}</div>
+          <div className={classes.balance}>{formatDecimals(tokenBalance)}</div>
           {pool.price && (
-            <div className={classes.balanceSecondary}>${balanceSingle.times(pool.price).toFixed(2)}</div>
+            <div className={classes.balanceSecondary}>${tokenBalance.times(pool.price).toFixed(2)}</div>
           )}
           <div className={classes.balanceDescription}>{t('Vault-Deposited')}</div>
 
-          <StakeButton pool={pool} index={index} balance={balanceSingle} />
+          <StakeButton pool={pool} index={index} balance={tokenBalance} />
         </div>
       </Grid>
 
@@ -41,13 +41,13 @@ const FarmOnly = ({ pool, index, balanceSingle, stakedAmount, pendingRewards }) 
         <Step />
 
         <div className={classes.detailsSection}>
-          <div className={classes.balance}>{formatDecimals(stakedAmount)}</div>
+          <div className={classes.balance}>{formatDecimals(stakedBalance)}</div>
           {pool.price && (
-            <div className={classes.balanceSecondary}>${stakedAmount.times(pool.price).toFixed(2)}</div>
+            <div className={classes.balanceSecondary}>${stakedBalance.times(pool.price).toFixed(2)}</div>
           )}
           <div className={classes.balanceDescription}>{t('Vault-Staked')}</div>
 
-          <UnstakeButton pool={pool} index={index} balance={stakedAmount} />
+          <UnstakeButton pool={pool} index={index} balance={stakedBalance} />
         </div>
       </Grid>
 
