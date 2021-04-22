@@ -125,35 +125,42 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
       </div>
 
       {/* Input */}
-      <FormControl fullWidth variant="outlined">
-        <CustomOutlinedInput
-          value={withdrawAmount.amount}
-          onChange={onInputChange}
-        />
-      </FormControl>
+      {!pool.isV1 && (
+        <FormControl fullWidth variant="outlined">
+          <CustomOutlinedInput
+            value={withdrawAmount.amount}
+            onChange={onInputChange}
+          />
+        </FormControl>
+      )}
 
       {/* Slider */}
-      <CustomSlider
-        classes={{
-          root: classes.drawSliderRoot,
-          markLabel: classes.drawSliderMarkLabel,
-        }}
-        aria-labelledby="continuous-slider"
-        value={withdrawAmount.slider}
-        onChange={onSliderChange}
-      />
+      {!pool.isV1 && (
+        <CustomSlider
+          classes={{
+            root: classes.drawSliderRoot,
+            markLabel: classes.drawSliderMarkLabel,
+          }}
+          aria-labelledby="continuous-slider"
+          value={withdrawAmount.slider}
+          onChange={onSliderChange}
+        />
+      )}
 
       {/* Withdraw Buttons */}
       <div className={classes.showDetailButtonCon}>
-        <Button
-          className={classes.withdrawButton}
-          disabled={fetchWithdrawPending[index]}
-          onClick={() => onWithdraw(false)}
-        >
-          {fetchWithdrawPending[index]
-            ? `${t('Vault-WithdrawING')}`
-            : `${t('Vault-WithdrawButton')}`}
-        </Button>
+        {!pool.isV1 && (
+          <Button
+            className={classes.withdrawButton}
+            disabled={fetchWithdrawPending[index]}
+            onClick={() => onWithdraw(false)}
+          >
+            {fetchWithdrawPending[index]
+              ? `${t('Vault-WithdrawING')}`
+              : `${t('Vault-WithdrawButton')}`}
+          </Button>
+        )}
+
         <Button
           className={classes.withdrawButton}
           disabled={fetchWithdrawPending[index]}

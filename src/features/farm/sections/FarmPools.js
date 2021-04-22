@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import classNames from "classnames";
 import { useTranslation } from 'react-i18next';
+import BigNumber from 'bignumber.js';
 import farmItemStyle from "../jss/sections/farmItemStyle";
 import Button from "components/CustomButtons/Button.js";
-import { useFetchPoolsInfo, useFetchPoolsBalances } from '../redux/hooks';
+import { useFetchPoolsInfo, useFetchPoolsBalances, useFetchWithdraw } from '../redux/hooks';
 import { useConnectWallet } from '../../home/redux/hooks';
 
 import millify from 'millify';
@@ -11,6 +12,7 @@ import millify from 'millify';
 import {
   Avatar,
   Checkbox,
+  CircularProgress,
   FormControl,
   FormControlLabel,
   Grid,
@@ -31,6 +33,7 @@ export default () => {
   let { pools } = useFetchPoolsInfo();
   const { fetchPoolsBalances, fetchPoolsBalancesDone } = useFetchPoolsBalances();
   const { web3, address, networkId } = useConnectWallet();
+  const { fetchWithdraw, fetchWithdrawPending } = useFetchWithdraw();
 
   const [searchTerm, setSearchTerm] = useState('');
   const [sortTerm, setSortTerm] = useState('default');
@@ -82,14 +85,16 @@ export default () => {
   }
 
   useEffect(() => {
-    if (pools[0].vault !== undefined) {
-      setSearchResults(pools);
-    }
-
     const term = searchTerm.toLowerCase()
     let results = pools.filter(pool =>
       pool.token.toLowerCase().includes(term)
     );
+
+    // Hide all V1-farms with zero balance from list
+    results = results.filter(pool => {
+      return ! pool.isV1
+        || (pool.stakedAmount && pool.stakedAmount.gt(0));
+    });
 
     if (onlyStakedPools) {
       results = results.filter(pool => pool.stakedAmount && pool.stakedAmount.gt(0));
@@ -111,12 +116,19 @@ export default () => {
         break;
     }
 
+    // Put all V1 pools in top of the list
+    results = _.orderBy(results, 'isV1', 'asc');
+
     setSearchResults(results);
-  }, [searchTerm, sortTerm, onlyStakedPools, onlyWithBalancePools, fetchPoolsBalancesDone])
+  }, [searchTerm, sortTerm, onlyStakedPools, onlyWithBalancePools, fetchPoolsBalancesDone, pools])
 
   const units = ["", "K", "Million", "Billion", "Trillion", "Quadrillion", "Quintillion", "Sextillion", "Septillion", "Octillion", "Nonillion", "Decillion", "Undecillion"];
 
   const farmApy = pool => {
+    if (pool.isV1) {
+      return 0;
+    }
+
     if (pool.farm === undefined || pool.farm.apy === undefined || pool.farm.apy === null) {
       return '--'
     } else {
@@ -130,6 +142,10 @@ export default () => {
   }
 
   const farmAprd = pool => {
+    if (pool.isV1) {
+      return 0;
+    }
+
     if (pool.farm === undefined || pool.farm.aprl === undefined || pool.farm.aprd === null) {
       return '--'
     } else {
@@ -139,6 +155,10 @@ export default () => {
   }
 
   const farmAprl = pool => {
+    if (pool.isV1) {
+      return 0;
+    }
+
     if (pool.farm === undefined || pool.farm.aprl === undefined || pool.farm.aprl === null) {
       return '--'
     } else {
@@ -162,6 +182,14 @@ export default () => {
     const id = setInterval(fetch, 15000);
     return () => clearInterval(id);
   }, [address, web3]);
+
+  const handleWithdrawAll = (pool, index) => {
+    const amount = new BigNumber(pool.stakedAmount)
+      .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
+      .toString(10);
+
+    fetchWithdraw(pool.id - 1, amount);
+  }
 
   const handleSearchChange = event => {
     setSearchTerm(event.target.value);
@@ -254,6 +282,10 @@ export default () => {
                 [classes.flexColumnCenter]: true,
                 [classes.farmItem]: true
               })} key={index}>
+                {pool.isV1 && (
+                  <div className={classes.poolWarning}>Migration to V2 pool is required</div>
+                )}
+
                 {/*Logo处理*/}
                 {isLP && lpTokens.length === 2 ? (
                   <div className={classes.logo}>
@@ -289,27 +321,44 @@ export default () => {
                 )}
 
                 {/*操作菜单*/}
-                <div className={classes.menu} style={isLP ? {} : { justifyContent: 'center' }}>
-                  {isLP ? (
-                    <>
-                      <Button className={classes.menuButton}
-                        href={`/#/farm/pool/${id}`}
-                        style={{ background: `#635AFF` }}>
-                        {t('Farm-Mining')}
-                      </Button>
-                      <Button
-                        className={classes.menuButton}
-                        href={`https://exchange.pancakeswap.finance/#/add/${token1}/${token2}`}
-                        target={"_blank"}
-                        style={{ background: `#FF635A` }}>
-                        {t('Farm-Get')} LP Token
-                      </Button>
-                    </>
-                  ) : <Button
+                {!pool.isV1 && (
+                  <div className={classes.menu} style={isLP ? {} : { justifyContent: 'center' }}>
+                    {isLP ? (
+                      <>
+                        <Button className={classes.menuButton}
+                          href={`/#/farm/pool/${id}`}
+                          style={{ background: `#635AFF` }}>
+                          {t('Farm-Mining')}
+                        </Button>
+                        <Button
+                          className={classes.menuButton}
+                          href={`https://exchange.pancakeswap.finance/#/add/${token1}/${token2}`}
+                          target={"_blank"}
+                          style={{ background: `#FF635A` }}>
+                          {t('Farm-Get')} LP Token
+                        </Button>
+                      </>
+                    ) : <Button
+                      className={classes.menuButton}
+                      href={`/#/farm/pool/${id}`}
+                      style={{ background: `#635AFF` }}>{t('Farm-Mining')}</Button>}
+                  </div>
+                )}
+
+                {pool.isV1 && (
+                  <Button
+                    onClick={handleWithdrawAll.bind(this, pool, index)}
                     className={classes.menuButton}
-                    href={`/#/farm/pool/${id}`}
-                    style={{ background: `#635AFF` }}>{t('Farm-Mining')}</Button>}
-                </div>
+                    style={{ background: `#FF635A` }}
+                  >
+                    {!fetchWithdrawPending[pool.id - 1] ? `${t('Vault-WithdrawButtonAll')}` : (
+                      <CircularProgress
+                        className={classes.buttonLoader}
+                        size={20}
+                        thickness={6} />
+                    )}
+                  </Button>
+                )}
               </div>
             </Grid>
           )

@@ -3,6 +3,7 @@ import {pool4Abi} from "../../configure";
 const pools = [
   {
     name: 'ELE-BNB LP',
+    isV1: true,
     description: '',
     token: 'ELE-BNB LP',
     tokenDescription: 'ELE-BNB LP',
@@ -65,6 +66,7 @@ const pools = [
   },
 {
     name: 'NRV-BNB LP',
+    isV1: true,
     description: '',
     token: '11NRVBNB',
     tokenDescription: '11NRVBNB',
@@ -88,6 +90,7 @@ const pools = [
 
   {
     name: 'SWIRL-BNB LP',
+    isV1: true,
     description: '',
     token: '11SWIRL',
     tokenDescription: '11SWIRL',
@@ -109,6 +112,7 @@ const pools = [
   },
   {
     name: 'ICE-BNB LP',
+    isV1: true,
     description: '',
     token: '11ICEBNB',
     tokenDescription: '11ICEBNB',
@@ -130,6 +134,7 @@ const pools = [
   },
   {
     name: 'EULER-BNB LP',
+    isV1: true,
     description: '',
     token: '11EULER',
     tokenDescription: '11EULER',
@@ -171,6 +176,7 @@ const pools = [
   },
   {
     name: 'YUMCHA-BUSD LP',
+    isV1: true,
     description: '',
     token: '11YUMCHABUSD',
     tokenDescription: '11YUMCHABUSD',
@@ -192,6 +198,7 @@ const pools = [
   },
   {
     name: 'EPS-BNB LP',
+    isV1: true,
     description: '',
     token: '11EPS',
     tokenDescription: '11EPS',
@@ -233,6 +240,7 @@ const pools = [
   },
 {
     name: 'SWTH-BNB LP',
+    isV1: true,
     description: '',
     token: '11SWTHBNB',
     tokenDescription: '11SWTHBNB',
@@ -255,6 +263,7 @@ const pools = [
 
 {
     name: 'DFT-BNB LP',
+    isV1: true,
     description: '',
     token: '11DFTBNB',
     tokenDescription: '11DFTBNB',
@@ -279,6 +288,7 @@ const pools = [
 
 {
     name: 'PBTC-BNB LP',
+    isV1: true,
     description: '',
     token: '11PBTCBNB',
     tokenDescription: '11PBTCBNB',
@@ -303,6 +313,7 @@ const pools = [
 
 {
     name: 'GUM-BNB LP',
+    isV1: true,
     description: '',
     token: '11GUMBNB',
     tokenDescription: '11GUMBNB',
@@ -327,6 +338,7 @@ const pools = [
 
 {
     name: 'DEGO-BNB LP',
+    isV1: true,
     description: '',
     token: '11DEGOBNB',
     tokenDescription: '11DEGOBNB',
@@ -353,6 +365,7 @@ const pools = [
 
 {
     name: 'EASY-BNB LP',
+    isV1: true,
     description: '',
     token: '11EASYBNB',
     tokenDescription: '11EASYBNB',
@@ -377,6 +390,7 @@ const pools = [
 
 {
     name: 'ODDZ-BNB LP',
+    isV1: true,
     description: '',
     token: '11ODDZBNB',
     tokenDescription: '11ODDZBNB',
@@ -401,6 +415,7 @@ const pools = [
 
 {
     name: 'APYS-BNB LP',
+    isV1: true,
     description: '',
     token: '11APYSBNB',
     tokenDescription: '11APYSBNB',
@@ -424,6 +439,7 @@ const pools = [
 
 {
     name: 'TKO-BNB LP',
+    isV1: true,
     description: '',
     token: '11TKOBNB',
     tokenDescription: '11TKOBNB',
@@ -448,6 +464,7 @@ const pools = [
 
 {
     name: 'BONDLY-BNB LP',
+    isV1: true,
     description: '',
     token: '11BONDLYBNB',
     tokenDescription: '11BONDLYBNB',
@@ -471,6 +488,7 @@ const pools = [
 
   {
     name: 'LIEN-BNB LP',
+    isV1: true,
     description: '',
     token: '11LIEN',
     tokenDescription: '11LIEN',
@@ -492,6 +510,7 @@ const pools = [
   },
   {
     name: 'ZIL-BNB LP',
+    isV1: true,
     description: '',
     token: '11ZIL',
     tokenDescription: '11ZIL',
@@ -513,6 +532,7 @@ const pools = [
   },
   {
     name: 'BELLA-BNB LP',
+    isV1: true,
     description: '',
     token: '11BELLA',
     tokenDescription: '11BELLA',
@@ -534,6 +554,7 @@ const pools = [
   },
     {
     name: 'BFI-BNB LP',
+    isV1: true,
     description: '',
     token: '11BFI',
     tokenDescription: '11BFI',
@@ -555,6 +576,7 @@ const pools = [
   },
     {
     name: 'BELT-BNB LP',
+    isV1: true,
     description: '',
     token: '11BELT',
     tokenDescription: '11BELT',
@@ -576,6 +598,7 @@ const pools = [
   },
     {
     name: 'BUX-BNB LP',
+    isV1: true,
     description: '',
     token: '11BUX',
     tokenDescription: '11BUX',
@@ -597,6 +620,7 @@ const pools = [
   },
     {
     name: 'ALICE-BNB LP',
+    isV1: true,
     description: '',
     token: '11ALICE',
     tokenDescription: '11ALICE',
@@ -618,6 +642,7 @@ const pools = [
   },
     {
     name: 'BUNNY-BNB LP',
+    isV1: true,
     description: '',
     token: '11BUNNY',
     tokenDescription: '11BUNNY',
@@ -639,6 +664,7 @@ const pools = [
   },
     {
     name: 'COS-BNB LP',
+    isV1: true,
     description: '',
     token: '11COS',
     tokenDescription: '11COS',
@@ -660,6 +686,7 @@ const pools = [
   },
     {
     name: 'BIFI-BNB LP',
+    isV1: true,
     description: '',
     token: '11BIFI',
     tokenDescription: '11BIFI',
@@ -681,6 +708,7 @@ const pools = [
   },
     {
     name: 'DUSK-BNB LP',
+    isV1: true,
     description: '',
     token: '11DUSK',
     tokenDescription: '11DUSK',
@@ -702,6 +730,7 @@ const pools = [
   },
     {
     name: 'TRADE-BNB LP',
+    isV1: true,
     description: '',
     token: '11TRADE',
     tokenDescription: '11TRADE',
@@ -723,6 +752,7 @@ const pools = [
   },
     {
     name: 'LTO-BNB LP',
+    isV1: true,
     description: '',
     token: '11LTO',
     tokenDescription: '11LTO',
@@ -744,6 +774,7 @@ const pools = [
   },
     {
     name: 'PCWS-BNB LP',
+    isV1: true,
     description: '',
     token: '11PCWS',
     tokenDescription: '11PCWS',
@@ -766,6 +797,7 @@ const pools = [
 
   {
     name: 'CAKE-BNB LP',
+    isV1: true,
     description: '',
     token: '11CAKEBNB',
     tokenDescription: '11CAKEBNB',
@@ -787,6 +819,7 @@ const pools = [
   },
   {
     name: 'ALPACA-BNB LP',
+    isV1: true,
     description: '',
     token: '11ALPACA',
     tokenDescription: '11ALPACA',
@@ -808,6 +841,7 @@ const pools = [
   },
   {
     name: 'BMXX-BNB LP',
+    isV1: true,
     description: '',
     token: '11BMXX',
     tokenDescription: '11BMXX',
@@ -829,6 +863,7 @@ const pools = [
   },
   {
     name: 'BETH-ETH LP',
+    isV1: true,
     description: '',
     token: '11BETH',
     tokenDescription: '11BETH',
@@ -850,6 +885,7 @@ const pools = [
   },
   {
     name: 'WATCH-BNB LP',
+    isV1: true,
     description: '',
     token: '11WATCH',
     tokenDescription: '11WATCH',
@@ -871,6 +907,7 @@ const pools = [
   },
   {
     name: 'BOPEN-BNB LP',
+    isV1: true,
     description: '',
     token: '11BOPEN',
     tokenDescription: '11BOPEN',
@@ -893,6 +930,7 @@ const pools = [
 
   {
     name: 'DODO-BNB LP',
+    isV1: true,
     description: '',
     token: '11DODO',
     tokenDescription: '11DODO',
@@ -915,6 +953,7 @@ const pools = [
 
   {
     name: 'SWINGBY-BNB LP',
+    isV1: true,
     description: '',
     token: '11SWINGBY',
     tokenDescription: '11SWINGBY',
@@ -937,6 +976,7 @@ const pools = [
 
   {
     name: 'BRY-BNB LP',
+    isV1: true,
     description: '',
     token: '11BRY',
     tokenDescription: '11BRY',
@@ -959,6 +999,7 @@ const pools = [
 
   {
     name: 'ZEE-BNB LP',
+    isV1: true,
     description: '',
     token: '11ZEE',
     tokenDescription: '11ZEE',
@@ -981,6 +1022,7 @@ const pools = [
 
   {
     name: 'SWGB-BNB LP',
+    isV1: true,
     description: '',
     token: '11SWGB',
     tokenDescription: '11SWGB',
@@ -1003,6 +1045,7 @@ const pools = [
 
   {
     name: 'SFP-BNB LP',
+    isV1: true,
     description: '',
     token: '11SFP',
     tokenDescription: '11SFP',
@@ -1025,6 +1068,7 @@ const pools = [
 
   {
     name: 'LIT-BNB LP',
+    isV1: true,
     description: '',
     token: '11LIT',
     tokenDescription: '11LIT',
@@ -1047,6 +1091,7 @@ const pools = [
 
   {
     name: 'HGET-BNB LP',
+    isV1: true,
     description: '',
     token: '11HGET',
     tokenDescription: '11HGET',
@@ -1069,6 +1114,7 @@ const pools = [
 
   {
     name: 'BDO-BNB LP',
+    isV1: true,
     description: '',
     token: '11BDO',
     tokenDescription: '11BDO',
@@ -1091,6 +1137,7 @@ const pools = [
 
   {
     name: 'EGLD-BNB LP',
+    isV1: true,
     description: '',
     token: '11EGLD',
     tokenDescription: '11EGLD',
@@ -1113,6 +1160,7 @@ const pools = [
 
   {
     name: 'WSOTE-BNB LP',
+    isV1: true,
     description: '',
     token: '11WSOTE',
     tokenDescription: '11WSOTE',
@@ -1135,6 +1183,7 @@ const pools = [
 
   {
     name: 'FRONT-BNB LP',
+    isV1: true,
     description: '',
     token: '11FRONT',
     tokenDescription: '11FRONT',
@@ -1156,6 +1205,7 @@ const pools = [
   },
   {
     name: 'HELMET-BNB LP',
+    isV1: true,
     description: '',
     token: '11HELMET',
     tokenDescription: '11HELMET',
@@ -1178,6 +1228,7 @@ const pools = [
 
   {
     name: 'BTCST-BNB LP',
+    isV1: true,
     description: '',
     token: '11BTCST',
     tokenDescription: '11BTCST',
@@ -1200,6 +1251,7 @@ const pools = [
 
   {
     name: 'LTC-BNB LP',
+    isV1: true,
     description: '',
     token: '11LTC',
     tokenDescription: '11LTC',
@@ -1222,6 +1274,7 @@ const pools = [
 
   {
     name: 'BSCX-BNB LP',
+    isV1: true,
     description: '',
     token: '11BSCX',
     tokenDescription: '11BSCX',
@@ -1244,6 +1297,7 @@ const pools = [
 
   {
     name: 'TEN-BNB LP',
+    isV1: true,
     description: '',
     token: '11TEN',
     tokenDescription: '11TEN',
@@ -1266,6 +1320,7 @@ const pools = [
 
   {
     name: 'BALBT-BNB LP',
+    isV1: true,
     description: '',
     token: '11BALBT',
     tokenDescription: '11BALBT',
@@ -1288,6 +1343,7 @@ const pools = [
 
   {
     name: 'REEF-BNB LP',
+    isV1: true,
     description: '',
     token: '11REEF',
     tokenDescription: '11REEF',
@@ -1310,6 +1366,7 @@ const pools = [
 
   {
     name: 'DITTO-BNB LP',
+    isV1: true,
     description: '',
     token: '11DITTO',
     tokenDescription: '11DITTO',
@@ -1331,6 +1388,7 @@ const pools = [
   },
 {
     name: 'BLK-BNB LP',
+    isV1: true,
     description: '',
     token: '11BLK',
     tokenDescription: '11BLK',
@@ -1353,6 +1411,7 @@ const pools = [
 
     {
     name: 'UNFI-BNB LP',
+    isV1: true,
     description: '',
     token: '11UNFI',
     tokenDescription: '11UNFI',
@@ -1375,6 +1434,7 @@ const pools = [
 
     {
     name: 'HARD-BNB LP',
+    isV1: true,
     description: '',
     token: '11HARD',
     tokenDescription: '11HARD',
@@ -1397,6 +1457,7 @@ const pools = [
 
     {
     name: 'CTK-BNB LP',
+    isV1: true,
     description: '',
     token: '11CTK',
     tokenDescription: '11CTK',
@@ -1419,6 +1480,7 @@ const pools = [
 
     {
     name: 'SXP-BNB LP',
+    isV1: true,
     description: '',
     token: '11SXP',
     tokenDescription: '11SXP',
@@ -1441,6 +1503,7 @@ const pools = [
 
     {
     name: 'INJ-BNB LP',
+    isV1: true,
     description: '',
     token: '11INJ',
     tokenDescription: '11INJ',
@@ -1463,6 +1526,7 @@ const pools = [
 
     {
     name: 'FIL-BNB LP',
+    isV1: true,
     description: '',
     token: '11FIL',
     tokenDescription: '11FIL',
@@ -1485,6 +1549,7 @@ const pools = [
 
     {
     name: 'UNI-BNB LP',
+    isV1: true,
     description: '',
     token: '11UNI',
     tokenDescription: '11UNI',
@@ -1507,6 +1572,7 @@ const pools = [
 
     {
     name: 'YFI-BNB LP',
+    isV1: true,
     description: '',
     token: '11YFI',
     tokenDescription: '11YFI',
@@ -1529,6 +1595,7 @@ const pools = [
 
     {
     name: 'BCH-BNB LP',
+    isV1: true,
     description: '',
     token: '11BCH',
     tokenDescription: '11BCH',
@@ -1551,6 +1618,7 @@ const pools = [
 
     {
     name: 'XTZ-BNB LP',
+    isV1: true,
     description: '',
     token: '11XTZ',
     tokenDescription: '11XTZ',
@@ -1573,6 +1641,7 @@ const pools = [
 
     {
     name: 'YFII-BNB LP',
+    isV1: true,
     description: '',
     token: '11YFII',
     tokenDescription: '11YFII',
@@ -1595,6 +1664,7 @@ const pools = [
 
     {
     name: 'ATOM-BNB LP',
+    isV1: true,
     description: '',
     token: '11ATOM',
     tokenDescription: '11ATOM',
@@ -1617,6 +1687,7 @@ const pools = [
 
     {
     name: 'XRP-BNB LP',
+    isV1: true,
     description: '',
     token: '11XRP',
     tokenDescription: '11XRP',
@@ -1639,6 +1710,7 @@ const pools = [
 
     {
     name: 'ALPHA-BNB LP',
+    isV1: true,
     description: '',
     token: '11ALPHA',
     tokenDescription: '11ALPHA',
@@ -1661,6 +1733,7 @@ const pools = [
 
     {
     name: 'BTC-BNB LP',
+    isV1: true,
     description: '',
     token: '11BTC',
     tokenDescription: '11BTC',
@@ -1683,6 +1756,7 @@ const pools = [
 
     {
     name: 'ETH-BNB LP',
+    isV1: true,
     description: '',
     token: '11ETH',
     tokenDescription: '11ETH',
@@ -1705,6 +1779,7 @@ const pools = [
 
     {
     name: 'XVS-BNB LP',
+    isV1: true,
     description: '',
     token: '11XVS',
     tokenDescription: '11XVS',
@@ -1727,6 +1802,7 @@ const pools = [
 
     {
     name: 'TWT-BNB LP',
+    isV1: true,
     description: '',
     token: '11TWT',
     tokenDescription: '11TWT',
@@ -1749,6 +1825,7 @@ const pools = [
 
     {
     name: 'LINK-BNB LP',
+    isV1: true,
     description: '',
     token: '11LINK',
     tokenDescription: '11LINK',
@@ -1771,6 +1848,7 @@ const pools = [
 
     {
     name: 'EOS-BNB LP',
+    isV1: true,
     description: '',
     token: '11EOS',
     tokenDescription: '11EOS',
@@ -1793,6 +1871,7 @@ const pools = [
 
     {
     name: 'DOT-BNB LP',
+    isV1: true,
     description: '',
     token: '11DOT',
     tokenDescription: '11DOST',
@@ -1815,6 +1894,7 @@ const pools = [
 
     {
     name: 'BAND-BNB LP',
+    isV1: true,
     description: '',
     token: '11BAND',
     tokenDescription: '11BAND',
@@ -1837,6 +1917,7 @@ const pools = [
 
     {
     name: 'ADA-BNB LP',
+    isV1: true,
     description: '',
     token: '11ADA',
     tokenDescription: '11ADA',
@@ -1859,6 +1940,7 @@ const pools = [
 
     {
     name: 'BUSD-BNB LP',
+    isV1: true,
     description: '',
     token: '11BUSD',
     tokenDescription: '11BUSD',
@@ -1880,6 +1962,7 @@ const pools = [
   },
   {
     name: 'WAULT-BNB LP',
+    isV1: true,
     description: '',
     token: '11WAULT',
     tokenDescription: '11WAULT',
@@ -1901,6 +1984,7 @@ const pools = [
   },
   {
     name: 'PSG-BNB LP',
+    isV1: true,
     description: '',
     token: '11PSG',
     tokenDescription: '11PSG',
@@ -1922,6 +2006,7 @@ const pools = [
   },
   {
     name: 'ATM-BNB LP',
+    isV1: true,
     description: '',
     token: '11ATM',
     tokenDescription: '11ATM',
@@ -1943,6 +2028,7 @@ const pools = [
   },
   {
     name: 'JUV-BNB LP',
+    isV1: true,
     description: '',
     token: '11JUV',
     tokenDescription: '11JUV',
@@ -1964,6 +2050,7 @@ const pools = [
   },
   {
     name: 'OG-BNB LP',
+    isV1: true,
     description: '',
     token: '11OG',
     tokenDescription: '11OG',
@@ -1985,6 +2072,7 @@ const pools = [
   },
   {
     name: 'ASR-BNB LP',
+    isV1: true,
     description: '',
     token: '11ASR',
     tokenDescription: '11ASR',

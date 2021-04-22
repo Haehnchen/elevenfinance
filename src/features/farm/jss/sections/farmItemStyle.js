@@ -39,6 +39,8 @@ const farmItemStyle = theme => ({
     alignItems: 'center'
   },
   farmItem: {
+    position: 'relative',
+    paddingTop: 40,
     minWidth: 260,
     margin: '10px 10px 50px',
     padding: 15,
@@ -72,6 +74,27 @@ const farmItemStyle = theme => ({
   margin: {
     marginRight: '5px'
   },
+
+  poolWarning: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    background: '#f0b90b',
+    color: 'rgb(30, 41, 59)',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    padding: '5px 10px !important',
+    borderRadius: '5px 5px 0 0'
+  },
+  buttonLoader: {
+    color: 'rgb(30, 41, 59)',
+    margin: '2px 20px',
+
+    '& svg': {
+      margin: 0
+    }
+  }
 });
 
 export default farmItemStyle;

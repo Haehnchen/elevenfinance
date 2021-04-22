@@ -129,6 +129,7 @@ export const pools = [
   },
   {
     id: 'nervebusd',
+    isV1: true,
     name: 'NRVBUSD',
     token: 'NRV-BUSD LP',
     tokenDescription: 'NRV',
@@ -179,6 +180,7 @@ export const pools = [
   },
   {
     id: 'nervebnb',
+    isV1: true,
     name: 'NRV',
     token: 'NRV-BNB LP',
     tokenDescription: 'NRV',
@@ -200,6 +202,7 @@ export const pools = [
   },
   {
     id: 'eulerbnb',
+    isV1: true,
     name: 'EULER',
     token: 'EULER-BNB LP',
     tokenDescription: 'EULER',
@@ -221,6 +224,7 @@ export const pools = [
   },
   {
     id: 'icebnb',
+    isV1: true,
     name: 'ICEBNB',
     token: 'ICE-BNB LP',
     tokenDescription: 'ICE',
@@ -242,6 +246,7 @@ export const pools = [
   },
   {
     id: 'swirlbnb',
+    isV1: true,
     name: 'SWIRL',
     token: 'SWIRL-BNB LP',
     tokenDescription: 'SWIRL',
@@ -284,6 +289,7 @@ export const pools = [
   },
   {
     id: 'yumchabnb',
+    isV1: true,
     name: 'YUMCHA',
     token: 'YUMCHA-BUSD LP',
     tokenDescription: 'YUMCHA',
@@ -305,6 +311,7 @@ export const pools = [
   },
   {
     id: 'epsbnb',
+    isV1: true,
     name: 'EPS',
     token: 'EPS-BNB LP',
     tokenDescription: 'EPS',
@@ -348,6 +355,7 @@ export const pools = [
 
   {
     id: 'swthbnb',
+    isV1: true,
     name: 'SWTH',
     token: 'SWTH-BNB LP',
     tokenDescription: 'SWTH',
@@ -372,6 +380,7 @@ export const pools = [
 
   {
     id: 'dftbnb',
+    isV1: true,
     name: 'DFT',
     token: 'DFT-BNB LP',
     tokenDescription: 'DFT',
@@ -395,6 +404,7 @@ export const pools = [
 
   {
     id: 'pbtcbnb',
+    isV1: true,
     name: 'PBTC',
     token: 'PBTC-BNB LP',
     tokenDescription: 'PBTC',
@@ -419,6 +429,7 @@ export const pools = [
 
   {
     id: 'gumbnb',
+    isV1: true,
     name: 'GUM',
     token: 'GUM-BNB LP',
     tokenDescription: 'GUM',
@@ -443,6 +454,7 @@ export const pools = [
 
   {
     id: 'degobnb',
+    isV1: true,
     name: 'DEGO',
     token: 'DEGO-BNB LP',
     tokenDescription: 'DEGO',
@@ -464,6 +476,7 @@ export const pools = [
   },
   {
     id: 'easybnb',
+    isV1: true,
     name: 'EASY',
     token: 'EASY-BNB LP',
     tokenDescription: 'EASY',
@@ -488,6 +501,7 @@ export const pools = [
 
   {
     id: 'oddzbnb',
+    isV1: true,
     name: 'ODDZ',
     token: 'ODDZ-BNB LP',
     tokenDescription: 'ODDZ',
@@ -512,6 +526,7 @@ export const pools = [
 
   {
     id: 'apysbnb',
+    isV1: true,
     name: 'APYS',
     token: 'APYS-BNB LP',
     tokenDescription: 'APYS',
@@ -535,6 +550,7 @@ export const pools = [
 
   {
     id: 'tkobnb',
+    isV1: true,
     name: 'TKO',
     token: 'TKO-BNB LP',
     tokenDescription: 'TKO',
@@ -559,6 +575,7 @@ export const pools = [
 
   {
     id: 'bondlybnb',
+    isV1: true,
     name: 'BONDLY',
     token: 'BONDLY-BNB LP',
     tokenDescription: 'BONDLY',
@@ -584,6 +601,7 @@ export const pools = [
 
   {
     id: 'lienbnb',
+    isV1: true,
     name: 'LIEN',
     token: 'LIEN-BNB LP',
     tokenDescription: 'LIEN',
@@ -605,6 +623,7 @@ export const pools = [
   },
   {
     id: 'zilbnb',
+    isV1: true,
     name: 'ZIL',
     token: 'ZIL-BNB LP',
     tokenDescription: 'ZIL',
@@ -626,6 +645,7 @@ export const pools = [
   },
   {
     id: 'bellabnb',
+    isV1: true,
     name: 'BELLA',
     token: 'BELLA-BNB LP',
     tokenDescription: 'BELLA',
@@ -647,6 +667,7 @@ export const pools = [
   },
   {
     id: 'bfibnb',
+    isV1: true,
     name: 'BFI',
     token: 'BFI-BNB LP',
     tokenDescription: 'BFI',
@@ -668,6 +689,7 @@ export const pools = [
   },
   {
     id: 'beltbnb',
+    isV1: true,
     name: 'BELT',
     token: 'BELT-BNB LP',
     tokenDescription: 'BELT',
@@ -689,6 +711,7 @@ export const pools = [
   },
   {
     id: 'buxbnb',
+    isV1: true,
     name: 'BUX',
     token: 'BUX-BNB LP',
     tokenDescription: 'BUX',
@@ -710,6 +733,7 @@ export const pools = [
   },
   {
     id: 'alicebnb',
+    isV1: true,
     name: 'ALICE',
     token: 'ALICE-BNB LP',
     tokenDescription: 'ALICE',
@@ -731,6 +755,7 @@ export const pools = [
   },
   {
     id: 'bunnybnb',
+    isV1: true,
     name: 'BUNNY',
     token: 'BUNNY-BNB LP',
     tokenDescription: 'BUNNY',
@@ -752,6 +777,7 @@ export const pools = [
   },
   {
     id: 'cosbnb',
+    isV1: true,
     name: 'COS',
     token: 'COS-BNB LP',
     tokenDescription: 'COS',
@@ -773,6 +799,7 @@ export const pools = [
   },
   {
     id: 'bifibnb',
+    isV1: true,
     name: 'BIFI',
     token: 'BIFI-BNB LP',
     tokenDescription: 'BIFI',
@@ -794,6 +821,7 @@ export const pools = [
   },
   {
     id: 'duskbnb',
+    isV1: true,
     name: 'DUSK',
     token: 'DUSK-BNB LP',
     tokenDescription: 'DUSK',
@@ -815,6 +843,7 @@ export const pools = [
   },
   {
     id: 'tradebnb',
+    isV1: true,
     name: 'TRADE',
     token: 'TRADE-BNB LP',
     tokenDescription: 'TRADE',
@@ -836,6 +865,7 @@ export const pools = [
   },
   {
     id: 'ltobnb',
+    isV1: true,
     name: 'LTO',
     token: 'LTO-BNB LP',
     tokenDescription: 'LTO',
@@ -857,6 +887,7 @@ export const pools = [
   },
   {
     id: 'pcwsbnb',
+    isV1: true,
     name: 'PCWS',
     token: 'PCWS-BNB LP',
     tokenDescription: 'PCWS',
@@ -879,6 +910,7 @@ export const pools = [
 
   {
     id: 'cakebnb',
+    isV1: true,
     name: 'CAKE',
     token: 'CAKE-BNB LP',
     tokenDescription: 'CAKE',
@@ -900,6 +932,7 @@ export const pools = [
   },
   {
     id: 'betheth',
+    isV1: true,
     name: 'ETH',
     token: 'BETH-ETH LP',
     tokenDescription: 'ETH',
@@ -921,6 +954,7 @@ export const pools = [
   },
   {
     id: 'alpacabnb',
+    isV1: true,
     name: 'ALPACA',
     token: 'ALPACA-BNB LP',
     tokenDescription: 'ALPACA',
@@ -942,6 +976,7 @@ export const pools = [
   },
   {
     id: 'bopenbnb',
+    isV1: true,
     name: 'BOPEN',
     token: 'BOPEN-BNB LP',
     tokenDescription: 'BOPEN',
@@ -963,6 +998,7 @@ export const pools = [
   },
   {
     id: 'bmxxbnb',
+    isV1: true,
     name: 'BMXX',
     token: 'BMXX-BNB LP',
     tokenDescription: 'BMXX',
@@ -984,6 +1020,7 @@ export const pools = [
   },
   {
     id: 'dodobnb',
+    isV1: true,
     name: 'DODO',
     token: 'DODO-BNB LP',
     tokenDescription: 'DODO',
@@ -1005,6 +1042,7 @@ export const pools = [
   },
   {
     id: 'swingbybnb',
+    isV1: true,
     name: 'SWINGBY',
     token: 'SWINGBY-BNB LP',
     tokenDescription: 'SWINGBY',
@@ -1026,6 +1064,7 @@ export const pools = [
   },
   {
     id: 'brybnb',
+    isV1: true,
     name: 'BRY',
     token: 'BRY-BNB LP',
     tokenDescription: 'BRY',
@@ -1047,6 +1086,7 @@ export const pools = [
   },
   {
     id: 'zeebnb',
+    isV1: true,
     name: 'ZEE',
     token: 'ZEE-BNB LP',
     tokenDescription: 'ZEE',
@@ -1068,6 +1108,7 @@ export const pools = [
   },
   {
     id: 'swgbbnb',
+    isV1: true,
     name: 'SWGB',
     token: 'SWGB-BNB LP',
     tokenDescription: 'SWGB',
@@ -1089,6 +1130,7 @@ export const pools = [
   },
   {
     id: 'watchbnb',
+    isV1: true,
     name: 'WATCH',
     token: 'WATCH-BNB LP',
     tokenDescription: 'WATCH',
@@ -1110,6 +1152,7 @@ export const pools = [
   },
   {
     id: 'sfpbnb',
+    isV1: true,
     name: 'SFP',
     token: 'SFP-BNB LP',
     tokenDescription: 'SFP',
@@ -1131,6 +1174,7 @@ export const pools = [
   },
   {
     id: 'litbnb',
+    isV1: true,
     name: 'LIT',
     token: 'LIT-BNB LP',
     tokenDescription: 'LIT',
@@ -1152,6 +1196,7 @@ export const pools = [
   },
   {
     id: 'hgetbnb',
+    isV1: true,
     name: 'HGET',
     token: 'HGET-BNB LP',
     tokenDescription: 'HGET',
@@ -1173,6 +1218,7 @@ export const pools = [
   },
   {
     id: 'bdobnb',
+    isV1: true,
     name: 'BDO',
     token: 'BDO-BNB LP',
     tokenDescription: 'BDO',
@@ -1194,6 +1240,7 @@ export const pools = [
   },
   {
     id: 'egldbnb',
+    isV1: true,
     name: 'EGLD',
     token: 'EGLD-BNB LP',
     tokenDescription: 'EGLD',
@@ -1215,6 +1262,7 @@ export const pools = [
   },
   {
     id: 'wsotebnb',
+    isV1: true,
     name: 'WSOTE',
     token: 'WSOTE-BNB LP',
     tokenDescription: 'WSOTE',
@@ -1236,6 +1284,7 @@ export const pools = [
   },
   {
     id: 'frontbnb',
+    isV1: true,
     name: 'FRONT',
     token: 'FRONT-BNB LP',
     tokenDescription: 'FRONT',
@@ -1257,6 +1306,7 @@ export const pools = [
   },
   {
     id: 'helmetbnb',
+    isV1: true,
     name: 'HELMET',
     token: 'HELMET-BNB LP',
     tokenDescription: 'HELMET',
@@ -1278,6 +1328,7 @@ export const pools = [
   },
   {
     id: 'btcstbnb',
+    isV1: true,
     name: 'BTCST',
     token: 'BTCST-BNB LP',
     tokenDescription: 'BTCST',
@@ -1299,6 +1350,7 @@ export const pools = [
   },
   {
     id: 'ltcbnb',
+    isV1: true,
     name: 'LTC',
     token: 'LTC-BNB LP',
     tokenDescription: 'LTC',
@@ -1320,6 +1372,7 @@ export const pools = [
   },
   {
     id: 'bscxbnb',
+    isV1: true,
     name: 'BSCX',
     token: 'BSCX-BNB LP',
     tokenDescription: 'BSCX',
@@ -1341,6 +1394,7 @@ export const pools = [
   },
   {
     id: 'tenbnb',
+    isV1: true,
     name: 'TEN',
     token: 'TEN-BNB LP',
     tokenDescription: 'TEN',
@@ -1362,6 +1416,7 @@ export const pools = [
   },
   {
     id: 'balbtbnb',
+    isV1: true,
     name: 'BALBT',
     token: 'BALBT-BNB LP',
     tokenDescription: 'BALBT',
@@ -1383,6 +1438,7 @@ export const pools = [
   },
   {
     id: 'reefbnb',
+    isV1: true,
     name: 'REEF',
     token: 'REEF-BNB LP',
     tokenDescription: 'REEF',
@@ -1404,6 +1460,7 @@ export const pools = [
   },
   {
     id: 'dittobnb',
+    isV1: true,
     name: 'DITTO',
     token: 'DITTO-BNB LP',
     tokenDescription: 'DITTO',
@@ -1425,6 +1482,7 @@ export const pools = [
   },
   {
     id: 'blkbnb',
+    isV1: true,
     name: 'BLK',
     token: 'BLK-BNB LP',
     tokenDescription: 'BLK',
@@ -1446,6 +1504,7 @@ export const pools = [
   },
   {
     id: 'unfibnb',
+    isV1: true,
     name: 'UNFI',
     token: 'UNFI-BNB LP',
     tokenDescription: 'UNFI',
@@ -1467,6 +1526,7 @@ export const pools = [
   },
   {
     id: 'hardbnb',
+    isV1: true,
     name: 'HARD',
     token: 'HARD-BNB LP',
     tokenDescription: 'HARD',
@@ -1488,6 +1548,7 @@ export const pools = [
   },
   {
     id: 'ctkbnb',
+    isV1: true,
     name: 'CTK',
     token: 'CTK-BNB LP',
     tokenDescription: 'CTK',
@@ -1509,6 +1570,7 @@ export const pools = [
   },
   {
     id: 'sxpbnb',
+    isV1: true,
     name: 'SXP',
     token: 'SXP-BNB LP',
     tokenDescription: 'SXP',
@@ -1530,6 +1592,7 @@ export const pools = [
   },
   {
     id: 'injbnb',
+    isV1: true,
     name: 'INJ',
     token: 'INJ-BNB LP',
     tokenDescription: 'INJ',
@@ -1551,6 +1614,7 @@ export const pools = [
   },
   {
     id: 'filbnb',
+    isV1: true,
     name: 'FIL',
     token: 'FIL-BNB LP',
     tokenDescription: 'FIL',
@@ -1572,6 +1636,7 @@ export const pools = [
   },
   {
     id: 'unibnb',
+    isV1: true,
     name: 'UNI',
     token: 'UNI-BNB LP',
     tokenDescription: 'UNI',
@@ -1593,6 +1658,7 @@ export const pools = [
   },
   {
     id: 'yfibnb',
+    isV1: true,
     name: 'YFI',
     token: 'YFI-BNB LP',
     tokenDescription: 'YFI',
@@ -1614,6 +1680,7 @@ export const pools = [
   },
   {
     id: 'bchbnb',
+    isV1: true,
     name: 'BCH',
     token: 'BCH-BNB LP',
     tokenDescription: 'BCH',
@@ -1635,6 +1702,7 @@ export const pools = [
   },
   {
     id: 'xtzbnb',
+    isV1: true,
     name: 'XTZ',
     token: 'XTZ-BNB LP',
     tokenDescription: 'XTZ',
@@ -1656,6 +1724,7 @@ export const pools = [
   },
   {
     id: 'yfiibnb',
+    isV1: true,
     name: 'YFII',
     token: 'YFII-BNB LP',
     tokenDescription: 'YFII',
@@ -1677,6 +1746,7 @@ export const pools = [
   },
   {
     id: 'atombnb',
+    isV1: true,
     name: 'ATOM',
     token: 'ATOM-BNB LP',
     tokenDescription: 'ATOM',
@@ -1698,6 +1768,7 @@ export const pools = [
   },
   {
     id: 'xrpbnb',
+    isV1: true,
     name: 'XRP',
     token: 'XRP-BNB LP',
     tokenDescription: 'XRP',
@@ -1719,6 +1790,7 @@ export const pools = [
   },
   {
     id: 'alphabnb',
+    isV1: true,
     name: 'ALPHA',
     token: 'ALPHA-BNB LP',
     tokenDescription: 'ALPHA',
@@ -1740,6 +1812,7 @@ export const pools = [
   },
   {
     id: 'btcbnb',
+    isV1: true,
     name: 'BTC',
     token: 'BTC-BNB LP',
     tokenDescription: 'BTC',
@@ -1761,6 +1834,7 @@ export const pools = [
   },
   {
     id: 'ethbnb',
+    isV1: true,
     name: 'ETH',
     token: 'ETH-BNB LP',
     tokenDescription: 'ETH',
@@ -1782,6 +1856,7 @@ export const pools = [
   },
   {
     id: 'xvsbnb',
+    isV1: true,
     name: 'XVS',
     token: 'XVS-BNB LP',
     tokenDescription: 'XVS',
@@ -1803,6 +1878,7 @@ export const pools = [
   },
   {
     id: 'twtbnb',
+    isV1: true,
     name: 'TWT',
     token: 'TWT-BNB LP',
     tokenDescription: 'TWT',
@@ -1824,6 +1900,7 @@ export const pools = [
   },
   {
     id: 'linkbnb',
+    isV1: true,
     name: 'LINK',
     token: 'LINK-BNB LP',
     tokenDescription: 'LINK',
@@ -1845,6 +1922,7 @@ export const pools = [
   },
   {
     id: 'eosbnb',
+    isV1: true,
     name: 'EOS',
     token: 'EOS-BNB LP',
     tokenDescription: 'EOS',
@@ -1866,6 +1944,7 @@ export const pools = [
   },
   {
     id: 'dotbnb',
+    isV1: true,
     name: 'DOT',
     token: 'DOT-BNB LP',
     tokenDescription: 'DOT',
@@ -1887,6 +1966,7 @@ export const pools = [
   },
   {
     id: 'bandbnb',
+    isV1: true,
     name: 'BAND',
     token: 'BAND-BNB LP',
     tokenDescription: 'BAND',
@@ -1908,6 +1988,7 @@ export const pools = [
   },
   {
     id: 'adabnb',
+    isV1: true,
     name: 'ADA',
     token: 'ADA-BNB LP',
     tokenDescription: 'ADA',
@@ -1929,6 +2010,7 @@ export const pools = [
   },
   {
     id: 'busdbnb',
+    isV1: true,
     name: 'BUSD',
     token: 'BUSD-BNB LP',
     tokenDescription: 'BUSD',
@@ -1950,6 +2032,7 @@ export const pools = [
   },
   {
     id: 'waultbnb',
+    isV1: true,
     name: 'WAULT',
     token: 'WAULT-BNB LP',
     tokenDescription: 'WAULT',
@@ -1971,6 +2054,7 @@ export const pools = [
   },
   {
     id: 'psgbnb',
+    isV1: true,
     name: 'PSG',
     token: 'PSG-BNB LP',
     tokenDescription: 'PSG',
@@ -1992,6 +2076,7 @@ export const pools = [
   },
   {
     id: 'atmbnb',
+    isV1: true,
     name: 'ATM',
     token: 'ATM-BNB LP',
     tokenDescription: 'ATM',
@@ -2013,6 +2098,7 @@ export const pools = [
   },
   {
     id: 'juvbnb',
+    isV1: true,
     name: 'JUV',
     token: 'JUV-BNB LP',
     tokenDescription: 'JUV',
@@ -2034,6 +2120,7 @@ export const pools = [
   },
   {
     id: 'ogbnb',
+    isV1: true,
     name: 'OG',
     token: 'OG-BNB LP',
     tokenDescription: 'OG',
@@ -2055,6 +2142,7 @@ export const pools = [
   },
   {
     id: 'asrbnb',
+    isV1: true,
     name: 'ASR',
     token: 'ASR-BNB LP',
     tokenDescription: 'ASR',

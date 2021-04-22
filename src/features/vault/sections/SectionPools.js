@@ -95,14 +95,17 @@ export default function SectionPools() {
   }
 
   useEffect(() => {
-    if (pools[0].vault !== undefined) {
-      setSearchResults(pools);
-    }
-
     const term = searchTerm.toLowerCase()
     let results = pools.filter(pool =>
       pool.token.toLowerCase().includes(term)
     );
+
+    // Hide all V1-pools with zero balance from list
+    results = results.filter(pool => {
+      return ! pool.isV1
+        || tokens[pool.token]?.tokenBalance > 0
+        || tokens[pool.earnedToken]?.tokenBalance > 0;
+    });
 
     if (onlyStakedPools) {
       results = results.filter(pool => tokens[pool.earnedToken]?.tokenBalance > 0);
@@ -140,6 +143,9 @@ export default function SectionPools() {
         results = _.orderBy(results, 'tvl', 'desc');
         break;
     }
+
+    // Put all V1 pools in top of the list
+    results = _.orderBy(results, 'isV1', 'asc');
 
     setSearchResults(results);
   }, [searchTerm, sortTerm, onlyStakedPools, onlyWithBalancePools, filtersCategories, tokens])
@@ -191,6 +197,10 @@ export default function SectionPools() {
   const units = ["", "K", "Million", "Billion", "Trillion", "Quadrillion", "Quintillion", "Sextillion", "Septillion", "Octillion", "Nonillion", "Decillion", "Undecillion"];
 
   const getApy = pool => {
+    if (pool.isV1) {
+      return 0;
+    }
+
     if (pool.vault === undefined) {
       return "";
     } else {
@@ -202,6 +212,10 @@ export default function SectionPools() {
   }
 
   const getAprd = pool => {
+    if (pool.isV1) {
+      return 0;
+    }
+
     if (pool.vault === undefined) {
       return "";
     } else {
@@ -340,6 +354,13 @@ export default function SectionPools() {
                   }}
                 >
                   <Grid container alignItems="center" justify="space-around" spacing={4} style={{ paddingTop: "16px", paddingBottom: "16px" }}>
+
+                    {pool.isV1 && (
+                      <Grid item xs={12} className={classes.poolWarning}>
+                        Migration to V2 pool is required
+                      </Grid>
+                    )}
+
                     <Grid item xs={12} sm={6} md={3}>
                       <Grid item container alignItems="center" xs={12} spacing={2}>
                         <Grid item>
@@ -439,8 +460,11 @@ export default function SectionPools() {
                   </Grid>
                 </AccordionSummary>
                 <AccordionDetails style={{ justifyContent: "space-between" }}>
-                  <Grid container style={{ width: "100%", marginLeft: 0, marginRight: 0 }}>
-                    <DepositSection pool={pool} index={index} balanceSingle={balanceSingle}/>
+                  <Grid container style={{ width: "100%", marginLeft: 0, marginRight: 0 }} justify="center">
+                    {!pool.isV1 && (
+                      <DepositSection pool={pool} index={index} balanceSingle={balanceSingle}/>
+                    )}
+
                     <WithdrawSection pool={pool} index={index} sharesBalance={singleDepositedBalance} />
 
                     {pool.claimable && (
