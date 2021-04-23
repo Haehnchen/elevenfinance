@@ -139,7 +139,7 @@ export const pools = [
     depostLimit: 0,
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
-    earnedToken: 'old11nrvBUSD',
+    earnedToken: '11nrvBUSD',
     earnedTokenAddress: '0xDF098493bB4eeE18BB56BE45DC43BD655a27E1A9',
     earnContractAddress: '0xDF098493bB4eeE18BB56BE45DC43BD655a27E1A9',
     defaultApy: "39.54",
