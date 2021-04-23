@@ -71,9 +71,10 @@ export function fetchBalances(data) {
 export function useFetchBalances() {
   const dispatch = useDispatch();
 
-  const { tokens, fetchBalancesPending } = useSelector(
+  const { tokens, fetchBalancesDone, fetchBalancesPending } = useSelector(
     state => ({
       tokens: state.vault.tokens,
+      fetchBalancesDone: state.vault.fetchBalancesDone,
       fetchBalancesPending: state.vault.fetchBalancesPending,
     }),
     shallowEqual,
@@ -89,6 +90,7 @@ export function useFetchBalances() {
   return {
     tokens,
     fetchBalances: boundAction,
+    fetchBalancesDone,
     fetchBalancesPending,
   };
 }
@@ -105,6 +107,7 @@ export function reducer(state, action) {
       return {
         ...state,
         tokens: action.data,
+        fetchBalancesDone: true,
         fetchBalancesPending: false,
       };
 

@@ -110,9 +110,10 @@ export function fetchPoolRewards({ address, web3, pool }) {
 export function useFetchPoolRewards() {
   const dispatch = useDispatch();
 
-  const { pendingRewards, fetchPoolRewardsPending } = useSelector(
+  const { pendingRewards, fetchPoolRewardsDone, fetchPoolRewardsPending } = useSelector(
     state => ({
       pendingRewards: state.vault.pendingRewards,
+      fetchPoolRewardsDone: state.vault.fetchPoolRewardsDone,
       fetchPoolRewardsPending: state.vault.fetchPoolRewardsPending,
     }),
     shallowEqual
@@ -128,12 +129,13 @@ export function useFetchPoolRewards() {
   return {
     pendingRewards,
     fetchPoolRewards: boundAction,
+    fetchPoolRewardsDone,
     fetchPoolRewardsPending,
   };
 }
 
 export function reducer(state, action) {
-  const { pendingRewards, fetchPoolRewardsPending } = state;
+  const { pendingRewards, fetchPoolRewardsDone, fetchPoolRewardsPending } = state;
 
   switch (action.type) {
     case VAULT_FETCH_POOL_REWARDS_BEGIN:
@@ -145,12 +147,14 @@ export function reducer(state, action) {
       };
 
     case VAULT_FETCH_POOL_REWARDS_SUCCESS:
+      fetchPoolRewardsDone[action.id] = true;
       fetchPoolRewardsPending[action.id] = false;
       pendingRewards[action.id] = action.data;
 
       return {
         ...state,
         pendingRewards: pendingRewards,
+        fetchPoolRewardsDone,
         fetchPoolRewardsPending,
       };
 

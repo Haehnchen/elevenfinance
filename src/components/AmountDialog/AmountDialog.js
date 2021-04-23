@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { byDecimals, calculateReallyNum, forMat, formatDecimals } from 'features/helpers/bignumber';
-import { inputLimitPass, inputFinalVal, isEmpty } from 'features/helpers/utils';
+import { makeStyles } from '@material-ui/core/styles';
+import { byDecimals, calculateReallyNum, formatDecimals } from 'features/helpers/bignumber';
+import { inputLimitPass, inputFinalVal } from 'features/helpers/utils';
 
 import Button from '@material-ui/core/Button'
 import CircularProgress from '@material-ui/core/CircularProgress';

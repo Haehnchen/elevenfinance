@@ -40,16 +40,17 @@ const useStyles = makeStyles(sectionPoolsStyle);
 import Pool from './Pool/Pool';
 
 export default function SectionPools({ filtersCategory }) {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
+  const classes = useStyles();
+
   const { web3, address, networkId } = useConnectWallet();
   let { pools, fetchPoolBalances, fetchPoolBalancesDone } = useFetchPoolBalances();
   const { categories } = useFetchPoolsInfo();
-  const { tokens, fetchBalances } = useFetchBalances();
+  const { tokens, fetchBalances, fetchBalancesDone } = useFetchBalances();
   const { fetchFarmsStaked, fetchFarmsStakedDone } = useFetchFarmsStaked();
-  const [openedCardList, setOpenCardList] = useState([0]);
-  const classes = useStyles();
-
   const { fetchContractApy } = useFetchContractApy();
+
+  const [fetchPoolDataDone, setFetchPoolDataDone] = useState(false);
 
   const [searchTerm, setSearchTerm] = useState('');
   const [sortTerm, setSortTerm] = useState('default');
@@ -72,6 +73,12 @@ export default function SectionPools({ filtersCategory }) {
     loadData();
   }, []);
 
+  useEffect(() => {
+    if (fetchPoolBalancesDone && fetchFarmsStakedDone) {
+      setFetchPoolDataDone(true);
+    }
+  }, [fetchPoolBalancesDone, fetchFarmsStakedDone])
+
   const loadData = async () => {
     const response = await fetch("https://eleven.finance/api.json");
     const json = await response.json();
@@ -93,10 +100,6 @@ export default function SectionPools({ filtersCategory }) {
   }
 
   useEffect(() => {
-    if (pools[0].vault !== undefined) {
-      setSearchResults(pools);
-    }
-
     const term = searchTerm.toLowerCase()
     let results = pools.filter(pool =>
       pool.token.toLowerCase().includes(term)
@@ -145,18 +148,6 @@ export default function SectionPools({ filtersCategory }) {
 
     setSearchResults(results);
   }, [searchTerm, sortTerm, onlyStakedPools, onlyWithBalancePools, filtersCategories, tokens, pools])
-
-  const openCard = id => {
-    return setOpenCardList(
-      openedCardList => {
-        if (openedCardList.includes(id)) {
-          return openedCardList.filter(item => item !== id)
-        } else {
-          return [...openedCardList, id]
-        }
-      }
-    )
-  }
 
   useEffect(() => {
     if (address && web3) {
@@ -291,7 +282,8 @@ export default function SectionPools({ filtersCategory }) {
             pool={pool}
             index={index}
             tokens={tokens}
-            fetchPoolBalancesDone={fetchPoolBalancesDone}
+            fetchBalancesDone={fetchBalancesDone}
+            fetchPoolDataDone={fetchPoolDataDone}
           />
         )
       })}

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import BigNumber from 'bignumber.js';
 
 import Grid from '@material-ui/core/Grid';
 
@@ -18,7 +17,7 @@ const PoolDetails = ({ pool, index, tokenBalance, depositedBalance, stakedBalanc
   const classes = useStyles();
 
   const { web3, address } = useConnectWallet();
-  const { pendingRewards, fetchPoolRewards, fetchPoolRewardsPending } = useFetchPoolRewards();
+  const { pendingRewards, fetchPoolRewards, fetchPoolRewardsDone } = useFetchPoolRewards();
 
   useEffect(() => {
     const fetch = () => {
@@ -41,7 +40,8 @@ const PoolDetails = ({ pool, index, tokenBalance, depositedBalance, stakedBalanc
           tokenBalance={tokenBalance}
           depositedBalance={depositedBalance}
           stakedBalance={stakedBalance}
-          pendingRewards={pendingRewards[pool.id]} />
+          pendingRewards={pendingRewards[pool.id]}
+          pendingRewardsLoaded={fetchPoolRewardsDone[pool.id]} />
       )}
 
       {pool.farm && ! pool.earnContractAddress && (
@@ -49,7 +49,8 @@ const PoolDetails = ({ pool, index, tokenBalance, depositedBalance, stakedBalanc
           index={index}
           tokenBalance={tokenBalance}
           stakedBalance={stakedBalance}
-          pendingRewards={pendingRewards[pool.id]} />
+          pendingRewards={pendingRewards[pool.id]}
+          pendingRewardsLoaded={fetchPoolRewardsDone[pool.id]} />
       )}
 
       {pool.claimable && (
@@ -57,7 +58,8 @@ const PoolDetails = ({ pool, index, tokenBalance, depositedBalance, stakedBalanc
           index={index}
           tokenBalance={tokenBalance}
           depositedBalance={depositedBalance}
-          pendingRewards={pendingRewards[pool.id]} />
+          pendingRewards={pendingRewards[pool.id]}
+          pendingRewardsLoaded={fetchPoolRewardsDone[pool.id]} />
       )}
     </Grid>
   );

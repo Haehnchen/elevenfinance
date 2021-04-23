@@ -4,18 +4,17 @@ import { makeStyles } from '@material-ui/core/styles';
 import { formatDecimals } from 'features/helpers/bignumber';
 
 import Grid from '@material-ui/core/Grid';
+import Loader from 'components/Loader/Loader';
 
-import DepositButton from '../Buttons/DepositButton';
 import FarmClaimButton from '../Buttons/FarmClaimButton';
 import StakeButton from '../Buttons/StakeButton';
 import UnstakeButton from '../Buttons/UnstakeButton';
-import WithdrawButton from '../Buttons/WithdrawButton';
 import Step from './Step/Step';
 
 import styles from './styles';
 const useStyles = makeStyles(styles);
 
-const FarmOnly = ({ pool, index, tokenBalance, stakedBalance, pendingRewards }) => {
+const FarmOnly = ({ pool, index, tokenBalance, stakedBalance, pendingRewards, pendingRewardsLoaded }) => {
   const { t } = useTranslation();
   const classes = useStyles();
 
@@ -61,7 +60,12 @@ const FarmOnly = ({ pool, index, tokenBalance, stakedBalance, pendingRewards }) 
               <img src={require(`images/${pool.farm.earnedToken}-logo.png`)}/>
             </div>
             <div>
-              <div className={classes.balance}>{formatDecimals(pendingRewards?.pendingEle)}</div>
+              <div className={classes.balance}>
+                {pendingRewardsLoaded
+                  ? formatDecimals(pendingRewards?.pendingEle)
+                  : (<Loader/>)
+                }
+              </div>
               <div className={classes.balanceDescription}>{t('Vault-Earned')} {pool.farm.earnedToken}</div>
             </div>
           </div>

@@ -16,12 +16,14 @@ import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 
+import Loader from 'components/Loader/Loader';
+
 import PoolDetails from '../PoolDetails/PoolDetails';
 
 import styles from './styles';
 const useStyles = makeStyles(styles);
 
-const Pool = ({ pool, index, tokens, fetchPoolBalancesDone }) => {
+const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => {
   const { t, i18n } = useTranslation();
   const classes = useStyles();
 
@@ -29,7 +31,7 @@ const Pool = ({ pool, index, tokens, fetchPoolBalancesDone }) => {
   const [tokenBalance, setTokenBalance] = useState(new BigNumber(0));
   const [depositedBalance, setDepositedBalance] = useState(new BigNumber(0));
   const [stakedBalance, setStakedBalance] = useState(new BigNumber(0));
-  const [depositedAndStaked, setDepositedAndStaked] = useState(new BigNumber(0));
+  const [depositedAndStaked, setDepositedAndStaked] = useState(null);
 
   const isZh = Boolean((i18n.language == 'zh') || (i18n.language == 'zh-CN'));
 
@@ -40,7 +42,7 @@ const Pool = ({ pool, index, tokens, fetchPoolBalancesDone }) => {
       setTokenBalance(byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals));
     }
 
-    if (fetchPoolBalancesDone) {
+    if (fetchPoolDataDone) {
       const depositedBalance = pool.earnContractAddress
         ? byDecimals(tokens[pool.earnedToken].tokenBalance, pool.itokenDecimals).times(pool.pricePerFullShare)
         : new BigNumber(0);
@@ -51,7 +53,7 @@ const Pool = ({ pool, index, tokens, fetchPoolBalancesDone }) => {
       setStakedBalance(stakedBalance);
       setDepositedAndStaked(depositedBalance.plus(stakedBalance));
     }
-  }, [tokens, pool, fetchPoolBalancesDone])
+  }, [tokens, pool, fetchPoolDataDone])
 
   const depositedLabels = [
     pool.earnContractAddress ? 'Deposited' : null,
@@ -157,7 +159,12 @@ const Pool = ({ pool, index, tokens, fetchPoolBalancesDone }) => {
                   <Hidden smDown>
                     <Grid item xs={5} container alignItems="center">
                       <Grid item className={isOpen ? classes.hidden : ''} style={{ width: "200px" }}>
-                        <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>{pool.token == 'OG-BNB LP' || pool.token == 'PSG-BNB LP' || pool.token == 'JUV-BNB LP' || pool.token == 'ASR-BNB LP' || pool.token == 'ATM-BNB LP' ? forMat(tokenBalance) : forMat(tokenBalance).toFixed(6)}</Typography>
+                        <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
+                          {fetchBalancesDone
+                            ? (pool.token == 'OG-BNB LP' || pool.token == 'PSG-BNB LP' || pool.token == 'JUV-BNB LP' || pool.token == 'ASR-BNB LP' || pool.token == 'ATM-BNB LP' ? forMat(tokenBalance) : forMat(tokenBalance).toFixed(6))
+                            : (<Loader />)
+                          }
+                        </Typography>
                         <Typography className={classes.iconContainerSubTitle} variant="body2">{t('Vault-Balance')}</Typography>
                       </Grid>
                     </Grid>
@@ -165,7 +172,12 @@ const Pool = ({ pool, index, tokens, fetchPoolBalancesDone }) => {
                   <Hidden mdDown>
                     <Grid item xs={4} container alignItems="center">
                       <Grid item className={isOpen ? classes.hidden : ''} style={{ width: "200px" }}>
-                        <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>{pool.token == 'OG-BNB LP' || pool.token == 'PSG-BNB LP' || pool.token == 'JUV-BNB LP' ? forMat(depositedAndStaked) : forMat(depositedAndStaked).toFixed(6)}</Typography>
+                        <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
+                          {depositedAndStaked !== null
+                            ? (pool.token == 'OG-BNB LP' || pool.token == 'PSG-BNB LP' || pool.token == 'JUV-BNB LP' ? forMat(depositedAndStaked) : forMat(depositedAndStaked).toFixed(6))
+                            : (<Loader/>)
+                          }
+                          </Typography>
                         <Typography className={classes.iconContainerSubTitle} variant="body2">{depositedLabels.filter(label => !! label).join(' + ')}</Typography>
                       </Grid>
                     </Grid>

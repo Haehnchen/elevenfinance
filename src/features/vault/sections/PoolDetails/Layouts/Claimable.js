@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { formatDecimals } from 'features/helpers/bignumber';
 
 import Grid from '@material-ui/core/Grid';
+import Loader from 'components/Loader/Loader';
 
 import ClaimButton from '../Buttons/ClaimButton';
 import DepositButton from '../Buttons/DepositButton';
@@ -13,7 +14,7 @@ import Step from './Step/Step';
 import styles from './styles';
 const useStyles = makeStyles(styles);
 
-const Claimable = ({ pool, index, tokenBalance, depositedBalance, pendingRewards }) => {
+const Claimable = ({ pool, index, tokenBalance, depositedBalance, pendingRewards, pendingRewardsLoaded }) => {
   const { t } = useTranslation();
   const classes = useStyles();
 
@@ -61,7 +62,12 @@ const Claimable = ({ pool, index, tokenBalance, depositedBalance, pendingRewards
                   <img src={require(`images/ELE-logo.png`)}/>
                 </div>
                 <div>
-                  <div className={classes.balance}>{formatDecimals(pendingRewards?.pendingEle)}</div>
+                  <div className={classes.balance}>
+                    {pendingRewardsLoaded
+                      ? formatDecimals(pendingRewards?.pendingEle)
+                      : (<Loader/>)
+                    }
+                  </div>
                   <div className={classes.balanceDescription}>{t('Vault-Earned')} ELE</div>
                 </div>
               </div>
@@ -72,7 +78,12 @@ const Claimable = ({ pool, index, tokenBalance, depositedBalance, pendingRewards
                   <img src={require(`images/${pool.claimableToken}-logo.svg`)}/>
                 </div>
                 <div>
-                  <div className={classes.balance}>{formatDecimals(pendingRewards?.pendingToken)}</div>
+                  <div className={classes.balance}>
+                    {pendingRewardsLoaded
+                      ? formatDecimals(pendingRewards?.pendingToken)
+                      : (<Loader/>)
+                    }
+                  </div>
                   <div className={classes.balanceDescription}>{t('Vault-Earned')} {pool.claimableToken}</div>
                 </div>
               </div>
