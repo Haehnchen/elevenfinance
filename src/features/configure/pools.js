@@ -2074,30 +2074,4 @@ export const pools = [
     tokenAddress: '0xd6b900d5308356317299dafe303e661271aa12f1',
     categories: ['Pancake']
   },
-  {
-    id: 'wrongnervebusd',
-    name: 'wrongNRVBUSD',
-    token: 'wrongNRV-BUSD LP',
-    tokenDescription: 'wrongNRV',
-    tokenAddress: '',
-    tokenDecimals: 18,
-    uses: 'Uses wrong LPs.',
-    itokenDecimals: 18,
-    depostLimit: 0,
-    tokenDescriptionUrl: '',
-    tokenDescriptionUrl2: '',
-    earnedToken: 'wrong11nrvBUSD',
-    earnedTokenAddress: '0xC4678BdB4Eee05703740AA03d8cB14F843556f6B',
-    earnContractAddress: '0xC4678BdB4Eee05703740AA03d8cB14F843556f6B',
-    defaultApy: "39.54",
-    pricePerFullShare: 1,
-    pastPricePerFullShare: 1,
-    tokenAddress: '0x3ED6D29f5d3EE3f14b7B34Bf6a3366b2bE1167bd',
-    categories: ['Pancake', 'Nerve'],
-
-    claimable: true,
-    claimableToken: '11NRV',
-    claimableRewardMethod: 'Nerve'
-  },
-
 ];
