@@ -1,41 +1,35 @@
 /* eslint-disable */
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import BigNumber from "bignumber.js";
-import { byDecimals } from 'features/helpers/bignumber';
 import classNames from 'classnames';
 
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
-import { primaryColor } from "assets/jss/material-kit-pro-react.js";
 
 import {
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  Avatar,
   Checkbox,
   Chip,
   FormControl,
   FormControlLabel,
   Grid,
-  Hidden,
-  IconButton,
   InputAdornment,
   MenuItem,
   Select,
   TextField,
-  Typography
 } from '@material-ui/core';
 
 import SearchIcon from "@material-ui/icons/Search"
 
 import { useConnectWallet } from '../../home/redux/hooks';
-import { useFetchBalances, useFetchPoolBalances, useFetchContractApy, useFetchPoolsInfo, useFetchPendingRewards } from '../redux/hooks';
+import {
+  useFetchBalances,
+  useFetchPoolBalances,
+  useFetchContractApy,
+  useFetchPoolsInfo,
+  useFetchFarmsStaked
+} from '../redux/hooks';
 
 import sectionPoolsStyle from "../jss/sections/sectionPoolsStyle";
-
-import millify from 'millify';
 
 import NumberFormat from 'react-number-format';
 
@@ -43,20 +37,15 @@ import _ from 'lodash';
 
 const useStyles = makeStyles(sectionPoolsStyle);
 
-import DepositSection from './PoolDetails/DepositSection/DepositSection';
-import WithdrawSection from './PoolDetails/WithdrawSection/WithdrawSection';
-import HarvestSection from './PoolDetails/HarvestSection/HarvestSection';
+import Pool from './Pool/Pool';
 
-export default function SectionPools() {
-
-  const nervePools = ['nrvETH', 'nrvBTC', '3NRV', 'NRVBUSD'];
-
+export default function SectionPools({ filtersCategory }) {
   const { t, i18n } = useTranslation();
   const { web3, address, networkId } = useConnectWallet();
-  let { pools, fetchPoolBalances } = useFetchPoolBalances();
+  let { pools, fetchPoolBalances, fetchPoolBalancesDone } = useFetchPoolBalances();
   const { categories } = useFetchPoolsInfo();
   const { tokens, fetchBalances } = useFetchBalances();
-  const { pendingRewards, fetchPendingRewards } = useFetchPendingRewards();
+  const { fetchFarmsStaked, fetchFarmsStakedDone } = useFetchFarmsStaked();
   const [openedCardList, setOpenCardList] = useState([0]);
   const classes = useStyles();
 
@@ -72,6 +61,14 @@ export default function SectionPools() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
+    if (filtersCategory) {
+      categories.forEach(category => {
+        if (category.name.toLowerCase() == filtersCategory.toLowerCase()) {
+          setFiltersCategories([category.name]);
+        }
+      })
+    }
+
     loadData();
   }, []);
 
@@ -86,6 +83,7 @@ export default function SectionPools() {
       pool["vault"] = vault;
       pool["tvl"] = tvl;
       pool['price'] = json[token]?.price;
+      pool['farmStats'] = json[token]?.farm;
       return pool;
     });
 
@@ -105,13 +103,17 @@ export default function SectionPools() {
     );
 
     if (onlyStakedPools) {
-      results = results.filter(pool => tokens[pool.earnedToken]?.tokenBalance > 0);
+      results = results.filter(pool => {
+        return tokens[pool.earnedToken]?.tokenBalance > 0
+          || pool.stakedAmount?.gt(0);
+      });
     }
 
     if (onlyWithBalancePools) {
       results = results.filter(pool => {
         return tokens[pool.token]?.tokenBalance > 0
-          || tokens[pool.earnedToken]?.tokenBalance > 0;
+          || tokens[pool.earnedToken]?.tokenBalance > 0
+          || pool.stakedAmount?.gt(0);
       });
     }
 
@@ -142,7 +144,7 @@ export default function SectionPools() {
     }
 
     setSearchResults(results);
-  }, [searchTerm, sortTerm, onlyStakedPools, onlyWithBalancePools, filtersCategories, tokens])
+  }, [searchTerm, sortTerm, onlyStakedPools, onlyWithBalancePools, filtersCategories, tokens, pools])
 
   const openCard = id => {
     return setOpenCardList(
@@ -160,12 +162,12 @@ export default function SectionPools() {
     if (address && web3) {
       fetchBalances({ address, web3, tokens });
       fetchPoolBalances({ address, web3, pools });
-      fetchPendingRewards({ address, web3, pools });
+      fetchFarmsStaked({ address, web3, pools});
 
       const id = setInterval(() => {
         fetchBalances({ address, web3, tokens });
         fetchPoolBalances({ address, web3, pools });
-        fetchPendingRewards({ address, web3, pools });
+        fetchFarmsStaked({ address, web3, pools});
       }, 10000);
       return () => clearInterval(id);
     }
@@ -174,43 +176,6 @@ export default function SectionPools() {
   useEffect(() => {
     fetchContractApy();
   }, [pools, fetchContractApy]);
-
-  const forMat = number => {
-    return new BigNumber(
-      number
-    ).multipliedBy(
-      new BigNumber(1000000000000000)
-    ).dividedToIntegerBy(
-      new BigNumber(1)
-    ).dividedBy(
-      new BigNumber(1000000000000000)
-    ).toNumber()
-  }
-
-  const isZh = Boolean((i18n.language == 'zh') || (i18n.language == 'zh-CN'));
-  const units = ["", "K", "Million", "Billion", "Trillion", "Quadrillion", "Quintillion", "Sextillion", "Septillion", "Octillion", "Nonillion", "Decillion", "Undecillion"];
-
-  const getApy = pool => {
-    if (pool.vault === undefined) {
-      return "";
-    } else {
-      const vaultApy = pool.vault.apy;
-      try{
-        return millify(vaultApy, { units, space: true });
-      }catch{return Number.parseFloat(vaultApy).toExponential(2);}
-    }
-  }
-
-  const getAprd = pool => {
-    if (pool.vault === undefined) {
-      return "";
-    } else {
-      const vaultAprd = pool.vault.aprd;
-      try{
-        return millify(vaultAprd, { units, space: true });
-      }catch{return "--"}
-    }
-  }
 
   const handleSearchChange = event => {
     setSearchTerm(event.target.value);
@@ -321,136 +286,13 @@ export default function SectionPools() {
 
       {/* Pools */}
       {Boolean(networkId === Number(process.env.NETWORK_ID)) && searchResults.map((pool, index) => {
-        let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
-        let singleDepositedBalance = byDecimals(tokens[pool.earnedToken].tokenBalance, pool.itokenDecimals);
         return (
-          <Grid item xs={12} container key={index} style={{ marginBottom: "24px" }} spacing={0}>
-            <div style={{ width: "100%" }}>
-              <Accordion
-                expanded={Boolean(openedCardList.includes(index))}
-                className={classes.accordion}
-                TransitionProps={{ unmountOnExit: true }}
-              >
-                <AccordionSummary
-                  className={classes.details}
-                  style={{ justifyContent: "space-between" }}
-                  onClick={(event) => {
-                    event.stopPropagation();
-                    openCard(index)
-                  }}
-                >
-                  <Grid container alignItems="center" justify="space-around" spacing={4} style={{ paddingTop: "16px", paddingBottom: "16px" }}>
-                    <Grid item xs={12} sm={6} md={3}>
-                      <Grid item container alignItems="center" xs={12} spacing={2}>
-                        <Grid item>
-                          <Avatar alt={pool.token} src={require(`../../../images/${pool.token}-logo.svg`)} />
-                        </Grid>
-                        <Grid item>
-                          <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom>
-                            {pool.token}
-                            <Hidden smUp>
-                              <i
-                                style={{ color: primaryColor[0], marginLeft: '4px', visibility: Boolean(isZh ? pool.tokenDescriptionUrl2 : pool.tokenDescriptionUrl) ? "visible" : "hidden" }}
-                                className={"yfiiicon yfii-help-circle"}
-                                onClick={
-                                  event => {
-                                    event.stopPropagation();
-                                    window.open(isZh ? pool.tokenDescriptionUrl2 : pool.tokenDescriptionUrl)
-                                  }
-                                }
-                              />
-                            </Hidden>
-                          </Typography>
-                          {typeof pool.tvl !== 'undefined' ? (
-                            <Typography className={classes.poolTvl} variant="body2">TVL: <NumberFormat value={pool.tvl} displayType={'text'} thousandSeparator={true} prefix={'$'} decimalScale={0} /> </Typography>
-                          ) : (
-                            <Typography className={classes.poolTvl} variant="body2">--</Typography>
-                          )}
-                          <Typography className={classes.iconContainerSubTitle} variant="body2">{pool.uses}</Typography>
-                        </Grid>
-                      </Grid>
-                    </Grid>
-
-                    <Grid item xs={6} sm={4} md={8}>
-                      <Grid item container justify="space-between">
-                        <Hidden smDown>
-                          <Grid item xs={5} container alignItems="center">
-                            <Grid item style={{ width: "200px" }}>
-                              <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>{pool.token == 'OG-BNB LP' || pool.token == 'PSG-BNB LP' || pool.token == 'JUV-BNB LP' || pool.token == 'ASR-BNB LP' || pool.token == 'ATM-BNB LP' ? forMat(balanceSingle) : forMat(balanceSingle).toFixed(6)} {pool.token}</Typography>
-                              <Typography className={classes.iconContainerSubTitle} variant="body2">{t('Vault-Balance')}</Typography></Grid>
-                          </Grid>
-                        </Hidden>
-                        <Hidden mdDown>
-                          <Grid item xs={4} container alignItems="center">
-                            <Grid item style={{ width: "200px" }}>
-                              <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>{pool.token == 'OG-BNB LP' || pool.token == 'PSG-BNB LP' || pool.token == 'JUV-BNB LP' ? forMat(singleDepositedBalance) : forMat(singleDepositedBalance).toFixed(6)} {pool.earnedToken}</Typography>
-                              <Typography className={classes.iconContainerSubTitle} variant="body2">{t('Vault-Deposited')}</Typography>
-                            </Grid>
-                          </Grid>
-                        </Hidden>
-                        <Grid item xs={12} md={3} container alignItems="center">
-                          <Grid item>
-                            <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
-                              <span>{nervePools.includes(pool.name) ? "APR" : "APY" }: {getApy(pool)} %</span>
-                            </Typography>
-                            <Typography className={classes.iconContainerSubTitle} variant="body2">
-                              <span>{nervePools.includes(pool.name) ? "ELE APR" : "APRD" }: {getAprd(pool)} %</span>
-                            </Typography>
-                          </Grid>
-                        </Grid>
-                      </Grid>
-                    </Grid>
-
-                    <Grid item xs={6} sm={2} md={1}>
-                      <Grid item container justify="flex-end" alignItems="center" spacing={2}>
-                        <Hidden xsUp>
-                          <Grid item>
-                            <IconButton
-                              classes={{
-                                root: classes.iconContainerSecond
-                              }}
-                              style={{ visibility: Boolean(isZh ? pool.tokenDescriptionUrl2 : pool.tokenDescriptionUrl) ? "visible" : "hidden" }}
-                              onClick={
-                                event => {
-                                  event.stopPropagation();
-                                  window.open(isZh ? pool.tokenDescriptionUrl2 : pool.tokenDescriptionUrl)
-                                }
-                              }
-                            >
-                              <i className={"yfiiicon yfii-help-circle"} />
-                            </IconButton>
-                          </Grid>
-                        </Hidden>
-                        <Grid item>
-                          <IconButton
-                            className={classes.iconContainerPrimary}
-                            onClick={(event) => {
-                              event.stopPropagation();
-                              openCard(index);
-                            }}
-                          >
-                            {
-                              openedCardList.includes(index) ? <i className={"yfiiicon yfii-arrow-up"} /> : <i className={"yfiiicon yfii-arrow-down"} />
-                            }
-                          </IconButton>
-                        </Grid>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                </AccordionSummary>
-                <AccordionDetails style={{ justifyContent: "space-between" }}>
-                  <Grid container style={{ width: "100%", marginLeft: 0, marginRight: 0 }}>
-                    <DepositSection pool={pool} index={index} balanceSingle={balanceSingle}/>
-                    <WithdrawSection pool={pool} index={index} sharesBalance={singleDepositedBalance} />
-
-                    {pool.claimable && (
-                      <HarvestSection pool={pool} index={index} pendingRewards={pendingRewards[pool.id]} />
-                    )}
-                  </Grid>
-                </AccordionDetails>
-              </Accordion>
-            </div>
-          </Grid>
+          <Pool key={index}
+            pool={pool}
+            index={index}
+            tokens={tokens}
+            fetchPoolBalancesDone={fetchPoolBalancesDone}
+          />
         )
       })}
     </Grid>

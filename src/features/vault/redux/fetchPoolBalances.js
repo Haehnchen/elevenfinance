@@ -1,13 +1,17 @@
 import { useCallback } from 'react';
 import { earnContractABI, erc20ABI } from "../../configure";
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+import BigNumber from 'bignumber.js';
+import { MultiCall } from 'eth-multicall';
+
+import { getNetworkMulticall } from 'features/helpers/getNetworkData';
+import { byDecimals } from 'features/helpers/bignumber';
+
 import {
   VAULT_FETCH_POOL_BALANCES_BEGIN,
   VAULT_FETCH_POOL_BALANCES_SUCCESS,
   VAULT_FETCH_POOL_BALANCES_FAILURE,
 } from './constants';
-import { fetchPricePerFullShare, fetchAllowance } from "../../web3";
-import async from 'async';
 
 export function fetchPoolBalances(data) {
   return dispatch => {
@@ -16,74 +20,71 @@ export function fetchPoolBalances(data) {
       type: VAULT_FETCH_POOL_BALANCES_BEGIN,
     });
 
-    // Return a promise so that you could control UI flow without states in the store.
-    // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
-    // It's hard to use state to manage it, but returning a promise allows you to easily achieve it.
-    // e.g.: handleSubmit() { this.props.actions.submitForm(data).then(()=> {}).catch(() => {}); }
     const promise = new Promise((resolve, reject) => {
-      // doRequest is a placeholder Promise. You should replace it with your own logic.
-      // args.error here is only for test coverage purpose.
       const { address, web3, pools } = data;
-      async.map(pools, (pool, callback) => {
-        const earnContract = pool.earnContractAddress == "0x3Ed531BfB3FAD41111f6dab567b33C4db897f991"? new web3.eth.Contract([{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"spender","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"spender","type":"address"}],"name":"allowance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"approve","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"decimals","outputs":[{"internalType":"uint8","name":"","type":"uint8"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"subtractedValue","type":"uint256"}],"name":"decreaseAllowance","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"addedValue","type":"uint256"}],"name":"increaseAllowance","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"shareToTokens","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"sharesPerToken","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"stake","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"tokenToShares","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"tokensPerShare","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalElevenFunds","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"recipient","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"transfer","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"sender","type":"address"},{"internalType":"address","name":"recipient","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"transferFrom","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"unstake","outputs":[],"stateMutability":"nonpayable","type":"function"}], pool.earnContractAddress) : new web3.eth.Contract(earnContractABI, pool.earnContractAddress);
-        const erc20Contract = pool.tokenAddress ? new web3.eth.Contract(erc20ABI, pool.tokenAddress) : null;
-        async.parallel([
-          (callbackInner) => {
-            fetchAllowance({
-              web3,
-              contractAddress: pool.earnContractAddress,
-              contract: erc20Contract,
-              address
-            }).then(
-              data => {
-                // console.log('data:' + data);
-                return callbackInner(null, data)
-              }
-            ).catch(
-              error => {
-                // console.log(error)
-                return callbackInner(error, 0)
-              }
-            )
-          },
-          (callbackInner) => { 
-            fetchPricePerFullShare({
-              contract: earnContract,
-              address,
-              earnAddress: pool.earnContractAddress
-            }).then(
-              data => {
-                // console.log(data)
-                return callbackInner(null, data)
-              }
-            ).catch(
-              error => {
-                // console.log(error)
-                return callbackInner(error, 0)
-              }
-            ) 
-          }
-        ], (error, data) => {
-            if (error) {
-              console.log(error)
+      const earnPools = pools.filter(pool => pool.earnContractAddress);
+
+      const tokenCalls = earnPools.map(pool => {
+        const contract = pool.tokenAddress
+          ? new web3.eth.Contract(erc20ABI, pool.tokenAddress)
+          : null;
+
+        return {
+          allowance: contract.methods.allowance(address, pool.earnContractAddress)
+        }
+      });
+
+      const vaultCalls = earnPools.map(pool => {
+        let pricePerShareCall;
+
+        // Using a separate method for E11 token
+        if (pool.earnContractAddress == '0x3Ed531BfB3FAD41111f6dab567b33C4db897f991') {
+          const contract = new web3.eth.Contract([{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"spender","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"spender","type":"address"}],"name":"allowance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"approve","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"decimals","outputs":[{"internalType":"uint8","name":"","type":"uint8"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"subtractedValue","type":"uint256"}],"name":"decreaseAllowance","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"addedValue","type":"uint256"}],"name":"increaseAllowance","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"shareToTokens","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"sharesPerToken","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"stake","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"tokenToShares","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"tokensPerShare","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalElevenFunds","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"recipient","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"transfer","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"sender","type":"address"},{"internalType":"address","name":"recipient","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"transferFrom","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"unstake","outputs":[],"stateMutability":"nonpayable","type":"function"}], pool.earnContractAddress);
+          pricePerShareCall = contract.methods.tokensPerShare();
+        } else {
+          const contract = new web3.eth.Contract(earnContractABI, pool.earnContractAddress);
+          pricePerShareCall = contract.methods.getPricePerFullShare();
+        }
+
+        return {
+          pricePerShare: pricePerShareCall
+        }
+      });
+
+      const multicall = new MultiCall(web3, getNetworkMulticall());
+      multicall.all([tokenCalls, vaultCalls])
+        .then(data => {
+          const poolsData = {};
+
+          pools.map(pool => {
+            let allowance = 0;
+            let pricePerFullShare = 1;
+
+            const callIndex = earnPools.findIndex(earnPool => earnPool.id == pool.id);
+            if (callIndex >= 0) {
+              allowance = new BigNumber(data[0][callIndex].allowance).toNumber();
+
+              const multiplier = pool.earnContractAddress == '0x3Ed531BfB3FAD41111f6dab567b33C4db897f991' ? 1e6 : 1;
+              pricePerFullShare = byDecimals(data[1][callIndex].pricePerShare * multiplier, 18).toNumber() || 1;
             }
-            pool.allowance = data[0] || 0;
-            pool.pricePerFullShare = data[1] || 1;
-            callback(null, pool);
+
+            poolsData[pool.id] = { allowance, pricePerFullShare }
+          })
+
+          dispatch({
+            type: VAULT_FETCH_POOL_BALANCES_SUCCESS,
+            data: poolsData,
+          });
+
+          resolve()
         })
-      }, (error, pools) => {
-        if(error) {
+        .catch(error => {
           dispatch({
             type: VAULT_FETCH_POOL_BALANCES_FAILURE,
-          })
-          return reject(error.message || error)
-        }
-        dispatch({
-          type: VAULT_FETCH_POOL_BALANCES_SUCCESS,
-          data: pools,
-        })
-        resolve()
-      })
+          });
+
+          return reject(error.message || error);
+        });
     });
 
     return promise;
@@ -96,9 +97,10 @@ export function useFetchPoolBalances() {
   // if array, means args passed to the action creator
   const dispatch = useDispatch();
 
-  const { pools, fetchPoolBalancesPending } = useSelector(
+  const { pools, fetchPoolBalancesDone, fetchPoolBalancesPending } = useSelector(
     state => ({
       pools: state.vault.pools,
+      fetchPoolBalancesDone: state.vault.fetchPoolBalancesDone,
       fetchPoolBalancesPending: state.vault.fetchPoolBalancesPending,
     }),
     shallowEqual,
@@ -114,11 +116,14 @@ export function useFetchPoolBalances() {
   return {
     pools,
     fetchPoolBalances: boundAction,
+    fetchPoolBalancesDone,
     fetchPoolBalancesPending
   };
 }
 
 export function reducer(state, action) {
+  const { pools } = state;
+
   switch (action.type) {
     case VAULT_FETCH_POOL_BALANCES_BEGIN:
       // Just after a request is sent
@@ -128,10 +133,23 @@ export function reducer(state, action) {
       };
 
     case VAULT_FETCH_POOL_BALANCES_SUCCESS:
-      // The request is success
+      const updatedPools = pools.map(pool => {
+        if (! action.data[pool.id]) {
+          return pool;
+        }
+
+        const { allowance, pricePerFullShare } = action.data[pool.id];
+        return {
+          ...pool,
+          allowance,
+          pricePerFullShare
+        }
+      });
+
       return {
         ...state,
-        pools: action.data,
+        pools: updatedPools,
+        fetchPoolBalancesDone: true,
         fetchPoolBalancesPending: false,
       };
 

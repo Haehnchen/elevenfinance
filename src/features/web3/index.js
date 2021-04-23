@@ -1,8 +1,12 @@
 export { approval } from './approval';
+export { farmClaim } from './farmClaim';
+export { farmStake } from './farmStake';
+export { farmUnstake } from './farmUnstake';
 export { fetchGasPrice } from './fetchGasPrice';
 export { fetchAllowance } from './fetchAllowance';
 export { fetchBalance } from './fetchBalance';
 export { fetchFarmStaked } from './fetchFarmStaked';
+export { fetchPendingEle } from './fetchPendingEle';
 export { fetchPendingReward } from './fetchPendingReward';
 export { claimRewards } from './claimRewards';
 export { deposit } from './deposit';

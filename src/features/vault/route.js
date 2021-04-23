@@ -3,6 +3,6 @@ import { VaultPage } from './';
 export default {
   path: 'vault',
   childRoutes: [
-    { path: 'vault', component: VaultPage, isIndex: true },
+    { path: ':category?', component: VaultPage, isIndex: true },
   ],
 };

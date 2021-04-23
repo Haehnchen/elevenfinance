@@ -7,9 +7,12 @@ pools.map(({token, tokenAddress, earnedToken, earnedTokenAddress})=> {
     tokenAddress: tokenAddress,
     tokenBalance: 0
   }
-  tokens[earnedToken] = {
-    tokenAddress: earnedTokenAddress,
-    tokenBalance: 0
+
+  if (earnedTokenAddress != tokenAddress) {
+    tokens[earnedToken] = {
+      tokenAddress: earnedTokenAddress,
+      tokenBalance: 0
+    }
   }
   return '';
 })
@@ -22,10 +25,21 @@ const initialState = {
   tokens,
   pendingRewards: {},
   contractApy: {},
+  farmAllowance: {},
   fetchContractApyPending: false,
+  fetchPoolBalancesDone: false,
   fetchPoolBalancesPending: false,
   fetchBalancesPending: false,
+  fetchFarmsStakedDone: false,
+  fetchFarmsStakedPending: false,
+  fetchFarmClaimPending: {},
+  fetchFarmStakePending: {},
+  fetchFarmUnstakePending: {},
   fetchApprovalPending: {},
+  fetchFarmAllowanceDone: {},
+  fetchPoolRewardsPending: {},
+  fetchFarmAllowancePending: {},
+  fetchFarmApprovalPending: {},
   fetchClaimPending: {},
   fetchDepositPending: {},
   fetchWithdrawPending: {},

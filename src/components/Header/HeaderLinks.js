@@ -39,7 +39,7 @@ export default function HeaderLinks(props) {
 
   const tabArr = [
     {value:'vault',label:t('Nav-Vault')},
-    {value:'farm',label:t('Nav-Farm')},
+    // {value:'farm',label:t('Nav-Farm')},
   ]
 
   useEffect(() => {
@@ -54,7 +54,7 @@ export default function HeaderLinks(props) {
       setShortAddress(address)
     } else {
       setShortAddress(`${address.slice(0, 6)}...${address.slice(-4)}`)
-    }  
+    }
   }, [dataUrl, address])
 
   const switchLanguage = () => {
@@ -110,7 +110,7 @@ export default function HeaderLinks(props) {
   if(window.location.hash != '#/' && window.location.hash!='#/index'){
     defaultTabValue = window.location.hash.split('/')[1];
   }
-  
+
   return (
     <List className={classes.list + " " + classes.mlAuto}>
       {

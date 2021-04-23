@@ -39,11 +39,9 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
       tokenAddress: pool.tokenAddress,
       contractAddress: pool.earnContractAddress,
       index
-    }).then(
-      () => enqueueSnackbar(`Approval success`, { variant: 'success' })
-    ).catch(
-      error => enqueueSnackbar(`Approval error: ${error}`, { variant: 'error' })
-    )
+    })
+      .then(() => enqueueSnackbar(`Approval success`, { variant: 'success' }))
+      .catch(error => enqueueSnackbar(`Approval error: ${error}`, { variant: 'error' }))
   }
 
   const onDeposit = isAll => {
@@ -137,7 +135,6 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
               </span>
             )}
           </div>
-          <div className={classes.poolBalanceDescription}>&nbsp;</div>
         </div>
       </div>
 

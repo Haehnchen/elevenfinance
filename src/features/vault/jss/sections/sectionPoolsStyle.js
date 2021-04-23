@@ -286,6 +286,10 @@ const sectionPoolsStyle = theme => ({
         paddingRight: "0px"
       },
       paddingRight: '0px'
+    },
+
+    hidden: {
+      display: 'none'
     }
 });
 
