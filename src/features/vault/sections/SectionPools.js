@@ -364,7 +364,7 @@ export default function SectionPools() {
                     <Grid item xs={12} sm={6} md={3}>
                       <Grid item container alignItems="center" xs={12} spacing={2}>
                         <Grid item>
-                          <Avatar alt={pool.token} src={require(`../../../images/${pool.token}-logo.svg`)} />
+                          <Avatar alt={pool.token} src={require(`../../../images/${pool.isV1 && pool.token.indexOf('old') === 0 ? pool.token.slice(3) : pool.token}-logo.svg`)} />
                         </Grid>
                         <Grid item>
                           <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom>
@@ -467,7 +467,7 @@ export default function SectionPools() {
 
                     <WithdrawSection pool={pool} index={index} sharesBalance={singleDepositedBalance} />
 
-                    {pool.claimable && (
+                    {pool.claimable && !pool.isV1 && (
                       <HarvestSection pool={pool} index={index} pendingRewards={pendingRewards[pool.id]} />
                     )}
                   </Grid>
