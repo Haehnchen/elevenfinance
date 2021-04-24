@@ -42,7 +42,7 @@ export function fetchWithdraw(index, amount) {
         .on('receipt', function(receipt){
           dispatch(enqueueSnackbar({
             key: new Date().getTime() + Math.random(),
-            message: 'Approval success',
+            message: 'Withdrawal success',
             options: {
               variant: 'success',
             },

@@ -286,7 +286,18 @@ const sectionPoolsStyle = theme => ({
         paddingRight: "0px"
       },
       paddingRight: '0px'
+    },
+
+    poolWarning: {
+      margin: '-20px 0 10px',
+      background: '#f0b90b',
+      color: 'rgb(30, 41, 59)',
+      fontWeight: 'bold',
+      textAlign: 'center',
+      padding: '5px 10px !important',
+      borderRadius: '5px 5px 0 0'
     }
+
 });
 
 export default sectionPoolsStyle;
