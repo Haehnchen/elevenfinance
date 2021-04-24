@@ -131,7 +131,6 @@ const pools = [
   },
   {
     name: 'ICE-BNB LP',
-    isV1: true,
     description: '',
     token: '11ICEBNB',
     tokenDescription: '11ICEBNB',
@@ -153,7 +152,6 @@ const pools = [
   },
   {
     name: 'EULER-BNB LP',
-    isV1: true,
     description: '',
     token: '11EULER',
     tokenDescription: '11EULER',
