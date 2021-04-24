@@ -256,7 +256,6 @@ const pools = [
   },
   {
     name: 'oldEPS-BNB LP',
-    isV1: true,
     description: '',
     token: 'old11EPS',
     tokenDescription: 'old11EPS',
