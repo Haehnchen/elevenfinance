@@ -214,7 +214,6 @@ const pools = [
   },
   {
     name: 'YUMCHA-BUSD LP',
-    isV1: true,
     description: '',
     token: '11YUMCHABUSD',
     tokenDescription: '11YUMCHABUSD',
