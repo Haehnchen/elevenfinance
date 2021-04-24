@@ -25,7 +25,7 @@ export function fetchPricePerShare(index) {
       const { pools } = farm;
       const { name, token, tokenAddress } = pools[index];
 
-      if (name == 'ELE-BNB LP') {
+      if (tokenAddress == '0xa9338126a645aca52aa74ce65fbc1092eb67d335') {
         const data = new BigNumber(1e18);
 
         dispatch({
