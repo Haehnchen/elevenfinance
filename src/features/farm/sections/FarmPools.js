@@ -59,7 +59,7 @@ export default () => {
         pool["farm"] = { apy: apy };
         return pool;
       } else if (name !== undefined) {
-        let farm = json[name]["farm"];
+        let farm = json[name]?.farm || { aprd: 0, apy: 0, aprl: 0};
         pool["farm"] = farm;
         return pool;
       }
@@ -292,13 +292,13 @@ export default () => {
                     {lpTokens.map((item, index) => {
                       return (
                         <Avatar key={index}
-                          src={require(`../../../images/${item}-logo.svg`)} className={classes.logoImage}
+                          src={require(`../../../images/${pool.isV1 && item.indexOf('old') === 0 ? item.slice(3) : item}-logo.svg`)} className={classes.logoImage}
                           style={index > 0 ? offsetImageStyle : {}}
                         />
                       )
                     })}
                   </div>
-                ) : <img src={require(`../../../images/${token}-logo.svg`)} className={classes.logoImage} />}
+                ) : <img src={require(`../../../images/${pool.isV1 && token.indexOf('old') === 0 ? token.slice(3) : token}-logo.svg`)} className={classes.logoImage} />}
                 <div className={classes.weightFont} style={{ marginTop: 10 }}>{token}</div>
 
                 <div style={{ fontSize: 13 }}>
