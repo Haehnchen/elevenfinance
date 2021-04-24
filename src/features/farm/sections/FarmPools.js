@@ -54,7 +54,7 @@ export default () => {
     let normalizedData = pools.map((pool, index) => {
       let name = pool.name;
 
-      if (name === "ELE-BNB LP") {
+      if (name === "ELE-BNB LP" || name === "ELE-BNB LP V2") {
         let apy = json[name]["apy"];
         pool["farm"] = { apy: apy };
         return pool;
@@ -306,7 +306,7 @@ export default () => {
                 </div>
                 <div style={{ fontSize: 13, marginTop: -5 }}>{t('Farm-Earn')} {earnedToken}</div>
 
-                {token == "ELE-BNB LP" ? (
+                {token == "ELE-BNB LP" || token == "ELE-BNB LP V2" ? (
                   <div>
                     <div className={classes.weightFont} style={{ margin: 15 }}>APR: <span>{farmApy(pool)}</span>%</div>
                     <div>x60 weight</div>

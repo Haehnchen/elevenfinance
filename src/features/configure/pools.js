@@ -131,7 +131,7 @@ export const pools = [
     id: 'nervebusd',
     name: 'NRVBUSD',
     token: 'NRV-BUSD LP',
-    tokenDescription: 'NRV',
+    tokenDescription: 'oldNRV',
     tokenAddress: '',
     tokenDecimals: 18,
     uses: 'Uses nerve',
@@ -2463,6 +2463,27 @@ export const pools = [
     categories: ['Pancake']
   },
   {
+    id: 'oldblkbnb',
+    name: 'oldBLK',
+    token: 'oldBLK-BNB LP',
+    tokenDescription: 'oldBLK',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses old pancakeswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: 'old11BLK',
+    earnedTokenAddress: '0x689D35ec441F3EDc125Eb53Fec1eaC755f397B76',
+    earnContractAddress: '0x689D35ec441F3EDc125Eb53Fec1eaC755f397B76',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0xC743Dc05F03D25E1aF8eC5F8228f4BD25513c8d0',
+    categories: ['Pancake']
+  },
+  {
     id: 'blkbnb',
     name: 'BLK',
     token: 'BLK-BNB LP',
@@ -3469,7 +3490,7 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x1f280a4fA78f5805bAC193dDdAfEB77B16da4614',
-    categories: ['Pancake', 'Wault']
-  }
+    tokenAddress: '0xd6b900d5308356317299dafe303e661271aa12f1',
+    categories: ['Pancake']
+  },
 ];
