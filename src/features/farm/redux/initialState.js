@@ -1290,13 +1290,12 @@ const pools = [
     token1: "0xbcf39f0edda668c58371e519af37ca705f2bfcbd",
     token2: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
   },
-
   {
-    name: 'CAKE-BNB LP',
+    name: 'oldCAKE-BNB LP',
     isV1: true,
     description: '',
-    token: '11CAKEBNB',
-    tokenDescription: '11CAKEBNB',
+    token: 'old11CAKEBNB',
+    tokenDescription: 'old11CAKEBNB',
     tokenDecimals: 18,
     tokenAddress: '0x093fe062705700BE2e4EffE45Be3e5563E397b20',
     earnedToken: 'ELE',
@@ -1310,6 +1309,27 @@ const pools = [
     earnTime: 365 * 24 * 3600,
     earnedTokenUrl: 'https://eleven.finance',
     masterchefPid: 63, //ELEVEN CHEF!!
+    token1: "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82",
+    token2: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
+  },
+  {
+    name: 'CAKE-BNB LP',
+    description: '',
+    token: '11CAKEBNB',
+    tokenDescription: '11CAKEBNB',
+    tokenDecimals: 18,
+    tokenAddress: '0x58D25A7e34eE8fA7A070510e6D2E0096Ed62c828',
+    earnedToken: 'ELE',
+    earnedTokenDescription: '',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+    earnContractAbi: pool4Abi,
+    color: '12, 33, 89',
+    startTimestamp: 1614798020,
+    earnTime: 365 * 24 * 3600,
+    earnedTokenUrl: 'https://eleven.finance',
+    masterchefPid: 178, //ELEVEN CHEF!!
     token1: "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82",
     token2: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
   },
