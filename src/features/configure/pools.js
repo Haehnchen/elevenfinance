@@ -348,7 +348,6 @@ export const pools = [
   },
   {
     id: 'oldepsbnb',
-    isV1: true,
     name: 'oldEPS',
     token: 'oldEPS-BNB LP',
     tokenDescription: 'oldEPS',
