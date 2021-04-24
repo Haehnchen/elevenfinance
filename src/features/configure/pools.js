@@ -2465,6 +2465,7 @@ export const pools = [
   {
     id: 'oldblkbnb',
     name: 'oldBLK',
+    isV1: true,
     token: 'oldBLK-BNB LP',
     tokenDescription: 'oldBLK',
     tokenAddress: '',
