@@ -23,6 +23,27 @@ const pools = [
     token2: "0xacd7b3d9c10e97d0efa418903c0c7669e702e4c0"
   },
   {
+    name: 'ELE-BNB LP V2',
+    description: '',
+    token: 'ELE-BNB LP V2',
+    tokenDescription: 'ELE-BNB LP V2',
+    tokenDecimals: 18,
+    tokenAddress: '0xa9338126a645aca52aa74ce65fbc1092eb67d335',
+    earnedToken: 'ELE',
+    earnedTokenDescription: '',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+    earnContractAbi: pool4Abi,
+    color: '133, 100, 245',
+    startTimestamp: 1614808020,
+    earnTime: 365 * 24 * 3600,
+    earnedTokenUrl: 'https://eleven.finance',
+    masterchefPid: 104,
+    token1: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+    token2: "0xacd7b3d9c10e97d0efa418903c0c7669e702e4c0"
+  },
+  {
     name: 'ELE',
     description: '',
     token: 'E11',
