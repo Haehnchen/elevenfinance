@@ -77,11 +77,11 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: 'ELE-BNB LP',
-    earnedTokenAddress: '0x1f43e18a2558aef9276a00e041c57ba589813eb2',
+    earnedTokenAddress: '0xa9338126a645aca52aa74ce65fbc1092eb67d335',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x1f43e18a2558aef9276a00e041c57ba589813eb2',
+    tokenAddress: '0xa9338126a645aca52aa74ce65fbc1092eb67d335',
     categories: ['Pancake'],
 
     farm: {
@@ -89,7 +89,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 8
+      masterchefPid: 104
     }
   },
   {
@@ -234,12 +234,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11NRVBNB',
-    earnedTokenAddress: '0xeB5603459684F5dbaC4a1B6a35A214Cd42931714',
-    earnContractAddress: '0xeB5603459684F5dbaC4a1B6a35A214Cd42931714',
+    earnedTokenAddress: '0x9009a831fd7469ae9d4a07250cbbae05c2b5c165',
+    earnContractAddress: '0x9009a831fd7469ae9d4a07250cbbae05c2b5c165',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x5a805994a2E30aC710e7376ccc0211285bD4dD92',
+    tokenAddress: '0xE482249Cd295C0d1e9D2baAEE71e66de21024C68',
     categories: ['Pancake', 'Nerve'],
 
     farm: {
@@ -247,7 +247,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 91
+      masterchefPid: 109
     }
   },
   {
@@ -408,12 +408,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11EPS',
-    earnedTokenAddress: '0xc8d3ad71ba1d7eb0a234c6107567b99dc0b71ba1',
-    earnContractAddress: '0xc8d3ad71ba1d7eb0a234c6107567b99dc0b71ba1',
+    earnedTokenAddress: '0x251fc294ec0e3d2d82df70cc9271ee60e4ae76e0',
+    earnContractAddress: '0x251fc294ec0e3d2d82df70cc9271ee60e4ae76e0',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xf9045866e7b372DeF1EFf3712CE55FAc1A98dAF0',
+    tokenAddress: '0xddE420cbB3794ebD8FFC3Ac69F9c78e5d1411870',
     categories: ['Ellipsis'],
 
     farm: {
@@ -421,7 +421,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 77
+      masterchefPid: 177
     }
   },
   {
@@ -467,12 +467,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11SWTHBNB',
-    earnedTokenAddress: '0x4f8D5Ae88835aA910DD0744Ac65c91deF52ceaef',
-    earnContractAddress: '0x4f8D5Ae88835aA910DD0744Ac65c91deF52ceaef',
+    earnedTokenAddress: '0xe6fbc3e4e20f30f1250febe3e985b308380c7ed0',
+    earnContractAddress: '0xe6fbc3e4e20f30f1250febe3e985b308380c7ed0',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x8c5cFfad6cddb96Ee33DA685D0d50a37e030E115',
+    tokenAddress: '0x123D475E13aA54A43a7421d94CAa4459dA021c77',
     categories: ['Pancake'],
 
     farm: {
@@ -480,7 +480,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 86
+      masterchefPid: 170
     }
   },
   {
@@ -496,12 +496,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11DFTBNB',
-    earnedTokenAddress: '0xD78BA97d501E55Ef7C5c5a385E30c572E9ab7b07',
-    earnContractAddress: '0xD78BA97d501E55Ef7C5c5a385E30c572E9ab7b07',
+    earnedTokenAddress: '0x768becbc0f490e2eb9d731bf158b8eaab28a401f',
+    earnContractAddress: '0x768becbc0f490e2eb9d731bf158b8eaab28a401f',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x8FbCbD7e30b1733965a8980bf7Ae2ca1c0C456cc',
+    tokenAddress: '0x24d3B0eD4C444A4f6882d527cBF67aDc8c026582',
     categories: ['Pancake'],
 
     farm: {
@@ -509,7 +509,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 87
+      masterchefPid: 171
     }
   },
   {
@@ -525,12 +525,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11PBTCBNB',
-    earnedTokenAddress: '0x70f7817956b642E9C703680b1f0D5602c549F867',
-    earnContractAddress: '0x70f7817956b642E9C703680b1f0D5602c549F867',
+    earnedTokenAddress: '0x0580daab7ab6d792786f0feed80bd8c8cde65938',
+    earnContractAddress: '0x0580daab7ab6d792786f0feed80bd8c8cde65938',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xb5F6f7dAD23132d40d778085D795BD0FD4B859CD',
+    tokenAddress: '0x0362ba706DFE8ED12Ec1470aB171d8Dcb1C72B8D',
     categories: ['Pancake'],
 
     farm: {
@@ -538,7 +538,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 88
+      masterchefPid: 172
     }
   },
   {
@@ -554,12 +554,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11GUMBNB',
-    earnedTokenAddress: '0x93ED4d8F66aCc39d660Cd567eb3d9513a4682A9D',
-    earnContractAddress: '0x93ED4d8F66aCc39d660Cd567eb3d9513a4682A9D',
+    earnedTokenAddress: '0x787ded9f1465e93cff85de8d407e44e51bb52b54',
+    earnContractAddress: '0x787ded9f1465e93cff85de8d407e44e51bb52b54',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x155645cDF8e4B28d5B7790b65d9f79efc222740C',
+    tokenAddress: '0x28Ea5894D4DBbE90bB58eE3BAB2869387d711c87',
     categories: ['Pancake'],
 
     farm: {
@@ -567,7 +567,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 89
+      masterchefPid: 173
     }
   },
   {
@@ -583,12 +583,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11DEGOBNB',
-    earnedTokenAddress: '0x088Cd6b5E22D1F7BE00B286A6aF0bc088B7C750C',
-    earnContractAddress: '0x088Cd6b5E22D1F7BE00B286A6aF0bc088B7C750C',
+    earnedTokenAddress: '0x483626122b250409fe0fa1098cb6abb26a0ba613',
+    earnContractAddress: '0x483626122b250409fe0fa1098cb6abb26a0ba613',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x17F0b998B81cE75074a7CDAdAe6D63Da3cb23572',
+    tokenAddress: '0xF1Ec67fA1881796BFf63Db3E1A301cE9cb787Fad',
     categories: ['Pancake'],
 
     farm: {
@@ -596,7 +596,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 90
+      masterchefPid: 174
     }
   },
   {
@@ -612,12 +612,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11EASYBNB',
-    earnedTokenAddress: '0x24999901607DE66DC095D3f4e9037dB69c70bdEd',
-    earnContractAddress: '0x24999901607DE66DC095D3f4e9037dB69c70bdEd',
+    earnedTokenAddress: '0xaa86c6990c532a37a0c7b4eda418abfd4aecac61',
+    earnContractAddress: '0xaa86c6990c532a37a0c7b4eda418abfd4aecac61',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xBD1eC00B0d1CCA9D5B28fbE0bB7d664238af2fFa',
+    tokenAddress: '0x20c6De8983Fb2D641c55004646aEF40b4EA66E18',
     categories: ['Pancake'],
 
     farm: {
@@ -625,7 +625,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 92
+      masterchefPid: 175
     }
   },
   {
@@ -641,12 +641,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11ODDZBNB',
-    earnedTokenAddress: '0x3E52061CBbbAB88578d908855fCd2ac2ebF4497e',
-    earnContractAddress: '0x3E52061CBbbAB88578d908855fCd2ac2ebF4497e',
+    earnedTokenAddress: '0xb084ef6ba200fba55367bf94ec672b4687c036b2',
+    earnContractAddress: '0xb084ef6ba200fba55367bf94ec672b4687c036b2',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x61376B56Ff33c618B115131712A4138f98810A6a',
+    tokenAddress: '0x3c2c77353E2F6AC1578807b6b2336Bf3a3CbB014',
     categories: ['Pancake'],
 
     farm: {
@@ -654,7 +654,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 93
+      masterchefPid: 108
     }
   },
   {
@@ -670,12 +670,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11APYSBNB',
-    earnedTokenAddress: '0xcb78A5dFb73612a325c322c539955eFda1Fdd38F',
-    earnContractAddress: '0xcb78A5dFb73612a325c322c539955eFda1Fdd38F',
+    earnedTokenAddress: '0x94fcc63a8821bdf802d12c783c2df69d5cd78f9d',
+    earnContractAddress: '0x94fcc63a8821bdf802d12c783c2df69d5cd78f9d',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xE5783Cc9dFb3E7e474B81B07369a008e80F1cEdb',
+    tokenAddress: '0x510b29a93ebf098f3fC24A16541aAA0114D07056',
     categories: ['Pancake'],
 
     farm: {
@@ -683,7 +683,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 94
+      masterchefPid: 176
     }
   },
   {
@@ -728,12 +728,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11BONDLYBNB',
-    earnedTokenAddress: '0xc1Fc509224b5c2E268E164c3500303a086128EBf',
-    earnContractAddress: '0xc1Fc509224b5c2E268E164c3500303a086128EBf',
+    earnedTokenAddress: '0x631a4e92cdb80d7f8e7c9073f0292ba9432bca30',
+    earnContractAddress: '0x631a4e92cdb80d7f8e7c9073f0292ba9432bca30',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x67581BFB4fc13BB73C71489b504E9b5354769063',
+    tokenAddress: '0xb8b4383B49d451BBeA63BC4421466E1086da6f18',
     categories: ['Pancake'],
 
     farm: {
@@ -741,7 +741,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 96
+      masterchefPid: 107
     }
   },
   {
@@ -757,12 +757,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11LIEN',
-    earnedTokenAddress: '0xA16581a46D35746AAd3A821965Fb437A2EE348C7',
-    earnContractAddress: '0xA16581a46D35746AAd3A821965Fb437A2EE348C7',
+    earnedTokenAddress: '0xc9b8ab5561d95c54ad51f1b6cefff0660026e3f1',
+    earnContractAddress: '0xc9b8ab5561d95c54ad51f1b6cefff0660026e3f1',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xcd14855150335AAE984aa6D281E090c27035C692',
+    tokenAddress: '0xa4963B38b271c0D714593063497Fc786Fa4029Ce',
     categories: ['Pancake'],
 
     farm: {
@@ -770,7 +770,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 78
+      masterchefPid: 169
     }
   },
   {
@@ -786,12 +786,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11ZIL',
-    earnedTokenAddress: '0x700Aa0E0a80A630c0Bb9c6535eF1fA7BB5C3De39',
-    earnContractAddress: '0x700Aa0E0a80A630c0Bb9c6535eF1fA7BB5C3De39',
+    earnedTokenAddress: '0xb89c254010a3345fca9f15f77a8242391569ac39',
+    earnContractAddress: '0xb89c254010a3345fca9f15f77a8242391569ac39',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xc746337b5F800a0e19eD4eB3bda03FF1401B8167',
+    tokenAddress: '0x6A97867a4b7Eb7646ffB1F359ad582e9903aa1C2',
     categories: ['Pancake'],
 
     farm: {
@@ -799,7 +799,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 76
+      masterchefPid: 168
     }
   },
   {
@@ -844,12 +844,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11BFI',
-    earnedTokenAddress: '0x34012a405BdF69a6d419d358FFA1EF1758693Ba1',
-    earnContractAddress: '0x34012a405BdF69a6d419d358FFA1EF1758693Ba1',
+    earnedTokenAddress: '0xa26a2c4da2b3c1e707712fdb4a7148d05441a3ed',
+    earnContractAddress: '0xa26a2c4da2b3c1e707712fdb4a7148d05441a3ed',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x45a9e8D48BC560416008D122C9437927fEd50E7d',
+    tokenAddress: '0x153Ad7d25B0b810497483d0cEE8AF42Fc533FeC8',
     categories: ['Pancake'],
 
     farm: {
@@ -857,7 +857,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 65
+      masterchefPid: 158
     }
   },
   {
@@ -873,12 +873,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11BELT',
-    earnedTokenAddress: '0xd127361D75Eb0a3e6d0cEF41992e54C311F2Ce1f',
-    earnContractAddress: '0xd127361D75Eb0a3e6d0cEF41992e54C311F2Ce1f',
+    earnedTokenAddress: '0xe7d709c8aabd5c67652bb3166eaa972a68331344',
+    earnContractAddress: '0xe7d709c8aabd5c67652bb3166eaa972a68331344',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x83B92D283cd279fF2e057BD86a95BdEfffED6faa',
+    tokenAddress: '0xF3Bc6FC080ffCC30d93dF48BFA2aA14b869554bb',
     categories: ['Pancake'],
 
     farm: {
@@ -886,7 +886,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 66
+      masterchefPid: 159
     }
   },
   {
@@ -902,12 +902,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11BUX',
-    earnedTokenAddress: '0x6aE4Acea632499b04d32a4BD6841BF52D75F7B8b',
-    earnContractAddress: '0x6aE4Acea632499b04d32a4BD6841BF52D75F7B8b',
+    earnedTokenAddress: '0x8d6250dfba37fd083a1275b58ec286e46028e4d6',
+    earnContractAddress: '0x8d6250dfba37fd083a1275b58ec286e46028e4d6',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x0F556f4E47513d1a19Be456a9aF778d7e1A226B9',
+    tokenAddress: '0x222C3CbB89647bF77822435Bd4c234A04272A77A',
     categories: ['Pancake'],
 
     farm: {
@@ -915,7 +915,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 67
+      masterchefPid: 160
     }
   },
   {
@@ -931,12 +931,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11ALICE',
-    earnedTokenAddress: '0x2177A4A1242E1FE814B35cd3B789275eF1c377a0',
-    earnContractAddress: '0x2177A4A1242E1FE814B35cd3B789275eF1c377a0',
+    earnedTokenAddress: '0x1013350b1e0215f654e8e46972f84e2b2874a800',
+    earnContractAddress: '0x1013350b1e0215f654e8e46972f84e2b2874a800',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xe022baa3E5E87658f789c9132B10d7425Fd3a389',
+    tokenAddress: '0xcAD7019D6d84a3294b0494aEF02e73BD0f2572Eb',
     categories: ['Pancake'],
 
     farm: {
@@ -944,7 +944,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 68
+      masterchefPid: 161
     }
   },
   {
@@ -960,12 +960,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11BUNNY',
-    earnedTokenAddress: '0x404838F913D0C0baE376C2C85720626d4C71162d',
-    earnContractAddress: '0x404838F913D0C0baE376C2C85720626d4C71162d',
+    earnedTokenAddress: '0x2adf8e06993e8723464981e6e472c0a819912d4e',
+    earnContractAddress: '0x2adf8e06993e8723464981e6e472c0a819912d4e',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x7Bb89460599Dbf32ee3Aa50798BBcEae2A5F7f6a',
+    tokenAddress: '0x5aFEf8567414F29f0f927A0F2787b188624c10E2',
     categories: ['Pancake'],
 
     farm: {
@@ -973,7 +973,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 69
+      masterchefPid: 162
     }
   },
   {
@@ -989,12 +989,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11COS',
-    earnedTokenAddress: '0xD49519303d44C9F00a1a100F49d9ADb0029D453f',
-    earnContractAddress: '0xD49519303d44C9F00a1a100F49d9ADb0029D453f',
+    earnedTokenAddress: '0xf8cc41bf5b3dfb569d06b84cd2edfc76d4fbe913',
+    earnContractAddress: '0xf8cc41bf5b3dfb569d06b84cd2edfc76d4fbe913',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x7b1e440240B220244761C9D9A3B07fbA1995BD84',
+    tokenAddress: '0xe98585bBb2dc81854fF100A3d9D7B0F53E0dafEd',
     categories: ['Pancake'],
 
     farm: {
@@ -1002,7 +1002,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 70
+      masterchefPid: 163
     }
   },
   {
@@ -1018,12 +1018,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11BIFI',
-    earnedTokenAddress: '0xf185e84431D8A68B97c8867Ca66d3604B4Ea42f9',
-    earnContractAddress: '0xf185e84431D8A68B97c8867Ca66d3604B4Ea42f9',
+    earnedTokenAddress: '0x21295a0163599b3e8a70dacefa478bb55d44947b',
+    earnContractAddress: '0x21295a0163599b3e8a70dacefa478bb55d44947b',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xd132D2C24F29EE8ABb64a66559d1b7aa627Bd7fD',
+    tokenAddress: '0x3f1A9f3D9aaD8bD339eD4853F345d2eF89fbfE0c',
     categories: ['Pancake'],
 
     farm: {
@@ -1031,7 +1031,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 71
+      masterchefPid: 164
     }
   },
   {
@@ -1047,12 +1047,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11DUSK',
-    earnedTokenAddress: '0x12b235e5FcB68414513D471406014bff2DF08703',
-    earnContractAddress: '0x12b235e5FcB68414513D471406014bff2DF08703',
+    earnedTokenAddress: '0x400f5446653b9554e6b3280146c96f27e91f5cd6',
+    earnContractAddress: '0x400f5446653b9554e6b3280146c96f27e91f5cd6',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xB7918560273FD56e50E9c215CC0DFE8D764C36C5',
+    tokenAddress: '0x678EDb8B268e73dB57b7694c163e1dc296b6e219',
     categories: ['Pancake'],
 
     farm: {
@@ -1060,7 +1060,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 72
+      masterchefPid: 165
     }
   },
   {
@@ -1076,12 +1076,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11TRADE',
-    earnedTokenAddress: '0x694E3D8897C87F3911D2C38b2Bdc52cD60919305',
-    earnContractAddress: '0x694E3D8897C87F3911D2C38b2Bdc52cD60919305',
+    earnedTokenAddress: '0xcee9b83e0994f4f56c5fe6a6f20493679bd27818',
+    earnContractAddress: '0xcee9b83e0994f4f56c5fe6a6f20493679bd27818',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x2562f94E90dE6D9eb4fB6B3b8Eab56b15Aa4FC72',
+    tokenAddress: '0x8F6baf368E7A4f6e2C9c995f22702d5e654A0237',
     categories: ['Pancake'],
 
     farm: {
@@ -1089,7 +1089,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 73
+      masterchefPid: 166
     }
   },
   {
@@ -1105,12 +1105,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11LTO',
-    earnedTokenAddress: '0xd3188d59296aA312C468849d88f270b17404239E',
-    earnContractAddress: '0xd3188d59296aA312C468849d88f270b17404239E',
+    earnedTokenAddress: '0xbc66934128d60cf0e47f2be7b7e3deeb19ce92e3',
+    earnContractAddress: '0xbc66934128d60cf0e47f2be7b7e3deeb19ce92e3',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x85644FcD00C401E1A0a0a10d2aE6Bbe04A73e4ab',
+    tokenAddress: '0xa5Bb44c6F5fD9B836E5a654c8AbbCCc96A15deE5',
     categories: ['Pancake'],
 
     farm: {
@@ -1118,7 +1118,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 74
+      masterchefPid: 167
     }
   },
   {
@@ -1134,12 +1134,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11PCWS',
-    earnedTokenAddress: '0x11f62a74B9692bD7e9936B147c74309a57F730EA',
-    earnContractAddress: '0x11f62a74B9692bD7e9936B147c74309a57F730EA',
+    earnedTokenAddress: '0x0c1c5dbe7cc26da3927fe7f37c5760e3686f370d',
+    earnContractAddress: '0x0c1c5dbe7cc26da3927fe7f37c5760e3686f370d',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x889E81d25bFfbA437b2a5d3e0E4FC58a0E2749c5',
+    tokenAddress: '0x6615CE60D71513aA4849269dD63821D324A23F8C',
     categories: ['Pancake'],
 
     farm: {
@@ -1147,7 +1147,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 75
+      masterchefPid: 129
     }
   },
   {
@@ -1163,12 +1163,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11CAKEBNB',
-    earnedTokenAddress: '0x093fe062705700BE2e4EffE45Be3e5563E397b20',
-    earnContractAddress: '0x093fe062705700BE2e4EffE45Be3e5563E397b20',
+    earnedTokenAddress: '0x58D25A7e34eE8fA7A070510e6D2E0096Ed62c828',
+    earnContractAddress: '0x58D25A7e34eE8fA7A070510e6D2E0096Ed62c828',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xA527a61703D82139F8a06Bc30097cC9CAA2df5A6',
+    tokenAddress: '0x0ed7e52944161450477ee417de9cd3a859b14fd0',
     categories: ['Pancake'],
 
     farm: {
@@ -1176,7 +1176,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 63
+      masterchefPid: 178
     }
   },
   {
@@ -1250,12 +1250,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11bOPEN',
-    earnedTokenAddress: '0xE8e64d86CFdAFC25Ccee1681Dab127aE8C37CC4b',
-    earnContractAddress: '0xE8e64d86CFdAFC25Ccee1681Dab127aE8C37CC4b',
+    earnedTokenAddress: '0x2ab4b226c08b8ecf4a54e0a4ed965c678188aa91',
+    earnContractAddress: '0x2ab4b226c08b8ecf4a54e0a4ed965c678188aa91',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x9d8b7e4a9D53654D82F12c83448D8f92732bC761',
+    tokenAddress: '0xc7A9c2af263ebB86139Cca9349e49b17129Ba033',
     categories: ['Pancake'],
 
     farm: {
@@ -1263,7 +1263,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 14
+      masterchefPid: 154
     }
   },
   {
@@ -1279,12 +1279,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11bMXX',
-    earnedTokenAddress: '0xda88bD84e752960f8fDe52CC2E9e6B19ae0D6e7C',
-    earnContractAddress: '0xda88bD84e752960f8fDe52CC2E9e6B19ae0D6e7C',
+    earnedTokenAddress: '0x37e54cfe5a6ed9224300d9839896c1dfa1828124',
+    earnContractAddress: '0x37e54cfe5a6ed9224300d9839896c1dfa1828124',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x4D5aA94Ce6BbB1BC4eb73207a5a5d4D052cFcD67',
+    tokenAddress: '0xc20A92a1424b29b78DFaF92FD35D4cf8A06419B4',
     categories: ['Pancake'],
 
     farm: {
@@ -1292,7 +1292,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 10
+      masterchefPid: 155
     }
   },
   {
@@ -1308,12 +1308,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11DODO',
-    earnedTokenAddress: '0x9fe4C02ba78cDE545F8c55775BbcC54324e37A9F',
-    earnContractAddress: '0x9fe4C02ba78cDE545F8c55775BbcC54324e37A9F',
+    earnedTokenAddress: '0x4101cea7ddc92ab53938a14e6b8ee1516640054d',
+    earnContractAddress: '0x4101cea7ddc92ab53938a14e6b8ee1516640054d',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x9e642d174B14fAEa31D842Dc83037c42b53236E6',
+    tokenAddress: '0xA9986Fcbdb23c2E8B11AB40102990a08f8E58f06',
     categories: ['Pancake'],
 
     farm: {
@@ -1321,7 +1321,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 11
+      masterchefPid: 153
     }
   },
   {
@@ -1337,12 +1337,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11SWINGBY',
-    earnedTokenAddress: '0x991Ece2D170cC4Fb3876e737c37B0e7a0CF0b827',
-    earnContractAddress: '0x991Ece2D170cC4Fb3876e737c37B0e7a0CF0b827',
+    earnedTokenAddress: '0x88094d75d1be902e7650cdb34f66b1852b896fc5',
+    earnContractAddress: '0x88094d75d1be902e7650cdb34f66b1852b896fc5',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x4576C456AF93a37a096235e5d83f812AC9aeD027',
+    tokenAddress: '0x4Fd6D315bEf387fAD2322fbc64368fC443F0886D',
     categories: ['Pancake'],
 
     farm: {
@@ -1350,7 +1350,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 15
+      masterchefPid: 106
     }
   },
   {
@@ -1366,12 +1366,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11BRY',
-    earnedTokenAddress: '0x07EAcFE846130F78A16f93e1DA8625953080c0d0',
-    earnContractAddress: '0x07EAcFE846130F78A16f93e1DA8625953080c0d0',
+    earnedTokenAddress: '0x8f15bd33c51fa54e9e0925dd4aae789aff9b28e5',
+    earnContractAddress: '0x8f15bd33c51fa54e9e0925dd4aae789aff9b28e5',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x5E3CD27F36932Bc0314aC4e2510585798C34a2fC',
+    tokenAddress: '0x21dD71aB78EDE3033c976948f769D506E4F489eE',
     categories: ['Pancake'],
 
     farm: {
@@ -1379,7 +1379,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 16
+      masterchefPid: 152
     }
   },
   {
@@ -1395,12 +1395,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11ZEE',
-    earnedTokenAddress: '0x06bdC7D6d0a2Ef45bC8b83F458407FE961596014',
-    earnContractAddress: '0x06bdC7D6d0a2Ef45bC8b83F458407FE961596014',
+    earnedTokenAddress: '0x61079517c5a7c66d8e9f337d5839f0976e9afda0',
+    earnContractAddress: '0x61079517c5a7c66d8e9f337d5839f0976e9afda0',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xB5Ab3996808c7e489DCDc0f1Af2AB212ae0059aF',
+    tokenAddress: '0x8e799cB0737525CeB8A6C6Ad07f748535fF6377B',
     categories: ['Pancake'],
 
     farm: {
@@ -1408,7 +1408,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 17
+      masterchefPid: 151
     }
   },
   {
@@ -1424,12 +1424,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11SWGB',
-    earnedTokenAddress: '0xd56F8c5E5a47fC010a3E86ba57D87B0DCfA5AAe5',
-    earnContractAddress: '0xd56F8c5E5a47fC010a3E86ba57D87B0DCfA5AAe5',
+    earnedTokenAddress: '0x8678e37e10a3ee45a87fa052513ce12878a990b1',
+    earnContractAddress: '0x8678e37e10a3ee45a87fa052513ce12878a990b1',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xC1800c29CF91954357cd0bf3f0accAADa3D0109c',
+    tokenAddress: '0x856f9AD94cA8680B899214Bb1EB3d235a3C33Afe',
     categories: ['Pancake'],
 
     farm: {
@@ -1437,7 +1437,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 18
+      masterchefPid: 150
     }
   },
   {
@@ -1453,12 +1453,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11WATCH',
-    earnedTokenAddress: '0x3d7c095A6559dF3FD185778Ac1687EcE650670a5',
-    earnContractAddress: '0x3d7c095A6559dF3FD185778Ac1687EcE650670a5',
+    earnedTokenAddress: '0x7c4294cbde222cf679dd059b35b517453580b195',
+    earnContractAddress: '0x7c4294cbde222cf679dd059b35b517453580b195',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xdC6C130299E53ACD2CC2D291fa10552CA2198a6b',
+    tokenAddress: '0x13321AcfF4A27f3d2bcA64b8bEaC6e5FdAAAf12C',
     categories: ['Pancake'],
 
     farm: {
@@ -1466,7 +1466,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 60
+      masterchefPid: 156
     }
   },
   {
@@ -1482,12 +1482,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11SFP',
-    earnedTokenAddress: '0x8cfd13f45c397BD58e6de469286ebb4FB939Fd2E',
-    earnContractAddress: '0x8cfd13f45c397BD58e6de469286ebb4FB939Fd2E',
+    earnedTokenAddress: '0x59b99da89de72130e624d60644fe9585dbe98f93',
+    earnContractAddress: '0x59b99da89de72130e624d60644fe9585dbe98f93',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xcBe2cF3bd012e9C1ADE2Ee4d41DB3DaC763e78F3',
+    tokenAddress: '0x942b294e59a8c47a0F7F20DF105B082710F7C305',
     categories: ['Pancake'],
 
     farm: {
@@ -1495,7 +1495,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 19
+      masterchefPid: 149
     }
   },
   {
@@ -1511,12 +1511,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11LIT',
-    earnedTokenAddress: '0x1F4FCAc27BB56b9D58F436f8f39a92973ae4C343',
-    earnContractAddress: '0x1F4FCAc27BB56b9D58F436f8f39a92973ae4C343',
+    earnedTokenAddress: '0x06683f660007a0875f40f7d2d1ded37c30a04378',
+    earnContractAddress: '0x06683f660007a0875f40f7d2d1ded37c30a04378',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x60bB03D1010b99CEAdD0dd209b64bC8bd83da161',
+    tokenAddress: '0x1F37d4226d23d09044B8005c127C0517BD7e94fD',
     categories: ['Pancake'],
 
     farm: {
@@ -1524,7 +1524,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 20
+      masterchefPid: 148
     }
   },
   {
@@ -1540,12 +1540,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11HGET',
-    earnedTokenAddress: '0xB76F6eF15e4EF27e5766573Dcbab684b099CBdE9',
-    earnContractAddress: '0xB76F6eF15e4EF27e5766573Dcbab684b099CBdE9',
+    earnedTokenAddress: '0x2a6f28aebf729f114f6d7728244914204d69bd44',
+    earnContractAddress: '0x2a6f28aebf729f114f6d7728244914204d69bd44',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x66b9E1eAc8a81F3752F7f3A5E95dE460688A17Ee',
+    tokenAddress: '0xF74ee1e10e097dc326a2ad004F9Cc95CB71088d3',
     categories: ['Pancake'],
 
     farm: {
@@ -1553,7 +1553,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 21
+      masterchefPid: 111
     }
   },
   {
@@ -1569,12 +1569,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11BDO',
-    earnedTokenAddress: '0xb1049508617924134d452b4b0ec38980D3f25fB2',
-    earnContractAddress: '0xb1049508617924134d452b4b0ec38980D3f25fB2',
+    earnedTokenAddress: '0x50a67d1a6b2acd18bf3869457949cfd3b38cdd7c',
+    earnContractAddress: '0x50a67d1a6b2acd18bf3869457949cfd3b38cdd7c',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x74690f829fec83ea424ee1F1654041b2491A7bE9',
+    tokenAddress: '0x4288706624e3dD839b069216eB03B8B9819C10d2',
     categories: ['Pancake'],
 
     farm: {
@@ -1582,7 +1582,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 22
+      masterchefPid: 110
     }
   },
   {
@@ -1598,12 +1598,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11EGLD',
-    earnedTokenAddress: '0x0C0116026103B88aDf611DAfD5301c669776eD48',
-    earnContractAddress: '0x0C0116026103B88aDf611DAfD5301c669776eD48',
+    earnedTokenAddress: '0x96cba0ee10841c244357ea7b1292a4bbcb4a5fb2',
+    earnContractAddress: '0x96cba0ee10841c244357ea7b1292a4bbcb4a5fb2',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x3Ef4952C7a9AfbE374EA02d1Bf5eD5a0015b7716',
+    tokenAddress: '0xcD68856b6E72E99b5eEaAE7d41Bb4A3b484c700D',
     categories: ['Pancake'],
 
     farm: {
@@ -1611,7 +1611,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 23
+      masterchefPid: 147
     }
   },
   {
@@ -1627,12 +1627,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11WSOTE',
-    earnedTokenAddress: '0x297c7816b70a0be4Ff7687aC381807f2e5Bb19A8',
-    earnContractAddress: '0x297c7816b70a0be4Ff7687aC381807f2e5Bb19A8',
+    earnedTokenAddress: '0x88c9b5f8bf319156499520a46cb7b5ad8efaa151',
+    earnContractAddress: '0x88c9b5f8bf319156499520a46cb7b5ad8efaa151',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xFfb9E2d5ce4378F1a89b29bf53F80804CC078102',
+    tokenAddress: '0x7653D2c31440f04d2c6520D482dC5DbD7650f70a',
     categories: ['Pancake'],
 
     farm: {
@@ -1640,7 +1640,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 24
+      masterchefPid: 146
     }
   },
   {
@@ -1656,12 +1656,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11FRONT',
-    earnedTokenAddress: '0x928C1937B9178F175551b72e4e43ae08E3c7E9eC',
-    earnContractAddress: '0x928C1937B9178F175551b72e4e43ae08E3c7E9eC',
+    earnedTokenAddress: '0x92cf8c13096b246fffc114d1e39cf13e26b3e537',
+    earnContractAddress: '0x92cf8c13096b246fffc114d1e39cf13e26b3e537',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x36b7D2e5C7877392Fb17f9219efaD56F3D794700',
+    tokenAddress: '0xC6b668548aA4A56792e8002A920d3159728121D5',
     categories: ['Pancake'],
 
     farm: {
@@ -1669,7 +1669,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 25
+      masterchefPid: 145
     }
   },
   {
@@ -1685,12 +1685,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11HELMET',
-    earnedTokenAddress: '0xC736a70E9d083BA610909A71B1995547e1f1bD1A',
-    earnContractAddress: '0xC736a70E9d083BA610909A71B1995547e1f1bD1A',
+    earnedTokenAddress: '0x000d6f296c41905f221ac4863baa0f5d2b8e9f08',
+    earnContractAddress: '0x000d6f296c41905f221ac4863baa0f5d2b8e9f08',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x6411310C07d8c48730172146Fd6F31FA84034a8b',
+    tokenAddress: '0xC869A9943b702B03770B6A92d2b2d25cf3a3f571',
     categories: ['Pancake'],
 
     farm: {
@@ -1698,7 +1698,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 26
+      masterchefPid: 144
     }
   },
   {
@@ -1714,12 +1714,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11BTCST',
-    earnedTokenAddress: '0x83b5d185cb2Bd62025D4c55F1bAFA7b9B6785abb',
-    earnContractAddress: '0x83b5d185cb2Bd62025D4c55F1bAFA7b9B6785abb',
+    earnedTokenAddress: '0xb7194eea1cafe93aa3bf33f44c2787c551c314e3',
+    earnContractAddress: '0xb7194eea1cafe93aa3bf33f44c2787c551c314e3',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x91589786D36fEe5B27A5539CfE638a5fc9834665',
+    tokenAddress: '0xB2678C414ebC63c9CC6d1a0fC45f43E249B50fdE',
     categories: ['Pancake'],
 
     farm: {
@@ -1727,7 +1727,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 28
+      masterchefPid: 143
     }
   },
   {
@@ -1743,12 +1743,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11LTC',
-    earnedTokenAddress: '0x59DA97Caed37a56Be45c96348E9BdDBe8eCE4fAc',
-    earnContractAddress: '0x59DA97Caed37a56Be45c96348E9BdDBe8eCE4fAc',
+    earnedTokenAddress: '0x84898845e6bef725ada3367350891c374d837076',
+    earnContractAddress: '0x84898845e6bef725ada3367350891c374d837076',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xBc765Fd113c5bDB2ebc25F711191B56bB8690aec',
+    tokenAddress: '0x71b01eBdDD797c8E9E0b003ea2f4FD207fBF46cC',
     categories: ['Pancake'],
 
     farm: {
@@ -1756,7 +1756,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 29
+      masterchefPid: 142
     }
   },
   {
@@ -1772,12 +1772,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11BSCX',
-    earnedTokenAddress: '0xDBF8B3a860a890c452809eb4e99F23335b81ab7B',
-    earnContractAddress: '0xDBF8B3a860a890c452809eb4e99F23335b81ab7B',
+    earnedTokenAddress: '0x2cd96e186a4d57687b445ecfb1ed9ccd1d5f9d72',
+    earnContractAddress: '0x2cd96e186a4d57687b445ecfb1ed9ccd1d5f9d72',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x20781bc3701C5309ac75291f5D09BdC23D7b7Fa8',
+    tokenAddress: '0x47C42b0A056A9C6e9C65b9Ef79020Af518e767A5',
     categories: ['Pancake'],
 
     farm: {
@@ -1785,7 +1785,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 30
+      masterchefPid: 141
     }
   },
   {
@@ -1801,12 +1801,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11TEN',
-    earnedTokenAddress: '0x95576e89a2097A2F3EC585E582B24d9Fa150868b',
-    earnContractAddress: '0x95576e89a2097A2F3EC585E582B24d9Fa150868b',
+    earnedTokenAddress: '0xdfa04c6a71e9584e7103cc0bf664fbea45377cc6',
+    earnContractAddress: '0xdfa04c6a71e9584e7103cc0bf664fbea45377cc6',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x01ecc44Ddd2D104F44D2AA1A2bD9DFbC91aE8275',
+    tokenAddress: '0x1B415C3ec8095AfBF9d78882b3a6263c4ad141B5',
     categories: ['Pancake'],
 
     farm: {
@@ -1814,7 +1814,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 31
+      masterchefPid: 140
     }
   },
   {
@@ -1830,12 +1830,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11BALBT',
-    earnedTokenAddress: '0xb18A859F3b5A4b053800e595D855CBB5f5da5EFE',
-    earnContractAddress: '0xb18A859F3b5A4b053800e595D855CBB5f5da5EFE',
+    earnedTokenAddress: '0xd64d92b8c9dc9b0119da885a7fd7036da5cd65b1',
+    earnContractAddress: '0xd64d92b8c9dc9b0119da885a7fd7036da5cd65b1',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xbe14f3a89A4F7f279Af9d99554cf12E8C29dB921',
+    tokenAddress: '0x24EB18bA412701f278B172ef96697c4622b19da6',
     categories: ['Pancake'],
 
     farm: {
@@ -1843,7 +1843,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 32
+      masterchefPid: 139
     }
   },
   {
@@ -1859,12 +1859,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11REEF',
-    earnedTokenAddress: '0xd7B75DAE1794649b9ea59E67C50c83D1c3F0aFD6',
-    earnContractAddress: '0xd7B75DAE1794649b9ea59E67C50c83D1c3F0aFD6',
+    earnedTokenAddress: '0x0f2e64cfd59670716bc69e940108764281d45d74',
+    earnContractAddress: '0x0f2e64cfd59670716bc69e940108764281d45d74',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x58B58cab6C5cF158f63A2390b817710826d116D0',
+    tokenAddress: '0xd63b5CecB1f40d626307B92706Df357709D05827',
     categories: ['Pancake'],
 
     farm: {
@@ -1872,7 +1872,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 33
+      masterchefPid: 114
     }
   },
   {
@@ -1888,12 +1888,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11DITTO',
-    earnedTokenAddress: '0xC272241ae3900f795109D506faaEd1047ADbe35E',
-    earnContractAddress: '0xC272241ae3900f795109D506faaEd1047ADbe35E',
+    earnedTokenAddress: '0x423bb4bef374da4ea7654230edf10a0ac94984b0',
+    earnContractAddress: '0x423bb4bef374da4ea7654230edf10a0ac94984b0',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x470BC451810B312BBb1256f96B0895D95eA659B1',
+    tokenAddress: '0x8645148dE4E339964bA480AE3478653b5bc6E211',
     categories: ['Pancake'],
 
     farm: {
@@ -1901,7 +1901,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 34
+      masterchefPid: 115
     }
   },
   {
@@ -1917,12 +1917,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11BLK',
-    earnedTokenAddress: '0x689D35ec441F3EDc125Eb53Fec1eaC755f397B76',
-    earnContractAddress: '0x689D35ec441F3EDc125Eb53Fec1eaC755f397B76',
+    earnedTokenAddress: '0x8910c3c650b611fd25930f9f57acf7a3dcba17ba',
+    earnContractAddress: '0x8910c3c650b611fd25930f9f57acf7a3dcba17ba',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xC743Dc05F03D25E1aF8eC5F8228f4BD25513c8d0',
+    tokenAddress: '0x356Dd24BfF8e23BdE0430f00ad0C290E33438bD7',
     categories: ['Pancake'],
 
     farm: {
@@ -1930,7 +1930,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 35
+      masterchefPid: 113
     }
   },
   {
@@ -1946,12 +1946,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11UNFI',
-    earnedTokenAddress: '0x456602BEA1a8644A8f4e34974Be8f5C828bE9580',
-    earnContractAddress: '0x456602BEA1a8644A8f4e34974Be8f5C828bE9580',
+    earnedTokenAddress: '0x2d67c46fd98a475ea6065c8d72d68b1cb71adb0a',
+    earnContractAddress: '0x2d67c46fd98a475ea6065c8d72d68b1cb71adb0a',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xbEA35584b9a88107102ABEf0BDeE2c4FaE5D8c31',
+    tokenAddress: '0x44EA47F2765fd5D26b7eF0222736AD6FD6f61950',
     categories: ['Pancake'],
 
     farm: {
@@ -1959,7 +1959,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 36
+      masterchefPid: 116
     }
   },
   {
@@ -1975,12 +1975,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11HARD',
-    earnedTokenAddress: '0x0144eeDa9f067592A444eDCC71fE438131f32dBB',
-    earnContractAddress: '0x0144eeDa9f067592A444eDCC71fE438131f32dBB',
+    earnedTokenAddress: '0x0412d1e65b2bc1c2739a0e06ae2ed9584d92b867',
+    earnContractAddress: '0x0412d1e65b2bc1c2739a0e06ae2ed9584d92b867',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x9F40e8a2Fcaa267A0c374B6c661E0b372264cC3D',
+    tokenAddress: '0x73566ca86248bD12F0979793e4671e99a40299A7',
     categories: ['Pancake'],
 
     farm: {
@@ -1988,7 +1988,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 37
+      masterchefPid: 117
     }
   },
   {
@@ -2004,12 +2004,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11CTK',
-    earnedTokenAddress: '0x01d0571F47a79782Db6B0C33c024aEDCB91FEC2C',
-    earnContractAddress: '0x01d0571F47a79782Db6B0C33c024aEDCB91FEC2C',
+    earnedTokenAddress: '0x4c9518936f979b694303e1c279a61cbbd2571de5',
+    earnContractAddress: '0x4c9518936f979b694303e1c279a61cbbd2571de5',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x7793870484647a7278907498ec504879d6971EAb',
+    tokenAddress: '0x460b4193Ec4C1a17372Aa5FDcd44c520ba658646',
     categories: ['Pancake'],
 
     farm: {
@@ -2017,7 +2017,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 38
+      masterchefPid: 118
     }
   },
   {
@@ -2033,12 +2033,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11SXP',
-    earnedTokenAddress: '0x7E93C334A215A11A4c80136C914Bb641E6dddE62',
-    earnContractAddress: '0x7E93C334A215A11A4c80136C914Bb641E6dddE62',
+    earnedTokenAddress: '0xfdb0d13aeeaf50d8dd602168f16f428e740b2af3',
+    earnContractAddress: '0xfdb0d13aeeaf50d8dd602168f16f428e740b2af3',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x752E713fB70E3FA1Ac08bCF34485F14A986956c4',
+    tokenAddress: '0xD8E2F8b6Db204c405543953Ef6359912FE3A88d6',
     categories: ['Pancake'],
 
     farm: {
@@ -2046,7 +2046,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 39
+      masterchefPid: 119
     }
   },
   {
@@ -2062,12 +2062,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11INJ',
-    earnedTokenAddress: '0x857d733f702eC996C108059027E5385abcb788A0',
-    earnContractAddress: '0x857d733f702eC996C108059027E5385abcb788A0',
+    earnedTokenAddress: '0x3651ecb8de44c255e37ecb571f52095225342d6a',
+    earnContractAddress: '0x3651ecb8de44c255e37ecb571f52095225342d6a',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x7a34bd64d18e44CfdE3ef4B81b87BAf3EB3315B6',
+    tokenAddress: '0x1BdCebcA3b93af70b58C41272AEa2231754B23ca',
     categories: ['Pancake'],
 
     farm: {
@@ -2075,7 +2075,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 40
+      masterchefPid: 138
     }
   },
   {
@@ -2091,12 +2091,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11FIL',
-    earnedTokenAddress: '0xd0ff54ce0eA735d010b25eF55f354F0bb7D646Ba',
-    earnContractAddress: '0xd0ff54ce0eA735d010b25eF55f354F0bb7D646Ba',
+    earnedTokenAddress: '0xe4fedf6c2793b185f3f3b76f1c946e72eba2c987',
+    earnContractAddress: '0xe4fedf6c2793b185f3f3b76f1c946e72eba2c987',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x35FE9787F0eBF2a200BAc413D3030CF62D312774',
+    tokenAddress: '0xD9bCcbbbDFd9d67BEb5d2273102CE0762421D1e3',
     categories: ['Pancake'],
 
     farm: {
@@ -2104,7 +2104,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 41
+      masterchefPid: 112
     }
   },
   {
@@ -2120,12 +2120,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11UNI',
-    earnedTokenAddress: '0x487c000daF32c547eE9413831176D4D545744250',
-    earnContractAddress: '0x487c000daF32c547eE9413831176D4D545744250',
+    earnedTokenAddress: '0xe9f6594b0299f3a097414d696884cedebf4e1684',
+    earnContractAddress: '0xe9f6594b0299f3a097414d696884cedebf4e1684',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x4269e7F43A63CEA1aD7707Be565a94a9189967E9',
+    tokenAddress: '0x014608E87AF97a054C9a49f81E1473076D51d9a3',
     categories: ['Pancake'],
 
     farm: {
@@ -2133,7 +2133,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 42
+      masterchefPid: 120
     }
   },
   {
@@ -2149,12 +2149,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11YFI',
-    earnedTokenAddress: '0x8D212b23948b4b1160d7eD157743c16f6500D089',
-    earnContractAddress: '0x8D212b23948b4b1160d7eD157743c16f6500D089',
+    earnedTokenAddress: '0x1190f6c71584168f2c14db98a4f9ecae1f1b269c',
+    earnContractAddress: '0x1190f6c71584168f2c14db98a4f9ecae1f1b269c',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x68Ff2ca47D27db5Ac0b5c46587645835dD51D3C1',
+    tokenAddress: '0xCE383277847f8217392eeA98C5a8B4a7D27811b0',
     categories: ['Pancake'],
 
     farm: {
@@ -2162,7 +2162,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 43
+      masterchefPid: 121
     }
   },
   {
@@ -2224,35 +2224,6 @@ export const pools = [
     }
   },
   {
-    id: 'yfiibnb',
-    name: 'YFII',
-    token: 'YFII-BNB LP',
-    tokenDescription: 'YFII',
-    tokenAddress: '',
-    tokenDecimals: 18,
-    uses: 'Uses pancakeswap',
-    itokenDecimals: 18,
-    depostLimit:0,
-    tokenDescriptionUrl: '',
-    tokenDescriptionUrl2: '',
-    earnedToken: '11YFII',
-    earnedTokenAddress: '0xd39832249075319D8476192fda0344f6bFA19132',
-    earnContractAddress: '0xd39832249075319D8476192fda0344f6bFA19132',
-    defaultApy: "39.54",
-    pricePerFullShare: 1,
-    pastPricePerFullShare: 1,
-    tokenAddress: '0x574a978c2D0d36D707a05E459466C7A1054F1210',
-    categories: ['Pancake'],
-
-    farm: {
-      earnedToken: 'ELE',
-      earnedTokenDecimals: 18,
-      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
-      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 46
-    }
-  },
-  {
     id: 'atombnb',
     name: 'ATOM',
     token: 'ATOM-BNB LP',
@@ -2265,12 +2236,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11ATOM',
-    earnedTokenAddress: '0xC225bf0De350704D18C38450abFBe5ac131Ff6A7',
-    earnContractAddress: '0xC225bf0De350704D18C38450abFBe5ac131Ff6A7',
+    earnedTokenAddress: '0x2a23a24fa4da825f0622fd4369b16a3cf6ca7052',
+    earnContractAddress: '0x2a23a24fa4da825f0622fd4369b16a3cf6ca7052',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x2333c77FC0B2875c11409cdCD3C75D42D402E834',
+    tokenAddress: '0x468b2DC8DC75990eE3E9dc0648965Ad6294E7914',
     categories: ['Pancake'],
 
     farm: {
@@ -2278,7 +2249,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 47
+      masterchefPid: 122
     }
   },
   {
@@ -2294,12 +2265,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11XRP',
-    earnedTokenAddress: '0xF3Ba7c535F9FeA2B95ce636258E2c5419c89c682',
-    earnContractAddress: '0xF3Ba7c535F9FeA2B95ce636258E2c5419c89c682',
+    earnedTokenAddress: '0x0c044c0344b2fc2f155c93313307df187de0b98c',
+    earnContractAddress: '0x0c044c0344b2fc2f155c93313307df187de0b98c',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xC7b4B32A3be2cB6572a1c9959401F832Ce47a6d2',
+    tokenAddress: '0x03F18135c44C64ebFdCBad8297fe5bDafdBbdd86',
     categories: ['Pancake'],
 
     farm: {
@@ -2307,7 +2278,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 48
+      masterchefPid: 123
     }
   },
   {
@@ -2323,12 +2294,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11ALPHA',
-    earnedTokenAddress: '0x732404e4D3888B289Ee1665c45f2bf871562B270',
-    earnContractAddress: '0x732404e4D3888B289Ee1665c45f2bf871562B270',
+    earnedTokenAddress: '0x53a31e5bfa7b40243df3aecb7158beb99d853777',
+    earnContractAddress: '0x53a31e5bfa7b40243df3aecb7158beb99d853777',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x4e0f3385d932F7179DeE045369286FFa6B03d887',
+    tokenAddress: '0xACF47CBEaab5c8A6Ee99263cfE43995f89fB3206',
     categories: ['Pancake'],
 
     farm: {
@@ -2336,7 +2307,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 49
+      masterchefPid: 125
     }
   },
   {
@@ -2352,12 +2323,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11BTC',
-    earnedTokenAddress: '0x345657786b32Bf4ac715Ead5ae5C3c08C099FBC9',
-    earnContractAddress: '0x345657786b32Bf4ac715Ead5ae5C3c08C099FBC9',
+    earnedTokenAddress: '0xeda8986d2df3d0626c93fd7cbd84e2a6b6dbbf32',
+    earnContractAddress: '0xeda8986d2df3d0626c93fd7cbd84e2a6b6dbbf32',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x7561EEe90e24F3b348E1087A005F78B4c8453524',
+    tokenAddress: '0x61EB789d75A95CAa3fF50ed7E47b96c132fEc082',
     categories: ['Pancake'],
 
     farm: {
@@ -2365,7 +2336,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 50
+      masterchefPid: 126
     }
   },
   {
@@ -2381,12 +2352,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11ETH',
-    earnedTokenAddress: '0x4585F275e1D5E534528060d7cDCc544E26CfE68B',
-    earnContractAddress: '0x4585F275e1D5E534528060d7cDCc544E26CfE68B',
+    earnedTokenAddress: '0x40293dbe472dcc8da5ff63988376d4199fb97287',
+    earnContractAddress: '0x40293dbe472dcc8da5ff63988376d4199fb97287',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x70D8929d04b60Af4fb9B58713eBcf18765aDE422',
+    tokenAddress: '0x74E4716E431f45807DCF19f284c7aA99F18a4fbc',
     categories: ['Pancake'],
 
     farm: {
@@ -2394,7 +2365,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 51
+      masterchefPid: 127
     }
   },
   {
@@ -2410,12 +2381,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11XVS',
-    earnedTokenAddress: '0x31697b615dFEf36A415260996d234a8a8C1f74C4',
-    earnContractAddress: '0x31697b615dFEf36A415260996d234a8a8C1f74C4',
+    earnedTokenAddress: '0xd3ae5ede9e3efd34ac859743ca1964d85cab097b',
+    earnContractAddress: '0xd3ae5ede9e3efd34ac859743ca1964d85cab097b',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x41182c32F854dd97bA0e0B1816022e0aCB2fc0bb',
+    tokenAddress: '0x7EB5D86FD78f3852a3e0e064f2842d45a3dB6EA2',
     categories: ['Pancake'],
 
     farm: {
@@ -2423,7 +2394,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 52
+      masterchefPid: 137
     }
   },
   {
@@ -2439,12 +2410,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11TWT',
-    earnedTokenAddress: '0x7913D9b83bfB2E948aC78F15628EC5aF12927c98',
-    earnContractAddress: '0x7913D9b83bfB2E948aC78F15628EC5aF12927c98',
+    earnedTokenAddress: '0x313ece8be11cab51e8fd730740f4e0f035b32cd5',
+    earnContractAddress: '0x313ece8be11cab51e8fd730740f4e0f035b32cd5',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x610e7a287c27dfFcaC0F0a94f547Cc1B770cF483',
+    tokenAddress: '0x3DcB1787a95D2ea0Eb7d00887704EeBF0D79bb13',
     categories: ['Pancake'],
 
     farm: {
@@ -2452,7 +2423,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 53
+      masterchefPid: 135
     }
   },
   {
@@ -2468,12 +2439,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11LINK',
-    earnedTokenAddress: '0xCB73C1866508debAda74F1Ac2798334ab0Db8A9d',
-    earnContractAddress: '0xCB73C1866508debAda74F1Ac2798334ab0Db8A9d',
+    earnedTokenAddress: '0xb6e754db11fba321c1e27d449677177fb0024d1f',
+    earnContractAddress: '0xb6e754db11fba321c1e27d449677177fb0024d1f',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xaeBE45E3a03B734c68e5557AE04BFC76917B4686',
+    tokenAddress: '0x824eb9faDFb377394430d2744fa7C42916DE3eCe',
     categories: ['Pancake'],
 
     farm: {
@@ -2481,7 +2452,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 54
+      masterchefPid: 136
     }
   },
   {
@@ -2497,12 +2468,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11EOS',
-    earnedTokenAddress: '0xAcD820Ec2d105Ba75862202cCd93B932E2F2B88a',
-    earnContractAddress: '0xAcD820Ec2d105Ba75862202cCd93B932E2F2B88a',
+    earnedTokenAddress: '0x0aac7f59c8c2605b649fa9de127bc77d13222f57',
+    earnContractAddress: '0x0aac7f59c8c2605b649fa9de127bc77d13222f57',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x981d2Ba1b298888408d342C39c2Ab92e8991691e',
+    tokenAddress: '0xB6e34b5C65Eda51bb1BD4ea5F79d385Fb94b9504',
     categories: ['Pancake'],
 
     farm: {
@@ -2510,7 +2481,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 55
+      masterchefPid: 134
     }
   },
   {
@@ -2526,12 +2497,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11DOT',
-    earnedTokenAddress: '0x8066fd579b3DcD5e47C9B6915540d5271cc854b5',
-    earnContractAddress: '0x8066fd579b3DcD5e47C9B6915540d5271cc854b5',
+    earnedTokenAddress: '0x2b65d7653c2d66d130ab59a65df04250e071c621',
+    earnContractAddress: '0x2b65d7653c2d66d130ab59a65df04250e071c621',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xbCD62661A6b1DEd703585d3aF7d7649Ef4dcDB5c',
+    tokenAddress: '0xDd5bAd8f8b360d76d12FdA230F8BAF42fe0022CF',
     categories: ['Pancake'],
 
     farm: {
@@ -2539,7 +2510,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 56
+      masterchefPid: 133
     }
   },
   {
@@ -2555,12 +2526,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11BAND',
-    earnedTokenAddress: '0xa6e0f45F80Ca72271343145a9E33b0A4630380d4',
-    earnContractAddress: '0xa6e0f45F80Ca72271343145a9E33b0A4630380d4',
+    earnedTokenAddress: '0xae663b34779074a3ac54149b0990d14b589269d9',
+    earnContractAddress: '0xae663b34779074a3ac54149b0990d14b589269d9',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xc639187ef82271D8f517de6FEAE4FaF5b517533c',
+    tokenAddress: '0x168B273278F3A8d302De5E879aA30690B7E6c28f',
     categories: ['Pancake'],
 
     farm: {
@@ -2568,7 +2539,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 57
+      masterchefPid: 132
     }
   },
   {
@@ -2584,12 +2555,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11ADA',
-    earnedTokenAddress: '0xcDEe7B6b1B9817eBd02aa8101a6E7b78F1B549c9',
-    earnContractAddress: '0xcDEe7B6b1B9817eBd02aa8101a6E7b78F1B549c9',
+    earnedTokenAddress: '0x010d7c8d616eee6dc878c6aab5c47aa6f84c0c23',
+    earnContractAddress: '0x010d7c8d616eee6dc878c6aab5c47aa6f84c0c23',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0xBA51D1AB95756ca4eaB8737eCD450cd8F05384cF',
+    tokenAddress: '0x28415ff2C35b65B9E5c7de82126b4015ab9d031F',
     categories: ['Pancake'],
 
     farm: {
@@ -2597,7 +2568,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 58
+      masterchefPid: 131
     }
   },
   {
@@ -2613,12 +2584,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11BUSD',
-    earnedTokenAddress: '0x7Ed3a3bb1Ca62FAAfB08EAdD00d57969485cf6D4',
-    earnContractAddress: '0x7Ed3a3bb1Ca62FAAfB08EAdD00d57969485cf6D4',
+    earnedTokenAddress: '0x2465fedeac581418e08d9fbfb6d987d0817f5c16',
+    earnContractAddress: '0x2465fedeac581418e08d9fbfb6d987d0817f5c16',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
-    tokenAddress: '0x1B96B92314C44b159149f7E0303511fB2Fc4774f',
+    tokenAddress: '0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16',
     categories: ['Pancake'],
 
     farm: {
@@ -2626,7 +2597,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 59
+      masterchefPid: 130
     }
   },
   {
@@ -2658,150 +2629,4 @@ export const pools = [
       masterchefPid: 61
     }
   },
-  {
-    id: 'psgbnb',
-    name: 'PSG',
-    token: 'PSG-BNB LP',
-    tokenDescription: 'PSG',
-    tokenAddress: '',
-    tokenDecimals: 18,
-    uses: 'Uses pancakeswap',
-    itokenDecimals: 18,
-    depostLimit:0,
-    tokenDescriptionUrl: '',
-    tokenDescriptionUrl2: '',
-    earnedToken: '11PSG',
-    earnedTokenAddress: '0x250b9021018132a52C1bE46d9f1ae53997C3f8A8',
-    earnContractAddress: '0x250b9021018132a52C1bE46d9f1ae53997C3f8A8',
-    defaultApy: "39.54",
-    pricePerFullShare: 1,
-    pastPricePerFullShare: 1,
-    tokenAddress: '0x9c4f6a5050CF863e67a402E8b377973b4E3372c1',
-    categories: ['Pancake'],
-
-    farm: {
-      earnedToken: 'ELE',
-      earnedTokenDecimals: 18,
-      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
-      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 4
-    }
-  },
-  {
-    id: 'atmbnb',
-    name: 'ATM',
-    token: 'ATM-BNB LP',
-    tokenDescription: 'ATM',
-    tokenAddress: '',
-    tokenDecimals: 18,
-    uses: 'Uses pancakeswap',
-    itokenDecimals: 18,
-    depostLimit:0,
-    tokenDescriptionUrl: '',
-    tokenDescriptionUrl2: '',
-    earnedToken: '11ATM',
-    earnedTokenAddress: '0xd527f4145C84a57E38278485658829040E7e87b7',
-    earnContractAddress: '0xd527f4145C84a57E38278485658829040E7e87b7',
-    defaultApy: "39.54",
-    pricePerFullShare: 1,
-    pastPricePerFullShare: 1,
-    tokenAddress: '0xd5b3ebf1a85d32c73a82b40f75e1cd929caf4029',
-    categories: ['Pancake'],
-
-    farm: {
-      earnedToken: 'ELE',
-      earnedTokenDecimals: 18,
-      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
-      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 2
-    }
-  },
-  {
-    id: 'juvbnb',
-    name: 'JUV',
-    token: 'JUV-BNB LP',
-    tokenDescription: 'JUV',
-    tokenAddress: '',
-    tokenDecimals: 18,
-    uses: 'Uses pancakeswap',
-    itokenDecimals: 18,
-    depostLimit:0,
-    tokenDescriptionUrl: '',
-    tokenDescriptionUrl2: '',
-    earnedToken: '11JUV',
-    earnedTokenAddress: '0x2f01AC6cDec485d07D4Be8998Bc4c16f540b914C',
-    earnContractAddress: '0x2f01AC6cDec485d07D4Be8998Bc4c16f540b914C',
-    defaultApy: "39.54",
-    pricePerFullShare: 1,
-    pastPricePerFullShare: 1,
-    tokenAddress: '0x51a2ffa5b7de506f9a22549e48b33f6cf0d9030e',
-    categories: ['Pancake'],
-
-    farm: {
-      earnedToken: 'ELE',
-      earnedTokenDecimals: 18,
-      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
-      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 1
-    }
-  },
-  {
-    id: 'ogbnb',
-    name: 'OG',
-    token: 'OG-BNB LP',
-    tokenDescription: 'OG',
-    tokenAddress: '',
-    tokenDecimals: 18,
-    uses: 'Uses pancakeswap',
-    itokenDecimals: 18,
-    depostLimit:0,
-    tokenDescriptionUrl: '',
-    tokenDescriptionUrl2: '',
-    earnedToken: '11OG',
-    earnedTokenAddress: '0xd2e399e7768fc713c9ecf0c8e8988dd056c8dbd7',
-    earnContractAddress: '0xd2e399e7768fc713c9ecf0c8e8988dd056c8dbd7',
-    defaultApy: "39.54",
-    pricePerFullShare: 1,
-    pastPricePerFullShare: 1,
-    tokenAddress: '0x64373608f2E93Ea97aD4D8Ca2CCE6B2575dB2F55',
-    categories: ['Pancake'],
-
-    farm: {
-      earnedToken: 'ELE',
-      earnedTokenDecimals: 18,
-      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
-      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 5
-    }
-  },
-  {
-    id: 'asrbnb',
-    name: 'ASR',
-    token: 'ASR-BNB LP',
-    tokenDescription: 'ASR',
-    tokenAddress: '',
-    tokenDecimals: 18,
-    uses: 'Uses pancakeswap',
-    itokenDecimals: 18,
-    depostLimit:0,
-    tokenDescriptionUrl: '',
-    tokenDescriptionUrl2: '',
-    earnedToken: '11ASR',
-    earnedTokenAddress: '0x1716D66943b0833f26A938d0A75aEfAc708Bd98B',
-    earnContractAddress: '0x1716D66943b0833f26A938d0A75aEfAc708Bd98B',
-    defaultApy: "39.54",
-    pricePerFullShare: 1,
-    pastPricePerFullShare: 1,
-    tokenAddress: '0xd6b900d5308356317299dafe303e661271aa12f1',
-    categories: ['Pancake'],
-
-    farm: {
-      earnedToken: 'ELE',
-      earnedTokenDecimals: 18,
-      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
-      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 3
-    }
-  },
-
 ];
