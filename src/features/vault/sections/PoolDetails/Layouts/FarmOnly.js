@@ -31,7 +31,9 @@ const FarmOnly = ({ pool, index, tokenBalance, stakedBalance, pendingRewards, pe
           )}
           <div className={classes.balanceDescription}>{t('Vault-Deposited')}</div>
 
-          <StakeButton pool={pool} index={index} balance={tokenBalance} />
+          {!pool.isDiscontinued && (
+            <StakeButton pool={pool} index={index} balance={tokenBalance} />
+          )}
         </div>
       </Grid>
 

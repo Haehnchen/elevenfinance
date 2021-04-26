@@ -33,7 +33,9 @@ const WithFarm = ({ pool, index, tokenBalance, depositedBalance, stakedBalance, 
           )}
           <div className={classes.balanceDescription}>{t('Vault-Balance')}</div>
 
-          <DepositButton pool={pool} index={index} balance={tokenBalance} />
+          {!pool.isDiscontinued && (
+            <DepositButton pool={pool} index={index} balance={tokenBalance} />
+          )}
         </div>
       </Grid>
 
@@ -48,7 +50,11 @@ const WithFarm = ({ pool, index, tokenBalance, depositedBalance, stakedBalance, 
           )}
           <div className={classes.balanceDescription}>{t('Vault-Deposited')}</div>
 
-          <StakeButton pool={pool} index={index} balance={depositedBalance} />&nbsp;&nbsp;
+          {!pool.isDiscontinued && (
+            <>
+              <StakeButton pool={pool} index={index} balance={depositedBalance} />&nbsp;&nbsp;
+            </>
+          )}
           <WithdrawButton pool={pool} index={index} balance={depositedBalance} />
         </div>
       </Grid>

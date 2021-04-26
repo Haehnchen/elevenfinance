@@ -1,6 +1,34 @@
 import { primaryColor, hoverColor} from "assets/jss/material-kit-pro-react.js";
 
 const styles = theme => ({
+  poolInactive: {
+    opacity: 0.5,
+  },
+  discontinued: {
+    padding: '0 !important',
+    margin: '-6px 0 6px',
+
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column'
+    },
+  },
+  discontinuedLabel: {
+    marginRight: 20,
+    background: '#25272f',
+    padding: '5px 10px',
+    fontSize: '12px',
+    fontWeight: 'bold'
+  },
+  discontinuedMessage: {
+    fontSize: '15px',
+    fontWeight: 'bold',
+    paddingTop: '5px',
+    color: '#ddd',
+
+    [theme.breakpoints.down('sm')]: {
+      padding: '5px 15px'
+    },
+  },
   accordion: {
     backgroundColor: '#2C3040',
     color: '#fff',

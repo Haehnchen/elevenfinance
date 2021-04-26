@@ -110,7 +110,12 @@ const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => 
   }
 
   return (
-    <Grid item xs={12} container key={index} style={{ marginBottom: "24px" }} spacing={0}>
+    <Grid item container
+      key={index}
+      xs={12}
+      style={{ marginBottom: "24px" }}
+      spacing={0}
+    >
       <div style={{ width: "100%" }}>
         <Accordion
           expanded={isOpen}
@@ -119,12 +124,18 @@ const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => 
         >
           <AccordionSummary
             className={classes.details}
-            style={{ justifyContent: "space-between" }}
             onClick={toggleCard}
           >
             <Grid container alignItems="center" justify="space-around" spacing={4} style={{ paddingTop: "16px", paddingBottom: "16px" }}>
+              {pool.isDiscontinued && (
+                <Grid item container xs={12} className={classes.discontinued}>
+                  <div className={classes.discontinuedLabel}>DISCONTINUED</div>
+                  <div className={classes.discontinuedMessage}>{pool.discontinuedMessage}</div>
+                </Grid>
+              )}
+
               <Grid item xs={12} sm={6} md={3}>
-                <Grid item container alignItems="center" xs={12} spacing={2}>
+                <Grid item container alignItems="center" xs={12} spacing={2} className={pool.isDiscontinued && ! isOpen ? classes.poolInactive : ''}>
                   <Grid item>
                     <Avatar alt={pool.token} src={require(`../../../../images/${pool.token}-logo.svg`)} />
                   </Grid>
@@ -157,7 +168,7 @@ const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => 
               <Grid item xs={6} sm={4} md={8}>
                 <Grid item container justify="space-between">
                   <Hidden smDown>
-                    <Grid item xs={5} container alignItems="center">
+                    <Grid item xs={5} container alignItems="center" className={pool.isDiscontinued && ! isOpen ? classes.poolInactive : ''}>
                       <Grid item className={isOpen ? classes.hidden : ''} style={{ width: "200px" }}>
                         <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
                           {fetchBalancesDone
@@ -170,7 +181,7 @@ const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => 
                     </Grid>
                   </Hidden>
                   <Hidden mdDown>
-                    <Grid item xs={4} container alignItems="center">
+                    <Grid item xs={4} container alignItems="center" className={pool.isDiscontinued && ! isOpen ? classes.poolInactive : ''}>
                       <Grid item className={isOpen ? classes.hidden : ''} style={{ width: "200px" }}>
                         <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
                           {depositedAndStaked !== null
@@ -182,7 +193,7 @@ const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => 
                       </Grid>
                     </Grid>
                   </Hidden>
-                  <Grid item xs={12} md={3} container alignItems="center">
+                  <Grid item xs={12} md={3} container alignItems="center" className={pool.isDiscontinued && ! isOpen ? classes.poolInactive : ''}>
                     <Grid item>
                       <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
                         <span>{pool.claimable || ! pool.earnContractAddress ? "APR" : "APY" }: {getApy(pool)} %</span>
@@ -204,7 +215,7 @@ const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => 
                 </Grid>
               </Grid>
 
-              <Grid item xs={6} sm={2} md={1}>
+              <Grid item xs={6} sm={2} md={1} className={pool.isDiscontinued && ! isOpen ? classes.poolInactive : ''}>
                 <Grid item container justify="flex-end" alignItems="center" spacing={2}>
                   <Hidden xsUp>
                     <Grid item>

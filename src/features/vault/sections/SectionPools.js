@@ -171,10 +171,6 @@ export default function SectionPools({ filtersCategory }) {
     return () => clearInterval(id);
   }, [address, web3, fetchBalances, fetchPoolBalances]);
 
-  useEffect(() => {
-    fetchContractApy();
-  }, [pools, fetchContractApy]);
-
   const handleSearchChange = event => {
     setSearchTerm(event.target.value);
   };

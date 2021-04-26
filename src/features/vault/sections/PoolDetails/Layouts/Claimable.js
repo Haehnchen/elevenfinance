@@ -31,7 +31,9 @@ const Claimable = ({ pool, index, tokenBalance, depositedBalance, pendingRewards
           )}
           <div className={classes.balanceDescription}>{t('Vault-Balance')}</div>
 
-          <DepositButton pool={pool} index={index} balance={tokenBalance} />
+          {!pool.isDiscontinued && (
+            <DepositButton pool={pool} index={index} balance={tokenBalance} />
+          )}
         </div>
       </Grid>
 
