@@ -91,6 +91,13 @@ export default function SectionPools({ filtersCategory }) {
       pool["tvl"] = tvl;
       pool['price'] = json[token]?.price;
       pool['farmStats'] = json[token]?.farm;
+
+      if (pool.id == 'elebnb' && json[token]) {
+        pool.farmStats = {
+          apy: json[token].apy
+        }
+      }
+
       return pool;
     });
 
@@ -150,18 +157,18 @@ export default function SectionPools({ filtersCategory }) {
   }, [searchTerm, sortTerm, onlyStakedPools, onlyWithBalancePools, filtersCategories, tokens, pools])
 
   useEffect(() => {
-    if (address && web3) {
-      fetchBalances({ address, web3, tokens });
-      fetchPoolBalances({ address, web3, pools });
-      fetchFarmsStaked({ address, web3, pools});
-
-      const id = setInterval(() => {
+    const fetch = () => {
+      if (address && web3) {
         fetchBalances({ address, web3, tokens });
         fetchPoolBalances({ address, web3, pools });
         fetchFarmsStaked({ address, web3, pools});
-      }, 10000);
-      return () => clearInterval(id);
+      }
     }
+
+    fetch();
+
+    const id = setInterval(fetch, 15000);
+    return () => clearInterval(id);
   }, [address, web3, fetchBalances, fetchPoolBalances]);
 
   useEffect(() => {

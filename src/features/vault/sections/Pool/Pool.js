@@ -183,21 +183,23 @@ const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => 
                     </Grid>
                   </Hidden>
                   <Grid item xs={12} md={3} container alignItems="center">
-                    {pool.earnContractAddress && (
-                      <Grid item>
-                        <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
-                          <span>{pool.claimable ? "APR" : "APY" }: {getApy(pool)} %</span>
-                        </Typography>
-                        <Typography className={classes.iconContainerSubTitle} variant="body2">
-                          <span>{pool.claimable ? "ELE APR" : "APRD" }: {getAprd(pool)} %</span>
-                        </Typography>
-                        {!pool.claimable && (
-                          <Typography className={classes.iconContainerSubTitle} variant="body2" style={{paddingTop: 5}}>
-                            <span>ELE APR: {getEleApr(pool)} %</span>
+                    <Grid item>
+                      <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
+                        <span>{pool.claimable || ! pool.earnContractAddress ? "APR" : "APY" }: {getApy(pool)} %</span>
+                      </Typography>
+                      {pool.earnContractAddress && (
+                        <>
+                          <Typography className={classes.iconContainerSubTitle} variant="body2">
+                            <span>{pool.claimable ? "ELE APR" : "APRD" }: {getAprd(pool)} %</span>
                           </Typography>
-                        )}
-                      </Grid>
-                    )}
+                          {!pool.claimable && (
+                            <Typography className={classes.iconContainerSubTitle} variant="body2" style={{paddingTop: 5}}>
+                              <span>ELE APR: {getEleApr(pool)} %</span>
+                            </Typography>
+                          )}
+                        </>
+                      )}
+                    </Grid>
                   </Grid>
                 </Grid>
               </Grid>
