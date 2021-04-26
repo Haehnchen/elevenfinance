@@ -402,7 +402,7 @@ export const pools = [
     tokenDescription: 'EPS',
     tokenAddress: '',
     tokenDecimals: 18,
-    uses: 'Uses Ellipsis',
+    uses: 'Uses Pancakeswap',
     itokenDecimals: 18,
     depostLimit:0,
     tokenDescriptionUrl: '',
