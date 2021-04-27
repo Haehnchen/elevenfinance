@@ -251,6 +251,36 @@ export const pools = [
     }
   },
   {
+    id: 'wexbnb',
+    name: 'WEX',
+    image: 'wexbnb.png',
+    token: 'WEX-BNB LP',
+    tokenDescription: 'WEX',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses waultswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11WEXBNB',
+    earnedTokenAddress: '0x8e46ACE8e4F6d4Fdf5811cd04b39477C732C180a',
+    earnContractAddress: '0x8e46ACE8e4F6d4Fdf5811cd04b39477C732C180a',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0xb4814f1ca673dBE9a2637C5dd4e94A4a0ED834C6',
+    categories: ['Wault'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 186
+    }
+  },
+  {
     id: 'eulerbnb',
     name: 'EULER',
     token: 'EULER-BNB LP',

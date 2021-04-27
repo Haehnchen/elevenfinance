@@ -137,7 +137,7 @@ const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => 
               <Grid item xs={12} sm={6} md={3}>
                 <Grid item container alignItems="center" xs={12} spacing={2} className={pool.isDiscontinued && ! isOpen ? classes.poolInactive : ''}>
                   <Grid item>
-                    <Avatar alt={pool.token} src={require(`../../../../images/${pool.token}-logo.svg`)} />
+                    <Avatar alt={pool.token} src={require(`../../../../images/${pool.image || pool.token + '-logo.svg'}`)} />
                   </Grid>
                   <Grid item>
                     <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom>
