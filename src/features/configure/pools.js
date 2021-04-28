@@ -397,14 +397,14 @@ export const pools = [
     }
   },
   {
-    id: 'icebnb',
+    id: 'oldicebnb',
 
-    // isDiscontinued: true,
-    // discontinuedMessage: 'ICE-BNB is migrating to Sushiswap',
+    isDiscontinued: true,
+    discontinuedMessage: 'ICE-BNB is migrating to Sushiswap',
 
-    name: 'ICEBNB',
-    token: 'ICE-BNB LP',
-    tokenDescription: 'ICE',
+    name: 'oldICEBNB',
+    token: 'oldICE-BNB LP',
+    tokenDescription: 'oldICE',
     tokenAddress: '',
     tokenDecimals: 18,
     uses: 'Uses popsicle',
@@ -412,7 +412,7 @@ export const pools = [
     depostLimit:0,
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
-    earnedToken: '11ICEBNB',
+    earnedToken: 'old11ICEBNB',
     earnedTokenAddress: '0x40A5ef990864328F8fe22B5FD04bDC90E4604a84',
     earnContractAddress: '0x40A5ef990864328F8fe22B5FD04bDC90E4604a84',
     defaultApy: "39.54",
@@ -427,6 +427,36 @@ export const pools = [
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 83
+    }
+  },
+  {
+    id: 'icebnb',
+
+    name: 'ICEBNB',
+    token: 'ICE-BNB LP',
+    tokenDescription: 'ICE',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses popsicle',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11ICEBNB',
+    earnedTokenAddress: '0x081D365008eEA51B1b9F78f81e3A35e124D53BA7',
+    earnContractAddress: '0x081D365008eEA51B1b9F78f81e3A35e124D53BA7',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x51F914a192a97408D991FddDAFB8F8537C5Ffb0a',
+    categories: ['Popsicle'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 187
     }
   },
 
