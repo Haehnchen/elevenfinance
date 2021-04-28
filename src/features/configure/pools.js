@@ -281,6 +281,66 @@ export const pools = [
     }
   },
   {
+    id: 'wex',
+    name: 'WEX',
+    image: 'wex.png',
+    token: 'WEX',
+    tokenDescription: 'WEX',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses waultswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11WEX',
+    earnedTokenAddress: '0x9F98A5466309ea2d9F984eFAD401E75ed9ffF764',
+    earnContractAddress: '0x9F98A5466309ea2d9F984eFAD401E75ed9ffF764',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0xa9c41a46a6b3531d28d5c32f6633dd2ff05dfb90',
+    categories: ['Wault'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 189
+    }
+  },
+  {
+    id: 'waultxbnb',
+    name: 'WAULTXBNB',
+    image: 'waultxbnb.png',
+    token: 'WAULTX-BNB WLP',
+    tokenDescription: 'WAULTX',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses waultswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11wWAULTXBNB',
+    earnedTokenAddress: '0x76fa69c64341eF9ae32995919700cD1f1BBdC799',
+    earnContractAddress: '0x76fa69c64341eF9ae32995919700cD1f1BBdC799',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0xA2eBDa2e8975B42068b6162C7dd798C2143caf21',
+    categories: ['Wault'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 188
+    }
+  },
+  {
     id: 'usdtbnb',
     name: 'USDT',
     token: 'USDT-BNB LP',
