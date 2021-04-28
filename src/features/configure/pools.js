@@ -254,7 +254,7 @@ export const pools = [
     id: 'wexbnb',
     name: 'WEX',
     image: 'wexbnb.png',
-    token: 'WEX-BNB LP',
+    token: 'WEX-BNB WLP',
     tokenDescription: 'WEX',
     tokenAddress: '',
     tokenDecimals: 18,
