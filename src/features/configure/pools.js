@@ -368,35 +368,6 @@ export const pools = [
     }
   },
   {
-    id: 'yumchabnb',
-    name: 'YUMCHA',
-    token: 'YUMCHA-BUSD LP',
-    tokenDescription: 'YUMCHA',
-    tokenAddress: '',
-    tokenDecimals: 18,
-    uses: 'Uses pancakeswap',
-    itokenDecimals: 18,
-    depostLimit:0,
-    tokenDescriptionUrl: '',
-    tokenDescriptionUrl2: '',
-    earnedToken: '11YUMCHA',
-    earnedTokenAddress: '0x02fed251bc69009814b7c3b5ea13a3320e84a77e',
-    earnContractAddress: '0x02fed251bc69009814b7c3b5ea13a3320e84a77e',
-    defaultApy: "39.54",
-    pricePerFullShare: 1,
-    pastPricePerFullShare: 1,
-    tokenAddress: '0xD7c43A10F6e92c6F1aB13096AE4a08DD8F8c3c8A',
-    categories: ['Pancake'],
-
-    farm: {
-      earnedToken: 'ELE',
-      earnedTokenDecimals: 18,
-      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
-      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 80
-    }
-  },
-  {
     id: 'epsbnb',
     name: 'EPS',
     token: 'EPS-BNB LP',
