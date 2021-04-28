@@ -281,6 +281,64 @@ export const pools = [
     }
   },
   {
+    id: 'usdtbnb',
+    name: 'USDT',
+    token: 'USDT-BNB LP',
+    tokenDescription: 'USDT',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses pancakeswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11USDTBNB',
+    earnedTokenAddress: '0xca5fe76131123eAc494088FE1770Ff6EcB09df8C',
+    earnContractAddress: '0xca5fe76131123eAc494088FE1770Ff6EcB09df8C',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x16b9a82891338f9bA80E2D6970FddA79D1eb0daE',
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 124
+    }
+  },
+  {
+    id: 'borbnb',
+    name: 'BOR',
+    token: 'BOR-BNB LP',
+    tokenDescription: 'BOR',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses pancakeswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11BORBNB',
+    earnedTokenAddress: '0xF85759C595D380EC8694de525C28574F16b1F5d4',
+    earnContractAddress: '0xF85759C595D380EC8694de525C28574F16b1F5d4',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0xe094c686aD6cDda57b9564457F541FBF099B948A',
+    categories: ['Pancake'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 128
+    }
+  },
+  {
     id: 'eulerbnb',
     name: 'EULER',
     token: 'EULER-BNB LP',
