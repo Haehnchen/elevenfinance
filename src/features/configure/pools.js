@@ -659,35 +659,6 @@ export const pools = [
     }
   },
   {
-    id: 'tkobnb',
-    name: 'TKO',
-    token: 'TKO-BNB LP',
-    tokenDescription: 'TKO',
-    tokenAddress: '',
-    tokenDecimals: 18,
-    uses: 'Uses pancakeswap',
-    itokenDecimals: 18,
-    depostLimit:0,
-    tokenDescriptionUrl: '',
-    tokenDescriptionUrl2: '',
-    earnedToken: '11TKOBNB',
-    earnedTokenAddress: '0xeC58B5139A2903D3514518749EA8Ea17e33a285D',
-    earnContractAddress: '0xeC58B5139A2903D3514518749EA8Ea17e33a285D',
-    defaultApy: "39.54",
-    pricePerFullShare: 1,
-    pastPricePerFullShare: 1,
-    tokenAddress: '0x496a8b716A3A3410B16e71E3c906968CE4488e52',
-    categories: ['Pancake'],
-
-    farm: {
-      earnedToken: 'ELE',
-      earnedTokenDecimals: 18,
-      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
-      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 95
-    }
-  },
-  {
     id: 'bondlybnb',
     name: 'BONDLY',
     token: 'BONDLY-BNB LP',
@@ -2570,35 +2541,6 @@ export const pools = [
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 130
-    }
-  },
-  {
-    id: 'waultbnb',
-    name: 'WAULT',
-    token: 'WAULT-BNB LP',
-    tokenDescription: 'WAULT',
-    tokenAddress: '',
-    tokenDecimals: 18,
-    uses: 'Uses pancakeswap',
-    itokenDecimals: 18,
-    depostLimit:0,
-    tokenDescriptionUrl: '',
-    tokenDescriptionUrl2: '',
-    earnedToken: '11WAULT',
-    earnedTokenAddress: '0x527636DB487Dcf972F09A7149cF4686fF8fC32DC',
-    earnContractAddress: '0x527636DB487Dcf972F09A7149cF4686fF8fC32DC',
-    defaultApy: "39.54",
-    pricePerFullShare: 1,
-    pastPricePerFullShare: 1,
-    tokenAddress: '0x1f280a4fA78f5805bAC193dDdAfEB77B16da4614',
-    categories: ['Pancake', 'Wault'],
-
-    farm: {
-      earnedToken: 'ELE',
-      earnedTokenDecimals: 18,
-      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
-      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 61
     }
   },
   {
