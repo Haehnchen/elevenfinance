@@ -61,7 +61,7 @@ const AmountDialog = ({ title, buttonText, buttonIsLoading, balance, decimals, o
 
     let amount = 0;
 
-    if (sliderNum >= 99) {
+    if (sliderNum == 100) {
       amount = byDecimals(balance, 0).toFormat(decimals);
     } else if (sliderNum > 0) {
       amount = inputFinalVal(calculateReallyNum(total, sliderNum), total, decimals);
