@@ -1501,6 +1501,9 @@ export const pools = [
   },
   {
     id: 'alpacabnb',
+
+    isDiscontinued: true,
+
     name: 'ALPACA',
     token: 'ALPACA-BNB LP',
     tokenDescription: 'ALPACA',
