@@ -46,7 +46,7 @@ const AmountDialog = ({ title, buttonText, buttonIsLoading, balance, decimals, o
     let sliderNum = 0;
     let inputVal = 0;
     if (value) {
-      inputVal = Number(value.replaceAll(',', ''));
+      inputVal = Number(value.replace(/,/g, ''));
       sliderNum = byDecimals(inputVal / total, 0).toFormat(2) * 100;
     }
 
@@ -81,7 +81,7 @@ const AmountDialog = ({ title, buttonText, buttonIsLoading, balance, decimals, o
   }
 
   const onConfirmButton = () => {
-    onConfirm((amount.number + '').replaceAll(',', ''));
+    onConfirm((amount.number + '').replace(/,/g, ''));
   }
 
   return (
