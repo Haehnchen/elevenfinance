@@ -40,7 +40,7 @@ const WithdrawButton = ({ pool, index, balance }) => {
           .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
           .dividedBy(pool.pricePerFullShare)
           .toFixed(0),
-        contractAddress: pool.earnContractAddress,
+        pool,
         index
       })
         .then(() => {
@@ -56,7 +56,7 @@ const WithdrawButton = ({ pool, index, balance }) => {
         amount: new BigNumber(amountValue)
           .multipliedBy(new BigNumber(10).exponentiatedBy(pool.itokenDecimals))
           .toString(10),
-        contractAddress: pool.earnContractAddress,
+        pool,
         index
       })
         .then(() => {

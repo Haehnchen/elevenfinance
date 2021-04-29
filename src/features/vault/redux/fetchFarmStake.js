@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { fetchTokenBalance, fetchSingleFarmStaked } from './actions';
 import { farmStake } from '../../web3'
 
 import {
@@ -33,6 +34,9 @@ export function fetchFarmStake({ address, web3, pool, amount }) {
             type: VAULT_FETCH_FARM_STAKE_SUCCESS,
             id: pool.id
           });
+
+          dispatch(fetchTokenBalance({ address, web3, token: pool.earnedToken }));
+          dispatch(fetchSingleFarmStaked({ address, web3, pool }));
 
           resolve();
         })

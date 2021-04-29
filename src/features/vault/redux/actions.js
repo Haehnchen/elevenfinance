@@ -1,9 +1,8 @@
-export { fetchBalances } from './fetchBalances';
+export { fetchBalances, fetchTokenBalance } from './fetchBalances';
+export { fetchSingleFarmStaked } from './fetchFarmsStaked';
 export { fetchPoolBalances } from './fetchPoolBalances';
 export { fetchApproval } from './fetchApproval';
 export { fetchDeposit } from './fetchDeposit';
 export { fetchClaim } from './fetchClaim';
 export { fetchWithdraw } from './fetchWithdraw';
-export { fetchFarm } from './fetchFarm';
-export { fetchHarvest } from './fetchHarvest';
 export { fetchContractApy } from './fetchContractApy';

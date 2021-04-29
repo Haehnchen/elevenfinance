@@ -4,10 +4,13 @@ import { MultiCall } from 'eth-multicall';
 import { getNetworkMulticall } from 'features/helpers/getNetworkData';
 import { erc20ABI } from 'features/configure'
 
+import { fetchBalance } from '../../web3';
+
 import {
   VAULT_FETCH_BALANCES_BEGIN,
   VAULT_FETCH_BALANCES_SUCCESS,
   VAULT_FETCH_BALANCES_FAILURE,
+  VAULT_FETCH_TOKEN_BALANCE_SUCCESS
 } from './constants';
 
 export function fetchBalances(data) {
@@ -68,6 +71,30 @@ export function fetchBalances(data) {
   };
 }
 
+/**
+ * Get the balance of a separate token
+ *
+ * @param {*} param0
+ * @returns
+ */
+export function fetchTokenBalance({ address, web3, token }) {
+  return (dispatch, getState) => {
+    const { vault } = getState();
+    const { tokens } = vault;
+    const { tokenAddress } = tokens[token];
+
+    fetchBalance({ web3, address, tokenAddress })
+      .then(data => {
+        dispatch({
+          type: VAULT_FETCH_TOKEN_BALANCE_SUCCESS,
+          token: token,
+          data: data || 0,
+        });
+      })
+      .catch(error => console.info(error));
+  }
+}
+
 export function useFetchBalances() {
   const dispatch = useDispatch();
 
@@ -81,15 +108,19 @@ export function useFetchBalances() {
   );
 
   const boundAction = useCallback(
-    (data) => {
-      return dispatch(fetchBalances(data));
-    },
+    data => dispatch(fetchBalances(data)),
     [dispatch],
+  );
+
+  const tokenBalanceAction = useCallback(
+    data => dispatch(fetchTokenBalance(data)),
+    [dispatch]
   );
 
   return {
     tokens,
     fetchBalances: boundAction,
+    fetchTokenBalance: tokenBalanceAction,
     fetchBalancesDone,
     fetchBalancesPending,
   };
@@ -116,6 +147,20 @@ export function reducer(state, action) {
         ...state,
         fetchBalancesPending: false,
       };
+
+    case VAULT_FETCH_TOKEN_BALANCE_SUCCESS:
+      const { tokens } = state;
+
+      return {
+        ...state,
+        tokens: {
+          ...tokens,
+          [action.token]: {
+            ...tokens[action.token],
+            tokenBalance: action.data
+          }
+        }
+      }
 
     default:
       return state;

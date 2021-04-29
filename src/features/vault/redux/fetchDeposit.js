@@ -1,34 +1,34 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+
 import {
   VAULT_FETCH_DEPOSIT_BEGIN,
   VAULT_FETCH_DEPOSIT_SUCCESS,
   VAULT_FETCH_DEPOSIT_FAILURE,
 } from './constants';
+
+import { fetchTokenBalance } from './actions';
 import { deposit, depositEth } from "../../web3";
 
-export function fetchDeposit({ address, web3, isAll, amount, contractAddress, index }) {
+export function fetchDeposit({ address, web3, isAll, amount, pool, index }) {
   return dispatch => {
-    // optionally you can have getState as the second argument
     dispatch({
       type: VAULT_FETCH_DEPOSIT_BEGIN,
       index
     });
 
-    // Return a promise so that you could control UI flow without states in the store.
-    // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
-    // It's hard to use state to manage it, but returning a promise allows you to easily achieve it.
-    // e.g.: handleSubmit() { this.props.actions.submitForm(data).then(()=> {}).catch(() => {}); }
     const promise = new Promise((resolve, reject) => {
-      // doRequest is a placeholder Promise. You should replace it with your own logic.
-      // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
-      // args.error here is only for test coverage purpose.
+      const contractAddress = pool.earnContractAddress;
       deposit({ web3, address, isAll, amount, contractAddress, dispatch }).then(
         data => {
           dispatch({
             type: VAULT_FETCH_DEPOSIT_SUCCESS,
             data, index
           });
+
+          dispatch(fetchTokenBalance({ address, web3, token: pool.token }));
+          dispatch(fetchTokenBalance({ address, web3, token: pool.earnedToken }));
+
           resolve(data);
         },
       ).catch(
@@ -46,28 +46,24 @@ export function fetchDeposit({ address, web3, isAll, amount, contractAddress, in
   };
 }
 
-export function fetchDepositEth({ address, web3, amount, contractAddress, index }) {
+export function fetchDepositEth({ address, web3, amount, pool, index }) {
   return dispatch => {
-    // optionally you can have getState as the second argument
     dispatch({
       type: VAULT_FETCH_DEPOSIT_BEGIN,
       index
     });
 
-    // Return a promise so that you could control UI flow without states in the store.
-    // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
-    // It's hard to use state to manage it, but returning a promise allows you to easily achieve it.
-    // e.g.: handleSubmit() { this.props.actions.submitForm(data).then(()=> {}).catch(() => {}); }
     const promise = new Promise((resolve, reject) => {
-      // doRequest is a placeholder Promise. You should replace it with your own logic.
-      // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
-      // args.error here is only for test coverage purpose.
+      const contractAddress = pool.earnContractAddress;
       depositEth({ web3, address, amount, contractAddress, dispatch }).then(
         data => {
           dispatch({
             type: VAULT_FETCH_DEPOSIT_SUCCESS,
             data, index
           });
+
+          dispatch(fetchTokenBalance({ address, web3, token: pool.earnedToken }));
+
           resolve(data);
         },
       ).catch(

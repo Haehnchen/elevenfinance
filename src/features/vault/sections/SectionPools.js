@@ -167,7 +167,7 @@ export default function SectionPools({ filtersCategory }) {
 
     fetch();
 
-    const id = setInterval(fetch, 15000);
+    const id = setInterval(fetch, 30000);
     return () => clearInterval(id);
   }, [address, web3, fetchBalances, fetchPoolBalances]);
 

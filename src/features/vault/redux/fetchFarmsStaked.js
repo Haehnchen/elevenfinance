@@ -1,17 +1,21 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+import BigNumber from 'bignumber.js';
+
 import { MultiCall } from 'eth-multicall';
+import { getNetworkMulticall } from 'features/helpers/getNetworkData';
 
 import { byDecimals } from 'features/helpers/bignumber';
-import { getNetworkMulticall } from 'features/helpers/getNetworkData';
 import { pool4Abi } from 'features/configure/abi';
+
+import { fetchFarmStaked } from '../../web3';
 
 import {
   VAULT_FETCH_FARMS_STAKED_BEGIN,
   VAULT_FETCH_FARMS_STAKED_SUCCESS,
-  VAULT_FETCH_FARMS_STAKED_FAILURE
+  VAULT_FETCH_FARMS_STAKED_FAILURE,
+  VAULT_FETCH_SINGLE_FARM_STAKED_SUCCESS,
 } from './constants';
-import BigNumber from 'bignumber.js';
 
 export function fetchFarmsStaked({ address, web3, pools }) {
   return dispatch => {
@@ -64,6 +68,28 @@ export function fetchFarmsStaked({ address, web3, pools }) {
 
     return promise;
   };
+}
+
+export function fetchSingleFarmStaked({ address, web3, pool }) {
+  return dispatch => {
+    const { earnContractAddress, masterchefPid } = pool.farm;
+
+    fetchFarmStaked({
+      web3,
+      address,
+      earnContractAddress,
+      earnContractAbi: null,
+      masterchefPid
+    })
+      .then(data => {
+        dispatch({
+          type: VAULT_FETCH_SINGLE_FARM_STAKED_SUCCESS,
+          id: pool.id,
+          data: byDecimals(data, pool.farm.earnedTokenDecimals)
+        });
+      })
+      .catch(error => console.info(error));
+  }
 }
 
 export function useFetchFarmsStaked() {
@@ -119,6 +145,21 @@ export function reducer(state, action) {
         fetchFarmsStakedDone: true,
         fetchFarmsStakedPending: false,
       };
+
+    case VAULT_FETCH_SINGLE_FARM_STAKED_SUCCESS:
+      const newPools = pools.map(pool => {
+        return pool.id == action.id
+          ? {
+            ...pool,
+            stakedAmount: action.data
+          }
+          : pool;
+      });
+
+      return {
+        ...state,
+        pools: newPools
+      }
 
     case VAULT_FETCH_FARMS_STAKED_FAILURE:
       return {

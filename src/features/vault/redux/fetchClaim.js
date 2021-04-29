@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import BigNumber from 'bignumber.js';
 
 import { claimRewards } from '../../web3'
 
@@ -54,7 +55,7 @@ export function useFetchClaim() {
 }
 
 export function reducer(state, action) {
-  const { fetchClaimPending } = state;
+  const { fetchClaimPending, pendingRewards } = state;
 
   switch (action.type) {
     case VAULT_FETCH_CLAIM_BEGIN:
@@ -66,11 +67,17 @@ export function reducer(state, action) {
       };
 
     case VAULT_FETCH_CLAIM_SUCCESS:
+      pendingRewards[action.id] = {
+        pendingEle: new BigNumber(0),
+        pendingToken: new BigNumber(0)
+      };
+
       fetchClaimPending[action.id] = false;
 
       return {
         ...state,
-        fetchClaimPending
+        fetchClaimPending,
+        pendingRewards
       };
 
     case VAULT_FETCH_CLAIM_FAILURE:

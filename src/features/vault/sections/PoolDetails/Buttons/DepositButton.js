@@ -43,7 +43,7 @@ const DepositButton = ({ pool, index, balance }) => {
       return;
     }
 
-    let amountValue = amount.replace(',', '')
+    let amountValue = amount.replace(',', '');
 
     if (pool.tokenAddress) {
       fetchDeposit({
@@ -53,7 +53,7 @@ const DepositButton = ({ pool, index, balance }) => {
         amount: new BigNumber(amountValue)
           .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
           .toString(10),
-        contractAddress: pool.earnContractAddress,
+        pool,
         index
       })
         .then(() => {
@@ -68,7 +68,7 @@ const DepositButton = ({ pool, index, balance }) => {
         amount: new BigNumber(amountValue)
           .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
           .toString(10),
-        contractAddress: pool.earnContractAddress,
+        pool,
         index
       })
         .then(() => {
