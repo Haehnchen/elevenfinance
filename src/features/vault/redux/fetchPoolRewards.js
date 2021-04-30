@@ -153,7 +153,10 @@ export function reducer(state, action) {
 
       return {
         ...state,
-        pendingRewards: pendingRewards,
+        pendingRewards: {
+          ...pendingRewards,
+          [action.id]: action.data
+        },
         fetchPoolRewardsDone,
         fetchPoolRewardsPending,
       };
