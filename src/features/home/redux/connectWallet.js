@@ -20,7 +20,7 @@ export function connectWallet(web3Modal) {
         ]
       });
       const subscribeProvider = provider => {
-        if (!provider.on) { 
+        if (!provider.on) {
           console.log("provider.on")
           return;
         };
@@ -45,15 +45,18 @@ export function connectWallet(web3Modal) {
         });
       }
       await subscribeProvider(provider);
-      
+
       const accounts = await web3.eth.getAccounts();
       const address = accounts[0];
       const networkId = await web3.eth.net.getId();
       dispatch({type: HOME_CONNECT_WALLET_SUCCESS, data: {web3, address, networkId}})
+
+      // Debug message with last synchronized block
+      web3.eth.getBlockNumber().then(res => console.info('Wallet connected. Last block: ' + res));
     } catch (error) {
       dispatch({ type: HOME_CONNECT_WALLET_FAILURE });
     }
-    
+
   };
 }
 

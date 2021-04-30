@@ -24,7 +24,6 @@ import { useConnectWallet } from '../../home/redux/hooks';
 import {
   useFetchBalances,
   useFetchPoolBalances,
-  useFetchContractApy,
   useFetchPoolsInfo,
   useFetchFarmsStaked
 } from '../redux/hooks';
@@ -48,7 +47,6 @@ export default function SectionPools({ filtersCategory }) {
   const { categories } = useFetchPoolsInfo();
   const { tokens, fetchBalances, fetchBalancesDone } = useFetchBalances();
   const { fetchFarmsStaked, fetchFarmsStakedDone } = useFetchFarmsStaked();
-  const { fetchContractApy } = useFetchContractApy();
 
   const [fetchPoolDataDone, setFetchPoolDataDone] = useState(false);
 
@@ -98,6 +96,13 @@ export default function SectionPools({ filtersCategory }) {
         }
       }
 
+      const poolStats = pool.claimable
+        ? pool.vault
+        : pool.farmStats;
+
+      pool.apy = poolStats?.apy;
+      pool.apr = poolStats?.apr;
+
       return pool;
     });
 
@@ -143,10 +148,10 @@ export default function SectionPools({ filtersCategory }) {
 
     switch (sortTerm) {
       case "apy":
-        results = _.orderBy(results, 'vault.apy', 'desc');
+        results = _.orderBy(results, 'apy', 'desc');
         break;
       case "apd":
-        results = _.orderBy(results, 'vault.aprd', 'desc');
+        results = _.orderBy(results, 'aprd', 'desc');
         break;
       case "tvl":
         results = _.orderBy(results, 'tvl', 'desc');
