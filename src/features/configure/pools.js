@@ -760,7 +760,7 @@ export const pools = [
   {
     id: 'oldswirlbnb',
     name: 'oldSWIRL',
-    token: 'oldSWIRL-BNB LP',
+    token: 'SWIRL-BNB LP',
     image: '11SWIRL-logo.svg',
     tokenDescription: 'oldSWIRL',
     tokenAddress: '',
