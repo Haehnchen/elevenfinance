@@ -341,6 +341,36 @@ export const pools = [
     }
   },
   {
+    id: 'waultx',
+    name: 'WAULTX',
+    image: 'wault.png',
+    token: 'WAULTX',
+    tokenDescription: 'WAULTX',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses waultswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11WAULTX',
+    earnedTokenAddress: '0xE941e79b8614Ab48138ab4cfb9f674367CDc3cBC',
+    earnContractAddress: '0xE941e79b8614Ab48138ab4cfb9f674367CDc3cBC',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0xB64E638E60D154B43f660a6BF8fD8a3b249a6a21',
+    categories: ['Wault'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 201
+    }
+  },
+  {
     id: 'bnbbusdw',
     name: 'BNBBUSD',
     image: 'bnbbusd.png',
