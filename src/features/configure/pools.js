@@ -915,6 +915,8 @@ export const pools = [
     name: 'SWIRLBNB',
     image: '11SWIRL-logo.svg',
     token: 'SWIRL-BNB WLP',
+
+
     tokenDescription: 'SWIRLBNB',
     tokenAddress: '',
     tokenDecimals: 18,
@@ -999,10 +1001,12 @@ export const pools = [
     }
   },
   {
-    id: 'eulerbnb',
-    name: 'EULER',
-    token: 'EULER-BNB LP',
-    tokenDescription: 'EULER',
+    id: 'oldeulerbnb',
+    name: 'oldEULER',
+    token: 'oldEULER-BNB LP',
+    image: "EULER-BNB LP-logo.svg",
+    isDiscontinued: true,
+    tokenDescription: 'oldEULER',
     tokenAddress: '',
     tokenDecimals: 18,
     uses: 'Uses pcs V1',
@@ -1010,7 +1014,7 @@ export const pools = [
     depostLimit:0,
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
-    earnedToken: '11EULER',
+    earnedToken: 'old11EULER',
     earnedTokenAddress: '0x42D6855799eFC79188e06e80a5704e1Cef40DBf5',
     earnContractAddress: '0x42D6855799eFC79188e06e80a5704e1Cef40DBf5',
     defaultApy: "39.54",
@@ -1028,11 +1032,42 @@ export const pools = [
     }
   },
   {
+    id: 'eulerbnb',
+    name: 'EULER',
+    token: 'EULER-BNB WLP',
+    image: "EULER-BNB LP-logo.svg",
+    tokenDescription: 'EULER',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses waultswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11EULERBNB',
+    earnedTokenAddress: '0xaBF6eC9F9B4a5f473b67b5272f096795c32ea762',
+    earnContractAddress: '0xaBF6eC9F9B4a5f473b67b5272f096795c32ea762',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0xB52603072981529c8c0DB3E390b2876d97B9b7ed',
+    categories: ['Wault'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 210
+    }
+  },
+  {
     id: 'oldswirlbnb',
     name: 'oldSWIRL',
     token: 'SWIRL-BNB LP',
     image: '11SWIRL-logo.svg',
     tokenDescription: 'oldSWIRL',
+    isDiscontinued: true,
     tokenAddress: '',
     tokenDecimals: 18,
     uses: 'Uses pcs V1',
