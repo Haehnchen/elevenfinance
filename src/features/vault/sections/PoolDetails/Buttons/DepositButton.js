@@ -21,7 +21,7 @@ const DepositButton = ({ pool, index, balance }) => {
   const { enqueueSnackbar } = useSnackbar();
   const { web3, address } = useConnectWallet();
   const { fetchApproval, fetchApprovalPending } = useFetchApproval();
-  const { fetchDeposit, fetchDepositEth, fetchDepositPending } = useFetchDeposit();
+  const { fetchDeposit, fetchDepositNativeToken, fetchDepositPending } = useFetchDeposit();
 
   const [amountDialogOpen, setAmountDialogOpen] = useState(false);
 
@@ -62,7 +62,7 @@ const DepositButton = ({ pool, index, balance }) => {
         })
         .catch(error => enqueueSnackbar(`Deposit error: ${error}`, { variant: 'error' }))
     } else {
-      fetchDepositEth({
+      fetchDepositNativeToken({
         address,
         web3,
         amount: new BigNumber(amountValue)

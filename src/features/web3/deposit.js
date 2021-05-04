@@ -3,17 +3,17 @@ import { enqueueSnackbar } from '../common/redux/actions';
 
 
 export const deposit = async ({web3, address, isAll, amount, contractAddress, dispatch}) => {
-  // console.log(`=====================================deposit begin=====================================`)
   console.log(`
     address:${address}\n
     contractAddress:${contractAddress}\n
     amount:${amount}
   `)
+
   const contract = contractAddress == "0x3Ed531BfB3FAD41111f6dab567b33C4db897f991"? new web3.eth.Contract(e11Abi, contractAddress) : new web3.eth.Contract(earnContractABI, contractAddress);
   const elevenContract = new web3.eth.Contract(erc20ABI, "0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0");
   const elevenBalance = await elevenContract.methods.balanceOf(address).call();
   const data = await _deposit({web3, contract,isAll, amount,  address, dispatch, contractAddress, elevenContract, elevenBalance});
-  // console.log(`=====================================deposit success=====================================`)
+
   return data;
 }
 
