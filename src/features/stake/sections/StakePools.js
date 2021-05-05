@@ -17,8 +17,8 @@ import InputBase from '@material-ui/core/InputBase';
 import IconButton from '@material-ui/core/IconButton';
 import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
-import leftImage from 'assets/img/stake-head-left.png';
-import rightImage from 'assets/img/stake-head-right.png';
+// import leftImage from 'assets/img/stake-head-left.png';
+// import rightImage from 'assets/img/stake-head-right.png';
 import { useFetchPoolsInfo } from '../redux/hooks';
 
 const useStyles = makeStyles(stakePoolsStyle);
@@ -40,12 +40,12 @@ export default function StakePools(props) {
         <h3 className={classes.secondTitle}>{t('Stake-Second-Title')}</h3>
       </Grid>
       {
-        fromPage == 'page' && 
+        fromPage == 'page' &&
         <Hidden xsDown>
           <GridItem>
             <div className={classes.listHeader}>
-              <img className={classes.leftImage} src={leftImage} />
-              <img className={classes.rightImage} src={rightImage} />
+              {/* <img className={classes.leftImage} src={leftImage} />
+              <img className={classes.rightImage} src={rightImage} /> */}
               <div className={classes.mainTitle}>{t('Stake-List-Header-Main')}</div>
               <GridContainer >
                 <GridItem className={classNames({
@@ -86,7 +86,7 @@ export default function StakePools(props) {
                   <StyledTableCell component="th">
                     <div className={classes.firstCell}>
                       <div className={classes.avatarContainer}>
-                        <Avatar 
+                        <Avatar
                           alt={pool.name}
                           src={require(`../../../images/${pool.name}-logo.png`)}
                           className={classNames({
@@ -123,7 +123,7 @@ export default function StakePools(props) {
         {pools.map((pool, index) => (
           <div key={`mobile-${index}`} className={classes.mobileContainer} style={{display: Boolean(index !== 3 && index !== 4) ? "none" : ""}}>
             <div className={classes.avatarContainer} style={{width:'80px',height:'80px',borderRadius:'40px'}}>
-              <Avatar 
+              <Avatar
                 alt={pool.name}
                 src={require(`../../../images/${pool.name}-logo.png`)}
                 style={{width:'54px',height:'54px'}}
