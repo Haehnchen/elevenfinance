@@ -148,13 +148,13 @@ export default function SectionPools({ filtersCategory }) {
 
     switch (sortTerm) {
       case "apy":
-        results = _.orderBy(results, 'apy', 'desc');
+        results = _.orderBy(results, pool => pool.apy || 0, 'desc');
         break;
       case "apd":
-        results = _.orderBy(results, 'aprd', 'desc');
+        results = _.orderBy(results, pool => pool.aprd || 0, 'desc');
         break;
       case "tvl":
-        results = _.orderBy(results, 'tvl', 'desc');
+        results = _.orderBy(results, pool => pool.tvl || 0, 'desc');
         break;
     }
 
