@@ -180,12 +180,7 @@ const styles = {
       color: COLORS.primaryContrast,
     },
 
-    '&:hover': {
-      opacity: 0.97
-    },
-
     '&:active': {
-      position: 'relative',
       top: 2,
       paddingBottom: 8,
       boxShadow: 'none',

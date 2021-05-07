@@ -6,7 +6,7 @@ const appStyle = {
     backgroundColor: COLORS.bgDark,
     fontFamily: FONT.family,
     minHeight: '100vh',
-    padding: '0 45px 0 305px',
+    padding: '25px 45px 25px 305px',
 
     '& *': {
       fontFamily: FONT.family

@@ -1,44 +1,25 @@
-/* eslint-disable */
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import classNames from 'classnames';
+import NumberFormat from 'react-number-format';
+import _ from 'lodash';
 
-// @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
 
-import {
-  Checkbox,
-  Chip,
-  FormControl,
-  FormControlLabel,
-  Grid,
-  InputAdornment,
-  MenuItem,
-  Select,
-  TextField,
-} from '@material-ui/core';
+import Filters from '../Filters/Filters';
+import Pool from '../Pool/Pool';
 
-import SearchIcon from "@material-ui/icons/Search"
-
-import { useConnectWallet } from '../../home/redux/hooks';
+import { useConnectWallet } from '../../../home/redux/hooks';
 import {
   useFetchBalances,
   useFetchPoolBalances,
   useFetchPoolsInfo,
   useFetchFarmsStaked
-} from '../redux/hooks';
+} from '../../redux/hooks';
 
-import sectionPoolsStyle from "../jss/sections/sectionPoolsStyle";
+import styles from './styles.js';
+const useStyles = makeStyles(styles);
 
-import NumberFormat from 'react-number-format';
-
-import _ from 'lodash';
-
-const useStyles = makeStyles(sectionPoolsStyle);
-
-import Pool from './Pool/Pool';
-
-export default function SectionPools({ filtersCategory }) {
+export default function PoolsList({ filtersCategory }) {
   const { t } = useTranslation();
   const classes = useStyles();
 
@@ -176,125 +157,29 @@ export default function SectionPools({ filtersCategory }) {
     return () => clearInterval(id);
   }, [address, web3, fetchBalances, fetchPoolBalances]);
 
-  const handleSearchChange = event => {
-    setSearchTerm(event.target.value);
-  };
-
-  const handleSort = event => {
-    setSortTerm(event.target.value);
-  }
-
-  const handleOnlyStakedPools = event => {
-    setOnlyStakedPools(event.target.checked);
-  }
-
-  const handleOnlyWithBalancePools = event => {
-    setOnlyWithBalancePools(event.target.checked);
-  }
-
-  const handleFiltersCategory = category => {
-    const selectedCategories = filtersCategories.slice();
-
-    var index = selectedCategories.indexOf(category.name);
-    if (index === -1) {
-      selectedCategories.push(category.name);
-    } else {
-      selectedCategories.splice(index, 1);
-    }
-
-    setFiltersCategories(selectedCategories);
-  }
-
   return (
-    <Grid container style={{ paddingTop: '4px' }}>
-      <Grid item xs={12}>
-        <div className={classes.mainTitle}>{t('Vault-Main-Title')}</div>
-        <h3 style={{color: 'white'}}>TVL: <NumberFormat value={data.totalvaluelocked} displayType={'text'} thousandSeparator={true} prefix={'$'} decimalScale={0} /></h3>
-      </Grid>
+    <>
+      <h2 className={classes.h2}>{t('Vault-Main-Title')}</h2>
+      <h3 className={classes.h3}>
+        TVL: <NumberFormat value={data.totalvaluelocked} displayType={'text'} thousandSeparator={true} prefix={'$'} decimalScale={0} />
+      </h3>
 
-      {/* Categories */}
-      <Grid item xs={12} className={classes.filtersChips}>
-        {categories.map((category, index) => {
-          return (
-            <Chip key={index}
-                  label={category.name}
-                  onClick={() => handleFiltersCategory(category)}
-                  className={classNames(
-                    classes.filtersChip,
-                    {
-                      active: filtersCategories.includes(category.name),
-                      inactive: category.default === false
-                    }
-                  )} />
-          )
-        })}
-      </Grid>
-
-      {/* Filters */}
-      <Grid item container className={classes.filtersContainer} xs={12}>
-        <Grid item md={6} className={classes.filtersLeft}>
-          <FormControlLabel
-            control={
-              <Checkbox checked={onlyStakedPools}
-                        onChange={handleOnlyStakedPools}
-                        name="only_staked_pools" />
-            }
-            label="Deposited Only"
-            className={classes.filtersCheckbox}
-          />
-
-          <FormControlLabel
-            control={
-              <Checkbox checked={onlyWithBalancePools}
-                        onChange={handleOnlyWithBalancePools}
-                        name="only_with_balance_pools" />
-            }
-            label="Hide Zero Balances"
-            className={classes.filtersCheckbox}
-          />
-        </Grid>
-        <Grid item md={6} className={classes.filtersRight}>
-          <TextField
-            onChange={handleSearchChange}
-            className={classes.searchInput}
-            placeholder="Search"
-            variant="outlined"
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <SearchIcon />
-                </InputAdornment>
-              ),
-            }} />
-
-          <FormControl
-            variant="outlined"
-            className={classes.sortSelect}
-          >
-            <Select
-              value={sortTerm}
-              onChange={handleSort}
-            >
-              <MenuItem value="default">Default</MenuItem>
-              <MenuItem value="apy">APY</MenuItem>
-              <MenuItem value="tvl">TVL</MenuItem>
-            </Select>
-          </FormControl>
-        </Grid>
-      </Grid>
+      {/* <Filters /> */}
 
       {/* Pools */}
-      {Boolean(networkId === Number(process.env.NETWORK_ID)) && searchResults.map((pool, index) => {
-        return (
-          <Pool key={index}
-            pool={pool}
-            index={index}
-            tokens={tokens}
-            fetchBalancesDone={fetchBalancesDone}
-            fetchPoolDataDone={fetchPoolDataDone}
-          />
-        )
-      })}
-    </Grid>
+      <div className={classes.pools}>
+        {Boolean(networkId === Number(process.env.NETWORK_ID)) && searchResults.map((pool, index) => {
+          return (
+            <Pool key={index}
+              pool={pool}
+              index={index}
+              tokens={tokens}
+              fetchBalancesDone={fetchBalancesDone}
+              fetchPoolDataDone={fetchPoolDataDone}
+            />
+          )
+        })}
+      </div>
+    </>
   )
 }

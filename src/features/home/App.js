@@ -1,24 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { createUseStyles } from "react-jss";
-//  notistack
-import { SnackbarProvider } from 'notistack';
-//  core components
-import { Notifier } from "features/common"
-import Header from "components/Header/Header.js";
-import HeaderLinks from "components/Header/HeaderLinks.js";
-import FooterLinks from 'components/Footer/FooterLinks.js';
-//  hooks
-import { useConnectWallet, useDisconnectWallet } from './redux/hooks';
-//  i18n
 import i18next from 'i18next';
-//  web3Modal
+import { createUseStyles } from "react-jss";
+import { SnackbarProvider } from 'notistack';
 import Web3Modal from "web3modal";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 
+import { Notifier } from "features/common"
+
+import { useConnectWallet, useDisconnectWallet } from './redux/hooks';
+
 import Sidebar from './Sidebar/Sidebar';
-//  core pages
-//  style for this page
+
 import appStyle from "./jss/appStyle.js";
 const useStyles = createUseStyles(appStyle);
 
@@ -87,11 +80,10 @@ export default function App({ children }) {
         />
 
         <div className={classes.container}>
-            <div className={classes.children}>
-              {Boolean(networkId === Number(process.env.NETWORK_ID)) && children}
-              <Notifier />
-            </div>
-          <FooterLinks />
+          <div className={classes.children}>
+            {Boolean(networkId === Number(process.env.NETWORK_ID)) && children}
+            <Notifier />
+          </div>
         </div>
       </div>
     </SnackbarProvider>
