@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { createUseStyles } from 'react-jss';
 import BigNumber from 'bignumber.js';
-import { makeStyles } from '@material-ui/core/styles';
 import { useSnackbar } from 'notistack';
 
 import { useConnectWallet } from 'features/home/redux/hooks';
 import { useFetchFarmAllowance, useFetchFarmApproval, useFetchFarmStake } from 'features/vault/redux/hooks';
 
-import Button from '@material-ui/core/Button';
-import CircularProgress from '@material-ui/core/CircularProgress';
-
 import AmountDialog from 'components/AmountDialog/AmountDialog'
+import Spinner from 'components/Spinner/Spinner';
 
 import styles from './styles';
-const useStyles = makeStyles(styles);
+const useStyles = createUseStyles(styles);
 
 const StakeButton = ({ pool, index, balance }) => {
   const { t } = useTranslation();
@@ -80,23 +78,20 @@ const StakeButton = ({ pool, index, balance }) => {
   return (
     <span>
       {farmAllowance[pool.id] ? (
-        <Button className={classes.buttonPrimary}
+        <button className={classes.buttonPrimary}
           onClick={handleStakeButton}
         >
           {t('Vault-Stake')}
-        </Button>
+        </button>
       ) : (
-        <Button className={classes.buttonPrimary}
+        <button className={classes.buttonPrimary}
           onClick={handleApproval}
           disabled={fetchFarmApprovalPending[pool.id]}
         >
-          {!fetchFarmApprovalPending[pool.id] ? `${t('Vault-ApproveButton')}` : (
-            <CircularProgress
-              className={classes.buttonLoader}
-              size={20}
-              thickness={6} />
-          )}
-        </Button>
+          {!fetchFarmApprovalPending[pool.id]
+            ? `${t('Vault-ApproveButton')}`
+            : (<Spinner />)}
+        </button>
       )}
 
       <AmountDialog

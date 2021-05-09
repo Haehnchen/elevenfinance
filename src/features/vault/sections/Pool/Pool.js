@@ -1,5 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { createUseStyles } from 'react-jss';
+import { Transition } from '@headlessui/react';
 import BigNumber from 'bignumber.js';
 import { byDecimals } from 'features/helpers/bignumber';
 
@@ -49,12 +50,22 @@ const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => 
         onClick={toggleCard}
       />
 
-      {/* <PoolDetails pool={pool}
-        index={index}
-        tokenBalance={tokenBalance}
-        depositedBalance={depositedBalance}
-        stakedBalance={stakedBalance}
-      /> */}
+      <Transition
+        show={isOpen}
+        enter={classes.transitionSlide}
+        enterFrom={classes.transitionSlideClosed}
+        enterTo={classes.transitionSlideOpen}
+        leave={classes.transitionSlide}
+        leaveFrom={classes.transitionSlideOpen}
+        leaveTo={classes.transitionSlideClosed}
+      >
+        <PoolDetails pool={pool}
+          index={index}
+          tokenBalance={tokenBalance}
+          depositedBalance={depositedBalance}
+          stakedBalance={stakedBalance}
+        />
+      </Transition>
     </div>
   );
 };

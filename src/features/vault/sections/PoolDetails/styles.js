@@ -1,7 +1,7 @@
-const styles = theme => ({
+const styles = {
   poolDetails: {
-    padding: '10px 0 20px'
+    padding: '20px 0'
   }
-});
+};
 
 export default styles;

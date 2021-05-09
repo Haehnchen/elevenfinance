@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { makeStyles } from '@material-ui/core/styles';
+import { createUseStyles } from 'react-jss';
 import { formatDecimals } from 'features/helpers/bignumber';
 
 import Grid from '@material-ui/core/Grid';
@@ -12,7 +12,7 @@ import UnstakeButton from '../Buttons/UnstakeButton';
 import Step from './Step/Step';
 
 import styles from './styles';
-const useStyles = makeStyles(styles);
+const useStyles = createUseStyles(styles);
 
 const FarmOnly = ({ pool, index, tokenBalance, stakedBalance, pendingRewards, pendingRewardsLoaded }) => {
   const { t } = useTranslation();

@@ -1,8 +1,8 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { createUseStyles } from 'react-jss';
 
 import styles from './styles';
-const useStyles = makeStyles(styles);
+const useStyles = createUseStyles(styles);
 
 const Step = ({ number, label }) => {
   const classes = useStyles();

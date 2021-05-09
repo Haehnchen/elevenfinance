@@ -1,4 +1,4 @@
-import { BORDER, COLORS, FONT } from 'assets/jss/common';
+import commonStyles, { BORDER, COLORS, FONT } from 'assets/jss/common';
 
 const styles = {
   sidebar: {
@@ -150,40 +150,23 @@ const styles = {
   },
 
   bigfootButton: {
-    position: 'relative',
-    display: 'block',
-    padding: '10px 0',
+    ...commonStyles.button,
 
-    color: COLORS.primaryContrast,
+    display: 'block',
+
     fontSize: 15,
     fontWeight: 'bold',
     lineHeight: '20px',
     textTransform: 'uppercase',
-    textAlign: 'center',
-
-    borderRadius: BORDER.radius,
-
-    background: COLORS.primary,
 
     boxShadow: 'inset 0 -3px 0 0 rgba(0,0,0,.2)',
 
     '& svg': {
+      ...commonStyles.button['& svg'],
+
       width: 16,
       height: 22,
       marginRight: 11,
-      verticalAlign: 'middle',
-      display: 'inline-block',
-      marginTop: -5
-    },
-
-    '&:link, &:visited, &:hover, &:active': {
-      color: COLORS.primaryContrast,
-    },
-
-    '&:active': {
-      top: 2,
-      paddingBottom: 8,
-      boxShadow: 'none',
     }
   },
 

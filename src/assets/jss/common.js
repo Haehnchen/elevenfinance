@@ -20,7 +20,7 @@ export const FONT = {
     h3: '22px',
     h4: '18px',
 
-    bigger: '16px',
+    bigger: '15px',
     normal: '14px',
     small: '13px',
   }
@@ -28,6 +28,30 @@ export const FONT = {
 
 export const BORDER = {
   radius: '14px'
+}
+
+export const TRANSITIONS = {
+  slide: {
+    transitionSlide: {
+      overflow: 'hidden',
+      transition: 'max-height 0.25s linear',
+    },
+
+    transitionSlideClosed: {
+      maxHeight: 0,
+    },
+
+    transitionSlideOpen: {
+      maxHeight: 300,
+    }
+  }
+}
+
+export const BREAKPOINTS = {
+  sm: '576px',
+  md: '768px',
+  lg: '992px',
+  xl: '1200px'
 }
 
 const styles = {
@@ -66,6 +90,74 @@ const styles = {
   textSecondary: {
     color: COLORS.textSecondaryLight,
     fontSize: FONT.size.normal
+  },
+
+  button: {
+    position: 'relative',
+    padding: '10px 15px',
+
+    color: COLORS.primaryContrast,
+    fontSize: FONT.size.bigger,
+    fontWeight: 500,
+    lineHeight: '20px',
+    textAlign: 'center',
+
+    border: 'none',
+    borderRadius: '7px',
+
+    background: COLORS.primary,
+
+    cursor: 'pointer',
+    transition: 'transform .1s ease-in-out',
+
+    '& svg': {
+      width: 20,
+      height: 20,
+      marginRight: 10,
+      verticalAlign: 'middle',
+      display: 'inline-block',
+      marginTop: -5
+    },
+
+    '&:link, &:visited, &:hover, &:active': {
+      color: COLORS.primaryContrast,
+      background: COLORS.primary
+    },
+
+    '&:hover': {
+      transform: 'scale(1.05)'
+    },
+  },
+
+  buttonSecondary: {
+    position: 'relative',
+    padding: '10px 15px',
+
+    color: COLORS.primary,
+    fontSize: FONT.size.bigger,
+    lineHeight: '20px',
+    textAlign: 'center',
+
+    border: 'none',
+    borderRadius: '7px',
+
+    background: 'rgba(254, 191, 50, 0.2)',
+
+    cursor: 'pointer',
+    transition: 'transform .1s ease-in-out',
+
+    '& svg': {
+      width: 20,
+      height: 20,
+      marginRight: 10,
+      verticalAlign: 'middle',
+      display: 'inline-block',
+      marginTop: -5
+    },
+
+    '&:link, &:visited, &:hover, &:active': {
+      transform: 'scale(1.05)'
+    },
   }
 }
 

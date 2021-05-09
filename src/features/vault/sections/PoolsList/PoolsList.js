@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { createUseStyles } from 'react-jss';
 import NumberFormat from 'react-number-format';
 import _ from 'lodash';
 
-import { makeStyles } from '@material-ui/core/styles';
 
 import Filters from '../Filters/Filters';
 import Pool from '../Pool/Pool';
@@ -17,7 +17,7 @@ import {
 } from '../../redux/hooks';
 
 import styles from './styles.js';
-const useStyles = makeStyles(styles);
+const useStyles = createUseStyles(styles);
 
 export default function PoolsList({ filtersCategory }) {
   const { t } = useTranslation();

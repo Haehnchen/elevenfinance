@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { makeStyles } from '@material-ui/core/styles';
+import { createUseStyles } from 'react-jss';
 import { formatDecimals } from 'features/helpers/bignumber';
 
 import Grid from '@material-ui/core/Grid';
@@ -12,7 +12,7 @@ import WithdrawButton from '../Buttons/WithdrawButton';
 import Step from './Step/Step';
 
 import styles from './styles';
-const useStyles = makeStyles(styles);
+const useStyles = createUseStyles(styles);
 
 const Claimable = ({ pool, index, tokenBalance, depositedBalance, pendingRewards, pendingRewardsLoaded }) => {
   const { t } = useTranslation();
