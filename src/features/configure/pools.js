@@ -1127,6 +1127,8 @@ export const pools = [
   },
   {
     id: 'icebnb',
+    isDiscontinued: true,
+    discontinuedMessage: 'ICE-BNB rewards ended',
 
     name: 'ICEBNB',
     token: 'ICE-BNB LP',
@@ -1160,6 +1162,9 @@ export const pools = [
     id: 'ice',
     name: 'ICE',
     token: 'ICE',
+    isDiscontinued: true,
+    discontinuedMessage: 'ICE rewards ended. Lending might be enabled in the future',
+
     tokenDescription: 'ICE',
     tokenAddress: '',
     tokenDecimals: 18,
