@@ -1,15 +1,20 @@
 export const COLORS = {
   primary: '#FEBF32',
   primaryContrast: '#1B1717',
+  primaryOpaque: 'rgba(254, 191, 50, 0.2)',
 
   textMain: '#ffffff',
   textHeader: '#FCFCFC',
   textLight: '#EEEEEE',
   textSecondaryLight: '#B5B7BF',
+  textSecondaryDark: '#93959C',
 
   bgDark: '#1D1E24',
   bgSurface: '#23262B',
-  bgLight: '#30323B'
+  bgLight: '#30323B',
+  bgOverlay: 'rgba(16, 20, 26, 0.7)',
+
+  border: '#33363D'
 };
 
 export const FONT = {
@@ -27,7 +32,8 @@ export const FONT = {
 }
 
 export const BORDER = {
-  radius: '14px'
+  radius: 14,
+  radiusSmall: 10
 }
 
 export const TRANSITIONS = {
@@ -44,10 +50,37 @@ export const TRANSITIONS = {
     transitionSlideOpen: {
       maxHeight: 300,
     }
+  },
+
+  opacity: {
+    transitionOpacity: {
+      transition: 'opacity .2s cubic-bezier(0, 0, 0.2, 1)'
+    },
+    transitionOpacityClosed: {
+      opacity: 0,
+    },
+    transitionOpacityOpen: {
+      opacity: 1,
+    }
+  },
+
+  fade: {
+    transitionFade: {
+      transition: 'opacity .2s cubic-bezier(0, 0, 0.2, 1), transform .2s cubic-bezier(0, 0, 0.2, 1)'
+    },
+    transitionFadeClosed: {
+      opacity: 0,
+      transform: 'scale(.95) !important'
+    },
+    transitionFadeOpen: {
+      opacity: 1,
+      transform: 'scale(1) !important'
+    }
   }
 }
 
 export const BREAKPOINTS = {
+  xs: '444px',
   sm: '576px',
   md: '768px',
   lg: '992px',
@@ -141,7 +174,7 @@ const styles = {
     border: 'none',
     borderRadius: '7px',
 
-    background: 'rgba(254, 191, 50, 0.2)',
+    background: COLORS.primaryOpaque,
 
     cursor: 'pointer',
     transition: 'transform .1s ease-in-out',
@@ -155,9 +188,34 @@ const styles = {
       marginTop: -5
     },
 
-    '&:link, &:visited, &:hover, &:active': {
+    '&:hover': {
       transform: 'scale(1.05)'
     },
+  },
+
+  input: {
+    width: '100%',
+    padding: '10px 16px',
+
+    color: COLORS.textLight,
+    fontSize: FONT.size.normal,
+    lineHeight: '18px',
+
+    background: 'transparent',
+    border: '1px solid ' + COLORS.border,
+    borderRadius: BORDER.radius,
+  },
+
+  inputLarge: {
+    padding: '16px',
+    fontSize: FONT.size.bigger,
+    fontWeight: 'bold'
+  },
+
+  label: {
+    color: COLORS.textSecondaryLight,
+    fontSize: FONT.size.bigger,
+    lineHeight: FONT.size.h3
   }
 }
 

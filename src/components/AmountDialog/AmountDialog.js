@@ -1,24 +1,15 @@
 import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { createUseStyles } from 'react-jss';
 import { byDecimals, calculateReallyNum, formatDecimals } from 'features/helpers/bignumber';
 import { inputLimitPass, inputFinalVal } from 'features/helpers/utils';
 
-import Button from '@material-ui/core/Button'
-import CircularProgress from '@material-ui/core/CircularProgress';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import FormControl from '@material-ui/core/FormControl';
-import IconButton from '@material-ui/core/IconButton';
+import Dialog from 'components/Dialog/Dialog';
+import Spinner from 'components/Spinner/Spinner';
 
-import CloseIcon from '@material-ui/icons/Close';
-
-import CustomOutlinedInput from 'components/CustomOutlinedInput/CustomOutlinedInput';
 import CustomSlider from 'components/CustomSlider/CustomSlider';
 
 import styles from './styles';
-const useStyles = makeStyles(styles);
+const useStyles = createUseStyles(styles);
 
 const AmountDialog = ({ title, buttonText, buttonIsLoading, balance, decimals, open, onConfirm, onClose }) => {
   const classes = useStyles();
@@ -84,43 +75,41 @@ const AmountDialog = ({ title, buttonText, buttonIsLoading, balance, decimals, o
     onConfirm((amount.number + '').replace(/,/g, ''));
   }
 
+  const controls = (
+    <>
+      <button
+        className={classes.button}
+        onClick={onConfirmButton}
+        disabled={buttonIsLoading}
+      >
+        {!buttonIsLoading
+          ? buttonText
+          : (<Spinner/>)}
+      </button>
+    </>
+  )
+
   return (
-    <Dialog
-      open={open}
-      onEnter={onEnter}
-      onClose={onClose}
-      fullWidth
-      maxWidth={'xs'}
-      classes={{
-        paper: classes.dialog
-      }}
-    >
-      <DialogTitle className={classes.dialogTitle}>
-        {title}
-
-        <IconButton className={classes.dialogClose} onClick={onClose}>
-            <CloseIcon />
-        </IconButton>
-      </DialogTitle>
-
-      <DialogContent>
-        {/* Balance */}
-        <div className={classes.balance}>
-          <span>Balance:</span>
-          <Button className={classes.balanceButton}
+    <>
+      <Dialog open={open}
+        onClose={onClose}
+        title={title}
+        controls={controls}
+      >
+        <div className={classes.labelWithAddon}>
+            <label>Amount</label>
+          <button className={classes.balanceButton}
             onClick={onBalanceButton}
           >
-            {formatDecimals(balance)}
-          </Button>
+            max: <span>{ formatDecimals(balance) }</span>
+          </button>
         </div>
 
-        {/* Input */}
-        <FormControl fullWidth variant="outlined">
-          <CustomOutlinedInput
-            value={amount.number}
-            onChange={onInputChange}
-          />
-        </FormControl>
+        <input type="text"
+          className={classes.input}
+          value={amount.number}
+          onChange={onInputChange}
+        />
 
         {/* Slider */}
         <div className={classes.sliderWrapper}>
@@ -131,26 +120,12 @@ const AmountDialog = ({ title, buttonText, buttonIsLoading, balance, decimals, o
             }}
             aria-labelledby="continuous-slider"
             value={amount.slider}
+            valueLabelDisplay="off"
             onChange={onSliderChange}
           />
         </div>
-      </DialogContent>
-
-      <DialogActions className={classes.dialogActions}>
-        <Button
-          className={classes.buttonPrimary}
-          onClick={onConfirmButton}
-          disabled={buttonIsLoading}
-        >
-          {!buttonIsLoading ? buttonText : (
-            <CircularProgress
-              className={classes.loader}
-              size={20}
-              thickness={6} />
-          )}
-        </Button>
-      </DialogActions>
-    </Dialog>
+      </Dialog>
+    </>
   );
 }
 
