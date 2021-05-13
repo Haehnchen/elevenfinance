@@ -14,3 +14,4 @@ export { useFetchFarmsStaked } from './fetchFarmsStaked';
 export { useFetchFarmClaim } from './fetchFarmClaim';
 export { useFetchFarmStake } from './fetchFarmStake';
 export { useFetchFarmUnstake } from './fetchFarmUnstake';
+export { useFetchFilters } from './fetchFilters';

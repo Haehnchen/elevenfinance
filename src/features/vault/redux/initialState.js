@@ -23,6 +23,12 @@ const initialState = {
   categories,
   pools,
   tokens,
+  filters: {
+    categories: [],
+    deposited: false,
+    withBalance: false,
+    sort: 'default'
+  },
   pendingRewards: {},
   contractApy: {},
   farmAllowance: {},

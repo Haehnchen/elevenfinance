@@ -216,6 +216,54 @@ const styles = {
     color: COLORS.textSecondaryLight,
     fontSize: FONT.size.bigger,
     lineHeight: FONT.size.h3
+  },
+
+  checkbox: {
+    color: COLORS.textSecondaryLight,
+    fontSize: FONT.size.normal,
+    lineHeight: FONT.size.bigger,
+
+    position: 'relative',
+    cursor: 'pointer',
+
+    '& input': {
+      position: 'absolute',
+      opacity: 0,
+      cursor: 'pointer',
+      height: 0,
+      width: 0,
+    },
+
+    '&:before': {
+      content: '""',
+      position: 'relative',
+      top: 1,
+      display: 'inline-block',
+      marginRight: 8,
+      verticalAlign: 'text-top',
+      width: 16,
+      height: 16,
+      background: 'transparent',
+      border: '1px solid ' + COLORS.border,
+      borderRadius: 4,
+    },
+
+    '&.active:before': {
+      background: COLORS.primary,
+      borderColor: COLORS.primary
+    },
+
+    '&.active:after': {
+      content: '""',
+      position: 'absolute',
+      top: 3,
+      left: 6,
+      width: 4,
+      height: 9,
+      borderBottom: '2px solid ' + COLORS.primaryContrast,
+      borderRight: '2px solid ' + COLORS.primaryContrast,
+      transform: 'rotate(45deg)'
+    }
   }
 }
 

@@ -11,6 +11,7 @@ import Pool from '../Pool/Pool';
 import { useConnectWallet } from '../../../home/redux/hooks';
 import {
   useFetchBalances,
+  useFetchFilters,
   useFetchPoolBalances,
   useFetchPoolsInfo,
   useFetchFarmsStaked
@@ -28,15 +29,9 @@ export default function PoolsList({ filtersCategory }) {
   const { categories } = useFetchPoolsInfo();
   const { tokens, fetchBalances, fetchBalancesDone } = useFetchBalances();
   const { fetchFarmsStaked, fetchFarmsStakedDone } = useFetchFarmsStaked();
+  const { filteredPools } = useFetchFilters(pools, tokens);
 
   const [fetchPoolDataDone, setFetchPoolDataDone] = useState(false);
-
-  const [searchTerm, setSearchTerm] = useState('');
-  const [sortTerm, setSortTerm] = useState('default');
-  const [onlyStakedPools, setOnlyStakedPools] = useState(false);
-  const [onlyWithBalancePools, setOnlyWithBalancePools] = useState(false);
-  const [filtersCategories, setFiltersCategories] = useState([]);
-  const [searchResults, setSearchResults] = useState([]);
 
   const [data, setData] = useState([]);
 
@@ -44,7 +39,7 @@ export default function PoolsList({ filtersCategory }) {
     if (filtersCategory) {
       categories.forEach(category => {
         if (category.name.toLowerCase() == filtersCategory.toLowerCase()) {
-          setFiltersCategories([category.name]);
+          // setFiltersCategories([category.name]); TODO:
         }
       })
     }
@@ -93,56 +88,6 @@ export default function PoolsList({ filtersCategory }) {
   }
 
   useEffect(() => {
-    const term = searchTerm.toLowerCase()
-    let results = pools.filter(pool =>
-      pool.token.toLowerCase().includes(term)
-    );
-
-    if (onlyStakedPools) {
-      results = results.filter(pool => {
-        return tokens[pool.earnedToken]?.tokenBalance > 0
-          || pool.stakedAmount?.gt(0);
-      });
-    }
-
-    if (onlyWithBalancePools) {
-      results = results.filter(pool => {
-        return tokens[pool.token]?.tokenBalance > 0
-          || tokens[pool.earnedToken]?.tokenBalance > 0
-          || pool.stakedAmount?.gt(0);
-      });
-    }
-
-    if (filtersCategories.length) {
-      results = results.filter(pool => {
-        return _.intersection(pool.categories || [], filtersCategories).length > 0;
-      });
-    } else {
-      // Show all pools without category or in categories active by default
-      const defaultCategories = categories.filter(category => category.default).map(category => category.name);
-
-      results = results.filter(pool => {
-        return ! pool.categories?.length
-          || _.intersection(pool.categories, defaultCategories).length > 0;
-      });
-    }
-
-    switch (sortTerm) {
-      case "apy":
-        results = _.orderBy(results, 'apy', 'desc');
-        break;
-      case "apd":
-        results = _.orderBy(results, 'aprd', 'desc');
-        break;
-      case "tvl":
-        results = _.orderBy(results, 'tvl', 'desc');
-        break;
-    }
-
-    setSearchResults(results);
-  }, [searchTerm, sortTerm, onlyStakedPools, onlyWithBalancePools, filtersCategories, tokens, pools])
-
-  useEffect(() => {
     const fetch = () => {
       if (address && web3) {
         fetchBalances({ address, web3, tokens });
@@ -164,11 +109,11 @@ export default function PoolsList({ filtersCategory }) {
         TVL: <NumberFormat value={data.totalvaluelocked} displayType={'text'} thousandSeparator={true} prefix={'$'} decimalScale={0} />
       </h3>
 
-      {/* <Filters /> */}
+      <Filters />
 
       {/* Pools */}
       <div className={classes.pools}>
-        {Boolean(networkId === Number(process.env.NETWORK_ID)) && searchResults.map((pool, index) => {
+        {Boolean(networkId === Number(process.env.NETWORK_ID)) && filteredPools.map((pool, index) => {
           return (
             <Pool key={index}
               pool={pool}

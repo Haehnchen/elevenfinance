@@ -41,7 +41,7 @@ const PoolSummary = ({ pool, tokenBalance, depositedBalance, fetchBalanceDone, o
 
     const vaultAprd = stats.aprd;
     try {
-      return millify(vaultAprd, { units, space: true });
+      return millify(vaultAprd, { units });
     } catch {
       return "--"
     }
