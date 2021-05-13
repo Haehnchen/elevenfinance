@@ -5,8 +5,9 @@ import {
   VAULT_FETCH_WITHDRAW_SUCCESS,
   VAULT_FETCH_WITHDRAW_FAILURE,
 } from './constants';
+
 import { fetchTokenBalance } from './actions';
-import { withdraw, withdrawEth } from "../../web3";
+import { withdraw, withdrawNativeToken } from "../../web3";
 
 export function fetchWithdraw({ address, web3, isAll, amount, pool, index }) {
   return dispatch => {
@@ -44,7 +45,7 @@ export function fetchWithdraw({ address, web3, isAll, amount, pool, index }) {
   };
 }
 
-export function fetchWithdrawEth({ address, web3, isAll, amount, pool, index }) {
+export function fetchWithdrawNativeToken({ address, web3, amount, pool, index }) {
   return dispatch => {
     dispatch({
       type: VAULT_FETCH_WITHDRAW_BEGIN,
@@ -53,19 +54,19 @@ export function fetchWithdrawEth({ address, web3, isAll, amount, pool, index }) 
 
     const promise = new Promise((resolve, reject) => {
       const contractAddress = pool.earnContractAddress;
-      withdrawEth({ web3, address, isAll, amount, contractAddress, dispatch }).then(
+      withdrawNativeToken({ web3, address, amount, contractAddress, dispatch }).then(
         data => {
           dispatch({
             type: VAULT_FETCH_WITHDRAW_SUCCESS,
             data, index
           });
 
+          dispatch(fetchTokenBalance({ address, web3, token: pool.token }));
           dispatch(fetchTokenBalance({ address, web3, token: pool.earnedToken }));
 
           resolve(data);
         },
       ).catch(
-          // Use rejectHandler as the second argument so that render errors won't be caught.
         error => {
           dispatch({
             type: VAULT_FETCH_WITHDRAW_FAILURE,
@@ -96,13 +97,13 @@ export function useFetchWithdraw() {
   );
 
   const boundAction2 = useCallback(
-    (data) => dispatch(fetchWithdrawEth(data)),
+    (data) => dispatch(fetchWithdrawNativeToken(data)),
     [dispatch],
   );
 
   return {
     fetchWithdraw: boundAction,
-    fetchWithdrawEth: boundAction2,
+    fetchWithdrawNativeToken: boundAction2,
     fetchWithdrawPending
   };
 }

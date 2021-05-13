@@ -106,11 +106,10 @@ const AmountDialog = ({ title, buttonText, buttonIsLoading, balance, decimals, o
       <DialogContent>
         {/* Balance */}
         <div className={classes.balance}>
-          <span>Balance:</span>
           <Button className={classes.balanceButton}
             onClick={onBalanceButton}
           >
-            {formatDecimals(balance)}
+            max: {formatDecimals(balance)}
           </Button>
         </div>
 

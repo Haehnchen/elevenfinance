@@ -44,7 +44,7 @@ const footerLinkArr = [
     {content:'Link.Contract',href:'https://bscscan.com/address/0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0'},
     // {content:'CoinMarketCap',href:'https://coinmarketcap.com/zh/currencies/yearn-finance-ii/'},
     // {content:'CoinGecko',href:'https://www.coingecko.com/en/coins/dfi-money'},
-    {content:'Link.Pancakeswap',href:'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0'},
+    {content:'Link.Pancakeswap',href:'https://app.1inch.io/#/56/swap/BNB/ELE'},
 ];
 
 export default function FooterLinks(props) {

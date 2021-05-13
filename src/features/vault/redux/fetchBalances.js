@@ -1,7 +1,8 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { MultiCall } from 'eth-multicall';
-import { getNetworkMulticall } from 'features/helpers/getNetworkData';
+
+import { getNetworkMulticall, getNetworkTokenShim } from 'features/helpers/getNetworkData';
 import { erc20ABI } from 'features/configure'
 
 import { fetchBalance } from '../../web3';
@@ -34,7 +35,7 @@ export function fetchBalances(data) {
       const multicall = new MultiCall(web3, getNetworkMulticall());
 
       const calls = tokensList.map(token => {
-        const tokenContract = new web3.eth.Contract(erc20ABI, token.tokenAddress);
+        const tokenContract = new web3.eth.Contract(erc20ABI, token.tokenAddress || getNetworkTokenShim());
         return {
           tokenBalance: tokenContract.methods.balanceOf(address),
         };

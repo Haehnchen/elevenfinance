@@ -8,7 +8,7 @@ import {
 } from './constants';
 
 import { fetchTokenBalance } from './actions';
-import { deposit, depositEth } from "../../web3";
+import { deposit, depositNativeToken } from "../../web3";
 
 export function fetchDeposit({ address, web3, isAll, amount, pool, index }) {
   return dispatch => {
@@ -32,7 +32,6 @@ export function fetchDeposit({ address, web3, isAll, amount, pool, index }) {
           resolve(data);
         },
       ).catch(
-        // Use rejectHandler as the second argument so that render errors won't be caught.
         error => {
           dispatch({
             type: VAULT_FETCH_DEPOSIT_FAILURE,
@@ -46,7 +45,7 @@ export function fetchDeposit({ address, web3, isAll, amount, pool, index }) {
   };
 }
 
-export function fetchDepositEth({ address, web3, amount, pool, index }) {
+export function fetchDepositNativeToken({ address, web3, amount, pool, index }) {
   return dispatch => {
     dispatch({
       type: VAULT_FETCH_DEPOSIT_BEGIN,
@@ -55,13 +54,14 @@ export function fetchDepositEth({ address, web3, amount, pool, index }) {
 
     const promise = new Promise((resolve, reject) => {
       const contractAddress = pool.earnContractAddress;
-      depositEth({ web3, address, amount, contractAddress, dispatch }).then(
+      depositNativeToken({ web3, address, amount, contractAddress, dispatch }).then(
         data => {
           dispatch({
             type: VAULT_FETCH_DEPOSIT_SUCCESS,
             data, index
           });
 
+          dispatch(fetchTokenBalance({ address, web3, token: pool.token }));
           dispatch(fetchTokenBalance({ address, web3, token: pool.earnedToken }));
 
           resolve(data);
@@ -101,14 +101,14 @@ export function useFetchDeposit() {
 
   const boundAction2 = useCallback(
     (data) => {
-      return dispatch(fetchDepositEth(data));
+      return dispatch(fetchDepositNativeToken(data));
     },
     [dispatch],
   );
 
   return {
     fetchDeposit: boundAction,
-    fetchDepositEth: boundAction2,
+    fetchDepositNativeToken: boundAction2,
     fetchDepositPending
   };
 }

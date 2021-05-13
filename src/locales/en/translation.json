@@ -10,7 +10,7 @@
   "Foot-Stats": "Stats",
   "Foot-Voting": "Voting",
   "Foot-Documentation": "Documentation",
-  "Foot-Pancakeswap": "Pancakeswap 11-BNB",
+  "Foot-Pancakeswap": "1inch ELE-BNB",
   "App-SnackBarText": "Network error",
   "Home-Subtitle": "A Better Way For Everyone To Grow Wealth.",
   "Home-Warning": "This project is in beta, Use at your own risk.",
@@ -103,7 +103,7 @@
     "Stats": "Stats",
     "Voting": "Voting",
     "Documentation": "Documentation",
-    "Pancakeswap": "Pancakeswap 11-BNB",
+    "Pancakeswap": "1inch ELE-BNB",
     "Audit": "Audit"
   },
   "Farm-Main-Title": "Farm",

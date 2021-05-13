@@ -172,7 +172,7 @@ const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => 
                       <Grid item className={isOpen ? classes.hidden : ''} style={{ width: "200px" }}>
                         <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
                           {fetchBalancesDone
-                            ? (pool.token == 'OG-BNB LP' || pool.token == 'PSG-BNB LP' || pool.token == 'JUV-BNB LP' || pool.token == 'ASR-BNB LP' || pool.token == 'ATM-BNB LP' ? forMat(tokenBalance) : forMat(tokenBalance).toFixed(6))
+                            ? forMat(tokenBalance.toFixed(6))
                             : (<Loader />)
                           }
                         </Typography>
@@ -185,7 +185,7 @@ const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => 
                       <Grid item className={isOpen ? classes.hidden : ''} style={{ width: "200px" }}>
                         <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
                           {depositedAndStaked !== null
-                            ? (pool.token == 'OG-BNB LP' || pool.token == 'PSG-BNB LP' || pool.token == 'JUV-BNB LP' ? forMat(depositedAndStaked) : forMat(depositedAndStaked).toFixed(6))
+                            ? forMat(depositedAndStaked.toFixed(6))
                             : (<Loader/>)
                           }
                           </Typography>

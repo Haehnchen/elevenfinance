@@ -28,9 +28,7 @@ const styles = theme => ({
     paddingBottom: '3px',
     fontFamily: fonts,
 
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center'
+    textAlign: 'right'
   },
 
   balanceButton: {
