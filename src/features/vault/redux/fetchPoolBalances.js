@@ -1,10 +1,11 @@
 import { useCallback } from 'react';
 import { earnContractABI, erc20ABI } from "../../configure";
+import bigfootBnbBankABI from '../../configure/abis/bigfootBnbBank';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import BigNumber from 'bignumber.js';
 import { MultiCall } from 'eth-multicall';
 
-import { getNetworkMulticall } from 'features/helpers/getNetworkData';
+import { getNetworkMulticall, getNetworkTokenShim } from 'features/helpers/getNetworkData';
 import { byDecimals } from 'features/helpers/bignumber';
 
 import {
@@ -25,9 +26,7 @@ export function fetchPoolBalances(data) {
       const earnPools = pools.filter(pool => pool.earnContractAddress);
 
       const tokenCalls = earnPools.map(pool => {
-        const contract = pool.tokenAddress
-          ? new web3.eth.Contract(erc20ABI, pool.tokenAddress)
-          : null;
+        const contract = new web3.eth.Contract(erc20ABI, pool.tokenAddress || getNetworkTokenShim());
 
         return {
           allowance: contract.methods.allowance(address, pool.earnContractAddress)
@@ -36,6 +35,16 @@ export function fetchPoolBalances(data) {
 
       const vaultCalls = earnPools.map(pool => {
         let pricePerShareCall;
+
+        // Calculate price per share from total supply for Bigfiit BNB bank
+        if (pool.earnContractAddress == '0xA96C90223e4cC69192A9ffF1BA4c8b86D02765B2') {
+          const contract = new web3.eth.Contract(bigfootBnbBankABI, pool.earnContractAddress);
+
+          return {
+            totalBNB: contract.methods.totalBNB(),
+            totalSupply: contract.methods.totalSupply()
+          }
+        }
 
         // Using a separate method for E11 token
         if (pool.earnContractAddress == '0x3Ed531BfB3FAD41111f6dab567b33C4db897f991') {
@@ -64,8 +73,13 @@ export function fetchPoolBalances(data) {
             if (callIndex >= 0) {
               allowance = new BigNumber(data[0][callIndex].allowance).toNumber();
 
-              const multiplier = pool.earnContractAddress == '0x3Ed531BfB3FAD41111f6dab567b33C4db897f991' ? 1e6 : 1;
-              pricePerFullShare = byDecimals(data[1][callIndex].pricePerShare * multiplier, 18).toNumber() || 1;
+              if (pool.earnContractAddress == '0xA96C90223e4cC69192A9ffF1BA4c8b86D02765B2') {
+                // Calculate price per share from total supply for Bigfoot BNB Bank
+                pricePerFullShare = (new BigNumber(data[1][callIndex].totalBNB)).div(new BigNumber(data[1][callIndex].totalSupply));
+              } else {
+                const multiplier = pool.earnContractAddress == '0x3Ed531BfB3FAD41111f6dab567b33C4db897f991' ? 1e6 : 1;
+                pricePerFullShare = byDecimals(data[1][callIndex].pricePerShare * multiplier, 18).toNumber() || 1;
+              }
             }
 
             poolsData[pool.id] = { allowance, pricePerFullShare }

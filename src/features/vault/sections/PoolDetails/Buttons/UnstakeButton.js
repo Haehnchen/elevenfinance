@@ -42,9 +42,9 @@ const UnstakeButton = ({ pool, index, balance }) => {
     })
       .then(() => {
         setAmountDialogOpen(false);
-        enqueueSnackbar(`Withdraw success`, { variant: 'success' })
+        enqueueSnackbar(`Unstake success`, { variant: 'success' })
       })
-      .catch(error => enqueueSnackbar(`Withdraw error: ${error}`, { variant: 'error' }))
+      .catch(error => enqueueSnackbar(`Unstake error: ${error}`, { variant: 'error' }))
   }
 
   const handleUnstakeButton = () => {
