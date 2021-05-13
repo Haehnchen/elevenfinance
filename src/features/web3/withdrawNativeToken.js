@@ -1,19 +1,17 @@
+import nativeTokenVaultABI from "../configure/abis/nativeTokenVault";
 import { enqueueSnackbar } from '../common/redux/actions';
 
-export const depositEth = async ({web3, address, amount, contractAddress, dispatch}) => {
+
+export const withdrawNativeToken = async ({ web3, address, amount, contractAddress, dispatch }) => {
+  const contract = new web3.eth.Contract(nativeTokenVaultABI, contractAddress);
+  const data = await _withdraw({ contract, amount, address, dispatch });
+  return data;
+}
+
+const _withdraw = ({ contract, address, amount, dispatch }) => {
   return new Promise((resolve, reject) => {
-    console.log(`
-      address:${address}\n
-      contractAddress:${contractAddress}\n
-      amount:${amount}
-    `)
-    web3.eth.sendTransaction({
-      from: address,
-      to: contractAddress,
-      value: amount,
-      gasLimit: 300000
-    })
-    .on('transactionHash', function(hash){
+    contract.methods.withdraw(amount).send({ from: address }).on('transactionHash', function(hash){
+      console.log(hash)
       dispatch(enqueueSnackbar({
         message: hash,
         options: {
@@ -24,7 +22,6 @@ export const depositEth = async ({web3, address, amount, contractAddress, dispat
       }));
     })
     .on('receipt', function(receipt){
-      console.log(receipt);
       resolve()
     })
     .on('error', function(error) {

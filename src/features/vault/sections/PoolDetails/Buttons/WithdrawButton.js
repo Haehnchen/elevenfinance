@@ -19,7 +19,7 @@ const WithdrawButton = ({ pool, index, balance }) => {
   const classes = useStyles();
   const { enqueueSnackbar } = useSnackbar();
   const { web3, address } = useConnectWallet();
-  const { fetchWithdraw, fetchWithdrawEth, fetchWithdrawPending } = useFetchWithdraw();
+  const { fetchWithdraw, fetchWithdrawNativeToken, fetchWithdrawPending } = useFetchWithdraw();
 
   const [amountDialogOpen, setAmountDialogOpen] = useState(false);
 
@@ -49,13 +49,13 @@ const WithdrawButton = ({ pool, index, balance }) => {
         })
         .catch(error => enqueueSnackbar(`Withdraw error: ${error}`, { variant: 'error' }))
     } else {
-      fetchWithdrawEth({
+      fetchWithdrawNativeToken({
         address,
         web3,
-        isAll: false,
         amount: new BigNumber(amountValue)
-          .multipliedBy(new BigNumber(10).exponentiatedBy(pool.itokenDecimals))
-          .toString(10),
+          .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
+          .dividedBy(pool.pricePerFullShare)
+          .toFixed(0),
         contractAddress: pool.earnContractAddress,
         index
       })
