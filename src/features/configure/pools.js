@@ -97,6 +97,37 @@ export const pools = [
     }
   },
   {
+    id: 'elebnbw',
+    name: 'ELEBNB',
+    image: 'ELE-BNB\ LP-logo.svg',
+    token: 'ELE-BNB WLP',
+    tokenDescription: 'ELEBNB',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses waultswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11wELEBNB',
+    earnedTokenAddress: '0x5bC5aa4B82800Fc965C8856f9628ec5730049E9E',
+    earnContractAddress: '0x5bC5aa4B82800Fc965C8856f9628ec5730049E9E',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x7eB399165722A98E047471157FF6CdDeEd95a2e1',
+    categories: ['Wault'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 214
+    }
+  },
+
+  {
     id: 'bfbnb',
     name: 'BFBNB',
     token: 'BFBNB',
