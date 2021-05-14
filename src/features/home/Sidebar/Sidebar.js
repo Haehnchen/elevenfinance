@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { createUseStyles } from 'react-jss';
 
+import { useConnectWallet, useFetchTokenPrice } from '../redux/hooks';
+
+import Loader from 'components/Loader/Loader';
 import { LightningBoltIcon, DocumentTextIcon, ExternalLinkIcon, FingerPrintIcon } from '@heroicons/react/outline'
 
 import logo from 'assets/img/logo.png';
@@ -16,7 +19,23 @@ const useStyles = createUseStyles(styles);
 
 const Sidebar = ({ connected, address, connectWallet, disconnectWallet }) => {
   const classes = useStyles();
+  const { web3 } = useConnectWallet();
+  const { tokenPriceUsd, fetchTokenPrice, fetchTokenPriceDone } = useFetchTokenPrice();
+
   const [shortAddress, setShortAddress] = useState('');
+
+  useEffect(() => {
+    const fetch = () => {
+      if (web3) {
+        fetchTokenPrice({ web3 });
+      }
+    }
+
+    fetch();
+
+    const id = setInterval(fetch, 60000);
+    return () => clearInterval(id);
+  }, [web3])
 
   useEffect(() => {
     if (! connected) {
@@ -88,7 +107,10 @@ const Sidebar = ({ connected, address, connectWallet, disconnectWallet }) => {
         <div className={classes.priceBlock}>
           <div className={classes.price}>
             <img src={logo} />
-            $5.72
+            { fetchTokenPriceDone
+              ? '$' + (tokenPriceUsd ? tokenPriceUsd.toFixed(2) : '--')
+              : <Loader />
+            }
           </div>
           <div>
             <a className={classes.buyButton}

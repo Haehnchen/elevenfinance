@@ -187,6 +187,7 @@ const styles = {
   },
 
   price: {
+    minWidth: 100,
     paddingTop: 5,
     color: COLORS.textMain,
     fontSize: FONT.size.bigger,
@@ -199,6 +200,10 @@ const styles = {
       marginLeft: 3,
       marginRight: 8,
       marginTop: -3
+    },
+
+    '& span': {
+      width: '60% !important',
     }
   },
 

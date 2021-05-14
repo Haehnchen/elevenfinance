@@ -9,11 +9,13 @@
 import initialState from './initialState';
 import { reducer as connectWalletReducer } from './connectWallet';
 import { reducer as disconnectWalletReducer } from './disconnectWallet';
+import { reducer as fetchTokenPriceReducer } from './fetchTokenPrice';
 
 
 const reducers = [
   connectWalletReducer,
-  disconnectWalletReducer
+  disconnectWalletReducer,
+  fetchTokenPriceReducer,
 ];
 
 export default function reducer(state = initialState, action) {

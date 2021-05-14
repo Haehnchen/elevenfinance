@@ -11,6 +11,9 @@ const initialState = {
   web3: null,
   connected: false,
   networkId: Number(process.env.NETWORK_ID),
+
+  tokenPrice: null,
+  fetchTokenPriceDone: false
 };
 
 export default initialState;
