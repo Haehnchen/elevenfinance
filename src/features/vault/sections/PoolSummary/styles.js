@@ -1,10 +1,16 @@
-import commonStyles, { MEDIA } from 'assets/jss/common';
+import commonStyles, { BORDER, COLORS, FONT, MEDIA } from 'assets/jss/common';
 
 const styles = {
   poolSummary: {
+    position: 'relative',
+
     display: 'flex',
     justifyContent: 'space-between',
     cursor: 'pointer',
+
+    '&.discontinued': {
+      opacity: 0.5
+    },
 
     [MEDIA.mobile]: {
       flexWrap: 'wrap'
@@ -81,6 +87,37 @@ const styles = {
       margin: '10px 0'
     }
   },
+
+  discontinuedMessage: {
+    position: 'relative',
+
+    minHeight: 24,
+
+    marginBottom: 20,
+    paddingLeft: 120,
+
+    color: COLORS.textSecondaryLight,
+    fontSize: FONT.size.normal,
+    fontWeight: 500,
+
+    '& :first-child': {
+      position: 'absolute',
+
+      padding: '5px 14px',
+      top: -5,
+      left: -20,
+
+      color: COLORS.textLight,
+      fontSize: FONT.size.normal,
+
+      background: COLORS.bgDark,
+      borderRadius: [0, BORDER.radiusSmall, BORDER.radiusSmall, 0],
+
+      fontSize: FONT.size.small,
+      textTransform: 'uppercase',
+      fontWeight: 500,
+    }
+  }
 }
 
 export default styles;

@@ -9,7 +9,6 @@ const styles = {
     top: 0,
     bottom: 0,
     width: 255,
-    padding: '0 10px',
     background: COLORS.bgSurface,
     boxShadow: '1px 0px 3px rgba(22, 20, 20, 0.18)',
     zIndex: 2,
@@ -28,6 +27,16 @@ const styles = {
         left: 0,
       }
     }
+  },
+
+  sidebarInner: {
+    position: 'absolute',
+    top: 0,
+    bottom: 115,
+    left: 0,
+    right: 0,
+    padding: '0 10px',
+    overflowY: 'auto'
   },
 
   mobileButton: {
@@ -221,7 +230,7 @@ const styles = {
     left: 10,
     right: 10,
     bottom: 0,
-    paddingBottom: 20
+    padding: '10px 0 20px'
   },
 
   priceBlock: {

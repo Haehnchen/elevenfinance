@@ -29,7 +29,7 @@ export default function PoolsList({ filtersCategory }) {
   const { categories } = useFetchPoolsInfo();
   const { tokens, fetchBalances, fetchBalancesDone } = useFetchBalances();
   const { fetchFarmsStaked, fetchFarmsStakedDone } = useFetchFarmsStaked();
-  const { filteredPools } = useFetchFilters(pools, tokens);
+  const { filteredPools, setCategoriesFilter } = useFetchFilters(pools, tokens);
 
   const [fetchPoolDataDone, setFetchPoolDataDone] = useState(false);
 
@@ -39,7 +39,7 @@ export default function PoolsList({ filtersCategory }) {
     if (filtersCategory) {
       categories.forEach(category => {
         if (category.name.toLowerCase() == filtersCategory.toLowerCase()) {
-          // setFiltersCategories([category.name]); TODO:
+          setCategoriesFilter([category.name]);
         }
       })
     }

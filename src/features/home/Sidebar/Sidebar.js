@@ -93,55 +93,57 @@ const Sidebar = ({ connected, address, connectWallet, disconnectWallet }) => {
       </Transition>
 
       <div className={classes.sidebar + (isOpen ? ' open' : '')}>
-        {/* Logo */}
-        <a href="#" className={classes.logo}>
-          <img src={logo} />
-          ELEVEN.FINANCE
-        </a>
+        <div className={classes.sidebarInner}>
+          {/* Logo */}
+          <a href="#" className={classes.logo}>
+            <img src={logo} />
+            ELEVEN.FINANCE
+          </a>
 
-        <div>
-          {/* Network */}
-          <div className={classes.network}>
-            <img src={bscLogo} />
-            <span>Binance Smart Chain</span>
+          <div>
+            {/* Network */}
+            <div className={classes.network}>
+              <img src={bscLogo} />
+              <span>Binance Smart Chain</span>
 
-            <div className={classes.networkStatus + ' connected'}></div>
+              <div className={classes.networkStatus + ' connected'}></div>
+            </div>
+
+            {/* Wallet */}
+            <button className={classes.wallet}
+              onClick={connected ? disconnectWallet : connectWallet}
+            >
+              <FingerPrintIcon />
+              { connected && shortAddress ? shortAddress : 'WALLET' }
+            </button>
           </div>
 
-          {/* Wallet */}
-          <button className={classes.wallet}
-            onClick={connected ? disconnectWallet : connectWallet}
+          <div className={classes.divider}></div>
+
+          <ul className={classes.menu}>
+            <li className={classes.menuItem + ' active'}>
+              <a href="/#/vault">
+                <LightningBoltIcon />
+                Vault
+              </a>
+            </li>
+
+            <li className={classes.menuItem}>
+              <a href="https://11eleven-11finance.gitbook.io/eleven-finance/" target="_blank">
+                <DocumentTextIcon />
+                Documentation
+              </a>
+            </li>
+          </ul>
+
+          <a className={classes.bigfootButton}
+            href="http://bigfoot.eleven.finance"
+            target="_blank"
           >
-            <FingerPrintIcon />
-            { connected && shortAddress ? shortAddress : 'WALLET' }
-          </button>
+            <BigfootIcon />
+            Bigfoot
+          </a>
         </div>
-
-        <div className={classes.divider}></div>
-
-        <ul className={classes.menu}>
-          <li className={classes.menuItem + ' active'}>
-            <a href="/#/vault">
-              <LightningBoltIcon />
-              Vault
-            </a>
-          </li>
-
-          <li className={classes.menuItem}>
-            <a href="https://11eleven-11finance.gitbook.io/eleven-finance/" target="_blank">
-              <DocumentTextIcon />
-              Documentation
-            </a>
-          </li>
-        </ul>
-
-        <a className={classes.bigfootButton}
-          href="http://bigfoot.eleven.finance"
-          target="_blank"
-        >
-          <BigfootIcon />
-          Bigfoot
-        </a>
 
 
         <div className={classes.bottom}>

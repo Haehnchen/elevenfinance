@@ -62,51 +62,61 @@ const PoolSummary = ({ pool, tokenBalance, depositedBalance, fetchBalanceDone, o
   }
 
   return (
-    <div className={classes.poolSummary} onClick={onClick}>
-      <div className={classes.poolInfo}>
-        <div className={classes.logo}>
-          <img src={require(`../../../../images/${pool.image || pool.token + '-logo.svg'}`)} />
+    <>
+      {pool.isDiscontinued && (
+        <div className={classes.discontinuedMessage}>
+          <span>Discontinued</span>
+
+          { pool.discontinuedMessage || '' }
+        </div>
+      )}
+
+      <div className={classes.poolSummary + (pool.isDiscontinued ? ' discontinued' : '')} onClick={onClick}>
+        <div className={classes.poolInfo}>
+          <div className={classes.logo}>
+            <img src={require(`../../../../images/${pool.image || pool.token + '-logo.svg'}`)} />
+          </div>
+
+          <div className={classes.nameBlock}>
+            <p className={classes.name}>{pool.token}</p>
+            <p className={classes.description}>{pool.uses}</p>
+          </div>
         </div>
 
-        <div className={classes.nameBlock}>
-          <p className={classes.name}>{pool.token}</p>
-          <p className={classes.description}>{pool.uses}</p>
+        <div className={classes.counter}>
+          <p>
+            { fetchBalanceDone
+              ? formatDecimals(tokenBalance)
+              : (<Loader />) }
+          </p>
+          <p>Balance</p>
+        </div>
+
+        <div className={classes.counter}>
+          <p>
+            { depositedBalance !== null
+              ? formatDecimals(depositedBalance)
+              : (<Loader />)}
+          </p>
+          <p>Deposited</p>
+        </div>
+
+        <div className={classes.counter}>
+          <p>{ getApy(pool) }%</p>
+          <p>APY</p>
+        </div>
+
+        <div className={classes.counter}>
+          <p>{ getAprd(pool) }%</p>
+          <p>APRD</p>
+        </div>
+
+        <div className={classes.counter}>
+          <p>{ pool.tvl ? '$' + millify(pool.tvl, { units }) : '-' }</p>
+          <p>TVL</p>
         </div>
       </div>
-
-      <div className={classes.counter}>
-        <p>
-          { fetchBalanceDone
-            ? formatDecimals(tokenBalance)
-            : (<Loader />) }
-        </p>
-        <p>Balance</p>
-      </div>
-
-      <div className={classes.counter}>
-        <p>
-          { depositedBalance !== null
-            ? formatDecimals(depositedBalance)
-            : (<Loader />)}
-        </p>
-        <p>Deposited</p>
-      </div>
-
-      <div className={classes.counter}>
-        <p>{ getApy(pool) }%</p>
-        <p>APY</p>
-      </div>
-
-      <div className={classes.counter}>
-        <p>{ getAprd(pool) }%</p>
-        <p>APRD</p>
-      </div>
-
-      <div className={classes.counter}>
-        <p>{ pool.tvl ? '$' + millify(pool.tvl, { units }) : '-' }</p>
-        <p>TVL</p>
-      </div>
-    </div>
+    </>
   );
 
 };
