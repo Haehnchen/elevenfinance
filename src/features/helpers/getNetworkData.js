@@ -6,3 +6,12 @@ export const getNetworkMulticall = () => {
       return '';
   }
 }
+
+export const getNetworkTokenShim = () => {
+  switch (process.env.NETWORK_ID) {
+    case '56':
+      return '0xC72E5edaE5D7bA628A2Acb39C8Aa0dbbD06daacF';
+    default:
+      return '';
+  }
+}

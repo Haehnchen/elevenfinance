@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { createUseStyles } from 'react-jss';
 import BigNumber from 'bignumber.js';
@@ -19,9 +19,19 @@ const DepositButton = ({ pool, index, balance }) => {
   const { enqueueSnackbar } = useSnackbar();
   const { web3, address } = useConnectWallet();
   const { fetchApproval, fetchApprovalPending } = useFetchApproval();
-  const { fetchDeposit, fetchDepositEth, fetchDepositPending } = useFetchDeposit();
+  const { fetchDeposit, fetchDepositNativeToken, fetchDepositPending } = useFetchDeposit();
 
+  const [maxAmount, setMaxAmount] = useState(new BigNumber(0));
   const [amountDialogOpen, setAmountDialogOpen] = useState(false);
+
+  useEffect(() => {
+    // If pool uses network's native token (ETH, BNB, etc) - leave some reserve for TX fees
+    if (pool.tokenAddress === null) {
+      setMaxAmount(balance.minus(0.02));
+    } else {
+      setMaxAmount(new BigNumber(balance.toString()))
+    }
+  }, [balance]);
 
   const handleApproval = () => {
     fetchApproval({
@@ -60,7 +70,7 @@ const DepositButton = ({ pool, index, balance }) => {
         })
         .catch(error => enqueueSnackbar(`Deposit error: ${error}`, { variant: 'error' }))
     } else {
-      fetchDepositEth({
+      fetchDepositNativeToken({
         address,
         web3,
         amount: new BigNumber(amountValue)
@@ -105,7 +115,7 @@ const DepositButton = ({ pool, index, balance }) => {
       )}
 
       <AmountDialog
-        balance={balance}
+        balance={maxAmount}
         decimals={pool.tokenDecimals}
         onConfirm={handleDeposit}
 
