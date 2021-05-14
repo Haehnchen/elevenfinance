@@ -42,7 +42,6 @@ const styles = {
     width: '100%',
     padding: '24px',
     maxWidth: BREAKPOINTS.xs,
-    margin: '0 15px',
     textAlign: 'left',
 
     transform: 'translateX(0) translateY(0)'

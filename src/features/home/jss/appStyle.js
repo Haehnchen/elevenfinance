@@ -1,5 +1,5 @@
 import { container } from "assets/jss/material-kit-pro-react.js";
-import { COLORS, FONT } from 'assets/jss/common';
+import { MEDIA, COLORS, FONT } from 'assets/jss/common';
 
 const appStyle = {
   page: {
@@ -8,8 +8,14 @@ const appStyle = {
     minHeight: '100vh',
     padding: '25px 25px 25px 285px',
 
+    overflowX: 'hidden',
+
     '& *': {
       fontFamily: FONT.family
+    },
+
+    [MEDIA.mobile]: {
+      padding: '0 0 25px'
     }
   },
   container: {

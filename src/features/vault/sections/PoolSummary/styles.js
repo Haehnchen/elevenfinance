@@ -1,22 +1,31 @@
-import commonStyles from 'assets/jss/common';
+import commonStyles, { MEDIA } from 'assets/jss/common';
 
 const styles = {
   poolSummary: {
     display: 'flex',
     justifyContent: 'space-between',
-    cursor: 'pointer'
+    cursor: 'pointer',
+
+    [MEDIA.mobile]: {
+      flexWrap: 'wrap'
+    }
   },
 
   poolInfo: {
     display: 'flex',
     flex: '0 0 auto',
-    justifyContent: 'space-between',
-    width: 310
+    width: 310,
+
+    [MEDIA.mobile]: {
+      width: '100%',
+      marginBottom: 10
+    }
   },
 
   logo: {
     width: 48,
     height: 48,
+    marginRight: 22,
     borderRadius: '50%',
     position: 'relative',
     overflow: 'hidden',
@@ -64,6 +73,13 @@ const styles = {
         lineHeight: '18px'
       }
     },
+
+    [MEDIA.mobile]: {
+      width: '40%',
+      paddinLeft: 10,
+      textAlign: 'left',
+      margin: '10px 0'
+    }
   },
 }
 

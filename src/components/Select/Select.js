@@ -8,7 +8,7 @@ import { CheckIcon, ChevronDownIcon } from '@heroicons/react/outline'
 import styles from './styles';
 const useStyles = createUseStyles(styles);
 
-const Select = ({ options, selected, multiple, placeholder, icon, onChange }) => {
+const Select = ({ options, selected, multiple, placeholder, icon, onChange, className }) => {
   const classes = useStyles();
 
   const [label, setLabel] = useState('')
@@ -54,11 +54,11 @@ const Select = ({ options, selected, multiple, placeholder, icon, onChange }) =>
         as="div"
         value={selected}
         onChange={toggleItem}
-        className={classes.wrapper}
+        className={classes.wrapper + (className ? ' ' + className : '')}
       >
         {({ open }) => (
           <>
-            <Listbox.Button className={classes.select}>
+            <Listbox.Button className={classes.select + (icon ? ' with-icon' : '')}>
               { icon && (
                 <span className={classes.icon}>{ icon }</span>
               )}

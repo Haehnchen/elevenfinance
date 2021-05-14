@@ -7,7 +7,6 @@ import { FilterIcon, SearchIcon, SortDescendingIcon } from '@heroicons/react/out
 import { useFetchFilters, useFetchPoolsInfo } from '../../redux/hooks';
 
 import styles from './styles.js';
-import { filter } from 'async';
 const useStyles = createUseStyles(styles);
 
 const Filters = () => {
@@ -64,6 +63,7 @@ const Filters = () => {
             placeholder="All Groups"
             icon={<FilterIcon />}
             onChange={setCategoriesFilter}
+            className={classes.categoriesSelect}
           />
 
           <div className={classes.checkboxes}>
@@ -100,7 +100,7 @@ const Filters = () => {
               type="text"
               name="search_phrase"
               ref={searchInputRef}
-              value={filter.searchPhrase}
+              value={filters.searchPhrase}
               onChange={onSearchFieldChange}
               onBlur={onSearchFieldBlur}
             />
@@ -111,6 +111,7 @@ const Filters = () => {
             placeholder="Sort"
             icon={<SortDescendingIcon />}
             onChange={onSortSelect}
+            className={classes.sortSelect}
           />
         </div>
       </div>

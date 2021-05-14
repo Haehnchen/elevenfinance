@@ -1,6 +1,8 @@
-import commonStyles, { BORDER, COLORS, FONT } from 'assets/jss/common';
+import commonStyles, { BORDER, COLORS, FONT, MEDIA, TRANSITIONS } from 'assets/jss/common';
 
 const styles = {
+  ...TRANSITIONS.opacity,
+
   sidebar: {
     position: 'fixed',
     left: 0,
@@ -14,6 +16,49 @@ const styles = {
     minHeight: '100vh',
     paddingBottom: 110,
     overflowY: 'auto',
+
+    transition: 'left .2s ease-in-out',
+
+    [MEDIA.mobile]: {
+      position: 'absolute',
+      left: -255,
+      zIndex: 101,
+
+      '&.open': {
+        left: 0,
+      }
+    }
+  },
+
+  mobileButton: {
+    display: 'none',
+    padding: '20px 8px 10px',
+
+    [MEDIA.mobile]: {
+      display: 'block',
+    },
+
+    '& button': {
+      background: 'transparent',
+      border: 'none'
+    },
+
+    '& svg': {
+      width: 30,
+      height: 30,
+
+      color: COLORS.textSecondaryDark
+    }
+  },
+
+  overlay: {
+    position: 'fixed',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    background: COLORS.bgOverlay,
+    zIndex: 100,
   },
 
   logo: {

@@ -8,9 +8,9 @@ const styles = {
   },
 
   select: {
-    maxWidth: '100%',
+    width: '100%',
     position: 'relative',
-    padding: '10px 44px 8px 14px',
+    padding: '10px 34px 8px 14px',
 
     color: COLORS.textSecondaryLight,
     fontSize: FONT.size.normal,
@@ -20,20 +20,32 @@ const styles = {
     border: 'none',
     borderRadius: BORDER.radius,
 
+    textAlign: 'left',
     cursor: 'pointer',
+
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+
+    '&.with-icon': {
+      paddingLeft: 44
+    }
   },
 
   icon: {
+    position: 'absolute',
+
+    width: 20,
+    height: 20,
+
+    top: 10,
+    left: 14,
+
     '& svg': {
       color: COLORS.textSecondaryDark,
 
-      width: 20,
-      height: 20,
-      marginRight: 10,
-      top: -1,
-      position: 'relative',
-      verticalAlign: 'middle',
-      display: 'inline-block'
+      width: '100%',
+      height: '100%',
     }
   },
 

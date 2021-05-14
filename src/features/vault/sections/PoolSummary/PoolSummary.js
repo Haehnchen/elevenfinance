@@ -11,7 +11,8 @@ const useStyles = createUseStyles(styles);
 const PoolSummary = ({ pool, tokenBalance, depositedBalance, fetchBalanceDone, onClick }) => {
   const classes = useStyles();
 
-  const units = ['', 'K', 'M', 'B', 'T', 'Q', 'Quintillion', 'Sextillion', 'Septillion', 'Octillion', 'Nonillion', 'Decillion', 'Undecillion'];
+  const units = ['', 'K', 'M', 'B', 'T', 'Q', 'Quintillion', 'Sextillion', 'Septillion', 'Octillion', 'Nonillion',
+    'Decillion', 'Undecillion'];
 
   const getApy = pool => {
     const stats = pool.claimable
