@@ -17,18 +17,35 @@ pools.map(({token, tokenAddress, earnedToken, earnedTokenAddress})=> {
   return '';
 })
 
-// console.log(tokens)
+const getInitialFilters = () => {
+  const defaultFilters = {
+    categories: [],
+    searchPhrase: '',
+    deposited: false,
+    withBalance: false,
+    sort: 'default'
+  };
+
+  try {
+    const serialized = localStorage.getItem('vault_filters');
+    const filters = JSON.parse(serialized);
+
+    if (filters) {
+      return {
+        ...defaultFilters,
+        ...filters
+      }
+    }
+  } catch (e) {}
+
+  return defaultFilters;
+}
 
 const initialState = {
   categories,
   pools,
   tokens,
-  filters: {
-    categories: [],
-    deposited: false,
-    withBalance: false,
-    sort: 'default'
-  },
+  filters: getInitialFilters(),
   pendingRewards: {},
   contractApy: {},
   farmAllowance: {},

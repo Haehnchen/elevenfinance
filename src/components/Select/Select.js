@@ -8,18 +8,19 @@ import { CheckIcon, ChevronDownIcon } from '@heroicons/react/outline'
 import styles from './styles';
 const useStyles = createUseStyles(styles);
 
-const Select = ({ options, multiple, placeholder, icon, onChange }) => {
+const Select = ({ options, selected, multiple, placeholder, icon, onChange }) => {
   const classes = useStyles();
 
-  const [selected, setSelected] = useState([])
   const [label, setLabel] = useState('')
 
   useEffect(() => {
-    if (selected.length) {
+    const items = multiple ? selected : [selected];
+
+    if (items && items.length) {
       const selectedNames = [];
 
       options.forEach(item => {
-        if (selected.indexOf(item.value) !== -1) {
+        if (items.indexOf(item.value) !== -1) {
           selectedNames.push(item.name)
         }
       });
@@ -28,14 +29,6 @@ const Select = ({ options, multiple, placeholder, icon, onChange }) => {
     } else {
       setLabel(placeholder || 'Not selected');
     }
-
-    onChange(multiple
-      ? selected
-      : (selected.length
-        ? selected[0]
-        : null
-      )
-    );
   }, [selected]);
 
   const toggleItem = (item) => {
@@ -49,9 +42,9 @@ const Select = ({ options, multiple, placeholder, icon, onChange }) => {
         items.push(item);
       }
 
-      setSelected(items);
+      onChange(items);
     } else {
-      setSelected([item]);
+      onChange(item);
     }
   }
 
