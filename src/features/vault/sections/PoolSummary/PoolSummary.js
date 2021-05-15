@@ -14,6 +14,8 @@ const PoolSummary = ({ pool, tokenBalance, depositedBalance, fetchBalanceDone, o
   const units = ['', 'K', 'M', 'B', 'T', 'Q', 'Quintillion', 'Sextillion', 'Septillion', 'Octillion', 'Nonillion',
     'Decillion', 'Undecillion'];
 
+  const isCompounding = pool.earnContractAddress && ! pool.claimable;
+
   const getApy = pool => {
     const stats = pool.claimable
       ? pool.vault
@@ -40,7 +42,7 @@ const PoolSummary = ({ pool, tokenBalance, depositedBalance, fetchBalanceDone, o
       return "";
     }
 
-    const vaultAprd = stats.aprd;
+    const vaultAprd = isCompounding ? stats.aprd : stats.apy / 365;
     try {
       return millify(vaultAprd, { units });
     } catch {
@@ -103,7 +105,7 @@ const PoolSummary = ({ pool, tokenBalance, depositedBalance, fetchBalanceDone, o
 
         <div className={classes.counter}>
           <p>{ getApy(pool) }%</p>
-          <p>APY</p>
+          <p>{ isCompounding ? 'APY' : 'APR' }</p>
         </div>
 
         <div className={classes.counter}>
