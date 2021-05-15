@@ -1,7 +1,8 @@
 const styles = theme => ({
 
   loader: {
-    display: 'block',
+    display: 'inline-block',
+    marginBottom: -3,
     boxShadow: '0 4px 10px 0 rgba(33, 33, 33, 0.15)',
     background: '#94a3b8',
     opacity: 0.2,

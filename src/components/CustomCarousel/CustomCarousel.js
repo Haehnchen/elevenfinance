@@ -6,11 +6,11 @@ import { makeStyles } from "@material-ui/core/styles";
 import Slider from "react-slick";
 import ElementResizeDetector from "element-resize-detector";
 
-import ImgWePiggy from "assets/img/carousel/wepiggy.jpg";
-import ImgSFinance from "assets/img/carousel/sfinance.jpg";
-import ImgSakeSwap from "assets/img/carousel/sakeswap.jpg";
-import ImgQian from "assets/img/carousel/qian.png";
-import ImgUnisave from "assets/img/carousel/unisave.png";
+// import ImgWePiggy from "assets/img/carousel/wepiggy.jpg";
+// import ImgSFinance from "assets/img/carousel/sfinance.jpg";
+// import ImgSakeSwap from "assets/img/carousel/sakeswap.jpg";
+// import ImgQian from "assets/img/carousel/qian.png";
+// import ImgUnisave from "assets/img/carousel/unisave.png";
 
 import styles from "assets/jss/material-kit-pro-react/components/customCarouselStyle.js";
 
@@ -121,7 +121,7 @@ function CustomCarousel(props) {
   return (
     <div ref={ref} className={classes.container}>
       <Slider className={classes.slider} {...sliderProps}>
-        <div>
+        {/* <div>
           <a
             className={classes.link}
             href="https://unisave.exchange/"
@@ -130,7 +130,7 @@ function CustomCarousel(props) {
           >
             <img src={ImgUnisave} alt="slider" width={width} height={height} />
           </a>
-        </div>        
+        </div>
         <div>
           <a
             className={classes.link}
@@ -170,7 +170,7 @@ function CustomCarousel(props) {
           >
             <img src={ImgQian} alt="slider" width={width} height={height} />
           </a>
-        </div>
+        </div> */}
       </Slider>
     </div>
   );

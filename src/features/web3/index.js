@@ -6,6 +6,7 @@ export { fetchGasPrice } from './fetchGasPrice';
 export { fetchAllowance } from './fetchAllowance';
 export { fetchBalance } from './fetchBalance';
 export { fetchFarmStaked } from './fetchFarmStaked';
+export { fetchPancakeOutputAmount } from './fetchPancakeOutputAmount';
 export { fetchPendingEle } from './fetchPendingEle';
 export { fetchPendingReward } from './fetchPendingReward';
 export { claimRewards } from './claimRewards';

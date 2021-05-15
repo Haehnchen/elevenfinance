@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { createUseStyles } from 'react-jss';
 import BigNumber from 'bignumber.js';
-import { makeStyles } from '@material-ui/core/styles';
 import { useSnackbar } from 'notistack';
 
 import { useConnectWallet } from 'features/home/redux/hooks';
 import { useFetchDeposit, useFetchApproval } from 'features/vault/redux/hooks';
 
-import Button from '@material-ui/core/Button';
-import CircularProgress from '@material-ui/core/CircularProgress';
-
+import Spinner from 'components/Spinner/Spinner';
 import AmountDialog from 'components/AmountDialog/AmountDialog'
 
 import styles from './styles';
-const useStyles = makeStyles(styles);
+const useStyles = createUseStyles(styles);
 
 const DepositButton = ({ pool, index, balance }) => {
   const { t } = useTranslation();
@@ -100,23 +98,20 @@ const DepositButton = ({ pool, index, balance }) => {
   return (
     <span>
       {pool.allowance === 0 ? (
-        <Button className={classes.buttonPrimary}
+        <button className={classes.buttonPrimary}
           onClick={handleApproval}
           disabled={fetchApprovalPending[index]}
         >
-          {!fetchApprovalPending[index] ? `${t('Vault-ApproveButton')}` : (
-            <CircularProgress
-              className={classes.buttonLoader}
-              size={20}
-              thickness={6} />
-          )}
-        </Button>
+          {!fetchApprovalPending[index]
+            ? `${t('Vault-ApproveButton')}`
+            : (<Spinner />)}
+        </button>
       ) : (
-        <Button className={classes.buttonPrimary}
+        <button className={classes.buttonPrimary}
           onClick={handleDepositButton}
         >
           {t('Vault-DepositButton')}
-        </Button>
+        </button>
       )}
 
       <AmountDialog

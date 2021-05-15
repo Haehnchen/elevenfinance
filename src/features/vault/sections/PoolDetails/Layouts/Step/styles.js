@@ -1,15 +1,17 @@
-import { primaryColor } from 'assets/jss/components/commonStyle';
+import { BREAKPOINTS, COLORS, FONT } from 'assets/jss/common';
 
-const styles = theme => ({
+const color = COLORS.primary;
+
+const styles = {
   step: {
     height: '30px',
     marginTop: '10px',
     marginBottom: '25px',
-    color: primaryColor,
+    color: color,
     position: 'relative',
   },
   stepEmpty: {
-    [theme.breakpoints.down('xs')]: {
+    ['@media(max-width: ' + BREAKPOINTS.sm + ')']: {
       display: 'none'
     },
   },
@@ -21,7 +23,7 @@ const styles = theme => ({
     height: '1px',
     marginTop: '15px',
     left: '0',
-    backgroundColor: primaryColor,
+    backgroundColor: color,
   },
 
   stepBg: {
@@ -30,27 +32,30 @@ const styles = theme => ({
     left: '-16px',
     width: '16px',
     height: '100%',
-    background: '#2c3040',
+    background: COLORS.bgSurface,
   },
 
   stepNumber: {
     position: 'relative',
     display: 'inline-block',
-    border: '2px solid ' + primaryColor,
-    fontWeight: 'bold',
+    border: '2px solid ' + color,
+    fontSize: FONT.size.bigger,
+    fontWeight: 500,
     width: '30px',
     height: '30px',
     textAlign: 'center',
     borderRadius: '15px',
     lineHeight: '27px',
-    backgroundColor: '#2c3040'
+    backgroundColor: COLORS.bgSurface
   },
 
   stepLabel: {
     position: 'relative',
     padding: '0 15px',
-    backgroundColor: '#2c3040'
+    backgroundColor: COLORS.bgSurface,
+    fontSize: FONT.size.bigger,
+    fontWeight: 500
   },
-});
+};
 
 export default styles;

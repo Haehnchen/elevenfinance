@@ -1,16 +1,15 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { makeStyles } from '@material-ui/core/styles';
+import { createUseStyles } from 'react-jss';
 import { useSnackbar } from 'notistack';
 
 import { useConnectWallet } from 'features/home/redux/hooks';
 import { useFetchFarmClaim } from 'features/vault/redux/hooks';
 
-import Button from '@material-ui/core/Button';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import Spinner from 'components/Spinner/Spinner';
 
 import styles from './styles';
-const useStyles = makeStyles(styles);
+const useStyles = createUseStyles(styles);
 
 const FarmClaimButton = ({ pool }) => {
   const { t } = useTranslation();
@@ -26,16 +25,13 @@ const FarmClaimButton = ({ pool }) => {
   }
 
   return (
-    <Button className={classes.buttonPrimary}
+    <button className={classes.buttonPrimary}
       onClick={handleHarvest}
     >
-      {!fetchFarmClaimPending[pool.id] ? t('Vault-HarvestButton') : (
-        <CircularProgress
-          className={classes.buttonLoader}
-          size={20}
-          thickness={6} />
-      )}
-    </Button>
+      {!fetchFarmClaimPending[pool.id]
+        ? t('Vault-HarvestButton')
+        : (<Spinner/>)}
+    </button>
   );
 };
 

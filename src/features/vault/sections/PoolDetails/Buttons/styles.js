@@ -1,7 +1,13 @@
-import commonStyles from 'assets/jss/components/commonStyle';
+import commonStyles from 'assets/jss/common';
 
-const styles = theme => ({
-  ...commonStyles(theme),
-})
+const styles = {
+  buttonPrimary: {
+    ...commonStyles.button,
+  },
+
+  buttonSecondary: {
+    ...commonStyles.buttonSecondary
+  }
+}
 
 export default styles;

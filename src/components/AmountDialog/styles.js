@@ -1,57 +1,49 @@
-import commonStyle, { fonts, primaryColor, primaryContrastColor, bgColor } from 'assets/jss/components/commonStyle';
+import commonStyles, { BORDER, BREAKPOINTS, COLORS, FONT, TRANSITIONS } from 'assets/jss/common';
 
-const styles = theme => ({
-  ...commonStyle(theme),
-
-  dialog: {
-    backgroundColor: bgColor,
-    padding: '5px 0'
-  },
-  dialogTitle: {
-    color: '#fff',
-  },
-  dialogClose: {
-    position: 'absolute',
-    top: 10,
-    right: 5,
-    color: '#5e616b'
-  },
-  dialogActions: {
-    padding: '10px 20px'
+const styles = {
+  button: {
+    ...commonStyles.button
   },
 
-  balance: {
-    fontSize: '16px',
-    fontWeight: 'bold',
-    color: '#eee',
-    textAlign: 'right',
-    paddingBottom: '3px',
-    fontFamily: fonts,
+  input: {
+    ...commonStyles.input,
+    ...commonStyles.inputLarge
+  },
 
-    textAlign: 'right'
+  labelWithAddon: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    marginBottom: 5,
+
+    '& label': {
+      ...commonStyles.label
+    }
   },
 
   balanceButton: {
-    fontSize: '15px',
-    fontWeight: 'bold',
-    color: '#eee',
+    background: 'none',
+    border: 'none',
+    cursor: 'pointer',
+
+    color: COLORS.textSecondaryDark,
+    fontSize: FONT.size.normal,
+
+    '& span': {
+      color: COLORS.textLight,
+      fontWeight: 'bold',
+      textDecoration: 'underline',
+    }
   },
 
   sliderWrapper: {
     padding: '0 10px'
   },
   sliderRoot:{
-    color: primaryColor,
+    color: COLORS.primary + ' !important',
   },
   sliderMarkLabel:{
-    color: primaryColor,
+    color: COLORS.primary + ' !important',
   },
-
-  loader: {
-    color: primaryContrastColor,
-    margin: '2px 20px'
-  }
-
-});
+};
 
 export default styles;

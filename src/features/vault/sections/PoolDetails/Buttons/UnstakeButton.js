@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { createUseStyles } from 'react-jss';
 import BigNumber from 'bignumber.js';
-import { makeStyles } from '@material-ui/core/styles';
 import { useSnackbar } from 'notistack';
 
 import { useConnectWallet } from 'features/home/redux/hooks';
 import { useFetchFarmUnstake } from 'features/vault/redux/hooks';
 
-import Button from '@material-ui/core/Button';
-
 import AmountDialog from 'components/AmountDialog/AmountDialog';
 
 import styles from './styles';
-const useStyles = makeStyles(styles);
+const useStyles = createUseStyles(styles);
 
 const UnstakeButton = ({ pool, index, balance }) => {
   const { t } = useTranslation();
@@ -57,11 +55,11 @@ const UnstakeButton = ({ pool, index, balance }) => {
 
   return (
     <span>
-      <Button className={classes.buttonPrimary + ' ' + classes.buttonOutline}
+      <button className={classes.buttonSecondary}
         onClick={handleUnstakeButton}
       >
         {t('Vault-Unstake')}
-      </Button>
+      </button>
 
       <AmountDialog
         balance={balance}

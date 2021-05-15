@@ -1,37 +1,40 @@
-import { textSecondaryColor } from 'assets/jss/components/commonStyle';
+import commonStyles, { BREAKPOINTS, COLORS, FONT } from 'assets/jss/common';
 
-const styles = theme => ({
+const styles = {
   detailsSection: {
     paddingLeft: '45px',
 
-    [theme.breakpoints.down('md')]: {
+    ['@media(max-width: ' + BREAKPOINTS.md + ')']: {
       marginBottom: 20
     },
   },
 
   balance: {
-    fontSize: '24px',
+    ...commonStyles.h3,
     fontWeight: 'bold',
     margin: '10px 0 2px',
 
-    [theme.breakpoints.only('md')]: {
+    ['@media(min-width: ' + BREAKPOINTS.md + ') and (max-width: ' + BREAKPOINTS.lg + ')']: {
       fontSize: '20px'
     },
   },
   balanceSecondary: {
-    fontWeight: 'bold',
-    color: '#fff',
+    color: COLORS.textHeader,
+    fontSize: FONT.size.bigger,
+    fontWeight: 500,
+    lineHeight: FONT.size.bigger,
+    margin: '5px 0 7px',
 
-    [theme.breakpoints.only('md')]: {
+    ['@media(min-width: ' + BREAKPOINTS.md + ') and (max-width: ' + BREAKPOINTS.lg + ')']: {
       fontSize: '15px'
     },
   },
   balanceDescription: {
-    color: textSecondaryColor,
-    fontSize: '16px',
-    marginBottom: '20px',
+    ...commonStyles.textSecondary,
+    lineHeight: FONT.size.bigger,
+    marginBottom: '25px',
 
-    [theme.breakpoints.down('sm')]: {
+    ['@media(min-width: ' + BREAKPOINTS.md + ') and (max-width: ' + BREAKPOINTS.lg + ')']: {
       marginBottom: '10px'
     }
   },
@@ -56,7 +59,7 @@ const styles = theme => ({
 
   balanceWithPadding: {
     padding: '12px 0'
-  }
-});
+  },
+};
 
 export default styles;

@@ -14,6 +14,7 @@ import { reducer as fetchFarmsStakedReducer } from './fetchFarmsStaked';
 import { reducer as fetchFarmClaimReducer } from './fetchFarmClaim';
 import { reducer as fetchFarmStakeReducer } from './fetchFarmStake';
 import { reducer as fetchFarmUnstakeReducer } from './fetchFarmUnstake';
+import { reducer as fetchFiltersReducer } from './fetchFilters';
 
 const reducers = [
   fetchBalancesReducer,
@@ -30,7 +31,8 @@ const reducers = [
   fetchFarmClaimReducer,
   fetchFarmStakeReducer,
   fetchFarmUnstakeReducer,
-  fetchPoolRewardsReducer
+  fetchPoolRewardsReducer,
+  fetchFiltersReducer
 ];
 
 

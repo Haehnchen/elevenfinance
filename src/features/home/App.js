@@ -1,28 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-//  notistack
-import { SnackbarProvider } from 'notistack';
-//  core components
-import { Notifier } from "features/common"
-import Header from "components/Header/Header.js";
-import HeaderLinks from "components/Header/HeaderLinks.js";
-import FooterLinks from 'components/Footer/FooterLinks.js';
-import RewardModal from 'components/RewardModal/RewardModal';
-//  @material-ui/core components
-import Modal from "@material-ui/core/Modal";
-import { makeStyles } from "@material-ui/core/styles";
-//  hooks
-import { useConnectWallet, useDisconnectWallet } from './redux/hooks';
-//  i18n
 import i18next from 'i18next';
-//  web3Modal
+import { createUseStyles } from "react-jss";
+import { SnackbarProvider } from 'notistack';
 import Web3Modal from "web3modal";
 import WalletConnectProvider from "@walletconnect/web3-provider";
-//  core pages
-//  style for this page
-import appStyle from "./jss/appStyle.js";
 
-const useStyles = makeStyles(appStyle);
+import { Notifier } from "features/common"
+
+import { useConnectWallet, useDisconnectWallet } from './redux/hooks';
+
+import Sidebar from './Sidebar/Sidebar';
+
+import appStyle from "./jss/appStyle.js";
+const useStyles = createUseStyles(appStyle);
 
 export default function App({ children }) {
   const classes = useStyles();
@@ -30,15 +21,6 @@ export default function App({ children }) {
   const { connectWallet, web3, address, networkId, connected, connectWalletPending } = useConnectWallet();
   const { disconnectWallet } = useDisconnectWallet();
   const [ web3Modal, setModal ] = useState(null)
-  const [ rewardModal, setRewardModal] = React.useState(false);
-
-  const openRewardModal = () => {
-    setRewardModal(true);
-  };
-
-  const closeRewardModal = () => {
-    setRewardModal(false);
-  };
 
   useEffect(() => {
     const newModal = new Web3Modal({
@@ -75,8 +57,6 @@ export default function App({ children }) {
     setModal(newModal)
   }, [setModal])
 
-
-
   useEffect(() => {
     if (web3Modal && (web3Modal.cachedProvider || window.ethereum)) {
       connectWallet(web3Modal);
@@ -92,29 +72,18 @@ export default function App({ children }) {
   return (
     <SnackbarProvider>
       <div className={classes.page}>
-        <Header
-          brand="Eleven.finance"
-          links={
-            <HeaderLinks
-              dropdownHoverColor="dark"
-              address={address}
-              connected={connected}
-              connectWallet={() => connectWallet(web3Modal)}
-              disconnectWallet={() => disconnectWallet(web3, web3Modal)}
-              openRewardModal={() => openRewardModal()}
-            />
-          }
-          color="dark"
+        <Sidebar
+          address={address}
+          connected={connected}
+          connectWallet={() => connectWallet(web3Modal)}
+          disconnectWallet={() => disconnectWallet(web3, web3Modal)}
         />
 
-        <RewardModal isOpen={rewardModal} closeRewardModal={closeRewardModal} />
-
         <div className={classes.container}>
-            <div className={classes.children}>
-              {Boolean(networkId === Number(process.env.NETWORK_ID)) && children}
-              <Notifier />
-            </div>
-          <FooterLinks />
+          <div className={classes.children}>
+            {Boolean(networkId === Number(process.env.NETWORK_ID)) && children}
+            <Notifier />
+          </div>
         </div>
       </div>
     </SnackbarProvider>

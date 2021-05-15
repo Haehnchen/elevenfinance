@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React, { useEffect } from 'react';
+import { createUseStyles } from 'react-jss';
 
 import Grid from '@material-ui/core/Grid';
 
@@ -11,7 +11,7 @@ import FarmOnly from './Layouts/FarmOnly';
 import WithFarm from './Layouts/WithFarm';
 
 import styles from './styles';
-const useStyles = makeStyles(styles);
+const useStyles = createUseStyles(styles);
 
 const PoolDetails = ({ pool, index, tokenBalance, depositedBalance, stakedBalance }) => {
   const classes = useStyles();
