@@ -585,6 +585,36 @@ export const pools = [
     }
   },
   {
+    id: 'wexusdt',
+    name: 'WEX',
+    image: 'wexusdt.png',
+    token: 'WEX-USDT WLP',
+    tokenDescription: 'WEX',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses waultswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11WEXUSDT',
+    earnedTokenAddress: '0xB225A38b71933482c4E7954701992aD386432E99',
+    earnContractAddress: '0xB225A38b71933482c4E7954701992aD386432E99',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x50e8D9Aa83eBDe9608074eC1faaDfD2E792D9B81',
+    categories: ['Wault'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 215
+    }
+  },
+  {
     id: 'wex',
     name: 'WEX',
     image: 'wex.png',
