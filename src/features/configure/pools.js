@@ -46,7 +46,7 @@ export const pools = [
     tokenDescription: 'E11',
     tokenAddress: '',
     tokenDecimals: 18,
-    uses: 'Uses pancakeswap',
+    uses: 'Uses Eleven.finance',
     itokenDecimals: 18,
     depostLimit:0,
     tokenDescriptionUrl: '',
@@ -1363,11 +1363,9 @@ export const pools = [
   },
   {
     id: 'icebnb',
-    isDiscontinued: true,
-    discontinuedMessage: 'ICE-BNB rewards ended',
-
     name: 'ICEBNB',
-    token: 'ICE-BNB LP',
+    token: 'ICE-BNB SLP',
+    image: 'ICE-BNB SLP-logo.svg',
     tokenDescription: 'ICE',
     tokenAddress: '',
     tokenDecimals: 18,
