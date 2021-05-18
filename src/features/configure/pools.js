@@ -157,6 +157,36 @@ export const pools = [
     }
   },
   {
+    id: 'hfsbusd',
+    name: 'HFS',
+    image: 'hfs-busd.png',
+    token: 'HFS-BUSD WLP',
+    tokenDescription: 'HFS',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses waultswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11HFSBUSD',
+    earnedTokenAddress: '0x8b06b41c78a5521E882ca1cac10777C6831b203F',
+    earnContractAddress: '0x8b06b41c78a5521E882ca1cac10777C6831b203F',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x7517Bd126ca57a3c941ad3a53818367Fa149251b',
+    categories: ['Wault'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 223
+    }
+  },
+  {
     id: 'nerve',
     name: 'NRV',
     token: 'NRV',
