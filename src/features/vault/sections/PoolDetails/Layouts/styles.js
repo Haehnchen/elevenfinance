@@ -12,7 +12,7 @@ const styles = {
   balance: {
     ...commonStyles.h3,
     fontWeight: 'bold',
-    margin: '10px 0 2px',
+    margin: '11px 0 3px',
 
     ['@media(min-width: ' + BREAKPOINTS.md + ') and (max-width: ' + BREAKPOINTS.lg + ')']: {
       fontSize: '20px'
@@ -31,7 +31,7 @@ const styles = {
   },
   balanceDescription: {
     ...commonStyles.textSecondary,
-    lineHeight: FONT.size.bigger,
+    lineHeight: FONT.size.normal,
     marginBottom: '25px',
 
     ['@media(min-width: ' + BREAKPOINTS.md + ') and (max-width: ' + BREAKPOINTS.lg + ')']: {
@@ -45,10 +45,13 @@ const styles = {
     marginTop: -10
   },
   balanceLogo: {
+    width: 45,
     height: 45,
+    flex: '0 0 auto',
     margin: '0 15px 10px 0',
     textAlign: 'center',
     display: 'flex',
+    justifyContent: 'center',
     alignItems: 'center',
 
     '& img': {
@@ -60,6 +63,19 @@ const styles = {
   balanceWithPadding: {
     padding: '12px 0'
   },
+  balanceDouble: {
+    height: 134,
+    display: 'flex',
+    alignItems: 'center',
+  },
+  balanceSelect: {
+    width: 150,
+    margin: '10px 0 35px'
+  },
+
+  button: {
+    ...commonStyles.button
+  }
 };
 
 export default styles;

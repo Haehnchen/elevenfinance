@@ -61,6 +61,7 @@ const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => 
       >
         <PoolDetails pool={pool}
           index={index}
+          tokens={tokens}
           tokenBalance={tokenBalance}
           depositedBalance={depositedBalance}
           stakedBalance={stakedBalance}

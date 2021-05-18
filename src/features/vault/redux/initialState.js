@@ -2,10 +2,19 @@ import { pools, categories } from "../../configure/pools";
 
 const tokens = {};
 
-pools.map(({token, tokenAddress, earnedToken, earnedTokenAddress})=> {
-  tokens[token] = {
-    tokenAddress: tokenAddress,
-    tokenBalance: 0
+pools.map(({token, tokenAddress, isMultiToken, tokens: poolTokens, earnedToken, earnedTokenAddress})=> {
+  if (isMultiToken) {
+    poolTokens.map(token => {
+      tokens[token.token] = {
+        tokenAddress: token.address,
+        tokenBalance: 0
+      }
+    })
+  } else {
+    tokens[token] = {
+      tokenAddress: tokenAddress,
+      tokenBalance: 0
+    }
   }
 
   if (earnedTokenAddress != tokenAddress) {
