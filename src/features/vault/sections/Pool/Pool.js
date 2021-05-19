@@ -22,8 +22,20 @@ const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => 
   const toggleCard = useCallback(() => setIsOpen(!isOpen), [isOpen]);
 
   useEffect(() => {
-    if (tokens[pool.token]) {
-      setTokenBalance(byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals));
+    if (pool.isMultiToken) {
+      let balance = new BigNumber(0);
+
+      pool.tokens.map(token => {
+        if (tokens[token.token]) {
+          balance = balance.plus(byDecimals(tokens[token.token].tokenBalance, token.decimals));
+        }
+      });
+
+      setTokenBalance(balance);
+    } else {
+      if (tokens[pool.token]) {
+        setTokenBalance(byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals));
+      }
     }
 
     if (fetchPoolDataDone) {

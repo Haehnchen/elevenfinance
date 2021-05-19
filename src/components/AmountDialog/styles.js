@@ -10,6 +10,15 @@ const styles = {
     ...commonStyles.inputLarge
   },
 
+  inputWithAddon: {
+    ...commonStyles.inputWithAddon
+  },
+
+  inputAddonPre: {
+    ...commonStyles.inputAddonPre,
+    ...commonStyles.inputAddonLarge
+  },
+
   labelWithAddon: {
     display: 'flex',
     justifyContent: 'space-between',
@@ -18,6 +27,10 @@ const styles = {
     '& label': {
       ...commonStyles.label
     }
+  },
+
+  tokenBlock: {
+    padding: '10px 0'
   },
 
   balanceButton: {

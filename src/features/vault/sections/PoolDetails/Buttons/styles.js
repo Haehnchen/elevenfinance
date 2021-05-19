@@ -7,6 +7,11 @@ const styles = {
 
   buttonSecondary: {
     ...commonStyles.buttonSecondary
+  },
+
+  alert: {
+    ...commonStyles.alert,
+    marginBottom: 20,
   }
 }
 

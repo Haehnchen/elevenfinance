@@ -115,8 +115,11 @@ const DepositButton = ({ pool, index, balance }) => {
       )}
 
       <AmountDialog
-        balance={maxAmount}
-        decimals={pool.tokenDecimals}
+        tokensAmounts={[{
+          token: pool.token,
+          decimals: pool.tokenDecimals,
+          balance: maxAmount
+        }]}
         onConfirm={handleDeposit}
 
         title={'Deposit to Vault'}

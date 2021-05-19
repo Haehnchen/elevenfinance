@@ -63,15 +63,6 @@ const styles = {
   balanceWithPadding: {
     padding: '12px 0'
   },
-  balanceDouble: {
-    height: 134,
-    display: 'flex',
-    alignItems: 'center',
-  },
-  balanceSelect: {
-    width: 150,
-    margin: '10px 0 35px'
-  },
 
   button: {
     ...commonStyles.button

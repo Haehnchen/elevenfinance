@@ -95,8 +95,11 @@ const StakeButton = ({ pool, index, balance }) => {
       )}
 
       <AmountDialog
-        balance={balance}
-        decimals={pool.itokenDecimals}
+        tokensAmounts={[{
+          token: pool.token,
+          decimals: pool.tokenDecimals,
+          balance: balance
+        }]}
         onConfirm={handleStake}
 
         title={'Stake in Farm'}

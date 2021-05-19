@@ -12,6 +12,7 @@ export { fetchPendingReward } from './fetchPendingReward';
 export { claimRewards } from './claimRewards';
 export { deposit } from './deposit';
 export { depositNativeToken } from './depositNativeToken';
+export { depositMultiToken } from './depositMultiToken';
 export { withdraw } from './withdraw';
 export { withdrawNativeToken } from './withdrawNativeToken';
 export { fetchPricePerFullShare } from './fetchPricePerFullShare';

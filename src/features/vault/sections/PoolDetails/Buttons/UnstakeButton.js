@@ -62,8 +62,11 @@ const UnstakeButton = ({ pool, index, balance }) => {
       </button>
 
       <AmountDialog
-        balance={balance}
-        decimals={pool.itokenDecimals}
+        tokensAmounts={[{
+          token: pool.token,
+          decimals: pool.tokenDecimals,
+          balance: balance
+        }]}
         onConfirm={handleUnstake}
 
         title={'Unstake from Farm'}

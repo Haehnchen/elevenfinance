@@ -216,6 +216,31 @@ const styles = {
     fontWeight: 'bold'
   },
 
+  inputWithAddon: {
+    display: 'flex',
+
+    '& input:nth-child(2)': {
+      borderRadius: [0, BORDER.radius, BORDER.radius, 0],
+    }
+  },
+
+  inputAddonPre: {
+    padding: '0 12px 0 13px',
+
+    background: COLORS.bgDark,
+    border: '1px solid ' + COLORS.border,
+    borderWidth: '1px 0 1px 1px',
+    borderRadius: [BORDER.radius, 0, 0, BORDER.radius],
+
+    '& img': {
+      maxHeight: 26,
+    }
+  },
+
+  inputAddonLarge: {
+    lineHeight: '47px',
+  },
+
   label: {
     color: COLORS.textSecondaryLight,
     fontSize: FONT.size.bigger,
@@ -267,6 +292,28 @@ const styles = {
       borderBottom: '2px solid ' + COLORS.primaryContrast,
       borderRight: '2px solid ' + COLORS.primaryContrast,
       transform: 'rotate(45deg)'
+    }
+  },
+
+  alert: {
+    padding: '16px',
+
+    color: COLORS.textSecondaryLight,
+    fontSize: FONT.size.normal,
+
+    background: COLORS.bgDark,
+    borderRadius: BORDER.radius,
+
+    '&.with-icon': {
+      position: 'relative',
+      paddingLeft: 54,
+    },
+
+    '& .icon': {
+      width: 30,
+      position: 'absolute',
+      top: 16,
+      left: 12,
     }
   }
 }
