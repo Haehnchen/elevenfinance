@@ -26,6 +26,7 @@ const MultiTokenDepositButton = ({ pool, tokens, index }) => {
   const { fetchDepositMultiToken, fetchDepositPending } = useFetchDeposit();
 
   const [tokensAmounts, setTokensAmounts] = useState([]);
+  const [requiredApprovals, setRequiredApprovals] = useState([]);
   const [amountDialogOpen, setAmountDialogOpen] = useState(false);
   const [approvalDialogOpen, setApprovalDialogOpen] = useState(false);
 
@@ -47,17 +48,28 @@ const MultiTokenDepositButton = ({ pool, tokens, index }) => {
     setTokensAmounts(amounts)
   }, [pool, tokens]);
 
-  // const handleApproval = () => {
-  //   fetchApproval({
-  //     address,
-  //     web3,
-  //     tokenAddress: pool.tokenAddress,
-  //     contractAddress: pool.earnContractAddress,
-  //     index
-  //   })
-  //     .then(() => enqueueSnackbar(`Approval success`, { variant: 'success' }))
-  //     .catch(error => enqueueSnackbar(`Approval error: ${error}`, { variant: 'error' }))
-  // }
+  const onApproval = (tokenAddress) => {
+    fetchApproval({
+      address,
+      web3,
+      pool,
+      tokenAddress: tokenAddress,
+    })
+      .then(() => {
+        const newApprovals = [...requiredApprovals];
+        newApprovals.shift();
+
+        if (newApprovals.length) {
+          setRequiredApprovals(newApprovals);
+        } else {
+          setApprovalDialogOpen(false);
+          setAmountDialogOpen(true);
+    }
+
+        enqueueSnackbar(`Approval success`, { variant: 'success' });
+      })
+      .catch(error => enqueueSnackbar(`Approval error: ${error}`, { variant: 'error' }))
+  }
 
   const handleDeposit = (amounts) => {
     if (! amounts.filter(amount => +amount > 0).length) {
@@ -66,7 +78,13 @@ const MultiTokenDepositButton = ({ pool, tokens, index }) => {
     }
 
     // Check if any of tokens requires approval
-    // TODO:
+    const approvals = pool.tokens.filter((token, index) => amounts[index] > 0 && ! pool.allowance[token.address]);
+    if (approvals.length) {
+      setRequiredApprovals(approvals);
+      setAmountDialogOpen(false);
+      setApprovalDialogOpen(true);
+      return;
+    }
 
     const amountsValues = pool.tokens.map((token, index) => {
       return new BigNumber(amounts[index])
@@ -128,7 +146,24 @@ const MultiTokenDepositButton = ({ pool, tokens, index }) => {
         onClose={() => setApprovalDialogOpen(false)}
         title={"Approve Tokens"}
       >
-
+        {requiredApprovals.length && (
+          <div className={classes.tokenApproveBlock}>
+            <div className="image">
+              <img src={require('images/' + (requiredApprovals[0].image || (requiredApprovals[0].token + '-logo.svg')))}/>
+            </div>
+            <div>
+              <div className="name">{ requiredApprovals[0].token }</div>
+              <button
+                className={classes.buttonPrimary}
+                onClick={() => onApproval(requiredApprovals[0].address)}
+              >
+                {! fetchApprovalPending[pool.id]
+                  ? `${t('Vault-ApproveButton')}`
+                  : (<Spinner />)}
+              </button>
+            </div>
+          </div>
+        )}
       </Dialog>
 
     </span>

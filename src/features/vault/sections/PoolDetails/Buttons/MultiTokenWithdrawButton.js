@@ -43,11 +43,13 @@ const MultiTokenWithdrawButton = ({ pool, tokens, balance, index }) => {
 
     const token = pool.tokens[selectedToken];
 
-    const amount = balance.multipliedBy(new BigNumber(10).exponentiatedBy(18)).toFixed(0);
-    convert3PoolToUsd({ web3, address, amount, usdTokenIndex: selectedToken })
-      .then(usdAmount => {
-        setMaxAmount(byDecimals(usdAmount, token.decimals));
-      })
+    if (balance.gt(0)) {
+      const amount = balance.multipliedBy(new BigNumber(10).exponentiatedBy(18)).toFixed(0);
+      convert3PoolToUsd({ web3, address, amount, usdTokenIndex: selectedToken })
+        .then(usdAmount => {
+          setMaxAmount(byDecimals(usdAmount, token.decimals));
+        });
+    }
   }, [selectedToken]);
 
   const onWithdraw = (amount) => {

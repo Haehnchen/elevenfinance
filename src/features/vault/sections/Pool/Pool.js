@@ -50,7 +50,7 @@ const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => 
 
       let stakedBalancePromise;
 
-      if (pool.id == 'bfusd') {
+      if (pool.id == 'bfusd' && depositedBalance.gt(0)) {
         // For Bigfoot USD pool add "virtual" stakedBalance to display values in USD without the need to modify
         // pricePerFullShare
         const amount = depositedBalance.multipliedBy(new BigNumber(10).exponentiatedBy(18)).toFixed(0);

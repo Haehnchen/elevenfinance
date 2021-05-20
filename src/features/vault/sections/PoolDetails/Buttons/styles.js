@@ -27,6 +27,32 @@ const styles = {
     flex: '0 0 auto',
 
     margin: '4px 0 0 10px',
+  },
+
+  tokenApproveBlock: {
+    display: 'flex',
+    justifyContent: 'center',
+    paddingTop: 10,
+
+    '& .image': {
+      width: 80,
+      height: 80,
+      marginRight: 25,
+
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    },
+
+    '& .image img': {
+      maxWidth: '100%',
+      maxHeight: '100%'
+    },
+
+    '& .name': {
+      ...commonStyles.h3,
+      marginBottom: 15
+    }
   }
 }
 

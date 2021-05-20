@@ -28,12 +28,20 @@ export function fetchPoolBalances(data) {
       const earnPools = pools.filter(pool => pool.earnContractAddress);
 
       const tokenCalls = earnPools.map(pool => {
-        const contract = new web3.eth.Contract(erc20ABI, pool.tokenAddress || getNetworkTokenShim());
+        const tokens = pool.isMultiToken
+          ? pool.tokens.map(token => token.address)
+          : [pool.tokenAddress];
 
-        return {
-          allowance: contract.methods.allowance(address, pool.earnContractAddress)
-        }
-      });
+        return tokens.map(token => {
+          const contract = new web3.eth.Contract(erc20ABI, token || getNetworkTokenShim());
+
+          return {
+            pool: pool.earnContractAddress,
+            token: token || '',
+            allowance: contract.methods.allowance(address, pool.earnContractAddress)
+          };
+        });
+      }).flat();
 
       const vaultCalls = earnPools.map(pool => {
         let pricePerShareCall;
@@ -74,6 +82,16 @@ export function fetchPoolBalances(data) {
       const multicall = new MultiCall(web3, getNetworkMulticall());
       multicall.all([tokenCalls, vaultCalls])
         .then(data => {
+          const allowances = {};
+
+          // Process pools allowances
+          data[0].forEach(allowance => {
+            allowances[allowance.pool] = {
+              ...allowances[allowance.pool],
+              [allowance.token]: new BigNumber(allowance.allowance).toNumber()
+            }
+          });
+
           const poolsData = {};
 
           pools.map(pool => {
@@ -82,7 +100,9 @@ export function fetchPoolBalances(data) {
 
             const callIndex = earnPools.findIndex(earnPool => earnPool.id == pool.id);
             if (callIndex >= 0) {
-              allowance = new BigNumber(data[0][callIndex].allowance).toNumber();
+              allowance = pool.isMultiToken
+                ? allowances[pool.earnContractAddress]
+                : allowances[pool.earnContractAddress][pool.tokenAddress || '']
 
               // Calculate price per share from total supply for Bigfoot Banks
               if (['bfbnb', 'bfusd'].includes(pool.id)) {
