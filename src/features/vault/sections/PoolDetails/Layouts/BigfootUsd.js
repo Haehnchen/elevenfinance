@@ -8,13 +8,22 @@ import Loader from 'components/Loader/Loader';
 
 import ClaimButton from '../Buttons/ClaimButton';
 import MultiTokenDepositButton from '../Buttons/MultiTokenDepositButton';
-import WithdrawButton from '../Buttons/WithdrawButton';
+import MultiTokenWithdrawButton from '../Buttons/MultiTokenWithdrawButton';
 import Step from './Step/Step';
 
 import styles from './styles';
 const useStyles = createUseStyles(styles);
 
-const BigfootUsd = ({ pool, index, tokens, tokenBalance, depositedBalance, pendingRewards, pendingRewardsLoaded }) => {
+const BigfootUsd = ({
+  pool,
+  index,
+  tokens,
+  tokenBalance,
+  depositedBalance,
+  stakedBalance,
+  pendingRewards,
+  pendingRewardsLoaded
+}) => {
   const { t } = useTranslation();
   const classes = useStyles();
 
@@ -25,10 +34,7 @@ const BigfootUsd = ({ pool, index, tokens, tokenBalance, depositedBalance, pendi
         <Step number={1} label={'Deposit to Bank'} />
 
         <div className={classes.detailsSection}>
-          <div className={classes.balance}>{formatDecimals(tokenBalance, 2)}</div>
-          {pool.price && (
-            <div className={classes.balanceSecondary}>${tokenBalance.times(pool.price).toFixed(2)}</div>
-          )}
+          <div className={classes.balance}>${formatDecimals(tokenBalance, 2)}</div>
           <div className={classes.balanceDescription}>Stablecoins Balance</div>
 
           {!pool.isDiscontinued && (
@@ -42,13 +48,10 @@ const BigfootUsd = ({ pool, index, tokens, tokenBalance, depositedBalance, pendi
         <Step />
 
         <div className={classes.detailsSection}>
-          <div className={classes.balance}>{formatDecimals(depositedBalance)}</div>
-          {pool.price && (
-            <div className={classes.balanceSecondary}>${depositedBalance.times(pool.price).toFixed(2)}</div>
-          )}
+          <div className={classes.balance}>${formatDecimals(depositedBalance.plus(stakedBalance), 2)}</div>
           <div className={classes.balanceDescription}>{t('Vault-Deposited')}</div>
 
-          <WithdrawButton pool={pool} index={index} balance={depositedBalance} />
+          <MultiTokenWithdrawButton pool={pool} tokens={tokens} balance={depositedBalance} index={index} />
         </div>
       </Grid>
 

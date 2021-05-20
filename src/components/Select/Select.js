@@ -86,7 +86,7 @@ const Select = ({ options, selected, multiple, placeholder, icon, onChange, clas
                     className={classNames(
                       classes.option,
                       {
-                        active: selected.includes(item.value),
+                        active: multiple ? selected.includes(item.value) : selected == item.value,
                         multiple: multiple
                       }
                     )}

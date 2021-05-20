@@ -73,6 +73,7 @@ const PoolDetails = ({ pool, index, tokens, tokenBalance, depositedBalance, stak
           tokens={tokens}
           tokenBalance={tokenBalance}
           depositedBalance={depositedBalance}
+          stakedBalance={stakedBalance}
           pendingRewards={pendingRewards[pool.id]}
           pendingRewardsLoaded={fetchPoolRewardsDone[pool.id]} />
       )}

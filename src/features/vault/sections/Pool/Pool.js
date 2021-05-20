@@ -4,6 +4,9 @@ import { Transition } from '@headlessui/react';
 import BigNumber from 'bignumber.js';
 import { byDecimals } from 'features/helpers/bignumber';
 
+import { useConnectWallet } from 'features/home/redux/hooks';
+import { convert3PoolToUsd } from 'features/web3'
+
 import PoolSummary from '../PoolSummary/PoolSummary';
 import PoolDetails from '../PoolDetails/PoolDetails';
 
@@ -12,6 +15,8 @@ const useStyles = createUseStyles(styles);
 
 const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => {
   const classes = useStyles();
+
+  const { web3, address } = useConnectWallet();
 
   const [isOpen, setIsOpen] = useState(false);
   const [tokenBalance, setTokenBalance] = useState(new BigNumber(0));
@@ -43,11 +48,23 @@ const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => 
         ? byDecimals(tokens[pool.earnedToken].tokenBalance, pool.itokenDecimals).times(pool.pricePerFullShare)
         : new BigNumber(0);
 
-      const stakedBalance = (pool.stakedAmount || new BigNumber(0)).times(pool.pricePerFullShare);
+      let stakedBalancePromise;
 
-      setDepositedBalance(depositedBalance);
-      setStakedBalance(stakedBalance);
-      setDepositedAndStaked(depositedBalance.plus(stakedBalance));
+      if (pool.id == 'bfusd') {
+        // For Bigfoot USD pool add "virtual" stakedBalance to display values in USD without the need to modify
+        // pricePerFullShare
+        const amount = depositedBalance.multipliedBy(new BigNumber(10).exponentiatedBy(18)).toFixed(0);
+        stakedBalancePromise = convert3PoolToUsd({ web3, address, amount, usdTokenIndex: 0 })
+          .then(balanceUsd => byDecimals(balanceUsd, pool.tokens[0].decimals).minus(depositedBalance))
+      } else {
+        stakedBalancePromise = Promise.resolve((pool.stakedAmount || new BigNumber(0)).times(pool.pricePerFullShare));
+      }
+
+      stakedBalancePromise.then(stakedBalance => {
+        setDepositedBalance(depositedBalance);
+        setStakedBalance(stakedBalance);
+        setDepositedAndStaked(depositedBalance.plus(stakedBalance));
+      });
     }
   }, [tokens, pool, fetchPoolDataDone])
 

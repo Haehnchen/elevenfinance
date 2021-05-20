@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { createUseStyles } from 'react-jss';
 import { byDecimals, calculateReallyNum, formatDecimals } from 'features/helpers/bignumber';
 import { inputLimitPass, inputFinalVal } from 'features/helpers/utils';
@@ -24,9 +24,21 @@ const AmountDialog = ({
   const classes = useStyles();
 
   const [amounts, setAmounts] = useState(Array(tokensAmounts?.length).fill({
-    number: 0,
+    number: '0',
     slider: 0
   }));
+
+  useEffect(() => {
+    tokensAmounts.forEach((token, index) => {
+      const amount = +amounts[index]?.number.replace(/,/g, '') || 0;
+      if (amount > token.balance.toNumber()) {
+        setAmount(index, {
+          number: inputFinalVal(amounts[index].number, token.balance.toNumber(), token.decimals),
+          slider: 100
+        });
+      }
+    });
+  }, [tokensAmounts])
 
   const setAmount = (index, amount) => {
     const newAmounts = [...amounts];
