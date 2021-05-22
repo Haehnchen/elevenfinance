@@ -158,7 +158,7 @@ const AmountDialog = ({
                 )}
                 <input type="text"
                   className={classes.input}
-                  value={amounts[index]?.number || 0}
+                  value={amounts[index] ? amounts[index].number : 0}
                   onChange={ev => onInputChange(ev, index)}
                 />
               </div>

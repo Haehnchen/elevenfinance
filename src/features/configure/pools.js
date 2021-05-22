@@ -158,6 +158,7 @@ export const pools = [
   {
     id: 'bfusd',
     name: 'BFUSD',
+    image: 'bfusd.png',
     token: 'BFUSD',
     tokenDescription: 'Bigfoot USD',
 
