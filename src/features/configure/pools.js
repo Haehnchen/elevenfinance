@@ -119,17 +119,26 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 214
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.25,
+      platform: 0.25,
+      buybacks: 1.23
     }
   },
   {
     id: 'bfbnb',
     name: 'BFBNB',
-    token: 'BNB',
+    token: 'BFBNB',
     tokenDescription: 'Bigfoot BNB',
     tokenAddress: '',
     tokenDecimals: 18,
@@ -207,7 +216,15 @@ export const pools = [
 
     claimable: true,
     claimableToken: '11NRV',
-    claimableRewardMethod: '11Nrv'
+    claimableRewardMethod: '11Nrv',
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.25,
+      platform: 0.25,
+      buybacks: 1.23
+    }
   },
   {
     id: 'hfsbusd',
@@ -232,11 +249,20 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 223
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.25,
+      platform: 0.25,
+      buybacks: 1.23
     }
   },
   {
@@ -261,11 +287,20 @@ export const pools = [
     categories: ['Nerve'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 97
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -291,7 +326,15 @@ export const pools = [
 
     claimable: true,
     claimableToken: '11NRV',
-    claimableRewardMethod: 'Nerve'
+    claimableRewardMethod: 'Nerve',
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
+    }
   },
   {
     id: 'nerveust',
@@ -317,7 +360,15 @@ export const pools = [
 
     claimable: true,
     claimableToken: '11NRV',
-    claimableRewardMethod: 'Nerve'
+    claimableRewardMethod: 'Nerve',
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
+    }
   },
   {
     id: 'nervefusdt',
@@ -343,7 +394,15 @@ export const pools = [
 
     claimable: true,
     claimableToken: '11NRV',
-    claimableRewardMethod: 'Nerve'
+    claimableRewardMethod: 'Nerve',
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
+    }
   },
   {
     id: 'nervebtc',
@@ -368,7 +427,15 @@ export const pools = [
 
     claimable: true,
     claimableToken: '11NRV',
-    claimableRewardMethod: 'Nerve'
+    claimableRewardMethod: 'Nerve',
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
+    }
   },
   {
     id: 'nervebusd',
@@ -393,7 +460,15 @@ export const pools = [
 
     claimable: true,
     claimableToken: '11NRV',
-    claimableRewardMethod: 'Nerve'
+    claimableRewardMethod: 'Nerve',
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
+    }
   },
   {
     id: 'nerve3pool',
@@ -418,7 +493,15 @@ export const pools = [
 
     claimable: true,
     claimableToken: '11NRV',
-    claimableRewardMethod: 'Nerve'
+    claimableRewardMethod: 'Nerve',
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
+    }
   },
   {
     id: 'nervebnb',
@@ -442,11 +525,20 @@ export const pools = [
     categories: ['Pancake', 'Nerve'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 109
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -472,11 +564,20 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 202
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.25,
+      platform: 0.25,
+      buybacks: 1.23
     }
   },
   {
@@ -502,11 +603,20 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 203
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.25,
+      platform: 0.25,
+      buybacks: 1.23
     }
   },
   {
@@ -532,11 +642,20 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 204
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.25,
+      platform: 0.25,
+      buybacks: 1.23
     }
   },
   {
@@ -562,11 +681,20 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 205
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.25,
+      platform: 0.25,
+      buybacks: 1.23
     }
   },
   {
@@ -592,11 +720,20 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 206
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.25,
+      platform: 0.25,
+      buybacks: 1.23
     }
   },
   {
@@ -622,11 +759,20 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 207
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.25,
+      platform: 0.25,
+      buybacks: 1.23
     }
   },
   {
@@ -652,11 +798,20 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 208
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.25,
+      platform: 0.25,
+      buybacks: 1.23
     }
   },
   {
@@ -682,11 +837,20 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 209
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.25,
+      platform: 0.25,
+      buybacks: 1.23
     }
   },
   {
@@ -712,11 +876,20 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 186
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.25,
+      platform: 0.25,
+      buybacks: 1.23
     }
   },
   {
@@ -742,11 +915,20 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 215
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.25,
+      platform: 0.25,
+      buybacks: 1.23
     }
   },
   {
@@ -772,11 +954,20 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 189
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.25,
+      platform: 0.25,
+      buybacks: 1.23
     }
   },
   {
@@ -802,11 +993,20 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 188
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.25,
+      platform: 0.25,
+      buybacks: 1.23
     }
   },
   {
@@ -832,11 +1032,20 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 217
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.25,
+      platform: 0.25,
+      buybacks: 1.23
     }
   },
   {
@@ -862,11 +1071,20 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 219
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.25,
+      platform: 0.25,
+      buybacks: 1.23
     }
   },
   {
@@ -892,11 +1110,20 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 218
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.25,
+      platform: 0.25,
+      buybacks: 1.23
     }
   },
   {
@@ -922,11 +1149,20 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 201
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.25,
+      platform: 0.25,
+      buybacks: 1.23
     }
   },
   {
@@ -952,11 +1188,20 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 190
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.25,
+      platform: 0.25,
+      buybacks: 1.23
     }
   },
   {
@@ -982,11 +1227,20 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 191
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.25,
+      platform: 0.25,
+      buybacks: 1.23
     }
   },
   {
@@ -1012,11 +1266,20 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 192
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.25,
+      platform: 0.25,
+      buybacks: 1.23
     }
   },
   {
@@ -1042,11 +1305,20 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 193
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.25,
+      platform: 0.25,
+      buybacks: 1.23
     }
   },
   {
@@ -1072,11 +1344,20 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 194
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.25,
+      platform: 0.25,
+      buybacks: 1.23
     }
   },
   {
@@ -1102,11 +1383,20 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 195
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.25,
+      platform: 0.25,
+      buybacks: 1.23
     }
   },
   {
@@ -1132,11 +1422,20 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 196
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.25,
+      platform: 0.25,
+      buybacks: 1.23
     }
   },
   {
@@ -1162,11 +1461,20 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 197
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.25,
+      platform: 0.25,
+      buybacks: 1.23
     }
   },
   {
@@ -1192,11 +1500,20 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 198
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.25,
+      platform: 0.25,
+      buybacks: 1.23
     }
   },
   {
@@ -1222,11 +1539,20 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 199
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.25,
+      platform: 0.25,
+      buybacks: 1.23
     }
   },
   {
@@ -1254,11 +1580,20 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 200
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.25,
+      platform: 0.25,
+      buybacks: 1.23
     }
   },
   {
@@ -1283,11 +1618,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 124
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -1312,11 +1656,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 128
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -1343,11 +1696,20 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 82
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -1373,11 +1735,20 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 210
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.25,
+      platform: 0.25,
+      buybacks: 1.23
     }
   },
   {
@@ -1404,11 +1775,20 @@ export const pools = [
     categories: ['Wault'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 62
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -1437,11 +1817,20 @@ export const pools = [
     categories: ['Popsicle'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 83
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -1467,11 +1856,20 @@ export const pools = [
     categories: ['Popsicle'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 187
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
 
@@ -1500,11 +1898,20 @@ export const pools = [
     categories: ['Popsicle'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 81
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -1529,11 +1936,20 @@ export const pools = [
     categories: ['Ellipsis'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 177
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -1558,11 +1974,20 @@ export const pools = [
     categories: ['Ellipsis'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 77
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -1586,18 +2011,22 @@ export const pools = [
     tokenAddress: '0xa7A0b605343dF36B748FF4B5f7578b3F2D0651CE',
     categories: ['Pancake'],
 
-
-
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 180
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
-
-
-
   },
   {
     id: 'cggbnb',
@@ -1621,14 +2050,21 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 181
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
-
-
   },
   {
     id: 'suterbnb',
@@ -1651,17 +2087,22 @@ export const pools = [
     tokenAddress: '0x2d5DB889392Bc3c8B023A8631ca230A033eEA1B8',
     categories: ['Pancake'],
 
-
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 182
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
-
-
-
   },
   {
     id: 'broobeebnb',
@@ -1684,18 +2125,22 @@ export const pools = [
     tokenAddress: '0x950FD020F8E4B8C57285EC7020b7a204348dadFa',
     categories: ['Pancake'],
 
-
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 183
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
-
-
-
-
   },
   {
     id: 'hznbnb',
@@ -1718,17 +2163,22 @@ export const pools = [
     tokenAddress: '0xDc9a574b9B341D4a98cE29005b614e1E27430E74',
     categories: ['Pancake'],
 
-
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 184
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
-
-
-
   },
   {
     id: 'alpabnb',
@@ -1752,13 +2202,21 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 185
-    }
+    },
 
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
+    }
   },
   {
     id: 'cake',
@@ -1782,14 +2240,22 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 85
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
-
   {
     id: 'swthbnb',
     name: 'SWTH',
@@ -1812,11 +2278,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 170
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -1841,11 +2316,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 171
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -1870,11 +2354,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 172
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -1899,11 +2392,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 173
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -1928,11 +2430,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 174
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -1957,11 +2468,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 175
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -1986,11 +2506,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 108
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2015,11 +2544,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 176
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2044,11 +2582,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 107
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2073,11 +2620,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 169
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2102,11 +2658,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 168
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2131,11 +2696,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 158
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2160,11 +2734,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 159
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2189,11 +2772,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 160
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2218,11 +2810,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 161
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2247,11 +2848,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 162
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2276,11 +2886,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 163
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2305,11 +2924,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 164
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2334,11 +2962,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 165
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2363,11 +3000,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 166
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2392,11 +3038,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 167
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2421,11 +3076,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 129
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2450,11 +3114,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 178
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2482,11 +3155,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 9
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2511,11 +3193,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 154
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2540,11 +3231,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 155
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2569,11 +3269,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 153
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2598,11 +3307,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 106
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2627,11 +3345,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 152
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2656,11 +3383,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 151
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2685,11 +3421,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 150
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2714,11 +3459,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 156
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2743,11 +3497,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 149
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2772,11 +3535,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 148
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2801,11 +3573,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 111
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2830,11 +3611,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 110
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2859,11 +3649,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 147
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2888,11 +3687,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 146
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2917,11 +3725,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 145
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2946,11 +3763,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 144
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -2975,11 +3801,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 143
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -3004,11 +3839,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 142
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -3033,11 +3877,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 141
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -3062,11 +3915,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 140
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -3091,11 +3953,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 139
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -3120,11 +3991,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 114
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -3149,11 +4029,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 115
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -3178,11 +4067,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 113
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -3207,11 +4105,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 116
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -3236,11 +4143,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 117
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -3265,11 +4181,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 118
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -3294,11 +4219,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 119
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -3323,11 +4257,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 138
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -3352,11 +4295,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 112
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -3381,11 +4333,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 120
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -3410,11 +4371,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 121
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -3439,11 +4409,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 122
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -3468,11 +4447,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 123
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -3497,11 +4485,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 125
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -3526,11 +4523,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 126
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -3555,11 +4561,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 127
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -3584,11 +4599,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 137
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -3613,11 +4637,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 135
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -3642,11 +4675,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 136
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -3671,11 +4713,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 134
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -3700,11 +4751,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 133
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -3729,11 +4789,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 132
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -3758,6 +4827,7 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
@@ -3787,11 +4857,20 @@ export const pools = [
     categories: ['Pancake'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 130
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
 ];
