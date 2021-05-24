@@ -73,6 +73,13 @@ const Regular = ({ pool, index, tokenBalance, depositedBalance, pendingRewards, 
                 <span>ELE buyback burn</span>
                 <span>{ pool.fees.buybacks ? pool.fees.buybacks + '% on profits' : 'none' }</span>
               </div>
+
+              {pool.fees.waultx_burn && (
+                <div className="item">
+                  <span>WAULTx burn</span>
+                  <span>{ pool.fees.waultx_burn + '% on profits' }</span>
+                </div>
+              )}
             </div>
           )}
         </div>

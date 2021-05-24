@@ -130,9 +130,10 @@ export const pools = [
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.25,
-      platform: 0.25,
-      buybacks: 1.23
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+      waultx_burn: 1
     }
   },
   {
@@ -221,9 +222,9 @@ export const pools = [
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.25,
-      platform: 0.25,
-      buybacks: 1.23
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.77
     }
   },
   {
@@ -260,9 +261,10 @@ export const pools = [
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.25,
-      platform: 0.25,
-      buybacks: 1.23
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+      waultx_burn: 1
     }
   },
   {
@@ -575,9 +577,10 @@ export const pools = [
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.25,
-      platform: 0.25,
-      buybacks: 1.23
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+      waultx_burn: 1
     }
   },
   {
@@ -614,9 +617,10 @@ export const pools = [
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.25,
-      platform: 0.25,
-      buybacks: 1.23
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+      waultx_burn: 1
     }
   },
   {
@@ -653,9 +657,10 @@ export const pools = [
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.25,
-      platform: 0.25,
-      buybacks: 1.23
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+      waultx_burn: 1
     }
   },
   {
@@ -692,9 +697,10 @@ export const pools = [
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.25,
-      platform: 0.25,
-      buybacks: 1.23
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+      waultx_burn: 1
     }
   },
   {
@@ -731,9 +737,10 @@ export const pools = [
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.25,
-      platform: 0.25,
-      buybacks: 1.23
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+      waultx_burn: 1
     }
   },
   {
@@ -770,9 +777,10 @@ export const pools = [
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.25,
-      platform: 0.25,
-      buybacks: 1.23
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+      waultx_burn: 1
     }
   },
   {
@@ -809,9 +817,10 @@ export const pools = [
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.25,
-      platform: 0.25,
-      buybacks: 1.23
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+      waultx_burn: 1
     }
   },
   {
@@ -848,9 +857,10 @@ export const pools = [
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.25,
-      platform: 0.25,
-      buybacks: 1.23
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+      waultx_burn: 1
     }
   },
   {
@@ -887,9 +897,10 @@ export const pools = [
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.25,
-      platform: 0.25,
-      buybacks: 1.23
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+      waultx_burn: 1
     }
   },
   {
@@ -926,9 +937,10 @@ export const pools = [
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.25,
-      platform: 0.25,
-      buybacks: 1.23
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+      waultx_burn: 1
     }
   },
   {
@@ -965,9 +977,10 @@ export const pools = [
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.25,
-      platform: 0.25,
-      buybacks: 1.23
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+      waultx_burn: 1
     }
   },
   {
@@ -1004,9 +1017,10 @@ export const pools = [
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.25,
-      platform: 0.25,
-      buybacks: 1.23
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+      waultx_burn: 1
     }
   },
   {
@@ -1043,9 +1057,10 @@ export const pools = [
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.25,
-      platform: 0.25,
-      buybacks: 1.23
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+      waultx_burn: 1
     }
   },
   {
@@ -1082,9 +1097,10 @@ export const pools = [
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.25,
-      platform: 0.25,
-      buybacks: 1.23
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+      waultx_burn: 1
     }
   },
   {
@@ -1121,9 +1137,10 @@ export const pools = [
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.25,
-      platform: 0.25,
-      buybacks: 1.23
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+      waultx_burn: 1
     }
   },
   {
@@ -1160,9 +1177,10 @@ export const pools = [
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.25,
-      platform: 0.25,
-      buybacks: 1.23
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+      waultx_burn: 1
     }
   },
   {
@@ -1199,9 +1217,10 @@ export const pools = [
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.25,
-      platform: 0.25,
-      buybacks: 1.23
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+      waultx_burn: 1
     }
   },
   {
@@ -1238,9 +1257,10 @@ export const pools = [
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.25,
-      platform: 0.25,
-      buybacks: 1.23
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+      waultx_burn: 1
     }
   },
   {
@@ -1277,9 +1297,10 @@ export const pools = [
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.25,
-      platform: 0.25,
-      buybacks: 1.23
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+      waultx_burn: 1
     }
   },
   {
@@ -1316,9 +1337,10 @@ export const pools = [
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.25,
-      platform: 0.25,
-      buybacks: 1.23
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+      waultx_burn: 1
     }
   },
   {
@@ -1355,9 +1377,10 @@ export const pools = [
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.25,
-      platform: 0.25,
-      buybacks: 1.23
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+      waultx_burn: 1
     }
   },
   {
@@ -1394,9 +1417,10 @@ export const pools = [
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.25,
-      platform: 0.25,
-      buybacks: 1.23
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+      waultx_burn: 1
     }
   },
   {
@@ -1433,9 +1457,10 @@ export const pools = [
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.25,
-      platform: 0.25,
-      buybacks: 1.23
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+      waultx_burn: 1
     }
   },
   {
@@ -1472,9 +1497,10 @@ export const pools = [
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.25,
-      platform: 0.25,
-      buybacks: 1.23
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+      waultx_burn: 1
     }
   },
   {
@@ -1511,9 +1537,10 @@ export const pools = [
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.25,
-      platform: 0.25,
-      buybacks: 1.23
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+      waultx_burn: 1
     }
   },
   {
@@ -1550,9 +1577,10 @@ export const pools = [
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.25,
-      platform: 0.25,
-      buybacks: 1.23
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+      waultx_burn: 1
     }
   },
   {
@@ -1591,9 +1619,10 @@ export const pools = [
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.25,
-      platform: 0.25,
-      buybacks: 1.23
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+      waultx_burn: 1
     }
   },
   {
@@ -1746,9 +1775,10 @@ export const pools = [
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.25,
-      platform: 0.25,
-      buybacks: 1.23
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+      waultx_burn: 1
     }
   },
   {
