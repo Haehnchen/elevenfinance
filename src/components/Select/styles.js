@@ -29,6 +29,10 @@ const styles = {
 
     '&.with-icon': {
       paddingLeft: 44
+    },
+
+    '&.bg-dark': {
+      background: COLORS.bgDark
     }
   },
 

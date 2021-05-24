@@ -4,7 +4,6 @@ import { createUseStyles } from 'react-jss';
 import NumberFormat from 'react-number-format';
 import _ from 'lodash';
 
-
 import Filters from '../Filters/Filters';
 import Pool from '../Pool/Pool';
 
@@ -115,7 +114,7 @@ export default function PoolsList({ filtersCategory }) {
       <div className={classes.pools}>
         {Boolean(networkId === Number(process.env.NETWORK_ID)) && filteredPools.map((pool, index) => {
           return (
-            <Pool key={index}
+            <Pool key={pool.id}
               pool={pool}
               index={index}
               tokens={tokens}

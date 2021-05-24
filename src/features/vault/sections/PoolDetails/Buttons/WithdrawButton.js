@@ -82,8 +82,11 @@ const WithdrawButton = ({ pool, index, balance }) => {
       </button>
 
       <AmountDialog
-        balance={balance}
-        decimals={pool.tokenDecimals}
+        tokensAmounts={[{
+          token: pool.token,
+          decimals: pool.tokenDecimals,
+          balance: balance
+        }]}
         onConfirm={handleWithdraw}
 
         title={'Withdraw from Vault'}

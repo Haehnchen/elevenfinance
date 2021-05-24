@@ -37,9 +37,8 @@ const DepositButton = ({ pool, index, balance }) => {
     fetchApproval({
       address,
       web3,
-      tokenAddress: pool.tokenAddress,
-      contractAddress: pool.earnContractAddress,
-      index
+      pool,
+      tokenAddress: pool.tokenAddress
     })
       .then(() => enqueueSnackbar(`Approval success`, { variant: 'success' }))
       .catch(error => enqueueSnackbar(`Approval error: ${error}`, { variant: 'error' }))
@@ -100,9 +99,9 @@ const DepositButton = ({ pool, index, balance }) => {
       {pool.allowance === 0 ? (
         <button className={classes.buttonPrimary}
           onClick={handleApproval}
-          disabled={fetchApprovalPending[index]}
+          disabled={fetchApprovalPending[pool.id]}
         >
-          {!fetchApprovalPending[index]
+          {!fetchApprovalPending[pool.id]
             ? `${t('Vault-ApproveButton')}`
             : (<Spinner />)}
         </button>
@@ -115,8 +114,11 @@ const DepositButton = ({ pool, index, balance }) => {
       )}
 
       <AmountDialog
-        balance={maxAmount}
-        decimals={pool.tokenDecimals}
+        tokensAmounts={[{
+          token: pool.token,
+          decimals: pool.tokenDecimals,
+          balance: maxAmount
+        }]}
         onConfirm={handleDeposit}
 
         title={'Deposit to Vault'}

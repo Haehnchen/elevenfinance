@@ -1,11 +1,11 @@
 import { useCallback } from 'react';
-import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   VAULT_FETCH_DEPOSIT_BEGIN,
   VAULT_FETCH_DEPOSIT_SUCCESS,
   VAULT_FETCH_DEPOSIT_FAILURE,
 } from './constants';
-import { deposit, depositNativeToken } from "../../web3";
+import { deposit, depositNativeToken, depositMultiToken } from "../../web3";
 
 export function fetchDeposit({ address, web3, isAll, amount, contractAddress, index }) {
   return dispatch => {
@@ -68,9 +68,38 @@ export function fetchDepositNativeToken({ address, web3, amount, contractAddress
   };
 }
 
+export function fetchDepositMultiToken({ address, web3, amounts, contractAddress, index }) {
+  return dispatch => {
+    dispatch({
+      type: VAULT_FETCH_DEPOSIT_BEGIN,
+      index
+    });
+
+    const promise = new Promise((resolve, reject) => {
+      depositMultiToken({ web3, address, amounts, contractAddress, dispatch }).then(
+        data => {
+          dispatch({
+            type: VAULT_FETCH_DEPOSIT_SUCCESS,
+            data, index
+          });
+          resolve(data);
+        },
+      ).catch(
+        // Use rejectHandler as the second argument so that render errors won't be caught.
+        error => {
+          dispatch({
+            type: VAULT_FETCH_DEPOSIT_FAILURE,
+            index
+          });
+          reject(error.message || error);
+        }
+      )
+    });
+    return promise;
+  };
+}
+
 export function useFetchDeposit() {
-  // args: false value or array
-  // if array, means args passed to the action creator
   const dispatch = useDispatch();
 
   const { fetchDepositPending } = useSelector(
@@ -93,9 +122,12 @@ export function useFetchDeposit() {
     [dispatch],
   );
 
+  const fetchDepositMultiTokenAction = useCallback(data => dispatch(fetchDepositMultiToken(data)), [dispatch]);
+
   return {
     fetchDeposit: boundAction,
     fetchDepositNativeToken: boundAction2,
+    fetchDepositMultiToken: fetchDepositMultiTokenAction,
     fetchDepositPending
   };
 }

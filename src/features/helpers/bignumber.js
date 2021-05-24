@@ -225,7 +225,7 @@ export function calculateReallyNum(total,sliderNum,formatNum=4){
   return byDecimals(sliderNum/100*Number(total), 0).toFormat(formatNum);
 }
 
-export function formatDecimals(number) {
+export function formatDecimals(number, maxDecimals = null) {
   if (! number || number.eq(0)) {
     return '0';
   }
@@ -246,6 +246,10 @@ export function formatDecimals(number) {
 
   if (number.lt(1)) {
     decimals = 10;
+  }
+
+  if (maxDecimals && decimals > maxDecimals) {
+    decimals = maxDecimals;
   }
 
   number = number.toFixed(decimals);

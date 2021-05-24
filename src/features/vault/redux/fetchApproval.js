@@ -7,22 +7,16 @@ import {
 } from './constants';
 import { approval } from "../../web3";
 
-export function fetchApproval({ address, web3, tokenAddress, contractAddress, index }) {
+export function fetchApproval({ address, web3, pool, tokenAddress }) {
   return dispatch => {
-    // optionally you can have getState as the second argument
     dispatch({
       type: VAULT_FETCH_APPROVAL_BEGIN,
-      index
+      id: pool.id
     });
 
-    // Return a promise so that you could control UI flow without states in the store.
-    // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
-    // It's hard to use state to manage it, but returning a promise allows you to easily achieve it.
-    // e.g.: handleSubmit() { this.props.actions.submitForm(data).then(()=> {}).catch(() => {}); }
     const promise = new Promise((resolve, reject) => {
-      // doRequest is a placeholder Promise. You should replace it with your own logic.
-      // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/vault/redux/fetchRedditReactjsList.js
-      // args.error here is only for test coverage purpose.
+      const contractAddress = pool.earnContractAddress;
+
       approval({
         web3,
         address,
@@ -33,7 +27,8 @@ export function fetchApproval({ address, web3, tokenAddress, contractAddress, in
         data => {
           dispatch({
             type: VAULT_FETCH_APPROVAL_SUCCESS,
-            data: {index, allowance: data},index
+            data: {token: tokenAddress, allowance: data},
+            id: pool.id
           })
           resolve();
         }
@@ -41,7 +36,7 @@ export function fetchApproval({ address, web3, tokenAddress, contractAddress, in
         error => {
           dispatch({
             type: VAULT_FETCH_APPROVAL_FAILURE,
-            index
+            id: pool.id
           })
           reject(error.message || error);
         }
@@ -53,8 +48,6 @@ export function fetchApproval({ address, web3, tokenAddress, contractAddress, in
 }
 
 export function useFetchApproval() {
-  // args: false value or array
-  // if array, means args passed to the action creator
   const dispatch = useDispatch();
 
   const { fetchApprovalPending } = useSelector(
@@ -79,20 +72,37 @@ export function reducer(state, action) {
         ...state,
         fetchApprovalPending: {
           ...state.fetchApprovalPending,
-          [action.index]: true
+          [action.id]: true
         },
       };
 
     case VAULT_FETCH_APPROVAL_SUCCESS:
-      // The request is success
       const { pools } = state;
-      pools[action.index].allowance = action.data.allowance;
+
+      const newPools = pools.map(pool => {
+        if (pool.id == action.id) {
+          const allowance = pool.isMultiToken
+            ? {
+                ...pool.allowance,
+                [action.data.token]: action.data.allowance
+              }
+            : action.data.allowance;
+
+          return {
+            ...pool,
+            allowance
+          }
+        }
+
+        return pool;
+      })
+
       return {
         ...state,
-        pools,
+        pools: newPools,
         fetchApprovalPending: {
           ...state.fetchApprovalPending,
-          [action.index]: false
+          [action.id]: false
         },
       };
 
@@ -102,7 +112,7 @@ export function reducer(state, action) {
         ...state,
         fetchApprovalPending: {
           ...state.fetchApprovalPending,
-          [action.index]: false
+          [action.id]: false
         },
       };
 

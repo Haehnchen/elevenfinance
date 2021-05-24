@@ -50,19 +50,6 @@ const PoolSummary = ({ pool, tokenBalance, depositedBalance, fetchBalanceDone, o
     }
   }
 
-  const getEleApr = pool => {
-    if (pool.farmStats === undefined) {
-      return "";
-    }
-
-    const eleApr = pool.farmStats.aprl;
-    try {
-      return millify(eleApr, { units, space: true });
-    } catch {
-      return '--'
-    }
-  }
-
   return (
     <>
       {pool.isDiscontinued && (

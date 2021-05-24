@@ -1,4 +1,5 @@
 export { approval } from './approval';
+export { convert3PoolToUsd } from './convert3PoolToUsd';
 export { farmClaim } from './farmClaim';
 export { farmStake } from './farmStake';
 export { farmUnstake } from './farmUnstake';
@@ -12,7 +13,9 @@ export { fetchPendingReward } from './fetchPendingReward';
 export { claimRewards } from './claimRewards';
 export { deposit } from './deposit';
 export { depositNativeToken } from './depositNativeToken';
+export { depositMultiToken } from './depositMultiToken';
 export { withdraw } from './withdraw';
+export { withdrawMultiToken } from './withdrawMultiToken';
 export { withdrawNativeToken } from './withdrawNativeToken';
 export { fetchPricePerFullShare } from './fetchPricePerFullShare';
 export { zapOrSwap } from './zapOrSwap';

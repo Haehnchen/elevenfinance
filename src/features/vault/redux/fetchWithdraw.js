@@ -5,7 +5,7 @@ import {
   VAULT_FETCH_WITHDRAW_SUCCESS,
   VAULT_FETCH_WITHDRAW_FAILURE,
 } from './constants';
-import { withdraw, withdrawNativeToken } from "../../web3";
+import { withdraw, withdrawNativeToken, withdrawMultiToken } from "../../web3";
 
 export function fetchWithdraw({ address, web3, isAll, amount, contractAddress, index }) {
   return dispatch => {
@@ -76,6 +76,36 @@ export function fetchWithdrawNativeToken({ address, web3, amount, contractAddres
   };
 }
 
+export function fetchWithdrawMultiToken({ address, web3, amount, tokenIndex, contractAddress, index }) {
+  return dispatch => {
+    dispatch({
+      type: VAULT_FETCH_WITHDRAW_BEGIN,
+      index
+    });
+
+    const promise = new Promise((resolve, reject) => {
+      withdrawMultiToken({ web3, address, amount, tokenIndex, contractAddress, dispatch }).then(
+        data => {
+          dispatch({
+            type: VAULT_FETCH_WITHDRAW_SUCCESS,
+            data, index
+          });
+            resolve(data);
+          },
+      ).catch(
+        error => {
+          dispatch({
+            type: VAULT_FETCH_WITHDRAW_FAILURE,
+            index
+          });
+          reject(error.message || error);
+        }
+      )
+    });
+    return promise;
+  };
+}
+
 export function useFetchWithdraw() {
   // args: false value or array
   // if array, means args passed to the action creator
@@ -97,9 +127,12 @@ export function useFetchWithdraw() {
     [dispatch],
   );
 
+  const withdrawMultiTokenAction = useCallback(data => dispatch(fetchWithdrawMultiToken(data)), [dispatch]);
+
   return {
     fetchWithdraw: boundAction,
     fetchWithdrawNativeToken: boundAction2,
+    fetchWithdrawMultiToken: withdrawMultiTokenAction,
     fetchWithdrawPending
   };
 }

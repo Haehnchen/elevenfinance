@@ -126,11 +126,10 @@ export const pools = [
       masterchefPid: 214
     }
   },
-
   {
     id: 'bfbnb',
     name: 'BFBNB',
-    token: 'BFBNB',
+    token: 'BNB',
     tokenDescription: 'Bigfoot BNB',
     tokenAddress: '',
     tokenDecimals: 18,
@@ -155,6 +154,60 @@ export const pools = [
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 79
     }
+  },
+  {
+    id: 'bfusd',
+    name: 'BFUSD',
+    image: 'bfusd.png',
+    token: 'BFUSD',
+    tokenDescription: 'Bigfoot USD',
+
+    isMultiToken: true,
+    tokens: [
+      {
+        token: 'BUSD',
+        image: 'BUSD-logo.png',
+        address: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
+        decimals: 18
+      },
+      {
+        token: 'USDT',
+        image: 'USDT-logo.png',
+        address: '0x55d398326f99059ff775485246999027b3197955',
+        decimals: 18
+      },
+      {
+        token: 'USDC',
+        image: 'USDC-logo.png',
+        address: '0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d',
+        decimals: 18
+      },
+      {
+        token: '3NRV-LP',
+        image: '3NRV LP-logo.svg',
+        address: '0xf2511b5e4fb0e5e2d123004b672ba14850478c14',
+        decimals: 18
+      }
+    ],
+
+    uses: 'Uses Bigfoot',
+    itokenDecimals: 18,
+    depostLimit: 0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: 'bfUSD',
+    earnedTokenAddress: '0xE9B3017cd7A347a8B0324F88db335255E5c5D3FD',
+    earnContractAddress: '0xE9B3017cd7A347a8B0324F88db335255E5c5D3FD',
+
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+
+    categories: ['Bigfoot'],
+
+    claimable: true,
+    claimableToken: '11NRV',
+    claimableRewardMethod: '11Nrv'
   },
   {
     id: 'hfsbusd',
