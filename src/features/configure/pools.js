@@ -138,7 +138,7 @@ export const pools = [
   },
   {
     id: 'bfbnb',
-    name: 'BFBNB',
+    name: 'BNB',
     token: 'BFBNB',
     tokenDescription: 'Bigfoot BNB',
     tokenAddress: '',
@@ -167,7 +167,7 @@ export const pools = [
   },
   {
     id: 'bfusd',
-    name: 'BFUSD',
+    name: 'USD',
     image: 'bfusd.png',
     token: 'BFUSD',
     tokenDescription: 'Bigfoot USD',
