@@ -216,6 +216,7 @@ export const pools = [
     categories: ['Bigfoot'],
 
     claimable: true,
+    claimableEle: true,
     claimableToken: '11NRV',
     claimableRewardMethod: '11Nrv',
 
@@ -327,6 +328,7 @@ export const pools = [
     categories: ['Nerve'],
 
     claimable: true,
+    claimableEle: false,
     claimableToken: '11NRV',
     claimableRewardMethod: 'Nerve',
 
@@ -361,6 +363,7 @@ export const pools = [
     categories: ['Nerve'],
 
     claimable: true,
+    claimableEle: false,
     claimableToken: '11NRV',
     claimableRewardMethod: 'Nerve',
 
@@ -395,6 +398,7 @@ export const pools = [
     categories: ['Nerve'],
 
     claimable: true,
+    claimableEle: false,
     claimableToken: '11NRV',
     claimableRewardMethod: 'Nerve',
 
@@ -428,6 +432,7 @@ export const pools = [
     categories: ['Nerve'],
 
     claimable: true,
+    claimableEle: false,
     claimableToken: '11NRV',
     claimableRewardMethod: 'Nerve',
 
@@ -461,6 +466,7 @@ export const pools = [
     categories: ['Pancake', 'Nerve'],
 
     claimable: true,
+    claimableEle: false,
     claimableToken: '11NRV',
     claimableRewardMethod: 'Nerve',
 
@@ -494,6 +500,7 @@ export const pools = [
     categories: ['Nerve'],
 
     claimable: true,
+    claimableEle: false,
     claimableToken: '11NRV',
     claimableRewardMethod: 'Nerve',
 

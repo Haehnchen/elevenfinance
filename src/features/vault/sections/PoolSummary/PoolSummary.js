@@ -14,18 +14,14 @@ const PoolSummary = ({ pool, tokenBalance, depositedBalance, fetchBalanceDone, o
   const units = ['', 'K', 'M', 'B', 'T', 'Q', 'Quintillion', 'Sextillion', 'Septillion', 'Octillion', 'Nonillion',
     'Decillion', 'Undecillion'];
 
-  const isCompounding = pool.earnContractAddress && ! pool.claimable;
+  const isCompounding = pool.earnContractAddress && ( ! pool.claimable || pool.id == 'bfusd');
 
   const getApy = pool => {
-    const stats = pool.claimable
-      ? pool.vault
-      : pool.farmStats;
-
-    if (stats === undefined) {
+    if (pool.apy === undefined) {
       return "";
     }
 
-    const vaultApy = stats.apy;
+    const vaultApy = pool.apy;
     try {
       return millify(vaultApy, { units });
     } catch {
@@ -34,15 +30,11 @@ const PoolSummary = ({ pool, tokenBalance, depositedBalance, fetchBalanceDone, o
   }
 
   const getAprd = pool => {
-    const stats = pool.claimable
-      ? pool.vault
-      : pool.farmStats;
-
-    if (stats === undefined) {
+    if (pool.aprd === undefined) {
       return "";
     }
 
-    const vaultAprd = isCompounding ? stats.aprd : stats.apy / 365;
+    const vaultAprd = isCompounding ? pool.aprd : pool.apy / 365;
     try {
       return millify(vaultAprd, { units });
     } catch {

@@ -27,20 +27,24 @@ export function fetchPoolRewards({ address, web3, pool }) {
         const { earnContractAddress } = pool;
 
         // Get pending ELE reward
-        requests.push(
-          (callbackInner) => {
-            const tokenName = 'Eleven';
+        if (pool.claimableEle) {
+          requests.push(
+            (callbackInner) => {
+              const tokenName = 'Eleven';
 
-            fetchPendingReward({
-              web3,
-              address,
-              earnContractAddress,
-              tokenName
-            })
-              .then(data => callbackInner(null, data))
-              .catch(error => callbackInner(error.message || error))
-          }
-        );
+              fetchPendingReward({
+                web3,
+                address,
+                earnContractAddress,
+                tokenName
+              })
+                .then(data => callbackInner(null, data))
+                .catch(error => callbackInner(error.message || error))
+            }
+          );
+        } else {
+          requests.push(callbackInner => callbackInner(null, null));
+        }
 
         // Get pending 11-token reward
         requests.push(

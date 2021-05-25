@@ -71,12 +71,13 @@ export default function PoolsList({ filtersCategory }) {
         }
       }
 
-      const poolStats = pool.claimable
+      const poolStats = pool.claimable && pool.id != 'bfusd'
         ? pool.vault
         : pool.farmStats;
 
       pool.apy = poolStats?.apy;
       pool.apr = poolStats?.apr;
+      pool.aprd = poolStats?.aprd;
 
       return pool;
     });

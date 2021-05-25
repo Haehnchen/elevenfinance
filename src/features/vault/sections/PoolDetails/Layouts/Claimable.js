@@ -58,22 +58,24 @@ const Claimable = ({ pool, index, tokenBalance, depositedBalance, pendingRewards
 
         <div className={classes.detailsSection}>
           <Grid container>
-            <Grid item xs={12} sm={6}>
-              <div className={classes.balanceWithLogo + (pool.price ? ' ' + classes.balanceWithPadding : '')}>
-                <div className={classes.balanceLogo}>
-                  <img src={require(`images/ELE-logo.png`)}/>
-                </div>
-                <div>
-                  <div className={classes.balance}>
-                    {pendingRewardsLoaded
-                      ? formatDecimals(pendingRewards?.pendingEle)
-                      : (<Loader/>)
-                    }
+            {pool.claimableEle && (
+              <Grid item xs={12} sm={6}>
+                <div className={classes.balanceWithLogo + (pool.price ? ' ' + classes.balanceWithPadding : '')}>
+                  <div className={classes.balanceLogo}>
+                    <img src={require(`images/ELE-logo.png`)}/>
                   </div>
-                  <div className={classes.balanceDescription}>{t('Vault-Earned')} ELE</div>
+                  <div>
+                    <div className={classes.balance}>
+                      {pendingRewardsLoaded
+                        ? formatDecimals(pendingRewards?.pendingEle)
+                        : (<Loader/>)
+                      }
+                    </div>
+                    <div className={classes.balanceDescription}>{t('Vault-Earned')} ELE</div>
+                  </div>
                 </div>
-              </div>
-            </Grid>
+              </Grid>
+            )}
             <Grid item xs={12} sm={6}>
               <div className={classes.balanceWithLogo + (pool.price ? ' ' + classes.balanceWithPadding : '')}>
                 <div className={classes.balanceLogo}>
