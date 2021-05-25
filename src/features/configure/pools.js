@@ -138,8 +138,8 @@ export const pools = [
   },
   {
     id: 'bfbnb',
-    name: 'BNB',
-    token: 'BFBNB',
+    name: 'BFBNB',
+    token: 'BNB',
     tokenDescription: 'Bigfoot BNB',
     tokenAddress: '',
     tokenDecimals: 18,
@@ -167,9 +167,9 @@ export const pools = [
   },
   {
     id: 'bfusd',
-    name: 'USD',
+    name: 'BFUSD',
     image: 'bfusd.png',
-    token: 'BFUSD',
+    token: 'USD',
     tokenDescription: 'Bigfoot USD',
 
     isMultiToken: true,
