@@ -126,7 +126,7 @@ const styles = {
 
     [MEDIA.mobile]: {
       width: '50%',
-      marginRight: 12,
+      marginRight: 10,
     }
   },
 

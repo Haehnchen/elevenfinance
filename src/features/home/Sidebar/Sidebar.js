@@ -11,9 +11,10 @@ import {
   DocumentTextIcon,
   ExternalLinkIcon,
   FingerPrintIcon,
-  MenuIcon,
-  QuestionMarkCircleIcon
+  MenuIcon
 } from '@heroicons/react/outline'
+
+import NetworkSelect from './NetworkSelect/NetworkSelect';
 
 import logo from 'assets/img/logo.png';
 import twitterLogo from 'assets/img/socials/twitter.png';
@@ -101,26 +102,11 @@ const Sidebar = ({ connected, address, connectWallet, disconnectWallet }) => {
           </a>
 
           <div>
-            {/* Network */}
-            <div className={classes.network}>
-              {networkId && networkData && (
-                <>
-                  <img src={require(`assets/img/networks/${networkData.image}`)} />
-                  <span>{ networkData.label }</span>
-
-                  <div className={classes.networkStatus + ' connected'}></div>
-                </>
-              )}
-
-              {networkId && ! networkData && (
-                <>
-                  <QuestionMarkCircleIcon />
-                  <span>Unsupported Network</span>
-
-                  <div className={classes.networkStatus}></div>
-                </>
-              )}
-            </div>
+            <NetworkSelect
+              web3={web3}
+              networkId={networkId}
+              networkData={networkData}
+            />
 
             {/* Wallet */}
             <button className={classes.wallet}
