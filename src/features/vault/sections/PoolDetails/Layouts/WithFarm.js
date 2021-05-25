@@ -50,7 +50,7 @@ const WithFarm = ({ pool, index, tokenBalance, depositedBalance, stakedBalance, 
           )}
           <div className={classes.balanceDescription}>{t('Vault-Deposited')}</div>
 
-          {!pool.isDiscontinued && (
+          {! pool.isDiscontinued && ! pool.farm.isDisabled && (
             <>
               <StakeButton pool={pool} index={index} balance={depositedBalance} />&nbsp;&nbsp;
             </>

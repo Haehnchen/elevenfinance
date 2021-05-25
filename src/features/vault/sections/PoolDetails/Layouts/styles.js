@@ -1,4 +1,4 @@
-import commonStyles, { BREAKPOINTS, COLORS, FONT } from 'assets/jss/common';
+import commonStyles, { BORDER, BREAKPOINTS, COLORS, FONT, MEDIA } from 'assets/jss/common';
 
 const styles = {
   detailsSection: {
@@ -7,6 +7,13 @@ const styles = {
     ['@media(max-width: ' + BREAKPOINTS.md + ')']: {
       marginBottom: 20
     },
+
+    [MEDIA.mobile]: {
+      '&.without-steps': {
+        paddingLeft: 0,
+        textAlign: 'center'
+      }
+    }
   },
 
   balance: {
@@ -66,7 +73,59 @@ const styles = {
 
   button: {
     ...commonStyles.button
-  }
+  },
+
+  divider: {
+    height: 1,
+    background: COLORS.primary,
+    margin: '20px 0 30px'
+  },
+
+  statsSection: {
+    minHeight: '100%',
+    padding: '12px 15px',
+
+    color: COLORS.textSecondaryLight,
+    fontSize: FONT.size.normal,
+
+    background: COLORS.bgDark,
+    borderRadius: BORDER.radius,
+
+    [MEDIA.mobile]: {
+      marginTop: 20,
+      minHeight: 0
+    },
+
+    '& .header': {
+      marginBottom: 10,
+      textAlign: 'center',
+
+      color: COLORS.textLight,
+      fontSize: FONT.size.h4,
+    },
+
+    '& .item': {
+      display: 'flex',
+      width: '100%',
+
+      '& span': {
+        width: '50%',
+      },
+
+      '& span:first-child': {
+        paddingRight: 15,
+
+        textAlign: 'right',
+        color: COLORS.textLight,
+
+        borderRight: '1px solid ' + COLORS.border
+      },
+
+      '& span:last-child': {
+        paddingLeft: 15
+      }
+    }
+  },
 };
 
 export default styles;
