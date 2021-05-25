@@ -106,7 +106,7 @@ export const pools = [
     network: 'polygon',
     id: 'curve3pool',
     name: 'am3CRV',
-    image: 'NRV-logo.svg',
+    image: 'am3crv.png',
     token: '3 Curve LP',
     tokenDescription: 'am3CRV',
     tokenAddress: '',

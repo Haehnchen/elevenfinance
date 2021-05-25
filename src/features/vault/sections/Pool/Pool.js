@@ -5,7 +5,9 @@ import BigNumber from 'bignumber.js';
 import { byDecimals } from 'features/helpers/bignumber';
 
 import { useConnectWallet } from 'features/home/redux/hooks';
-import { convert3PoolToUsd } from 'features/web3'
+import { convert3PoolToUsd, switchNetwork } from 'features/web3'
+
+import { networks } from 'features/configure';
 
 import PoolSummary from '../PoolSummary/PoolSummary';
 import PoolDetails from '../PoolDetails/PoolDetails';
@@ -27,6 +29,9 @@ const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => 
   const toggleCard = () => {
     if (pool.network == network) {
       setIsOpen(! isOpen);
+    } else {
+      const poolNetwork = networks.find(item => item.name == pool.network);
+      switchNetwork({ web3, params: poolNetwork.params })
     }
   }
 

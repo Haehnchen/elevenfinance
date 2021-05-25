@@ -14,6 +14,7 @@ export { claimRewards } from './claimRewards';
 export { deposit } from './deposit';
 export { depositNativeToken } from './depositNativeToken';
 export { depositMultiToken } from './depositMultiToken';
+export { switchNetwork } from './switchNetwork';
 export { withdraw } from './withdraw';
 export { withdrawMultiToken } from './withdrawMultiToken';
 export { withdrawNativeToken } from './withdrawNativeToken';
