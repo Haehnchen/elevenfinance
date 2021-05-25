@@ -138,7 +138,7 @@ export const pools = [
   },
   {
     id: 'bfbnb',
-    name: 'BFBNB',
+    name: 'BNB',
     token: 'BFBNB',
     tokenDescription: 'Bigfoot BNB',
     tokenAddress: '',
@@ -167,7 +167,7 @@ export const pools = [
   },
   {
     id: 'bfusd',
-    name: 'BFUSD',
+    name: 'USD',
     image: 'bfusd.png',
     token: 'BFUSD',
     tokenDescription: 'Bigfoot USD',
@@ -983,11 +983,11 @@ export const pools = [
 
     fees: {
       deposit: 0,
-      withdrawal: 0.1,
-      controller: 0.35,
-      platform: 0.35,
-      buybacks: 1.7,
-      waultx_burn: 1
+      withdrawal: 0.2,
+      controller: 0,
+      platform: 0.03,
+      buybacks: 0.1,
+      waultx_burn: 0.07
     }
   },
   {
@@ -2287,10 +2287,10 @@ export const pools = [
 
     fees: {
       deposit: 0,
-      withdrawal: 0.1,
-      controller: 0.275,
-      platform: 0.275,
-      buybacks: 1.65
+      withdrawal: 0.2,
+      controller: 0,
+      platform: 0.03,
+      buybacks: 0.17
     }
   },
   {
