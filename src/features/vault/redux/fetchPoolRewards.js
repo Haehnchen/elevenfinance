@@ -61,7 +61,7 @@ export function fetchPoolRewards({ address, web3, pool }) {
               .catch(error => callbackInner(error.message || error))
           }
         );
-      } else {
+      } else if (pool.farm) {
         const { earnContractAddress, masterchefPid } = pool.farm;
 
         // Get farm pending ELE reward

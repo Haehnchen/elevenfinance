@@ -21,11 +21,12 @@ export function fetchPoolBalances(data) {
     // optionally you can have getState as the second argument
     dispatch({
       type: VAULT_FETCH_POOL_BALANCES_BEGIN,
+      data: data.forceUpdate || false
     });
 
     const promise = new Promise((resolve, reject) => {
-      const { address, web3, pools } = data;
-      const earnPools = pools.filter(pool => pool.earnContractAddress);
+      const { address, web3, pools, network } = data;
+      const earnPools = pools.filter(pool => pool.earnContractAddress && pool.network == network);
 
       const tokenCalls = earnPools.map(pool => {
         const tokens = pool.isMultiToken
@@ -33,7 +34,7 @@ export function fetchPoolBalances(data) {
           : [pool.tokenAddress];
 
         return tokens.map(token => {
-          const contract = new web3.eth.Contract(erc20ABI, token || getNetworkTokenShim());
+          const contract = new web3.eth.Contract(erc20ABI, token || getNetworkTokenShim(network));
 
           return {
             pool: pool.earnContractAddress,
@@ -79,7 +80,7 @@ export function fetchPoolBalances(data) {
         }
       });
 
-      const multicall = new MultiCall(web3, getNetworkMulticall());
+      const multicall = new MultiCall(web3, getNetworkMulticall(network));
       multicall.all([tokenCalls, vaultCalls])
         .then(data => {
           const allowances = {};
@@ -168,13 +169,13 @@ export function useFetchPoolBalances() {
 }
 
 export function reducer(state, action) {
-  const { pools } = state;
+  const { pools, fetchPoolBalancesDone } = state;
 
   switch (action.type) {
     case VAULT_FETCH_POOL_BALANCES_BEGIN:
-      // Just after a request is sent
       return {
         ...state,
+        fetchPoolBalancesDone: action.data ? false : fetchPoolBalancesDone,
         fetchPoolBalancesPending: true,
       };
 

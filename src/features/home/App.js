@@ -63,12 +63,6 @@ export default function App({ children }) {
     }
   }, [web3Modal, connectWallet, window.ethereum])
 
-  useEffect(() => {
-    if (web3 && address && !connectWalletPending && networkId && Boolean(networkId !== Number(process.env.NETWORK_ID))) {
-      alert(t('App-SnackBarText'))
-    }
-  }, [web3, address, networkId])
-
   return (
     <SnackbarProvider>
       <div className={classes.page}>
@@ -81,7 +75,7 @@ export default function App({ children }) {
 
         <div className={classes.container}>
           <div className={classes.children}>
-            {Boolean(networkId === Number(process.env.NETWORK_ID)) && children}
+            { children }
             <Notifier />
           </div>
         </div>

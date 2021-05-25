@@ -16,6 +16,10 @@ export const categories = [
     default: true
   },
   {
+    name: 'Curve',
+    default: true
+  },
+  {
     name: 'Popsicle',
     default: true
   },
@@ -40,6 +44,7 @@ export const categories = [
 // path price:
 export const pools = [
   {
+    network: 'bsc',
     id: 'ELE',
     name: 'ELE',
     token: 'ELE',
@@ -69,6 +74,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'elebnb',
     name: 'ELE-BNB LP V2',
     token: 'ELE-BNB LP V2',
@@ -97,6 +103,39 @@ export const pools = [
     }
   },
   {
+    network: 'polygon',
+    id: 'curve3pool',
+    name: 'am3CRV',
+    image: 'NRV-logo.svg',
+    token: '3 Curve LP',
+    tokenDescription: 'am3CRV',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses curve',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11CRV3',
+    earnedTokenAddress: '0x6d8ED04c60cCAaEaf4520E1B34E51F03659d9554',
+    earnContractAddress: '0x6d8ED04c60cCAaEaf4520E1B34E51F03659d9554',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0xE7a24EF0C5e95Ffb0f6684b813A78F2a3AD7D171',
+    categories: ['Curve'],
+
+    // TODO: set correct pool fees
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+    }
+  },
+  {
+    network: 'bsc',
     id: 'elebnbw',
     name: 'ELEBNB',
     image: 'ELE-BNB\ LP-logo.svg',
@@ -137,6 +176,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'bfbnb',
     name: 'BNB',
     token: 'BFBNB',
@@ -166,6 +206,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'bfusd',
     name: 'USD',
     image: 'bfusd.png',
@@ -229,6 +270,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'hfsbusd',
     name: 'HFS',
     image: 'hfs-busd.png',
@@ -269,6 +311,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'nerve',
     name: 'NRV',
     token: 'NRV',
@@ -307,6 +350,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'nerveeth',
     name: 'nrvETH',
     token: 'nrvETH',
@@ -341,6 +385,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'nerveust',
     name: 'nrvUST',
     token: 'nrvUST',
@@ -376,6 +421,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'nervefusdt',
     name: 'nrvFUSDT',
     token: 'nrvFUSDT',
@@ -411,6 +457,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'nervebtc',
     name: 'nrvBTC',
     token: 'nrvBTC',
@@ -445,6 +492,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'nervebusd',
     name: 'NRVBUSD',
     token: 'NRV-BUSD LP',
@@ -479,6 +527,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'nerve3pool',
     name: '3NRV',
     token: '3NRV LP',
@@ -513,6 +562,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'nervebnb',
     name: 'NRV',
     token: 'NRV-BNB LP',
@@ -551,6 +601,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'btcBbusdw',
     name: 'BTC',
     image: 'btcb-busd.png',
@@ -591,6 +642,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'ethbusdw',
     name: 'ETH',
     image: 'eth-busd.png',
@@ -631,6 +683,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'usdtbusd',
     name: 'USDTBUSD',
     image: 'usdt-busd.png',
@@ -671,6 +724,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'daibusd',
     name: 'DAIBUSD',
     image: 'dai-busd.png',
@@ -711,6 +765,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'xvsbusd',
     name: 'XVS',
     image: 'xvs-busd.png',
@@ -751,6 +806,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'ltcbusdw',
     name: 'LTC',
     image: 'ltc-busd.png',
@@ -791,6 +847,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'xrpbusdw',
     name: 'XRP',
     image: 'xrp-busd.png',
@@ -831,6 +888,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'adabusdw',
     name: 'ADA',
     image: 'ada-busd.png',
@@ -871,6 +929,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'wexbnb',
     name: 'WEX',
     image: 'wexbnb.png',
@@ -911,6 +970,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'wexusdt',
     name: 'WEX',
     image: 'wexusdt.png',
@@ -951,6 +1011,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'wex',
     name: 'WEX',
     image: 'wex.png',
@@ -991,6 +1052,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'waultxbnb',
     name: 'WAULTXBNB',
     image: 'waultxbnb.png',
@@ -1031,6 +1093,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'autobnb',
     name: 'autobnb',
     image: 'autobnb.png',
@@ -1071,6 +1134,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'oraibnb',
     name: 'ORAIBNB',
     image: 'oraibnb.png',
@@ -1111,6 +1175,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'twinbnb',
     name: 'TWINBNB',
     image: 'twinbnb.png',
@@ -1151,6 +1216,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'waultx',
     name: 'WAULTX',
     image: 'wault.png',
@@ -1191,6 +1257,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'bnbbusdw',
     name: 'BNBBUSD',
     image: 'bnbbusd.png',
@@ -1231,6 +1298,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'cakebnbw',
     name: 'CAKEBNB',
     image: 'cakebnb.png',
@@ -1271,6 +1339,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'btcbbnbw',
     name: 'BTCBBNB',
     image: 'btcbbnb.png',
@@ -1311,6 +1380,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'ethbnbw',
     name: 'ETHBNB',
     image: 'ethbnb.png',
@@ -1351,6 +1421,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'vaibnb',
     name: 'VAIBNB',
     image: 'vaibnb.png',
@@ -1391,6 +1462,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'usdtbnbw',
     name: 'USDTBNB',
     image: 'usdtbnb.png',
@@ -1431,6 +1503,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'usdcbnbw',
     name: 'USDCBNB',
     image: 'usdcbnb.png',
@@ -1471,6 +1544,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'dotbnbw',
     name: 'DOTBNB',
     image: 'dotbnb.png',
@@ -1511,6 +1585,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'linkbnbw',
     name: 'LINKBNB',
     image: 'linkbnb.png',
@@ -1551,6 +1626,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'dogebnb',
     name: 'DOGEBNB',
     image: 'dogebnb.png',
@@ -1591,6 +1667,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'swirlbnb',
     name: 'SWIRLBNB',
     image: '11SWIRL-logo.svg',
@@ -1633,6 +1710,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'usdtbnb',
     name: 'USDT',
     token: 'USDT-BNB LP',
@@ -1671,6 +1749,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'borbnb',
     name: 'BOR',
     token: 'BOR-BNB LP',
@@ -1709,6 +1788,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'oldeulerbnb',
     name: 'oldEULER',
     token: 'oldEULER-BNB LP',
@@ -1749,6 +1829,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'eulerbnb',
     name: 'EULER',
     token: 'EULER-BNB WLP',
@@ -1789,6 +1870,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'oldswirlbnb',
     name: 'oldSWIRL',
     token: 'SWIRL-BNB LP',
@@ -1829,6 +1911,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'oldicebnb',
 
     isDiscontinued: true,
@@ -1871,6 +1954,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'icebnb',
     name: 'ICEBNB',
     token: 'ICE-BNB SLP',
@@ -1911,6 +1995,7 @@ export const pools = [
   },
 
   {
+    network: 'bsc',
     id: 'ice',
     name: 'ICE',
     token: 'ICE',
@@ -1952,6 +2037,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'epsbnb',
     name: 'EPS',
     token: 'EPS-BNB LP',
@@ -1990,6 +2076,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'oldepsbnb',
     name: 'oldEPS',
     token: 'oldEPS-BNB LP',
@@ -2028,6 +2115,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'xedbnb',
     name: 'XED',
     token: 'XED-BNB LP',
@@ -2066,6 +2154,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'cggbnb',
     name: 'CGG',
     token: 'CGG-BNB LP',
@@ -2104,6 +2193,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'suterbnb',
     name: 'SUTER',
     token: 'SUTER-BNB LP',
@@ -2142,6 +2232,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'broobeebnb',
     name: 'BROOBEE',
     token: 'BROOBEE-BNB LP',
@@ -2180,6 +2271,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'hznbnb',
     name: 'HZN',
     token: 'HZN-BNB LP',
@@ -2218,6 +2310,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'alpabnb',
     name: 'ALPA',
     token: 'ALPA-BNB LP',
@@ -2256,6 +2349,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'cake',
     name: 'CAKE',
     token: 'CAKE',
@@ -2294,6 +2388,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'swthbnb',
     name: 'SWTH',
     token: 'SWTH-BNB LP',
@@ -2332,6 +2427,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'dftbnb',
     name: 'DFT',
     token: 'DFT-BNB LP',
@@ -2370,6 +2466,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'pbtcbnb',
     name: 'PBTC',
     token: 'PBTC-BNB LP',
@@ -2408,6 +2505,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'gumbnb',
     name: 'GUM',
     token: 'GUM-BNB LP',
@@ -2446,6 +2544,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'degobnb',
     name: 'DEGO',
     token: 'DEGO-BNB LP',
@@ -2484,6 +2583,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'easybnb',
     name: 'EASY',
     token: 'EASY-BNB LP',
@@ -2522,6 +2622,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'oddzbnb',
     name: 'ODDZ',
     token: 'ODDZ-BNB LP',
@@ -2560,6 +2661,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'apysbnb',
     name: 'APYS',
     token: 'APYS-BNB LP',
@@ -2598,6 +2700,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'bondlybnb',
     name: 'BONDLY',
     token: 'BONDLY-BNB LP',
@@ -2636,6 +2739,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'lienbnb',
     name: 'LIEN',
     token: 'LIEN-BNB LP',
@@ -2674,6 +2778,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'zilbnb',
     name: 'ZIL',
     token: 'ZIL-BNB LP',
@@ -2712,6 +2817,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'bfibnb',
     name: 'BFI',
     token: 'BFI-BNB LP',
@@ -2750,6 +2856,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'beltbnb',
     name: 'BELT',
     token: 'BELT-BNB LP',
@@ -2788,6 +2895,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'buxbnb',
     name: 'BUX',
     token: 'BUX-BNB LP',
@@ -2826,6 +2934,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'alicebnb',
     name: 'ALICE',
     token: 'ALICE-BNB LP',
@@ -2864,6 +2973,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'bunnybnb',
     name: 'BUNNY',
     token: 'BUNNY-BNB LP',
@@ -2902,6 +3012,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'cosbnb',
     name: 'COS',
     token: 'COS-BNB LP',
@@ -2940,6 +3051,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'bifibnb',
     name: 'BIFI',
     token: 'BIFI-BNB LP',
@@ -2978,6 +3090,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'duskbnb',
     name: 'DUSK',
     token: 'DUSK-BNB LP',
@@ -3016,6 +3129,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'tradebnb',
     name: 'TRADE',
     token: 'TRADE-BNB LP',
@@ -3054,6 +3168,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'ltobnb',
     name: 'LTO',
     token: 'LTO-BNB LP',
@@ -3092,6 +3207,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'pcwsbnb',
     name: 'PCWS',
     token: 'PCWS-BNB LP',
@@ -3130,6 +3246,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'cakebnb',
     name: 'CAKE',
     token: 'CAKE-BNB LP',
@@ -3168,6 +3285,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'alpacabnb',
 
     isDiscontinued: true,
@@ -3209,6 +3327,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'bopenbnb',
     name: 'BOPEN',
     token: 'BOPEN-BNB LP',
@@ -3247,6 +3366,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'bmxxbnb',
     name: 'BMXX',
     token: 'BMXX-BNB LP',
@@ -3285,6 +3405,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'dodobnb',
     name: 'DODO',
     token: 'DODO-BNB LP',
@@ -3323,6 +3444,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'swingbybnb',
     name: 'SWINGBY',
     token: 'SWINGBY-BNB LP',
@@ -3361,6 +3483,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'brybnb',
     name: 'BRY',
     token: 'BRY-BNB LP',
@@ -3399,6 +3522,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'zeebnb',
     name: 'ZEE',
     token: 'ZEE-BNB LP',
@@ -3437,6 +3561,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'swgbbnb',
     name: 'SWGB',
     token: 'SWGB-BNB LP',
@@ -3475,6 +3600,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'watchbnb',
     name: 'WATCH',
     token: 'WATCH-BNB LP',
@@ -3513,6 +3639,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'sfpbnb',
     name: 'SFP',
     token: 'SFP-BNB LP',
@@ -3551,6 +3678,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'litbnb',
     name: 'LIT',
     token: 'LIT-BNB LP',
@@ -3589,6 +3717,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'hgetbnb',
     name: 'HGET',
     token: 'HGET-BNB LP',
@@ -3627,6 +3756,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'bdobnb',
     name: 'BDO',
     token: 'BDO-BNB LP',
@@ -3665,6 +3795,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'egldbnb',
     name: 'EGLD',
     token: 'EGLD-BNB LP',
@@ -3703,6 +3834,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'wsotebnb',
     name: 'WSOTE',
     token: 'WSOTE-BNB LP',
@@ -3741,6 +3873,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'frontbnb',
     name: 'FRONT',
     token: 'FRONT-BNB LP',
@@ -3779,6 +3912,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'helmetbnb',
     name: 'HELMET',
     token: 'HELMET-BNB LP',
@@ -3817,6 +3951,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'btcstbnb',
     name: 'BTCST',
     token: 'BTCST-BNB LP',
@@ -3855,6 +3990,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'ltcbnb',
     name: 'LTC',
     token: 'LTC-BNB LP',
@@ -3893,6 +4029,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'bscxbnb',
     name: 'BSCX',
     token: 'BSCX-BNB LP',
@@ -3931,6 +4068,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'tenbnb',
     name: 'TEN',
     token: 'TEN-BNB LP',
@@ -3969,6 +4107,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'balbtbnb',
     name: 'BALBT',
     token: 'BALBT-BNB LP',
@@ -4007,6 +4146,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'reefbnb',
     name: 'REEF',
     token: 'REEF-BNB LP',
@@ -4045,6 +4185,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'dittobnb',
     name: 'DITTO',
     token: 'DITTO-BNB LP',
@@ -4083,6 +4224,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'blkbnb',
     name: 'BLK',
     token: 'BLK-BNB LP',
@@ -4121,6 +4263,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'unfibnb',
     name: 'UNFI',
     token: 'UNFI-BNB LP',
@@ -4159,6 +4302,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'hardbnb',
     name: 'HARD',
     token: 'HARD-BNB LP',
@@ -4197,6 +4341,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'ctkbnb',
     name: 'CTK',
     token: 'CTK-BNB LP',
@@ -4235,6 +4380,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'sxpbnb',
     name: 'SXP',
     token: 'SXP-BNB LP',
@@ -4273,6 +4419,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'injbnb',
     name: 'INJ',
     token: 'INJ-BNB LP',
@@ -4311,6 +4458,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'filbnb',
     name: 'FIL',
     token: 'FIL-BNB LP',
@@ -4349,6 +4497,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'unibnb',
     name: 'UNI',
     token: 'UNI-BNB LP',
@@ -4387,6 +4536,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'yfibnb',
     name: 'YFI',
     token: 'YFI-BNB LP',
@@ -4425,6 +4575,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'atombnb',
     name: 'ATOM',
     token: 'ATOM-BNB LP',
@@ -4463,6 +4614,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'xrpbnb',
     name: 'XRP',
     token: 'XRP-BNB LP',
@@ -4501,6 +4653,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'alphabnb',
     name: 'ALPHA',
     token: 'ALPHA-BNB LP',
@@ -4539,6 +4692,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'btcbnb',
     name: 'BTC',
     token: 'BTC-BNB LP',
@@ -4577,6 +4731,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'ethbnb',
     name: 'ETH',
     token: 'ETH-BNB LP',
@@ -4615,6 +4770,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'xvsbnb',
     name: 'XVS',
     token: 'XVS-BNB LP',
@@ -4653,6 +4809,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'twtbnb',
     name: 'TWT',
     token: 'TWT-BNB LP',
@@ -4691,6 +4848,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'linkbnb',
     name: 'LINK',
     token: 'LINK-BNB LP',
@@ -4729,6 +4887,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'eosbnb',
     name: 'EOS',
     token: 'EOS-BNB LP',
@@ -4767,6 +4926,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'dotbnb',
     name: 'DOT',
     token: 'DOT-BNB LP',
@@ -4805,6 +4965,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'bandbnb',
     name: 'BAND',
     token: 'BAND-BNB LP',
@@ -4843,6 +5004,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'adabnb',
     name: 'ADA',
     token: 'ADA-BNB LP',
@@ -4873,6 +5035,7 @@ export const pools = [
     }
   },
   {
+    network: 'bsc',
     id: 'busdbnb',
     name: 'BUSD',
     token: 'BUSD-BNB LP',

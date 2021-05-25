@@ -15,38 +15,44 @@ export function fetchBalances(data) {
   return dispatch => {
     dispatch({
       type: VAULT_FETCH_BALANCES_BEGIN,
+      data: data.forceUpdate || false
     });
 
     const promise = new Promise((resolve, reject) => {
-      const { address, web3, tokens } = data;
+      const { address, web3, tokens, network } = data;
 
-      const tokensList = [];
+      const networkTokens = [];
       for (let key in tokens) {
-        tokensList.push({
-          token: key,
-          tokenAddress: tokens[key].tokenAddress,
-          tokenBalance: tokens[key].tokenBalance,
-        });
+        if (tokens[key].network == network) {
+          networkTokens.push(tokens[key].tokenAddress);
+        }
       }
 
-      const multicall = new MultiCall(web3, getNetworkMulticall());
+      const multicall = new MultiCall(web3, getNetworkMulticall(network));
 
-      const calls = tokensList.map(token => {
-        const tokenContract = new web3.eth.Contract(erc20ABI, token.tokenAddress || getNetworkTokenShim());
+      const calls = networkTokens.map(token => {
+        const tokenContract = new web3.eth.Contract(erc20ABI, token || getNetworkTokenShim(network));
         return {
-          tokenBalance: tokenContract.methods.balanceOf(address),
+          token: token || '',
+          balance: tokenContract.methods.balanceOf(address),
         };
       });
 
       multicall
         .all([calls])
         .then(([results]) => {
+          const balances = {};
+          results.map(item => balances[item.token] = item.balance);
+
           const newTokens = {};
-          for (let i = 0; i < tokensList.length; i++) {
-            newTokens[tokensList[i].token] = {
-              tokenAddress: tokensList[i].tokenAddress,
-              tokenBalance: results[i].tokenBalance || 0,
-            };
+
+          for (let key in tokens) {
+            const token = tokens[key];
+
+            newTokens[key] = {
+              ...token,
+              tokenBalance: balances[token.tokenAddress] || 0,
+            }
           }
 
           dispatch({
@@ -97,10 +103,13 @@ export function useFetchBalances() {
 }
 
 export function reducer(state, action) {
+  const { fetchBalancesDone } = state;
+
   switch (action.type) {
     case VAULT_FETCH_BALANCES_BEGIN:
       return {
         ...state,
+        fetchBalancesDone: action.data ? false : fetchBalancesDone,
         fetchBalancesPending: true,
       };
 

@@ -3,17 +3,20 @@ import { createUseStyles } from 'react-jss';
 import millify from 'millify';
 import { formatDecimals } from 'features/helpers/bignumber';
 
+import { networks } from 'features/configure';
+
 import Loader from 'components/Loader/Loader';
 
 import styles from './styles';
 const useStyles = createUseStyles(styles);
 
-const PoolSummary = ({ pool, tokenBalance, depositedBalance, fetchBalanceDone, onClick }) => {
+const PoolSummary = ({ pool, tokenBalance, depositedBalance, fetchBalanceDone, isActiveNetwork, onClick }) => {
   const classes = useStyles();
 
   const units = ['', 'K', 'M', 'B', 'T', 'Q', 'Quintillion', 'Sextillion', 'Septillion', 'Octillion', 'Nonillion',
     'Decillion', 'Undecillion'];
 
+  const poolNetwork = networks.find(network => pool.network == network.name);
   const isCompounding = pool.earnContractAddress && ( ! pool.claimable || pool.id == 'bfusd');
 
   const getApy = pool => {
@@ -67,23 +70,40 @@ const PoolSummary = ({ pool, tokenBalance, depositedBalance, fetchBalanceDone, o
           </div>
         </div>
 
-        <div className={classes.counter}>
-          <p>
-            { fetchBalanceDone
-              ? formatDecimals(tokenBalance)
-              : (<Loader />) }
-          </p>
-          <p>Balance</p>
-        </div>
+        {isActiveNetwork && (
+          <>
+            <div className={classes.counter}>
+              <p>
+                { fetchBalanceDone
+                  ? formatDecimals(tokenBalance)
+                  : (<Loader />) }
+              </p>
+              <p>Balance</p>
+            </div>
 
-        <div className={classes.counter}>
-          <p>
-            { depositedBalance !== null
-              ? formatDecimals(depositedBalance)
-              : (<Loader />)}
-          </p>
-          <p>Deposited</p>
-        </div>
+            <div className={classes.counter}>
+              <p>
+                { depositedBalance !== null
+                  ? formatDecimals(depositedBalance)
+                  : (<Loader />)}
+              </p>
+              <p>Deposited</p>
+            </div>
+          </>
+        )}
+
+        {! isActiveNetwork && (
+          <div className={classes.networkSwitch}>
+            Available on
+
+            {poolNetwork && (
+              <div className={classes.networkName}>
+                <img src={require(`assets/img/networks/${poolNetwork.image}`)} />
+                { poolNetwork.label }
+              </div>
+            )}
+          </div>
+        )}
 
         <div className={classes.counter}>
           <p>{ getApy(pool) }%</p>

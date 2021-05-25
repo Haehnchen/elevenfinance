@@ -16,7 +16,7 @@ const useStyles = createUseStyles(styles);
 const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => {
   const classes = useStyles();
 
-  const { web3, address } = useConnectWallet();
+  const { web3, address, network } = useConnectWallet();
 
   const [isOpen, setIsOpen] = useState(false);
   const [tokenBalance, setTokenBalance] = useState(new BigNumber(0));
@@ -24,7 +24,11 @@ const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => 
   const [stakedBalance, setStakedBalance] = useState(new BigNumber(0));
   const [depositedAndStaked, setDepositedAndStaked] = useState(null);
 
-  const toggleCard = useCallback(() => setIsOpen(!isOpen), [isOpen]);
+  const toggleCard = () => {
+    if (pool.network == network) {
+      setIsOpen(! isOpen);
+    }
+  }
 
   useEffect(() => {
     if (pool.isMultiToken) {
@@ -65,6 +69,8 @@ const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => 
         setStakedBalance(stakedBalance);
         setDepositedAndStaked(depositedBalance.plus(stakedBalance));
       });
+    } else {
+      setDepositedAndStaked(null);
     }
   }, [tokens, pool, fetchPoolDataDone])
 
@@ -76,7 +82,8 @@ const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => 
         tokenBalance={tokenBalance}
         depositedBalance={depositedAndStaked}
         fetchBalanceDone={fetchBalancesDone}
-        onClick={toggleCard}
+        isActiveNetwork={pool.network == network}
+        onClick={() => toggleCard()}
       />
 
       <Transition

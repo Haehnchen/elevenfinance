@@ -11,11 +11,11 @@ import {
   DocumentTextIcon,
   ExternalLinkIcon,
   FingerPrintIcon,
-  MenuIcon
+  MenuIcon,
+  QuestionMarkCircleIcon
 } from '@heroicons/react/outline'
 
 import logo from 'assets/img/logo.png';
-import bscLogo from 'assets/img/networks/binance.png';
 import twitterLogo from 'assets/img/socials/twitter.png';
 import telegramLogo from 'assets/img/socials/telegram.png';
 import mediumLogo from 'assets/img/socials/medium.png';
@@ -27,7 +27,7 @@ const useStyles = createUseStyles(styles);
 
 const Sidebar = ({ connected, address, connectWallet, disconnectWallet }) => {
   const classes = useStyles();
-  const { web3 } = useConnectWallet();
+  const { web3, network, networkId, networkData } = useConnectWallet();
   const { tokenPriceUsd, fetchTokenPrice, fetchTokenPriceDone } = useFetchTokenPrice();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -37,8 +37,8 @@ const Sidebar = ({ connected, address, connectWallet, disconnectWallet }) => {
 
   useEffect(() => {
     const fetch = () => {
-      if (web3) {
-        fetchTokenPrice({ web3 });
+      if (web3 && network) {
+        fetchTokenPrice({ web3, network });
       }
     }
 
@@ -46,7 +46,7 @@ const Sidebar = ({ connected, address, connectWallet, disconnectWallet }) => {
 
     const id = setInterval(fetch, 60000);
     return () => clearInterval(id);
-  }, [web3])
+  }, [web3, network])
 
   useEffect(() => {
     if (! connected) {
@@ -103,10 +103,23 @@ const Sidebar = ({ connected, address, connectWallet, disconnectWallet }) => {
           <div>
             {/* Network */}
             <div className={classes.network}>
-              <img src={bscLogo} />
-              <span>Binance Smart Chain</span>
+              {networkId && networkData && (
+                <>
+                  <img src={require(`assets/img/networks/${networkData.image}`)} />
+                  <span>{ networkData.label }</span>
 
-              <div className={classes.networkStatus + ' connected'}></div>
+                  <div className={classes.networkStatus + ' connected'}></div>
+                </>
+              )}
+
+              {networkId && ! networkData && (
+                <>
+                  <QuestionMarkCircleIcon />
+                  <span>Unsupported Network</span>
+
+                  <div className={classes.networkStatus}></div>
+                </>
+              )}
             </div>
 
             {/* Wallet */}

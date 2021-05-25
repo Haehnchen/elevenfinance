@@ -102,7 +102,7 @@ const styles = {
 
     color: COLORS.textLight,
     fontSize: FONT.size.small,
-    lineHeight: '20px',
+    lineHeight: '21px',
 
     '& img': {
       width: 20,
@@ -110,6 +110,15 @@ const styles = {
       marginRight: 14,
       marginTop: -3
     },
+
+    '& svg': {
+      width: 20,
+      height: 20,
+      marginRight: 14,
+      verticalAlign: 'middle',
+      display: 'inline-block',
+      marginTop: -2,
+    }
   },
 
   networkStatus: {
@@ -119,6 +128,8 @@ const styles = {
     position: 'absolute',
     top: 9,
     right: 9,
+
+    background: 'orange',
 
     '&.connected': {
       background: '#166E57'
