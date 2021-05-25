@@ -30,11 +30,14 @@ const PoolSummary = ({ pool, tokenBalance, depositedBalance, fetchBalanceDone, o
   }
 
   const getAprd = pool => {
-    if (pool.aprd === undefined) {
+    const vaultAprd = isCompounding
+      ? pool.aprd
+      : pool.apy / 365;
+
+    if (vaultAprd === undefined || isNaN(vaultAprd)) {
       return "";
     }
 
-    const vaultAprd = isCompounding ? pool.aprd : pool.apy / 365;
     try {
       return millify(vaultAprd, { units });
     } catch {
