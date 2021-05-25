@@ -31,6 +31,7 @@ pools.map(({network, token, tokenAddress, isMultiToken, tokens: poolTokens, earn
 
 const getInitialFilters = () => {
   const defaultFilters = {
+    networks: [],
     categories: [],
     searchPhrase: '',
     deposited: false,

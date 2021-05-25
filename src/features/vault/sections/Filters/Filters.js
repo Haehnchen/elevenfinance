@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { createUseStyles } from 'react-jss';
 
 import Select from 'components/Select/Select';
-import { FilterIcon, SearchIcon, SortDescendingIcon } from '@heroicons/react/outline'
+import { CubeTransparentIcon, FilterIcon, SearchIcon, SortDescendingIcon } from '@heroicons/react/outline'
 
 import { useFetchFilters, useFetchPoolsInfo } from '../../redux/hooks';
 
@@ -14,6 +14,7 @@ const Filters = () => {
   const { categories } = useFetchPoolsInfo();
   const {
     filters,
+    setNetworksFilter,
     setCategoriesFilter,
     setDepositedFilter,
     setWithBalanceFilter,
@@ -23,6 +24,11 @@ const Filters = () => {
 
   const [searchFieldActive, setSearchFieldActive] = useState(false);
   const searchInputRef = useRef();
+
+  const networksOptions = [
+    {value: 'bsc', name: 'Binance'},
+    {value: 'polygon', name: 'Polygon'},
+  ]
 
   const sortOptions = [
     {value: 'default', name: 'Default'},
@@ -56,15 +62,27 @@ const Filters = () => {
     <>
       <div className={classes.filters}>
         <div>
-          <Select
-            options={categories.map(item => ({value: item.name, name: item.name}))}
-            selected={filters.categories}
-            multiple={true}
-            placeholder="All Groups"
-            icon={<FilterIcon />}
-            onChange={setCategoriesFilter}
-            className={classes.categoriesSelect}
-          />
+          <div className={classes.selectsGroup}>
+            <Select
+              options={networksOptions}
+              selected={filters.networks}
+              multiple={true}
+              placeholder="All networks"
+              icon={<CubeTransparentIcon />}
+              onChange={setNetworksFilter}
+              className={classes.networksSelect}
+            />
+
+            <Select
+              options={categories.map(item => ({value: item.name, name: item.name}))}
+              selected={filters.categories}
+              multiple={true}
+              placeholder="All Groups"
+              icon={<FilterIcon />}
+              onChange={setCategoriesFilter}
+              className={classes.categoriesSelect}
+            />
+          </div>
 
           <div className={classes.checkboxes}>
             <label className={classes.checkbox + (filters.withBalance ? ' active' : '')}>
