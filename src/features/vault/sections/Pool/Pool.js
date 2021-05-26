@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createUseStyles } from 'react-jss';
 import { Transition } from '@headlessui/react';
 import BigNumber from 'bignumber.js';
@@ -18,7 +18,7 @@ const useStyles = createUseStyles(styles);
 const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => {
   const classes = useStyles();
 
-  const { web3, address, network } = useConnectWallet();
+  const { web3, address, network, connectWallet } = useConnectWallet();
 
   const [isOpen, setIsOpen] = useState(false);
   const [tokenBalance, setTokenBalance] = useState(new BigNumber(0));
@@ -31,7 +31,12 @@ const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => 
       setIsOpen(! isOpen);
     } else {
       const poolNetwork = networks.find(item => item.name == pool.network);
-      switchNetwork({ web3, params: poolNetwork.params })
+
+      switchNetwork({
+        web3,
+        params: poolNetwork.params,
+        connectWallet
+      })
     }
   }
 

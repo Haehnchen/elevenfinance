@@ -2,6 +2,8 @@ import { useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { HOME_DISCONNECT_WALLET_BEGIN, HOME_DISCONNECT_WALLET_SUCCESS, HOME_DISCONNECT_WALLET_FAILURE } from './constants';
 
+import { fetchWeb3Modal } from 'features/web3';
+
 export function disconnectWallet(web3, web3Modal) {
   return dispatch => {
     dispatch({ type: HOME_DISCONNECT_WALLET_BEGIN });
@@ -11,6 +13,8 @@ export function disconnectWallet(web3, web3Modal) {
         if (web3 && web3.currentProvider && web3.currentProvider.close) {
           await web3.currentProvider.close();
         }
+
+        web3Modal = fetchWeb3Modal();
         await web3Modal.clearCachedProvider();
         dispatch({ type: HOME_DISCONNECT_WALLET_SUCCESS });
         resolve()
@@ -45,6 +49,11 @@ export function reducer(state, action) {
         address: "",
         web3: null,
         connected: false,
+
+        network: null,
+        networkId: null,
+        networkData: null,
+
         disconnectWalletPending: false
       };
     case HOME_DISCONNECT_WALLET_FAILURE:
@@ -52,6 +61,11 @@ export function reducer(state, action) {
         ...state,
         web3: null,
         address: "",
+
+        network: null,
+        networkId: null,
+        networkData: null,
+
         disconnectWalletPending: false
       };
 

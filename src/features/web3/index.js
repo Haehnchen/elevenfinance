@@ -10,6 +10,7 @@ export { fetchFarmStaked } from './fetchFarmStaked';
 export { fetchPancakeOutputAmount } from './fetchPancakeOutputAmount';
 export { fetchPendingEle } from './fetchPendingEle';
 export { fetchPendingReward } from './fetchPendingReward';
+export { fetchWeb3Modal } from './fetchWeb3Modal';
 export { claimRewards } from './claimRewards';
 export { deposit } from './deposit';
 export { depositNativeToken } from './depositNativeToken';

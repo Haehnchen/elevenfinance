@@ -51,7 +51,7 @@ export function fetchBalances(data) {
 
             newTokens[key] = {
               ...token,
-              tokenBalance: balances[token.tokenAddress] || 0,
+              tokenBalance: balances[token.tokenAddress || ''] || 0,
             }
           }
 

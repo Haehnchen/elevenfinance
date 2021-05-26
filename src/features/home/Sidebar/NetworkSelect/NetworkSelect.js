@@ -10,7 +10,7 @@ import { QuestionMarkCircleIcon } from '@heroicons/react/outline';
 import styles from './styles';
 const useStyles = createUseStyles(styles);
 
-const NetworkSelect = ({ web3, networkId, networkData }) => {
+const NetworkSelect = ({ web3, networkId, networkData, connectWallet }) => {
   const classes = useStyles();
 
   const [isSelectOpen, setIsSelectOpen] = useState(false);
@@ -21,7 +21,11 @@ const NetworkSelect = ({ web3, networkId, networkData }) => {
 
   const onNetworkSelect = (network) => {
     if (network.id != networkId) {
-      switchNetwork({ web3, params: network.params });
+      switchNetwork({
+        web3,
+        params: network.params,
+        connectWallet: connectWallet
+      });
     }
 
     setIsSelectOpen(false);
@@ -42,10 +46,10 @@ const NetworkSelect = ({ web3, networkId, networkData }) => {
           </>
         )}
 
-        {networkId && ! networkData && (
+        { ! networkData && (
           <>
             <QuestionMarkCircleIcon />
-            <span>Unsupported Network</span>
+            <span>{ networkId ? 'Unsupported Network' : 'Connect wallet' }</span>
 
             <div className={classes.networkStatus}></div>
           </>

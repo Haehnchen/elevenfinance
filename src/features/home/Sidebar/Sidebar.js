@@ -106,6 +106,7 @@ const Sidebar = ({ connected, address, connectWallet, disconnectWallet }) => {
               web3={web3}
               networkId={networkId}
               networkData={networkData}
+              connectWallet={connectWallet}
             />
 
             {/* Wallet */}

@@ -5,12 +5,14 @@ import { HOME_CONNECT_WALLET_BEGIN, HOME_CONNECT_WALLET_SUCCESS, HOME_CONNECT_WA
 import { disconnectWallet } from './actions';
 
 import { networks } from 'features/configure';
+import { fetchWeb3Modal } from 'features/web3';
 
-export function connectWallet(web3Modal) {
+export function connectWallet() {
   return async dispatch => {
     dispatch({ type: HOME_CONNECT_WALLET_BEGIN });
 
     try {
+      const web3Modal = fetchWeb3Modal();
       const provider = await web3Modal.connect();
       const web3 = new Web3(provider);
 
@@ -30,10 +32,6 @@ export function connectWallet(web3Modal) {
           return;
         };
 
-        provider.on('close', () => {
-          dispatch(disconnectWallet(web3, web3Modal));
-        });
-
         provider.on("disconnect", async () => {
           console.log("provider.close")
           dispatch(disconnectWallet(web3, web3Modal));
@@ -49,7 +47,7 @@ export function connectWallet(web3Modal) {
           }
         });
 
-        provider.on("networkChanged", async (networkId) => {
+        provider.on("chainChanged", async (networkId) => {
           dispatch({type: HOME_NETWORK_CHANGED, data: networkId});
         });
       }
@@ -64,6 +62,8 @@ export function connectWallet(web3Modal) {
 
       // Debug message with last synchronized block
       web3.eth.getBlockNumber().then(res => console.info('Wallet connected. Last block: ' + res));
+
+      return web3;
     } catch (error) {
       dispatch({ type: HOME_CONNECT_WALLET_FAILURE });
     }
@@ -74,15 +74,15 @@ export function connectWallet(web3Modal) {
 export function useConnectWallet() {
   const dispatch = useDispatch();
   const {web3, address, network, networkId, networkData, connected, connectWalletPending} = useSelector(state => ({
-    web3:state.home.web3,
-    address:state.home.address,
+    web3: state.home.web3,
+    address: state.home.address,
 
     network: state.home.network,
     networkId: state.home.networkId,
     networkData: state.home.networkData,
 
     connected: state.home.connected,
-    connectWalletPending:state.home.connectWalletPending,
+    connectWalletPending: state.home.connectWalletPending,
   }), shallowEqual);
   const boundAction = useCallback(data => dispatch(connectWallet(data)), [dispatch]);
 
