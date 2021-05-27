@@ -104,6 +104,35 @@ export const pools = [
   },
   {
     network: 'polygon',
+    id: 'elebnbslp',
+    name: 'ELE-BNB SLP',
+    token: 'ELE-BNB SLP',
+    tokenDescription: 'ELE-BNB SLP',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses sushiswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: 'ELE-BNB SLP',
+    earnedTokenAddress: '0x5a895D1eac4905384e4AF39dB47B64655B8f6aCA',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x5a895D1eac4905384e4AF39dB47B64655B8f6aCA',
+    categories: ['Sushi'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 104
+    }
+  },
+  {
+    network: 'polygon',
     id: 'curve3pool',
     name: 'am3CRV',
     image: 'am3crv.png',
