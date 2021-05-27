@@ -108,10 +108,10 @@ export const pools = [
   },
   {
     network: 'polygon',
-    id: 'elebnbslp',
-    name: 'ELE-BNB SLP',
+    id: 'elematic',
+    name: 'ELE-MATIC SLP',
     image: 'ELE-BNB LP-logo.svg',
-    token: 'ELE-BNB SLP',
+    token: 'ELE-MATIC SLP',
     tokenDescription: 'ELE-BNB SLP',
     tokenAddress: '',
     tokenDecimals: 18,
