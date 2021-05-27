@@ -41,6 +41,12 @@ const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => 
   }
 
   useEffect(() => {
+    if (isOpen && pool.network != network) {
+      setIsOpen(false);
+    }
+  }, [network]);
+
+  useEffect(() => {
     if (pool.isMultiToken) {
       let balance = new BigNumber(0);
 
