@@ -110,9 +110,9 @@ export const pools = [
     network: 'polygon',
     id: 'elematic',
     name: 'ELE-MATIC SLP',
-    image: 'ELE-BNB LP-logo.svg',
+    image: 'ele_matic.png',
     token: 'ELE-MATIC SLP',
-    tokenDescription: 'ELE-BNB SLP',
+    tokenDescription: 'ELE-MATIC SLP',
     tokenAddress: '',
     tokenDecimals: 18,
     uses: 'Uses sushiswap',
@@ -166,6 +166,126 @@ export const pools = [
       earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
       masterchefPid: 2
     },
+
+    // TODO: set correct pool fees
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+    }
+  },
+  {
+    network: 'polygon',
+    id: 'titanmatic',
+    name: 'TITAN-MATIC SLP',
+    image: 'titan_matic.png',
+    token: 'TITAN-MATIC SLP',
+    tokenDescription: 'TITAN-MATIC SLP',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses sushiswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11TITANMATIC',
+    earnedTokenAddress: '0xd7C5a3Cba73D4c9F042F88928d1CD64b64E76A50',
+    earnContractAddress: '0xd7C5a3Cba73D4c9F042F88928d1CD64b64E76A50',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0xA79983Daf2A92c2C902cD74217Efe3D8AF9Fba2a',
+    categories: ['Sushi'],
+
+    // farm: {
+    //   earnedToken: 'ELE',
+    //   earnedTokenDecimals: 18,
+    //   earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    //   earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+    //   masterchefPid: 2 // TODO:
+    // },
+
+    // TODO: set correct pool fees
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+    }
+  },
+  {
+    network: 'polygon',
+    id: 'titaniron',
+    name: 'TITAN-IRON SLP',
+    image: 'titan_iron.png',
+    token: 'TITAN-IRON SLP',
+    tokenDescription: 'TITAN-IRON SLP',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses sushiswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11TITANIRON',
+    earnedTokenAddress: '0x47f9F157317e7e655dF30E013ce14730d224D4e5',
+    earnContractAddress: '0x47f9F157317e7e655dF30E013ce14730d224D4e5',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x35c1895DAC1e2432b320e2927b4F71a0D995602F',
+    categories: ['Sushi'],
+
+    // farm: {
+    //   earnedToken: 'ELE',
+    //   earnedTokenDecimals: 18,
+    //   earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    //   earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+    //   masterchefPid: 2 // TODO:
+    // },
+
+    // TODO: set correct pool fees
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+    }
+  },
+  {
+    network: 'polygon',
+    id: 'iron',
+    name: 'IRON',
+    image: 'iron.png',
+    token: 'IRON',
+    tokenDescription: 'IRON',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses iron.finance',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11IRON',
+    earnedTokenAddress: '0x5F2b2518616907A5f76f25e9e2b67a571879c610',
+    earnContractAddress: '0x5F2b2518616907A5f76f25e9e2b67a571879c610',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0xaAa5B9e6c589642f98a1cDA99B9D024B8407285A',
+    categories: [],
+
+    // farm: {
+    //   earnedToken: 'ELE',
+    //   earnedTokenDecimals: 18,
+    //   earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    //   earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+    //   masterchefPid: 2 // TODO:
+    // },
 
     // TODO: set correct pool fees
     fees: {
