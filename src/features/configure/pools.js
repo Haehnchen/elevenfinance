@@ -133,7 +133,7 @@ export const pools = [
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
-      masterchefPid: 104
+      masterchefPid: 0
     }
   },
   {
@@ -151,13 +151,21 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: '11CRV3',
-    earnedTokenAddress: '0x6d8ED04c60cCAaEaf4520E1B34E51F03659d9554',
-    earnContractAddress: '0x6d8ED04c60cCAaEaf4520E1B34E51F03659d9554',
+    earnedTokenAddress: '0x52B8bb74Cde6602AB9e6540e25E0A97f5B3226D7',
+    earnContractAddress: '0x52B8bb74Cde6602AB9e6540e25E0A97f5B3226D7',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xE7a24EF0C5e95Ffb0f6684b813A78F2a3AD7D171',
     categories: ['Curve'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 2
+    },
 
     // TODO: set correct pool fees
     fees: {
