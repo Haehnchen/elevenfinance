@@ -157,8 +157,9 @@ const Sidebar = ({ connected, address, connectWallet, disconnectWallet }) => {
               }
             </div>
             <div>
-              <a className={classes.buyButton}
-                href="https://app.1inch.io/#/56/swap/BNB/ELE"
+              <a
+                className={classes.buyButton}
+                href={networkData?.buyTokenLink || 'https://app.1inch.io/#/56/swap/BNB/ELE'}
                 target="_blank"
               >
                 <ExternalLinkIcon />

@@ -7,7 +7,7 @@ export { fetchGasPrice } from './fetchGasPrice';
 export { fetchAllowance } from './fetchAllowance';
 export { fetchBalance } from './fetchBalance';
 export { fetchFarmStaked } from './fetchFarmStaked';
-export { fetchPancakeOutputAmount } from './fetchPancakeOutputAmount';
+export { fetchUniswapOutputAmount } from './fetchUniswapOutputAmount';
 export { fetchPendingEle } from './fetchPendingEle';
 export { fetchPendingReward } from './fetchPendingReward';
 export { fetchWeb3Modal } from './fetchWeb3Modal';
