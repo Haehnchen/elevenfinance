@@ -8,6 +8,10 @@ export const categories = [
     default: true
   },
   {
+    name: 'Sushi',
+    default: true
+  },
+  {
     name: 'Nerve',
     default: true
   },
@@ -106,6 +110,7 @@ export const pools = [
     network: 'polygon',
     id: 'elebnbslp',
     name: 'ELE-BNB SLP',
+    image: 'ELE-BNB LP-logo.svg',
     token: 'ELE-BNB SLP',
     tokenDescription: 'ELE-BNB SLP',
     tokenAddress: '',
