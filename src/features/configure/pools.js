@@ -131,7 +131,7 @@ export const pools = [
     farm: {
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
-      earnedTokenAddress: '0xacd7b3d9c10e97d0efa418903c0c7669e702e4c0',
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
       masterchefPid: 104
     }
