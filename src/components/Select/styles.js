@@ -85,7 +85,7 @@ const styles = {
     position: 'absolute',
     top: 45,
     minWidth: '100%',
-    maxHeight: '18rem',
+    // maxHeight: '18rem',
     overflow: 'auto',
 
     zIndex: 2,

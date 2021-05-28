@@ -3,12 +3,22 @@ import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import _ from 'lodash';
 
 import {
+  VAULT_FILTERS_SET_NETWORKS,
   VAULT_FILTERS_SET_CATEGORIES,
   VAULT_FILTERS_SET_DEPOSITED,
   VAULT_FILTERS_SET_WITH_BALANCE,
   VAULT_FILTERS_SET_SEARCH_PHRASE,
   VAULT_FILTERS_SET_SORT,
 } from './constants';
+
+const setNetworksFilter = (networks) => {
+  return dispatch => {
+    dispatch({
+      type: VAULT_FILTERS_SET_NETWORKS,
+      data: networks
+    });
+  }
+}
 
 const setCategoriesFilter = (categories) => {
   return dispatch => {
@@ -85,6 +95,11 @@ const getFilteredPools = (pools, tokens, filters, categories) => {
     });
   }
 
+  // Filter by network
+  if (filters.networks.length) {
+    filteredPools = filteredPools.filter(pool => filters.networks.includes(pool.network));
+  }
+
   // Filter by categories
   if (filters.categories.length) {
     filteredPools = filteredPools.filter(pool => {
@@ -126,6 +141,7 @@ export function useFetchFilters(pools, tokens) {
     shallowEqual
   );
 
+  const setNetworksAction = useCallback(data => dispatch(setNetworksFilter(data)), [dispatch]);
   const setCategoriesAction = useCallback(data => dispatch(setCategoriesFilter(data)), [dispatch]);
   const setDepositedAction = useCallback(data => dispatch(setDepositedFilter(data)), [dispatch]);
   const setWithBalanceAction = useCallback(data => dispatch(setWithBalanceFilter(data)), [dispatch]);
@@ -143,6 +159,7 @@ export function useFetchFilters(pools, tokens) {
   return {
     filters,
     filteredPools: getFilteredPools(pools, tokens, filters, categories),
+    setNetworksFilter: setNetworksAction,
     setCategoriesFilter: setCategoriesAction,
     setDepositedFilter: setDepositedAction,
     setWithBalanceFilter: setWithBalanceAction,
@@ -155,6 +172,15 @@ export function reducer(state, action) {
   const { filters } = state;
 
   switch (action.type) {
+    case VAULT_FILTERS_SET_NETWORKS:
+      return {
+        ...state,
+        filters: {
+          ...filters,
+          networks: action.data
+        }
+      }
+
     case VAULT_FILTERS_SET_CATEGORIES:
       return {
         ...state,

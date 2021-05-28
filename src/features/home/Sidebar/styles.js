@@ -91,40 +91,6 @@ const styles = {
     }
   },
 
-  network: {
-    position: 'relative',
-    height: 32,
-    padding: '6px 16px',
-    marginBottom: 10,
-
-    background: COLORS.bgLight,
-    borderRadius: BORDER.radius,
-
-    color: COLORS.textLight,
-    fontSize: FONT.size.small,
-    lineHeight: '20px',
-
-    '& img': {
-      width: 20,
-      height: 20,
-      marginRight: 14,
-      marginTop: -3
-    },
-  },
-
-  networkStatus: {
-    width: 14,
-    height: 14,
-    borderRadius: 7,
-    position: 'absolute',
-    top: 9,
-    right: 9,
-
-    '&.connected': {
-      background: '#166E57'
-    }
-  },
-
   wallet: {
     display: 'block',
     cursor: 'pointer',

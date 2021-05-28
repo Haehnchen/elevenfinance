@@ -10,7 +10,10 @@ const initialState = {
   address: "",
   web3: null,
   connected: false,
-  networkId: Number(process.env.NETWORK_ID),
+
+  network: null,
+  networkId: null,
+  networkData: null,
 
   tokenPrice: null,
   fetchTokenPriceDone: false

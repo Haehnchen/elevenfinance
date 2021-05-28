@@ -13,16 +13,16 @@ import {
 } from './constants';
 import BigNumber from 'bignumber.js';
 
-export function fetchFarmsStaked({ address, web3, pools }) {
+export function fetchFarmsStaked({ address, web3, pools, network }) {
   return dispatch => {
     dispatch({
       type: VAULT_FETCH_FARMS_STAKED_BEGIN,
     });
 
     const promise = new Promise((resolve, reject) => {
-      const farmPools = pools.filter(pool => pool.farm);
+      const farmPools = pools.filter(pool => pool.farm && pool.network == network);
 
-      const multicall = new MultiCall(web3, getNetworkMulticall());
+      const multicall = new MultiCall(web3, getNetworkMulticall(network));
 
       const calls = farmPools.map(pool => {
         const { earnContractAddress, masterchefPid } = pool.farm;

@@ -1,11 +1,13 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createUseStyles } from 'react-jss';
 import { Transition } from '@headlessui/react';
 import BigNumber from 'bignumber.js';
 import { byDecimals } from 'features/helpers/bignumber';
 
 import { useConnectWallet } from 'features/home/redux/hooks';
-import { convert3PoolToUsd } from 'features/web3'
+import { convert3PoolToUsd, switchNetwork } from 'features/web3'
+
+import { networks } from 'features/configure';
 
 import PoolSummary from '../PoolSummary/PoolSummary';
 import PoolDetails from '../PoolDetails/PoolDetails';
@@ -16,7 +18,7 @@ const useStyles = createUseStyles(styles);
 const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => {
   const classes = useStyles();
 
-  const { web3, address } = useConnectWallet();
+  const { web3, address, network, connectWallet } = useConnectWallet();
 
   const [isOpen, setIsOpen] = useState(false);
   const [tokenBalance, setTokenBalance] = useState(new BigNumber(0));
@@ -24,7 +26,25 @@ const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => 
   const [stakedBalance, setStakedBalance] = useState(new BigNumber(0));
   const [depositedAndStaked, setDepositedAndStaked] = useState(null);
 
-  const toggleCard = useCallback(() => setIsOpen(!isOpen), [isOpen]);
+  const toggleCard = () => {
+    if (pool.network == network) {
+      setIsOpen(! isOpen);
+    } else {
+      const poolNetwork = networks.find(item => item.name == pool.network);
+
+      switchNetwork({
+        web3,
+        params: poolNetwork.params,
+        connectWallet
+      })
+    }
+  }
+
+  useEffect(() => {
+    if (isOpen && pool.network != network) {
+      setIsOpen(false);
+    }
+  }, [network]);
 
   useEffect(() => {
     if (pool.isMultiToken) {
@@ -65,6 +85,8 @@ const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => 
         setStakedBalance(stakedBalance);
         setDepositedAndStaked(depositedBalance.plus(stakedBalance));
       });
+    } else {
+      setDepositedAndStaked(null);
     }
   }, [tokens, pool, fetchPoolDataDone])
 
@@ -76,7 +98,8 @@ const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => 
         tokenBalance={tokenBalance}
         depositedBalance={depositedAndStaked}
         fetchBalanceDone={fetchBalancesDone}
-        onClick={toggleCard}
+        isActiveNetwork={pool.network == network}
+        onClick={() => toggleCard()}
       />
 
       <Transition

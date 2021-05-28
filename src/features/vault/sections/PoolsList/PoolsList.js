@@ -23,7 +23,7 @@ export default function PoolsList({ filtersCategory }) {
   const { t } = useTranslation();
   const classes = useStyles();
 
-  const { web3, address, networkId } = useConnectWallet();
+  const { web3, address, network } = useConnectWallet();
   let { pools, fetchPoolBalances, fetchPoolBalancesDone } = useFetchPoolBalances();
   const { categories } = useFetchPoolsInfo();
   const { tokens, fetchBalances, fetchBalancesDone } = useFetchBalances();
@@ -47,9 +47,7 @@ export default function PoolsList({ filtersCategory }) {
   }, []);
 
   useEffect(() => {
-    if (fetchPoolBalancesDone && fetchFarmsStakedDone) {
-      setFetchPoolDataDone(true);
-    }
+    setFetchPoolDataDone(fetchPoolBalancesDone && fetchFarmsStakedDone);
   }, [fetchPoolBalancesDone, fetchFarmsStakedDone])
 
   const loadData = async () => {
@@ -88,19 +86,19 @@ export default function PoolsList({ filtersCategory }) {
   }
 
   useEffect(() => {
-    const fetch = () => {
-      if (address && web3) {
-        fetchBalances({ address, web3, tokens });
-        fetchPoolBalances({ address, web3, pools });
-        fetchFarmsStaked({ address, web3, pools});
+    const fetch = (forceUpdate = false) => {
+      if (address && web3 && network) {
+        fetchBalances({ address, web3, tokens, network, forceUpdate });
+        fetchPoolBalances({ address, web3, pools, network, forceUpdate });
+        fetchFarmsStaked({ address, web3, pools, network, forceUpdate });
       }
     }
 
-    fetch();
+    fetch(true);
 
     const id = setInterval(fetch, 15000);
     return () => clearInterval(id);
-  }, [address, web3, fetchBalances, fetchPoolBalances]);
+  }, [address, web3, network, fetchBalances, fetchPoolBalances]);
 
   return (
     <>
@@ -113,7 +111,7 @@ export default function PoolsList({ filtersCategory }) {
 
       {/* Pools */}
       <div className={classes.pools}>
-        {Boolean(networkId === Number(process.env.NETWORK_ID)) && filteredPools.map((pool, index) => {
+        {filteredPools.map((pool, index) => {
           return (
             <Pool key={pool.id}
               pool={pool}
