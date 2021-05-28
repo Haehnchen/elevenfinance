@@ -117,6 +117,32 @@ const styles = {
       textTransform: 'uppercase',
       fontWeight: 500,
     }
+  },
+
+  networkSwitch: {
+    width: 300,
+    textAlign: 'center',
+
+    color: COLORS.textSecondaryDark,
+    fontSize: FONT.size.normal,
+
+    [MEDIA.mobile]: {
+      padding: '10px 0 20px',
+      lineHeight: '20px'
+    }
+  },
+
+  networkName: {
+    color: COLORS.textSecondaryLight,
+    fontSize: FONT.size.normal,
+
+    '& img': {
+      width: 20,
+      height: 20,
+      marginRight: 8,
+      marginTop: -3,
+      opacity: 0.8
+    },
   }
 }
 

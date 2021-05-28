@@ -19,3 +19,4 @@ export {
 } from './abi';
 export { pools } from './pools';
 export { supportedChains } from './chains';
+export { networks } from './networks';

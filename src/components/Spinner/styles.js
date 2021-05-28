@@ -9,11 +9,12 @@ const styles = {
     borderRadius: '50%',
     width: size,
     height: size,
+    overflow: 'hidden',
 
     margin: '-1px auto',
     fontSize: '8px',
     position: 'relative',
-    textIndent: '-9999em',
+    textIndent: '-10em',
     borderTop: thickness + ' solid rgba(0, 0, 0, 0.2)',
     borderRight: thickness + ' solid rgba(0, 0, 0, 0.2)',
     borderBottom: thickness + ' solid rgba(0, 0, 0, 0.2)',

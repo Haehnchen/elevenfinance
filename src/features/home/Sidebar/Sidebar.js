@@ -14,8 +14,9 @@ import {
   MenuIcon
 } from '@heroicons/react/outline'
 
+import NetworkSelect from './NetworkSelect/NetworkSelect';
+
 import logo from 'assets/img/logo.png';
-import bscLogo from 'assets/img/networks/binance.png';
 import twitterLogo from 'assets/img/socials/twitter.png';
 import telegramLogo from 'assets/img/socials/telegram.png';
 import mediumLogo from 'assets/img/socials/medium.png';
@@ -27,7 +28,7 @@ const useStyles = createUseStyles(styles);
 
 const Sidebar = ({ connected, address, connectWallet, disconnectWallet }) => {
   const classes = useStyles();
-  const { web3 } = useConnectWallet();
+  const { web3, network, networkId, networkData } = useConnectWallet();
   const { tokenPriceUsd, fetchTokenPrice, fetchTokenPriceDone } = useFetchTokenPrice();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -37,8 +38,8 @@ const Sidebar = ({ connected, address, connectWallet, disconnectWallet }) => {
 
   useEffect(() => {
     const fetch = () => {
-      if (web3) {
-        fetchTokenPrice({ web3 });
+      if (web3 && network) {
+        fetchTokenPrice({ web3, network });
       }
     }
 
@@ -46,7 +47,7 @@ const Sidebar = ({ connected, address, connectWallet, disconnectWallet }) => {
 
     const id = setInterval(fetch, 60000);
     return () => clearInterval(id);
-  }, [web3])
+  }, [web3, network])
 
   useEffect(() => {
     if (! connected) {
@@ -101,13 +102,12 @@ const Sidebar = ({ connected, address, connectWallet, disconnectWallet }) => {
           </a>
 
           <div>
-            {/* Network */}
-            <div className={classes.network}>
-              <img src={bscLogo} />
-              <span>Binance Smart Chain</span>
-
-              <div className={classes.networkStatus + ' connected'}></div>
-            </div>
+            <NetworkSelect
+              web3={web3}
+              networkId={networkId}
+              networkData={networkData}
+              connectWallet={connectWallet}
+            />
 
             {/* Wallet */}
             <button className={classes.wallet}
@@ -157,8 +157,9 @@ const Sidebar = ({ connected, address, connectWallet, disconnectWallet }) => {
               }
             </div>
             <div>
-              <a className={classes.buyButton}
-                href="https://app.1inch.io/#/56/swap/BNB/ELE"
+              <a
+                className={classes.buyButton}
+                href={networkData?.buyTokenLink || 'https://app.1inch.io/#/56/swap/BNB/ELE'}
                 target="_blank"
               >
                 <ExternalLinkIcon />

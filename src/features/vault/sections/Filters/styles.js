@@ -25,9 +25,11 @@ const styles = {
 
   checkboxes: {
     marginLeft: 42,
+    maxHeight: 38,
 
     [MEDIA.mobile]: {
       width: '100%',
+      maxHeight: 'none',
       margin: '10px 0'
     }
   },
@@ -36,6 +38,7 @@ const styles = {
     ...commonStyles.checkbox,
 
     marginRight: 16,
+    whiteSpace: 'nowrap',
 
     [MEDIA.mobile]: {
       display: 'block',
@@ -107,11 +110,31 @@ const styles = {
     }
   },
 
+  selectsGroup: {
+    display: 'flex',
+
+    [MEDIA.mobile]: {
+      width: '100%'
+    }
+  },
+
+  networksSelect: {
+    flexShrink: 0,
+
+    width: 200,
+    marginRight: 12,
+
+    [MEDIA.mobile]: {
+      width: '50%',
+      marginRight: 10,
+    }
+  },
+
   categoriesSelect: {
     width: 200,
 
     [MEDIA.mobile]: {
-      width: '100%',
+      width: 'calc(50% - 10px)',
     }
   },
 
