@@ -299,6 +299,7 @@ export const pools = [
   {
     network: 'polygon',
     id: 'titan',
+    isDiscontinued: true;
     name: 'TITAN',
     image: 'titan.png',
     token: 'TITAN',
