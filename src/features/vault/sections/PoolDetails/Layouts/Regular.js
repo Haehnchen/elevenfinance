@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { createUseStyles } from 'react-jss';
 import { formatDecimals } from 'features/helpers/bignumber';
@@ -14,6 +14,20 @@ const useStyles = createUseStyles(styles);
 const Regular = ({ pool, index, tokenBalance, depositedBalance, pendingRewards, pendingRewardsLoaded }) => {
   const { t } = useTranslation();
   const classes = useStyles();
+
+  const [performanceFee, setPerformanceFee] = useState(0);
+
+  useEffect(() => {
+    let fee = 0;
+
+    if (pool.fees) {
+      fee = (pool.fees.controller || 0)
+        + (pool.fees.platform || 0)
+        + (pool.fees.buybacks || 0);
+    }
+
+    setPerformanceFee(fee);
+  }, [pool]);
 
   return (
     <>
@@ -62,16 +76,19 @@ const Regular = ({ pool, index, tokenBalance, depositedBalance, pendingRewards, 
                 <span>{ pool.fees.withdrawal ? pool.fees.withdrawal + '% on capital' : 'none' }</span>
               </div>
               <div className="item">
-                <span>Controller fee</span>
-                <span>{ pool.fees.controller ? pool.fees.controller + '% on profits' : 'none' }</span>
-              </div>
-              <div className="item">
-                <span>Platform fee</span>
-                <span>{ pool.fees.platform ? pool.fees.platform + '% on profits' : 'none' }</span>
-              </div>
-              <div className="item">
-                <span>ELE buyback burn</span>
-                <span>{ pool.fees.buybacks ? pool.fees.buybacks + '% on profits' : 'none' }</span>
+                <span>Performance fee</span>
+                <span>
+                  { performanceFee
+                    ? (
+                      <>
+                        {performanceFee + '% on profits'}
+                        <br/>
+                        <i className="small">(75% of fees buyback ELE)</i>
+                      </>
+                    )
+                    : 'none'
+                  }
+                </span>
               </div>
 
               {pool.fees.waultx_burn && (
