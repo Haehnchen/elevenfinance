@@ -138,6 +138,38 @@ export const pools = [
   },
   {
     network: 'polygon',
+    id: 'fishmatic',
+    name: 'FISH-MATIC qLP',
+    image: 'fish-matic.svg',
+    token: 'FISH-MATIC qLP',
+    tokenDescription: 'FISH-MATIC qLP',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses polycat',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11FISHMATIC qLP',
+    earnedTokenAddress: '0xF4051fdd819c580e4C03fF73cff9a6D9f29Bd48d',
+    earnContractAddress: '0xF4051fdd819c580e4C03fF73cff9a6D9f29Bd48d',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x289cf2B63c5Edeeeab89663639674d9233E8668E',
+    categories: ['Curve'],
+
+    // TODO: set correct pool fees
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+    }
+  },
+  {
+    network: 'polygon',
     id: 'curve3pool',
     name: 'am3CRV',
     image: 'am3crv.png',
