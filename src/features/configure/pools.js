@@ -170,6 +170,38 @@ export const pools = [
   },
   {
     network: 'polygon',
+    id: 'fish',
+    name: 'FISH',
+    image: 'fish.svg',
+    token: 'FISH',
+    tokenDescription: 'FISH',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses polycat',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11FISH',
+    earnedTokenAddress: '0x5c95B6C16df69e97D5AEc4cFEFbb1200847D7101',
+    earnContractAddress: '0x5c95B6C16df69e97D5AEc4cFEFbb1200847D7101',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x3a3Df212b7AA91Aa0402B9035b098891d276572B',
+    categories: ['Curve'],
+
+    // TODO: set correct pool fees
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      buybacks: 1.7,
+    }
+  },
+  {
+    network: 'polygon',
     id: 'curve3pool',
     name: 'am3CRV',
     image: 'am3crv.png',
