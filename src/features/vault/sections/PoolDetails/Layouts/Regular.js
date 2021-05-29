@@ -64,9 +64,9 @@ const Regular = ({ pool, index, tokenBalance, depositedBalance, pendingRewards, 
       </Grid>
 
       <Grid item xs={12} sm={12} md={6}>
-        <div className={classes.statsSection}>
+        <div className={classes.descriptionSection + ' ' + classes.statsSection}>
           {pool.fees && (
-            <div>
+            <div className={classes.statsContent}>
               <div className="item">
                 <span>Deposit fee</span>
                 <span>{ pool.fees.deposit ? pool.fees.deposit + '% on capital' : 'none' }</span>

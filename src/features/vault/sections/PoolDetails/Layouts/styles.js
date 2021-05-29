@@ -49,7 +49,12 @@ const styles = {
   balanceWithLogo: {
     display: 'flex',
     alignItems: 'center',
-    marginTop: -10
+    marginTop: -10,
+
+    [MEDIA.mobile]: {
+      justifyContent: 'center',
+      textAlign: 'left'
+    }
   },
   balanceLogo: {
     width: 45,
@@ -81,7 +86,7 @@ const styles = {
     margin: '10px 0 30px'
   },
 
-  statsSection: {
+  descriptionSection: {
     minHeight: '100%',
     padding: '12px 15px',
 
@@ -95,6 +100,11 @@ const styles = {
       marginTop: 20,
       minHeight: 0
     },
+  },
+
+  statsSection: {
+    display: 'flex',
+    alignItems: 'center',
 
     '& .header': {
       marginBottom: 10,
@@ -133,6 +143,10 @@ const styles = {
         fontSize: FONT.size.small,
       }
     }
+  },
+
+  statsContent: {
+    width: '100%'
   },
 
   boostRewards: {

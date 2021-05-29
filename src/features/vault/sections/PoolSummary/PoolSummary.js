@@ -7,10 +7,12 @@ import { networks } from 'features/configure';
 
 import Loader from 'components/Loader/Loader';
 
+import { ChevronDoubleUpIcon } from '@heroicons/react/outline';
+
 import styles from './styles';
 const useStyles = createUseStyles(styles);
 
-const PoolSummary = ({ pool, tokenBalance, depositedBalance, fetchBalanceDone, isActiveNetwork, onClick }) => {
+const PoolSummary = ({ pool, tokenBalance, depositedBalance, fetchBalanceDone, isActiveNetwork, onClick, isBoosted }) => {
   const classes = useStyles();
 
   const units = ['', 'K', 'M', 'B', 'T', 'Q', 'Quintillion', 'Sextillion', 'Septillion', 'Octillion', 'Nonillion',
@@ -46,6 +48,34 @@ const PoolSummary = ({ pool, tokenBalance, depositedBalance, fetchBalanceDone, i
     } catch {
       return "--"
     }
+  }
+
+  const getApyUnboosted = pool => {
+    if (! isBoosted || ! pool.farmStats) {
+      return getApy(pool);
+    }
+
+    const aprl = pool.farmStats.aprl;
+    const apy = pool.apy - ((1 + aprl / 100 / 365) ** 365 - 1) * 100;
+
+    try {
+      return millify(apy, { units });
+    } catch {
+      return Number.parseFloat(aprl).toExponential(2);
+    }
+  }
+
+  const getAprdUnboosted = pool => {
+    if (! isBoosted || ! pool.farmStats) {
+      return getAprd(pool);
+    }
+
+    const aprl = pool.farmStats.aprl;
+    const aprd = pool.aprd - aprl / 365;
+
+    return aprd > 0
+      ? Math.round(aprd * 1000) / 1000
+      : '';
   }
 
   return (
@@ -105,14 +135,32 @@ const PoolSummary = ({ pool, tokenBalance, depositedBalance, fetchBalanceDone, i
           </div>
         )}
 
-        <div className={classes.counter}>
-          <p>{ getApy(pool) }%</p>
-          <p>{ isCompounding ? 'APY' : 'APR' }</p>
+        <div className={classes.counter + (isBoosted ? ' boosted' : '')}>
+          <div>
+            <p>
+              {isBoosted && (<ChevronDoubleUpIcon />)}
+              { getApy(pool) }%
+            </p>
+            <p>{ isCompounding ? 'APY' : 'APR' }</p>
+          </div>
+
+          {isBoosted && (
+            <div className="old-value">{ getApyUnboosted(pool) }%</div>
+          )}
         </div>
 
-        <div className={classes.counter}>
-          <p>{ getAprd(pool) }%</p>
-          <p>APRD</p>
+        <div className={classes.counter + (isBoosted ? ' boosted' : '')}>
+          <div>
+            <p>
+              {isBoosted && (<ChevronDoubleUpIcon />)}
+              { getAprd(pool) }%
+            </p>
+            <p>APRD</p>
+          </div>
+
+          {isBoosted && (
+            <div className="old-value">{ getAprdUnboosted(pool) ? getAprdUnboosted(pool) + '%' : '' }</div>
+          )}
         </div>
 
         <div className={classes.counter}>

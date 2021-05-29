@@ -75,6 +75,13 @@ export const pools = [
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 7
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0,
+      controller: 0,
+      platform: 0
     }
   },
   {

@@ -115,6 +115,7 @@ const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => 
         fetchBalanceDone={fetchBalancesDone}
         isActiveNetwork={pool.network == network}
         onClick={() => toggleCard()}
+        isBoosted={isBoosted}
       />
 
       <Transition

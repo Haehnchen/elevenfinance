@@ -30,7 +30,7 @@ const Boosted = ({ pool, index, depositedBalance, stakedBalance, pendingRewards,
         </div>
       </Grid>
       <Grid item xs={12} lg={3}>
-        <div className={classes.detailsSection}>
+        <div className={classes.detailsSection + ' without-steps'}>
           <div className={classes.balance}>{formatDecimals(stakedBalance)}</div>
           {pool.price && (
             <div className={classes.balanceSecondary}>${stakedBalance.times(pool.price).toFixed(2)}</div>
@@ -49,7 +49,7 @@ const Boosted = ({ pool, index, depositedBalance, stakedBalance, pendingRewards,
 
       {/* Farm Earnings */}
       <Grid item xs={12} lg={3}>
-        <div className={classes.detailsSection + ' ' + classes.boostRewards}>
+        <div className={classes.detailsSection + ' ' + classes.boostRewards + ' without-steps'}>
           <div className={classes.balanceWithLogo + (pool.price ? ' ' + classes.balanceWithPadding : '')}>
             <div className={classes.balanceLogo}>
               <img src={require(`images/${pool.farm.earnedToken}-logo.png`)}/>
@@ -70,7 +70,7 @@ const Boosted = ({ pool, index, depositedBalance, stakedBalance, pendingRewards,
       </Grid>
 
       <Grid item xs={12} sm={12} md={6}>
-        <div className={classes.statsSection}>
+        <div className={classes.descriptionSection}>
           {! pool.farm.isDisabled && (
             <>
               <p><b>The pool is Boosted!</b></p>
