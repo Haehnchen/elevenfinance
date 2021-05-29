@@ -159,13 +159,12 @@ export const pools = [
     tokenAddress: '0x289cf2B63c5Edeeeab89663639674d9233E8668E',
     categories: ['Curve'],
 
-    // TODO: set correct pool fees
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.35,
-      platform: 0.35,
-      buybacks: 1.7,
+      controller: 0.44,
+      platform: 0.44,
+      buybacks: 2.48,
     }
   },
   {
@@ -191,13 +190,12 @@ export const pools = [
     tokenAddress: '0x3a3Df212b7AA91Aa0402B9035b098891d276572B',
     categories: ['Curve'],
 
-    // TODO: set correct pool fees
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.35,
-      platform: 0.35,
-      buybacks: 1.7,
+      controller: 0.44,
+      platform: 0.44,
+      buybacks: 2.48,
     }
   },
   {
@@ -231,13 +229,12 @@ export const pools = [
       masterchefPid: 2
     },
 
-    // TODO: set correct pool fees
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.35,
-      platform: 0.35,
-      buybacks: 1.7,
+      controller: 0.44,
+      platform: 0.44,
+      buybacks: 2.48,
     }
   },
   {
@@ -271,13 +268,12 @@ export const pools = [
        masterchefPid: 3
      },
 
-    // TODO: set correct pool fees
-    fees: {
+     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.35,
-      platform: 0.35,
-      buybacks: 1.7,
+      controller: 0.44,
+      platform: 0.44,
+      buybacks: 2.48,
     }
   },
   {
@@ -308,16 +304,15 @@ export const pools = [
        earnedTokenDecimals: 18,
        earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
        earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
-       masterchefPid: 4 // TODO:
+       masterchefPid: 4
      },
 
-    // TODO: set correct pool fees
-    fees: {
+     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.35,
-      platform: 0.35,
-      buybacks: 1.7,
+      controller: 0.44,
+      platform: 0.44,
+      buybacks: 2.48,
     }
   },
   {
@@ -348,16 +343,15 @@ export const pools = [
        earnedTokenDecimals: 18,
        earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
        earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
-       masterchefPid: 5 // TODO:
+       masterchefPid: 5
      },
 
-    // TODO: set correct pool fees
-    fees: {
+     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.35,
-      platform: 0.35,
-      buybacks: 1.7,
+      controller: 0.44,
+      platform: 0.44,
+      buybacks: 2.48,
     }
   },
   {
@@ -388,16 +382,15 @@ export const pools = [
        earnedTokenDecimals: 18,
        earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
        earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
-       masterchefPid: 6 // TODO:
+       masterchefPid: 6
      },
 
-    // TODO: set correct pool fees
-    fees: {
+     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.35,
-      platform: 0.35,
-      buybacks: 1.7,
+      controller: 0.44,
+      platform: 0.44,
+      buybacks: 2.48,
     }
   },
   {
