@@ -9,6 +9,8 @@ export const COLORS = {
   textSecondaryLight: '#B5B7BF',
   textSecondaryDark: '#93959C',
 
+  green: '#58D786',
+
   bgDark: '#1D1E24',
   bgSurface: '#23262B',
   bgLight: '#30323B',

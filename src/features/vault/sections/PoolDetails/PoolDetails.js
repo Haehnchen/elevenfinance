@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { createUseStyles } from 'react-jss';
 
 import Grid from '@material-ui/core/Grid';
@@ -7,15 +7,15 @@ import { useConnectWallet } from 'features/home/redux/hooks';
 import { useFetchPoolRewards } from 'features/vault/redux/fetchPoolRewards';
 
 import BigfootUsd from './Layouts/BigfootUsd';
+import Boosted from './Layouts/Boosted';
 import Claimable from './Layouts/Claimable';
 import FarmOnly from './Layouts/FarmOnly';
 import Regular from './Layouts/Regular';
-import WithFarm from './Layouts/WithFarm';
 
 import styles from './styles';
 const useStyles = createUseStyles(styles);
 
-const PoolDetails = ({ pool, index, tokens, tokenBalance, depositedBalance, stakedBalance }) => {
+const PoolDetails = ({ pool, index, tokens, tokenBalance, depositedBalance, stakedBalance, isBoosted }) => {
   const classes = useStyles();
 
   const { web3, address } = useConnectWallet();
@@ -57,32 +57,33 @@ const PoolDetails = ({ pool, index, tokens, tokenBalance, depositedBalance, stak
       />
     }
 
-    if (pool.farm && (! pool.farm.isDisabled || stakedBalance.gt(0))) {
-      if (pool.earnContractAddress) {
-        return <WithFarm pool={pool}
+    if (! pool.earnContractAddress && pool.farm && (! pool.farm.isDisabled || stakedBalance.gt(0))) {
+      return <FarmOnly pool={pool}
+        index={index}
+        tokenBalance={tokenBalance}
+        stakedBalance={stakedBalance}
+        pendingRewards={pendingRewards[pool.id]}
+        pendingRewardsLoaded={fetchPoolRewardsDone[pool.id]}
+      />
+    }
+
+    return <>
+      <Regular pool={pool}
+        index={index}
+        tokenBalance={tokenBalance}
+        depositedBalance={depositedBalance}
+      />
+
+      {(isBoosted || stakedBalance.gt(0)) && (
+        <Boosted pool={pool}
           index={index}
-          tokenBalance={tokenBalance}
           depositedBalance={depositedBalance}
           stakedBalance={stakedBalance}
           pendingRewards={pendingRewards[pool.id]}
           pendingRewardsLoaded={fetchPoolRewardsDone[pool.id]}
         />
-      } else {
-        return <FarmOnly pool={pool}
-          index={index}
-          tokenBalance={tokenBalance}
-          stakedBalance={stakedBalance}
-          pendingRewards={pendingRewards[pool.id]}
-          pendingRewardsLoaded={fetchPoolRewardsDone[pool.id]}
-        />
-      }
-    }
-
-    return <Regular pool={pool}
-      index={index}
-      tokenBalance={tokenBalance}
-      depositedBalance={depositedBalance}
-    />
+      )}
+    </>
   }
 
   return (
