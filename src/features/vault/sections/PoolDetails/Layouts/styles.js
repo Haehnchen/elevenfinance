@@ -88,7 +88,7 @@ const styles = {
 
   descriptionSection: {
     minHeight: '100%',
-    padding: '12px 15px',
+    padding: '12px 10px',
 
     color: COLORS.textSecondaryLight,
     fontSize: FONT.size.normal,

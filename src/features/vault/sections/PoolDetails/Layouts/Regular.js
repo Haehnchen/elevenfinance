@@ -4,6 +4,7 @@ import { createUseStyles } from 'react-jss';
 import { formatDecimals } from 'features/helpers/bignumber';
 
 import Grid from '@material-ui/core/Grid';
+import Tooltip from 'components/Tooltip/Tooltip';
 
 import DepositButton from '../Buttons/DepositButton';
 import WithdrawButton from '../Buttons/WithdrawButton';
@@ -23,6 +24,7 @@ const Regular = ({ pool, index, tokenBalance, depositedBalance, pendingRewards, 
     if (pool.fees) {
       fee = (pool.fees.controller || 0)
         + (pool.fees.platform || 0)
+        + (pool.fees.dividends || 0)
         + (pool.fees.buybacks || 0);
     }
 
@@ -82,6 +84,20 @@ const Regular = ({ pool, index, tokenBalance, depositedBalance, pendingRewards, 
                     ? (
                       <>
                         {performanceFee + '% on profits'}
+                        <Tooltip position="bottom-left">
+                          {pool.fees.buybacks > 0 && (
+                            <div>{pool.fees.buybacks + '%'} - ELE Buybacks</div>
+                          )}
+                          {pool.fees.dividends > 0 && (
+                            <div>{pool.fees.dividends + '%'} - ELE pool dividends</div>
+                          )}
+                          {pool.fees.controller > 0 && (
+                            <div>{pool.fees.controller + '%'} - Controller</div>
+                          )}
+                          {pool.fees.platform > 0 && (
+                            <div>{pool.fees.platform + '%'} - Platform</div>
+                          )}
+                        </Tooltip>
                         <br/>
                         <i className="small">(75% of fees buyback ELE)</i>
                       </>
