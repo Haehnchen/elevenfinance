@@ -522,7 +522,7 @@ export const pools = [
     depostLimit:0,
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
-    earnedToken: '11IRON',
+    earnedToken: '11TITAN',
     earnedTokenAddress: '0x5F2b2518616907A5f76f25e9e2b67a571879c610',
     earnContractAddress: '0x5F2b2518616907A5f76f25e9e2b67a571879c610',
     defaultApy: "39.54",
