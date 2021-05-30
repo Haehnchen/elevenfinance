@@ -271,6 +271,7 @@ export const pools = [
     categories: ['Sushi'],
 
      farm: {
+       isDisabled: true,
        earnedToken: 'ELE',
        earnedTokenDecimals: 18,
        earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
@@ -311,6 +312,7 @@ export const pools = [
     categories: ['Sushi'],
 
      farm: {
+       isDisabled: true,
        earnedToken: 'ELE',
        earnedTokenDecimals: 18,
        earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
