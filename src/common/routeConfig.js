@@ -2,6 +2,7 @@ import { App } from '../features/home';
 import { PageNotFound } from '../features/common';
 import homeRoute from '../features/home/route';
 import vaultRoute from '../features/vault/route';
+import leverageRoute from '../features/leverage/route';
 import _ from 'lodash';
 
 // NOTE: DO NOT CHANGE the 'childRoutes' name and the declaration pattern.
@@ -9,6 +10,7 @@ import _ from 'lodash';
 const childRoutes = [
   homeRoute,
   vaultRoute,
+  leverageRoute,
 ];
 
 const routes = [{
