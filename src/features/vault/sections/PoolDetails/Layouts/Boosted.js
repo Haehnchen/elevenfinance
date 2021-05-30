@@ -87,7 +87,7 @@ const Boosted = ({ pool, index, depositedBalance, stakedBalance, pendingRewards,
             <>
               <p>
                 This pool is no longer being Boosted. <b>ELE</b> Rewards will no longer be awarded.
-                You can now Unstake your Tokens
+                Feel free to Unstake your tokens. Your asset will keep compounding even if you don't.
               </p>
               <p>
                 <b>Important: </b> do not Withdraw your tokens after Unstaking to keep receiving base pool rewards.
