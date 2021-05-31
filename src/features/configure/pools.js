@@ -5603,7 +5603,7 @@ export const pools = [
     depostLimit:0,
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
-    earnedToken: '11LINK',
+    earnedToken: '11LINKBNB',
     earnedTokenAddress: '0xb6e754db11fba321c1e27d449677177fb0024d1f',
     earnContractAddress: '0xb6e754db11fba321c1e27d449677177fb0024d1f',
     defaultApy: "39.54",
