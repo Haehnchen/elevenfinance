@@ -43,9 +43,7 @@ const Sidebar = ({ connected, address, connectWallet, disconnectWallet }) => {
 
   useEffect(() => {
     const segments = location?.pathname.split('/').filter(item => !! item);
-    if (segments?.length) {
-      setActiveMenuItem(segments[0]);
-    }
+    setActiveMenuItem(segments?.length ? segments[0] : null);
   }, [location]);
 
   useEffect(() => {
@@ -133,7 +131,7 @@ const Sidebar = ({ connected, address, connectWallet, disconnectWallet }) => {
           <div className={classes.divider}></div>
 
           <ul className={classes.menu}>
-          <li className={classNames(classes.menuItem, { active: activeMenuItem == 'vault' })}>
+          <li className={classNames(classes.menuItem, { active: activeMenuItem == 'vault' || ! activeMenuItem })}>
               <a href="/#/vault">
                 <LightningBoltIcon />
                 Vaults

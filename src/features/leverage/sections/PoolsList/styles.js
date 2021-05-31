@@ -2,7 +2,9 @@ import commonStyles from 'assets/jss/common';
 
 const styles = {
   title: {
-    ...commonStyles.h3
+    ...commonStyles.h3,
+
+    marginBottom: 20,
   }
 };
 

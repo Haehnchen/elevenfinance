@@ -1,16 +1,23 @@
-const banks = {
-  bfBNB: "0xA96C90223e4cC69192A9ffF1BA4c8b86D02765B2",
-  bfUSD: "0xE9B3017cd7A347a8B0324F88db335255E5c5D3FD",
+export const banks = {
+  bfBNB: {
+    address: '0xA96C90223e4cC69192A9ffF1BA4c8b86D02765B2',
+    apiKey: 'BFBNB',
+  },
+  bfUSD: {
+    address: '0xE9B3017cd7A347a8B0324F88db335255E5c5D3FD',
+    apiKey: 'BFUSD',
+  }
 }
 
-export const leverageOptions = [
+export const pools = [
   {
     network: 'bsc',
     id: 'cakebnb',
     name: "CAKE-BNB LP",
-    image: '',
+    image: 'usdt-busd.png',
     bigfootAddress: '0x7fF89d5d048DA9a090C51D3FF7eD0fC45bcFe521',
-    bankAddress: banks.bfBNB,
+    bank: 'bfBNB',
+    apiKey: 'CAKE-BNB LP',
     deathLeverage: 3.333333333333,
     maxLeverage: 2.666666666666,
     tokens: [
@@ -25,6 +32,12 @@ export const leverageOptions = [
         address: null, //native token
       },
     ],
+
+    rates: {
+      yieldFarming: 0,
+      tradingFee: 13.87,
+      borrowApy: 0,
+    },
   },
   {
     network: 'bsc',
@@ -32,7 +45,8 @@ export const leverageOptions = [
     name: "USDT-BUSD WLP",
     image: 'usdt-busd.png',
     bigfootAddress: '0x97E1227D1d0072d9eCf72065e60B64F883dA7FDF',
-    bankAddress: banks.bfUSD,
+    bank: 'bfUSD',
+    apiKey: 'USDT-BUSD WLP',
     deathLeverage: 6.5,
     maxLeverage: 6,
     tokens: [
@@ -47,5 +61,11 @@ export const leverageOptions = [
         address: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
       },
     ],
+
+    rates: {
+      yieldFarming: 0,
+      tradingFee: 0, // wex (no trading fee)
+      borrowApy: 0,
+    },
   },
 ];

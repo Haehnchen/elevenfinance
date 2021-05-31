@@ -89,9 +89,9 @@ export function useFetchLeverageBalances() {
   // if array, means args passed to the action creator
   const dispatch = useDispatch();
 
-  const { leverageOptions, fetchLeverageBalancesDone, fetchLeverageBalancesPending } = useSelector(
+  const { pools, fetchLeverageBalancesDone, fetchLeverageBalancesPending } = useSelector(
     state => ({
-      leverageOptions: state.leverage.leverageOptions,
+      pools: state.leverage.pools,
       fetchLeverageBalancesDone: state.leverage.fetchLeverageBalancesDone,
       fetchLeverageBalancesPending: state.leverage.fetchLeverageBalancesPending,
     }),
@@ -106,7 +106,7 @@ export function useFetchLeverageBalances() {
   );
 
   return {
-    leverageOptions,
+    pools,
     fetchLeverageBalances: boundAction,
     fetchLeverageBalancesDone,
     fetchLeverageBalancesPending
@@ -115,7 +115,7 @@ export function useFetchLeverageBalances() {
 
 
 export function reducer(state, action) {
-  const { leverageOptions, fetchLeverageBalancesDone } = state;
+  const { pools, fetchLeverageBalancesDone } = state;
 
   switch (action.type) {
     case LEVERAGE_FETCH_LEVERAGE_BALANCES_BEGIN:
@@ -126,8 +126,8 @@ export function reducer(state, action) {
       };
 
     case LEVERAGE_FETCH_LEVERAGE_BALANCES_SUCCESS:
-      
-      const updatedLeverageOptions = leverageOptions.map(option => {
+
+      const updatedPools = pools.map(option => {
         if (! action.data[option.title]) {
           return option;
         }
@@ -141,7 +141,7 @@ export function reducer(state, action) {
 
       return {
         ...state,
-        leverageOptions: updatedLeverageOptions,
+        pools: pools,
         fetchLeverageBalancesDone: true,
         fetchLeverageBalancesPending: false,
       };

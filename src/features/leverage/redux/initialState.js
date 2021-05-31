@@ -1,8 +1,8 @@
-import { leverageOptions } from "../../configure/leverageOptions";
+import { banks, pools } from "../../configure/leverage";
 
 const tokens = {};
 
-leverageOptions.map(({network, tokens: leverageOptionTokens})=> {
+pools.map(({network, tokens: leverageOptionTokens})=> {
   leverageOptionTokens.map(token => {
     tokens[token.token] = {
       network: network,
@@ -14,10 +14,13 @@ leverageOptions.map(({network, tokens: leverageOptionTokens})=> {
 })
 
 const initialState = {
-  leverageOptions,
+  banks,
+  pools,
   tokens,
   fetchLeverageBalancesDone: false,
   fetchLeverageBalancesPending: false,
+  fetchPoolsDataDone: false,
+  fetchPoolsDataPending: false,
 };
 
 export default initialState;

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { createUseStyles } from 'react-jss';
 
-import LeverageList from './sections/LeverageList/LeverageList';
+import PoolsList from './sections/PoolsList/PoolsList';
 import Positions from './sections/Positions/Positions';
 
 import styles from './styles.js';
@@ -20,7 +20,7 @@ export default function LeveragePage(props) {
       <h2 className={classes.h2}>Leveraged Yield Farming</h2>
 
       <div className={classes.section}>
-        <LeverageList />
+        <PoolsList />
       </div>
 
       <div className={classes.section}>
