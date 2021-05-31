@@ -42,7 +42,7 @@ export function fetchFarmsStaked({ address, web3, pools, network }) {
             const callIndex = farmPools.findIndex(farmPool => farmPool.id == pool.id);
 
             stakedAmounts[pool.id] = callIndex >= 0
-              ? byDecimals(results[callIndex].stakedAmount[0], pool.farm.earnedTokenDecimals)
+              ? byDecimals(results[callIndex].stakedAmount[0], pool.itokenDecimals)
               : new BigNumber(0);
           })
 

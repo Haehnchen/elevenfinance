@@ -31,7 +31,7 @@ const Boosted = ({ pool, index, depositedBalance, stakedBalance, pendingRewards,
       </Grid>
       <Grid item xs={12} lg={3}>
         <div className={classes.detailsSection + ' without-steps'}>
-          <div className={classes.balance}>{formatDecimals(stakedBalance)}</div>
+          <div className={classes.balance}>{formatDecimals(stakedBalance, pool.tokenDecimals)}</div>
           {pool.price && (
             <div className={classes.balanceSecondary}>${stakedBalance.times(pool.price).toFixed(2)}</div>
           )}

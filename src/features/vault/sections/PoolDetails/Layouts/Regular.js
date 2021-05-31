@@ -55,7 +55,7 @@ const Regular = ({ pool, index, tokenBalance, depositedBalance, pendingRewards, 
       {/* Withdraw Section */}
       <Grid item xs={12} sm={6} md={3}>
         <div className={classes.detailsSection + ' without-steps'}>
-          <div className={classes.balance}>{formatDecimals(depositedBalance)}</div>
+          <div className={classes.balance}>{formatDecimals(depositedBalance, pool.tokenDecimals)}</div>
           {pool.price && (
             <div className={classes.balanceSecondary}>${depositedBalance.times(pool.price).toFixed(2)}</div>
           )}
