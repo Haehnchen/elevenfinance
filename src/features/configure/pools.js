@@ -30,6 +30,10 @@ export const categories = [
   {
     name: 'Ellipsis',
     default: true
+  },
+  {
+    name: 'Polycat',
+    default: true
   }
 ]
 
@@ -163,7 +167,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
-    categories: [],
+    categories: ['Polycat'],
 
     farm: {
       earnedToken: 'ELE',
@@ -207,7 +211,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6',
-    categories: [],
+    categories: ['Polycat'],
     farm: {
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
@@ -249,7 +253,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
-    categories: [],
+    categories: ['Polycat'],
 
     farm: {
       earnedToken: 'ELE',
@@ -293,7 +297,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xD86b5923F3AD7b585eD81B448170ae026c65ae9a',
-    categories: [],
+    categories: ['Polycat'],
 
     farm: {
       earnedToken: 'ELE',
