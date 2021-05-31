@@ -165,6 +165,15 @@ export const pools = [
     tokenAddress: '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
     categories: [],
 
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 9
+    },
+
+
     fees: {
       third_party: '4% on deposit',
       deposit: 0,
@@ -199,6 +208,13 @@ export const pools = [
     pastPricePerFullShare: 1,
     tokenAddress: '0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6',
     categories: [],
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 10
+    },
 
     fees: {
       third_party: '4% on deposit',
@@ -235,6 +251,15 @@ export const pools = [
     tokenAddress: '0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
     categories: [],
 
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 11
+    },
+
+
     fees: {
       third_party: '4% on deposit',
       deposit: 0,
@@ -269,6 +294,15 @@ export const pools = [
     pastPricePerFullShare: 1,
     tokenAddress: '0xD86b5923F3AD7b585eD81B448170ae026c65ae9a',
     categories: [],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 12
+    },
+
 
     fees: {
       third_party: '4% on deposit',
