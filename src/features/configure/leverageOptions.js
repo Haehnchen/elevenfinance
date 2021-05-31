@@ -6,7 +6,8 @@ const banks = {
 export const leverageOptions = [
   {
     network: 'bsc',
-    title: "CAKE-BNB LP",
+    id: 'cakebnb',
+    name: "CAKE-BNB LP",
     image: '',
     bigfootAddress: '0x7fF89d5d048DA9a090C51D3FF7eD0fC45bcFe521',
     bankAddress: banks.bfBNB,
@@ -27,7 +28,8 @@ export const leverageOptions = [
   },
   {
     network: 'bsc',
-    title: "USDT-BUSD WLP",
+    id: 'usdtbusd',
+    name: "USDT-BUSD WLP",
     image: 'usdt-busd.png',
     bigfootAddress: '0x97E1227D1d0072d9eCf72065e60B64F883dA7FDF',
     bankAddress: banks.bfUSD,

@@ -136,7 +136,7 @@ const Sidebar = ({ connected, address, connectWallet, disconnectWallet }) => {
           <li className={classNames(classes.menuItem, { active: activeMenuItem == 'vault' })}>
               <a href="/#/vault">
                 <LightningBoltIcon />
-                Vault
+                Vaults
               </a>
             </li>
 
