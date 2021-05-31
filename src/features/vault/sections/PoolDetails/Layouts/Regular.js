@@ -69,6 +69,12 @@ const Regular = ({ pool, index, tokenBalance, depositedBalance, pendingRewards, 
         <div className={classes.descriptionSection + ' ' + classes.statsSection}>
           {pool.fees && (
             <div className={classes.statsContent}>
+              {pool.fees.third_party && (
+                <div className="item warning">
+                  <span>3rd party fee</span>
+                  <span>{ pool.fees.third_party }</span>
+                </div>
+              )}
               <div className="item">
                 <span>Deposit fee</span>
                 <span>{ pool.fees.deposit ? pool.fees.deposit + '% on capital' : 'none' }</span>

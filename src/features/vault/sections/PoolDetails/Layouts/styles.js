@@ -88,7 +88,7 @@ const styles = {
 
   descriptionSection: {
     minHeight: '100%',
-    padding: '12px 10px',
+    padding: '12px 16px',
 
     color: COLORS.textSecondaryLight,
     fontSize: FONT.size.normal,
@@ -105,6 +105,7 @@ const styles = {
   statsSection: {
     display: 'flex',
     alignItems: 'center',
+    padding: '12px 10px',
 
     '& .header': {
       marginBottom: 10,
@@ -141,8 +142,12 @@ const styles = {
 
         color: COLORS.textSecondaryDark,
         fontSize: FONT.size.small,
+      },
+
+      '&.warning *': {
+        color: COLORS.primary + ' !important'
       }
-    }
+    },
   },
 
   statsContent: {

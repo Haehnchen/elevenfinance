@@ -7,8 +7,9 @@ import { useSnackbar } from 'notistack';
 import { useConnectWallet } from 'features/home/redux/hooks';
 import { useFetchDeposit, useFetchApproval } from 'features/vault/redux/hooks';
 
-import Spinner from 'components/Spinner/Spinner';
+import Alert from 'components/Alert/Alert';
 import AmountDialog from 'components/AmountDialog/AmountDialog'
+import Spinner from 'components/Spinner/Spinner';
 
 import styles from './styles';
 const useStyles = createUseStyles(styles);
@@ -126,7 +127,14 @@ const DepositButton = ({ pool, index, balance }) => {
         buttonIsLoading={fetchDepositPending[index]}
 
         open={amountDialogOpen}
-        onClose={handleAmountDialogClose} />
+        onClose={handleAmountDialogClose}
+      >
+        {pool.fees?.depositWarning && (
+          <Alert type="warning">
+            <div dangerouslySetInnerHTML={{ __html: pool.fees.depositWarning }}></div>
+          </Alert>
+        )}
+      </AmountDialog>
     </span>
   );
 };

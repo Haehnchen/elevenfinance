@@ -102,7 +102,7 @@ const StakeButton = ({ pool, index, balance }) => {
         }]}
         onConfirm={handleStake}
 
-        title={'Stake in Farm'}
+        title={'Stake tokens'}
         buttonText={'Stake'}
         buttonIsLoading={fetchFarmStakePending[pool.id]}
 
