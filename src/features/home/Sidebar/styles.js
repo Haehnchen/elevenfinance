@@ -150,10 +150,11 @@ const styles = {
     },
 
     '& a': {
+      display: 'block',
       color: COLORS.textLight,
       fontSize: FONT.size.normal,
       fontWeight: 'bold',
-      lineHeight: '22px'
+      lineHeight: '23px'
     },
 
     '&:hover': {

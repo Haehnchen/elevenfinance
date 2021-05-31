@@ -1,7 +1,9 @@
 import React, { Fragment, useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { createUseStyles } from 'react-jss';
 import { Transition } from '@headlessui/react';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import classNames from 'classnames';
 
 import { useConnectWallet, useFetchTokenPrice } from '../redux/hooks';
 
@@ -11,7 +13,8 @@ import {
   DocumentTextIcon,
   ExternalLinkIcon,
   FingerPrintIcon,
-  MenuIcon
+  MenuIcon,
+  VariableIcon
 } from '@heroicons/react/outline'
 
 import NetworkSelect from './NetworkSelect/NetworkSelect';
@@ -28,13 +31,22 @@ const useStyles = createUseStyles(styles);
 
 const Sidebar = ({ connected, address, connectWallet, disconnectWallet }) => {
   const classes = useStyles();
+  const location = useLocation();
   const { web3, network, networkId, networkData } = useConnectWallet();
   const { tokenPriceUsd, fetchTokenPrice, fetchTokenPriceDone } = useFetchTokenPrice();
 
   const [isOpen, setIsOpen] = useState(false);
   const [shortAddress, setShortAddress] = useState('');
+  const [activeMenuItem, setActiveMenuItem] = useState(null);
 
   isOpen ? disableBodyScroll(document) : enableBodyScroll(document)
+
+  useEffect(() => {
+    const segments = location?.pathname.split('/').filter(item => !! item);
+    if (segments?.length) {
+      setActiveMenuItem(segments[0]);
+    }
+  }, [location]);
 
   useEffect(() => {
     const fetch = () => {
@@ -121,10 +133,17 @@ const Sidebar = ({ connected, address, connectWallet, disconnectWallet }) => {
           <div className={classes.divider}></div>
 
           <ul className={classes.menu}>
-            <li className={classes.menuItem + ' active'}>
+          <li className={classNames(classes.menuItem, { active: activeMenuItem == 'vault' })}>
               <a href="/#/vault">
                 <LightningBoltIcon />
                 Vault
+              </a>
+            </li>
+
+            <li className={classNames(classes.menuItem, { active: activeMenuItem == 'leverage' })}>
+              <a href="/#/leverage">
+                <VariableIcon />
+                Leveraged Farming
               </a>
             </li>
 
