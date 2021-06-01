@@ -34,6 +34,10 @@ export const categories = [
   {
     name: 'Polycat',
     default: true
+  },
+  {
+    name: 'Cometh',
+    default: true
   }
 ]
 
@@ -115,6 +119,86 @@ export const pools = [
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 104
+    }
+  },
+  {
+    network: 'polygon',
+    id: 'celematic',
+    name: 'celematic',
+    image: 'ele_matic.png',
+    token: 'ELE-MATIC cLP',
+    tokenDescription: 'ELE-MATIC cLP',
+    tokenDecimals: 18,
+    uses: 'Uses cometh',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11ELEMATIC cLP',
+    earnedTokenAddress: '0x2A4947512163110C5b06276cf7C8D31Cdf374489',
+    earnContractAddress: '0x2A4947512163110C5b06276cf7C8D31Cdf374489',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x56f91f954271906496c68eFe8cDf5D13cED09e8A',
+    categories: ['Cometh'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 13
+    },
+
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    }
+  },
+  {
+    network: 'polygon',
+    id: 'elemust',
+    name: 'elemust',
+    image: 'elemust.png',
+    token: 'ELE-MUST cLP',
+    tokenDescription: 'ELE-MATIC cLP',
+    tokenDecimals: 18,
+    uses: 'Uses cometh',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11ELEMUST',
+    earnedTokenAddress: '0xd54dD032d36dB9F780A533fBA50Ea37C6A2646C5',
+    earnContractAddress: '0xd54dD032d36dB9F780A533fBA50Ea37C6A2646C5',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x477931816F7aeedc8FE837D413a3000B0a9B4C5b',
+    categories: ['Cometh'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 14
+    },
+
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
     }
   },
   {
