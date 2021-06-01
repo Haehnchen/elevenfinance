@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { createUseStyles } from 'react-jss';
 
 import { useConnectWallet } from 'features/home/redux/hooks';
-
+import { switchNetwork } from 'features/web3/switchNetwork.js';
 import { networks } from 'features/configure';
 
 import Loader from 'components/Loader/Loader';
+import Tooltip from 'components/Tooltip/Tooltip';
+
+import OpenPosition from '../OpenPosition/OpenPosition';
 
 import styles from './styles.js';
-import { switchNetwork } from 'features/web3/switchNetwork.js';
 const useStyles = createUseStyles(styles);
 
 export default function Pool({ bank, pool, fetchPoolsDataDone }) {
@@ -83,35 +85,35 @@ export default function Pool({ bank, pool, fetchPoolsDataDone }) {
         </div>
 
         <div className={classes.counter}>
-          <p>
+          <div>
             {fetchPoolsDataDone
-              ? `${apr}%`
+              ? (
+                <>
+                  { `${apr}%` }
+                  <Tooltip position="bottom-right">
+                    <div className={classes.stats}>
+                      <div>
+                        <p>Yield Farming</p>
+                        {tradingFee > 0 && (<p>Trading Fees</p>)}
+                        <p>Borrow APY</p>
+                      </div>
+
+                      <div>
+                        <p>{ yieldFarming.toFixed(2) }%</p>
+                        {tradingFee > 0 && (<p>{ tradingFee.toFixed(2) }%</p>)}
+                        <p>-{ borrowApy.toFixed(2) }%</p>
+                      </div>
+                    </div>
+                  </Tooltip>
+                </>
+              )
               : <Loader />
             }
-          </p>
+          </div>
           <p>APR</p>
         </div>
 
-        <div className={classes.stats}>
-          {fetchPoolsDataDone && (
-            <>
-              <div>
-                <p>Yield Farming:</p>
-                {tradingFee > 0 && (<p>Trading Fees:</p>)}
-                <p>Borrow APY:</p>
-              </div>
-
-              <div>
-                <p>{ yieldFarming.toFixed(2) }%</p>
-                {tradingFee > 0 && (<p>{ tradingFee.toFixed(2) }%</p>)}
-                <p>-{ borrowApy.toFixed(2) }%</p>
-              </div>
-            </>
-          )}
-
-          {! fetchPoolsDataDone && (<Loader />)}
-        </div>
-
+        {/* Leverage Select */}
         <div className={classes.counter + ' ' + classes.leverage}>
           <p>
             <button
@@ -137,7 +139,14 @@ export default function Pool({ bank, pool, fetchPoolsDataDone }) {
           <p>Leverage</p>
         </div>
 
+        {/* Actions */}
+        {isActiveNetwork && (
+          <div className={classes.controls}>
+            <OpenPosition />
+          </div>
+        )}
 
+        {/* Network Switch */}
         {! isActiveNetwork && (
           <div
             className={classes.networkSwitch}

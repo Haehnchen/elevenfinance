@@ -78,7 +78,7 @@ const styles = {
     width: 150,
     textAlign: 'center',
 
-    '& p': {
+    '& > *': {
       margin: 0,
 
       '&:first-child': {
@@ -103,17 +103,27 @@ const styles = {
   stats: {
     display: 'flex',
     justifyContent: 'space-between',
-    alignItems: 'center',
     flex: '0 0 auto',
-    width: 200,
 
-    color: COLORS.textSecondaryLight,
-    fontSize: FONT.size.small,
-    lineHeight: FONT.size.h4,
+    width: 160,
+
+    '& *': {
+      color: COLORS.textSecondaryLight,
+      fontSize: FONT.size.small,
+      fontWeight: 'normal',
+      lineHeight: FONT.size.h4,
+    },
+
+    '& > :first-child': {
+      textAlign: 'left',
+    },
 
     '& > :last-child': {
-      fontWeight: 600,
       textAlign: 'right',
+
+      '& > *': {
+        fontWeight: 600,
+      }
     },
 
     '& p': {
@@ -160,8 +170,14 @@ const styles = {
     outline: 'none'
   },
 
+  controls: {
+    width: 200,
+    paddingTop: 4,
+    textAlign: 'center'
+  },
+
   networkSwitch: {
-    width: 300,
+    width: 200,
     textAlign: 'center',
 
     color: COLORS.textSecondaryDark,
