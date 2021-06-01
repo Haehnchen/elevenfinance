@@ -34,6 +34,11 @@ const styles = {
   content: {
     '& p:last-child': {
       marginBottom: 0
+    },
+
+    '& a': {
+      color: COLORS.primary,
+      textDecoration: 'underline'
     }
   }
 };

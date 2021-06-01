@@ -23,14 +23,14 @@ export const pools = [
     tokens: [
       {
         token: "11CAKEBNB",
-        image: '',
+        image: 'CAKE-logo.svg',
         address: '0x58D25A7e34eE8fA7A070510e6D2E0096Ed62c828',
         decimals: 18,
       },
       {
         token: "BNB",
-        image: '',
-        address: null, //native token
+        image: 'BNB-logo.svg',
+        address: null, // native token
         decimals: 18,
       },
     ],

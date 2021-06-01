@@ -142,7 +142,11 @@ export default function Pool({ bank, pool, tokens, fetchBalancesDone, fetchPools
         {/* Actions */}
         {isActiveNetwork && (
           <div className={classes.controls}>
-            <OpenPosition />
+            <OpenPosition
+              pool={pool}
+              tokens={tokens}
+              fetchBalancesDone={fetchBalancesDone}
+            />
           </div>
         )}
 

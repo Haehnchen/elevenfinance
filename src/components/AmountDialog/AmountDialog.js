@@ -19,7 +19,8 @@ const AmountDialog = ({
   open,
   onConfirm,
   onClose,
-  children
+  children,
+  suffix
 }) => {
   const classes = useStyles();
 
@@ -183,6 +184,8 @@ const AmountDialog = ({
             </div>
           )
         })}
+
+        { suffix }
       </Dialog>
     </>
   );
