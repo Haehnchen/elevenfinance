@@ -65,6 +65,7 @@ const styles = {
   counter: {
     width: 150,
     textAlign: 'center',
+    position: 'relative',
 
     '& p': {
       margin: 0,
@@ -80,11 +81,45 @@ const styles = {
       }
     },
 
+    '&.boosted p:first-child': {
+      color: COLORS.green
+    },
+
+    '& svg': {
+      position: 'relative',
+
+      width: 16,
+      height: 16,
+
+      marginRight: 5,
+
+      verticalAlign: 'middle',
+      display: 'inline-block',
+    },
+
+    '& .old-value': {
+      position: 'absolute',
+      top: -18,
+      width: '100%',
+
+      color: COLORS.textSecondaryDark,
+      fontSize: FONT.size.normal,
+      fontWeight: 600,
+      textDecoration: 'line-through',
+
+      textAlign: 'center'
+    },
+
     [MEDIA.mobile]: {
       width: '40%',
       paddinLeft: 10,
       textAlign: 'left',
-      margin: '10px 0'
+      margin: '10px 0',
+
+      '& .old-value': {
+        top: -14,
+        textAlign: 'left',
+      }
     }
   },
 

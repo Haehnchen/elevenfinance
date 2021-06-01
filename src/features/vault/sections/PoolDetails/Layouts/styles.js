@@ -49,7 +49,12 @@ const styles = {
   balanceWithLogo: {
     display: 'flex',
     alignItems: 'center',
-    marginTop: -10
+    marginTop: -10,
+
+    [MEDIA.mobile]: {
+      justifyContent: 'center',
+      textAlign: 'left'
+    }
   },
   balanceLogo: {
     width: 45,
@@ -77,13 +82,13 @@ const styles = {
 
   divider: {
     height: 1,
-    background: COLORS.primary,
-    margin: '20px 0 30px'
+    background: COLORS.border,
+    margin: '10px 0 30px'
   },
 
-  statsSection: {
+  descriptionSection: {
     minHeight: '100%',
-    padding: '12px 15px',
+    padding: '12px 16px',
 
     color: COLORS.textSecondaryLight,
     fontSize: FONT.size.normal,
@@ -95,6 +100,12 @@ const styles = {
       marginTop: 20,
       minHeight: 0
     },
+  },
+
+  statsSection: {
+    display: 'flex',
+    alignItems: 'center',
+    padding: '12px 10px',
 
     '& .header': {
       marginBottom: 10,
@@ -123,9 +134,96 @@ const styles = {
 
       '& span:last-child': {
         paddingLeft: 15
+      },
+
+      '& .small': {
+        display: 'block',
+        marginTop: -4,
+
+        color: COLORS.textSecondaryDark,
+        fontSize: FONT.size.small,
+      },
+
+      '&.warning *': {
+        color: COLORS.primary + ' !important'
       }
+    },
+  },
+
+  statsContent: {
+    width: '100%'
+  },
+
+  boostRewards: {
+    paddingTop: 10
+  },
+
+  boostHeader: {
+    position: 'relative',
+    margin: '40px 0 20px',
+
+    color: COLORS.primary,
+    fontSize: FONT.size.h3,
+    fontWeight: 600,
+
+    color: COLORS.textSecondaryDark,
+
+    '&.active': {
+      color: COLORS.primary,
+
+      '& svg': {
+        animation: '$pulse 1.5s ease-in-out infinite'
+      }
+    },
+
+    '&:after': {
+      content: '""',
+
+      position: 'absolute',
+      height: 1,
+      top: '50%',
+      left: 0,
+      right: 0,
+      marginTop: -1,
+
+      background: COLORS.textSecondaryDark
+    },
+
+    '&.active:after': {
+      background: COLORS.primary
+    },
+
+    '& span': {
+      position: 'relative',
+      paddingRight: 20,
+      background: COLORS.bgSurface,
+      zIndex: 2,
     }
   },
+
+  boostIcon: {
+    position: 'relative',
+    width: 34,
+    height: 34,
+
+    top: -3,
+    margin: '0 12px 0 0',
+
+    verticalAlign: 'middle',
+    display: 'inline-block',
+  },
+
+  '@keyframes pulse': {
+    '0%': {
+      transform: 'scale(1)'
+    },
+    '50%': {
+      transform: 'scale(1.3)'
+    },
+    '100%': {
+      transform: 'scale(1)'
+    },
+  }
 };
 
 export default styles;

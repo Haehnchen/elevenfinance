@@ -12,6 +12,8 @@ import { networks } from 'features/configure';
 import PoolSummary from '../PoolSummary/PoolSummary';
 import PoolDetails from '../PoolDetails/PoolDetails';
 
+import { FireIcon } from '@heroicons/react/outline';
+
 import styles from './styles';
 const useStyles = createUseStyles(styles);
 
@@ -21,6 +23,7 @@ const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => 
   const { web3, address, network, connectWallet } = useConnectWallet();
 
   const [isOpen, setIsOpen] = useState(false);
+  const [isBoosted, setIsBoosted] = useState(false);
   const [tokenBalance, setTokenBalance] = useState(new BigNumber(0));
   const [depositedBalance, setDepositedBalance] = useState(new BigNumber(0));
   const [stakedBalance, setStakedBalance] = useState(new BigNumber(0));
@@ -45,6 +48,11 @@ const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => 
       setIsOpen(false);
     }
   }, [network]);
+
+  useEffect(() => {
+    const boosted = pool.farm && ! pool.farm.isDisabled && pool.earnContractAddress;
+    setIsBoosted(boosted);
+  }, [pool, stakedBalance]);
 
   useEffect(() => {
     if (pool.isMultiToken) {
@@ -92,14 +100,22 @@ const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => 
 
   return (
     <div key={pool.id}
-      className={classes.pool}
+      className={classes.pool + (isBoosted ? ' highlighted' : '')}
     >
+      {isBoosted && (
+        <div className={classes.highlightLabel}>
+          <FireIcon />
+          Boosted
+        </div>
+      )}
+
       <PoolSummary pool={pool}
         tokenBalance={tokenBalance}
         depositedBalance={depositedAndStaked}
         fetchBalanceDone={fetchBalancesDone}
         isActiveNetwork={pool.network == network}
         onClick={() => toggleCard()}
+        isBoosted={isBoosted}
       />
 
       <Transition
@@ -117,6 +133,7 @@ const Pool = ({ pool, index, tokens, fetchBalancesDone, fetchPoolDataDone }) => 
           tokenBalance={tokenBalance}
           depositedBalance={depositedBalance}
           stakedBalance={stakedBalance}
+          isBoosted={isBoosted}
         />
       </Transition>
     </div>

@@ -30,6 +30,10 @@ export const categories = [
   {
     name: 'Ellipsis',
     default: true
+  },
+  {
+    name: 'Polycat',
+    default: true
   }
 ]
 
@@ -75,6 +79,13 @@ export const pools = [
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 7
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0,
+      controller: 0,
+      platform: 0
     }
   },
   {
@@ -138,6 +149,494 @@ export const pools = [
   },
   {
     network: 'polygon',
+    id: 'dfyn',
+    name: 'DFYN',
+    image: 'dfyn.svg',
+    token: 'DFYN',
+    tokenDescription: 'DFYN',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses polycat',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11DFYN',
+    earnedTokenAddress: '0xC5E165c4Da919448889e4DDf625E56641A340Dab',
+    earnContractAddress: '0xC5E165c4Da919448889e4DDf625E56641A340Dab',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0xC168E40227E4ebD8C1caE80F7a55a4F0e6D66C97',
+    categories: ['Polycat'],
+
+/*    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 9
+    },*/
+
+
+    fees: {
+      third_party: '4% on deposit',
+      deposit: 0,
+      depositWarning: '<p>Be aware of <b>4% Deposit fee</b> on this pool.</p>'
+        + '<p>The fee is charged by Polycat, Eleven doesn\'t charge you on the deposit</p>',
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    }
+  },
+  {
+    network: 'polygon',
+    id: 'wmatic',
+    name: 'WMATIC',
+    image: 'wmatic.svg',
+    token: 'WMATIC',
+    tokenDescription: 'WMATIC',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses polycat',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11WMATIC',
+    earnedTokenAddress: '0x90FcA6d7931B4feCAe00c3dD864304AC8848fF7A',
+    earnContractAddress: '0x90FcA6d7931B4feCAe00c3dD864304AC8848fF7A',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
+    categories: ['Polycat'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 9
+    },
+
+
+    fees: {
+      third_party: '4% on deposit',
+      deposit: 0,
+      depositWarning: '<p>Be aware of <b>4% Deposit fee</b> on this pool.</p>'
+        + '<p>The fee is charged by Polycat, Eleven doesn\'t charge you on the deposit</p>',
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    }
+  },
+  {
+    network: 'polygon',
+    id: 'wbtc',
+    name: 'WBTC',
+    image: 'wbtc.svg',
+    token: 'WBTC',
+    tokenDescription: 'WBTC',
+    tokenAddress: '',
+    tokenDecimals: 8,
+    uses: 'Uses polycat',
+    itokenDecimals: 8,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11WBTC',
+    earnedTokenAddress: '0xa599e42A39dEa9230A8164dEC8316C2522c9cCd7',
+    earnContractAddress: '0xa599e42A39dEa9230A8164dEC8316C2522c9cCd7',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6',
+    categories: ['Polycat'],
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 10
+    },
+
+    fees: {
+      third_party: '4% on deposit',
+      deposit: 0,
+      depositWarning: '<p>Be aware of <b>4% Deposit fee</b> on this pool.</p>'
+        + '<p>The fee is charged by Polycat, Eleven doesn\'t charge you on the deposit</p>',
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    }
+  },
+  {
+    network: 'polygon',
+    id: 'weth',
+    name: 'WETH',
+    image: 'weth.svg',
+    token: 'WETH',
+    tokenDescription: 'WETH',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses polycat',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11WETH',
+    earnedTokenAddress: '0xde2AB86CC044a2905917F3123aD5b833b363298A',
+    earnContractAddress: '0xde2AB86CC044a2905917F3123aD5b833b363298A',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
+    categories: ['Polycat'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 11
+    },
+
+
+    fees: {
+      third_party: '4% on deposit',
+      deposit: 0,
+      depositWarning: '<p>Be aware of <b>4% Deposit fee</b> on this pool.</p>'
+        + '<p>The fee is charged by Polycat, Eleven doesn\'t charge you on the deposit</p>',
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    }
+  },
+  {
+    network: 'polygon',
+    id: 'iron',
+    name: 'IRON',
+    image: 'iron.png',
+    token: 'IRON',
+    tokenDescription: 'IRON',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses polycat',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11IRON',
+    earnedTokenAddress: '0x3856f4E61f5b28FEE2Fbf322fc03a03AFB930f4f',
+    earnContractAddress: '0x3856f4E61f5b28FEE2Fbf322fc03a03AFB930f4f',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0xD86b5923F3AD7b585eD81B448170ae026c65ae9a',
+    categories: ['Polycat'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 12
+    },
+
+
+    fees: {
+      third_party: '4% on deposit',
+      deposit: 0,
+      depositWarning: '<p>Be aware of <b>4% Deposit fee</b> on this pool.</p>'
+        + '<p>The fee is charged by Polycat, Eleven doesn\'t charge you on the deposit</p>',
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    }
+  },
+  {
+    network: 'polygon',
+    id: 'sushi',
+    name: 'SUSHI',
+    image: 'sushi.svg',
+    token: 'SUSHI',
+    tokenDescription: 'SUSHI',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses polycat',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11SUSHI',
+    earnedTokenAddress: '0xB29425F706ea716C91a2AE68EE883C6A6791938b',
+    earnContractAddress: '0xB29425F706ea716C91a2AE68EE883C6A6791938b',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x0b3F868E0BE5597D5DB7fEB59E1CADBb0fdDa50a',
+    categories: ['Polycat'],
+
+/*    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 9
+    },*/
+
+
+    fees: {
+      third_party: '4% on deposit',
+      deposit: 0,
+      depositWarning: '<p>Be aware of <b>4% Deposit fee</b> on this pool.</p>'
+        + '<p>The fee is charged by Polycat, Eleven doesn\'t charge you on the deposit</p>',
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    }
+  },
+  {
+    network: 'polygon',
+    id: 'link',
+    name: 'LINK',
+    image: 'link.svg',
+    token: 'LINK',
+    tokenDescription: 'LINK',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses polycat',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11LINK',
+    earnedTokenAddress: '0x60c9D693cbe45df09327A46F0792F821Cd58A438',
+    earnContractAddress: '0x60c9D693cbe45df09327A46F0792F821Cd58A438',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x53E0bca35eC356BD5ddDFebbD1Fc0fD03FaBad39',
+    categories: ['Polycat'],
+
+/*    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 9
+    },*/
+
+
+    fees: {
+      third_party: '4% on deposit',
+      deposit: 0,
+      depositWarning: '<p>Be aware of <b>4% Deposit fee</b> on this pool.</p>'
+        + '<p>The fee is charged by Polycat, Eleven doesn\'t charge you on the deposit</p>',
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    }
+  },
+  {
+    network: 'polygon',
+    id: 'usdc',
+    name: 'USDC',
+    image: 'usdc.svg',
+    token: 'USDC ',
+    tokenDescription: 'USDC',
+    tokenAddress: '',
+    tokenDecimals: 6,
+    uses: 'Uses polycat',
+    itokenDecimals: 6,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11USDC',
+    earnedTokenAddress: '0x299FA358763037657Bea14825CD06ff390C2a634',
+    earnContractAddress: '0x299FA358763037657Bea14825CD06ff390C2a634',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
+    categories: ['Polycat'],
+
+/*    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 9
+    },*/
+    fees: {
+      third_party: '4% on deposit',
+      deposit: 0,
+      depositWarning: '<p>Be aware of <b>4% Deposit fee</b> on this pool.</p>'
+        + '<p>The fee is charged by Polycat, Eleven doesn\'t charge you on the deposit</p>',
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    }
+  },
+  {
+    network: 'polygon',
+    id: 'quick',
+    name: 'QUICK',
+    image: 'quick.png',
+    token: 'QUICK',
+    tokenDescription: 'QUICK',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses polycat',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11QUICK',
+    earnedTokenAddress: '0x38E5c26f7bEC4E5966061a1bB13B656999F91c65',
+    earnContractAddress: '0x38E5c26f7bEC4E5966061a1bB13B656999F91c65',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x831753DD7087CaC61aB5644b308642cc1c33Dc13',
+    categories: ['Polycat'],
+
+/*    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 9
+    },*/
+
+
+    fees: {
+      third_party: '4% on deposit',
+      deposit: 0,
+      depositWarning: '<p>Be aware of <b>4% Deposit fee</b> on this pool.</p>'
+        + '<p>The fee is charged by Polycat, Eleven doesn\'t charge you on the deposit</p>',
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    }
+  },
+  {
+    network: 'polygon',
+    id: 'fishmatic',
+    name: 'FISH-MATIC qLP',
+    image: 'fish-matic.svg',
+    token: 'FISH-MATIC qLP',
+    tokenDescription: 'FISH-MATIC qLP',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses polycat',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11FISHMATIC qLP',
+    earnedTokenAddress: '0xF4051fdd819c580e4C03fF73cff9a6D9f29Bd48d',
+    earnContractAddress: '0xF4051fdd819c580e4C03fF73cff9a6D9f29Bd48d',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x289cf2B63c5Edeeeab89663639674d9233E8668E',
+    categories: ['Polycat'],
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    }
+  },
+  {
+    network: 'polygon',
+    id: 'fishmaticd',
+    name: 'FISH-MATIC dLP',
+    image: 'fish-matic.svg',
+    token: 'FISH-MATIC dLP',
+    tokenDescription: 'FISH-MATIC dLP',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses polycat',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11FISHMATIC dLP',
+    earnedTokenAddress: '0x873Ba405abD1Cdc561499097f03E08CCc054eCf8',
+    earnContractAddress: '0x873Ba405abD1Cdc561499097f03E08CCc054eCf8',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x9e2Fbb31fBd68472f6cd54A1635b8cd64d78FC1C',
+    categories: ['Polycat'],
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    }
+  },
+  {
+    network: 'polygon',
+    id: 'fish',
+    name: 'FISH',
+    image: 'fish.svg',
+    token: 'FISH',
+    tokenDescription: 'FISH',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses polycat',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11FISH',
+    earnedTokenAddress: '0x5c95B6C16df69e97D5AEc4cFEFbb1200847D7101',
+    earnContractAddress: '0x5c95B6C16df69e97D5AEc4cFEFbb1200847D7101',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x3a3Df212b7AA91Aa0402B9035b098891d276572B',
+    categories: ['Curve'],
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    }
+  },
+  {
+    network: 'polygon',
     id: 'curve3pool',
     name: 'am3CRV',
     image: 'am3crv.png',
@@ -167,13 +666,13 @@ export const pools = [
       masterchefPid: 2
     },
 
-    // TODO: set correct pool fees
     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.35,
-      platform: 0.35,
-      buybacks: 1.7,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
     }
   },
   {
@@ -200,6 +699,7 @@ export const pools = [
     categories: ['Sushi'],
 
      farm: {
+       isDisabled: true,
        earnedToken: 'ELE',
        earnedTokenDecimals: 18,
        earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
@@ -207,13 +707,13 @@ export const pools = [
        masterchefPid: 3
      },
 
-    // TODO: set correct pool fees
-    fees: {
+     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.35,
-      platform: 0.35,
-      buybacks: 1.7,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
     }
   },
   {
@@ -240,20 +740,21 @@ export const pools = [
     categories: ['Sushi'],
 
      farm: {
+       isDisabled: true,
        earnedToken: 'ELE',
        earnedTokenDecimals: 18,
        earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
        earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
-       masterchefPid: 4 // TODO:
+       masterchefPid: 4
      },
 
-    // TODO: set correct pool fees
-    fees: {
+     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.35,
-      platform: 0.35,
-      buybacks: 1.7,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
     }
   },
   {
@@ -280,20 +781,21 @@ export const pools = [
     categories: ['Sushi'],
 
      farm: {
+       isDisabled: true,
        earnedToken: 'ELE',
        earnedTokenDecimals: 18,
        earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
        earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
-       masterchefPid: 5 // TODO:
+       masterchefPid: 5
      },
 
-    // TODO: set correct pool fees
-    fees: {
+     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.35,
-      platform: 0.35,
-      buybacks: 1.7,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
     }
   },
   {
@@ -310,7 +812,7 @@ export const pools = [
     depostLimit:0,
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
-    earnedToken: '11IRON',
+    earnedToken: '11TITAN',
     earnedTokenAddress: '0x5F2b2518616907A5f76f25e9e2b67a571879c610',
     earnContractAddress: '0x5F2b2518616907A5f76f25e9e2b67a571879c610',
     defaultApy: "39.54",
@@ -324,16 +826,16 @@ export const pools = [
        earnedTokenDecimals: 18,
        earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
        earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
-       masterchefPid: 6 // TODO:
+       masterchefPid: 6
      },
 
-    // TODO: set correct pool fees
-    fees: {
+     fees: {
       deposit: 0,
       withdrawal: 0.1,
-      controller: 0.35,
-      platform: 0.35,
-      buybacks: 1.7,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
     }
   },
   {
@@ -373,6 +875,7 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.35,
       platform: 0.35,
+      dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
     }
@@ -468,7 +971,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -508,6 +1012,7 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.35,
       platform: 0.35,
+      dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
     }
@@ -548,7 +1053,8 @@ export const pools = [
       withdrawal: 0,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -583,7 +1089,8 @@ export const pools = [
       withdrawal: 0,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -619,7 +1126,8 @@ export const pools = [
       withdrawal: 0,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -655,7 +1163,8 @@ export const pools = [
       withdrawal: 0,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -690,7 +1199,8 @@ export const pools = [
       withdrawal: 0,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -725,7 +1235,8 @@ export const pools = [
       withdrawal: 0,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -760,7 +1271,8 @@ export const pools = [
       withdrawal: 0,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -799,7 +1311,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -839,6 +1352,7 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.35,
       platform: 0.35,
+      dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
     }
@@ -880,6 +1394,7 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.35,
       platform: 0.35,
+      dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
     }
@@ -921,6 +1436,7 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.35,
       platform: 0.35,
+      dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
     }
@@ -962,6 +1478,7 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.35,
       platform: 0.35,
+      dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
     }
@@ -1003,6 +1520,7 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.35,
       platform: 0.35,
+      dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
     }
@@ -1044,6 +1562,7 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.35,
       platform: 0.35,
+      dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
     }
@@ -1085,6 +1604,7 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.35,
       platform: 0.35,
+      dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
     }
@@ -1126,6 +1646,7 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.35,
       platform: 0.35,
+      dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
     }
@@ -1167,6 +1688,7 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.35,
       platform: 0.35,
+      dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
     }
@@ -1208,6 +1730,7 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.35,
       platform: 0.35,
+      dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
     }
@@ -1290,6 +1813,7 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.35,
       platform: 0.35,
+      dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
     }
@@ -1331,6 +1855,7 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.35,
       platform: 0.35,
+      dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
     }
@@ -1372,6 +1897,7 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.35,
       platform: 0.35,
+      dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
     }
@@ -1413,6 +1939,7 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.35,
       platform: 0.35,
+      dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
     }
@@ -1454,6 +1981,7 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.35,
       platform: 0.35,
+      dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
     }
@@ -1495,6 +2023,7 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.35,
       platform: 0.35,
+      dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
     }
@@ -1536,6 +2065,7 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.35,
       platform: 0.35,
+      dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
     }
@@ -1577,6 +2107,7 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.35,
       platform: 0.35,
+      dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
     }
@@ -1618,6 +2149,7 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.35,
       platform: 0.35,
+      dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
     }
@@ -1659,6 +2191,7 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.35,
       platform: 0.35,
+      dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
     }
@@ -1700,6 +2233,7 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.35,
       platform: 0.35,
+      dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
     }
@@ -1741,6 +2275,7 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.35,
       platform: 0.35,
+      dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
     }
@@ -1782,6 +2317,7 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.35,
       platform: 0.35,
+      dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
     }
@@ -1823,6 +2359,7 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.35,
       platform: 0.35,
+      dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
     }
@@ -1864,6 +2401,7 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.35,
       platform: 0.35,
+      dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
     }
@@ -1907,6 +2445,7 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.35,
       platform: 0.35,
+      dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
     }
@@ -1947,7 +2486,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -1986,7 +2526,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -2027,7 +2568,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -2067,6 +2609,7 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.35,
       platform: 0.35,
+      dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
     }
@@ -2109,7 +2652,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -2152,7 +2696,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -2192,7 +2737,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
 
@@ -2235,7 +2781,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -2274,7 +2821,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -2313,7 +2861,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -2352,7 +2901,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -2391,7 +2941,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -2430,7 +2981,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -2469,7 +3021,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -2508,7 +3061,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -2547,7 +3101,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -2625,7 +3180,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -2664,7 +3220,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -2703,7 +3260,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -2742,7 +3300,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -2781,7 +3340,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -2820,7 +3380,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -2859,7 +3420,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -2898,7 +3460,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -2937,7 +3500,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -2976,7 +3540,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -3015,7 +3580,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -3054,7 +3620,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -3093,7 +3660,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -3132,7 +3700,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -3171,7 +3740,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -3210,7 +3780,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -3249,7 +3820,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -3288,7 +3860,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -3327,7 +3900,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -3366,7 +3940,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -3405,7 +3980,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -3444,7 +4020,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -3483,7 +4060,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -3525,7 +4103,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -3564,7 +4143,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -3603,7 +4183,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -3642,7 +4223,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -3681,7 +4263,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -3720,7 +4303,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -3759,7 +4343,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -3798,7 +4383,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -3837,7 +4423,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -3876,7 +4463,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -3915,7 +4503,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -3954,7 +4543,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -3993,7 +4583,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -4032,7 +4623,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -4071,7 +4663,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -4110,7 +4703,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -4149,7 +4743,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -4188,7 +4783,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -4227,7 +4823,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -4266,7 +4863,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -4305,7 +4903,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -4344,7 +4943,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -4383,7 +4983,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -4422,7 +5023,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -4461,7 +5063,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -4500,7 +5103,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -4539,7 +5143,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -4578,7 +5183,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -4617,7 +5223,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -4656,7 +5263,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -4695,7 +5303,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -4734,7 +5343,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -4773,7 +5383,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -4812,7 +5423,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -4851,7 +5463,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -4890,7 +5503,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -4929,7 +5543,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -4968,7 +5583,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -5007,7 +5623,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -5046,7 +5663,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -5062,7 +5680,7 @@ export const pools = [
     depostLimit:0,
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
-    earnedToken: '11LINK',
+    earnedToken: '11LINKBNB',
     earnedTokenAddress: '0xb6e754db11fba321c1e27d449677177fb0024d1f',
     earnContractAddress: '0xb6e754db11fba321c1e27d449677177fb0024d1f',
     defaultApy: "39.54",
@@ -5085,7 +5703,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -5124,7 +5743,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -5163,7 +5783,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -5202,7 +5823,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
   {
@@ -5272,7 +5894,8 @@ export const pools = [
       withdrawal: 0.1,
       controller: 0.275,
       platform: 0.275,
-      buybacks: 1.65
+      dividends: 0.1,
+      buybacks: 1.55
     }
   },
 ];
