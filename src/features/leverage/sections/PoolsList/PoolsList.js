@@ -4,7 +4,7 @@ import { createUseStyles } from 'react-jss';
 import { useConnectWallet } from '../../../home/redux/hooks';
 import {
   useFetchBalances,
-  useFetchLeverageBalances,
+  useFetchAllowances,
   useFetchPoolsData,
 } from '../../redux/hooks';
 
@@ -16,9 +16,9 @@ const useStyles = createUseStyles(styles);
 export default function PoolsList() {
   const classes = useStyles();
   const { web3, address, network } = useConnectWallet();
-  const { fetchLeverageBalances, fetchLeverageBalancesDone } = useFetchLeverageBalances();
   const { banks, pools, fetchPoolsData, fetchPoolsDataDone } = useFetchPoolsData();
   const { tokens, fetchBalances, fetchBalancesDone } = useFetchBalances();
+  const { fetchAllowances, fetchAllowancesDone } = useFetchAllowances();
 
   const [data, setData] = useState([]);
 
@@ -27,7 +27,7 @@ export default function PoolsList() {
       if (address && web3 && network) {
         fetchPoolsData({ banks, pools });
         fetchBalances({ address, web3, tokens, network, forceUpdate });
-        // fetchLeverageBalances({ address, web3, leverageOptions, network, forceUpdate });
+        // fetchAllowances({ address, web3, leverageOptions, network, forceUpdate });
       }
     }
 
@@ -35,7 +35,7 @@ export default function PoolsList() {
 
     const id = setInterval(fetch, 30000);
     return () => clearInterval(id);
-  }, [address, web3, network, fetchBalances, fetchLeverageBalances]);
+  }, [address, web3, network, fetchBalances, fetchAllowances]);
 
   return (
     <>

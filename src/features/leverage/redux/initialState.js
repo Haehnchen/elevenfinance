@@ -19,8 +19,8 @@ const initialState = {
   tokens,
   fetchBalancesDone: false,
   fetchBalancesPending: false,
-  fetchLeverageBalancesDone: false,
-  fetchLeverageBalancesPending: false,
+  fetchAllowancesDone: false,
+  fetchAllowancesPending: false,
   fetchPoolsDataDone: false,
   fetchPoolsDataPending: false,
 };

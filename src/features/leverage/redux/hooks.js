@@ -1,3 +1,3 @@
 export { useFetchBalances } from './fetchBalances';
-export { useFetchLeverageBalances } from './fetchLeverageBalances';
+export { useFetchAllowances } from './fetchAllowances';
 export { useFetchPoolsData } from './fetchPoolsData';
