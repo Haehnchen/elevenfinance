@@ -3,6 +3,7 @@ import { createUseStyles } from 'react-jss';
 
 import { useConnectWallet } from '../../../home/redux/hooks';
 import {
+  useFetchBalances,
   useFetchLeverageBalances,
   useFetchPoolsData,
 } from '../../redux/hooks';
@@ -17,11 +18,7 @@ export default function PoolsList() {
   const { web3, address, network } = useConnectWallet();
   const { fetchLeverageBalances, fetchLeverageBalancesDone } = useFetchLeverageBalances();
   const { banks, pools, fetchPoolsData, fetchPoolsDataDone } = useFetchPoolsData();
-
-  //
-  const fetchBalances = null; //@todo: implement useFetchBalances
-  // const { tokens, fetchBalances, fetchBalancesDone } = useFetchBalances();
-  //
+  const { tokens, fetchBalances, fetchBalancesDone } = useFetchBalances();
 
   const [data, setData] = useState([]);
 
@@ -29,6 +26,7 @@ export default function PoolsList() {
     const fetch = (forceUpdate = false) => {
       if (address && web3 && network) {
         fetchPoolsData({ banks, pools });
+        fetchBalances({ address, web3, tokens, network, forceUpdate });
         // fetchLeverageBalances({ address, web3, leverageOptions, network, forceUpdate });
       }
     }
@@ -49,6 +47,8 @@ export default function PoolsList() {
             key={pool.id}
             pool={pool}
             bank={banks[pool.bank]}
+            tokens={tokens}
+            fetchBalancesDone={fetchBalancesDone}
             fetchPoolsDataDone={fetchPoolsDataDone}
           />
         );

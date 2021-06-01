@@ -11,7 +11,7 @@ import styles from './styles.js';
 import { switchNetwork } from 'features/web3/switchNetwork.js';
 const useStyles = createUseStyles(styles);
 
-export default function Pool({ bank, pool, fetchPoolsDataDone }) {
+export default function Pool({ bank, pool, tokens, fetchBalancesDone, fetchPoolsDataDone }) {
   const classes = useStyles();
 
   const { web3, network, connectWallet } = useConnectWallet();

@@ -17,6 +17,8 @@ const initialState = {
   banks,
   pools,
   tokens,
+  fetchBalancesDone: false,
+  fetchBalancesPending: false,
   fetchLeverageBalancesDone: false,
   fetchLeverageBalancesPending: false,
   fetchPoolsDataDone: false,
