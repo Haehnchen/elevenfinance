@@ -106,7 +106,7 @@ export function useFetchAllowances() {
   );
 
   return {
-    allowances, //
+    pools,
     fetchAllowances: boundAction,
     fetchAllowancesDone,
     fetchAllowancesPending
