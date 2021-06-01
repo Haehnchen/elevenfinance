@@ -146,7 +146,52 @@ export const pools = [
       earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
       masterchefPid: 0
     }
-  },{
+  },
+  {
+    network: 'polygon',
+    id: 'dfyn',
+    name: 'DFYN',
+    image: 'dfyn.svg',
+    token: 'DFYN',
+    tokenDescription: 'DFYN',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses polycat',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11DFYN',
+    earnedTokenAddress: '0xC5E165c4Da919448889e4DDf625E56641A340Dab',
+    earnContractAddress: '0xC5E165c4Da919448889e4DDf625E56641A340Dab',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0xC168E40227E4ebD8C1caE80F7a55a4F0e6D66C97',
+    categories: ['Polycat'],
+
+/*    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 9
+    },*/
+
+
+    fees: {
+      third_party: '4% on deposit',
+      deposit: 0,
+      depositWarning: '<p>Be aware of <b>4% Deposit fee</b> on this pool.</p>'
+        + '<p>The fee is charged by Polycat, Eleven doesn\'t charge you on the deposit</p>',
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    }
+  },
+  {
     network: 'polygon',
     id: 'wmatic',
     name: 'WMATIC',
