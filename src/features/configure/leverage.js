@@ -25,11 +25,13 @@ export const pools = [
         token: "11CAKEBNB",
         image: '',
         address: '0x58D25A7e34eE8fA7A070510e6D2E0096Ed62c828',
+        decimals: 18,
       },
       {
         token: "BNB",
         image: '',
         address: null, //native token
+        decimals: 18,
       },
     ],
 
@@ -54,11 +56,13 @@ export const pools = [
         token: "11USDTBUSD",
         image: 'usdt-busd.png',
         address: '0x1a489ee9ccd2f062f86361fb7af9dac9293864bc',
+        decimals: 18,
       },
       {
         token: "BUSD",
         image: '',
         address: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
+        decimals: 18,
       },
     ],
 
