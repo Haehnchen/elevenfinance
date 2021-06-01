@@ -8,15 +8,15 @@ import { getNetworkMulticall, getNetworkTokenShim } from 'features/helpers/getNe
 import { byDecimals } from 'features/helpers/bignumber';
 
 import {
-  LEVERAGE_FETCH_LEVERAGE_BALANCES_BEGIN,
-  LEVERAGE_FETCH_LEVERAGE_BALANCES_SUCCESS,
-  LEVERAGE_FETCH_LEVERAGE_BALANCES_FAILURE,
+  LEVERAGE_FETCH_ALLOWANCES_BEGIN,
+  LEVERAGE_FETCH_ALLOWANCES_SUCCESS,
+  LEVERAGE_FETCH_ALLOWANCES_FAILURE,
 } from './constants';
 
-export function fetchLeverageBalances(data) {
+export function fetchAllowances(data) {
   return dispatch => {
     dispatch({
-      type: LEVERAGE_FETCH_LEVERAGE_BALANCES_BEGIN,
+      type: LEVERAGE_FETCH_ALLOWANCES_BEGIN,
       data: data.forceUpdate || false
     });
 
@@ -64,7 +64,7 @@ export function fetchLeverageBalances(data) {
           })
 
           dispatch({
-            type: LEVERAGE_FETCH_LEVERAGE_BALANCES_SUCCESS,
+            type: LEVERAGE_FETCH_ALLOWANCES_SUCCESS,
             data: leverageOptionsData,
           });
 
@@ -72,7 +72,7 @@ export function fetchLeverageBalances(data) {
         })
         .catch(error => {
           dispatch({
-            type: LEVERAGE_FETCH_LEVERAGE_BALANCES_FAILURE,
+            type: LEVERAGE_FETCH_ALLOWANCES_FAILURE,
           });
 
           return reject(error.message || error);
@@ -84,48 +84,48 @@ export function fetchLeverageBalances(data) {
 }
 
 
-export function useFetchLeverageBalances() {
+export function useFetchAllowances() {
   // args: false value or array
   // if array, means args passed to the action creator
   const dispatch = useDispatch();
 
-  const { pools, fetchLeverageBalancesDone, fetchLeverageBalancesPending } = useSelector(
+  const { pools, fetchAllowancesDone, fetchAllowancesPending } = useSelector(
     state => ({
       pools: state.leverage.pools,
-      fetchLeverageBalancesDone: state.leverage.fetchLeverageBalancesDone,
-      fetchLeverageBalancesPending: state.leverage.fetchLeverageBalancesPending,
+      fetchAllowancesDone: state.leverage.fetchAllowancesDone,
+      fetchAllowancesPending: state.leverage.fetchAllowancesPending,
     }),
     shallowEqual,
   );
 
   const boundAction = useCallback(
     (data) => {
-      return dispatch(fetchLeverageBalances(data));
+      return dispatch(fetchAllowances(data));
     },
     [dispatch],
   );
 
   return {
     pools,
-    fetchLeverageBalances: boundAction,
-    fetchLeverageBalancesDone,
-    fetchLeverageBalancesPending
+    fetchAllowances: boundAction,
+    fetchAllowancesDone,
+    fetchAllowancesPending
   };
 }
 
 
 export function reducer(state, action) {
-  const { pools, fetchLeverageBalancesDone } = state;
+  const { pools, fetchAllowancesDone } = state;
 
   switch (action.type) {
-    case LEVERAGE_FETCH_LEVERAGE_BALANCES_BEGIN:
+    case LEVERAGE_FETCH_ALLOWANCES_BEGIN:
       return {
         ...state,
-        fetchLeverageBalancesDone: action.data ? false : fetchLeverageBalancesDone,
-        fetchLeverageBalancesPending: true,
+        fetchAllowancesDone: action.data ? false : fetchAllowancesDone,
+        fetchAllowancesPending: true,
       };
 
-    case LEVERAGE_FETCH_LEVERAGE_BALANCES_SUCCESS:
+    case LEVERAGE_FETCH_ALLOWANCES_SUCCESS:
 
       const updatedPools = pools.map(option => {
         if (! action.data[option.title]) {
@@ -142,14 +142,14 @@ export function reducer(state, action) {
       return {
         ...state,
         pools: pools,
-        fetchLeverageBalancesDone: true,
-        fetchLeverageBalancesPending: false,
+        fetchAllowancesDone: true,
+        fetchAllowancesPending: false,
       };
 
-    case LEVERAGE_FETCH_LEVERAGE_BALANCES_FAILURE:
+    case LEVERAGE_FETCH_ALLOWANCES_FAILURE:
       return {
         ...state,
-        fetchLeverageBalancesPending: false,
+        fetchAllowancesPending: false,
       };
 
     default:

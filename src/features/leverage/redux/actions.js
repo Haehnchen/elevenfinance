@@ -1,1 +1,2 @@
-export { fetchLeverageBalances } from './fetchLeverageBalances';
+export { fetchBalances } from './fetchBalances'
+export { fetchAllowances } from './fetchAllowances';

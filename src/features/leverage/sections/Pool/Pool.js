@@ -13,7 +13,7 @@ import OpenPosition from '../OpenPosition/OpenPosition';
 import styles from './styles.js';
 const useStyles = createUseStyles(styles);
 
-export default function Pool({ bank, pool, fetchPoolsDataDone }) {
+export default function Pool({ bank, pool, tokens, fetchBalancesDone, fetchPoolsDataDone }) {
   const classes = useStyles();
 
   const { web3, network, connectWallet } = useConnectWallet();
