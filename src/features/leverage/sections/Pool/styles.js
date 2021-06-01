@@ -100,35 +100,64 @@ const styles = {
     }
   },
 
-  discontinuedMessage: {
-    position: 'relative',
-
-    minHeight: 24,
-
-    marginBottom: 20,
-    paddingLeft: 120,
+  stats: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flex: '0 0 auto',
+    width: 200,
 
     color: COLORS.textSecondaryLight,
-    fontSize: FONT.size.normal,
-    fontWeight: 500,
+    fontSize: FONT.size.small,
+    lineHeight: FONT.size.h4,
 
-    '& :first-child': {
-      position: 'absolute',
+    '& > :last-child': {
+      fontWeight: 600,
+      textAlign: 'right',
+    },
 
-      padding: '5px 14px',
-      top: -5,
-      left: -20,
-
-      color: COLORS.textLight,
-      fontSize: FONT.size.normal,
-
-      background: COLORS.bgDark,
-      borderRadius: [0, BORDER.radiusSmall, BORDER.radiusSmall, 0],
-
-      fontSize: FONT.size.small,
-      textTransform: 'uppercase',
-      fontWeight: 500,
+    '& p': {
+      marginBottom: 0,
     }
+  },
+
+  leverage: {
+    height: 48,
+
+    '& p:first-child': {
+      margin: '-2px 0 2px'
+    }
+  },
+
+  leverageInput: {
+    ...commonStyles.h4,
+
+    width: 30,
+    height: 28,
+    margin: '0 10px',
+
+    textAlign: 'center',
+
+    background: 'transparent',
+    border: 'none',
+    outline: 'none'
+  },
+
+  leverageButton: {
+    width: 30,
+    height: 30,
+
+    color: COLORS.textSecondaryLight,
+    fontSize: FONT.size.h4,
+    lineHeight: '30px',
+    textAlign: 'center',
+
+    background: COLORS.bgDark,
+    borderRadius: BORDER.radiusSmall,
+
+    cursor: 'pointer',
+    border: 'none',
+    outline: 'none'
   },
 
   networkSwitch: {

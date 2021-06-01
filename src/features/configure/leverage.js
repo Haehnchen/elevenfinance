@@ -14,12 +14,12 @@ export const pools = [
     network: 'bsc',
     id: 'cakebnb',
     name: "CAKE-BNB LP",
-    image: 'usdt-busd.png',
+    image: 'cake_bnb.png',
     bigfootAddress: '0x7fF89d5d048DA9a090C51D3FF7eD0fC45bcFe521',
     bank: 'bfBNB',
     apiKey: 'CAKE-BNB LP',
     deathLeverage: 3.333333333333,
-    maxLeverage: 2.666666666666,
+    maxLeverage: 2.5,
     tokens: [
       {
         token: "11CAKEBNB",
@@ -43,7 +43,7 @@ export const pools = [
     network: 'bsc',
     id: 'usdtbusd',
     name: "USDT-BUSD WLP",
-    image: 'usdt-busd.png',
+    image: 'usdt_busd.png',
     bigfootAddress: '0x97E1227D1d0072d9eCf72065e60B64F883dA7FDF',
     bank: 'bfUSD',
     apiKey: 'USDT-BUSD WLP',
