@@ -233,6 +233,182 @@ export const pools = [
   },
   {
     network: 'polygon',
+    id: 'polydoge',
+    name: 'POLYDOGE',
+    image: 'polydoge.svg',
+    token: 'POLYDOGE',
+    tokenDescription: 'POLYDOGE',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses polycat',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11POLYDOGE',
+    earnedTokenAddress: '0x39Cf6Bd2671798d482578CE4407bA5f64f87803D',
+    earnContractAddress: '0x39Cf6Bd2671798d482578CE4407bA5f64f87803D',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x8A953CfE442c5E8855cc6c61b1293FA648BAE472',
+    categories: ['Polycat'],
+
+/*    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 9
+    },*/
+
+
+    fees: {
+      third_party: '4% on deposit',
+      deposit: 0,
+      depositWarning: '<p>Be aware of <b>4% Deposit fee</b> on this pool.</p>'
+        + '<p>The fee is charged by Polycat, Eleven doesn\'t charge you on the deposit</p>',
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    }
+  },
+  {
+    network: 'polygon',
+    id: 'krill',
+    name: 'KRILL',
+    image: 'krill.svg',
+    token: 'KRILL',
+    tokenDescription: 'KRILL',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses polycat',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11KRILL',
+    earnedTokenAddress: '0x162Da44709810Dcb8b886B60d9b3d0B105A77946',
+    earnContractAddress: '0x162Da44709810Dcb8b886B60d9b3d0B105A77946',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x05089C9EBFFa4F0AcA269e32056b1b36B37ED71b',
+    categories: ['Polycat'],
+
+/*    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 9
+    },*/
+
+
+    fees: {
+      third_party: '4% on deposit',
+      deposit: 0,
+      depositWarning: '<p>Be aware of <b>4% Deposit fee</b> on this pool.</p>'
+        + '<p>The fee is charged by Polycat, Eleven doesn\'t charge you on the deposit</p>',
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    }
+  },
+  {
+    network: 'polygon',
+    id: 'dai',
+    name: 'DAI',
+    image: 'dai.svg',
+    token: 'DAI',
+    tokenDescription: 'DAI',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses polycat',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11DAI',
+    earnedTokenAddress: '0xc74968693A829CA04f49E741285a0BE831FaC5f7',
+    earnContractAddress: '0xc74968693A829CA04f49E741285a0BE831FaC5f7',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063',
+    categories: ['Polycat'],
+
+/*    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 9
+    },*/
+
+
+    fees: {
+      third_party: '4% on deposit',
+      deposit: 0,
+      depositWarning: '<p>Be aware of <b>4% Deposit fee</b> on this pool.</p>'
+        + '<p>The fee is charged by Polycat, Eleven doesn\'t charge you on the deposit</p>',
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    }
+  },
+  {
+    network: 'polygon',
+    id: 'usdt',
+    name: 'USDT',
+    image: 'usdt.svg',
+    token: 'USDT ',
+    tokenDescription: 'USDT',
+    tokenAddress: '',
+    tokenDecimals: 6,
+    uses: 'Uses polycat',
+    itokenDecimals: 6,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11USDT ',
+    earnedTokenAddress: '0xAA6bca49f7842823312B0d90b4e1e336A7DBf892',
+    earnContractAddress: '0xAA6bca49f7842823312B0d90b4e1e336A7DBf892',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0xc2132D05D31c914a87C6611C10748AEb04B58e8F',
+    categories: ['Polycat'],
+
+/*    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 9
+    },*/
+
+
+    fees: {
+      third_party: '4% on deposit',
+      deposit: 0,
+      depositWarning: '<p>Be aware of <b>4% Deposit fee</b> on this pool.</p>'
+        + '<p>The fee is charged by Polycat, Eleven doesn\'t charge you on the deposit</p>',
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    }
+  },
+  {
+    network: 'polygon',
     id: 'dfyn',
     name: 'DFYN',
     image: 'dfyn.svg',
