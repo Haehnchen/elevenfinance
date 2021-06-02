@@ -18,16 +18,14 @@ export default function PoolsList() {
   const { web3, address, network } = useConnectWallet();
   const { banks, pools, fetchPoolsData, fetchPoolsDataDone } = useFetchPoolsData();
   const { tokens, fetchBalances, fetchBalancesDone } = useFetchBalances();
-  const { fetchAllowances, fetchAllowancesDone } = useFetchAllowances();
-
-  const [data, setData] = useState([]);
+  const { fetchAllowances } = useFetchAllowances();
 
   useEffect(() => {
     const fetch = (forceUpdate = false) => {
       if (address && web3 && network) {
         fetchPoolsData({ banks, pools });
         fetchBalances({ address, web3, tokens, network, forceUpdate });
-        // fetchAllowances({ address, web3, leverageOptions, network, forceUpdate });
+        fetchAllowances({ address, web3, pools, network, forceUpdate });
       }
     }
 

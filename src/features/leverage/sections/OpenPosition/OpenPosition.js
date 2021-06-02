@@ -1,22 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import { createUseStyles } from 'react-jss';
+import { useSnackbar } from 'notistack';
 import BigNumber from 'bignumber.js';
 import { byDecimals } from 'features/helpers/bignumber';
+
+import { useConnectWallet } from 'features/home/redux/hooks';
+import { useOpenPosition } from '../../redux/hooks';
 
 import Slider from '@material-ui/core/Slider';
 
 import Alert from 'components/Alert/Alert';
 import AmountDialog from 'components/AmountDialog/AmountDialog';
+import ApproveTokensDialog from 'components/ApproveTokensDialog/ApproveTokensDialog';
 
 import styles from './styles.js';
 const useStyles = createUseStyles(styles);
 
-export default function OpenPosition({ pool, tokens, fetchBalancesDone }) {
+export default function OpenPosition({ pool, bank, tokens, fetchBalancesDone }) {
   const classes = useStyles();
+  const { enqueueSnackbar } = useSnackbar();
+  const { web3, address, network } = useConnectWallet();
+  const { openPosition, openPositionPending } = useOpenPosition();
 
   const [tokensAmounts, setTokensAmounts] = useState([]);
+  const [leverage, setLeverage] = useState(pool.maxLeverage);
+  const [tokensRequiringApproval, setTokensRequiringApproval] = useState([]);
   const [amountDialogOpen, setAmountDialogOpen] = useState(false);
-  const [leverage, setLeverage] = useState(pool.maxLeverage)
+  const [approvalDialogOpen, setApprovalDialogOpen] = useState(false);
 
   useEffect(() => {
     const amounts = [];
@@ -44,8 +54,36 @@ export default function OpenPosition({ pool, tokens, fetchBalancesDone }) {
     setTokensAmounts(amounts)
   }, [pool, tokens]);
 
-  const onOpenPosition = () => {
-    // TODO:
+  const onOpenPosition = (amounts) => {
+    if (! amounts.filter(amount => +amount > 0).length) {
+      enqueueSnackbar(`Enter the amount of collateral to open position`, { variant: 'error' })
+      return;
+    }
+
+    // Check if any of tokens requires approval
+    const approvals = pool.tokens.filter((token, index) => amounts[index] > 0 && ! pool.allowance[token.address || '']);
+    if (approvals.length) {
+      setTokensRequiringApproval(approvals);
+      setAmountDialogOpen(false);
+      setApprovalDialogOpen(true);
+      return;
+    }
+
+    const amountsValues = pool.tokens.map((token, index) => {
+      return new BigNumber(amounts[index]);
+    });
+
+    openPosition({ address, web3, network, pool, bank, amounts: amountsValues, leverage })
+      .then(() => {
+        setAmountDialogOpen(false);
+        enqueueSnackbar(`Position successfully opened`, { variant: 'success' })
+      })
+      .catch(error => enqueueSnackbar(`Unable to open position: ${error}`, { variant: 'error' }))
+  }
+
+  const onTokensApproved = () => {
+    setApprovalDialogOpen(false);
+    setAmountDialogOpen(true);
   }
 
   const onOpenPositionButton = () => {
@@ -104,7 +142,7 @@ export default function OpenPosition({ pool, tokens, fetchBalancesDone }) {
 
         title={'Open Leveraged Position'}
         buttonText={'Open Position'}
-        buttonIsLoading={false}
+        buttonIsLoading={openPositionPending[pool.id]}
 
         open={amountDialogOpen}
         onClose={onAmountDialogClose}
@@ -122,6 +160,16 @@ export default function OpenPosition({ pool, tokens, fetchBalancesDone }) {
           </p>
         </Alert>
       </AmountDialog>
+
+      <ApproveTokensDialog
+        address={address}
+        web3={web3}
+        spender={pool.bigfootAddress}
+        tokens={tokensRequiringApproval}
+        isOpen={approvalDialogOpen}
+        onClose={() => setApprovalDialogOpen(false)}
+        onComplete={() => onTokensApproved()}
+      />
     </>
   )
 }

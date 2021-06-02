@@ -14,14 +14,16 @@ export const approval = ({web3, address, tokenAddress, contractAddress, dispatch
     // `)
     contract.methods.approve(contractAddress, web3.utils.toWei('79228162514', "ether")).send({ from: address }).on(
       'transactionHash', function(hash){
-        dispatch(enqueueSnackbar({
-          message: hash,
-          options: {
-            key: new Date().getTime() + Math.random(),
-            variant: 'success'
-          },
-          hash
-        }));
+        if (dispatch) {
+          dispatch(enqueueSnackbar({
+            message: hash,
+            options: {
+              key: new Date().getTime() + Math.random(),
+              variant: 'success'
+            },
+            hash
+          }));
+        }
       })
       .on('receipt', function(receipt){
         resolve(new BigNumber(79228162514).toNumber());

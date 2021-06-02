@@ -9,3 +9,8 @@ export const getNetworkTokenShim = (networkName) => {
   const networkData = networks.find(network => network.name == networkName);
   return networkData?.nativeTokenShim || '';
 }
+
+export const getNetworkWrappedNativeToken = (networkName) => {
+  const networkData = networks.find(network => network.name == networkName);
+  return networkData?.wrappedNativeToken || '';
+}

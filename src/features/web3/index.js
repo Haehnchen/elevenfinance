@@ -20,5 +20,6 @@ export { withdraw } from './withdraw';
 export { withdrawMultiToken } from './withdrawMultiToken';
 export { withdrawNativeToken } from './withdrawNativeToken';
 export { fetchPricePerFullShare } from './fetchPricePerFullShare';
+export { fetchVaultTokenValue } from './fetchVaultTokenValue';
 export { zapOrSwap } from './zapOrSwap';
 export { statke } from './stake';

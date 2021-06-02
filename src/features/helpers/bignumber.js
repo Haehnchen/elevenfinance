@@ -225,6 +225,15 @@ export function calculateReallyNum(total,sliderNum,formatNum=4){
   return byDecimals(sliderNum/100*Number(total), 0).toFormat(formatNum);
 }
 
+export function amountToUint(number, decimals = 18) {
+  if (typeof number !== 'object') {
+    number = new BigNumber(number);
+  }
+  return number
+    .multipliedBy(new BigNumber(10).exponentiatedBy(decimals))
+    .toFixed(0);
+}
+
 export function formatDecimals(number, maxDecimals = null) {
   if (! number || number.eq(0)) {
     return '0';

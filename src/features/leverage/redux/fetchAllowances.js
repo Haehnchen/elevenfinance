@@ -1,11 +1,10 @@
 import { useCallback } from 'react';
-import { erc20ABI } from "../../configure";
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import BigNumber from 'bignumber.js';
 import { MultiCall } from 'eth-multicall';
 
 import { getNetworkMulticall, getNetworkTokenShim } from 'features/helpers/getNetworkData';
-import { byDecimals } from 'features/helpers/bignumber';
+import { erc20ABI } from "../../configure";
 
 import {
   LEVERAGE_FETCH_ALLOWANCES_BEGIN,
@@ -21,51 +20,53 @@ export function fetchAllowances(data) {
     });
 
     const promise = new Promise((resolve, reject) => {
-      const { address, web3, leverageOptions, network } = data;
+      const { address, web3, pools, network } = data;
 
-      const tokenCalls = leverageOptions.map(option => {
-        const tokens = option.tokens.map(token => token.address);
+      const networkPools = pools.filter(pool => pool.network == network);
 
-        return tokens.map( (token, index) => {
+      const tokenCalls = networkPools.map(pool => {
+        const tokens = pool.tokens.map(token => token.address);
+
+        return tokens.map((token, index) => {
           const contract = new web3.eth.Contract(erc20ABI, token || getNetworkTokenShim(network));
 
-          //spenderAddress:
+          // spenderAddress:
           // - first token to be approved against bigfoot contract
           // - all other tokens in the array to be approved against bank contract
-          const spenderAddress = (index === 0) ? option.bigfootAddress : option.bankAddress;
+          // const spenderAddress = (index === 0) ? pool.bigfootAddress : pool.bankAddress; TODO: ???
+          const spenderAddress = pool.bigfootAddress;
 
           return {
-            leverageOption: option.title,
+            pool: pool.id,
             token: token || '',
             allowance: contract.methods.allowance(address, spenderAddress)
           };
         });
       }).flat();
 
-
       const multicall = new MultiCall(web3, getNetworkMulticall(network));
       multicall.all([tokenCalls])
         .then(data => {
           const allowances = {};
 
-          // Process leverageOptions allowances
-          data[0].forEach(response => {
-            allowances[response.leverageOption] = {
-              ...allowances[response.leverageOption],
-              [response.token]: new BigNumber(response.allowance).toNumber()
+          // Process pools allowances
+          data[0].forEach(allowance => {
+            allowances[allowance.pool] = {
+              ...allowances[allowance.pool],
+              [allowance.token]: new BigNumber(allowance.allowance).toNumber()
             }
           });
 
-          const leverageOptionsData = {};
+          const poolsData = {};
 
-          leverageOptions.map(option => {
-            const allowance = allowances[option.title];
-            leverageOptionsData[option.title] = { allowance }
+          pools.map(pool => {
+            const allowance = allowances[pool.id];
+            poolsData[pool.id] = { allowance }
           })
 
           dispatch({
             type: LEVERAGE_FETCH_ALLOWANCES_SUCCESS,
-            data: leverageOptionsData,
+            data: poolsData,
           });
 
           resolve()
@@ -126,22 +127,21 @@ export function reducer(state, action) {
       };
 
     case LEVERAGE_FETCH_ALLOWANCES_SUCCESS:
-
-      const updatedPools = pools.map(option => {
-        if (! action.data[option.title]) {
-          return option;
+      const updatedPools = pools.map(pool => {
+        if (! action.data[pool.id]) {
+          return pool;
         }
 
-        const { allowance } = action.data[option.title];
+        const { allowance } = action.data[pool.id];
         return {
-          ...option,
+          ...pool,
           allowance
         }
       });
 
       return {
         ...state,
-        pools: pools,
+        pools: updatedPools,
         fetchAllowancesDone: true,
         fetchAllowancesPending: false,
       };

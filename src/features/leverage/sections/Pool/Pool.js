@@ -144,6 +144,7 @@ export default function Pool({ bank, pool, tokens, fetchBalancesDone, fetchPools
           <div className={classes.controls}>
             <OpenPosition
               pool={pool}
+              bank={bank}
               tokens={tokens}
               fetchBalancesDone={fetchBalancesDone}
             />

@@ -23,6 +23,7 @@ const initialState = {
   fetchAllowancesPending: false,
   fetchPoolsDataDone: false,
   fetchPoolsDataPending: false,
+  openPositionPending: {},
 };
 
 export default initialState;
