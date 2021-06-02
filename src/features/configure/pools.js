@@ -12,6 +12,10 @@ export const categories = [
     default: true
   },
   {
+    name: 'Iron',
+    default: true
+  },
+  {
     name: 'Nerve',
     default: true
   },
@@ -229,6 +233,48 @@ export const pools = [
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
       masterchefPid: 0
+    }
+  },
+  {
+    network: 'bsc',
+    id: 'elebnbw',
+    name: 'ELEBNB',
+    image: 'ELE-BNB\ LP-logo.svg',
+    token: 'ELE-BNB WLP',
+    tokenDescription: 'ELEBNB',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses waultswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11wELEBNB',
+    earnedTokenAddress: '0x5bC5aa4B82800Fc965C8856f9628ec5730049E9E',
+    earnContractAddress: '0x5bC5aa4B82800Fc965C8856f9628ec5730049E9E',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x7eB399165722A98E047471157FF6CdDeEd95a2e1',
+    categories: ['Wault'],
+
+    farm: {
+      isDisabled: true,
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 214
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      dividends: 0.1,
+      buybacks: 1.7,
+      waultx_burn: 1
     }
   },
   {
@@ -602,7 +648,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xD86b5923F3AD7b585eD81B448170ae026c65ae9a',
-    categories: ['Polycat'],
+    categories: ['Polycat', 'Iron'],
 
     farm: {
       earnedToken: 'ELE',
@@ -956,7 +1002,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x85dE135fF062Df790A5f20B79120f17D3da63b2d',
-    categories: ['Sushi'],
+    categories: ['Sushi', 'Iron'],
 
      farm: {
        isDisabled: true,
@@ -997,7 +1043,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xA79983Daf2A92c2C902cD74217Efe3D8AF9Fba2a',
-    categories: ['Sushi'],
+    categories: ['Sushi', 'Iron'],
 
      farm: {
        isDisabled: true,
@@ -1038,7 +1084,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x35c1895DAC1e2432b320e2927b4F71a0D995602F',
-    categories: ['Sushi'],
+    categories: ['Sushi', 'Iron'],
 
      farm: {
        isDisabled: true,
@@ -1079,7 +1125,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xaAa5B9e6c589642f98a1cDA99B9D024B8407285A',
-    categories: [],
+    categories: ['Iron'],
 
      farm: {
        earnedToken: 'ELE',
@@ -1096,48 +1142,6 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
-  },
-  {
-    network: 'bsc',
-    id: 'elebnbw',
-    name: 'ELEBNB',
-    image: 'ELE-BNB\ LP-logo.svg',
-    token: 'ELE-BNB WLP',
-    tokenDescription: 'ELEBNB',
-    tokenAddress: '',
-    tokenDecimals: 18,
-    uses: 'Uses waultswap',
-    itokenDecimals: 18,
-    depostLimit:0,
-    tokenDescriptionUrl: '',
-    tokenDescriptionUrl2: '',
-    earnedToken: '11wELEBNB',
-    earnedTokenAddress: '0x5bC5aa4B82800Fc965C8856f9628ec5730049E9E',
-    earnContractAddress: '0x5bC5aa4B82800Fc965C8856f9628ec5730049E9E',
-    defaultApy: "39.54",
-    pricePerFullShare: 1,
-    pastPricePerFullShare: 1,
-    tokenAddress: '0x7eB399165722A98E047471157FF6CdDeEd95a2e1',
-    categories: ['Wault'],
-
-    farm: {
-      isDisabled: true,
-      earnedToken: 'ELE',
-      earnedTokenDecimals: 18,
-      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
-      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 214
-    },
-
-    fees: {
-      deposit: 0,
-      withdrawal: 0.1,
-      controller: 0.35,
-      platform: 0.35,
-      dividends: 0.1,
-      buybacks: 1.7,
-      waultx_burn: 1
     }
   },
   {
