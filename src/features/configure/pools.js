@@ -16,6 +16,10 @@ export const categories = [
     default: true
   },
   {
+    name: 'Quick',
+    default: true
+  },
+  {
     name: 'Nerve',
     default: true
   },
@@ -990,7 +994,7 @@ export const pools = [
     tokenDescription: 'USDC-IRON SLP',
     tokenAddress: '',
     tokenDecimals: 18,
-    uses: 'Uses iron.finance',
+    uses: 'Uses iron.finance + sushiswap',
     itokenDecimals: 18,
     depostLimit:0,
     tokenDescriptionUrl: '',
@@ -1012,6 +1016,38 @@ export const pools = [
        earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
        masterchefPid: 3
      },
+
+     fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    }
+  },
+  {
+    network: 'polygon',
+    id: 'usdcironq',
+    name: 'USDC-IRON QLP',
+    image: 'iron_usdc.png',
+    token: 'USDC-IRON QLP',
+    tokenDescription: 'USDC-IRON QLP',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses iron.finance + quickswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11USDCIRONQ',
+    earnedTokenAddress: '0x6f40f9F05212d8272eC096b0842E611BFeCe2211',
+    earnContractAddress: '0x6f40f9F05212d8272eC096b0842E611BFeCe2211',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x2Bbe0F728f4d5821F84eeE0432D2A4be7C0cB7Fc',
+    categories: ['Quick', 'Iron'],
 
      fees: {
       deposit: 0,
