@@ -28,12 +28,6 @@ export const pools = [
     maxLeverage: 2.5,
     tokens: [
       {
-        token: "11CAKEBNB",
-        image: 'CAKE-logo.svg',
-        address: '0x58D25A7e34eE8fA7A070510e6D2E0096Ed62c828',
-        decimals: 18,
-      },
-      {
         token: "BNB",
         image: 'BNB-logo.svg',
         address: null, // native token
@@ -49,7 +43,7 @@ export const pools = [
 
     params: {
       token: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
-      zapper: '0xCb84813806225D629dFb9C651A3d600955135998'
+      strategy: '0xCb84813806225D629dFb9C651A3d600955135998'
     }
   },
   {
@@ -64,16 +58,14 @@ export const pools = [
     maxLeverage: 6,
     tokens: [
       {
-        token: "11USDTBUSD",
-        image: 'usdt_busd.png',
-        address: '0x1a489ee9ccd2f062f86361fb7af9dac9293864bc',
-        decimals: 18,
-      },
-      {
         token: "BUSD",
         image: 'BUSD-logo.png',
         address: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
         decimals: 18,
+
+        meta: {
+          nerveUsdTokenIndex: 0
+        }
       },
     ],
 
@@ -82,5 +74,10 @@ export const pools = [
       tradingFee: 0, // wex (no trading fee)
       borrowApy: 0,
     },
+
+    params: {
+      token: '0x9Ce20a5169A3CD64A98C2C200aA995A2d8c8830e',
+      strategy: '0x5d1F6f28847a1699a9Ab3d2AA9Cb94543f40C797'
+    }
   },
 ];

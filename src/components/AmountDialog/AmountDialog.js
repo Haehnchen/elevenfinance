@@ -15,6 +15,8 @@ const AmountDialog = ({
   title,
   buttonText,
   buttonIsLoading,
+  inputLabelText,
+  disableSlider,
   tokensAmounts,
   open,
   onConfirm,
@@ -141,7 +143,7 @@ const AmountDialog = ({
               className={classes.tokenBlock}
             >
               <div className={classes.labelWithAddon}>
-                <label>{ tokensAmounts.length > 1 ? token.token + ' amount' : 'Amount' }</label>
+                <label>{ tokensAmounts.length > 1 ? token.token + ' amount' : (inputLabelText || 'Amount') }</label>
                 <button
                   className={classes.balanceButton}
                   onClick={() => onBalanceButton(index)}
@@ -164,7 +166,7 @@ const AmountDialog = ({
                 />
               </div>
 
-              {tokensAmounts.length == 1 && (
+              {tokensAmounts.length == 1 && ! disableSlider && (
                 <>
                   {/* Slider */}
                   <div className={classes.sliderWrapper}>

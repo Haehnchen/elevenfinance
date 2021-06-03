@@ -25,7 +25,7 @@ export default function PoolsList() {
       if (address && web3 && network) {
         fetchPoolsData({ banks, pools });
         fetchBalances({ address, web3, tokens, network, forceUpdate });
-        fetchAllowances({ address, web3, pools, network, forceUpdate });
+        fetchAllowances({ address, web3, pools, banks, network, forceUpdate });
       }
     }
 

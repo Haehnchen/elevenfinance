@@ -1,5 +1,5 @@
 export { approval } from './approval';
-export { convert3PoolToUsd } from './convert3PoolToUsd';
+export { convert3PoolToUsd, convertUsdTo3Pool } from './convert3Pool';
 export { farmClaim } from './farmClaim';
 export { farmStake } from './farmStake';
 export { farmUnstake } from './farmUnstake';

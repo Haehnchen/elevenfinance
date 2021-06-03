@@ -20,7 +20,7 @@ export function fetchAllowances(data) {
     });
 
     const promise = new Promise((resolve, reject) => {
-      const { address, web3, pools, network } = data;
+      const { address, web3, pools, banks, network } = data;
 
       const networkPools = pools.filter(pool => pool.network == network);
 
@@ -29,12 +29,7 @@ export function fetchAllowances(data) {
 
         return tokens.map((token, index) => {
           const contract = new web3.eth.Contract(erc20ABI, token || getNetworkTokenShim(network));
-
-          // spenderAddress:
-          // - first token to be approved against bigfoot contract
-          // - all other tokens in the array to be approved against bank contract
-          // const spenderAddress = (index === 0) ? pool.bigfootAddress : pool.bankAddress; TODO: ???
-          const spenderAddress = pool.bigfootAddress;
+          const spenderAddress = banks[pool.bank].address;
 
           return {
             pool: pool.id,

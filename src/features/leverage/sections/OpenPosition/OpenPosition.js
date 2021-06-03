@@ -55,13 +55,22 @@ export default function OpenPosition({ pool, bank, tokens, fetchBalancesDone }) 
   }, [pool, tokens]);
 
   const onOpenPosition = (amounts) => {
+    if (pool.tokens.length == 1) {
+      amounts = [amounts];
+    }
+
     if (! amounts.filter(amount => +amount > 0).length) {
       enqueueSnackbar(`Enter the amount of collateral to open position`, { variant: 'error' })
       return;
     }
 
     // Check if any of tokens requires approval
-    const approvals = pool.tokens.filter((token, index) => amounts[index] > 0 && ! pool.allowance[token.address || '']);
+    const approvals = pool.tokens.filter((token, index) => amounts[index] > 0 && ! pool.allowance[token.address || ''])
+      .map(token => {
+        token.spender = bank.address;
+        return token;
+      });
+
     if (approvals.length) {
       setTokensRequiringApproval(approvals);
       setAmountDialogOpen(false);
@@ -143,6 +152,8 @@ export default function OpenPosition({ pool, bank, tokens, fetchBalancesDone }) 
         title={'Open Leveraged Position'}
         buttonText={'Open Position'}
         buttonIsLoading={openPositionPending[pool.id]}
+        inputLabelText={'Collateral Amount'}
+        disableSlider={true}
 
         open={amountDialogOpen}
         onClose={onAmountDialogClose}
@@ -164,7 +175,6 @@ export default function OpenPosition({ pool, bank, tokens, fetchBalancesDone }) 
       <ApproveTokensDialog
         address={address}
         web3={web3}
-        spender={pool.bigfootAddress}
         tokens={tokensRequiringApproval}
         isOpen={approvalDialogOpen}
         onClose={() => setApprovalDialogOpen(false)}

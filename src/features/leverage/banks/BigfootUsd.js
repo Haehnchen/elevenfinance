@@ -1,11 +1,10 @@
 import BigNumber from 'bignumber.js';
 import { amountToUint } from 'features/helpers/bignumber';
-import { fetchVaultTokenValue } from 'features/web3';
+import { convertUsdTo3Pool } from 'features/web3';
 
-import bankAbi from 'features/configure/abis/bigfootBnbBank';
+import bankAbi from 'features/configure/abis/bigfootUsdBank';
 
-export default class BigfootBnb {
-
+export default class BigfootUsd {
   /**
    * Open new leveraged position
    */
@@ -28,13 +27,6 @@ export default class BigfootBnb {
           return;
         }
 
-        // Get native token amount for transaction value
-        const nativeTokenIndex = pool.tokens.findIndex(token => token.address === null);
-
-        const nativeTokenAmount = nativeTokenIndex !== -1
-          ? amountToUint(amounts[nativeTokenIndex], 18)
-          : 0;
-
         // Encode Bigfoot params
         const stratInfo = web3.eth.abi.encodeParameters(
           ['address', 'uint'],
@@ -46,10 +38,17 @@ export default class BigfootBnb {
           [pool.params.strategy, 0, stratInfo]
         );
 
+        const tokensAmounts = [
+          amountToUint(amounts[0], pool.tokens[0].decimals), // BUSD
+          0, // USDT
+          0, // USDC
+          0, // 3NRV
+        ]
+
         // Send the transaction
         const contract = new web3.eth.Contract(bankAbi, bank.address);
-        const tx = contract.methods.work(0, pool.bigfootAddress, loan, amountToUint(totalValue), bigfootInfo)
-          .send({ from: address, value: nativeTokenAmount })
+        const tx = contract.methods.work(0, pool.bigfootAddress, loan, amountToUint(totalValue), tokensAmounts, bigfootInfo)
+          .send({ from: address })
 
         resolve({ tx });
       })
@@ -59,15 +58,15 @@ export default class BigfootBnb {
   /**
    * Convert token to bank's main token
    */
-  convertValueToBankToken({ token, amount, web3, network }) {
-    if (! amount.gt(0) || token.address === null) {
+   convertValueToBankToken({ token, amount, web3, network }) {
+    if (! amount.gt(0) || token.meta.nerveUsdTokenIndex == 3) {
       return Promise.resolve(amount);
     }
 
-    return fetchVaultTokenValue({ address: token.address, decimals: token.decimals, web3, network })
-      .then(value => {
-        return amount.times(value);
-      })
+    return convertUsdTo3Pool({
+      amount: amountToUint(amount, token.decimals),
+      usdTokenIndex: token.meta.nerveUsdTokenIndex,
+      web3
+    });
   }
-
 }

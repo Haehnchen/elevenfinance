@@ -10,7 +10,7 @@ import Spinner from 'components/Spinner/Spinner';
 import styles from './styles';
 const useStyles = createUseStyles(styles);
 
-const ApproveTokensDialog = ({ address, web3, spender, tokens, isOpen, onClose, onComplete }) => {
+const ApproveTokensDialog = ({ address, web3, tokens, isOpen, onClose, onComplete }) => {
   const { t } = useTranslation();
   const classes = useStyles();
   const { enqueueSnackbar } = useSnackbar();
@@ -22,7 +22,7 @@ const ApproveTokensDialog = ({ address, web3, spender, tokens, isOpen, onClose, 
     setPendingTokens(tokens);
   }, [tokens])
 
-  const onApproval = (tokenAddress) => {
+  const onApproval = (tokenAddress, spender) => {
     setIsPending(true);
 
     approval({ web3, address, tokenAddress, contractAddress: spender })
@@ -43,26 +43,6 @@ const ApproveTokensDialog = ({ address, web3, spender, tokens, isOpen, onClose, 
       .catch(error => {
         setIsPending(false);
       })
-    // fetchApproval({
-    //   address,
-    //   web3,
-    //   pool: null,
-    //   tokenAddress: tokenAddress,
-    // })
-    //   .then(() => {
-    //     const newApprovals = [...requiredApprovals];
-    //     newApprovals.shift();
-
-    //     if (newApprovals.length) {
-    //       setRequiredApprovals(newApprovals);
-    //     } else {
-    //       setApprovalDialogOpen(false);
-    //       setAmountDialogOpen(true);
-    // }
-
-    //     enqueueSnackbar(`Approval success`, { variant: 'success' });
-    //   })
-    //   .catch(error => enqueueSnackbar(`Approval error: ${error}`, { variant: 'error' }))
   }
 
   return (
@@ -79,7 +59,7 @@ const ApproveTokensDialog = ({ address, web3, spender, tokens, isOpen, onClose, 
             <div className={classes.name}>{ pendingTokens[0].token }</div>
             <button
               className={classes.button}
-              onClick={() => onApproval(pendingTokens[0].address)}
+              onClick={() => onApproval(pendingTokens[0].address, pendingTokens[0].spender)}
               disabled={isPending}
             >
               {! isPending

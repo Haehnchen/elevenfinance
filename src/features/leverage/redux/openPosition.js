@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { enqueueSnackbar } from 'features/common/redux/actions';
 
 import BigfootBnb from '../banks/BigfootBnb';
+import BigfootUsd from '../banks/BigfootUsd';
 
 import {
   LEVERAGE_OPEN_POSITION_BEGIN,
@@ -65,6 +66,9 @@ const getBankInstance = bank => {
   switch (bank.id) {
     case 'bfbnb':
       return new BigfootBnb();
+
+    case 'bfusd':
+      return new BigfootUsd();
 
     default:
       return null;
