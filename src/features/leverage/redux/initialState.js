@@ -24,6 +24,7 @@ const initialState = {
   fetchPoolsDataDone: false,
   fetchPoolsDataPending: false,
   openPositionPending: {},
+  closePositionPending: {},
 };
 
 export default initialState;

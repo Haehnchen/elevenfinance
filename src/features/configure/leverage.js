@@ -43,7 +43,8 @@ export const pools = [
 
     params: {
       token: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
-      strategy: '0xCb84813806225D629dFb9C651A3d600955135998'
+      strategy: '0xCb84813806225D629dFb9C651A3d600955135998',
+      strategyLiquidation: '0x2d679e20A5E2461E6ADCa390DCD30c583F85B5b1',
     }
   },
   {
@@ -77,7 +78,8 @@ export const pools = [
 
     params: {
       token: '0x9Ce20a5169A3CD64A98C2C200aA995A2d8c8830e',
-      strategy: '0x5d1F6f28847a1699a9Ab3d2AA9Cb94543f40C797'
+      strategy: '0x5d1F6f28847a1699a9Ab3d2AA9Cb94543f40C797',
+      strategyLiquidation: '0x6A86DF83e6D81F53B9995758eD3202b68C32fa9D',
     }
   },
 ];
