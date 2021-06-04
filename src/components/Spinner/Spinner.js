@@ -4,12 +4,24 @@ import { createUseStyles } from 'react-jss';
 import styles from './styles';
 const useStyles = createUseStyles(styles);
 
-const Spinner = () => {
+const Spinner = ({ type }) => {
   const classes = useStyles();
 
-  return (
-    <span className={classes.loader}>...</span>
-  )
+  switch (type) {
+    case 'dots':
+      return (
+        <div className={classes.dots}>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      );
+
+    default:
+      return (
+        <span className={classes.spinner}>...</span>
+      )
+  }
 }
 
 export default Spinner;

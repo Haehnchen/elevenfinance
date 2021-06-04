@@ -13,10 +13,11 @@ import {
 
 import bankAbi from 'features/configure/abis/bigfootBankCommon';
 
-const fetchPositions = ({ address, web3, banks, pools, network }) => {
+const fetchPositions = ({ web3, banks, pools, network, forceUpdate }) => {
   return dispatch => {
     dispatch({
       type: LEVERAGE_FETCH_POSITIONS_BEGIN,
+      data: forceUpdate || false
     });
 
     const promise = new Promise((resolve, reject) => {
@@ -76,19 +77,26 @@ const fetchPositions = ({ address, web3, banks, pools, network }) => {
                 return null;
               }
 
+              const leverage = size.div(collateral);
+              const debtRatio = leverage.div(pool.deathLeverage).times(100);
+
               return {
+                id: positionIndex + 1,
                 bankId,
-                positionId: positionIndex + 1,
+                poolId: pool.id,
                 poolAddress,
                 owner,
                 size,
                 debtSize,
-                collateral
+                collateral,
+                leverage,
+                debtRatio
               }
             });
           })
             .flat()
-            .filter(position => !! position);
+            .filter(position => !! position)
+            .sort((a, b) => b.debtRatio.comparedTo(a.debtRatio));
 
           dispatch({
             type: LEVERAGE_FETCH_POSITIONS_SUCCESS,
@@ -118,7 +126,7 @@ export function useFetchPositions() {
     shallowEqual
   );
 
-  const fetchPositionsAction = useCallback(data => dispatch(fetchPositions(data)), [dispatch],);
+  const fetchPositionsAction = useCallback(data => dispatch(fetchPositions(data)), [dispatch]);
 
   return {
     positions,
@@ -129,10 +137,13 @@ export function useFetchPositions() {
 }
 
 export function reducer(state, action) {
+  const { fetchPositionsDone } = state;
+
   switch (action.type) {
     case LEVERAGE_FETCH_POSITIONS_BEGIN:
       return {
         ...state,
+        fetchPositionsDone: action.data ? false : fetchPositionsDone,
         fetchPositionsPending: true,
       };
 

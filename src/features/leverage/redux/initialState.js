@@ -22,6 +22,8 @@ const initialState = {
   closePositionPending: {},
   fetchBalancesDone: false,
   fetchBalancesPending: false,
+  fetchBanksTokensPricesDone: false,
+  fetchBanksTokensPricesPending: false,
   fetchAllowancesDone: false,
   fetchAllowancesPending: false,
   fetchPoolsDataDone: false,

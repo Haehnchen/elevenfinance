@@ -6,18 +6,18 @@ const nerveAbi = [
   { "inputs": [{ "internalType": "address", "name": "account", "type": "address" }, { "internalType": "uint256[]", "name": "amounts", "type": "uint256[]" }, { "internalType": "bool", "name": "deposit", "type": "bool" }], "name": "calculateTokenAmount", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }
 ];
 
-export const convert3PoolToUsd = async ({ web3, address, amount, usdTokenIndex }) => {
+export const convert3PoolToUsd = async ({ web3, amount, usdTokenIndex }) => {
   const contract = new web3.eth.Contract(nerveAbi, nerveAddress);
   const data = await contract.methods.calculateRemoveLiquidityOneToken(
-    address,
+    nerveAddress,
     amount,
     usdTokenIndex
-  ).call({ from: address });
+  ).call();
 
   return data;
 };
 
-export const convertUsdTo3Pool = async ({ web3, address, amount, usdTokenIndex }) => {
+export const convertUsdTo3Pool = async ({ web3, amount, usdTokenIndex }) => {
   const amounts = ['0', '0', '0'];
   amounts[usdTokenIndex] = amount;
 
@@ -26,7 +26,7 @@ export const convertUsdTo3Pool = async ({ web3, address, amount, usdTokenIndex }
     nerveAddress,
     amounts,
     true
-  ).call({ from: address });
+  ).call();
 
   return byDecimals(data, 18);
 };

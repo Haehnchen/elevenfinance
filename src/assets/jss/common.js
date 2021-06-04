@@ -10,6 +10,8 @@ export const COLORS = {
   textSecondaryDark: '#93959C',
 
   green: '#58D786',
+  orange: '#FEBF32',
+  red: '#fd5a5a',
 
   bgDark: '#1D1E24',
   bgSurface: '#23262B',

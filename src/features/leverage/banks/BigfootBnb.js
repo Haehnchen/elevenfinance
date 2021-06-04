@@ -1,6 +1,6 @@
 import BigNumber from 'bignumber.js';
-import { amountToUint } from 'features/helpers/bignumber';
-import { fetchVaultTokenValue } from 'features/web3';
+import { amountToUint, byDecimals } from 'features/helpers/bignumber';
+import { fetchVaultTokenValue, fetchUniswapOutputAmount } from 'features/web3';
 
 import bankAbi from 'features/configure/abis/bigfootBnbBank';
 
@@ -65,12 +65,12 @@ export default class BigfootBnb {
 
       // Encode params
       const stratInfo = web3.eth.abi.encodeParameters(
-        ["address", "uint"], 
+        ["address", "uint"],
         [pool.params.token, "0"]
       );
 
       const bigfootInfo = web3.eth.abi.encodeParameters(
-        ["address", "uint", "bytes"], 
+        ["address", "uint", "bytes"],
         [pool.params.strategyLiquidation, 0, stratInfo]
       );
 
@@ -97,6 +97,26 @@ export default class BigfootBnb {
       .then(value => {
         return amount.times(value);
       })
+  }
+
+  /**
+   * Get price of bank's main token in USD
+   *
+   * @param {*} param0
+   * @returns
+   */
+  getBankTokenPrice({ web3 }) {
+    return fetchUniswapOutputAmount({
+      web3,
+      amountIn: amountToUint(1, 18),
+      routerAddress: '0x10ED43C718714eb63d5aA57B78B54704E256024E', // PancakeSwap
+      path: [
+        '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c', // BNB
+        '0xe9e7cea3dedca5984780bafc599bd69add087d56', // BUSD
+      ],
+    }).then(res => {
+      return byDecimals(res, 18);
+    })
   }
 
 }

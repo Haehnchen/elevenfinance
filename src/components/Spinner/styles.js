@@ -4,7 +4,7 @@ const size = '2.8em';
 const thickness = '0.4em';
 
 const styles = {
-  loader: {
+  spinner: {
     display: 'block',
     borderRadius: '50%',
     width: size,
@@ -34,6 +34,40 @@ const styles = {
     },
     '100%': {
       transform: 'rotate(360deg)'
+    }
+  },
+
+  dots: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    margin: '20px auto',
+    width: 56,
+
+    '& > div': {
+      width: 12,
+      height: 12,
+      backgroundColor: COLORS.textSecondaryDark,
+      borderRadius: '100%',
+      display: 'inline-block',
+      animation: '$bounceDelay 1s infinite ease-in-out both',
+
+      '&:first-child': {
+        animationDelay: '-0.32s',
+      },
+
+      '&:nth-child(2)': {
+        animationDelay: '-0.16s'
+      }
+    },
+  },
+
+  '@keyframes bounceDelay': {
+    '0%, 80%, 100%': {
+      transform: 'scale(0)'
+    },
+    '40%': {
+      transform: 'scale(1.0)'
     }
   }
 };

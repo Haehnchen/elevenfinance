@@ -1,6 +1,6 @@
 import BigNumber from 'bignumber.js';
-import { amountToUint } from 'features/helpers/bignumber';
-import { convertUsdTo3Pool } from 'features/web3';
+import { amountToUint, byDecimals } from 'features/helpers/bignumber';
+import { convert3PoolToUsd, convertUsdTo3Pool } from 'features/web3';
 
 import bankAbi from 'features/configure/abis/bigfootUsdBank';
 
@@ -64,17 +64,17 @@ export default class BigfootUsd {
 
       // Encode params
       const stratInfo = web3.eth.abi.encodeParameters(
-        ["uint"], 
+        ["uint"],
         ["0"]
       );
 
       const bigfootInfo = web3.eth.abi.encodeParameters(
-        ["address", "uint", "bytes"], 
+        ["address", "uint", "bytes"],
         [pool.params.strategyLiquidation, 0, stratInfo]
       );
 
       const amounts = ["0", "0", "0", "0"];
-      
+
       // Send transaction
       const contract = new web3.eth.Contract(bankAbi, bank.address);
       const tx = contract.methods.work(positionId, pool.bigfootAddress, 0, "9999999999999999999999999999", amounts, bigfootInfo)
@@ -99,5 +99,21 @@ export default class BigfootUsd {
       usdTokenIndex: token.meta.nerveUsdTokenIndex,
       web3
     });
+  }
+
+  /**
+   * Get price of bank's main token in USD
+   *
+   * @param {*} param0
+   * @returns
+   */
+  getBankTokenPrice({ web3 }) {
+    return convert3PoolToUsd({
+      web3,
+      amount: amountToUint(1, 18),
+      usdTokenIndex: 0
+    }).then(res => {
+      return byDecimals(res, 18);
+    })
   }
 }
