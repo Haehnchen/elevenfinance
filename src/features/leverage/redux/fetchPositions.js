@@ -13,7 +13,7 @@ import {
 
 import bankAbi from 'features/configure/abis/bigfootBankCommon';
 
-const fetchPositions = ({ web3, banks, pools, network, forceUpdate }) => {
+export const fetchPositions = ({ web3, banks, pools, network, forceUpdate }) => {
   return dispatch => {
     dispatch({
       type: LEVERAGE_FETCH_POSITIONS_BEGIN,

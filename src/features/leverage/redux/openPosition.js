@@ -10,8 +10,10 @@ import {
   LEVERAGE_OPEN_POSITION_FAILURE
 } from './constants';
 
+import { fetchPositions } from './actions';
+
 const openPosition = ({ address, web3, network, pool, bank, amounts, leverage }) => {
-  return dispatch => {
+  return (dispatch, getState) => {
     dispatch({
       type: LEVERAGE_OPEN_POSITION_BEGIN,
       id: pool.id
@@ -50,6 +52,10 @@ const openPosition = ({ address, web3, network, pool, bank, amounts, leverage })
               type: LEVERAGE_OPEN_POSITION_SUCCESS,
               id: pool.id
             });
+
+            const { leverage } = getState();
+            const { banks, pools } = leverage;
+            dispatch(fetchPositions({ web3, banks, pools, network }))
 
             resolve()
           })

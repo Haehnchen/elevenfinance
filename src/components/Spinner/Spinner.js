@@ -4,7 +4,7 @@ import { createUseStyles } from 'react-jss';
 import styles from './styles';
 const useStyles = createUseStyles(styles);
 
-const Spinner = ({ type }) => {
+const Spinner = ({ type, color }) => {
   const classes = useStyles();
 
   switch (type) {
@@ -19,7 +19,7 @@ const Spinner = ({ type }) => {
 
     default:
       return (
-        <span className={classes.spinner}>...</span>
+        <span className={classes.spinner + (color ? ' ' + color : '')}>...</span>
       )
   }
 }

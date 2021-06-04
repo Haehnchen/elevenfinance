@@ -1,14 +1,16 @@
 export const banks = {
-  bfBNB: {
+  bfbnb: {
     id: 'bfbnb',
+    name: 'bfBNB',
     address: '0xA96C90223e4cC69192A9ffF1BA4c8b86D02765B2',
     apiKey: 'BFBNB',
     currency: 'BNB',
     minPositionSize: 0.11,
     tokenDecimals: 18,
   },
-  bfUSD: {
+  bfusd: {
     id: 'bfusd',
+    name: 'bfUSD',
     address: '0xE9B3017cd7A347a8B0324F88db335255E5c5D3FD',
     apiKey: 'BFUSD',
     currency: 'USD',
@@ -24,7 +26,7 @@ export const pools = [
     name: "CAKE-BNB LP",
     image: 'cake_bnb.png',
     bigfootAddress: '0x7fF89d5d048DA9a090C51D3FF7eD0fC45bcFe521',
-    bank: 'bfBNB',
+    bank: 'bfbnb',
     apiKey: 'CAKE-BNB LP',
     deathLeverage: 3.333333333333,
     maxLeverage: 2.5,
@@ -55,7 +57,7 @@ export const pools = [
     name: "USDT-BUSD WLP",
     image: 'usdt_busd.png',
     bigfootAddress: '0x97E1227D1d0072d9eCf72065e60B64F883dA7FDF',
-    bank: 'bfUSD',
+    bank: 'bfusd',
     apiKey: 'USDT-BUSD WLP',
     deathLeverage: 6.5,
     maxLeverage: 6,

@@ -84,6 +84,8 @@ export function useClosePosition() {
 
 
 export function reducer(state, action) {
+  const { positions } = state;
+
   switch (action.type) {
     case LEVERAGE_CLOSE_POSITION_BEGIN:
       return {
@@ -98,8 +100,13 @@ export function reducer(state, action) {
       };
 
     case LEVERAGE_CLOSE_POSITION_SUCCESS:
+      const positionIndex = positions.findIndex(pos => pos.bankId == action.bankId && pos.id == action.positionId);
+      const newPositions = [...positions];
+      newPositions.splice(positionIndex, 1);
+
       return {
         ...state,
+        positions: newPositions,
         closePositionPending: {
           ...state.closePositionPending,
           [action.bankId]: {

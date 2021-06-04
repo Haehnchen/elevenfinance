@@ -26,6 +26,13 @@ const styles = {
       borderRadius: '50%',
       width: size,
       height: size,
+    },
+
+    '&.bright': {
+      borderTop: thickness + ' solid rgba(0, 0, 0, 0.4)',
+      borderRight: thickness + ' solid rgba(0, 0, 0, 0.4)',
+      borderBottom: thickness + ' solid rgba(0, 0, 0, 0.4)',
+      borderLeftColor: COLORS.primary,
     }
   },
   '@keyframes spinner': {

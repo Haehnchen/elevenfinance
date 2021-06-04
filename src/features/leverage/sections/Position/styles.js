@@ -63,6 +63,16 @@ const styles = {
       margin: '10px 0'
     }
   },
+
+  controls: {
+    width: 200,
+    paddingTop: 4,
+    textAlign: 'right'
+  },
+
+  controlsButton: {
+    ...commonStyles.buttonSecondary
+  }
 };
 
 export default styles;
