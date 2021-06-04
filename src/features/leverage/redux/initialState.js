@@ -20,6 +20,7 @@ const initialState = {
   positions: [],
   openPositionPending: {},
   closePositionPending: {},
+  liquidatePositionPending: {},
   fetchBalancesDone: false,
   fetchBalancesPending: false,
   fetchBanksTokensPricesDone: false,

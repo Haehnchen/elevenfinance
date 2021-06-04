@@ -87,6 +87,21 @@ export default class BigfootUsd {
 
 
   /**
+   * Liquidate leveraged position
+   */
+   liquidatePosition({ address, web3, bank, positionId }) {
+    return new Promise((resolve, reject) => {
+      const contract = new web3.eth.Contract(bankAbi, bank.address);
+      const tx = contract.methods.kill(positionId)
+        .send({ from: address })
+
+      resolve({ tx });
+
+    });
+  }
+
+  
+  /**
    * Convert token to bank's main token
    */
    convertValueToBankToken({ token, amount, web3, network }) {
