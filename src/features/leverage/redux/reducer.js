@@ -2,6 +2,7 @@ import initialState from './initialState';
 import { reducer as fetchBalancesReducer } from './fetchBalances';
 import { reducer as fetchAllowancesReducer } from './fetchAllowances';
 import { reducer as fetchPoolsDataReducer } from './fetchPoolsData';
+import { reducer as fetchPositionsReducer } from './fetchPositions';
 import { reducer as openPositionReducer } from './openPosition';
 
 const reducers = [

@@ -17,13 +17,16 @@ const initialState = {
   banks,
   pools,
   tokens,
+  positions: [],
+  openPositionPending: {},
   fetchBalancesDone: false,
   fetchBalancesPending: false,
   fetchAllowancesDone: false,
   fetchAllowancesPending: false,
   fetchPoolsDataDone: false,
   fetchPoolsDataPending: false,
-  openPositionPending: {},
+  fetchPositionsDone: false,
+  fetchPositionsPending: false,
 };
 
 export default initialState;

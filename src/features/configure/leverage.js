@@ -4,7 +4,8 @@ export const banks = {
     address: '0xA96C90223e4cC69192A9ffF1BA4c8b86D02765B2',
     apiKey: 'BFBNB',
     currency: 'BNB',
-    minPositionSize: 0.11
+    minPositionSize: 0.11,
+    tokenDecimals: 18,
   },
   bfUSD: {
     id: 'bfusd',
@@ -12,6 +13,7 @@ export const banks = {
     apiKey: 'BFUSD',
     currency: 'USD',
     minPositionSize: 1000,
+    tokenDecimals: 18,
   }
 }
 

@@ -7,7 +7,7 @@ import {
   LEVERAGE_FETCH_POOLS_DATA_FAILURE
 } from './constants';
 
-const fetchPoolsData = ({ banks, pools}) => {
+const fetchPoolsData = ({ banks, pools }) => {
   return dispatch => {
     dispatch({
       type: LEVERAGE_FETCH_POOLS_DATA_BEGIN,
