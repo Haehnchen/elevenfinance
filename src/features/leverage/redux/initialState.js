@@ -19,6 +19,7 @@ const initialState = {
   tokens,
   positions: [],
   openPositionPending: {},
+  closePositionPending: {},
   fetchBalancesDone: false,
   fetchBalancesPending: false,
   fetchAllowancesDone: false,

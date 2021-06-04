@@ -56,6 +56,35 @@ export default class BigfootBnb {
     });
   }
 
+
+  /**
+   * Close leveraged position
+   */
+  closePosition({ address, web3, pool, bank, positionId }) {
+    return new Promise((resolve, reject) => {
+
+      // Encode params
+      const stratInfo = web3.eth.abi.encodeParameters(
+        ["address", "uint"], 
+        [pool.params.token, "0"]
+      );
+
+      const bigfootInfo = web3.eth.abi.encodeParameters(
+        ["address", "uint", "bytes"], 
+        [pool.params.strategyLiquidation, 0, stratInfo]
+      );
+
+      // Send transaction
+      const contract = new web3.eth.Contract(bankAbi, bank.address);
+      const tx = contract.methods.work(positionId, pool.bigfootAddress, 0, "9999999999999999999999999999", bigfootInfo)
+        .send({ from: address })
+
+      resolve({ tx });
+
+    });
+  }
+
+
   /**
    * Convert token to bank's main token
    */

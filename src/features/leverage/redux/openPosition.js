@@ -2,8 +2,7 @@ import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { enqueueSnackbar } from 'features/common/redux/actions';
 
-import BigfootBnb from '../banks/BigfootBnb';
-import BigfootUsd from '../banks/BigfootUsd';
+import BankHelper from '../banks/BankHelper';
 
 import {
   LEVERAGE_OPEN_POSITION_BEGIN,
@@ -28,7 +27,7 @@ const openPosition = ({ address, web3, network, pool, bank, amounts, leverage })
         reject(error.message || error);
       }
 
-      const bankInstance = getBankInstance(bank);
+      const bankInstance = BankHelper.getBankInstance(bank);
       if (! bankInstance) {
         onError('Can\'t open position using specified bank');
       }
@@ -59,19 +58,6 @@ const openPosition = ({ address, web3, network, pool, bank, amounts, leverage })
         })
         .catch(onError)
     });
-  }
-}
-
-const getBankInstance = bank => {
-  switch (bank.id) {
-    case 'bfbnb':
-      return new BigfootBnb();
-
-    case 'bfusd':
-      return new BigfootUsd();
-
-    default:
-      return null;
   }
 }
 
