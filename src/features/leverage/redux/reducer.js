@@ -5,6 +5,7 @@ import { reducer as fetchPoolsDataReducer } from './fetchPoolsData';
 import { reducer as fetchPositionsReducer } from './fetchPositions';
 import { reducer as openPositionReducer } from './openPosition';
 import { reducer as closePositionReducer } from './closePosition';
+import { reducer as liquidatePositionReducer } from './liquidatePosition';
 
 const reducers = [
   fetchBalancesReducer,
@@ -12,6 +13,7 @@ const reducers = [
   fetchPoolsDataReducer,
   openPositionReducer,
   closePositionReducer,
+  liquidatePositionReducer,
 ];
 
 
