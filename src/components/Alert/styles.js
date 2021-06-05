@@ -1,4 +1,4 @@
-import { BORDER, COLORS, FONT } from 'assets/jss/common';
+import { BORDER, COLORS, FONT, MEDIA } from 'assets/jss/common';
 
 const styles = {
   wrapper: {
@@ -18,6 +18,11 @@ const styles = {
       '& $icon': {
         color: COLORS.primary
       }
+    },
+
+    [MEDIA.mobile]: {
+      flexDirection: 'column',
+      padding: '16px 12px',
     }
   },
 
@@ -28,6 +33,10 @@ const styles = {
     '& svg': {
       width: 40,
       height: 40
+    },
+
+    [MEDIA.mobile]: {
+      display: 'none'
     }
   },
 

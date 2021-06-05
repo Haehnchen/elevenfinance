@@ -11,10 +11,20 @@ const styles = {
     justifyContent: 'space-between',
 
     color: COLORS.textSecondaryLight,
+
+    [MEDIA.mobile]: {
+      flexWrap: 'wrap'
+    }
   },
 
   nameBlock: {
     width: 240,
+
+    [MEDIA.mobile]: {
+      width: '60%',
+      paddingRight: 10,
+      margin: '10px 0'
+    }
   },
 
   name: {
@@ -58,7 +68,6 @@ const styles = {
 
     [MEDIA.mobile]: {
       width: '40%',
-      paddinLeft: 10,
       textAlign: 'left',
       margin: '10px 0'
     }
@@ -77,13 +86,22 @@ const styles = {
     width: 200,
     flex: '0 0 auto',
     paddingTop: 4,
-    textAlign: 'right'
+    textAlign: 'right',
+
+    [MEDIA.mobile]: {
+      width: '100%',
+      margin: '10px 0',
+      textAlign: 'center'
+    }
   },
 
   controlsButton: {
     ...commonStyles.buttonSecondary,
-
     marginLeft: 10,
+
+    '&:first-child': {
+      marginLeft: 0,
+    }
   }
 };
 

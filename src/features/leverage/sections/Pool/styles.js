@@ -131,11 +131,21 @@ const styles = {
     }
   },
 
+  tooltipContent: {
+    textAlign: 'left',
+    fontWeight: 400
+  },
+
   leverage: {
     height: 48,
 
     '& p:first-child': {
       margin: '-2px 0 2px'
+    },
+
+    [MEDIA.mobile]: {
+      width: '100%',
+      textAlign: 'center'
     }
   },
 
@@ -173,7 +183,13 @@ const styles = {
   controls: {
     width: 200,
     paddingTop: 4,
-    textAlign: 'right'
+    textAlign: 'right',
+
+    [MEDIA.mobile]: {
+      width: '100%',
+      marginTop: 10,
+      textAlign: 'center'
+    }
   },
 
   networkSwitch: {
@@ -184,6 +200,7 @@ const styles = {
     fontSize: FONT.size.normal,
 
     [MEDIA.mobile]: {
+      width: '100%',
       padding: '10px 0 20px',
       lineHeight: '20px'
     }

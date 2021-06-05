@@ -19,7 +19,7 @@ const styles = {
   },
   wrapper: {
     minHeight: '100vh',
-    padding: '0 10px',
+    padding: '20px 10px',
     textAlign: 'center',
   },
   overlay: {
@@ -85,7 +85,7 @@ const styles = {
   title: {
     ...commonStyles.h3,
 
-    margin: '3px 0 25px'
+    margin: '3px 35px 25px 0'
   },
 }
 

@@ -20,6 +20,7 @@ export default function Pool({ bank, pool, tokens, fetchBalancesDone, fetchPools
 
   const [leverage, setLeverage] = useState(pool.maxLeverage);
   const [apr, setApr] = useState(0);
+  const [apy, setApy] = useState(0);
   const [yieldFarming, setYieldFarming] = useState(0);
   const [tradingFee, setTradingFee] = useState(0);
   const [borrowApy, setBorrowApy] = useState(0);
@@ -35,8 +36,10 @@ export default function Pool({ bank, pool, tokens, fetchBalancesDone, fetchPools
     const borrowApy = (bank?.baseBorrowApy ?? 0) * multiplier / 2;
 
     const apr = Math.round((yieldFarming + tradingFee - borrowApy) * 100) / 100;
+    const apy = Math.round(((1 + apr / 100 / 365) ** 365 - 1) * 10000) / 100;
 
     setApr(apr);
+    setApy(apy);
     setYieldFarming(yieldFarming);
     setTradingFee(tradingFee);
     setBorrowApy(borrowApy);
@@ -111,6 +114,26 @@ export default function Pool({ bank, pool, tokens, fetchBalancesDone, fetchPools
             }
           </div>
           <p>APR</p>
+        </div>
+
+        <div className={classes.counter}>
+          <div>
+            {fetchPoolsDataDone
+              ? (
+                <>
+                  { `${apy}%` }
+                  <Tooltip position="bottom-left">
+                    <div className={classes.tooltipContent}>
+                      Calculated based on current APR <br />
+                      rate and assuming daily <br />compounding
+                    </div>
+                  </Tooltip>
+                </>
+              )
+              : <Loader />
+            }
+          </div>
+          <p>APY</p>
         </div>
 
         {/* Leverage Select */}

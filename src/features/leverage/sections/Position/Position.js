@@ -57,7 +57,9 @@ export default function Position({ position, bank, pool }) {
       <div className={classes.counter}>
         <div>
           ${ position.size.times(bank.tokenPrice || 1).toFixed(0) }
-          <Tooltip>Collateral: <b>${ position.collateral.times(bank.tokenPrice || 1).toFixed(0) }</b></Tooltip>
+          <Tooltip position="bottom-left">
+            Collateral: <b>${ position.collateral.times(bank.tokenPrice || 1).toFixed(0) }</b>
+          </Tooltip>
         </div>
         <p>Size</p>
       </div>
