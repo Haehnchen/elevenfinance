@@ -10,13 +10,14 @@ import Position from '../Position/Position';
 import styles from './styles.js';
 const useStyles = createUseStyles(styles);
 
-export default function Positions({ mode }) {
+export default function Positions({ }) {
   const classes = useStyles();
   const { web3, address, network } = useConnectWallet();
   const { banks, pools } = useFetchPoolsData();
   const { positions, fetchPositions, fetchPositionsDone } = useFetchPositions();
   const { fetchBanksTokensPrices } = useFetchBanksTokensPrices();
 
+  const [mode, setMode] = useState('own');
   const [displayPositions, setDisplayPositions] = useState([]);
 
   useEffect(() => {
@@ -42,11 +43,27 @@ export default function Positions({ mode }) {
     }
 
     setDisplayPositions(items);
-  }, [positions, address])
+  }, [positions, address, mode])
+
+  const toggleMode = () => {
+    setMode(mode == 'own' ? 'all' : 'own');
+  }
 
   return (
     <>
-      <h3 className={classes.title}>My Positions</h3>
+      <div className={classes.titleSection}>
+        <h3 className={classes.title}>
+          { mode == 'own' ? 'My Positions' : 'All positions' }
+        </h3>
+        <div>
+          <a
+            className={classes.link}
+            onClick={toggleMode}
+          >
+            { mode == 'own' ? 'Show all users positions' : 'Show my positions' }
+          </a>
+        </div>
+      </div>
 
       {fetchPositionsDone && displayPositions.length > 0 && (
         <div>

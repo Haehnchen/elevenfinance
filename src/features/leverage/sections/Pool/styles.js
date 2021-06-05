@@ -173,7 +173,7 @@ const styles = {
   controls: {
     width: 200,
     paddingTop: 4,
-    textAlign: 'center'
+    textAlign: 'right'
   },
 
   networkSwitch: {

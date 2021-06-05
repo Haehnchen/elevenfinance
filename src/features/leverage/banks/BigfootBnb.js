@@ -136,7 +136,6 @@ export default class BigfootBnb {
         .send({ from: address })
 
       resolve({ tx });
-
     });
   }
 

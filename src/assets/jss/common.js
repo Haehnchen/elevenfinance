@@ -196,9 +196,14 @@ const styles = {
       marginTop: -5
     },
 
-    '&:hover': {
+    '&:hover:not(.disabled)': {
       transform: 'scale(1.05)'
     },
+
+    '&.disabled': {
+      background: COLORS.bgLight,
+      color: COLORS.textSecondaryDark
+    }
   },
 
   input: {
@@ -318,6 +323,16 @@ const styles = {
       position: 'absolute',
       top: 16,
       left: 12,
+    }
+  },
+
+  link: {
+    color: COLORS.primary,
+    textDecoration: 'underline',
+    cursor: 'pointer',
+
+    '&:hover, &:active, &:focus, &:visited': {
+      color: COLORS.primary
     }
   }
 }

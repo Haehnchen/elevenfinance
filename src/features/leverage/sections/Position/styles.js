@@ -64,8 +64,18 @@ const styles = {
     }
   },
 
+  tooltipContent: {
+    textAlign: 'left',
+    fontWeight: 400,
+
+    '& p:last-child': {
+      marginBottom: 0
+    }
+  },
+
   controls: {
     width: 200,
+    flex: '0 0 auto',
     paddingTop: 4,
     textAlign: 'right'
   },

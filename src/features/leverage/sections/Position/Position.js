@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { useSnackbar } from 'notistack';
 
 import { useConnectWallet } from 'features/home/redux/hooks';
-import { useClosePosition } from '../../redux/hooks';
+import { useClosePosition, useLiquidatePosition } from '../../redux/hooks';
 
 import Spinner from 'components/Spinner/Spinner';
 import Tooltip from 'components/Tooltip/Tooltip';
@@ -19,8 +19,12 @@ export default function Position({ position, bank, pool }) {
   const { enqueueSnackbar } = useSnackbar();
   const { web3, address, network } = useConnectWallet();
   const { closePosition, closePositionPending } = useClosePosition();
+  const { liquidatePosition, liquidatePositionPending } = useLiquidatePosition();
 
+  const isOwnPosition = position.owner.toLowerCase() == address.toLowerCase();
+  const canBeLiquidated = position.debtRatio.gte(100);
   const isClosePending = closePositionPending[bank.id]?.[position.id];
+  const isLiquidatePending = liquidatePositionPending[bank.id]?.[position.id];
 
   const onCloseButton = () => {
     const positionId = position.id;
@@ -30,6 +34,16 @@ export default function Position({ position, bank, pool }) {
         enqueueSnackbar(`Position successfully closed`, { variant: 'success' })
       })
       .catch(error => enqueueSnackbar(`Unable to close position: ${error}`, { variant: 'error' }))
+  }
+
+  const onLiquidateButton = () => {
+    const positionId = position.id;
+
+    liquidatePosition({ address, web3, bank, positionId })
+      .then(() => {
+        enqueueSnackbar(`Position successfully liquidated`, { variant: 'success' })
+      })
+      .catch(error => enqueueSnackbar(`Unable to liquidate position: ${error}`, { variant: 'error' }))
   }
 
   return (
@@ -61,30 +75,49 @@ export default function Position({ position, bank, pool }) {
         })}>
           { position.debtRatio.toFixed(2) }%
           <Tooltip position="bottom-left">
-            Death Leverage: <b>{ pool?.deathLeverage.toFixed(2) }</b>
+            <div className={classes.tooltipContent}>
+              <p>Liquidation Leverage: <b>{ pool?.deathLeverage.toFixed(2) }</b></p>
+              <p>When the debt ratio will reach 100%<br />the position will be liquidated</p>
+            </div>
           </Tooltip>
         </div>
         <p>Debt Ratio</p>
       </div>
 
       <div className={classes.controls}>
-        {! isClosePending && (
-          <AdjustPosition
-            position={position}
-            pool={pool}
-            bank={bank}
-          />
+        {isOwnPosition && (
+          <>
+            {! isClosePending && (
+              <AdjustPosition
+                position={position}
+                pool={pool}
+                bank={bank}
+              />
+            )}
+
+            <button
+              className={classes.controlsButton}
+              onClick={onCloseButton}
+              disabled={isClosePending}
+            >
+              {! isClosePending
+                ? 'Close'
+                : <Spinner color="bright" />}
+            </button>
+          </>
         )}
 
-        <button
-          className={classes.controlsButton}
-          onClick={onCloseButton}
-          disabled={isClosePending}
-        >
-          {! isClosePending
-            ? 'Close'
-            : <Spinner color="bright" />}
-        </button>
+        {! isOwnPosition && (
+          <button
+            className={classes.controlsButton + (! canBeLiquidated ? ' disabled' : '')}
+            onClick={onLiquidateButton}
+            disabled={! canBeLiquidated || isLiquidatePending}
+          >
+            {! isLiquidatePending
+              ? 'Liquidate'
+              : <Spinner color="bright" />}
+          </button>
+        )}
       </div>
     </div>
   );

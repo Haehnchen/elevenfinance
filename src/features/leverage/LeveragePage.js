@@ -24,7 +24,7 @@ export default function LeveragePage(props) {
       </div>
 
       <div className={classes.section}>
-        <Positions mode="own" />
+        <Positions />
       </div>
     </>
   );
