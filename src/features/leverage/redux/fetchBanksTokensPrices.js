@@ -18,15 +18,17 @@ const fetchBanksTokensPrices = ({ web3, banks, network }) => {
     const promise = new Promise((resolve, reject) => {
       const promises = [];
 
-      Object.values(banks).forEach(bank => {
+      const networkBanks = Object.values(banks).filter(bank => bank.network == network);
+
+      networkBanks.forEach(bank => {
         const bankInstance = BankHelper.getBankInstance(bank);
         promises.push(bankInstance.getBankTokenPrice({ web3 }));
       });
 
       Promise.all(promises).then(results => {
         const tokensPrices = {};
-        Object.keys(banks).forEach((key, index) => {
-          tokensPrices[key] = results[index];
+        networkBanks.forEach((bank, index) => {
+          tokensPrices[bank.id] = results[index];
         });
 
         dispatch({
@@ -82,11 +84,11 @@ export function reducer(state, action) {
       };
 
     case LEVERAGE_FETCH_BANKS_TOKENS_PRICES_SUCCESS:
-      const updatedBanks = {};
-      for (let key in banks) {
-        updatedBanks[key] = {
-          ...banks[key],
-          tokenPrice: action.data[key]
+      const updatedBanks = {...banks};
+
+      for (let key in updatedBanks) {
+        if (action.data[key]) {
+          updatedBanks[key].tokenPrice = action.data[key]
         }
       }
 

@@ -1,5 +1,6 @@
 export const banks = {
   bfbnb: {
+    network: 'bsc',
     id: 'bfbnb',
     name: 'bfBNB',
     address: '0xA96C90223e4cC69192A9ffF1BA4c8b86D02765B2',
@@ -9,6 +10,7 @@ export const banks = {
     tokenDecimals: 18,
   },
   bfusd: {
+    network: 'bsc',
     id: 'bfusd',
     name: 'bfUSD',
     address: '0xE9B3017cd7A347a8B0324F88db335255E5c5D3FD',

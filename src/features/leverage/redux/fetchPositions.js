@@ -32,13 +32,14 @@ export const fetchPositions = ({ web3, banks, pools, network, forceUpdate }) => 
         reject(error.message || error);
       }
 
-      const banksContracts = [];
-      for (let key in banks) {
-        banksContracts.push({
-          id: key,
-          contract: new web3.eth.Contract(bankAbi, banks[key].address)
-        });
-      }
+      const networkBanks = Object.values(banks).filter(bank => bank.network == network);
+
+      const banksContracts = networkBanks.map(bank => {
+        return {
+          id: bank.id,
+          contract: new web3.eth.Contract(bankAbi, bank.address)
+        };
+      });
 
       const multicall = new MultiCall(web3, getNetworkMulticall(network));
       const nextIdCalls = banksContracts.map(bank => {
@@ -48,14 +49,14 @@ export const fetchPositions = ({ web3, banks, pools, network, forceUpdate }) => 
       });
 
       multicall.all([nextIdCalls]).then(([banksNextIds]) => {
-        const calls = Object.keys(banks).map((bankId, bankIndex) => {
-          const nextPositionId = +banksNextIds[bankIndex].nextId;
+        const calls = banksContracts.map((bank, index) => {
+          const nextPositionId = +banksNextIds[index].nextId;
 
           const bankCalls = [];
           for (let i = 1; i < nextPositionId; i++) {
             bankCalls.push({
-              details: banksContracts[bankIndex].contract.methods.positions(i),
-              info: banksContracts[bankIndex].contract.methods.positionInfo(i)
+              details: bank.contract.methods.positions(i),
+              info: bank.contract.methods.positionInfo(i)
             });
           }
 
@@ -63,14 +64,14 @@ export const fetchPositions = ({ web3, banks, pools, network, forceUpdate }) => 
         });
 
         multicall.all(calls).then(results => {
-          const positions = Object.keys(banks).map((bankId, bankIndex) => {
-            return results[bankIndex].map((position, positionIndex) => {
+          const positions = networkBanks.map((bank, index) => {
+            return results[index].map((position, positionIndex) => {
               const poolAddress = position.details[0];
               const owner = position.details[1];
               const pool = pools.find(pool => pool.bigfootAddress == poolAddress);
 
-              const size = byDecimals(position.info[0], banks[bankId].tokenDecimals);
-              const debtSize = byDecimals(position.info[1], banks[bankId].tokenDecimals);
+              const size = byDecimals(position.info[0], banks[bank.id].tokenDecimals);
+              const debtSize = byDecimals(position.info[1], banks[bank.id].tokenDecimals);
               const collateral = size.minus(debtSize);
 
               if (pool === undefined || collateral.lte(0)) {
@@ -82,7 +83,7 @@ export const fetchPositions = ({ web3, banks, pools, network, forceUpdate }) => 
 
               return {
                 id: positionIndex + 1,
-                bankId,
+                bankId: bank.id,
                 poolId: pool.id,
                 poolAddress,
                 owner,
