@@ -1311,6 +1311,48 @@ export const pools = [
   },
   {
     network: 'bsc',
+    id: 'ethbtc',
+    name: 'ETH-BTC',
+    image: 'btc-eth.png',
+    token: 'ETH-BTC WLP',
+    tokenDescription: 'ETH-BTC',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses waultswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11ETHBTC',
+    earnedTokenAddress: '0x33E87056cDD212310725eCd2FF465C69e87fBCbE',
+    earnContractAddress: '0x33E87056cDD212310725eCd2FF465C69e87fBCbE',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0xBb43C776D9dDDaD1395e1543545d05E138ccb4BA',
+    categories: ['Wault'],
+
+    farm: {
+      isDisabled: true,
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 223
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      dividends: 0.1,
+      buybacks: 1.7,
+      waultx_burn: 1
+    }
+  },
+  {
+    network: 'bsc',
     id: 'hfsbusd',
     name: 'HFS',
     image: 'hfs-busd.png',
