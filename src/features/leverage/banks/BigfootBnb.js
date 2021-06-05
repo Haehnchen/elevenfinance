@@ -56,6 +56,48 @@ export default class BigfootBnb {
     });
   }
 
+  /**
+   * Adjust existing leveraged position
+   */
+   adjustPosition({ address, web3, network, position, pool, bank, amounts }) {
+    return new Promise((resolve, reject) => {
+      // Convert all deposited tokens to bank's main token value
+      const bankTokenValues = pool.tokens.map((token, index) => {
+        return this.convertValueToBankToken({ token, amount: amounts[index], web3, network })
+      });
+
+      Promise.all(bankTokenValues).then(values => {
+        // Calculate additional collateral value
+        let totalValue = new BigNumber(0);
+        values.map(value => totalValue = totalValue.plus(value));
+
+        // Get native token amount for transaction value
+        const nativeTokenIndex = pool.tokens.findIndex(token => token.address === null);
+
+        const nativeTokenAmount = nativeTokenIndex !== -1
+          ? amountToUint(amounts[nativeTokenIndex], 18)
+          : 0;
+
+        // Encode Bigfoot params
+        const stratInfo = web3.eth.abi.encodeParameters(
+          ['address', 'uint'],
+          [pool.params.token, '0']
+        );
+
+        const bigfootInfo = web3.eth.abi.encodeParameters(
+          ['address', 'uint', 'bytes'],
+          [pool.params.strategy, 0, stratInfo]
+        );
+
+        // Send the transaction
+        const contract = new web3.eth.Contract(bankAbi, bank.address);
+        const tx = contract.methods.work(position.id, pool.bigfootAddress, '0', amountToUint(totalValue), bigfootInfo)
+          .send({ from: address, value: nativeTokenAmount })
+
+        resolve({ tx });
+      })
+    });
+  }
 
   /**
    * Close leveraged position
@@ -84,7 +126,6 @@ export default class BigfootBnb {
     });
   }
 
-
   /**
    * Liquidate leveraged position
    */
@@ -98,7 +139,6 @@ export default class BigfootBnb {
 
     });
   }
-
 
   /**
    * Convert token to bank's main token
@@ -133,5 +173,4 @@ export default class BigfootBnb {
       return byDecimals(res, 18);
     })
   }
-
 }

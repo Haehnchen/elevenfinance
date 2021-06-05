@@ -152,14 +152,6 @@ const Sidebar = ({ connected, address, connectWallet, disconnectWallet }) => {
               </a>
             </li>
           </ul>
-
-          <a className={classes.bigfootButton}
-            href="http://bigfoot.eleven.finance"
-            target="_blank"
-          >
-            <BigfootIcon />
-            Bigfoot
-          </a>
         </div>
 
 

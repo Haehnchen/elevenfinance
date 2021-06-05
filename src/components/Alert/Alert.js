@@ -15,7 +15,7 @@ const Alert = ({ type, children }) => {
         return <ExclamationCircleIcon />;
 
       default:
-        return '';
+        return <ExclamationCircleIcon />;
     }
   }
 

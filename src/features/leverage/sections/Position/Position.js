@@ -9,6 +9,8 @@ import { useClosePosition } from '../../redux/hooks';
 import Spinner from 'components/Spinner/Spinner';
 import Tooltip from 'components/Tooltip/Tooltip';
 
+import AdjustPosition from '../AdjustPosition/AdjustPosition';
+
 import styles from './styles.js';
 const useStyles = createUseStyles(styles);
 
@@ -66,6 +68,14 @@ export default function Position({ position, bank, pool }) {
       </div>
 
       <div className={classes.controls}>
+        {! isClosePending && (
+          <AdjustPosition
+            position={position}
+            pool={pool}
+            bank={bank}
+          />
+        )}
+
         <button
           className={classes.controlsButton}
           onClick={onCloseButton}

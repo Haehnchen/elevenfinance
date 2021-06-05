@@ -23,7 +23,8 @@ export default class BigfootUsd {
         const loan = amountToUint(totalValue.times(leverage - 1));
 
         if (totalValue.lt(bank.minPositionSize)) {
-          reject(`Min position size is ${bank.minPositionSize} ${bank.currency} (or the equivalent in other assets)`);
+          const minPositionUsd = Math.floor(bank.minPositionSize * bank.tokenPrice) + 1;
+          reject(`Min position size is ${minPositionUsd} ${bank.currency} (or the equivalent in other assets)`);
           return;
         }
 
@@ -55,6 +56,48 @@ export default class BigfootUsd {
     });
   }
 
+  /**
+   * Adjust existing leveraged position
+   */
+   adjustPosition({ address, web3, network, position, pool, bank, amounts }) {
+    return new Promise((resolve, reject) => {
+      // Convert all deposited tokens to bank's main token value
+      const bankTokenValues = pool.tokens.map((token, index) => {
+        return this.convertValueToBankToken({ token, amount: amounts[index], web3, network })
+      });
+
+      Promise.all(bankTokenValues).then(values => {
+        // Calculate total collateral value and loan size
+        let totalValue = new BigNumber(0);
+        values.map(value => totalValue = totalValue.plus(value));
+
+        // Encode Bigfoot params
+        const stratInfo = web3.eth.abi.encodeParameters(
+          ['address', 'uint'],
+          [pool.params.token, '0']
+        );
+
+        const bigfootInfo = web3.eth.abi.encodeParameters(
+          ['address', 'uint', 'bytes'],
+          [pool.params.strategy, 0, stratInfo]
+        );
+
+        const tokensAmounts = [
+          amountToUint(amounts[0], pool.tokens[0].decimals), // BUSD
+          0, // USDT
+          0, // USDC
+          0, // 3NRV
+        ]
+
+        // Send the transaction
+        const contract = new web3.eth.Contract(bankAbi, bank.address);
+        const tx = contract.methods.work(position.id, pool.bigfootAddress, '0', amountToUint(totalValue), tokensAmounts, bigfootInfo)
+          .send({ from: address })
+
+        resolve({ tx });
+      })
+    });
+  }
 
   /**
    * Close leveraged position
@@ -85,7 +128,6 @@ export default class BigfootUsd {
     });
   }
 
-
   /**
    * Liquidate leveraged position
    */
@@ -100,7 +142,6 @@ export default class BigfootUsd {
     });
   }
 
-  
   /**
    * Convert token to bank's main token
    */

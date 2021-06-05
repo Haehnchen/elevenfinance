@@ -1,4 +1,5 @@
 import initialState from './initialState';
+import { reducer as adjustPositionReducer } from './adjustPosition';
 import { reducer as fetchAllowancesReducer } from './fetchAllowances';
 import { reducer as fetchBalancesReducer } from './fetchBalances';
 import { reducer as fetchBanksTokensPricesReducer } from './fetchBanksTokensPrices';
@@ -9,6 +10,7 @@ import { reducer as closePositionReducer } from './closePosition';
 import { reducer as liquidatePositionReducer } from './liquidatePosition';
 
 const reducers = [
+  adjustPositionReducer,
   fetchAllowancesReducer,
   fetchBalancesReducer,
   fetchBanksTokensPricesReducer,

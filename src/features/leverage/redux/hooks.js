@@ -1,3 +1,4 @@
+export { useAdjustPosition } from './adjustPosition';
 export { useFetchAllowances } from './fetchAllowances';
 export { useFetchBalances } from './fetchBalances';
 export { useFetchBanksTokensPrices } from './fetchBanksTokensPrices';

@@ -18,6 +18,7 @@ const initialState = {
   pools,
   tokens,
   positions: [],
+  adjustPositionPending: {},
   openPositionPending: {},
   closePositionPending: {},
   liquidatePositionPending: {},

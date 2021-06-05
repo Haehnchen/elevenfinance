@@ -20,6 +20,7 @@ const AmountDialog = ({
   tokensAmounts,
   open,
   onConfirm,
+  onAmountsChange,
   onClose,
   children,
   suffix
@@ -48,6 +49,11 @@ const AmountDialog = ({
     newAmounts[index] = amount;
 
     setAmounts(newAmounts);
+
+    if (onAmountsChange) {
+      const items = formatAmounts(newAmounts);
+      onAmountsChange(items.length > 1 ? items : items[0]);
+    }
   }
 
   const onInputChange = (event, inputIndex) => {
@@ -101,16 +107,21 @@ const AmountDialog = ({
   }
 
   const onConfirmButton = () => {
+    const items = formatAmounts(amounts);
+    onConfirm(items.length > 1 ? items : items[0]);
+  }
+
+  const formatAmounts = (amounts) => {
     const items = [];
 
     for (let i = 0; i < tokensAmounts.length; i++) {
       items.push(amounts[i]
-        ? ((amounts[i].number || 0) + '').replace(/,/g, '')
+        ? ((amounts[i].number || 0) + '').replace(/,/g, '').replace(/\.+$/, '')
         : 0
       );
     }
 
-    onConfirm(items.length > 1 ? items : items[0]);
+    return items;
   }
 
   const controls = (

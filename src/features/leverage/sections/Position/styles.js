@@ -71,7 +71,9 @@ const styles = {
   },
 
   controlsButton: {
-    ...commonStyles.buttonSecondary
+    ...commonStyles.buttonSecondary,
+
+    marginLeft: 10,
   }
 };
 
