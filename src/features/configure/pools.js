@@ -349,6 +349,52 @@ export const pools = [
 
   {
     network: 'polygon',
+    id: 'titan ',
+    name: 'TITAN ',
+    image: 'titan.png',
+    token: 'TITAN ',
+    tokenDescription: 'TITAN ',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses polycat',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11TITAN ',
+    earnedTokenAddress: '0x8F2331A864Bd34E17d04623A871f10187c68860f',
+    earnContractAddress: '0x8F2331A864Bd34E17d04623A871f10187c68860f',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0xaAa5B9e6c589642f98a1cDA99B9D024B8407285A',
+    categories: ['Polycat'],
+
+/*    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 9
+    },*/
+
+
+    fees: {
+      third_party: '4% on deposit',
+      deposit: 0,
+      depositWarning: '<p>Be aware of <b>4% Deposit fee</b> on this pool.</p>'
+        + '<p>The fee is charged by Polycat, Eleven doesn\'t charge you on the deposit</p>',
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    }
+  },
+
+
+  {
+    network: 'polygon',
     id: 'polydoge',
     name: 'POLYDOGE',
     image: 'polydoge.svg',
@@ -391,6 +437,8 @@ export const pools = [
       buybacks: 2.48,
     }
   },
+
+
   {
     network: 'polygon',
     id: 'krill',
