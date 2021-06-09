@@ -171,6 +171,46 @@ export const pools = [
   },
   {
     network: 'polygon',
+    id: 'elequick',
+    name: 'elequick',
+    image: 'ele_quick.png',
+    token: 'ELE-QUICK qLP',
+    tokenDescription: 'ELE-QUICK qLP',
+    tokenDecimals: 18,
+    uses: 'Uses quickswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11ELEQUICK qLP',
+    earnedTokenAddress: '0xBFc3aED1D368275cf51E7a8A74F819f9DEF5329f',
+    earnContractAddress: '0xBFc3aED1D368275cf51E7a8A74F819f9DEF5329f',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x6696db3A5eF00e24c065edcFbc114b13Ea9eE997',
+    categories: ['Cometh'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 30
+    },
+
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    }
+  },
+  {
+    network: 'polygon',
     id: 'celematic',
     name: 'celematic',
     image: 'ele_matic.png',
