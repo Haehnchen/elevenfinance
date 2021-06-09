@@ -35,12 +35,16 @@ const PoolSummary = ({ pool, tokenBalance, depositedBalance, fetchBalanceDone, i
   }
 
   const getAprd = pool => {
-    const vaultAprd = isCompounding
+    let vaultAprd = isCompounding
       ? pool.aprd
       : pool.apy / 365;
 
     if (vaultAprd === undefined || isNaN(vaultAprd)) {
       return "";
+    }
+
+    if (['ELE', 'bfbnb'].includes(pool.id) && pool.farmStats) {
+      vaultAprd += pool.farmStats.aprl / 365;
     }
 
     try {
@@ -55,8 +59,13 @@ const PoolSummary = ({ pool, tokenBalance, depositedBalance, fetchBalanceDone, i
       return getApy(pool);
     }
 
-    const aprl = pool.farmStats.aprl;
-    const apy = pool.apy - ((1 + aprl / 100 / 365) ** 365 - 1) * 100;
+    let aprl = pool.farmStats.aprl;
+
+    if (['ELE', 'bfbnb'].includes(pool.id)) {
+      aprl = 0;
+    }
+
+    const apy = ((1 + ((pool.aprd - aprl / 365) / 100)) ** 365 - 1) * 100;
 
     try {
       return millify(apy, { units });
@@ -70,7 +79,12 @@ const PoolSummary = ({ pool, tokenBalance, depositedBalance, fetchBalanceDone, i
       return getAprd(pool);
     }
 
-    const aprl = pool.farmStats.aprl;
+    let aprl = pool.farmStats.aprl;
+
+    if (['ELE', 'bfbnb'].includes(pool.id)) {
+      aprl = 0;
+    }
+
     const aprd = pool.aprd - aprl / 365;
 
     return aprd > 0

@@ -9,7 +9,17 @@ import {
   VAULT_FILTERS_SET_WITH_BALANCE,
   VAULT_FILTERS_SET_SEARCH_PHRASE,
   VAULT_FILTERS_SET_SORT,
+  VAULT_FILTERS_RESET
 } from './constants';
+
+export const defaultFilters = {
+  networks: [],
+  categories: [],
+  searchPhrase: '',
+  deposited: false,
+  withBalance: false,
+  sort: 'default'
+};
 
 const setNetworksFilter = (networks) => {
   return dispatch => {
@@ -61,6 +71,14 @@ const setSort = (value) => {
     dispatch({
       type: VAULT_FILTERS_SET_SORT,
       data: value
+    });
+  }
+}
+
+const resetFilters = () => {
+  return dispatch => {
+    dispatch({
+      type: VAULT_FILTERS_RESET
     });
   }
 }
@@ -147,6 +165,7 @@ export function useFetchFilters(pools, tokens) {
   const setWithBalanceAction = useCallback(data => dispatch(setWithBalanceFilter(data)), [dispatch]);
   const setSearchPhraseAction = useCallback(data => dispatch(setSearchPhrase(data)), [dispatch]);
   const setSortAction = useCallback(data => dispatch(setSort(data)), [dispatch]);
+  const resetFiltersAction = useCallback(data => dispatch(resetFilters(data)), [dispatch]);
 
   // Store current filters state in local storage
   try {
@@ -159,12 +178,14 @@ export function useFetchFilters(pools, tokens) {
   return {
     filters,
     filteredPools: getFilteredPools(pools, tokens, filters, categories),
+    areFiltersDefault: JSON.stringify(filters) == JSON.stringify(defaultFilters),
     setNetworksFilter: setNetworksAction,
     setCategoriesFilter: setCategoriesAction,
     setDepositedFilter: setDepositedAction,
     setWithBalanceFilter: setWithBalanceAction,
     setSearchPhrase: setSearchPhraseAction,
-    setSort: setSortAction
+    setSort: setSortAction,
+    resetFilters: resetFiltersAction,
   }
 }
 
@@ -224,6 +245,12 @@ export function reducer(state, action) {
           ...filters,
           sort: action.data
         }
+      }
+
+    case VAULT_FILTERS_RESET:
+      return {
+        ...state,
+        filters: defaultFilters,
       }
 
     default:

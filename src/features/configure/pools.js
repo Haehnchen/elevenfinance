@@ -32,14 +32,6 @@ export const categories = [
     default: true
   },
   {
-    name: 'Popsicle',
-    default: true
-  },
-  {
-    name: 'Ellipsis',
-    default: true
-  },
-  {
     name: 'Polycat',
     default: true
   },
@@ -719,13 +711,13 @@ export const pools = [
     categories: ['Polycat'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
       masterchefPid: 9
     },
-
 
     fees: {
       third_party: '4% on deposit',
@@ -761,7 +753,9 @@ export const pools = [
     pastPricePerFullShare: 1,
     tokenAddress: '0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6',
     categories: ['Polycat'],
+
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
@@ -805,13 +799,13 @@ export const pools = [
     categories: ['Polycat'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
       masterchefPid: 11
     },
-
 
     fees: {
       third_party: '4% on deposit',
@@ -849,13 +843,13 @@ export const pools = [
     categories: ['Polycat', 'Iron'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
       masterchefPid: 12
     },
-
 
     fees: {
       third_party: '4% on deposit',
@@ -3184,7 +3178,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xFE3171B9c20d002376D4B0097207EDf54b02EA3B',
-    categories: ['Popsicle'],
+    categories: [],
 
     farm: {
       isDisabled: true,
@@ -3225,7 +3219,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x51F914a192a97408D991FddDAFB8F8537C5Ffb0a',
-    categories: ['Popsicle'],
+    categories: [],
 
     farm: {
       isDisabled: true,
@@ -3269,7 +3263,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xf16e81dce15B08F326220742020379B855B87DF9',
-    categories: ['Popsicle'],
+    categories: [],
 
     farm: {
       isDisabled: true,
@@ -3309,7 +3303,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xddE420cbB3794ebD8FFC3Ac69F9c78e5d1411870',
-    categories: ['Ellipsis'],
+    categories: [],
 
     farm: {
       isDisabled: true,
@@ -3349,7 +3343,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xf9045866e7b372DeF1EFf3712CE55FAc1A98dAF0',
-    categories: ['Ellipsis'],
+    categories: [],
 
     farm: {
       isDisabled: true,

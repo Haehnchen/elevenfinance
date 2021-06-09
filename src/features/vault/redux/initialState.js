@@ -1,4 +1,5 @@
 import { pools, categories } from "../../configure/pools";
+import { defaultFilters } from './fetchFilters';
 
 const tokens = {};
 
@@ -30,15 +31,6 @@ pools.map(({network, token, tokenAddress, isMultiToken, tokens: poolTokens, earn
 })
 
 const getInitialFilters = () => {
-  const defaultFilters = {
-    networks: [],
-    categories: [],
-    searchPhrase: '',
-    deposited: false,
-    withBalance: false,
-    sort: 'default'
-  };
-
   try {
     const serialized = localStorage.getItem('vault_filters');
     const filters = JSON.parse(serialized);

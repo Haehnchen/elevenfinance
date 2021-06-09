@@ -3,6 +3,7 @@ import { createUseStyles } from 'react-jss';
 
 import Select from 'components/Select/Select';
 import { CubeTransparentIcon, FilterIcon, SearchIcon, SortDescendingIcon } from '@heroicons/react/outline'
+import { XCircleIcon } from '@heroicons/react/solid';
 
 import { useFetchFilters, useFetchPoolsInfo } from '../../redux/hooks';
 
@@ -14,12 +15,14 @@ const Filters = () => {
   const { categories } = useFetchPoolsInfo();
   const {
     filters,
+    areFiltersDefault,
     setNetworksFilter,
     setCategoriesFilter,
     setDepositedFilter,
     setWithBalanceFilter,
     setSearchPhrase,
-    setSort
+    setSort,
+    resetFilters
   } = useFetchFilters();
 
   const [searchFieldActive, setSearchFieldActive] = useState(false);
@@ -133,6 +136,18 @@ const Filters = () => {
           />
         </div>
       </div>
+
+      {! areFiltersDefault && (
+        <div className={classes.resetBlock}>
+          <button
+            className={classes.resetButton}
+            onClick={resetFilters}
+          >
+            <XCircleIcon />
+            Reset Filters
+          </button>
+        </div>
+      )}
     </>
   );
 };

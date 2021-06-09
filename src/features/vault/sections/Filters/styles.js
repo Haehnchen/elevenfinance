@@ -142,6 +142,36 @@ const styles = {
     [MEDIA.mobile]: {
       width: 'calc(50% - 10px)',
     }
+  },
+
+  resetBlock: {
+    paddingTop: 5,
+
+    [MEDIA.mobile]: {
+      padding: '0 0 15px',
+      textAlign: 'center',
+    }
+  },
+  resetButton: {
+    padding: '5px 16px',
+
+    color: COLORS.textSecondaryDark,
+    fontSize: FONT.size.normal,
+
+    background: COLORS.bgDarkest,
+    border: 'none',
+    borderRadius: BORDER.radiusSmall,
+
+    cursor: 'pointer',
+
+    '& svg': {
+      width: 18,
+      height: 18,
+      marginRight: 8,
+      marginTop: -2,
+      verticalAlign: 'middle',
+      display: 'inline-block'
+    }
   }
 }
 
