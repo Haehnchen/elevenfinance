@@ -131,6 +131,46 @@ export const pools = [
   },
   {
     network: 'polygon',
+    id: 'qelematic',
+    name: 'qelematic',
+    image: 'ele_matic.png',
+    token: 'ELE-MATIC qLP',
+    tokenDescription: 'ELE-MATIC qLP',
+    tokenDecimals: 18,
+    uses: 'Uses quickswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11ELEMATIC qLP',
+    earnedTokenAddress: '0x297936316a539Dfa8287fc8966300Bf4fD6dD4bF',
+    earnContractAddress: '0x297936316a539Dfa8287fc8966300Bf4fD6dD4bF',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0xADcb09FD3346c72C98753e518397b336333Cf227',
+    categories: ['Cometh'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 29
+    },
+
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    }
+  },
+  {
+    network: 'polygon',
     id: 'celematic',
     name: 'celematic',
     image: 'ele_matic.png',
