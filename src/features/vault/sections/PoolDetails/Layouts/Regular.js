@@ -5,6 +5,7 @@ import { formatDecimals } from 'features/helpers/bignumber';
 
 import Grid from '@material-ui/core/Grid';
 import Tooltip from 'components/Tooltip/Tooltip';
+import { ExternalLinkIcon } from '@heroicons/react/outline';
 
 import DepositButton from '../Buttons/DepositButton';
 import WithdrawButton from '../Buttons/WithdrawButton';
@@ -67,56 +68,83 @@ const Regular = ({ pool, index, tokenBalance, depositedBalance, pendingRewards, 
 
       <Grid item xs={12} sm={12} md={6}>
         <div className={classes.descriptionSection + ' ' + classes.statsSection}>
-          {pool.fees && (
+          {(pool.fees || pool.links) && (
             <div className={classes.statsContent}>
-              {pool.fees.third_party && (
-                <div className="item warning">
-                  <span>3rd party fee</span>
-                  <span>{ pool.fees.third_party }</span>
-                </div>
-              )}
-              <div className="item">
-                <span>Deposit fee</span>
-                <span>{ pool.fees.deposit ? pool.fees.deposit + '% on capital' : 'none' }</span>
-              </div>
-              <div className="item">
-                <span>Withdrawal fee</span>
-                <span>{ pool.fees.withdrawal ? pool.fees.withdrawal + '% on capital' : 'none' }</span>
-              </div>
-              <div className="item">
-                <span>Performance fee</span>
-                <span>
-                  { performanceFee
-                    ? (
-                      <>
-                        {performanceFee + '% on profits'}
-                        <Tooltip position="bottom-left">
-                          {pool.fees.buybacks > 0 && (
-                            <div>{pool.fees.buybacks + '%'} - ELE Buybacks</div>
-                          )}
-                          {pool.fees.dividends > 0 && (
-                            <div>{pool.fees.dividends + '%'} - ELE pool dividends</div>
-                          )}
-                          {pool.fees.controller > 0 && (
-                            <div>{pool.fees.controller + '%'} - Controller</div>
-                          )}
-                          {pool.fees.platform > 0 && (
-                            <div>{pool.fees.platform + '%'} - Platform</div>
-                          )}
-                        </Tooltip>
-                        <br/>
-                        <i className="small">(75% of fees buyback ELE)</i>
-                      </>
-                    )
-                    : 'none'
-                  }
-                </span>
-              </div>
+              {pool.fees && (
+                <>
+                  {pool.fees.third_party && (
+                    <div className="item warning">
+                      <span>3rd party fee</span>
+                      <span>{ pool.fees.third_party }</span>
+                    </div>
+                  )}
+                  <div className="item">
+                    <span>Deposit fee</span>
+                    <span>{ pool.fees.deposit ? pool.fees.deposit + '% on capital' : 'none' }</span>
+                  </div>
+                  <div className="item">
+                    <span>Withdrawal fee</span>
+                    <span>{ pool.fees.withdrawal ? pool.fees.withdrawal + '% on capital' : 'none' }</span>
+                  </div>
+                  <div className="item">
+                    <span>Performance fee</span>
+                    <span>
+                      { performanceFee
+                        ? (
+                          <>
+                            {performanceFee + '% on profits'}
+                            <Tooltip position="bottom-left">
+                              {pool.fees.buybacks > 0 && (
+                                <div>{pool.fees.buybacks + '%'} - ELE Buybacks</div>
+                              )}
+                              {pool.fees.dividends > 0 && (
+                                <div>{pool.fees.dividends + '%'} - ELE pool dividends</div>
+                              )}
+                              {pool.fees.controller > 0 && (
+                                <div>{pool.fees.controller + '%'} - Controller</div>
+                              )}
+                              {pool.fees.platform > 0 && (
+                                <div>{pool.fees.platform + '%'} - Platform</div>
+                              )}
+                            </Tooltip>
+                            <br/>
+                            <i className="small">(75% of fees buyback ELE)</i>
+                          </>
+                        )
+                        : 'none'
+                      }
+                    </span>
+                  </div>
 
-              {pool.fees.waultx_burn && (
-                <div className="item">
-                  <span>WAULTx burn</span>
-                  <span>{ pool.fees.waultx_burn + '% on profits' }</span>
+                  {pool.fees.waultx_burn && (
+                    <div className="item">
+                      <span>WAULTx burn</span>
+                      <span>{ pool.fees.waultx_burn + '% on profits' }</span>
+                    </div>
+                  )}
+                </>
+              )}
+
+              {pool.links && (
+                <div className={classes.statsLinks}>
+                  {pool.links.map((link, index) => {
+                    return (
+                      <a
+                        href={link.url}
+                        key={index}
+                        target="_blank"
+                      >
+                        <ExternalLinkIcon />
+                        {
+                          link.text || (
+                            link.type == 'buy_token'
+                              ? 'Buy Token'
+                              : 'Add Liquidity'
+                          )
+                        }
+                      </a>
+                    )
+                  })}
                 </div>
               )}
             </div>

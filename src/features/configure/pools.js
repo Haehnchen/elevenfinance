@@ -90,7 +90,11 @@ export const pools = [
       withdrawal: 0,
       controller: 0,
       platform: 0
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://app.1inch.io/#/56/swap/BNB/ELE'}
+    ]
   },
   {
     network: 'bsc',
@@ -119,7 +123,12 @@ export const pools = [
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 104
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://app.1inch.io/#/56/swap/BNB/ELE'},
+      {type: 'add_liq', url: 'https://exchange.pancakeswap.finance/#/add/BNB/0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0'},
+    ]
   },
   {
     network: 'polygon',
@@ -159,7 +168,12 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0'},
+      {type: 'add_liq', url: 'https://quickswap.exchange/#/add/ETH/0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0'},
+    ]
   },
   {
     network: 'polygon',
@@ -199,7 +213,12 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0'},
+      {type: 'add_liq', url: 'https://quickswap.exchange/#/add/0x831753dd7087cac61ab5644b308642cc1c33dc13/0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0'},
+    ]
   },
   {
     network: 'polygon',
@@ -239,7 +258,12 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.cometh.io/#/swap?outputCurrency=0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0'},
+      {type: 'add_liq', url: 'https://swap.cometh.io/#/add/ETH/0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0'},
+    ]
   },
   {
     network: 'polygon',
@@ -271,7 +295,6 @@ export const pools = [
       masterchefPid: 14
     },
 
-
     fees: {
       deposit: 0,
       withdrawal: 0.1,
@@ -279,7 +302,12 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.cometh.io/#/swap?outputCurrency=0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0'},
+      {type: 'add_liq', url: 'https://swap.cometh.io/#/add/0x9C78EE466D6Cb57A4d01Fd887D2b5dFb2D46288f/0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0'},
+    ]
   },
   {
     network: 'polygon',
@@ -351,7 +379,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0'},
+    ]
   },
   {
     network: 'polygon',
@@ -383,7 +416,12 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0xd86b5923f3ad7b585ed81b448170ae026c65ae9a'},
+      {type: 'add_liq', url: 'https://quickswap.exchange/#/add/0xd86b5923f3ad7b585ed81b448170ae026c65ae9a/0x2791bca1f2de4661ed88a30c99a7a9449aa84174'},
+    ]
   },
   {
     network: 'polygon',
@@ -408,15 +446,19 @@ export const pools = [
     tokenAddress: '0xA28Ade2f27b9554b01964FDCe97eD643301411d9',
     categories: ['Quick', 'Iron'],
 
-
-     fees: {
+    fees: {
       deposit: 0,
       withdrawal: 0.1,
       controller: 0.44,
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0xaaa5b9e6c589642f98a1cda99b9d024b8407285a'},
+      {type: 'add_liq', url: 'https://quickswap.exchange/#/add/0x7ceb23fd6bc0add59e62ac25578270cff1b9f619/0xaaa5b9e6c589642f98a1cda99b9d024b8407285a'},
+    ]
   },
 
   {
@@ -461,9 +503,12 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
-  },
+    },
 
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0xaAa5B9e6c589642f98a1cDA99B9D024B8407285A'},
+    ]
+  },
 
   {
     network: 'polygon',
@@ -507,9 +552,12 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
-  },
+    },
 
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0x8A953CfE442c5E8855cc6c61b1293FA648BAE472'},
+    ]
+  },
 
   {
     network: 'polygon',
@@ -542,7 +590,6 @@ export const pools = [
       masterchefPid: 9
     },*/
 
-
     fees: {
       third_party: '4% on deposit',
       deposit: 0,
@@ -553,7 +600,11 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0x05089C9EBFFa4F0AcA269e32056b1b36B37ED71b'},
+    ]
   },
   {
     network: 'polygon',
@@ -597,7 +648,11 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063'},
+    ]
   },
   {
     network: 'polygon',
@@ -641,7 +696,11 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0xc2132D05D31c914a87C6611C10748AEb04B58e8F'},
+    ]
   },
   {
     network: 'polygon',
@@ -685,7 +744,11 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0xC168E40227E4ebD8C1caE80F7a55a4F0e6D66C97'},
+    ]
   },
   {
     network: 'polygon',
@@ -729,7 +792,11 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270'},
+    ]
   },
   {
     network: 'polygon',
@@ -773,7 +840,11 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6'},
+    ]
   },
   {
     network: 'polygon',
@@ -817,7 +888,11 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619'},
+    ]
   },
   {
     network: 'polygon',
@@ -861,7 +936,11 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0xD86b5923F3AD7b585eD81B448170ae026c65ae9a'},
+    ]
   },
   {
     network: 'polygon',
@@ -905,7 +984,11 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0x0b3F868E0BE5597D5DB7fEB59E1CADBb0fdDa50a'},
+    ]
   },
   {
     network: 'polygon',
@@ -949,7 +1032,11 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0x53E0bca35eC356BD5ddDFebbD1Fc0fD03FaBad39'},
+    ]
   },
   {
     network: 'polygon',
@@ -991,7 +1078,11 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174'},
+    ]
   },
   {
     network: 'polygon',
@@ -1035,7 +1126,11 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0x831753DD7087CaC61aB5644b308642cc1c33Dc13'},
+    ]
   },
   {
     network: 'polygon',
@@ -1067,7 +1162,12 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0x3a3df212b7aa91aa0402b9035b098891d276572b'},
+      {type: 'add_liq', url: 'https://quickswap.exchange/#/add/ETH/0x3a3df212b7aa91aa0402b9035b098891d276572b'},
+    ]
   },
   {
     network: 'polygon',
@@ -1099,7 +1199,12 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://exchange.dfyn.network/#/swap?inputCurrency=MATIC&outputCurrency=0x3a3Df212b7AA91Aa0402B9035b098891d276572B'},
+      {type: 'add_liq', url: 'https://exchange.dfyn.network/#/add/ETH/0x3a3Df212b7AA91Aa0402B9035b098891d276572B'},
+    ]
   },
   {
     network: 'polygon',
@@ -1131,7 +1236,11 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0x3a3Df212b7AA91Aa0402B9035b098891d276572B'},
+    ]
   },
   {
     network: 'polygon',
@@ -1171,7 +1280,11 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'add_liq', url: 'https://polygon.curve.fi/aave'},
+    ]
   },
   {
     network: 'polygon',
@@ -1212,7 +1325,12 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://app.sushi.com/#/swap?outputCurrency=0xd86b5923f3ad7b585ed81b448170ae026c65ae9a'},
+      {type: 'add_liq', url: 'https://app.sushi.com/#/add/0xd86b5923f3ad7b585ed81b448170ae026c65ae9a/0x2791bca1f2de4661ed88a30c99a7a9449aa84174'},
+    ]
   },
   {
     network: 'polygon',
@@ -1253,7 +1371,12 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://app.sushi.com/#/swap?outputCurrency=0xaaa5b9e6c589642f98a1cda99b9d024b8407285a'},
+      {type: 'add_liq', url: 'https://app.sushi.com/#/add/ETH/0xaaa5b9e6c589642f98a1cda99b9d024b8407285a'},
+    ]
   },
   {
     network: 'polygon',
@@ -1294,7 +1417,12 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://app.sushi.com/#/swap?inputCurrency=0xaaa5b9e6c589642f98a1cda99b9d024b8407285a&outputCurrency=0xd86b5923f3ad7b585ed81b448170ae026c65ae9a'},
+      {type: 'add_liq', url: 'https://app.sushi.com/#/add/0xaaa5b9e6c589642f98a1cda99b9d024b8407285a/0xd86b5923f3ad7b585ed81b448170ae026c65ae9a'},
+    ]
   },
   {
     network: 'polygon',
@@ -1334,7 +1462,11 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0xaAa5B9e6c589642f98a1cDA99B9D024B8407285A'},
+    ]
   },
   {
     network: 'bsc',
