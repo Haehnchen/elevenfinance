@@ -386,7 +386,7 @@ export const pools = [
       {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0'},
     ]
   },
-  {
+/*  {
     network: 'polygon',
     id: 'maltdai',
     name: 'MALT-DAI QLP',
@@ -417,7 +417,7 @@ export const pools = [
       dividends: 0.14,
       buybacks: 2.48,
     }
-  },
+  },*/
   {
     network: 'polygon',
     id: 'usdcironq',
