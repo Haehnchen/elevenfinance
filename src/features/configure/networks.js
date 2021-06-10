@@ -31,7 +31,7 @@ export const networks = [
     multicall: '0xC3821F0b56FA4F4794d5d760f94B812DE261361B',
     nativeTokenShim: '0x4D6294D36aD4201De1D93Af18A61453B8865d008',
 
-    buyTokenLink: 'https://app.sushi.com/swap?outputCurrency=0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    buyTokenLink: 'https://quickswap.exchange/#/swap?outputCurrency=0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
 
     params: {
       chainId: '0x89',

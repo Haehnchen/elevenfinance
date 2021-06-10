@@ -11,6 +11,7 @@ export const COLORS = {
 
   green: '#58D786',
 
+  bgDarkest: '#131313',
   bgDark: '#1D1E24',
   bgSurface: '#23262B',
   bgLight: '#30323B',

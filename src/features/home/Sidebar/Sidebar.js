@@ -11,7 +11,8 @@ import {
   DocumentTextIcon,
   ExternalLinkIcon,
   FingerPrintIcon,
-  MenuIcon
+  MenuIcon,
+  ShieldCheckIcon
 } from '@heroicons/react/outline'
 
 import NetworkSelect from './NetworkSelect/NetworkSelect';
@@ -125,6 +126,13 @@ const Sidebar = ({ connected, address, connectWallet, disconnectWallet }) => {
               <a href="/#/vault">
                 <LightningBoltIcon />
                 Vault
+              </a>
+            </li>
+
+            <li className={classes.menuItem}>
+              <a href="https://solidity.finance/audits/Eleven/" target="_blank">
+                <ShieldCheckIcon />
+                Audits
               </a>
             </li>
 
