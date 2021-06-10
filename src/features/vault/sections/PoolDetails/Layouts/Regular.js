@@ -13,7 +13,7 @@ import WithdrawButton from '../Buttons/WithdrawButton';
 import styles from './styles';
 const useStyles = createUseStyles(styles);
 
-const Regular = ({ pool, index, tokenBalance, depositedBalance, pendingRewards, pendingRewardsLoaded }) => {
+const Regular = ({ pool, index, tokenBalance, depositedBalance }) => {
   const { t } = useTranslation();
   const classes = useStyles();
 

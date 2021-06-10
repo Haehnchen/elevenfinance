@@ -1603,7 +1603,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?inputCurrency=0x2170ed0880ac9a755fd29b2688956bd959f933f8&outputCurrency=0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/0x2170ed0880ac9a755fd29b2688956bd959f933f8/0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c'},
+    ]
   },
   {
     network: 'bsc',
@@ -1645,7 +1650,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?inputCurrency=0x9412f9ab702afbd805dece8e0627427461ef0602&outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/0x9412f9ab702afbd805dece8e0627427461ef0602/0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+    ]
   },
   {
     network: 'bsc',
@@ -1985,7 +1995,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?inputCurrency=0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c&outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c/0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+    ]
   },
   {
     network: 'bsc',
@@ -2027,7 +2042,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?inputCurrency=0x2170ed0880ac9a755fd29b2688956bd959f933f8&outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/0x2170ed0880ac9a755fd29b2688956bd959f933f8/0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+    ]
   },
   {
     network: 'bsc',
@@ -2069,7 +2089,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?inputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56&outputCurrency=0x55d398326f99059ff775485246999027b3197955'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/0xe9e7cea3dedca5984780bafc599bd69add087d56/0x55d398326f99059ff775485246999027b3197955'},
+    ]
   },
   {
     network: 'bsc',
@@ -2111,7 +2136,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?inputCurrency=0x1af3f329e8be154074d8769d1ffa4ee058b1dbc3&outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/0x1af3f329e8be154074d8769d1ffa4ee058b1dbc3/0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+    ]
   },
   {
     network: 'bsc',
@@ -2153,7 +2183,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?inputCurrency=0xcf6bb5389c92bdda8a3747ddb454cb7a64626c63&outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/0xcf6bb5389c92bdda8a3747ddb454cb7a64626c63/0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+    ]
   },
   {
     network: 'bsc',
@@ -2195,7 +2230,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?inputCurrency=0x4338665cbb7b2485a8855a139b75d5e34ab0db94&outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/0x4338665cbb7b2485a8855a139b75d5e34ab0db94/0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+    ]
   },
   {
     network: 'bsc',
@@ -2237,7 +2277,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?inputCurrency=0x1d2f0da169ceb9fc7b3144628db156f3f6c60dbe&outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/0x1d2f0da169ceb9fc7b3144628db156f3f6c60dbe/0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+    ]
   },
   {
     network: 'bsc',
@@ -2279,7 +2324,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?inputCurrency=0x3ee2200efb3400fabb9aacf31297cbdd1d435d47&outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/0x3ee2200efb3400fabb9aacf31297cbdd1d435d47/0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+    ]
   },
   {
     network: 'bsc',
@@ -2321,7 +2371,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?inputCurrency=BNB&outputCurrency=0xa9c41a46a6b3531d28d5c32f6633dd2ff05dfb90'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0xa9c41a46a6b3531d28d5c32f6633dd2ff05dfb90'},
+    ]
   },
   {
     network: 'bsc',
@@ -2363,7 +2418,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?inputCurrency=0xa9c41a46a6b3531d28d5c32f6633dd2ff05dfb90&outputCurrency=0x55d398326f99059ff775485246999027b3197955'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/0xa9c41a46a6b3531d28d5c32f6633dd2ff05dfb90/0x55d398326f99059ff775485246999027b3197955'},
+    ]
   },
   {
     network: 'bsc',
@@ -2404,7 +2464,11 @@ export const pools = [
       platform: 0.03,
       buybacks: 0.1,
       waultx_burn: 0.07
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0xa9c41a46a6b3531d28d5c32f6633dd2ff05dfb90'},
+    ]
   },
   {
     network: 'bsc',
@@ -2446,7 +2510,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0xb64e638e60d154b43f660a6bf8fd8a3b249a6a21'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0xb64e638e60d154b43f660a6bf8fd8a3b249a6a21'},
+    ]
   },
   {
     network: 'bsc',
@@ -2488,7 +2557,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0xa184088a740c695e156f91f5cc086a06bb78b827'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0xa184088a740c695e156f91f5cc086a06bb78b827'},
+    ]
   },
   {
     network: 'bsc',
@@ -2530,7 +2604,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0xa325ad6d9c92b55a3fc5ad7e412b1518f96441c0'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0xa325ad6d9c92b55a3fc5ad7e412b1518f96441c0'},
+    ]
   },
   {
     network: 'bsc',
@@ -2572,7 +2651,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0xaf83f292fced83032f52ced45ef7dbddb586441a'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0xaf83f292fced83032f52ced45ef7dbddb586441a'},
+    ]
   },
   {
     network: 'bsc',
@@ -2614,7 +2698,11 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0xB64E638E60D154B43f660a6BF8fD8a3b249a6a21'},
+    ]
   },
   {
     network: 'bsc',
@@ -2656,7 +2744,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+    ]
   },
   {
     network: 'bsc',
@@ -2698,7 +2791,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82'},
+    ]
   },
   {
     network: 'bsc',
@@ -2740,7 +2838,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c'},
+    ]
   },
   {
     network: 'bsc',
@@ -2782,7 +2885,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0x2170ed0880ac9a755fd29b2688956bd959f933f8'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0x2170ed0880ac9a755fd29b2688956bd959f933f8'},
+    ]
   },
   {
     network: 'bsc',
@@ -2824,7 +2932,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0x4bd17003473389a42daf6a0a729f6fdb328bbbd7'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0x4bd17003473389a42daf6a0a729f6fdb328bbbd7'},
+    ]
   },
   {
     network: 'bsc',
@@ -2866,7 +2979,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0x55d398326f99059ff775485246999027b3197955'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0x55d398326f99059ff775485246999027b3197955'},
+    ]
   },
   {
     network: 'bsc',
@@ -2908,7 +3026,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d'},
+    ]
   },
   {
     network: 'bsc',
@@ -2950,7 +3073,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0x7083609fce4d1d8dc0c979aab8c869ea2c873402'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0x7083609fce4d1d8dc0c979aab8c869ea2c873402'},
+    ]
   },
   {
     network: 'bsc',
@@ -2992,7 +3120,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0xf8a0bf9cf54bb92f17374d9e9a321e6a111a51bd'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0xf8a0bf9cf54bb92f17374d9e9a321e6a111a51bd'},
+    ]
   },
   {
     network: 'bsc',
@@ -3034,7 +3167,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0xba2ae424d960c26247dd6c32edc70b295c744c43'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0xba2ae424d960c26247dd6c32edc70b295c744c43'},
+    ]
   },
   {
     network: 'bsc',
@@ -3078,7 +3216,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0x52d86850bc8207b520340b7e39cdaf22561b9e56'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0x52d86850bc8207b520340b7e39cdaf22561b9e56'},
+    ]
   },
   {
     network: 'bsc',
@@ -3242,7 +3385,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0x3920123482070c1a2dff73aad695c60e7c6f6862'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0x3920123482070c1a2dff73aad695c60e7c6f6862'},
+    ]
   },
   {
     network: 'bsc',
