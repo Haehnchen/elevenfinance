@@ -33,7 +33,7 @@ export const networks = [
     nativeTokenShim: '0x4D6294D36aD4201De1D93Af18A61453B8865d008',
     wrappedNativeToken: '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
 
-    buyTokenLink: 'https://app.sushi.com/swap?outputCurrency=0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+    buyTokenLink: 'https://quickswap.exchange/#/swap?outputCurrency=0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
 
     params: {
       chainId: '0x89',

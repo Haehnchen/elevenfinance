@@ -13,6 +13,7 @@ export const COLORS = {
   orange: '#FEBF32',
   red: '#fd5a5a',
 
+  bgDarkest: '#131313',
   bgDark: '#1D1E24',
   bgSurface: '#23262B',
   bgLight: '#30323B',

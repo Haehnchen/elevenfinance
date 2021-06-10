@@ -223,6 +223,30 @@ const styles = {
     '100%': {
       transform: 'scale(1)'
     },
+  },
+
+
+
+  statsLinks: {
+    textAlign: 'center',
+    paddingTop: 10,
+
+    '& a': {
+      margin: '0 15px',
+
+      color: COLORS.primary + ' !important',
+      fontSize: FONT.size.normal,
+      textDecoration: 'underline',
+
+      '& svg': {
+        width: 16,
+        height: 16,
+        marginRight: 6,
+        marginTop: -3,
+        verticalAlign: 'middle',
+        display: 'inline-block'
+      }
+    }
   }
 };
 

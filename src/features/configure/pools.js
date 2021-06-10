@@ -12,6 +12,14 @@ export const categories = [
     default: true
   },
   {
+    name: 'Iron',
+    default: true
+  },
+  {
+    name: 'Quick',
+    default: true
+  },
+  {
     name: 'Nerve',
     default: true
   },
@@ -24,15 +32,11 @@ export const categories = [
     default: true
   },
   {
-    name: 'Popsicle',
-    default: true
-  },
-  {
-    name: 'Ellipsis',
-    default: true
-  },
-  {
     name: 'Polycat',
+    default: true
+  },
+  {
+    name: 'Cometh',
     default: true
   }
 ]
@@ -86,7 +90,11 @@ export const pools = [
       withdrawal: 0,
       controller: 0,
       platform: 0
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://app.1inch.io/#/56/swap/BNB/ELE'}
+    ]
   },
   {
     network: 'bsc',
@@ -115,7 +123,191 @@ export const pools = [
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
       masterchefPid: 104
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://app.1inch.io/#/56/swap/BNB/ELE'},
+      {type: 'add_liq', url: 'https://exchange.pancakeswap.finance/#/add/BNB/0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0'},
+    ]
+  },
+  {
+    network: 'polygon',
+    id: 'qelematic',
+    name: 'qelematic',
+    image: 'ele_matic.png',
+    token: 'ELE-MATIC qLP',
+    tokenDescription: 'ELE-MATIC qLP',
+    tokenDecimals: 18,
+    uses: 'Uses quickswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11ELEMATIC qLP',
+    earnedTokenAddress: '0x297936316a539Dfa8287fc8966300Bf4fD6dD4bF',
+    earnContractAddress: '0x297936316a539Dfa8287fc8966300Bf4fD6dD4bF',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0xADcb09FD3346c72C98753e518397b336333Cf227',
+    categories: ['Cometh'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 29
+    },
+
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0'},
+      {type: 'add_liq', url: 'https://quickswap.exchange/#/add/ETH/0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0'},
+    ]
+  },
+  {
+    network: 'polygon',
+    id: 'elequick',
+    name: 'elequick',
+    image: 'ele_quick.png',
+    token: 'ELE-QUICK qLP',
+    tokenDescription: 'ELE-QUICK qLP',
+    tokenDecimals: 18,
+    uses: 'Uses quickswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11ELEQUICK qLP',
+    earnedTokenAddress: '0xBFc3aED1D368275cf51E7a8A74F819f9DEF5329f',
+    earnContractAddress: '0xBFc3aED1D368275cf51E7a8A74F819f9DEF5329f',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x6696db3A5eF00e24c065edcFbc114b13Ea9eE997',
+    categories: ['Cometh'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 30
+    },
+
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0'},
+      {type: 'add_liq', url: 'https://quickswap.exchange/#/add/0x831753dd7087cac61ab5644b308642cc1c33dc13/0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0'},
+    ]
+  },
+  {
+    network: 'polygon',
+    id: 'celematic',
+    name: 'celematic',
+    image: 'ele_matic.png',
+    token: 'ELE-MATIC cLP',
+    tokenDescription: 'ELE-MATIC cLP',
+    tokenDecimals: 18,
+    uses: 'Uses cometh',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11ELEMATIC cLP',
+    earnedTokenAddress: '0x2A4947512163110C5b06276cf7C8D31Cdf374489',
+    earnContractAddress: '0x2A4947512163110C5b06276cf7C8D31Cdf374489',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x56f91f954271906496c68eFe8cDf5D13cED09e8A',
+    categories: ['Cometh'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 13
+    },
+
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.cometh.io/#/swap?outputCurrency=0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0'},
+      {type: 'add_liq', url: 'https://swap.cometh.io/#/add/ETH/0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0'},
+    ]
+  },
+  {
+    network: 'polygon',
+    id: 'elemust',
+    name: 'elemust',
+    image: 'elemust.png',
+    token: 'ELE-MUST cLP',
+    tokenDescription: 'ELE-MATIC cLP',
+    tokenDecimals: 18,
+    uses: 'Uses cometh',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11ELEMUST',
+    earnedTokenAddress: '0xd54dD032d36dB9F780A533fBA50Ea37C6A2646C5',
+    earnContractAddress: '0xd54dD032d36dB9F780A533fBA50Ea37C6A2646C5',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x477931816F7aeedc8FE837D413a3000B0a9B4C5b',
+    categories: ['Cometh'],
+
+    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 14
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.cometh.io/#/swap?outputCurrency=0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0'},
+      {type: 'add_liq', url: 'https://swap.cometh.io/#/add/0x9C78EE466D6Cb57A4d01Fd887D2b5dFb2D46288f/0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0'},
+    ]
   },
   {
     network: 'polygon',
@@ -146,6 +338,369 @@ export const pools = [
       earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
       masterchefPid: 0
     }
+  },
+  {
+    network: 'bsc',
+    id: 'elebnbw',
+    name: 'ELEBNB',
+    image: 'ELE-BNB\ LP-logo.svg',
+    token: 'ELE-BNB WLP',
+    tokenDescription: 'ELEBNB',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses waultswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11wELEBNB',
+    earnedTokenAddress: '0x5bC5aa4B82800Fc965C8856f9628ec5730049E9E',
+    earnContractAddress: '0x5bC5aa4B82800Fc965C8856f9628ec5730049E9E',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x7eB399165722A98E047471157FF6CdDeEd95a2e1',
+    categories: ['Wault'],
+
+    farm: {
+      isDisabled: true,
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 214
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      dividends: 0.1,
+      buybacks: 1.7,
+      waultx_burn: 1
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0'},
+    ]
+  },
+  {
+    network: 'polygon',
+    id: 'usdcironq',
+    name: 'USDC-IRON QLP',
+    image: 'iron_usdc.png',
+    token: 'USDC-IRON QLP',
+    tokenDescription: 'USDC-IRON QLP',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses iron.finance + quickswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11USDCIRONQ',
+    earnedTokenAddress: '0x6f40f9F05212d8272eC096b0842E611BFeCe2211',
+    earnContractAddress: '0x6f40f9F05212d8272eC096b0842E611BFeCe2211',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x2Bbe0F728f4d5821F84eeE0432D2A4be7C0cB7Fc',
+    categories: ['Quick', 'Iron'],
+
+     fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0xd86b5923f3ad7b585ed81b448170ae026c65ae9a'},
+      {type: 'add_liq', url: 'https://quickswap.exchange/#/add/0xd86b5923f3ad7b585ed81b448170ae026c65ae9a/0x2791bca1f2de4661ed88a30c99a7a9449aa84174'},
+    ]
+  },
+  {
+    network: 'polygon',
+    id: 'titaneth',
+    name: 'TITAN-ETH QLP',
+    image: 'titan-eth.png',
+    token: 'TITAN-ETH QLP',
+    tokenDescription: 'TITAN-ETH QLP',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses iron.finance + quickswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11TITANETH',
+    earnedTokenAddress: '0x9E38551296e776b7d6592cE48fD02Cf4BA0cf648',
+    earnContractAddress: '0x9E38551296e776b7d6592cE48fD02Cf4BA0cf648',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0xA28Ade2f27b9554b01964FDCe97eD643301411d9',
+    categories: ['Quick', 'Iron'],
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0xaaa5b9e6c589642f98a1cda99b9d024b8407285a'},
+      {type: 'add_liq', url: 'https://quickswap.exchange/#/add/0x7ceb23fd6bc0add59e62ac25578270cff1b9f619/0xaaa5b9e6c589642f98a1cda99b9d024b8407285a'},
+    ]
+  },
+
+  {
+    network: 'polygon',
+    id: 'titan ',
+    name: 'TITAN ',
+    image: 'titan.png',
+    token: 'TITAN ',
+    tokenDescription: 'TITAN ',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses polycat',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11TITAN ',
+    earnedTokenAddress: '0x8F2331A864Bd34E17d04623A871f10187c68860f',
+    earnContractAddress: '0x8F2331A864Bd34E17d04623A871f10187c68860f',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0xaAa5B9e6c589642f98a1cDA99B9D024B8407285A',
+    categories: ['Polycat'],
+
+/*    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 9
+    },*/
+
+
+    fees: {
+      third_party: '4% on deposit',
+      deposit: 0,
+      depositWarning: '<p>Be aware of <b>4% Deposit fee</b> on this pool.</p>'
+        + '<p>The fee is charged by Polycat, Eleven doesn\'t charge you on the deposit</p>',
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0xaAa5B9e6c589642f98a1cDA99B9D024B8407285A'},
+    ]
+  },
+
+  {
+    network: 'polygon',
+    id: 'polydoge',
+    name: 'POLYDOGE',
+    image: 'polydoge.svg',
+    token: 'POLYDOGE',
+    tokenDescription: 'POLYDOGE',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses polycat',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11POLYDOGE',
+    earnedTokenAddress: '0x39Cf6Bd2671798d482578CE4407bA5f64f87803D',
+    earnContractAddress: '0x39Cf6Bd2671798d482578CE4407bA5f64f87803D',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x8A953CfE442c5E8855cc6c61b1293FA648BAE472',
+    categories: ['Polycat'],
+
+/*    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 9
+    },*/
+
+
+    fees: {
+      third_party: '4% on deposit',
+      deposit: 0,
+      depositWarning: '<p>Be aware of <b>4% Deposit fee</b> on this pool.</p>'
+        + '<p>The fee is charged by Polycat, Eleven doesn\'t charge you on the deposit</p>',
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0x8A953CfE442c5E8855cc6c61b1293FA648BAE472'},
+    ]
+  },
+
+  {
+    network: 'polygon',
+    id: 'krill',
+    name: 'KRILL',
+    image: 'krill.svg',
+    token: 'KRILL',
+    tokenDescription: 'KRILL',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses polycat',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11KRILL',
+    earnedTokenAddress: '0x162Da44709810Dcb8b886B60d9b3d0B105A77946',
+    earnContractAddress: '0x162Da44709810Dcb8b886B60d9b3d0B105A77946',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x05089C9EBFFa4F0AcA269e32056b1b36B37ED71b',
+    categories: ['Polycat'],
+
+/*    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 9
+    },*/
+
+    fees: {
+      third_party: '4% on deposit',
+      deposit: 0,
+      depositWarning: '<p>Be aware of <b>4% Deposit fee</b> on this pool.</p>'
+        + '<p>The fee is charged by Polycat, Eleven doesn\'t charge you on the deposit</p>',
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0x05089C9EBFFa4F0AcA269e32056b1b36B37ED71b'},
+    ]
+  },
+  {
+    network: 'polygon',
+    id: 'dai',
+    name: 'DAI',
+    image: 'dai.svg',
+    token: 'DAI',
+    tokenDescription: 'DAI',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses polycat',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11DAI',
+    earnedTokenAddress: '0xc74968693A829CA04f49E741285a0BE831FaC5f7',
+    earnContractAddress: '0xc74968693A829CA04f49E741285a0BE831FaC5f7',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063',
+    categories: ['Polycat'],
+
+/*    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 9
+    },*/
+
+
+    fees: {
+      third_party: '4% on deposit',
+      deposit: 0,
+      depositWarning: '<p>Be aware of <b>4% Deposit fee</b> on this pool.</p>'
+        + '<p>The fee is charged by Polycat, Eleven doesn\'t charge you on the deposit</p>',
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063'},
+    ]
+  },
+  {
+    network: 'polygon',
+    id: 'usdt',
+    name: 'USDT',
+    image: 'usdt.svg',
+    token: 'USDT ',
+    tokenDescription: 'USDT',
+    tokenAddress: '',
+    tokenDecimals: 6,
+    uses: 'Uses polycat',
+    itokenDecimals: 6,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11USDT ',
+    earnedTokenAddress: '0xAA6bca49f7842823312B0d90b4e1e336A7DBf892',
+    earnContractAddress: '0xAA6bca49f7842823312B0d90b4e1e336A7DBf892',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0xc2132D05D31c914a87C6611C10748AEb04B58e8F',
+    categories: ['Polycat'],
+
+/*    farm: {
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
+      masterchefPid: 9
+    },*/
+
+
+    fees: {
+      third_party: '4% on deposit',
+      deposit: 0,
+      depositWarning: '<p>Be aware of <b>4% Deposit fee</b> on this pool.</p>'
+        + '<p>The fee is charged by Polycat, Eleven doesn\'t charge you on the deposit</p>',
+      withdrawal: 0.1,
+      controller: 0.44,
+      platform: 0.44,
+      dividends: 0.14,
+      buybacks: 2.48,
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0xc2132D05D31c914a87C6611C10748AEb04B58e8F'},
+    ]
   },
   {
     network: 'polygon',
@@ -189,7 +744,11 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0xC168E40227E4ebD8C1caE80F7a55a4F0e6D66C97'},
+    ]
   },
   {
     network: 'polygon',
@@ -215,13 +774,13 @@ export const pools = [
     categories: ['Polycat'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
       masterchefPid: 9
     },
-
 
     fees: {
       third_party: '4% on deposit',
@@ -233,7 +792,11 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270'},
+    ]
   },
   {
     network: 'polygon',
@@ -257,7 +820,9 @@ export const pools = [
     pastPricePerFullShare: 1,
     tokenAddress: '0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6',
     categories: ['Polycat'],
+
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
@@ -275,7 +840,11 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6'},
+    ]
   },
   {
     network: 'polygon',
@@ -301,13 +870,13 @@ export const pools = [
     categories: ['Polycat'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
       masterchefPid: 11
     },
-
 
     fees: {
       third_party: '4% on deposit',
@@ -319,7 +888,11 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619'},
+    ]
   },
   {
     network: 'polygon',
@@ -342,16 +915,16 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xD86b5923F3AD7b585eD81B448170ae026c65ae9a',
-    categories: ['Polycat'],
+    categories: ['Polycat', 'Iron'],
 
     farm: {
+      isDisabled: true,
       earnedToken: 'ELE',
       earnedTokenDecimals: 18,
       earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
       earnContractAddress: '0xD109D9d6f258D48899D7D16549B89122B0536729',
       masterchefPid: 12
     },
-
 
     fees: {
       third_party: '4% on deposit',
@@ -363,7 +936,11 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0xD86b5923F3AD7b585eD81B448170ae026c65ae9a'},
+    ]
   },
   {
     network: 'polygon',
@@ -407,7 +984,11 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0x0b3F868E0BE5597D5DB7fEB59E1CADBb0fdDa50a'},
+    ]
   },
   {
     network: 'polygon',
@@ -451,7 +1032,11 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0x53E0bca35eC356BD5ddDFebbD1Fc0fD03FaBad39'},
+    ]
   },
   {
     network: 'polygon',
@@ -493,7 +1078,11 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174'},
+    ]
   },
   {
     network: 'polygon',
@@ -537,7 +1126,11 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0x831753DD7087CaC61aB5644b308642cc1c33Dc13'},
+    ]
   },
   {
     network: 'polygon',
@@ -569,7 +1162,12 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0x3a3df212b7aa91aa0402b9035b098891d276572b'},
+      {type: 'add_liq', url: 'https://quickswap.exchange/#/add/ETH/0x3a3df212b7aa91aa0402b9035b098891d276572b'},
+    ]
   },
   {
     network: 'polygon',
@@ -601,7 +1199,12 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://exchange.dfyn.network/#/swap?inputCurrency=MATIC&outputCurrency=0x3a3Df212b7AA91Aa0402B9035b098891d276572B'},
+      {type: 'add_liq', url: 'https://exchange.dfyn.network/#/add/ETH/0x3a3Df212b7AA91Aa0402B9035b098891d276572B'},
+    ]
   },
   {
     network: 'polygon',
@@ -633,7 +1236,11 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0x3a3Df212b7AA91Aa0402B9035b098891d276572B'},
+    ]
   },
   {
     network: 'polygon',
@@ -673,7 +1280,11 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'add_liq', url: 'https://polygon.curve.fi/aave'},
+    ]
   },
   {
     network: 'polygon',
@@ -684,7 +1295,7 @@ export const pools = [
     tokenDescription: 'USDC-IRON SLP',
     tokenAddress: '',
     tokenDecimals: 18,
-    uses: 'Uses iron.finance',
+    uses: 'Uses iron.finance + sushiswap',
     itokenDecimals: 18,
     depostLimit:0,
     tokenDescriptionUrl: '',
@@ -696,7 +1307,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x85dE135fF062Df790A5f20B79120f17D3da63b2d',
-    categories: ['Sushi'],
+    categories: ['Sushi', 'Iron'],
 
      farm: {
        isDisabled: true,
@@ -714,7 +1325,12 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://app.sushi.com/#/swap?outputCurrency=0xd86b5923f3ad7b585ed81b448170ae026c65ae9a'},
+      {type: 'add_liq', url: 'https://app.sushi.com/#/add/0xd86b5923f3ad7b585ed81b448170ae026c65ae9a/0x2791bca1f2de4661ed88a30c99a7a9449aa84174'},
+    ]
   },
   {
     network: 'polygon',
@@ -737,7 +1353,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xA79983Daf2A92c2C902cD74217Efe3D8AF9Fba2a',
-    categories: ['Sushi'],
+    categories: ['Sushi', 'Iron'],
 
      farm: {
        isDisabled: true,
@@ -755,7 +1371,12 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://app.sushi.com/#/swap?outputCurrency=0xaaa5b9e6c589642f98a1cda99b9d024b8407285a'},
+      {type: 'add_liq', url: 'https://app.sushi.com/#/add/ETH/0xaaa5b9e6c589642f98a1cda99b9d024b8407285a'},
+    ]
   },
   {
     network: 'polygon',
@@ -778,7 +1399,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x35c1895DAC1e2432b320e2927b4F71a0D995602F',
-    categories: ['Sushi'],
+    categories: ['Sushi', 'Iron'],
 
      farm: {
        isDisabled: true,
@@ -796,7 +1417,12 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://app.sushi.com/#/swap?inputCurrency=0xaaa5b9e6c589642f98a1cda99b9d024b8407285a&outputCurrency=0xd86b5923f3ad7b585ed81b448170ae026c65ae9a'},
+      {type: 'add_liq', url: 'https://app.sushi.com/#/add/0xaaa5b9e6c589642f98a1cda99b9d024b8407285a/0xd86b5923f3ad7b585ed81b448170ae026c65ae9a'},
+    ]
   },
   {
     network: 'polygon',
@@ -819,7 +1445,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xaAa5B9e6c589642f98a1cDA99B9D024B8407285A',
-    categories: [],
+    categories: ['Iron'],
 
      farm: {
        earnedToken: 'ELE',
@@ -836,49 +1462,11 @@ export const pools = [
       platform: 0.44,
       dividends: 0.14,
       buybacks: 2.48,
-    }
-  },
-  {
-    network: 'bsc',
-    id: 'elebnbw',
-    name: 'ELEBNB',
-    image: 'ELE-BNB\ LP-logo.svg',
-    token: 'ELE-BNB WLP',
-    tokenDescription: 'ELEBNB',
-    tokenAddress: '',
-    tokenDecimals: 18,
-    uses: 'Uses waultswap',
-    itokenDecimals: 18,
-    depostLimit:0,
-    tokenDescriptionUrl: '',
-    tokenDescriptionUrl2: '',
-    earnedToken: '11wELEBNB',
-    earnedTokenAddress: '0x5bC5aa4B82800Fc965C8856f9628ec5730049E9E',
-    earnContractAddress: '0x5bC5aa4B82800Fc965C8856f9628ec5730049E9E',
-    defaultApy: "39.54",
-    pricePerFullShare: 1,
-    pastPricePerFullShare: 1,
-    tokenAddress: '0x7eB399165722A98E047471157FF6CdDeEd95a2e1',
-    categories: ['Wault'],
-
-    farm: {
-      isDisabled: true,
-      earnedToken: 'ELE',
-      earnedTokenDecimals: 18,
-      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
-      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
-      masterchefPid: 214
     },
 
-    fees: {
-      deposit: 0,
-      withdrawal: 0.1,
-      controller: 0.35,
-      platform: 0.35,
-      dividends: 0.1,
-      buybacks: 1.7,
-      waultx_burn: 1
-    }
+    links: [
+      {type: 'buy_token', url: 'https://quickswap.exchange/#/swap?outputCurrency=0xaAa5B9e6c589642f98a1cDA99B9D024B8407285A'},
+    ]
   },
   {
     network: 'bsc',
@@ -977,6 +1565,53 @@ export const pools = [
   },
   {
     network: 'bsc',
+    id: 'ethbtc',
+    name: 'ETH-BTC',
+    image: 'btc-eth.png',
+    token: 'ETH-BTC WLP',
+    tokenDescription: 'ETH-BTC',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    uses: 'Uses waultswap',
+    itokenDecimals: 18,
+    depostLimit:0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: '11ETHBTC',
+    earnedTokenAddress: '0x33E87056cDD212310725eCd2FF465C69e87fBCbE',
+    earnContractAddress: '0x33E87056cDD212310725eCd2FF465C69e87fBCbE',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tokenAddress: '0xBb43C776D9dDDaD1395e1543545d05E138ccb4BA',
+    categories: ['Wault'],
+
+    farm: {
+      isDisabled: true,
+      earnedToken: 'ELE',
+      earnedTokenDecimals: 18,
+      earnedTokenAddress: '0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0',
+      earnContractAddress: '0x1ac6c0b955b6d7acb61c9bdf3ee98e0689e07b8a',
+      masterchefPid: 223
+    },
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.35,
+      platform: 0.35,
+      dividends: 0.1,
+      buybacks: 1.7,
+      waultx_burn: 1
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?inputCurrency=0x2170ed0880ac9a755fd29b2688956bd959f933f8&outputCurrency=0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/0x2170ed0880ac9a755fd29b2688956bd959f933f8/0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c'},
+    ]
+  },
+  {
+    network: 'bsc',
     id: 'hfsbusd',
     name: 'HFS',
     image: 'hfs-busd.png',
@@ -1015,7 +1650,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?inputCurrency=0x9412f9ab702afbd805dece8e0627427461ef0602&outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/0x9412f9ab702afbd805dece8e0627427461ef0602/0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+    ]
   },
   {
     network: 'bsc',
@@ -1355,7 +1995,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?inputCurrency=0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c&outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c/0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+    ]
   },
   {
     network: 'bsc',
@@ -1397,7 +2042,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?inputCurrency=0x2170ed0880ac9a755fd29b2688956bd959f933f8&outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/0x2170ed0880ac9a755fd29b2688956bd959f933f8/0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+    ]
   },
   {
     network: 'bsc',
@@ -1439,7 +2089,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?inputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56&outputCurrency=0x55d398326f99059ff775485246999027b3197955'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/0xe9e7cea3dedca5984780bafc599bd69add087d56/0x55d398326f99059ff775485246999027b3197955'},
+    ]
   },
   {
     network: 'bsc',
@@ -1481,7 +2136,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?inputCurrency=0x1af3f329e8be154074d8769d1ffa4ee058b1dbc3&outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/0x1af3f329e8be154074d8769d1ffa4ee058b1dbc3/0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+    ]
   },
   {
     network: 'bsc',
@@ -1523,7 +2183,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?inputCurrency=0xcf6bb5389c92bdda8a3747ddb454cb7a64626c63&outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/0xcf6bb5389c92bdda8a3747ddb454cb7a64626c63/0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+    ]
   },
   {
     network: 'bsc',
@@ -1565,7 +2230,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?inputCurrency=0x4338665cbb7b2485a8855a139b75d5e34ab0db94&outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/0x4338665cbb7b2485a8855a139b75d5e34ab0db94/0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+    ]
   },
   {
     network: 'bsc',
@@ -1607,7 +2277,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?inputCurrency=0x1d2f0da169ceb9fc7b3144628db156f3f6c60dbe&outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/0x1d2f0da169ceb9fc7b3144628db156f3f6c60dbe/0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+    ]
   },
   {
     network: 'bsc',
@@ -1649,7 +2324,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?inputCurrency=0x3ee2200efb3400fabb9aacf31297cbdd1d435d47&outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/0x3ee2200efb3400fabb9aacf31297cbdd1d435d47/0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+    ]
   },
   {
     network: 'bsc',
@@ -1691,7 +2371,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?inputCurrency=BNB&outputCurrency=0xa9c41a46a6b3531d28d5c32f6633dd2ff05dfb90'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0xa9c41a46a6b3531d28d5c32f6633dd2ff05dfb90'},
+    ]
   },
   {
     network: 'bsc',
@@ -1733,7 +2418,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?inputCurrency=0xa9c41a46a6b3531d28d5c32f6633dd2ff05dfb90&outputCurrency=0x55d398326f99059ff775485246999027b3197955'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/0xa9c41a46a6b3531d28d5c32f6633dd2ff05dfb90/0x55d398326f99059ff775485246999027b3197955'},
+    ]
   },
   {
     network: 'bsc',
@@ -1774,7 +2464,11 @@ export const pools = [
       platform: 0.03,
       buybacks: 0.1,
       waultx_burn: 0.07
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0xa9c41a46a6b3531d28d5c32f6633dd2ff05dfb90'},
+    ]
   },
   {
     network: 'bsc',
@@ -1816,7 +2510,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0xb64e638e60d154b43f660a6bf8fd8a3b249a6a21'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0xb64e638e60d154b43f660a6bf8fd8a3b249a6a21'},
+    ]
   },
   {
     network: 'bsc',
@@ -1858,7 +2557,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0xa184088a740c695e156f91f5cc086a06bb78b827'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0xa184088a740c695e156f91f5cc086a06bb78b827'},
+    ]
   },
   {
     network: 'bsc',
@@ -1900,7 +2604,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0xa325ad6d9c92b55a3fc5ad7e412b1518f96441c0'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0xa325ad6d9c92b55a3fc5ad7e412b1518f96441c0'},
+    ]
   },
   {
     network: 'bsc',
@@ -1942,7 +2651,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0xaf83f292fced83032f52ced45ef7dbddb586441a'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0xaf83f292fced83032f52ced45ef7dbddb586441a'},
+    ]
   },
   {
     network: 'bsc',
@@ -1984,7 +2698,11 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0xB64E638E60D154B43f660a6BF8fD8a3b249a6a21'},
+    ]
   },
   {
     network: 'bsc',
@@ -2026,7 +2744,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0xe9e7cea3dedca5984780bafc599bd69add087d56'},
+    ]
   },
   {
     network: 'bsc',
@@ -2068,7 +2791,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82'},
+    ]
   },
   {
     network: 'bsc',
@@ -2110,7 +2838,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c'},
+    ]
   },
   {
     network: 'bsc',
@@ -2152,7 +2885,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0x2170ed0880ac9a755fd29b2688956bd959f933f8'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0x2170ed0880ac9a755fd29b2688956bd959f933f8'},
+    ]
   },
   {
     network: 'bsc',
@@ -2194,7 +2932,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0x4bd17003473389a42daf6a0a729f6fdb328bbbd7'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0x4bd17003473389a42daf6a0a729f6fdb328bbbd7'},
+    ]
   },
   {
     network: 'bsc',
@@ -2236,7 +2979,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0x55d398326f99059ff775485246999027b3197955'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0x55d398326f99059ff775485246999027b3197955'},
+    ]
   },
   {
     network: 'bsc',
@@ -2278,7 +3026,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d'},
+    ]
   },
   {
     network: 'bsc',
@@ -2320,7 +3073,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0x7083609fce4d1d8dc0c979aab8c869ea2c873402'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0x7083609fce4d1d8dc0c979aab8c869ea2c873402'},
+    ]
   },
   {
     network: 'bsc',
@@ -2362,7 +3120,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0xf8a0bf9cf54bb92f17374d9e9a321e6a111a51bd'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0xf8a0bf9cf54bb92f17374d9e9a321e6a111a51bd'},
+    ]
   },
   {
     network: 'bsc',
@@ -2404,7 +3167,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0xba2ae424d960c26247dd6c32edc70b295c744c43'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0xba2ae424d960c26247dd6c32edc70b295c744c43'},
+    ]
   },
   {
     network: 'bsc',
@@ -2448,7 +3216,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0x52d86850bc8207b520340b7e39cdaf22561b9e56'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0x52d86850bc8207b520340b7e39cdaf22561b9e56'},
+    ]
   },
   {
     network: 'bsc',
@@ -2612,7 +3385,12 @@ export const pools = [
       dividends: 0.1,
       buybacks: 1.7,
       waultx_burn: 1
-    }
+    },
+
+    links: [
+      {type: 'buy_token', url: 'https://swap.wault.finance/#/swap?outputCurrency=0x3920123482070c1a2dff73aad695c60e7c6f6862'},
+      {type: 'add_liq', url: 'https://swap.wault.finance/#/add/BNB/0x3920123482070c1a2dff73aad695c60e7c6f6862'},
+    ]
   },
   {
     network: 'bsc',
@@ -2680,7 +3458,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xFE3171B9c20d002376D4B0097207EDf54b02EA3B',
-    categories: ['Popsicle'],
+    categories: [],
 
     farm: {
       isDisabled: true,
@@ -2721,7 +3499,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0x51F914a192a97408D991FddDAFB8F8537C5Ffb0a',
-    categories: ['Popsicle'],
+    categories: [],
 
     farm: {
       isDisabled: true,
@@ -2765,7 +3543,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xf16e81dce15B08F326220742020379B855B87DF9',
-    categories: ['Popsicle'],
+    categories: [],
 
     farm: {
       isDisabled: true,
@@ -2805,7 +3583,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xddE420cbB3794ebD8FFC3Ac69F9c78e5d1411870',
-    categories: ['Ellipsis'],
+    categories: [],
 
     farm: {
       isDisabled: true,
@@ -2845,7 +3623,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tokenAddress: '0xf9045866e7b372DeF1EFf3712CE55FAc1A98dAF0',
-    categories: ['Ellipsis'],
+    categories: [],
 
     farm: {
       isDisabled: true,
