@@ -1,5 +1,6 @@
 import BigfootBnb from './BigfootBnb';
 import BigfootUsd from './BigfootUsd';
+import eleUsd from './eleUsd';
 
 export default class BankHelper {
 
@@ -10,6 +11,9 @@ export default class BankHelper {
 
       case 'bfusd':
         return new BigfootUsd();
+
+      case 'eleusd':
+        return new eleUsd();
 
       default:
         return null;

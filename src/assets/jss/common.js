@@ -243,7 +243,7 @@ const styles = {
     borderRadius: [BORDER.radius, 0, 0, BORDER.radius],
 
     '& img': {
-      maxHeight: 26,
+      height: 26,
     }
   },
 

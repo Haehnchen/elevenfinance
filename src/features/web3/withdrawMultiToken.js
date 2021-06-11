@@ -1,8 +1,8 @@
-import bigfootUsdBankABI from '../configure/abis/bigfootUsdBank';
+import eleBankABI from '../configure/abis/eleBank';
 import { enqueueSnackbar } from '../common/redux/actions';
 
 export const withdrawMultiToken = async ({ web3, address, amount, tokenIndex, contractAddress, dispatch }) => {
-  const contract = new web3.eth.Contract(bigfootUsdBankABI, contractAddress);
+  const contract = new web3.eth.Contract(eleBankABI, contractAddress);
   const data = await _withdraw({ contract, amount, tokenIndex, address, dispatch });
   return data;
 }

@@ -158,6 +158,23 @@ export default class BigfootUsd {
   }
 
   /**
+   * Convert withdrawal amount from bank's main token to selected withdrawal token
+   *
+   * @param {*} param0
+   * @returns
+   */
+  convertWithdrawAmountToToken({ web3, amount, tokenIndex, tokenDecimals }) {
+    if (amount.gt(0) && tokenIndex != 3) {
+      return convert3PoolToUsd({ web3, amount: amountToUint(amount), usdTokenIndex: tokenIndex })
+        .then(usdAmount => {
+          return byDecimals(usdAmount, tokenDecimals);
+        });
+    }
+
+    return Promise.resolve(amount);
+  }
+
+  /**
    * Get price of bank's main token in USD
    *
    * @param {*} param0

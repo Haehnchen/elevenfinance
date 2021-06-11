@@ -1469,6 +1469,62 @@ export const pools = [
     ]
   },
   {
+    network: 'polygon',
+    id: 'eleusd',
+    bankId: 'eleusd',
+
+    name: 'eleUSD',
+    image: 'eleusd.png',
+    token: 'eleUSD',
+    tokenDescription: 'eleUSD',
+
+    isMultiToken: true,
+    tokens: [
+      {
+        token: 'DAI',
+        image: 'dai.svg',
+        address: '0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063',
+        decimals: 18
+      },
+      {
+        token: 'USDC ',
+        image: 'USDC-logo.png',
+        address: '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
+        decimals: 6
+      },
+      {
+        token: 'USDT ',
+        image: 'USDT-logo.png',
+        address: '0xc2132D05D31c914a87C6611C10748AEb04B58e8F',
+        decimals: 6
+      },
+    ],
+
+    uses: 'ELE bank',
+    itokenDecimals: 6,
+    depostLimit: 0,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: 'eleUSD',
+    earnedTokenAddress: '0xDF6Dae831353Efe17aB3998aD053d476B1B676E5',
+    earnContractAddress: '0xDF6Dae831353Efe17aB3998aD053d476B1B676E5',
+
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+
+    categories: ['Bigfoot'],
+
+    fees: {
+      deposit: 0,
+      withdrawal: 0.1,
+      controller: 0.275,
+      platform: 0.275,
+      dividends: 0.1,
+      buybacks: 1.55
+    }
+  },
+  {
     network: 'bsc',
     id: 'bfbnb',
     name: 'BFBNB',
@@ -1501,6 +1557,7 @@ export const pools = [
   {
     network: 'bsc',
     id: 'bfusd',
+    bankId: 'bfusd',
     name: 'BFUSD',
     image: 'bfusd.png',
     token: 'USD',

@@ -6,7 +6,7 @@ import Grid from '@material-ui/core/Grid';
 import { useConnectWallet } from 'features/home/redux/hooks';
 import { useFetchPoolRewards } from 'features/vault/redux/fetchPoolRewards';
 
-import BigfootUsd from './Layouts/BigfootUsd';
+import MultiToken from './Layouts/MultiToken';
 import Boosted from './Layouts/Boosted';
 import Claimable from './Layouts/Claimable';
 import FarmOnly from './Layouts/FarmOnly';
@@ -35,8 +35,8 @@ const PoolDetails = ({ pool, index, tokens, tokenBalance, depositedBalance, stak
   }, [address, web3, fetchPoolRewards]);
 
   const getDetailsSection = () => {
-    if (pool.id == 'bfusd') {
-      return <BigfootUsd pool={pool}
+    if (pool.isMultiToken) {
+      return <MultiToken pool={pool}
         index={index}
         tokens={tokens}
         tokenBalance={tokenBalance}
@@ -67,12 +67,16 @@ const PoolDetails = ({ pool, index, tokens, tokenBalance, depositedBalance, stak
       />
     }
 
-    return <>
-      <Regular pool={pool}
-        index={index}
-        tokenBalance={tokenBalance}
-        depositedBalance={depositedBalance}
-      />
+    return <Regular pool={pool}
+      index={index}
+      tokenBalance={tokenBalance}
+      depositedBalance={depositedBalance}
+    />
+  }
+
+  return (
+    <Grid item container xs={12} className={classes.poolDetails}>
+      { getDetailsSection() }
 
       {(isBoosted || stakedBalance.gt(0)) && (
         <Boosted pool={pool}
@@ -83,12 +87,6 @@ const PoolDetails = ({ pool, index, tokens, tokenBalance, depositedBalance, stak
           pendingRewardsLoaded={fetchPoolRewardsDone[pool.id]}
         />
       )}
-    </>
-  }
-
-  return (
-    <Grid item container xs={12} className={classes.poolDetails}>
-      { getDetailsSection() }
     </Grid>
   );
 }

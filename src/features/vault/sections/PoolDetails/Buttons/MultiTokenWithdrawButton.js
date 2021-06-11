@@ -4,16 +4,16 @@ import { createUseStyles } from 'react-jss';
 import BigNumber from 'bignumber.js';
 import { useSnackbar } from 'notistack';
 
+import BankHelper from 'features/leverage/banks/BankHelper';
+import { amountToUint } from 'features/helpers/bignumber';
 import { useConnectWallet } from 'features/home/redux/hooks';
 import { useFetchWithdraw } from 'features/vault/redux/hooks';
-import { convert3PoolToUsd } from 'features/web3';
 
 import AmountDialog from 'components/AmountDialog/AmountDialog';
 import Select from 'components/Select/Select';
 import { CashIcon } from '@heroicons/react/outline';
 
 import styles from './styles';
-import { byDecimals } from 'features/helpers/bignumber';
 const useStyles = createUseStyles(styles);
 
 const MultiTokenWithdrawButton = ({ pool, tokens, balance, index }) => {
@@ -34,22 +34,18 @@ const MultiTokenWithdrawButton = ({ pool, tokens, balance, index }) => {
     setTokensOptions(options);
   }, [pool, tokens])
 
-  // Convert current 3pool token balance to selected withdrawal token
+  // Convert pool's main token to selected withdrawal token
   useEffect(() => {
-    if (selectedToken == 3) {
-      setMaxAmount(new BigNumber(balance.toString()));
-      return;
-    }
-
-    const token = pool.tokens[selectedToken];
-
-    if (balance.gt(0)) {
-      const amount = balance.multipliedBy(new BigNumber(10).exponentiatedBy(18)).toFixed(0);
-      convert3PoolToUsd({ web3, address, amount, usdTokenIndex: selectedToken })
-        .then(usdAmount => {
-          setMaxAmount(byDecimals(usdAmount, token.decimals));
-        });
-    }
+    const bankInstance = BankHelper.getBankInstance({ id: pool.bankId })
+    bankInstance.convertWithdrawAmountToToken({
+      web3,
+      amount: balance,
+      tokenIndex: selectedToken,
+      tokenDecimals: pool.tokens[selectedToken].decimals
+    })
+      .then(tokenAmount => {
+        setMaxAmount(tokenAmount);
+      })
   }, [selectedToken]);
 
   const onWithdraw = (amount) => {
@@ -58,15 +54,14 @@ const MultiTokenWithdrawButton = ({ pool, tokens, balance, index }) => {
       return;
     }
 
-    const amountValue = balance.times((new BigNumber(amount.replace(',', '')).div(maxAmount)))
+    const amountValue = balance
+      .times((new BigNumber(amount.replace(',', '')).div(maxAmount)))
+      .dividedBy(pool.pricePerFullShare);
 
     fetchWithdrawMultiToken({
       address,
       web3,
-      amount: amountValue
-        .multipliedBy(new BigNumber(10).exponentiatedBy(pool.itokenDecimals))
-        .dividedBy(pool.pricePerFullShare)
-        .toFixed(0),
+      amount: amountToUint(amountValue, pool.itokenDecimals),
       tokenIndex: selectedToken,
       contractAddress: pool.earnContractAddress,
       index
